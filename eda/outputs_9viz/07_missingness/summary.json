@@ -1,0 +1,7 @@
+{
+  "mode": "food_only",
+  "rows": 92357,
+  "columns": 5,
+  "any_missing_row_ratio": 0.0,
+  "max_missing_rate_by_col": 0.0
+}
