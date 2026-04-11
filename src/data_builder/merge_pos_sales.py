@@ -64,8 +64,8 @@ def merge_csv_to_parquet(input_files, output_file, chunk_size=100000):
     print(f"Finished! Saved to {output_file}")
 
 if __name__ == "__main__":
-    raw_dir = "../data/raw"
-    processed_dir = "../data/processed"
+    raw_dir = "data/raw"
+    processed_dir = "data/processed"
     
     # 출력 디렉토리 생성
     if not os.path.exists(processed_dir):
