@@ -1,6 +1,10 @@
 import os
 import pandas as pd
 from apify_client import ApifyClient
+from dotenv import load_dotenv
+
+# .env 파일 로드
+load_dotenv()
 
 def run_instagram_crawler(target_url, start_date=None, end_date=None, results_limit=1500):
     """
