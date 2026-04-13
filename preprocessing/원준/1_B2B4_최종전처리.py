@@ -24,9 +24,11 @@ import pyarrow.parquet as pq
 warnings.filterwarnings("ignore")
 
 # ── 1. 경로 설정 ────────────────────────────────────────────────────────────
-BASE_DIR   = r"C:\Users\alexj\2026_캡스톤_디자인\세븐일레븐_프로젝트\세븐일레븐_내부데이터"
-INPUT_PATH = os.path.join(BASE_DIR, "병합_데이터셋",  "df_B2_B4_merged.parquet")
-OUTPUT_DIR = os.path.join(BASE_DIR, "전처리_EDA", "최종")
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+DATA_PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
+
+INPUT_PATH = os.path.join(DATA_PROCESSED_DIR, "df_B2_B4_merged.parquet")
+OUTPUT_DIR = os.path.join(DATA_PROCESSED_DIR, "최종") # 기존 구조 유지 (필요시 data/processed/final 등으로 변경 가능)
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # 최종 전처리 완료 파일 경로
@@ -49,9 +51,8 @@ RENAME_MAP = {
     "SALE_AMT"       : "매출금액",
     "ITEM_NM"        : "상품명",
     "ITEM_LRDV_NM"   : "상품대분류명",
-    # ↓ 아래 항목들은 병합 데이터 내 실제 컬럼명이 있을 경우 반영
-    # "ITEM_MRDV_NM" : "상품중분류명",
-    # "ITEM_SRDV_NM" : "상품소분류명",
+    "ITEM_MDDV_NM"   : "상품중분류명",
+    "ITEM_SMDV_NM"   : "상품소분류명",
     # "PROMO_YN"     : "프로모션여부",
 }
 
@@ -119,6 +120,7 @@ def add_trade_key(df: pd.DataFrame) -> pd.DataFrame:
     (원본 데이터의 자릿수 관례를 그대로 따름).
     """
     df["거래_고유키"] = (
+        df["영업일자"].astype(str) + "_" +
         df["점포코드"].astype(str) + "_" +
         df["POS번호"].astype(str)  + "_" +
         df["거래번호"].astype(str)
@@ -156,6 +158,8 @@ def add_anomaly_flags(df: pd.DataFrame) -> pd.DataFrame:
     amt = df["매출금액"]
 
     conditions = [
+        # 0순위: 결측값 → NaN 비교는 항상 False이므로 가장 먼저 체크
+        qty.isna() | amt.isna(),
         # 1순위: 정상
         (qty > 0) & (amt > 0),
         # 2순위: 수량/금액 둘 다 음수 → 환불/반품
@@ -164,12 +168,13 @@ def add_anomaly_flags(df: pd.DataFrame) -> pd.DataFrame:
         (qty < 0) & (amt == 0),
         # 4순위: 금액 < 0, 수량 > 0 → 시스템 오류 의심
         (qty > 0) & (amt < 0),
-        # 5순위: 한쪽만 음수 (부분 취소/할인 조정)
-        ((qty < 0) & (amt > 0)) | ((qty > 0) & (amt < 0)),
+        # 5순위: 수량만 음수 (부분 취소/할인 조정)
+        (qty < 0) & (amt > 0),
         # 6순위: 수량=0 또는 금액=0 → 증정품 가능성
         (qty == 0) | (amt == 0),
     ]
     choices = [
+        "MISSING_VALUE",
         "NORMAL",
         "REFUND_NEGATIVE",
         "ZERO_AMT_NEG_QTY",

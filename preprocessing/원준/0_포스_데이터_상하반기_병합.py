@@ -6,14 +6,18 @@ import os
 import gc
 
 def process_large_pos_data():
-    # 1. 경로 설정
-    base_path = r'C:\Users\alexj\2026_캡스톤_디자인\세븐일레븐_프로젝트\세븐일레븐_내부데이터'
+    # 1. 경로 설정 (현재 프로젝트 구조에 맞게 수정)
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+    raw_data_dir = os.path.join(project_root, 'data', 'raw')
+    processed_data_dir = os.path.join(project_root, 'data', 'processed')
+    
     b2_paths = [
-        os.path.join(base_path, '원본_데이터셋', 'B2_POS_SALE_H1.csv'),
-        os.path.join(base_path, '원본_데이터셋', 'B2_POS_SALE_H2.csv')
+        os.path.join(raw_data_dir, 'B2_POS_SALE_H1.csv'),
+        os.path.join(raw_data_dir, 'B2_POS_SALE_H2.csv') # H2 파일 존재 여부 확인 필요
     ]
-    b4_path = os.path.join(base_path, '원본_데이터셋', 'B4_ITEM_DV_INFO.csv')
-    output_dir = os.path.join(base_path, '병합_데이터셋')
+    b4_path = os.path.join(raw_data_dir, 'B4_ITEM_DV_INFO.csv')
+    
+    output_dir = processed_data_dir
     output_path = os.path.join(output_dir, 'df_B2_B4_merged.parquet')
 
     if not os.path.exists(output_dir):
@@ -22,7 +26,7 @@ def process_large_pos_data():
 
     # 2. 상품 마스터(B4) 미리 로드 (상대적으로 작음)
     print("상품 마스터(B4) 로딩 중...")
-    df_b4 = pd.read_csv(b4_path, low_memory=False)
+    df_b4 = pd.read_csv(b4_path, low_memory=False, encoding='cp949')
     df_b4['ITEM_CD'] = df_b4['ITEM_CD'].astype(str).str.zfill(6)
     df_b4 = df_b4[['ITEM_CD', 'ITEM_NM', 'ITEM_LRDV_NM', 'ITEM_MDDV_NM', 'ITEM_SMDV_NM']]
 
@@ -39,7 +43,7 @@ def process_large_pos_data():
             
         print(f"\n파일 읽기 시작: {os.path.basename(file_path)}")
         # chunksize 지정 시 메모리에 전체를 올리지 않고 Iterator를 반환
-        reader = pd.read_csv(file_path, chunksize=chunk_size, low_memory=False)
+        reader = pd.read_csv(file_path, chunksize=chunk_size, low_memory=False, encoding='cp949')
         
         for i, chunk in enumerate(reader):
             # A. 청크 데이터 클리닝
@@ -59,6 +63,8 @@ def process_large_pos_data():
                 # 첫 청크 작성 시 스키마 정의 및 파일 생성
                 writer = pq.ParquetWriter(output_path, table.schema, compression='snappy')
             
+            if writer is not None:
+                table = table.select(writer.schema_arrow.names)
             writer.write_table(table)
             
             if (i + 1) % 5 == 0:
