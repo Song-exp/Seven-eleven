@@ -21,17 +21,13 @@ def run_instagram_crawler(target_url, start_date=None, end_date=None, results_li
     os.makedirs(output_dir, exist_ok=True)
 
     # 2. 크롤링 입력 파라미터 (비용 최적화 극대화)
-    # 4/22까지 이미 수집했으므로, 4/21 이전의 데이터만 유료 결과로 카운트하게 설정
+    # Instagram Scraper는 최신순으로 수집하므로, start_date(2025-01-01)를 하한선으로 설정합니다.
     run_input = {
         "directUrls": [target_url],
         "resultsLimit": results_limit,
         "resultType": "posts",
-        
-        # [비용 절감 핵심 1] 이 날짜 이전의 게시물만 '결과물'로 저장 (2026년~2025년 5월 무시)
-        "untilDate": end_date if end_date else None, 
-        
-        # [비용 절감 핵심 2] 이 날짜에 도달하면 탐색을 즉시 중단
-        "oldestPostDate": start_date if start_date else None,
+        "onlyPostsNewerThan": start_date, # 이 날짜 이전 데이터는 수집 안 함 (하한선)
+        "skipPinnedPosts": True,         # 고정 게시물은 날짜가 섞이므로 제외
         
         "proxyConfiguration": {
             "useApifyProxy": True,
@@ -42,21 +38,26 @@ def run_instagram_crawler(target_url, start_date=None, end_date=None, results_li
         "includeSourceVideoUrl": False,
     }
 
-    print(f"🚀 [토큰 절약 모드] '{target_url}' 수집 시작...")
-    print(f"📅 수집 구간: {start_date} ~ {end_date} (이외 기간은 무시)")
-    print(f"💰 비용 관리: untilDate 적용으로 {end_date} 이후 데이터는 비용 청구 제외")
+    print(f"🚀 [최적화 모드] '{target_url}' 수집 시작...")
+    print(f"📅 목표 구간: {start_date} ~ {end_date}")
+    print(f"⚠️  주의: 최신글(2026년 등)부터 {end_date}까지는 무료 탐색 후 데이터셋에서 제외합니다.")
 
     try:
         # 액터 실행
         run = client.actor("apify/instagram-scraper").call(run_input=run_input)
 
-        print("📦 데이터 수집 완료, 결과 정리 중...")
+        print("📦 데이터 수집 완료, 결과 필터링 중...")
         items = []
         
+        # 최신순으로 반환되므로 end_date(2025-04-21)보다 최신인 데이터는 건너뜁니다.
         for i, item in enumerate(client.dataset(run["defaultDatasetId"]).iterate_items()):
             full_timestamp = item.get("timestamp")
             if not full_timestamp: continue
             post_date = full_timestamp[:10]
+            
+            # end_date보다 최신이면 저장하지 않고 건너뜀
+            if end_date and post_date > end_date:
+                continue
             
             # 텍스트 분리
             full_caption = item.get("caption", "")
@@ -68,8 +69,8 @@ def run_instagram_crawler(target_url, start_date=None, end_date=None, results_li
                 title_clean = "제목 없음"
                 body_clean = ""
 
-            # 수집 로그 (untilDate 덕분에 수집되는 것만 찍힘)
-            print(f"[{i+1:04d}] ✅ 수집 중 | 날짜: {post_date} | 제목: {title_clean}")
+            # 수집 로그
+            print(f"[{len(items)+1:04d}] ✅ 수집 중 | 날짜: {post_date} | 제목: {title_clean}")
 
             items.append({
                 "post_id": item.get("id"),
