@@ -26,7 +26,11 @@ def process_large_pos_data():
 
     # 2. 상품 마스터(B4) 미리 로드 (상대적으로 작음)
     print("상품 마스터(B4) 로딩 중...")
-    df_b4 = pd.read_csv(b4_path, low_memory=False, encoding='cp949')
+    try:
+        df_b4 = pd.read_csv(b4_path, low_memory=False, encoding='utf-8')
+    except UnicodeDecodeError:
+        df_b4 = pd.read_csv(b4_path, low_memory=False, encoding='cp949')
+        
     df_b4['ITEM_CD'] = df_b4['ITEM_CD'].astype(str).str.zfill(6)
     df_b4 = df_b4[['ITEM_CD', 'ITEM_NM', 'ITEM_LRDV_NM', 'ITEM_MDDV_NM', 'ITEM_SMDV_NM']]
 
@@ -43,7 +47,13 @@ def process_large_pos_data():
             
         print(f"\n파일 읽기 시작: {os.path.basename(file_path)}")
         # chunksize 지정 시 메모리에 전체를 올리지 않고 Iterator를 반환
-        reader = pd.read_csv(file_path, chunksize=chunk_size, low_memory=False, encoding='cp949')
+        try:
+            reader = pd.read_csv(file_path, chunksize=chunk_size, low_memory=False, encoding='utf-8')
+            # 첫 번째 청크를 시도해보고 인코딩 오류가 나는지 확인
+            next(reader)
+            reader = pd.read_csv(file_path, chunksize=chunk_size, low_memory=False, encoding='utf-8')
+        except UnicodeDecodeError:
+            reader = pd.read_csv(file_path, chunksize=chunk_size, low_memory=False, encoding='cp949')
         
         for i, chunk in enumerate(reader):
             # A. 청크 데이터 클리닝
@@ -64,7 +74,8 @@ def process_large_pos_data():
                 writer = pq.ParquetWriter(output_path, table.schema, compression='snappy')
             
             if writer is not None:
-                table = table.select(writer.schema_arrow.names)
+                # ParquetWriter의 schema(ParquetSchema)에서 컬럼명을 가져와 순서를 맞춤
+                table = table.select(writer.schema.names)
             writer.write_table(table)
             
             if (i + 1) % 5 == 0:
