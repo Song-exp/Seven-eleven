@@ -25,10 +25,10 @@ warnings.filterwarnings("ignore")
 
 # ── 1. 경로 설정 ────────────────────────────────────────────────────────────
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-DATA_PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
+DATA_PROCESSED_DIR = os.path.join(PROJECT_ROOT, "전처리_EDA", "최종")
 
 INPUT_PATH = os.path.join(DATA_PROCESSED_DIR, "df_B2_B4_merged.parquet")
-OUTPUT_DIR = os.path.join(DATA_PROCESSED_DIR, "최종") # 기존 구조 유지 (필요시 data/processed/final 등으로 변경 가능)
+OUTPUT_DIR = os.path.join(DATA_PROCESSED_DIR)
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # 최종 전처리 완료 파일 경로
