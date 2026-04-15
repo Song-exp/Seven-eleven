@@ -6,10 +6,13 @@ from dotenv import load_dotenv
 # .env 파일 로드
 load_dotenv()
 
-def run_instagram_crawler(target_url, start_date=None, end_date=None, results_limit=1500):
+def run_instagram_crawler(target_url, start_date=None, end_date=None, results_limit=1200):
     """
-    [토큰 초절약 버전] 
-    untilDate와 oldestPostDate를 사용하여 특정 기간 외의 데이터를 유료 결과물에서 제외합니다.
+    Apify Instagram Scraper를 사용하여 특정 기간의 게시물을 수집합니다.
+
+    - 하한선(start_date): onlyPostsNewerThan 파라미터로 API 레벨에서 필터링
+    - 상한선(end_date): API 파라미터 미지원 → Python 레벨에서 필터링 후 break 조기 종료
+    - resultsLimit: (현재날짜 - start_date) 기간의 예상 게시물 수에 안전 마진을 더해 설정
     """
     # 1. 인증 및 클라이언트 설정
     APIFY_TOKEN = os.getenv("APIFY_TOKEN", "your_apify_token_here")
@@ -20,44 +23,51 @@ def run_instagram_crawler(target_url, start_date=None, end_date=None, results_li
     output_dir = os.path.join(project_root, 'data', 'raw')
     os.makedirs(output_dir, exist_ok=True)
 
-    # 2. 크롤링 입력 파라미터 (비용 최적화 극대화)
-    # Instagram Scraper는 최신순으로 수집하므로, start_date(2025-01-01)를 하한선으로 설정합니다.
+    # 2. 크롤링 입력 파라미터
+    # - onlyPostsNewerThan: API 레벨 하한선 필터 (이 날짜 이전 게시물은 수집 안 함)
+    # - 상한선(end_date)에 해당하는 API 파라미터는 공식 미지원 → iterate_items 루프에서 처리
     run_input = {
         "directUrls": [target_url],
         "resultsLimit": results_limit,
-        "resultType": "posts",
-        "onlyPostsNewerThan": start_date, # 이 날짜 이전 데이터는 수집 안 함 (하한선)
-        "skipPinnedPosts": True,         # 고정 게시물은 날짜가 섞이므로 제외
-        
+        "resultsType": "posts",
+        "onlyPostsNewerThan": start_date,
         "proxyConfiguration": {
             "useApifyProxy": True,
-            "apifyProxyGroups": ["DATACENTER"] 
+            "apifyProxyGroups": ["DATACENTER"]
         },
-        "includeComments": False,
-        "includeContextualLocation": False,
-        "includeSourceVideoUrl": False,
     }
 
-    print(f"🚀 [최적화 모드] '{target_url}' 수집 시작...")
-    print(f"📅 목표 구간: {start_date} ~ {end_date}")
-    print(f"⚠️  주의: 최신글(2026년 등)부터 {end_date}까지는 무료 탐색 후 데이터셋에서 제외합니다.")
+    print(f"[시작] '{target_url}' 수집 시작...")
+    print(f"[기간] {start_date} ~ {end_date}")
+    print(f"[설정] resultsLimit={results_limit} | {end_date} 이후 게시물은 수집 후 제외, {start_date} 이전 도달 시 조기 종료")
 
     try:
         # 액터 실행
         run = client.actor("apify/instagram-scraper").call(run_input=run_input)
 
-        print("📦 데이터 수집 완료, 결과 필터링 중...")
+        print("데이터 수집 완료, 결과 필터링 중...")
         items = []
-        
-        # 최신순으로 반환되므로 end_date(2025-04-21)보다 최신인 데이터는 건너뜁니다.
-        for i, item in enumerate(client.dataset(run["defaultDatasetId"]).iterate_items()):
+        skipped_newer = 0
+
+        # Instagram은 최신순으로 반환
+        # - end_date 초과: continue (더 오래된 게시물이 아직 남아있으므로 계속 탐색)
+        # - start_date 미만: break (이후는 모두 범위 밖이므로 조기 종료)
+        for item in client.dataset(run["defaultDatasetId"]).iterate_items():
             full_timestamp = item.get("timestamp")
-            if not full_timestamp: continue
-            post_date = full_timestamp[:10]
-            
-            # end_date보다 최신이면 저장하지 않고 건너뜀
-            if end_date and post_date > end_date:
+            if not full_timestamp:
                 continue
+            post_date = full_timestamp[:10]
+
+            # 상한선 초과: 건너뜀 (API 미지원이므로 Python 레벨 처리)
+            if end_date and post_date > end_date:
+                skipped_newer += 1
+                print(f"[skip] {post_date} — end_date({end_date}) 이후, 건너뜀 ({skipped_newer}번째)")
+                continue
+
+            # 하한선 미만: 조기 종료 (이후 모든 게시물도 범위 밖)
+            if start_date and post_date < start_date:
+                print(f"[조기 종료] {post_date} 도달 — start_date({start_date}) 이전이므로 중단")
+                break
             
             # 텍스트 분리
             full_caption = item.get("caption", "")
@@ -69,8 +79,7 @@ def run_instagram_crawler(target_url, start_date=None, end_date=None, results_li
                 title_clean = "제목 없음"
                 body_clean = ""
 
-            # 수집 로그
-            print(f"[{len(items)+1:04d}] ✅ 수집 중 | 날짜: {post_date} | 제목: {title_clean}")
+            print(f"[{len(items)+1:04d}] 수집 중 | 날짜: {post_date} | 제목: {title_clean}")
 
             items.append({
                 "post_id": item.get("id"),
@@ -83,28 +92,33 @@ def run_instagram_crawler(target_url, start_date=None, end_date=None, results_li
                 "url": item.get("url")
             })
 
+        earliest = items[-1]["date"] if items else "없음"
+        latest = items[0]["date"] if items else "없음"
+        print(f"[필터 결과] 수집: {len(items)}개 | end_date 초과로 제외: {skipped_newer}개")
+        print(f"[수집 범위] {earliest} ~ {latest}")
+
         if not items:
-            print("⚠️ 조건에 맞는 데이터가 없습니다. (수집 기간 및 한도를 확인하세요.)")
+            print("조건에 맞는 데이터가 없습니다. (수집 기간 및 resultsLimit을 확인하세요.)")
             return
 
         df = pd.DataFrame(items)
         account_name = target_url.strip("/").split("/")[-1]
         filename = f"instagram_{account_name}_{start_date}_to_{end_date}.csv"
         output_path = os.path.join(output_dir, filename)
-        
+
         df.to_csv(output_path, index=False, encoding='utf-8-sig')
-        
-        print(f"✅ 최종 저장 완료: {len(df)}개")
-        print(f"💾 저장 경로: {os.path.abspath(output_path)}")
+
+        print(f"저장 완료: {len(df)}개 → {os.path.abspath(output_path)}")
 
     except Exception as e:
         print(f"❌ 오류 발생: {e}")
 
 if __name__ == "__main__":
-    # [남은 1월~4월 수집 실행]
+    
+    # 2025년 전체 수집
     run_instagram_crawler(
-        target_url="https://www.instagram.com/knewnew.official/", 
-        start_date="2025-01-01", 
-        end_date="2025-04-21", 
-        results_limit=1500 # 4개월치 넉넉한 한도
+        target_url="https://www.instagram.com/gs25_official/",
+        start_date="2025-01-01",
+        end_date="2025-12-31",
+        results_limit=2500
     )
