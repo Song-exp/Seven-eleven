@@ -31,9 +31,9 @@ import pandas as pd
 # 0. 경로 설정
 # ──────────────────────────────────────────────────────────────
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-BASE_DIR = PROJECT_ROOT / 'data' / 'processed' / '최종'
+BASE_DIR = PROJECT_ROOT / '전처리_EDA' / '최종'
 
-INPUT_FILE  = BASE_DIR / 'df_전처리완료.parquet' # 이전 단계의 출력 파일명에 맞춤
+INPUT_FILE  = BASE_DIR / 'pos_data_food_final_상품단위변환전.parquet' # 이전 단계의 출력 파일명에 맞춤
 OUTPUT_FILE = BASE_DIR / 'pos_data_food_final_상품단위.csv'
 
 # 관측 종료일 (2025년 마지막 날)
