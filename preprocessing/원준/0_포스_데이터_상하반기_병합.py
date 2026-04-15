@@ -8,12 +8,12 @@ import gc
 def process_large_pos_data():
     # 1. 경로 설정 (현재 프로젝트 구조에 맞게 수정)
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-    raw_data_dir = os.path.join(project_root, 'data', 'raw')
-    processed_data_dir = os.path.join(project_root, 'data', 'processed')
+    raw_data_dir = os.path.join(project_root, '원본_데이터셋')
+    processed_data_dir = os.path.join(project_root, '전처리_EDA', '최종')
     
     b2_paths = [
         os.path.join(raw_data_dir, 'B2_POS_SALE_H1.csv'),
-        os.path.join(raw_data_dir, 'B2_POS_SALE_H2.csv') # H2 파일 존재 여부 확인 필요
+        os.path.join(raw_data_dir, 'B2_POS_SALE_H2.csv')
     ]
     b4_path = os.path.join(raw_data_dir, 'B4_ITEM_DV_INFO.csv')
     
@@ -26,11 +26,7 @@ def process_large_pos_data():
 
     # 2. 상품 마스터(B4) 미리 로드 (상대적으로 작음)
     print("상품 마스터(B4) 로딩 중...")
-    try:
-        df_b4 = pd.read_csv(b4_path, low_memory=False, encoding='utf-8')
-    except UnicodeDecodeError:
-        df_b4 = pd.read_csv(b4_path, low_memory=False, encoding='cp949')
-        
+    df_b4 = pd.read_csv(b4_path, low_memory=False, encoding='utf-8')
     df_b4['ITEM_CD'] = df_b4['ITEM_CD'].astype(str).str.zfill(6)
     df_b4 = df_b4[['ITEM_CD', 'ITEM_NM', 'ITEM_LRDV_NM', 'ITEM_MDDV_NM', 'ITEM_SMDV_NM']]
 
@@ -47,13 +43,7 @@ def process_large_pos_data():
             
         print(f"\n파일 읽기 시작: {os.path.basename(file_path)}")
         # chunksize 지정 시 메모리에 전체를 올리지 않고 Iterator를 반환
-        try:
-            reader = pd.read_csv(file_path, chunksize=chunk_size, low_memory=False, encoding='utf-8')
-            # 첫 번째 청크를 시도해보고 인코딩 오류가 나는지 확인
-            next(reader)
-            reader = pd.read_csv(file_path, chunksize=chunk_size, low_memory=False, encoding='utf-8')
-        except UnicodeDecodeError:
-            reader = pd.read_csv(file_path, chunksize=chunk_size, low_memory=False, encoding='cp949')
+        reader = pd.read_csv(file_path, chunksize=chunk_size, low_memory=False, encoding='cp949')
         
         for i, chunk in enumerate(reader):
             # A. 청크 데이터 클리닝
@@ -74,7 +64,6 @@ def process_large_pos_data():
                 writer = pq.ParquetWriter(output_path, table.schema, compression='snappy')
             
             if writer is not None:
-                # ParquetWriter의 schema(ParquetSchema)에서 컬럼명을 가져와 순서를 맞춤
                 table = table.select(writer.schema.names)
             writer.write_table(table)
             
