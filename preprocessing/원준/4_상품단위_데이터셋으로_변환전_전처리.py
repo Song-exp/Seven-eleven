@@ -1,89 +1,92 @@
 import pandas as pd
 import numpy as np
 import gc
+import os
 
-# ─────────────────────────────────────────────
-# STEP 1. 데이터 로드
-# ─────────────────────────────────────────────
-file_path = 'data/processed/최종/pos_data_전처리완료_final.parquet'
+# 설정
+INPUT_PATH  = 'pos_data_전처리완료_final.parquet'
+OUTPUT_PATH = 'pos_data_food_final_상품단위변환전.parquet'
 
-print("데이터 로딩을 시작합니다. 약 1억 행의 데이터이므로 메모리 사용량에 주의하세요...")
+def preprocess():
+    # 실행 위치 확인 및 디렉토리 설정
+    # 현재 디렉토리에 파일이 없고 '최종' 폴더에 있다면 이동
+    if not os.path.exists(INPUT_PATH) and os.path.exists('최종/' + INPUT_PATH):
+        os.chdir('최종')
+        print(f"디렉토리를 '최종'으로 이동하였습니다.")
 
-try:
-    df_pos = pd.read_parquet(file_path)
-    print("데이터 로드 성공!")
-    print(f"\n전체 데이터 행 수: {len(df_pos):,}")
-    print("\n--- 데이터 기본 정보 ---")
-    print(df_pos.info())
-    print("\n--- 컬럼별 결측치 확인 ---")
-    print(df_pos.isnull().sum())
-except MemoryError:
-    print("\n[오류] 메모리 부족으로 전체 데이터를 로드할 수 없습니다.")
-    raise
+    print(f"데이터 로딩을 시작합니다: {INPUT_PATH}")
+    try:
+        # 전체 데이터를 df_pos로 로드
+        df_pos = pd.read_parquet(INPUT_PATH)
+        print(f"로드 성공! (전체 행 수: {len(df_pos):,})")
+    except Exception as e:
+        print(f"로드 실패: {e}")
+        return
 
-# ─────────────────────────────────────────────
-# STEP 2. 객단가 계산
-# ─────────────────────────────────────────────
-print("\n객단가 계산 중...")
-df_pos['객단가'] = (
-    df_pos['매출금액'] / df_pos['매출수량'].replace(0, np.nan)
-).astype('float32')
+    # 1. 객단가 생성 (Transformation)
+    # 매출수량이 0인 경우를 대비해 replace 후 계산, 메모리 절약을 위해 float32 사용
+    # 주의: 비정상 객단가 제거 로직은 포함하지 않음 (요청사항 반영)
+    print("객단가(Unit Price) 계산 중...")
+    df_pos['객단가'] = (df_pos['매출금액'] / df_pos['매출수량'].replace(0, np.nan)).astype('float32')
+    gc.collect()
 
-# ─────────────────────────────────────────────
-# STEP 3. 식품 카테고리 필터링
-# ─────────────────────────────────────────────
-print("\n상품대분류명 공백 제거 중...")
-df_pos['상품대분류명'] = df_pos['상품대분류명'].str.strip()
+    # 2. 카테고리 필터링 (Filtering)
+    food_categories = {
+        '음료', '과자', '유음료', '미반', '면', '냉장', '맥주', '즉석음료', '빵', '전통주', 
+        '아이스크림', '조리빵', '즉석 식품', '건강/기호식품', '가공식품', '양주와인', '디저트', 
+        '안주', '신선', '간식', '조미료/건물', '냉동'
+    }
 
-food_categories = [
-    '음료', '과자', '유음료', '미반', '면', '냉장', '맥주', '즉석음료', '빵', '전통주',
-    '아이스크림', '조리빵', '즉석 식품', '건강/기호식품', '가공식품', '양주와인', '디저트',
-    '안주', '신선', '간식', '조미료/건물', '냉동',
-]
+    print("상품대분류명 공백 제거 및 식품 카테고리 필터링 중...")
+    df_pos['상품대분류명'] = df_pos['상품대분류명'].str.strip()
+    
+    # [검증] 지정된 모든 카테고리가 데이터에 존재하는지 확인
+    actual_categories = set(df_pos['상품대분류명'].unique())
+    missing_categories = food_categories - actual_categories
+    
+    if missing_categories:
+        print(f"  ⚠️ 주의: 지정된 카테고리 중 다음 {len(missing_categories)}개 항목이 데이터에 존재하지 않습니다: {missing_categories}")
+    else:
+        print(f"  ✅ 확인: 지정된 {len(food_categories)}개의 모든 식품 카테고리가 데이터 내에 존재함을 확인했습니다.")
 
-print("식품 카테고리 필터링 중...")
-df_pos_food = df_pos[df_pos['상품대분류명'].isin(food_categories)].copy()
+    # 식품이 아닌 카테고리 인덱스 추출 후 삭제 (In-place)
+    drop_indices = df_pos[~df_pos['상품대분류명'].isin(food_categories)].index
+    df_pos.drop(drop_indices, inplace=True)
+    
+    print(f"식품 카테고리 필터링 완료 (남은 식품 행 수: {len(df_pos):,})")
+    del drop_indices
+    gc.collect()
 
-print(f"\n전체 데이터 행 수: {len(df_pos):,}")
-print(f"식품 카테고리 필터링 후 행 수: {len(df_pos_food):,}")
-print(f"제거된 행 수: {len(df_pos) - len(df_pos_food):,}")
+    # 3. 각 대분류별 매출수량 상위 1% (Q99) 제거 (Core Logic)
+    print("각 상품대분류별 매출수량 임계치(Q99) 계산 및 극단치 제거 중...")
+    
+    # 각 카테고리별 매출수량의 0.99 분위수(Q99) 계산
+    qty_q99_dict = df_pos.groupby('상품대분류명')['매출수량'].quantile(0.99).to_dict()
+    
+    # 제거할 인덱스 추적
+    outlier_indices = []
+    for cat, q99_val in qty_q99_dict.items():
+        # 해당 카테고리 내에서 해당 카테고리의 Q99를 초과하는 행의 인덱스 추출
+        idx = df_pos[(df_pos['상품대분류명'] == cat) & (df_pos['매출수량'] > q99_val)].index
+        outlier_indices.extend(idx)
+    
+    print(f"제거될 매출수량 극단치(각 카테고리별 Q99 초과) 행 수: {len(outlier_indices):,}")
+    
+    # 데이터 직접 삭제 (In-place)
+    df_pos.drop(outlier_indices, inplace=True)
+    
+    print(f"최종 필터링 완료 (최종 행 수: {len(df_pos):,})")
+    del outlier_indices, qty_q99_dict
+    gc.collect()
 
-del df_pos
-gc.collect()
+    # 4. 결과 저장
+    print(f"데이터 저장 중: {OUTPUT_PATH}")
+    try:
+        # 인덱스 제외하고 저장
+        df_pos.to_parquet(OUTPUT_PATH, engine='pyarrow', index=False)
+        print(f"저장 완료! (최종 경로: {os.path.abspath(OUTPUT_PATH)})")
+    except Exception as e:
+        print(f"저장 중 오류 발생: {e}")
 
-# ─────────────────────────────────────────────
-# STEP 4. 이상치 제거 (매출수량 Q99, 객단가 Q99 — 대분류별)
-# ─────────────────────────────────────────────
-print("\n그룹별 임계치(Q99) 계산 중...")
-qty_q99_dict   = df_pos_food.groupby('상품대분류명')['매출수량'].quantile(0.99).to_dict()
-price_q99_dict = df_pos_food.groupby('상품대분류명')['객단가'].quantile(0.99).to_dict()
-
-print(f"\n필터링 전 데이터 건수: {len(df_pos_food):,}")
-
-# 조건 1: 매출수량 <= Q99 (전체 카테고리 공통 적용)
-mask_qty = df_pos_food['매출수량'] <= df_pos_food['상품대분류명'].map(qty_q99_dict)
-
-# 조건 2: 객단가 <= Q99 (전체 카테고리 공통 적용)
-mask_price = df_pos_food['객단가'] <= df_pos_food['상품대분류명'].map(price_q99_dict)
-
-df_pos_food_final = df_pos_food[mask_qty & mask_price].copy()
-
-print(f"최종 필터링 후 데이터 건수: {len(df_pos_food_final):,}")
-print(f"제거된 총 행 수: {len(df_pos_food) - len(df_pos_food_final):,}")
-print(f"데이터 감소율: {(1 - len(df_pos_food_final)/len(df_pos_food))*100:.2f}%")
-
-del df_pos_food
-gc.collect()
-
-# ─────────────────────────────────────────────
-# STEP 5. 저장
-# ─────────────────────────────────────────────
-output_file_path = 'pos_data_food_final_상품단위변환전.parquet'
-
-print(f"\n데이터를 {output_file_path}로 저장 중입니다...")
-try:
-    df_pos_food_final.to_parquet(output_file_path, engine='pyarrow', index=False)
-    print(f"저장 완료! 파일 경로: {output_file_path}")
-except Exception as e:
-    print(f"저장 중 오류가 발생했습니다: {e}")
-    raise
+if __name__ == "__main__":
+    preprocess()
