@@ -157,37 +157,48 @@ def extract_keywords_instagram(title: str, body: str) -> list[str]:
         return []
 
 
-# 세븐일레븐 공식 인스타그램 전용 트렌드 키워드 추출 프롬프트
+# 세븐일레븐 공식 인스타그램 전용 구조화 추출 프롬프트 (v2)
+# - 상품 메타데이터(명칭·가격·용량) + 트렌드 노드를 JSON으로 분리 출력
+# - metadata를 배열로 처리하여 다중 상품 게시글 대응
 SEVENELEVEN_SYSTEM_PROMPT = (
 """
 [Role]
-당신은 세븐일레븐 'AI 기획 대시보드'의 HIN 파이프라인 전처리를 담당하는 트렌드 데이터 추출 에이전트입니다.
+당신은 세븐일레븐 'AI 기획 대시보드'의 HIN 파이프라인 전처리를 담당하는 데이터 추출 에이전트입니다.
 
 [Task]
-입력된 텍스트는 세븐일레븐 공식 인스타그램 게시글입니다.
-신제품 흥행 예측에 활용할 트렌드 변수(노드)를 5~10개 추출하세요.
+입력된 세븐일레븐 공식 인스타그램 게시글에서
+① 정확한 상품 메타데이터(상품명, 가격, 용량)와
+② 신제품 흥행 예측에 활용할 트렌드 변수(노드)를 추출하여 JSON 형식으로 출력하세요.
 소비자 리뷰가 아닌 브랜드 공식 채널이므로, '세븐일레븐이 지금 무엇을 밀고 있는가'를 포착하는 것이 목적입니다.
 
 [Hidden Chain-of-Thought (절대 출력하지 말고 내부적으로만 수행할 것)]
 1. [게시글 유형 판별]: 신상 소개(#세븐신상) / 이벤트·프로모션(#EVENT) / 콜라보 공지 중 무엇인지 먼저 파악합니다.
-2. [상품 속성 식별]: 원재료, 맛, 식감, 제품 카테고리(삼각김밥·도시락·샌드·하이볼 등) 키워드를 추출합니다.
-3. [콜라보·IP 식별]: 명시적으로 언급된 IP, 캐릭터, 인플루언서, 타 브랜드명을 추출합니다. 단, 세븐일레븐 자체 브랜드명(세븐일레븐, 7eleven)은 제외합니다.
-4. [프로모션 유형 식별]: 2+1, 1+1, 단독, 사전예약, 초특가, 시즌한정 등 행사 유형 키워드를 추출합니다. 구체적인 가격(원 단위)과 날짜는 제외합니다.
-5. [TPO·소비 맥락 식별]: 집캉스, 야식, 다이어트, 명절, 새해, 시즌 등 소비 맥락을 추출합니다.
-6. [노이즈 소거]: 다음을 완전히 제거합니다.
-   - 마케팅 카피·감탄사 (예: 이건 절대 안 되는 일이얌, 달려가세요, 모여라, 주목)
+2. [메타데이터 확보]: 텍스트에 명시된 상품명, 가격(원), 용량/중량(g·ml)을 있는 그대로 추출합니다.
+   - 가격은 텍스트에 표기된 값을 그대로 사용합니다. 표기가 없으면 null로 처리합니다. (추정 금지)
+   - 상품이 여러 개인 경우 각각 별도 객체로 나열합니다.
+   - 용량/중량이 없으면 null로 처리합니다.
+3. [맛·식감·원재료 식별]: 말차, 딸기, 명란마요, 쫀득, 바삭 등 신제품 트렌드를 나타내는 표현을 추출합니다.
+4. [제품 카테고리 식별]: 삼각김밥, 도시락, 샌드, 하이볼 등 제품 유형을 추출합니다.
+   (3·4번 결과는 flavor_and_category 필드에 함께 담습니다.)
+5. [콜라보·IP 식별]: 명시적으로 언급된 IP, 캐릭터, 인플루언서, 타 브랜드명을 추출합니다.
+   단, 세븐일레븐 자체 브랜드명(세븐일레븐, 7eleven, 세븐)은 제외합니다.
+6. [프로모션 유형 식별]: 2+1, 1+1, 단독, 사전예약, 초특가, 시즌한정 등 행사 유형을 추출합니다.
+   표기 방식이 다르면 규격화합니다 (원플원 → 1+1, 투플러스원 → 2+1).
+7. [TPO·소비 맥락 식별]: 집캉스, 야식, 다이어트, 명절, 새해, 여름간식 등 소비 맥락을 추출합니다.
+8. [노이즈 소거]: 다음을 완전히 제거합니다.
+   - 마케팅 카피·감탄사 (예: 달려가세요, 주목, 쟁여두세요)
    - 이벤트 참여 안내 (예: 댓글로 외쳐주세요, 팔로우 필수, 추첨을 통해)
-   - 구체적 가격·수량·날짜 (예: 3,900원, 9월 18일, 30%)
-   - 세븐일레븐 자체 계정명 (@7elevenkorea)
-   - 해시태그 기호(#), 이모지, 마크다운 기호
-7. [정규화]: 외래어·영문 표기는 가장 널리 쓰이는 한글 명사형으로 통일합니다.
+   - 행사 날짜·기간 (예: 9월 18일~10월 31일) — 단, 가격과 g/ml 단위는 보존
+   - 세븐일레븐 자체 계정명 (@7elevenkorea), 해시태그 기호(#), 이모지
+9. [정규화]: 외래어·영문 표기는 가장 널리 쓰이는 한글 명사형으로 통일합니다.
    (예: REAL→리얼, HOT→핫, pop-up→팝업, collab→콜라보)
-8. [최종 선별]: HIN 노드로 연결 가치가 높은 명사 5~10개를 선별합니다.
+10. [최종 선별]: 각 필드별 최대 개수(아래 참고)를 초과하지 않도록 연결 가치가 높은 것만 선별합니다.
 
 [추출 우선순위]
-① 신제품 원재료·맛·식감 트렌드: 예) 말차, 딸기, 홋카이도멜론, 피치, 까망베르, 명란마요, 쫀득, 바삭, 단짠
+⓪ [필수] 상품 메타데이터: 상품명, 가격(원), 용량/중량(g·ml)
+① 맛·식감·원재료: 예) 말차, 딸기, 홋카이도멜론, 피치, 까망베르, 명란마요, 쫀득, 바삭, 단짠
 ② 제품 카테고리: 예) 삼각김밥, 도시락, 샌드, 통김밥, 유부초밥, 머랭쿠키, 하이볼
-③ 콜라보·IP·브랜드: 예) 미미미누, 헬로키티, 디즈니, KBO, K리그, CJ제일제당, 블루밍테일, 부르봉
+③ 콜라보·IP·브랜드: 예) 미미미누, 헬로키티, 디즈니, KBO, K리그, CJ제일제당, 부르봉
 ④ 프로모션 유형: 예) 2+1, 1+1, 단독, 사전예약, 시즌한정, 초특가
 ⑤ TPO·소비 맥락: 예) 집캉스, 다이어트, 야식, 명절, 새해
 
@@ -195,21 +206,39 @@ SEVENELEVEN_SYSTEM_PROMPT = (
 - 세븐일레븐 브랜드명 자체 (세븐일레븐, 7eleven, 세븐, 편의점)
 - 마케팅 카피·행동 유도 표현 (예: 쟁여두세요, 달려가세요, 확인하세요, 먹어보실 분)
 - 이벤트 운영 관련 단어 (예: 추첨, 당첨, 팔로우, 댓글, 태그, 모바일상품권)
-- 구체적 가격·할인율·날짜·수량 (예: 4,900원, 30%, 9월 18일, 2종)
+- 행사 날짜·기간 (예: 9월 18일까지, 주말 한정) — 가격과 용량은 보존할 것
 - 의미 없는 서술어·형용사 (예: 맛있다, 예쁘다, 좋다, 푸짐하다)
+- 불필요한 마케팅 접미사 (예: 시리즈, 에디션, 기획, 세트, 패키지, 팩)
 - 인사말, 부가 설명, 번호 매기기, 줄바꿈
 
-[Output Format]
-단어1, 단어2, 단어3, 단어4, 단어5 ... (최소 5개 ~ 최대 10개)
+[Output Format (Strict JSON — 다른 텍스트 절대 출력 금지)]
+{
+  "metadata": [
+    {"name": "상품명", "price": 가격숫자또는null, "capacity": "용량문자열또는null"}
+  ],
+  "flavor_and_category": ["최대 6개"],
+  "collab_and_brand": ["최대 5개"],
+  "promotion_type": ["최대 3개"],
+  "tpo_context": ["최대 3개"]
+}
 """
 )
 
 
-def extract_keywords_seveneleven(title: str, body: str) -> list[str]:
+def extract_keywords_seveneleven(title: str, body: str) -> dict:
     """
     세븐일레븐 공식 인스타그램 게시글(title + body)에서
-    HIN 트렌드 노드용 키워드를 추출합니다.
-    - 신상 소개, 콜라보, 프로모션 유형까지 포착하도록 설계된 전용 프롬프트 사용
+    상품 메타데이터 + 트렌드 노드를 구조화된 dict로 추출합니다.
+
+    반환 형식:
+    {
+        "metadata": [{"name": str, "price": int|None, "capacity": str|None}, ...],
+        "flavor_and_category": [str, ...],
+        "collab_and_brand": [str, ...],
+        "promotion_type": [str, ...],
+        "tpo_context": [str, ...]
+    }
+    파싱 실패 시 빈 dict {} 반환.
     """
     url = "http://localhost:11434/api/generate"
     text = preprocess_instagram_text(title, body)
@@ -226,21 +255,148 @@ def extract_keywords_seveneleven(title: str, body: str) -> list[str]:
     try:
         response = requests.post(url, json=payload, timeout=TIMEOUT)
         response.raise_for_status()
-        result = response.json()
+        raw = response.json().get("response", "").strip()
 
-        raw_keywords = result.get("response", "").strip()
-        keyword_list = [kw.strip() for kw in raw_keywords.split(",") if kw.strip()]
-        return keyword_list
+        # JSON 블록만 추출 (모델이 앞뒤에 텍스트를 붙이는 경우 대비)
+        start = raw.find("{")
+        end = raw.rfind("}") + 1
+        if start == -1 or end == 0:
+            print("JSON 파싱 실패: 응답에서 JSON 블록을 찾을 수 없습니다.")
+            return {}
+
+        import json as _json
+        result = _json.loads(raw[start:end])
+        return result
 
     except requests.exceptions.Timeout:
         print(f"Ollama 응답 시간 초과 ({TIMEOUT}초). 모델 로딩 중일 수 있습니다.")
-        return []
+        return {}
     except requests.exceptions.RequestException as e:
         print(f"Ollama API 연결 오류: {e}")
-        return []
+        return {}
     except Exception as e:
         print(f"예상치 못한 오류 발생: {e}")
-        return []
+        return {}
+
+
+# CU 공식 인스타그램 전용 구조화 추출 프롬프트
+# - SEVENELEVEN_SYSTEM_PROMPT와 동일한 구조, CU 브랜드 관련 부분만 교체
+CU_SYSTEM_PROMPT = (
+"""
+[Role]
+당신은 CU 'AI 기획 대시보드'의 HIN 파이프라인 전처리를 담당하는 데이터 추출 에이전트입니다.
+
+[Task]
+입력된 CU 공식 인스타그램 게시글에서
+① 정확한 상품 메타데이터(상품명, 가격, 용량)와
+② 신제품 흥행 예측에 활용할 트렌드 변수(노드)를 추출하여 JSON 형식으로 출력하세요.
+소비자 리뷰가 아닌 브랜드 공식 채널이므로, 'CU가 지금 무엇을 밀고 있는가'를 포착하는 것이 목적입니다.
+
+[Hidden Chain-of-Thought (절대 출력하지 말고 내부적으로만 수행할 것)]
+1. [게시글 유형 판별]: 신상 소개 / 이벤트·프로모션 / 콜라보 공지 중 무엇인지 먼저 파악합니다.
+2. [메타데이터 확보]: 텍스트에 명시된 상품명, 가격(원), 용량/중량(g·ml)을 있는 그대로 추출합니다.
+   - 가격은 텍스트에 표기된 값을 그대로 사용합니다. 표기가 없으면 null로 처리합니다. (추정 금지)
+   - 상품이 여러 개인 경우 각각 별도 객체로 나열합니다.
+   - 용량/중량이 없으면 null로 처리합니다.
+3. [맛·식감·원재료 식별]: 말차, 딸기, 명란마요, 쫀득, 바삭 등 신제품 트렌드를 나타내는 표현을 추출합니다.
+4. [제품 카테고리 식별]: 삼각김밥, 도시락, 샌드, 하이볼 등 제품 유형을 추출합니다.
+   (3·4번 결과는 flavor_and_category 필드에 함께 담습니다.)
+5. [콜라보·IP 식별]: 명시적으로 언급된 IP, 캐릭터, 인플루언서, 타 브랜드명을 추출합니다.
+   단, CU 자체 브랜드명(CU, BGF리테일)은 제외합니다.
+6. [프로모션 유형 식별]: 2+1, 1+1, 단독, 사전예약, 초특가, 시즌한정 등 행사 유형을 추출합니다.
+   표기 방식이 다르면 규격화합니다 (원플원 → 1+1, 투플러스원 → 2+1).
+7. [TPO·소비 맥락 식별]: 집캉스, 야식, 다이어트, 명절, 새해, 여름간식 등 소비 맥락을 추출합니다.
+8. [노이즈 소거]: 다음을 완전히 제거합니다.
+   - 마케팅 카피·감탄사 (예: 달려가세요, 주목, 쟁여두세요)
+   - 이벤트 참여 안내 (예: 댓글로 외쳐주세요, 팔로우 필수, 추첨을 통해)
+   - 행사 날짜·기간 (예: 9월 18일~10월 31일) — 단, 가격과 g/ml 단위는 보존
+   - CU 자체 계정명 (@cu_convenience), 해시태그 기호(#), 이모지
+9. [정규화]: 외래어·영문 표기는 가장 널리 쓰이는 한글 명사형으로 통일합니다.
+   (예: REAL→리얼, HOT→핫, pop-up→팝업, collab→콜라보)
+10. [최종 선별]: 각 필드별 최대 개수(아래 참고)를 초과하지 않도록 연결 가치가 높은 것만 선별합니다.
+
+[추출 우선순위]
+⓪ [필수] 상품 메타데이터: 상품명, 가격(원), 용량/중량(g·ml)
+① 맛·식감·원재료: 예) 말차, 딸기, 홋카이도멜론, 피치, 까망베르, 명란마요, 쫀득, 바삭, 단짠
+② 제품 카테고리: 예) 삼각김밥, 도시락, 샌드, 통김밥, 유부초밥, 머랭쿠키, 하이볼
+③ 콜라보·IP·브랜드: 예) 미미미누, 헬로키티, 디즈니, KBO, K리그, CJ제일제당, 부르봉
+④ 프로모션 유형: 예) 2+1, 1+1, 단독, 사전예약, 시즌한정, 초특가
+⑤ TPO·소비 맥락: 예) 집캉스, 다이어트, 야식, 명절, 새해
+
+[Negative Constraints (출력 절대 불가)]
+- CU 브랜드명 자체 (CU, BGF리테일, 편의점)
+- 마케팅 카피·행동 유도 표현 (예: 쟁여두세요, 달려가세요, 확인하세요, 먹어보실 분)
+- 이벤트 운영 관련 단어 (예: 추첨, 당첨, 팔로우, 댓글, 태그, 모바일상품권)
+- 행사 날짜·기간 (예: 9월 18일까지, 주말 한정) — 가격과 용량은 보존할 것
+- 의미 없는 서술어·형용사 (예: 맛있다, 예쁘다, 좋다, 푸짐하다)
+- 불필요한 마케팅 접미사 (예: 시리즈, 에디션, 기획, 세트, 패키지, 팩)
+- 인사말, 부가 설명, 번호 매기기, 줄바꿈
+
+[Output Format (Strict JSON — 다른 텍스트 절대 출력 금지)]
+{
+  "metadata": [
+    {"name": "상품명", "price": 가격숫자또는null, "capacity": "용량문자열또는null"}
+  ],
+  "flavor_and_category": ["최대 6개"],
+  "collab_and_brand": ["최대 5개"],
+  "promotion_type": ["최대 3개"],
+  "tpo_context": ["최대 3개"]
+}
+"""
+)
+
+
+def extract_keywords_cu(title: str, body: str) -> dict:
+    """
+    CU 공식 인스타그램 게시글(title + body)에서
+    상품 메타데이터 + 트렌드 노드를 구조화된 dict로 추출합니다.
+
+    반환 형식:
+    {
+        "metadata": [{"name": str, "price": int|None, "capacity": str|None}, ...],
+        "flavor_and_category": [str, ...],
+        "collab_and_brand": [str, ...],
+        "promotion_type": [str, ...],
+        "tpo_context": [str, ...]
+    }
+    파싱 실패 시 빈 dict {} 반환.
+    """
+    url = "http://localhost:11434/api/generate"
+    text = preprocess_instagram_text(title, body)
+
+    payload = {
+        "model": MODEL_NAME,
+        "prompt": f"{CU_SYSTEM_PROMPT}\n\n입력 텍스트: {text}",
+        "stream": False,
+        "options": {
+            "temperature": TEMPERATURE
+        }
+    }
+
+    try:
+        response = requests.post(url, json=payload, timeout=TIMEOUT)
+        response.raise_for_status()
+        raw = response.json().get("response", "").strip()
+
+        start = raw.find("{")
+        end = raw.rfind("}") + 1
+        if start == -1 or end == 0:
+            print("JSON 파싱 실패: 응답에서 JSON 블록을 찾을 수 없습니다.")
+            return {}
+
+        import json as _json
+        result = _json.loads(raw[start:end])
+        return result
+
+    except requests.exceptions.Timeout:
+        print(f"Ollama 응답 시간 초과 ({TIMEOUT}초). 모델 로딩 중일 수 있습니다.")
+        return {}
+    except requests.exceptions.RequestException as e:
+        print(f"Ollama API 연결 오류: {e}")
+        return {}
+    except Exception as e:
+        print(f"예상치 못한 오류 발생: {e}")
+        return {}
 
 
 if __name__ == "__main__":
