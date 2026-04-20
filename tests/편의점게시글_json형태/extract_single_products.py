@@ -1,3 +1,4 @@
+
 import os
 import json
 import pandas as pd
@@ -30,20 +31,20 @@ def process_single_product(row):
             return None
         
         item = metadata[0]
-        name = str(item.get('name', 'Unknown')).strip()
+        name = str(item.get('name', 'Unknown')).replace('/', '').strip()
         price = clean_price(item.get('price', 0))
         capacity = item.get('capacity')
-        # 용량이 없으면 null로 표시
-        capacity_val = str(capacity).strip() if capacity and not pd.isna(capacity) else "null"
+        # 용량이 없으면 null로 표시, '/' 제거
+        capacity_val = str(capacity).replace('/', '').strip() if capacity and not pd.isna(capacity) else "null"
         
-        # 2. 모든 속성 리스트 통합
+        # 2. 모든 속성 리스트 통합 및 '/' 제거
         all_attributes = []
         for key in ['flavor_and_category', 'collab_and_brand', 'promotion_type', 'tpo_context']:
             vals = data.get(key, [])
             if isinstance(vals, list):
-                all_attributes.extend([str(v).strip() for v in vals if v])
+                all_attributes.extend([str(v).replace('/', '').strip() for v in vals if v])
             elif isinstance(vals, str) and vals.strip():
-                all_attributes.append(vals.strip())
+                all_attributes.append(vals.replace('/', '').strip())
         
         # 중복 제거 (순서 유지)
         all_attributes = list(dict.fromkeys(all_attributes))
@@ -52,13 +53,9 @@ def process_single_product(row):
         # 키 형식: ["상품명", 가격, "용량"]
         # 값 형식: [속성 리스트]
         product_key = f'["{name}", {price}, "{capacity_val}"]'
+        formatted_result = {product_key: all_attributes}
         
-        # 속성 리스트만 JSON 문자열로 변환 (한글 유지)
-        attrs_json = json.dumps(all_attributes, ensure_ascii=False)
-        
-        # 최종 문자열 조립: {["상품명", 2500, "300ml"]: ["속성1", "속성2"]}
-        # 이 방식은 전체를 json.dumps 하지 않으므로 백슬래시(\)가 생기지 않습니다.
-        return f'{{{product_key}: {attrs_json}}}'
+        return json.dumps(formatted_result, ensure_ascii=False)
         
     except Exception:
         return None
