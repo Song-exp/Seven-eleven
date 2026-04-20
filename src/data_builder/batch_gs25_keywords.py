@@ -1,9 +1,9 @@
 """
-CU 공식 인스타그램 게시글 배치 키워드 추출 스크립트
-- data/raw/편의점/instagram_cu_official_*.csv 두 파일을 병합하여
-  extract_keywords_seveneleven() 를 각 행에 적용합니다.
+GS25 공식 인스타그램 게시글 배치 키워드 추출 스크립트
+- data/raw/편의점/instagram_gs25_official_*.csv 두 파일을 병합하여
+  extract_keywords_gs25() 를 각 행에 적용합니다.
 - 결과는 keywords_json 열(JSON 문자열)로 추가되어
-  data/processed/cu_official_with_keywords.csv 에 저장됩니다.
+  data/processed/gs25_official_with_keywords.csv 에 저장됩니다.
 - 중단 시 체크포인트에서 이어서 진행할 수 있습니다.
 """
 import json
@@ -13,24 +13,23 @@ import sys
 import pandas as pd
 
 sys.path.insert(0, os.path.dirname(__file__))
-from keyword_extractor import extract_keywords_cu
+from keyword_extractor import extract_keywords_gs25
 
 # ==========================================
 # 설정 (필요 시 조정)
 # ==========================================
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-CU_DIR = os.path.join(PROJECT_ROOT, "data", "raw", "편의점")
+GS25_DIR = os.path.join(PROJECT_ROOT, "data", "raw", "편의점")
 
 INPUT_FILES = [
-    os.path.join(CU_DIR, "instagram_cu_official_2025-01_01_to_2025-02-13_fixed.csv"),
-    os.path.join(CU_DIR, "instagram_cu_official_2025-02-14_to_2025-11-12.csv"),
-    os.path.join(CU_DIR, "instagram_cu_official_2025-11-12_to_2025-12-31.csv"),
+    os.path.join(GS25_DIR, "instagram_gs25_official_2025-01-01_to_2025-01-31.csv"),
+    os.path.join(GS25_DIR, "instagram_gs25_official_2025-02-01_to_2025-12-31.csv"),
 ]
 OUTPUT_CSV = os.path.join(
-    PROJECT_ROOT, "data", "processed", "cu_official_with_keywords.csv"
+    PROJECT_ROOT, "data", "processed", "gs25_official_with_keywords.csv"
 )
 CHECKPOINT_CSV = os.path.join(
-    PROJECT_ROOT, "data", "processed", "cu_keywords_checkpoint.csv"
+    PROJECT_ROOT, "data", "processed", "gs25_keywords_checkpoint.csv"
 )
 
 CHECKPOINT_EVERY = 10   # N 행마다 중간 저장
@@ -38,9 +37,23 @@ CHECKPOINT_EVERY = 10   # N 행마다 중간 저장
 
 
 def load_input() -> pd.DataFrame:
-    """두 CSV 파일을 병합하고 중복 제거."""
-    frames = [pd.read_csv(f, encoding="utf-8") for f in INPUT_FILES]
-    df = pd.concat(frames, ignore_index=True).drop_duplicates(subset="post_id")
+    """두 CSV 파일을 병합하고 중복 제거.
+
+    파일1(1월)은 post_id·title·timestamp·comments 컬럼이 없는 구버전 포맷이므로
+    - post_id: url 값으로 대체
+    - title: 빈 문자열로 채움
+    """
+    frames = []
+    for f in INPUT_FILES:
+        df_part = pd.read_csv(f, encoding="utf-8")
+        if "post_id" not in df_part.columns:
+            df_part["post_id"] = df_part["url"]
+        if "title" not in df_part.columns:
+            df_part["title"] = ""
+        frames.append(df_part)
+
+    df = pd.concat(frames, ignore_index=True)
+    df = df[df["post_id"].notna()].drop_duplicates(subset="post_id")
     df["title"] = df["title"].fillna("").str.strip()
     df["body"] = df["body"].fillna("")
     return df.reset_index(drop=True)
@@ -72,7 +85,7 @@ def summarize(result: dict) -> str:
 
 def main():
     print("=" * 60)
-    print("CU 공식 인스타 배치 키워드 추출 시작")
+    print("GS25 공식 인스타 배치 키워드 추출 시작")
     print("=" * 60)
 
     # 1. 원본 데이터 로드
@@ -81,24 +94,29 @@ def main():
     total = len(df)
     print(f"      총 {total}건 (중복 제거 후)")
 
-    # 2. 체크포인트 확인 → body 기준으로 이미 처리된 항목 재사용
+    # 2. 체크포인트 확인 → 이미 처리된 post_id 제외
     checkpoint_df = load_checkpoint()
     if checkpoint_df is not None and "keywords_json" in checkpoint_df.columns:
-        done_ckpt = checkpoint_df.loc[
-            checkpoint_df["keywords_json"].notna()
-            & (checkpoint_df["keywords_json"] != ""),
-            ["body", "keywords_json"],
-        ].drop_duplicates(subset="body")
-        body_to_keywords = dict(zip(done_ckpt["body"], done_ckpt["keywords_json"]))
-        df["keywords_json"] = df["body"].map(body_to_keywords).fillna("")
-        matched = (df["keywords_json"] != "").sum()
-        print(f"\n[2/4] 체크포인트 발견 → body 기준 매칭 {matched}건 재사용")
+        done_ids = set(
+            checkpoint_df.loc[
+                checkpoint_df["keywords_json"].notna()
+                & (checkpoint_df["keywords_json"] != ""),
+                "post_id",
+            ]
+        )
+        print(f"\n[2/4] 체크포인트 발견 → 이미 처리된 {len(done_ids)}건 건너뜀")
+        df = df.merge(
+            checkpoint_df[["post_id", "keywords_json"]],
+            on="post_id",
+            how="left",
+        )
     else:
         print("\n[2/4] 체크포인트 없음 → 처음부터 시작")
         df["keywords_json"] = ""
+        done_ids = set()
 
     # 3. 미처리 행 선별
-    pending_mask = df["keywords_json"] == ""
+    pending_mask = ~df["post_id"].isin(done_ids)
     pending_count = pending_mask.sum()
     print(f"\n[3/4] 처리 대상: {pending_count}건 (전체 {total}건 중)")
 
@@ -119,7 +137,7 @@ def main():
 
             print(f"  [{i}/{pending_count}] post_id={post_id} 처리 중...", end=" ", flush=True)
 
-            result = extract_keywords_cu(row["title"], row["body"])
+            result = extract_keywords_gs25(row["title"], row["body"])
 
             if result:
                 df.at[idx, "keywords_json"] = json.dumps(result, ensure_ascii=False)
