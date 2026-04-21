@@ -67,10 +67,12 @@ def is_target(row) -> bool:
 
 
 def build_targets(origin: pd.DataFrame) -> pd.DataFrame:
-    """원본에서 재추출 대상 행만 뽑아 orig_idx 컬럼을 추가해 반환."""
+    """원본에서 재추출 대상 행만 뽑아 orig_idx 및 원본 키워드 백업 컬럼을 추가해 반환."""
     mask = origin.apply(is_target, axis=1)
     targets = origin[mask].copy()
-    targets["orig_idx"] = targets.index  # 원본 index 보존
+    targets["orig_idx"] = targets.index
+    targets["orig_review_keywords"] = targets["review_keywords"]
+    targets["orig_hin_keywords"]    = targets["hin_keywords"]
     targets = targets.reset_index(drop=True)
     return targets
 
@@ -172,6 +174,9 @@ def main():
 
     origin = merge_back(origin, df)
     origin.to_csv(ORIGIN_CSV, index=False, encoding="utf-8-sig")
+
+    # 노트북 전/후 비교용: 최종 재추출 결과를 TARGETS_CSV에도 저장
+    df.to_csv(TARGETS_CSV, index=False, encoding="utf-8-sig")
 
     filled = (origin["review_keywords"].fillna("") != "").sum()
     print(f"merge 완료: 총 {len(origin):,}건 / review_keywords 채워진 행: {filled:,}건")
