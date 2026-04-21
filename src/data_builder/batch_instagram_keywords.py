@@ -1,8 +1,8 @@
 """
 인스타그램 게시글 배치 키워드 추출 스크립트
-- data/raw/knewnew/knewnew_without_ad_4-22_12-31.csv (실제 xlsx 포맷) 를 읽어
+- data/raw/knewnew/knewnew_without_ad_1-01_04-22.csv 를 읽어
   extract_keywords_instagram() 를 각 행에 적용합니다.
-- 결과는 keywords 열로 추가되어 data/processed/knewnew_without_ad_with_keywords.csv 에 저장됩니다.
+- 결과는 keywords 열로 추가되어 data/processed/knewnew_1-01_04-22_with_keywords.csv 에 저장됩니다.
 - 중단 시 체크포인트에서 이어서 진행할 수 있습니다.
 """
 import os
@@ -19,14 +19,24 @@ from keyword_extractor import extract_keywords_instagram
 # ==========================================
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
+# INPUT_FILE = os.path.join(
+#     PROJECT_ROOT, "data", "raw", "knewnew", "knewnew_without_ad_4-22_12-31.csv"
+# )
+# OUTPUT_CSV = os.path.join(
+#     PROJECT_ROOT, "data", "processed", "knewnew_without_ad_with_keywords.csv"
+# )
+# CHECKPOINT_CSV = os.path.join(
+#     PROJECT_ROOT, "data", "processed", "knewnew_keywords_checkpoint.csv"
+# )
+
 INPUT_FILE = os.path.join(
-    PROJECT_ROOT, "data", "raw", "knewnew", "knewnew_without_ad_4-22_12-31.csv"
+    PROJECT_ROOT, "data", "raw", "knewnew", "knewnew_without_ad_1-01_04-22.csv"
 )
 OUTPUT_CSV = os.path.join(
-    PROJECT_ROOT, "data", "processed", "knewnew_without_ad_with_keywords.csv"
+    PROJECT_ROOT, "data", "processed", "knewnew_1-01_04-22_with_keywords.csv"
 )
 CHECKPOINT_CSV = os.path.join(
-    PROJECT_ROOT, "data", "processed", "knewnew_keywords_checkpoint.csv"
+    PROJECT_ROOT, "data", "processed", "knewnew_1-01_04-22_keywords_checkpoint.csv"
 )
 
 CHECKPOINT_EVERY = 10   # N 행마다 중간 저장
@@ -34,10 +44,18 @@ CHECKPOINT_EVERY = 10   # N 행마다 중간 저장
 
 
 def load_input() -> pd.DataFrame:
-    """원본 파일 로드. 확장자가 .csv 이지만 실제로는 xlsx 포맷."""
-    df = pd.read_excel(INPUT_FILE)
-    df["title"] = df["title"].fillna("")
+    """원본 파일 로드."""
+    df = pd.read_csv(INPUT_FILE, encoding="utf-8-sig")
+    # 컬럼명 통일: 새 파일은 'body(텍스트기반)', title 없음
+    df = df.rename(columns={"body(텍스트기반)": "body"})
+    df["title"] = ""
     df["body"] = df["body"].fillna("")
+    # post_id: url 마지막 세그먼트 추출
+    df["post_id"] = df["url"].str.rstrip("/").str.split("/").str[-1]
+    # url이 없거나 추출 결과가 null/빈 경우 row index fallback
+    # (NaN post_id는 체크포인트 isin/merge 매칭이 안 돼서 무한 재처리됨)
+    null_mask = df["post_id"].isna() | (df["post_id"] == "")
+    df.loc[null_mask, "post_id"] = [f"__row_{i}__" for i in df.index[null_mask]]
     return df
 
 
@@ -59,35 +77,26 @@ def main():
     print("인스타그램 배치 키워드 추출 시작")
     print("=" * 60)
 
-    # 1. 원본 데이터 로드
-    print(f"\n[1/4] 원본 파일 로드: {INPUT_FILE}")
-    df = load_input()
+    # 1. 체크포인트 우선 로드, 없으면 원본 로드
+    checkpoint_df = load_checkpoint()
+    if checkpoint_df is not None and "keywords" in checkpoint_df.columns:
+        df = checkpoint_df.copy()
+        df["body"] = df["body"].fillna("")
+        df["title"] = df["title"].fillna("") if "title" in df.columns else ""
+        print(f"\n[1/4] 체크포인트 로드: {CHECKPOINT_CSV}")
+    else:
+        print(f"\n[1/4] 원본 파일 로드: {INPUT_FILE}")
+        df = load_input()
+        df["keywords"] = ""
+
     total = len(df)
     print(f"      총 {total}건 로드 완료")
 
-    # 2. 체크포인트 확인 → 이미 처리된 post_id 제외
-    checkpoint_df = load_checkpoint()
-    if checkpoint_df is not None and "keywords" in checkpoint_df.columns:
-        done_ids = set(
-            checkpoint_df.loc[
-                checkpoint_df["keywords"].notna() & (checkpoint_df["keywords"] != ""),
-                "post_id",
-            ]
-        )
-        print(f"\n[2/4] 체크포인트 발견 → 이미 처리된 {len(done_ids)}건 건너뜀")
-        # 체크포인트를 기반으로 df 재구성 (처리된 행은 체크포인트 값 사용)
-        df = df.merge(
-            checkpoint_df[["post_id", "keywords"]],
-            on="post_id",
-            how="left",
-        )
-    else:
-        print("\n[2/4] 체크포인트 없음 → 처음부터 시작")
-        df["keywords"] = ""
-        done_ids = set()
+    # 2. 미처리 행 선별: keywords가 비어있는 행만
+    pending_mask = df["keywords"].isna() | (df["keywords"] == "")
+    done_count = (~pending_mask).sum()
+    print(f"\n[2/4] 이미 처리된 {done_count}건 건너뜀")
 
-    # 3. 미처리 행 선별
-    pending_mask = ~df["post_id"].isin(done_ids)
     pending_count = pending_mask.sum()
     print(f"\n[3/4] 처리 대상: {pending_count}건 (전체 {total}건 중)")
 
@@ -96,6 +105,7 @@ def main():
     else:
         # 4. 배치 처리
         print("\n[4/4] 키워드 추출 시작...\n")
+
         success = 0
         fail = 0
         processed_since_last_save = 0
