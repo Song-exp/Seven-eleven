@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7-Eleven NPD Dashboard — 신상품 기획 어시스턴트</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0D0F14;
+  --surface-1: #13161E;
+  --surface-2: #1A1E2A;
+  --surface-3: #222736;
+  --border: rgba(255,255,255,0.06);
+  --border-active: rgba(255,255,255,0.14);
+
+  --green: #00C896;
+  --green-dim: rgba(0,200,150,0.12);
+  --green-border: rgba(0,200,150,0.28);
+
+  --orange: #FF6B35;
+  --orange-dim: rgba(255,107,53,0.12);
+  --orange-border: rgba(255,107,53,0.28);
+
+  --blue: #4A9EFF;
+  --blue-dim: rgba(74,158,255,0.1);
+  --blue-border: rgba(74,158,255,0.25);
+
+  --purple: #9B7FFF;
+  --purple-dim: rgba(155,127,255,0.1);
+
+  --yellow: #FFD166;
+  --yellow-dim: rgba(255,209,102,0.1);
+
+  --red: #FF5C5C;
+  --red-dim: rgba(255,92,92,0.1);
+
+  --text: #E8EAF0;
+  --text-2: #8B90A0;
+  --text-3: #4A4F62;
+
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 13px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── 상단 헤더 ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  height: 56px;
+  background: var(--surface-1);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-badge {
+  background: var(--green);
+  color: #000;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+.header-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+.header-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text-3);
+}
+.header-year {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--green);
+  background: var(--green-dim);
+  border: 1px solid var(--green-border);
+  border-radius: 4px;
+  padding: 3px 8px;
+}
+
+/* ── 탭 네비 ── */
+.tab-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 12px 28px 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-1);
+}
+.tab-btn {
+  padding: 9px 18px;
+  border: none;
+  background: none;
+  color: var(--text-2);
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--green); border-bottom-color: var(--green); }
+.tab-badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-left: 5px;
+  background: var(--orange-dim);
+  color: var(--orange);
+  border: 1px solid var(--orange-border);
+  vertical-align: middle;
+}
+
+/* ── 메인 레이아웃 ── */
+.main {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: calc(100vh - 100px);
+}
+
+/* ── 좌측 사이드바 ── */
+.sidebar {
+  background: var(--surface-1);
+  border-right: 1px solid var(--border);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.sidebar-section { display: flex; flex-direction: column; gap: 8px; }
+.sidebar-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--text-3);
+  text-transform: uppercase;
+  padding: 0 2px;
+}
+
+/* 셀렉트 / 인풋 */
+.s-select, .s-input {
+  width: 100%;
+  background: var(--surface-2);
+  border: 1px solid var(--border-active);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 12px;
+  padding: 8px 12px;
+  outline: none;
+  transition: border-color 0.15s;
+  appearance: none;
+}
+.s-select:focus, .s-input:focus { border-color: var(--green); }
+.s-select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238B90A0' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; padding-right: 28px; }
+.s-input::placeholder { color: var(--text-3); }
+
+/* 트렌드 입력창 특별 처리 */
+.trend-input-wrap { position: relative; }
+.trend-input-wrap .s-input { padding-right: 72px; }
+.trend-run-btn {
+  position: absolute;
+  right: 6px; top: 50%;
+  transform: translateY(-50%);
+  background: var(--green);
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
+  transition: opacity 0.15s;
+}
+.trend-run-btn:hover { opacity: 0.85; }
+
+/* 추론 결과 태그들 */
+.infer-box {
+  background: var(--surface-2);
+  border: 1px solid var(--green-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+}
+.infer-box.show { display: flex; }
+.infer-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--green);
+  letter-spacing: 0.08em;
+}
+.infer-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.infer-tag {
+  background: var(--green-dim);
+  border: 1px solid var(--green-border);
+  color: var(--green);
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.infer-tag:hover { background: rgba(0,200,150,0.22); }
+.infer-tag.removed { background: none; border-color: var(--border); color: var(--text-3); text-decoration: line-through; }
+.infer-edit { font-size: 10px; color: var(--text-3); }
+
+/* 속성 태그 체크박스 스타일 */
+.attr-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.attr-tag {
+  font-size: 11px;
+  padding: 4px 9px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid var(--border-active);
+  color: var(--text-2);
+  background: var(--surface-2);
+  transition: all 0.12s;
+  user-select: none;
+}
+.attr-tag.selected { background: var(--blue-dim); border-color: var(--blue-border); color: var(--blue); }
+
+/* 실행 버튼 */
+.run-btn {
+  width: 100%;
+  padding: 11px;
+  background: var(--green);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: #000;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.run-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+.divider { border: none; border-top: 1px solid var(--border); }
+
+/* ── 우측 컨텐츠 ── */
+.content {
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 탭 패널 */
+.tab-panel { display: none; flex-direction: column; gap: 20px; }
+.tab-panel.active { display: flex; }
+
+/* 섹션 헤더 */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+.section-sub { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+
+/* 결과 카드 그리드 */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+/* 기획 제안 카드 */
+.proposal-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.15s, transform 0.15s;
+  cursor: pointer;
+}
+.proposal-card:hover { border-color: var(--green-border); transform: translateY(-2px); }
+.proposal-card.active { border-color: var(--green); background: var(--surface-3); }
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+.card-category {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--text-3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.card-score {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.card-score.high { background: var(--green-dim); color: var(--green); border: 1px solid var(--green-border); }
+.card-score.mid  { background: var(--yellow-dim); color: var(--yellow); border: 1px solid rgba(255,209,102,0.25); }
+.card-score.ph   { background: var(--surface-3); color: var(--text-3); border: 1px solid var(--border); }
+
+.card-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.card-attrs { display: flex; flex-wrap: wrap; gap: 4px; }
+.card-attr {
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: var(--surface-3);
+  color: var(--text-2);
+  border: 1px solid var(--border);
+}
+.card-attr.key { background: var(--blue-dim); color: var(--blue); border-color: var(--blue-border); }
+
+.card-tpo {
+  font-size: 11px;
+  color: var(--text-2);
+  padding: 6px 8px;
+  background: var(--surface-3);
+  border-radius: 6px;
+  border-left: 2px solid var(--green);
+  line-height: 1.5;
+}
+.card-tpo span { color: var(--text-3); }
+
+.card-ref {
+  font-size: 10px;
+  color: var(--text-3);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.card-ref::before { content: '↗'; color: var(--green); font-size: 10px; }
+
+/* 네트워크 맵 영역 */
+.network-panel {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.network-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* SVG 네트워크 시각화 */
+.network-svg-wrap {
+  background: var(--surface-3);
+  border-radius: 8px;
+  padding: 8px;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── 탭 2: 파생 제안 ── */
+.hit-search-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.hit-search-row .s-input { flex: 1; }
+.search-btn {
+  background: var(--surface-3);
+  border: 1px solid var(--border-active);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 12px;
+  padding: 8px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.15s;
+}
+.search-btn:hover { border-color: var(--green-border); color: var(--green); }
+
+.hit-product-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.hit-product-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.hit-col-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--text-3);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.hit-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+.success-bones { display: flex; flex-direction: column; gap: 5px; }
+.bone-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-2);
+}
+.bone-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+
+.derive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.derive-card {
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.derive-card:hover { border-color: var(--orange-border); }
+.derive-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--orange);
+  background: var(--orange-dim);
+  border: 1px solid var(--orange-border);
+  border-radius: 3px;
+  padding: 2px 6px;
+  display: inline-block;
+}
+.derive-name { font-size: 13px; font-weight: 600; color: var(--text); }
+.derive-desc { font-size: 11px; color: var(--text-2); line-height: 1.55; }
+
+/* ── 탭 3: 부진 리뉴얼 ── */
+.bust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.bust-list {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.bust-list-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bust-item {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.12s;
+}
+.bust-item:last-child { border-bottom: none; }
+.bust-item:hover { background: var(--surface-3); }
+.bust-item.active { background: var(--surface-3); border-left: 2px solid var(--red); }
+.bust-item-name { font-size: 12px; color: var(--text); font-weight: 500; }
+.bust-item-cat { font-size: 10px; color: var(--text-3); margin-top: 1px; }
+.bust-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  background: var(--red-dim);
+  color: var(--red);
+  border: 1px solid rgba(255,92,92,0.25);
+}
+
+.diagnosis-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.diag-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.diag-section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--text-3);
+  text-transform: uppercase;
+}
+.avoid-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.avoid-tag {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--red-dim);
+  color: var(--red);
+  border: 1px solid rgba(255,92,92,0.22);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.avoid-tag::before { content: '✗'; font-size: 10px; }
+
+.rx-list { display: flex; flex-direction: column; gap: 8px; }
+.rx-item {
+  background: var(--surface-3);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-left: 2px solid var(--green);
+}
+.rx-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--green);
+  letter-spacing: 0.06em;
+}
+.rx-title { font-size: 12px; font-weight: 600; color: var(--text); }
+.rx-desc { font-size: 11px; color: var(--text-2); line-height: 1.5; }
+
+/* 플레이스홀더 */
+.ph-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--surface-3);
+  position: relative;
+  overflow: hidden;
+}
+.ph-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+  animation: shimmer 1.6s infinite;
+}
+@keyframes shimmer { 0%{transform:translateX(-100%)} 100%{transform:translateX(100%)} }
+.ph-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--text-3);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ph-label::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--orange); display: inline-block; }
+
+/* 범례 */
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  color: var(--text-3);
+}
+.legend-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* 상태 표시줄 */
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--surface-3);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  color: var(--text-2);
+}
+.status-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green);
+  flex-shrink: 0;
+}
+
+/* 하단 공통 네트워크 패널 */
+.bottom-network {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+.bottom-network-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+</style>
+</head>
+<body>
+
+<!-- ── 헤더 ── -->
+<header class="header">
+  <div class="header-logo">
+    <span class="logo-badge">7-ELEVEN</span>
+    <span class="header-title">신상품 기획 어시스턴트</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <span class="header-meta">2025년 네트워크 기반</span>
+    <span class="header-year">→ 2026 기획 적용</span>
+  </div>
+</header>
+
+<!-- ── 탭 네비 ── -->
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="switchTab('tab1', this)">신제품 조합 제안</button>
+  <button class="tab-btn" onclick="switchTab('tab2', this)">히트 파생 아이디어</button>
+  <button class="tab-btn" onclick="switchTab('tab3', this)">부진 상품 리뉴얼 진단</button>
+  <div style="flex:1"></div>
+  <span style="font-family:'DM Mono',monospace;font-size:10px;color:var(--text-3);padding:8px 0;">속성노드 497 · 제품명노드 448 · 엣지 43,301</span>
+</nav>
+
+<!-- ── 메인 ── -->
+<div class="main">
+
+  <!-- ── 사이드바 ── -->
+  <aside class="sidebar">
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">① 카테고리 선택</div>
+      <select class="s-select" id="cat-select" onchange="updateAttrTags()">
+        <option value="">카테고리를 선택하세요</option>
+        <optgroup label="베이커리">
+          <option value="간식빵">간식빵</option>
+          <option value="냉장베이커리">냉장 베이커리</option>
+        </optgroup>
+        <optgroup label="주류">
+          <option value="하이볼">하이볼</option>
+          <option value="양주">양주</option>
+          <option value="전통주">전통주</option>
+        </optgroup>
+        <optgroup label="간식">
+          <option value="젤리">젤리</option>
+          <option value="스낵류">스낵류</option>
+          <option value="초콜릿">초콜릿</option>
+        </optgroup>
+        <optgroup label="식사">
+          <option value="도시락">도시락</option>
+          <option value="삼각김밥">삼각김밥</option>
+          <option value="샌드위치">샌드위치</option>
+        </optgroup>
+        <optgroup label="음료">
+          <option value="컵커피">컵커피</option>
+          <option value="기능성드링크">기능성드링크</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">② 트렌드 입력 <span style="color:var(--text-3);font-size:9px;">(외주사 제안 또는 직접 입력)</span></div>
+      <div class="trend-input-wrap">
+        <input class="s-input" id="trend-input" placeholder="예: 뇨끼 열풍, 헬시플레저..." />
+        <button class="trend-run-btn" onclick="runTrendInfer()">추론</button>
+      </div>
+
+      <!-- 추론 결과 -->
+      <div class="infer-box" id="infer-box">
+        <div class="infer-title">AI 속성 추론 결과</div>
+        <div class="infer-tags" id="infer-tags"></div>
+        <div class="infer-edit">클릭해서 추론 속성 조정 가능</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section" id="attr-section" style="display:none;">
+      <div class="sidebar-label">③ 네트워크 추천 속성 · TPO</div>
+      <div class="attr-tags" id="attr-tags"></div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="sidebar-section">
+      <button class="run-btn" onclick="runProposal()">조합 생성하기 →</button>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 데이터 기준 안내 -->
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <div class="sidebar-label">데이터 기준</div>
+      <div style="font-size:11px;color:var(--text-3);line-height:1.7;">
+        · 분석 기간: 2025.01~12<br>
+        · 지역: 강남·마포·송파<br>
+        · 신상품 기준: 출시 후 4주 이내<br>
+        · 히트 기준: 중분류 상위 30%
+      </div>
+      <div class="ph-label">히트 확률 — Phase 2 이후 업데이트</div>
+    </div>
+
+  </aside>
+
+  <!-- ── 컨텐츠 ── -->
+  <main class="content">
+
+    <!-- ══ 탭 1: 신제품 조합 제안 ══ -->
+    <div class="tab-panel active" id="tab1">
+
+      <div>
+        <div class="section-header">
+          <div>
+            <div class="section-title">신제품 조합 제안</div>
+            <div class="section-sub">2025년 네트워크 기반 · 카테고리 × 트렌드 최적 조합 추천</div>
+          </div>
+          <div class="status-bar" id="status-bar">
+            <div class="status-dot"></div>
+            카테고리와 트렌드를 선택하고 조합을 생성하세요
+          </div>
+        </div>
+      </div>
+
+      <!-- 결과 카드 -->
+      <div class="card-grid" id="proposal-grid">
+        <!-- 초기 placeholder -->
+        <div style="grid-column:1/-1;text-align:center;padding:48px 0;color:var(--text-3);">
+          <div style="font-size:32px;margin-bottom:12px;opacity:0.3;">⬡</div>
+          <div style="font-size:13px;">카테고리와 트렌드를 선택하면<br>네트워크 기반 신제품 조합이 제안됩니다</div>
+        </div>
+      </div>
+
+      <!-- 하단 네트워크 맵 -->
+      <div class="bottom-network" id="network-panel-1" style="display:none;">
+        <div class="bottom-network-header">
+          <span class="network-title">속성 연결 네트워크 맵</span>
+          <div class="legend">
+            <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>상품 노드</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--blue)"></div>속성 노드</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--orange)"></div>TPO 노드</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--purple)"></div>트렌드 노드</div>
+          </div>
+        </div>
+        <div class="network-svg-wrap" id="network-svg-1">
+          <!-- JS로 SVG 생성 -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══ 탭 2: 히트 파생 ══ -->
+    <div class="tab-panel" id="tab2">
+
+      <div>
+        <div class="section-title">히트 상품 파생 아이디어</div>
+        <div class="section-sub">기존 히트 상품의 성공 뼈대에 2026 트렌드 스킨을 접목합니다</div>
+      </div>
+
+      <div class="hit-search-row">
+        <input class="s-input" id="hit-search" placeholder="히트 상품명 검색... 예: 신동엽 위스키, 연세우유 크림빵" />
+        <button class="search-btn" onclick="loadHitProduct()">분석하기</button>
+      </div>
+
+      <div id="hit-result" style="display:none;flex-direction:column;gap:16px;">
+
+        <!-- 성공 뼈대 -->
+        <div class="hit-product-card">
+          <div class="hit-product-row">
+            <div>
+              <div class="hit-col-label">기존 히트 상품</div>
+              <div class="hit-name" id="hit-name">신동엽 위스키 블랙서클</div>
+              <div class="success-bones" id="success-bones">
+                <div class="bone-row"><div class="bone-dot"></div>연예인 IP × 주류 카테고리</div>
+                <div class="bone-row"><div class="bone-dot"></div>프리미엄 가격대 (2만원대)</div>
+                <div class="bone-row"><div class="bone-dot"></div>혼술 · 홈술 TPO</div>
+                <div class="bone-row"><div class="bone-dot"></div>위스키 특유 스모키 향</div>
+              </div>
+            </div>
+            <div>
+              <div class="hit-col-label">클러스터 분류</div>
+              <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px;">
+                <div class="card-score high" style="display:inline-block;width:fit-content;">클러스터 0 · 지속 흥행</div>
+                <div style="font-size:11px;color:var(--text-3);line-height:1.6;">출시 이후에도 꾸준한 판매<br>루틴 소비 패턴 확인됨</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 파생 제안 -->
+        <div>
+          <div class="section-header">
+            <div>
+              <div style="font-size:13px;font-weight:600;color:var(--text);">파생 상품 아이디어</div>
+              <div class="section-sub">성공 뼈대 유지 + 2025년 네트워크 트렌드 노드 접목</div>
+            </div>
+          </div>
+          <div class="derive-grid" style="margin-top:12px;" id="derive-grid">
+            <div class="derive-card">
+              <span class="derive-tag">일식 열풍 접목</span>
+              <div class="derive-name">하정우 사케 프리미엄</div>
+              <div class="derive-desc">위스키 성공 뼈대(연예인IP × 주류 × 혼술 TPO)에 일식 트렌드 스킨. 2만원대 적정 가격 유지.</div>
+              <div class="card-attrs">
+                <span class="card-attr key">사케</span>
+                <span class="card-attr key">연예인 IP</span>
+                <span class="card-attr">혼술</span>
+                <span class="card-attr">프리미엄</span>
+              </div>
+            </div>
+            <div class="derive-card">
+              <span class="derive-tag">헬시플레저 접목</span>
+              <div class="derive-name">신동엽 제로 하이볼</div>
+              <div class="derive-desc">기존 팬덤 유지하며 제로슈가 트렌드 흡수. GS25 얼박사 제로 성공 패턴 참조.</div>
+              <div class="card-attrs">
+                <span class="card-attr key">제로슈가</span>
+                <span class="card-attr key">하이볼</span>
+                <span class="card-attr">야식</span>
+                <span class="card-attr">가성비</span>
+              </div>
+            </div>
+            <div class="derive-card">
+              <span class="derive-tag">전통주 열풍 접목</span>
+              <div class="derive-name">신동엽 시그니처 막걸리</div>
+              <div class="derive-desc">혼술홈술 TPO 유지하며 전통주 리브랜딩. 고급 전통주 + 헬시플레저 복합 포지셔닝.</div>
+              <div class="card-attrs">
+                <span class="card-attr key">막걸리</span>
+                <span class="card-attr key">전통주</span>
+                <span class="card-attr">안주</span>
+                <span class="card-attr">야장</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 초기 상태 -->
+      <div id="hit-empty" style="text-align:center;padding:48px 0;color:var(--text-3);">
+        <div style="font-size:32px;margin-bottom:12px;opacity:0.3;">↺</div>
+        <div>히트 상품명을 검색하면 성공 뼈대 분석과<br>파생 아이디어를 제안합니다</div>
+      </div>
+
+    </div>
+
+    <!-- ══ 탭 3: 부진 리뉴얼 ══ -->
+    <div class="tab-panel" id="tab3">
+
+      <div>
+        <div class="section-title">부진 상품 리뉴얼 진단</div>
+        <div class="section-sub">클러스터 1 (부진) 상품 선택 → 회피 속성 진단 → 처방 제안</div>
+      </div>
+
+      <div class="bust-grid">
+
+        <!-- 부진 상품 리스트 -->
+        <div class="bust-list">
+          <div class="bust-list-header">
+            <span style="font-size:12px;font-weight:600;">부진 상품 목록</span>
+            <span class="bust-badge">클러스터 1</span>
+          </div>
+          <div class="bust-item" onclick="selectBustItem(this, 0)">
+            <div><div class="bust-item-name">KBO 끝내기홈런 미트부리또</div><div class="bust-item-cat">냉장피자 · 3,500원</div></div>
+            <span class="bust-badge">부진</span>
+          </div>
+          <div class="bust-item" onclick="selectBustItem(this, 1)">
+            <div><div class="bust-item-name">PB 이봉원의봉 새우볶음밥</div><div class="bust-item-cat">냉동간편식 · 4,500원</div></div>
+            <span class="bust-badge">부진</span>
+          </div>
+          <div class="bust-item" onclick="selectBustItem(this, 2)">
+            <div><div class="bust-item-name">직화불막창 PB</div><div class="bust-item-cat">냉장안주 · 5,900원</div></div>
+            <span class="bust-badge">부진</span>
+          </div>
+          <div class="bust-item" onclick="selectBustItem(this, 3)">
+            <div><div class="bust-item-name">그린바이옴 프로틴 그래놀라</div><div class="bust-item-cat">프로틴/시리얼 · 3,200원</div></div>
+            <span class="bust-badge">부진</span>
+          </div>
+          <div class="bust-item" onclick="selectBustItem(this, 4)">
+            <div><div class="bust-item-name">트러플 명란 파스타 도시락</div><div class="bust-item-cat">도시락 · 6,500원</div></div>
+            <span class="bust-badge">부진</span>
+          </div>
+        </div>
+
+        <!-- 진단 패널 -->
+        <div class="diagnosis-panel" id="diag-panel">
+          <div style="text-align:center;padding:32px 0;color:var(--text-3);">
+            <div style="font-size:28px;margin-bottom:10px;opacity:0.3;">✕</div>
+            <div>부진 상품을 선택하면<br>회피 속성 진단과 처방을 제안합니다</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+<script src="config.js"></script>
+<script>
+// ══════════════════════════════════════════════════════════════════════
+// 상태
+// ══════════════════════════════════════════════════════════════════════
+let _bustItems = [];   // 부진 상품 목록 (API에서 로딩)
+
+// ══════════════════════════════════════════════════════════════════════
+// 탭 전환
+// ══════════════════════════════════════════════════════════════════════
+function switchTab(tabId, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  btn.classList.add('active');
+  if (tabId === 'tab3' && _bustItems.length === 0) loadBustList();
+}
+
+// ══════════════════════════════════════════════════════════════════════
+// 로딩 상태 표시
+// ══════════════════════════════════════════════════════════════════════
+function setStatus(msg, loading = false) {
+  const bar = document.getElementById('status-bar');
+  bar.innerHTML = `<div class="status-dot" style="${loading ? 'animation:pulse 1s infinite' : ''}"></div>${msg}`;
+}
+
+// ══════════════════════════════════════════════════════════════════════
+// 탭 1 — 트렌드 추론
+// ══════════════════════════════════════════════════════════════════════
+async function runTrendInfer() {
+  const val = document.getElementById('trend-input').value.trim();
+  if (!val) return;
+
+  const box    = document.getElementById('infer-box');
+  const tagsEl = document.getElementById('infer-tags');
+
+  // 로딩 표시
+  box.classList.add('show');
+  tagsEl.innerHTML = '<span class="infer-tag" style="opacity:.5">추론 중…</span>';
+
+  try {
+    const data = await CONFIG.post('/api/trend/infer', { trend: val, top_n: 5 });
+    tagsEl.innerHTML = '';
+    (data.attrs || []).forEach(a => {
+      const t = document.createElement('span');
+      t.className = 'infer-tag';
+      t.textContent = a.attribute || a;
+      t.onclick = () => t.classList.toggle('removed');
+      tagsEl.appendChild(t);
+    });
+    const src = data.source === 'cache' ? '캐시' : 'Gemma 추론';
+    document.querySelector('.infer-title').textContent = `AI 속성 추론 결과 (${src})`;
+  } catch (e) {
+    tagsEl.innerHTML = '<span style="color:var(--red);font-size:11px;">서버 연결 실패</span>';
+    console.error(e);
+  }
+
+  await updateAttrTags();
+}
+
+// ══════════════════════════════════════════════════════════════════════
+// 탭 1 — 카테고리별 추천 속성 (API에서 로딩)
+// ══════════════════════════════════════════════════════════════════════
+async function updateAttrTags() {
+  const cat = document.getElementById('cat-select').value;
+  if (!cat) return;
+
+  const section = document.getElementById('attr-section');
+  const tagsEl  = document.getElementById('attr-tags');
+  section.style.display = 'block';
+  tagsEl.innerHTML = '<span style="font-size:11px;color:var(--text-3)">로딩 중…</span>';
+
+  try {
+    // 카테고리 내 자주 등장하는 속성을 meta에서 가져오거나
+    // trend/check로 카테고리 관련 속성 표시 (현재는 빈 속성 표시 후 propose 시 반영)
+    tagsEl.innerHTML = `<span class="attr-tag selected">${cat} 카테고리 선택됨</span>`;
+  } catch (e) {
+    tagsEl.innerHTML = '';
+  }
+}
+
+// ══════════════════════════════════════════════════════════════════════
+// 탭 1 — 조합 생성
+// ══════════════════════════════════════════════════════════════════════
+async function runProposal() {
+  const cat   = document.getElementById('cat-select').value;
+  const trend = document.getElementById('trend-input').value.trim();
+  if (!cat) { alert('카테고리를 선택해주세요'); return; }
+  if (!trend) { alert('트렌드 키워드를 입력해주세요'); return; }
+
+  setStatus('네트워크 탐색 중…', true);
+  document.getElementById('proposal-grid').innerHTML =
+    '<div style="grid-column:1/-1;text-align:center;padding:32px;color:var(--text-3)">조합 생성 중…</div>';
+
+  try {
+    const data = await CONFIG.post('/api/propose', { category: cat, trend, hop_limit: 3, top_k: 3 });
+    const proposals = data.proposals || [];
+
+    if (!proposals.length) {
+      document.getElementById('proposal-grid').innerHTML =
+        `<div style="grid-column:1/-1;text-align:center;padding:32px;color:var(--text-3)">${data.message || '조합 결과 없음'}</div>`;
+      setStatus(`${cat} × ${trend} — 결과 없음`);
+      return;
+    }
+
+    renderProposalCards(proposals, cat, trend);
+    setStatus(`${cat} × ${trend} — ${proposals.length}개 조합 생성됨`);
+
+    const netPanel = document.getElementById('network-panel-1');
+    netPanel.style.display = 'block';
+    renderNetwork(proposals[0], document.getElementById('network-svg-1'), trend);
+  } catch (e) {
+    setStatus('서버 연결 실패');
+    console.error(e);
+  }
+}
+
+function renderProposalCards(proposals, cat, trend) {
+  const grid = document.getElementById('proposal-grid');
+  grid.innerHTML = '';
+  proposals.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.className = 'proposal-card' + (i === 0 ? ' active' : '');
+    const attrsHtml = (p.attrs || []).map((a, j) =>
+      `<span class="card-attr${j < 2 ? ' key' : ''}">${a}</span>`).join('');
+    const via = p.via_product ? `<div class="card-ref">경유: ${p.via_product}</div>` : '';
+    card.innerHTML = `
+      <div class="card-top">
+        <div class="card-category">${cat} · ${trend}</div>
+        <div class="card-score ph">가중치 ${(p.total_weight||0).toFixed(2)}</div>
+      </div>
+      <div class="card-name">속성 조합 #${p.rank}</div>
+      <div class="card-attrs">${attrsHtml}</div>
+      <div class="card-tpo"><span>홉 수 ·</span> ${p.hops}홉 경로</div>
+      ${via}
+    `;
+    card.onclick = () => {
+      document.querySelectorAll('.proposal-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      renderNetwork(p, document.getElementById('network-svg-1'), trend);
+    };
+    grid.appendChild(card);
+  });
+}
+
+// ══════════════════════════════════════════════════════════════════════
+// SVG 네트워크 렌더링
+// ══════════════════════════════════════════════════════════════════════
+function renderNetwork(proposal, container, trendLabel) {
+  const W = container.offsetWidth || 600;
+  const H = 200;
+  const cx = W / 2, cy = H / 2;
+  const colorMap = { product: '#00C896', attribute: '#4A9EFF', tpo: '#FF6B35', trend: '#9B7FFF', attr: '#4A9EFF' };
+
+  const attrs = proposal.attrs || [];
+  const nodes = [
+    { label: trendLabel || '트렌드', type: 'trend', x: cx - 150, y: cy - 40, r: 16 },
+    ...attrs.map((a, i) => {
+      const angle = (i / attrs.length) * Math.PI * 2 - Math.PI / 2;
+      return { label: a, type: 'attr', x: cx + Math.cos(angle) * 90, y: cy + Math.sin(angle) * 70, r: 14 };
+    }),
+  ];
+  if (proposal.via_product) {
+    nodes.splice(1, 0, { label: proposal.via_product.slice(0, 8), type: 'product', x: cx, y: cy, r: 20 });
+  }
+
+  let svg = `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">`;
+  nodes.slice(1).forEach(n => {
+    const x0 = nodes[0].x, y0 = nodes[0].y;
+    svg += `<line x1="${x0}" y1="${y0}" x2="${n.x}" y2="${n.y}" stroke="${colorMap[n.type]||'#fff'}" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="${n.type==='trend'?'4 3':'none'}"/>`;
+  });
+  nodes.forEach(n => {
+    const col = colorMap[n.type] || '#8B90A0';
+    svg += `<circle cx="${n.x}" cy="${n.y}" r="${n.r}" fill="${col}22" stroke="${col}" stroke-width="${n.type==='product'?2:1}"/>`;
+    svg += `<text x="${n.x}" y="${n.y+1}" text-anchor="middle" dominant-baseline="central" font-size="${n.type==='product'?10:9}" fill="${n.type==='product'?col:'#8B90A0'}" font-family="Noto Sans KR,sans-serif">${n.label}</text>`;
+  });
+  svg += '</svg>';
+  container.innerHTML = svg;
+}
+
+// ══════════════════════════════════════════════════════════════════════
+// 탭 2 — 히트 상품 (현재 고정 예시 유지)
+// ══════════════════════════════════════════════════════════════════════
+function loadHitProduct() {
+  document.getElementById('hit-empty').style.display = 'none';
+  document.getElementById('hit-result').style.display = 'flex';
+}
+
+// ══════════════════════════════════════════════════════════════════════
+// 탭 3 — 부진 상품 목록 로딩
+// ══════════════════════════════════════════════════════════════════════
+async function loadBustList() {
+  const listEl = document.querySelector('.bust-list');
+  try {
+    const data = await CONFIG.get('/api/bust');
+    _bustItems = data.items || [];
+    if (!_bustItems.length) return;
+
+    // 헤더 유지, 기존 항목 제거
+    const header = listEl.querySelector('.bust-list-header');
+    listEl.innerHTML = '';
+    listEl.appendChild(header);
+
+    _bustItems.forEach((item, idx) => {
+      const el = document.createElement('div');
+      el.className = 'bust-item';
+      el.onclick = () => selectBustItem(el, item.item_cd);
+      el.innerHTML = `
+        <div>
+          <div class="bust-item-name">${item.item_name}</div>
+          <div class="bust-item-cat">${item.category || ''} · ${item.price ? item.price+'원' : ''}</div>
+        </div>
+        <span class="bust-badge">부진</span>`;
+      listEl.appendChild(el);
+    });
+  } catch (e) {
+    console.error('[bust] 로딩 실패:', e);
+  }
+}
+
+async function selectBustItem(el, itemCd) {
+  document.querySelectorAll('.bust-item').forEach(i => i.classList.remove('active'));
+  el.classList.add('active');
+
+  const panel = document.getElementById('diag-panel');
+  panel.innerHTML = '<div style="padding:24px;color:var(--text-3);text-align:center">진단 중…</div>';
+
+  try {
+    const data = await CONFIG.get(`/api/bust/${encodeURIComponent(itemCd)}`);
+    const avoidHtml = (data.avoid_attrs || []).map(a =>
+      `<span class="avoid-tag">${a.attr} (${a.weight})</span>`).join('');
+    const rxHtml = [
+      { title: '회피 속성 제거', desc: '가중치 하위 속성을 제거하고 상위 속성 중심으로 리포지셔닝' },
+      { title: '트렌드 재연결', desc: '현재 트렌드 노드와 연결이 약한 속성 교체 검토' },
+      { title: 'IP 강화', desc: '연결 IP 중 영향력이 낮은 IP 대신 신규 IP 발굴' },
+    ].map((r, i) => `
+      <div class="rx-item">
+        <div class="rx-num">처방 0${i+1}</div>
+        <div class="rx-title">${r.title}</div>
+        <div class="rx-desc">${r.desc}</div>
+      </div>`).join('');
+
+    panel.innerHTML = `
+      <div class="diag-card">
+        <div class="diag-section-label">회피 속성 진단</div>
+        <div style="font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px;">${data.item_name}</div>
+        <div class="avoid-tags">${avoidHtml || '<span style="color:var(--text-3)">데이터 없음</span>'}</div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-section-label">리뉴얼 처방</div>
+        <div class="rx-list">${rxHtml}</div>
+      </div>`;
+  } catch (e) {
+    panel.innerHTML = '<div style="padding:16px;color:var(--red)">진단 데이터 로딩 실패</div>';
+    console.error(e);
+  }
+}
+
+// ══════════════════════════════════════════════════════════════════════
+// 초기화 — 네트워크 메타 표시
+// ══════════════════════════════════════════════════════════════════════
+(async () => {
+  try {
+    const meta = await CONFIG.get('/api/network/meta');
+    const el = document.querySelector('.tab-nav span[style*="DM Mono"]');
+    if (el) {
+      el.textContent =
+        `속성노드 ${meta.node_types?.attribute||0} · 제품명노드 ${meta.node_types?.product||0} · 엣지 ${meta.total_edges?.toLocaleString()||0}`;
+    }
+  } catch (_) { /* 서버 미연결 시 기존 텍스트 유지 */ }
+})();
+
+</script>
+</body>
+</html>
