@@ -10,7 +10,7 @@
 
 const CONFIG = {
   // ── 백엔드 서버 주소 ──────────────────────────────────────────────
-  API_BASE_URL: 'http://localhost:8000',   // ← ngrok URL로 변경 시 여기만 수정
+  API_BASE_URL: '',   // ← 빈 문자열로 두면 현재 Vercel 도메인(또는 로컬 도메인)을 자동으로 사용합니다.
 
   // ── 인증 키 (.env의 DASHBOARD_SECRET_KEY와 동일하게 설정) ──────────
   API_KEY: 'DEV_KEY',                      // ← 운영 배포 시 강력한 키로 변경

@@ -26,7 +26,7 @@ except ImportError:
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
 from pydantic import BaseModel
 
 from network_builder import (
@@ -107,7 +107,11 @@ class ProposeRequest(BaseModel):
 
 @app.get("/")
 def root():
-    return {"status": "ok", "message": "7-Eleven NPD Dashboard API"}
+    return FileResponse(os.path.join(DATA_DIR, "..", "dashboard.html"))
+
+@app.get("/config.js")
+def get_config():
+    return FileResponse(os.path.join(DATA_DIR, "..", "config.js"))
 
 
 @app.get("/api/network/meta")
