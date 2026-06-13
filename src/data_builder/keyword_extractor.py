@@ -1,5 +1,7 @@
-import requests
 import re
+import subprocess
+
+import requests
 
 # ==========================================
 # [사용자 전용 튜닝 섹션] - 여기서 자유롭게 수정하세요!
@@ -7,6 +9,27 @@ import re
 MODEL_NAME = "gemma4:e4b"
 TEMPERATURE = 0.1  # 0.0 ~ 1.0 사이 (낮을수록 일관된 결과)
 TIMEOUT = 180      # Ollama 응답 대기 시간 (3분)
+
+
+def _get_ollama_base_url() -> str:
+    """WSL2 내부에서 실행 중이면 localhost, Windows에서 실행 중이면 WSL2 IP 사용."""
+    import platform, os
+    # WSL2 내부에서 실행 중인지 확인
+    if "microsoft" in platform.uname().release.lower() or os.path.exists("/proc/sys/fs/binfmt_misc/WSLInterop"):
+        return "http://localhost:11434"
+    # Windows에서 실행 중 → WSL2 IP 조회
+    try:
+        ip = subprocess.check_output(
+            ["wsl", "hostname", "-I"], timeout=5
+        ).decode().strip().split()[0]
+        if ip:
+            return f"http://{ip}:11434"
+    except Exception:
+        pass
+    return "http://localhost:11434"
+
+
+OLLAMA_BASE_URL = _get_ollama_base_url()
 
 # POS 상품명 기반 키워드 추출 프롬프트
 SYSTEM_PROMPT = (
@@ -74,7 +97,7 @@ def extract_keywords(text: str) -> list[str]:
     """
     Ollama API를 사용하여 텍스트에서 키워드를 추출합니다.
     """
-    url = "http://localhost:11434/api/generate"
+    url = f"{OLLAMA_BASE_URL}/api/generate"
     
     payload = {
         "model": MODEL_NAME,
@@ -125,7 +148,7 @@ def extract_keywords_instagram(title: str, body: str) -> list[str]:
     """
     인스타그램 게시글(title + body)에서 HIN 트렌드 노드용 키워드를 추출합니다.
     """
-    url = "http://localhost:11434/api/generate"
+    url = f"{OLLAMA_BASE_URL}/api/generate"
     text = preprocess_instagram_text(title, body)
 
     payload = {
@@ -240,7 +263,7 @@ def extract_keywords_seveneleven(title: str, body: str) -> dict:
     }
     파싱 실패 시 빈 dict {} 반환.
     """
-    url = "http://localhost:11434/api/generate"
+    url = f"{OLLAMA_BASE_URL}/api/generate"
     text = preprocess_instagram_text(title, body)
 
     payload = {
@@ -361,7 +384,7 @@ def extract_keywords_cu(title: str, body: str) -> dict:
     }
     파싱 실패 시 빈 dict {} 반환.
     """
-    url = "http://localhost:11434/api/generate"
+    url = f"{OLLAMA_BASE_URL}/api/generate"
     text = preprocess_instagram_text(title, body)
 
     payload = {
@@ -481,7 +504,7 @@ def extract_keywords_gs25(title: str, body: str) -> dict:
     }
     파싱 실패 시 빈 dict {} 반환.
     """
-    url = "http://localhost:11434/api/generate"
+    url = f"{OLLAMA_BASE_URL}/api/generate"
     text = preprocess_instagram_text(title, body)
 
     payload = {
@@ -582,7 +605,7 @@ GS25_SYSTEM_PROMPT_V2 = _build_v2_prompt(GS25_SYSTEM_PROMPT)
 def _extract_structured_v2(system_prompt: str, title: str, body: str) -> dict:
     """v2 프롬프트로 구조화 추출. 내부 공통 로직."""
     import json as _json
-    url = "http://localhost:11434/api/generate"
+    url = f"{OLLAMA_BASE_URL}/api/generate"
     text = preprocess_instagram_text(title, body)
     payload = {
         "model": MODEL_NAME,
@@ -733,7 +756,7 @@ def extract_keywords_blog(product_name: str, body: str, cutoff: int = 2000, num_
     import json as _json
     import re as _re
 
-    url = "http://localhost:11434/api/generate"
+    url = f"{OLLAMA_BASE_URL}/api/generate"
 
     text = _re.sub(r"\s+", " ", (body or "").strip())[:cutoff]
 
@@ -789,6 +812,93 @@ def extract_keywords_blog(product_name: str, body: str, cutoff: int = 2000, num_
     except Exception as e:
         print(f"예상치 못한 오류: {e}")
         return {}
+
+
+# =============================================================================
+# 제품명 분해 전용 프롬프트
+# 목적: POS 상품명에서 의미 단위(맛·원재료·카테고리·브랜드·형태)만 추출
+#       - 제품명에 실제 존재하는 표현만 (할루시네이션 금지)
+#       - 개수 강제 없음 (있는 것만)
+# =============================================================================
+NAME_DECOMPOSE_PROMPT = """\
+[Role]
+편의점 POS 상품명을 분해하는 키워드 추출 에이전트입니다.
+
+[Task]
+입력된 상품명에서 맛·원재료·카테고리·브랜드·형태에 해당하는 단어를 추출하세요.
+상품명에 실제로 존재하는 표현만 추출합니다. 없는 단어를 만들어내지 마세요.
+
+[규칙]
+1. 상품명에 실제 포함된 표현만 출력 (추측·유추 금지)
+2. 제조사 접두어 제거: 롯데), 삼립), CJ), PB), APP예약), APP전용) 등
+3. 용량·중량·가격·입수 제거: 100g, 500ml, 2입, 3P, 68g 등
+4. 브랜드명은 트렌드·콜라보 의미가 있을 때만 포함
+5. 복합어는 항상 최소 의미 단위로 분리
+   - 맛·재료·형태 복합어: 허니버터 → 허니, 버터 / 양념치킨 → 양념, 치킨 / 감자칩 → 감자, 칩
+   - 고유 상품 브랜드명은 유지: 꼬북칩(과자 브랜드), 맛장우(브랜드), 빼빼로 등
+   - 허니버터칩은 허니버터+칩 조합이므로 → 허니, 버터, 칩으로 분리
+6. 농도·강도 수식어는 명사형으로 변환하여 포함: 진한 → 진함, 달콤한 → 달콤함, 매운 → 매움
+7. 반드시 하나 이상 출력 (빈 출력 불가, 최소한 핵심 명사 1개)
+
+[출력 형식]
+단어1, 단어2, 단어3
+(쉼표 구분, 줄바꿈·설명·번호 없음)
+
+[예시]
+입력: 딸기치즈케이크
+출력: 딸기, 치즈, 케이크
+
+입력: 오리온)꼬북칩양념치킨맛68g
+출력: 오리온, 꼬북칩, 양념, 치킨
+
+입력: 삼립)말차크림롤85g
+출력: 말차, 크림, 롤
+
+입력: APP예약)맛장우김밥더블햄마요
+출력: 맛장우, 김밥, 햄, 마요
+
+입력: 허니버터칩감자칩100g
+출력: 허니, 버터, 감자, 칩
+
+입력: 그린)크랜베리치킨샌드
+출력: 크랜베리, 치킨, 샌드위치
+
+입력: PB)산리오런씨네마카라멜컵팝콘65g
+출력: 산리오, 카라멜, 팝콘
+
+입력: 2배더진한아메리카노500ml
+출력: 진함, 아메리카노\
+"""
+
+
+def extract_keywords_from_name(product_name: str) -> list[str]:
+    """
+    POS 상품명에서 의미 단위 키워드를 추출합니다.
+    NAME_DECOMPOSE_PROMPT 사용 — 제품명에 실제 존재하는 표현만 반환.
+    """
+    url = f"{OLLAMA_BASE_URL}/api/generate"
+
+    payload = {
+        "model": MODEL_NAME,
+        "prompt": f"{NAME_DECOMPOSE_PROMPT}\n\n입력: {product_name}\n출력:",
+        "stream": False,
+        "options": {"temperature": 0.0},
+    }
+
+    try:
+        response = requests.post(url, json=payload, timeout=TIMEOUT)
+        response.raise_for_status()
+        raw = response.json().get("response", "").strip()
+        return [kw.strip() for kw in raw.split(",") if kw.strip()]
+    except requests.exceptions.Timeout:
+        print(f"Ollama 응답 시간 초과 ({TIMEOUT}초).")
+        return []
+    except requests.exceptions.RequestException as e:
+        print(f"Ollama API 연결 오류: {e}")
+        return []
+    except Exception as e:
+        print(f"예상치 못한 오류: {e}")
+        return []
 
 
 if __name__ == "__main__":

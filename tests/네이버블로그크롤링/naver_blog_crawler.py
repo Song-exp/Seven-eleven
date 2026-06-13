@@ -58,10 +58,10 @@ def get_blog_content(url):
             
         return ""
     except Exception as e:
-        print(f"   ⚠️ 본문 추출 중 오류 ({url}): {e}")
+        print(f"   [오류] 본문 추출 중 오류 ({url}): {e}")
         return ""
 
-def run_naver_blog_crawler(keywords, start_date=None, results_limit=100, sort='sim'):
+def run_naver_blog_crawler(keywords, start_date=None, results_limit=100, sort='sim', save_csv=True):
     """
     네이버 블로그 검색 API를 사용하여 데이터를 수집합니다.
     
@@ -77,7 +77,7 @@ def run_naver_blog_crawler(keywords, start_date=None, results_limit=100, sort='s
     client_secret = os.getenv("NAVER_CLIENT_SECRET")
     
     if not client_id or not client_secret:
-        print("❌ 네이버 API 인증 정보가 .env에 없습니다.")
+        print("[오류] 네이버 API 인증 정보가 .env에 없습니다.")
         return None
 
     headers = {
@@ -92,8 +92,8 @@ def run_naver_blog_crawler(keywords, start_date=None, results_limit=100, sort='s
         
     all_results = []
     
-    print(f"🚀 네이버 블로그 수집 시작... (키워드: {len(keywords)}개)")
-    
+    print(f"[블로그] 수집 시작... (키워드: {len(keywords)}개)")
+
     for kw in keywords:
         kw_results = [] # 키워드별 결과를 따로 담기 위한 리스트
         params = {
@@ -102,9 +102,9 @@ def run_naver_blog_crawler(keywords, start_date=None, results_limit=100, sort='s
             "start": 1,
             "sort": sort
         }
-        
+
         try:
-            print(f"🔍 키워드 검색 중: '{kw}'")
+            print(f"[블로그] 키워드 검색 중: '{kw}'")
             response = requests.get(url, headers=headers, params=params, timeout=10)
             response.raise_for_status()
             data = response.json()
@@ -124,7 +124,7 @@ def run_naver_blog_crawler(keywords, start_date=None, results_limit=100, sort='s
                         continue
                 
                 # 본문 크롤링 추가
-                print(f"   📄 본문 수집 중: {title[:20]}...")
+                print(f"   [본문] 수집 중: {title[:20]}...")
                 content = get_blog_content(link)
                 
                 result_item = {
@@ -144,7 +144,7 @@ def run_naver_blog_crawler(keywords, start_date=None, results_limit=100, sort='s
                 time.sleep(0.3)
             
             # 키워드별 결과 저장 (결과가 있을 때만)
-            if kw_results:
+            if kw_results and save_csv:
                 kw_df = pd.DataFrame(kw_results)
                 # 저장 폴더: tests/네이버블로그크롤링
                 output_dir = os.path.dirname(os.path.abspath(__file__))
@@ -154,16 +154,16 @@ def run_naver_blog_crawler(keywords, start_date=None, results_limit=100, sort='s
                 safe_kw = kw.replace(" ", "_")
                 output_file = os.path.join(output_dir, f'naver_blog_data_{safe_kw}.csv')
                 kw_df.to_csv(output_file, index=False, encoding='utf-8-sig')
-                print(f"💾 키워드 '{kw}' 저장 완료: {output_file}")
-                
+                print(f"[저장] 키워드 '{kw}' 저장 완료: {output_file}")
+
         except Exception as e:
-            print(f"⚠️ '{kw}' 검색 중 오류 발생: {e}")
+            print(f"[오류] '{kw}' 검색 중 오류 발생: {e}")
             
         # API 호출 간격 조절
         time.sleep(0.1)
         
     if not all_results:
-        print("📭 수집된 데이터가 없습니다.")
+        print("[블로그] 수집된 데이터가 없습니다.")
         return None
         
     return pd.DataFrame(all_results)

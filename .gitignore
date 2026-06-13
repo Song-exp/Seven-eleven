@@ -1,6 +1,10 @@
 # Data
 data/
 
+# Virtual environment
+.venv/
+venv/
+
 # Python
 __pycache__/
 *.py[cod]
@@ -36,4 +40,20 @@ wheels/
 mcp_config.json
 eda/seven_trend/.env
 *.DS_Store
+.env
 .env
+
+# Model checkpoints (재현 가능, git 불필요)
+checkpoints/
+*.pt
+
+# Experiment result binaries (재실행으로 재생성 가능)
+experiments/results/**/hin_gnn_best.pt
+experiments/results/**/*.parquet
+
+# EDA 데이터 파생물 및 발표 자료 (비공개)
+eda/**/*.xlsx
+eda/**/*.csv
+eda/중간발표/
+eda/*.png
+eda/sunk_cost_diagnosis.png
