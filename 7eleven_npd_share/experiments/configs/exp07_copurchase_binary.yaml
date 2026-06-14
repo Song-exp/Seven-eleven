@@ -1,0 +1,69 @@
+# exp07 — 동반구매 엣지 Binary 가중치 (Lift 미사용)
+# 목적: exp06(Lift × α_r) 대비 binary(1.0 × α_r)의 성능 비교
+# 가설: Lift값 자체가 신호를 주는지, 엣지 존재 여부만으로도 충분한지 검증
+# 변경점: use_lift_weights false (엣지 구조는 exp06 동일, edge_attr만 제거)
+
+graph:
+  node_types: [product, keyword, ip]
+  edge_types:
+    - [product, has_kw, keyword]
+    - [ip, has_kw, keyword]
+    - [keyword, trend_to, keyword]
+    - [product, has_ip, ip]
+    - [product, co_offline, product]
+    - [product, co_quick, product]
+  add_reverse_edges: true
+  include_offline_copurchase: true
+  offline_copurchase_path: data/processed/offline_commerce_edge_lift_pair_out.csv
+  include_quick_copurchase: true
+  quick_copurchase_path: data/processed/quick_commerce_edge_lift_pair_out.csv
+  lift_normalization: log1p
+  use_lift_weights: false             # ← exp06과 유일한 차이
+
+node_feat:
+  product_init: content_aggregation
+  product_aggr: mean
+  use_has_promo_feature: true
+  keyword_emb_init: random
+  ip_emb_init: random
+
+model:
+  hidden_dim: 128
+  num_layers: 2
+  num_heads: 4
+  dropout: 0.3
+  use_diffmg_gate: true
+  diffmg_temperature: 0.5
+
+label:
+  target_col: 성공여부
+  positive_value: 성공
+  imbalance: weighted_bce
+  pos_weight: 3.24
+
+split:
+  scheme: stratified
+  stratify_by: [편의점명, 성공여부]
+  ratios: [0.70, 0.15, 0.15]
+  seed: 42
+
+train:
+  optimizer: adam
+  lr_w: 0.005
+  weight_decay_w: 0.0005
+  lr_alpha: 0.02
+  weight_decay_alpha: 0.001
+  epochs: 200
+  early_stopping_patience: 30
+  early_stopping_metric: val_pr_auc
+  device: auto
+
+eval:
+  primary_metric: pr_auc
+  metrics: [pr_auc, auc_roc, f1]
+
+recommend:
+  score_fn: hybrid_alpha_success
+  meta_path: [keyword, product, keyword]
+  top_k: 20
+  beam_width: 50
