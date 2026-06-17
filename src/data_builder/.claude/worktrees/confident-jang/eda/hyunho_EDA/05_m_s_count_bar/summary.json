@@ -1,0 +1,48 @@
+{
+  "mode": "food_only",
+  "rows": 92357,
+  "mddv_count": 109,
+  "smdv_count": 341,
+  "top_mddv_by_smdv_count": [
+    {
+      "ITEM_MDDV_NM": "선물세트",
+      "smdv_count": 10
+    },
+    {
+      "ITEM_MDDV_NM": "탄산음료",
+      "smdv_count": 10
+    },
+    {
+      "ITEM_MDDV_NM": "냉장간편식",
+      "smdv_count": 9
+    },
+    {
+      "ITEM_MDDV_NM": "냉장간식",
+      "smdv_count": 9
+    },
+    {
+      "ITEM_MDDV_NM": "과일",
+      "smdv_count": 8
+    },
+    {
+      "ITEM_MDDV_NM": "비스킷류",
+      "smdv_count": 7
+    },
+    {
+      "ITEM_MDDV_NM": "간식빵",
+      "smdv_count": 7
+    },
+    {
+      "ITEM_MDDV_NM": "기능성드링크",
+      "smdv_count": 6
+    },
+    {
+      "ITEM_MDDV_NM": "노벨티",
+      "smdv_count": 6
+    },
+    {
+      "ITEM_MDDV_NM": "캔디류",
+      "smdv_count": 6
+    }
+  ]
+}

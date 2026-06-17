@@ -1,0 +1,47 @@
+{
+  "mode": "food_only",
+  "rows": 92357,
+  "lrdv_count": 23,
+  "top_lrdv": [
+    {
+      "ITEM_LRDV_NM": "과자",
+      "item_count": 21271
+    },
+    {
+      "ITEM_LRDV_NM": "신선",
+      "item_count": 6758
+    },
+    {
+      "ITEM_LRDV_NM": "미반",
+      "item_count": 6396
+    },
+    {
+      "ITEM_LRDV_NM": "빵",
+      "item_count": 5191
+    },
+    {
+      "ITEM_LRDV_NM": "음료",
+      "item_count": 4677
+    },
+    {
+      "ITEM_LRDV_NM": "건강/기호식품",
+      "item_count": 4309
+    },
+    {
+      "ITEM_LRDV_NM": "냉장",
+      "item_count": 4223
+    },
+    {
+      "ITEM_LRDV_NM": "양주와인",
+      "item_count": 3981
+    },
+    {
+      "ITEM_LRDV_NM": "조미료/건물",
+      "item_count": 3928
+    },
+    {
+      "ITEM_LRDV_NM": "유음료",
+      "item_count": 3810
+    }
+  ]
+}

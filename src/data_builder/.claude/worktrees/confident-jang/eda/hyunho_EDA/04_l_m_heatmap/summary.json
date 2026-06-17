@@ -1,0 +1,13 @@
+{
+  "mode": "food_only",
+  "rows": 92357,
+  "shape_full": [
+    23,
+    109
+  ],
+  "shape_view": [
+    23,
+    40
+  ],
+  "top_m": 40
+}

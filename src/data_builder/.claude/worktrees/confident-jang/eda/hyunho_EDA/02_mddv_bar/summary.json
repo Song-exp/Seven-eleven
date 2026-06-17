@@ -1,0 +1,47 @@
+{
+  "mode": "food_only",
+  "rows": 92357,
+  "mddv_count": 109,
+  "top_mddv": [
+    {
+      "ITEM_MDDV_NM": "비스킷류",
+      "item_count": 6335
+    },
+    {
+      "ITEM_MDDV_NM": "선물세트",
+      "item_count": 6093
+    },
+    {
+      "ITEM_MDDV_NM": "캔디류",
+      "item_count": 4848
+    },
+    {
+      "ITEM_MDDV_NM": "초콜릿",
+      "item_count": 4588
+    },
+    {
+      "ITEM_MDDV_NM": "과일",
+      "item_count": 4486
+    },
+    {
+      "ITEM_MDDV_NM": "간식빵",
+      "item_count": 3634
+    },
+    {
+      "ITEM_MDDV_NM": "스낵류",
+      "item_count": 3432
+    },
+    {
+      "ITEM_MDDV_NM": "도시락",
+      "item_count": 2375
+    },
+    {
+      "ITEM_MDDV_NM": "노벨티",
+      "item_count": 2357
+    },
+    {
+      "ITEM_MDDV_NM": "와인",
+      "item_count": 2088
+    }
+  ]
+}

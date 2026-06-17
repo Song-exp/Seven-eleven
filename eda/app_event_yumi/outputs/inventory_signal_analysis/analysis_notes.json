@@ -1,0 +1,5 @@
+{
+  "inventory_event_product_id_status": "Inventory events do not expose a direct product id in af_content_id. af_search_inventory has af_search_string; af_content_view_inventory has only af_content.",
+  "matching_policy": "Top inventory search strings are normalized and matched to product names with exact, prefix, or substring rules. Results are candidate attributions.",
+  "lead_lag_policy": "Correlation compares daily inventory search counts with POS sales for the same candidate product after lag_days. lag_days=1 means search today vs POS sales tomorrow."
+}

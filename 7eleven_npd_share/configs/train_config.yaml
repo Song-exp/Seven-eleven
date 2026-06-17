@@ -1,0 +1,69 @@
+# 7-Eleven HIN-GNN 학습 설정
+# 모든 하이퍼파라미터는 이 파일에서 로드. 코드 하드코딩 금지.
+# 값 변경 시 docs/training_decisions.md 에 결정 로그도 함께 갱신.
+
+graph:
+  data_dir: data/processed/hin
+  node_types: [product, keyword, ip]
+  # canonical triple (src, rel, dst). 메시지패싱용 역방향은 add_reverse_edges 로 자동 생성.
+  edge_types:
+    - [product, has_kw, keyword]     # product_keyword_edges.parquet (33,761)
+    - [ip, has_kw, keyword]          # ip_keyword_edges.parquet (1,744)
+    - [keyword, trend_to, keyword]   # trend_keyword_edges.parquet (5,146, 트렌드→속성)
+    - [product, has_ip, ip]          # product_ip_edges.parquet (472)
+  add_reverse_edges: true
+  include_offline_copurchase: false  # 오프라인 POS 동반구매 엣지
+  offline_copurchase_path: data/processed/offline_commerce_edge_lift_pair_out.csv
+  include_quick_copurchase: false    # 퀵커머스 동반구매 엣지
+  quick_copurchase_path: data/processed/quick_commerce_edge_lift_pair_out.csv
+  lift_normalization: log1p          # log1p | minmax | none
+  use_lift_weights: true             # true: Lift값 × α_r / false: binary(1.0) × α_r
+
+node_feat:
+  product_init: content_aggregation  # NODE_FEAT 결정: 연결된 keyword/ip 임베딩 집계
+  product_aggr: mean                 # mean | sum
+  use_has_promo_feature: true        # product init 에 has_promo_30d 1차원 결합
+  keyword_emb_init: random
+  ip_emb_init: random
+
+model:
+  hidden_dim: 128                    # MODEL 결정: 표준
+  num_layers: 2                      # = 메시지패싱 홉 수 (keyword→product→keyword 2홉)
+  num_heads: 4
+  dropout: 0.3
+  use_diffmg_gate: true              # 엣지타입별 연속 α 게이팅 (XAI 메타관계 중요도)
+  diffmg_temperature: 1.0
+
+label:
+  target_col: 성공여부
+  positive_value: 성공
+  imbalance: weighted_bce            # LABEL 결정: weighted BCE
+  pos_weight: 3.24                   # 실패 3929 / 성공 1214
+
+split:
+  scheme: stratified                 # SPLIT 결정: 계층화 랜덤
+  stratify_by: [편의점명, 성공여부]
+  ratios: [0.70, 0.15, 0.15]         # train / val / test
+  seed: 42
+
+# 이중 최적화(Bi-level): W 는 train, α(DiffMG) 는 val 로 업데이트 (src/train/.claude-rules.md)
+train:
+  optimizer: adam                    # OPTIM 결정: 표준 Adam
+  lr_w: 0.005                         # 네트워크 가중치 W
+  weight_decay_w: 0.0005
+  lr_alpha: 0.005                     # 구조 가중치 α (DiffMG)
+  weight_decay_alpha: 0.001
+  epochs: 200
+  early_stopping_patience: 30
+  early_stopping_metric: val_pr_auc
+  device: auto                       # cuda if available else cpu
+
+eval:
+  primary_metric: pr_auc             # EVAL 결정: PR-AUC 주
+  metrics: [pr_auc, auc_roc, f1]     # AUC-ROC 병기, F1 은 best-threshold
+
+recommend:
+  score_fn: hybrid_alpha_success     # RECOMMEND 결정: α × 경유 product 성공확률
+  meta_path: [keyword, product, keyword]
+  top_k: 20
+  beam_width: 50
