@@ -1,0 +1,72 @@
+# exp08 — 키워드 IDF 가중 (Method B 첫 실험)
+# 목적: exp07(현재 그래프 baseline) 대비 P-K 엣지 IDF 가중의 end-to-end 효과 검증 (O2)
+# 가설: 흔한 키워드를 down-weight하면 노이즈↓ → PR-AUC 동등 이상 (EDA 05: 토폴로지 gap 0.006→0.043)
+# 변경점: use_idf_keyword_weights true (그 외 exp07과 동일)
+# ※ exp07도 이미 num_layers=2 + use_diffmg_gate=true → 층별 게이트 α_r^(ℓ) 적용 중(O1은 구조상 기구현)
+
+graph:
+  node_types: [product, keyword, ip]
+  edge_types:
+    - [product, has_kw, keyword]
+    - [ip, has_kw, keyword]
+    - [keyword, trend_to, keyword]
+    - [product, has_ip, ip]
+    - [product, co_offline, product]
+    - [product, co_quick, product]
+  add_reverse_edges: true
+  include_offline_copurchase: true
+  offline_copurchase_path: data/processed/offline_commerce_edge_lift_pair_out.csv
+  include_quick_copurchase: true
+  quick_copurchase_path: data/processed/quick_commerce_edge_lift_pair_out.csv
+  lift_normalization: log1p
+  use_lift_weights: false             # exp07과 동일 (동반구매 binary)
+  use_idf_keyword_weights: true       # ← exp07과 유일한 차이 (P-K IDF 가중)
+  idf_normalization: max              # IDF를 [0,1] 정규화 (Lift attr와 동일 스케일)
+
+node_feat:
+  product_init: content_aggregation
+  product_aggr: mean
+  use_has_promo_feature: true
+  keyword_emb_init: random
+  ip_emb_init: random
+
+model:
+  hidden_dim: 128
+  num_layers: 2
+  num_heads: 4
+  dropout: 0.3
+  use_diffmg_gate: true
+  diffmg_temperature: 0.5
+
+label:
+  target_col: 성공여부
+  positive_value: 성공
+  imbalance: weighted_bce
+  pos_weight: 3.24
+
+split:
+  scheme: stratified
+  stratify_by: [편의점명, 성공여부]
+  ratios: [0.70, 0.15, 0.15]
+  seed: 42
+
+train:
+  optimizer: adam
+  lr_w: 0.005
+  weight_decay_w: 0.0005
+  lr_alpha: 0.02
+  weight_decay_alpha: 0.001
+  epochs: 200
+  early_stopping_patience: 30
+  early_stopping_metric: val_pr_auc
+  device: auto
+
+eval:
+  primary_metric: pr_auc
+  metrics: [pr_auc, auc_roc, f1]
+
+recommend:
+  score_fn: hybrid_alpha_success
+  meta_path: [keyword, product, keyword]
+  top_k: 20
+  beam_width: 50

@@ -57,3 +57,7 @@ eda/**/*.csv
 eda/중간발표/
 eda/*.png
 eda/sunk_cost_diagnosis.png
+
+# Temporary run outputs
+temp_*
+_tmp_*

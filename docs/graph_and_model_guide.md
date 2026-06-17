@@ -1,5 +1,29 @@
 # HIN 그래프 데이터 & 모델 실행 가이드
 
+## 0. 사전 준비 — LLM 서버 (Ollama)
+
+`src/eval/serve.py` (대시보드 RAG) 및 `src/data_builder/extract_ip_kw_candidates.py` (IP 키워드 추출)는 Ollama gemma4:e4b를 사용한다. 스크립트 실행 전 WSL에서 먼저 띄워야 한다.
+
+### Ollama 시작 (WSL 터미널)
+
+```bash
+OLLAMA_MODELS=/mnt/c/Users/송정현/.ollama/models OLLAMA_HOST=0.0.0.0:11435 ollama serve
+```
+
+`Listening on [::]:11435` 로그가 찍히면 준비 완료. 이 창은 그대로 두고 다른 터미널에서 스크립트를 실행한다.
+
+> 또는 PowerShell에서 `.\scripts\start_ollama.ps1` 실행해도 동일.
+
+### 연결 구조
+
+```
+[Python 스크립트 / FastAPI]  →  localhost:11435  →  [WSL Ollama]  →  RTX 5060 (CUDA)
+```
+
+스크립트는 HTTP 요청만 보내므로 Windows / WSL 어디서 실행해도 무관하다. GPU는 Ollama 서버가 담당한다.
+
+---
+
 ## 1. 최종 그래프 데이터
 
 저장 위치: `data/processed/hin/`
@@ -75,7 +99,7 @@ eda/notebooks/04_hin_graph_builder.ipynb  →  Run All
 ### 방법 A — 통합 노트북 (권장)
 
 ```
-experiments/notebooks/all_experiments.ipynb
+experiments/notebooks/methodA_relation_gating.ipynb
 ```
 
 커널 재시작 → Run All 하면 exp01~exp07 순차 학습 후 비교표 출력.
@@ -156,7 +180,7 @@ exp01_baseline/
   → data/processed/hin/*.parquet  (노드 3종 + 엣지 4종)
         ↓
 [모델 학습 & 실험]
-  experiments/notebooks/all_experiments.ipynb
+  experiments/notebooks/methodA_relation_gating.ipynb
   → experiments/results/{exp_name}/
         ↓
 [추론 & XAI]

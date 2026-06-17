@@ -88,3 +88,45 @@ def export_weighted_kw_edges(
     if out_csv:
         df.to_csv(out_csv, index=False, encoding="utf-8-sig")
     return df
+
+
+# 이기종 체인 순회용 — 비(非)제품-키워드 관계 어텐션 export
+_HETERO_RELATIONS = {
+    "ip_keyword":  (("ip", "has_kw", "keyword"),    "ip", "keyword"),
+    "product_ip":  (("product", "has_ip", "ip"),    "product", "ip"),
+    "trend_keyword": (("keyword", "trend_to", "keyword"), "src_keyword", "tgt_keyword"),
+}
+
+
+def export_weighted_hetero_edges(model, edge_index_dict, maps,
+                                 has_promo=None, edge_attr_dict=None) -> Dict[str, "object"]:
+    """이기종 체인 순회용 가중 엣지 추출.
+
+    제품-키워드 외 관계(ip↔keyword, product↔ip, trend keyword↔keyword)의
+    마지막 층 어텐션을 src/tgt 원본명·attention 으로 DataFrame 화.
+    반환: {"ip_keyword": df, "product_ip": df, "trend_keyword": df}
+    각 df 는 [src, tgt, attention] 컬럼 (관계별 src/tgt 컬럼명 사용).
+    """
+    import pandas as pd
+
+    model.eval()
+    with torch.no_grad():
+        predict_proba(model, edge_index_dict, has_promo, edge_attr_dict)  # forward → last_attention 채움
+    att_all = model.last_edge_attention()
+
+    id_by_type = {"product": maps["product_names"], "keyword": maps["keyword_ids"],
+                  "ip": maps["ip_ids"]}
+    out: Dict[str, object] = {}
+    for name, (et, scol, tcol) in _HETERO_RELATIONS.items():
+        s_type, rel, t_type = et
+        key = f"{s_type}__{rel}__{t_type}"
+        if et not in edge_index_dict or key not in att_all:
+            out[name] = pd.DataFrame(columns=[scol, tcol, "attention"])
+            continue
+        ei = edge_index_dict[et].cpu()
+        att = att_all[key].cpu()
+        s_ids, t_ids = id_by_type[s_type], id_by_type[t_type]
+        rows = [{scol: s_ids[int(ei[0, e])], tcol: t_ids[int(ei[1, e])],
+                 "attention": float(att[e])} for e in range(ei.size(1))]
+        out[name] = pd.DataFrame(rows)
+    return out

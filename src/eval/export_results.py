@@ -25,6 +25,7 @@ from src.eval.recommend import (
     recommend_combinations,
     export_relation_importance,
     export_weighted_kw_edges,
+    export_weighted_hetero_edges,
 )
 
 CKPT = "checkpoints/hin_gnn_best.pt"
@@ -57,6 +58,11 @@ def export_experiment(
         include_quick_copurchase=g.get("include_quick_copurchase", False),
         lift_norm=g.get("lift_normalization", "log1p"),
         use_lift_weights=g.get("use_lift_weights", True),
+        use_idf_keyword_weights=g.get("use_idf_keyword_weights", False),
+        idf_normalization=g.get("idf_normalization", "max"),
+        add_2hop_edges=g.get("add_2hop_edges", False),
+        hop2_kw_min_shared=g.get("hop2_kw_min_shared", 5),
+        hop2_ip_min_shared=g.get("hop2_ip_min_shared", 2),
     )
     eidx = {et: ei.to(dev) for et, ei in forward_edge_index_dict(data).items()}
     raw_attrs = forward_edge_attr_dict(data)
@@ -77,6 +83,11 @@ def export_experiment(
     os.makedirs(out_dir, exist_ok=True)
     wdf = export_weighted_kw_edges(model, eidx, maps, hp, eattr)
     wdf.to_parquet(os.path.join(out_dir, "weighted_product_keyword_edges.parquet"), index=False)
+
+    # 이기종 체인 순회용 — ip↔keyword / product↔ip / trend keyword↔keyword 어텐션
+    hetero = export_weighted_hetero_edges(model, eidx, maps, hp, eattr)
+    for name, hdf in hetero.items():
+        hdf.to_parquet(os.path.join(out_dir, f"weighted_{name}_edges.parquet"), index=False)
 
     prob = predict_proba(model, eidx, hp, eattr, insta_m30=im30).cpu().numpy()
     emb = model.product_embeddings().detach().cpu()
@@ -112,6 +123,7 @@ def _rebuild(cfg, data, dev):
         m["hidden_dim"], m["num_layers"], m["num_heads"], m["dropout"],
         m["use_diffmg_gate"], m["diffmg_temperature"],
         cfg["node_feat"]["product_aggr"], cfg["node_feat"]["use_has_promo_feature"],
+        m.get("readout_hop_mode", "final"),
     ).to(dev)
     return model
 

@@ -1,0 +1,30 @@
+[
+  {
+    "product__has_kw__keyword": 0.02988690696656704,
+    "ip__has_kw__keyword": 0.02992057241499424,
+    "keyword__trend_to__keyword": 0.02992415428161621,
+    "product__has_ip__ip": 0.029939355328679085,
+    "product__co_offline__product": 0.4713073968887329,
+    "product__co_quick__product": 0.08264543116092682,
+    "keyword__rev_has_kw__product": 0.030273912474513054,
+    "keyword__rev_has_kw__ip": 0.029927963390946388,
+    "keyword__rev_trend_to__keyword": 0.029922306537628174,
+    "ip__rev_has_ip__product": 0.029520003125071526,
+    "product__rev_co_offline__product": 0.10654852539300919,
+    "product__rev_co_quick__product": 0.10018352419137955
+  },
+  {
+    "product__has_kw__keyword": 0.0833294689655304,
+    "ip__has_kw__keyword": 0.0833294689655304,
+    "keyword__trend_to__keyword": 0.0833294689655304,
+    "product__has_ip__ip": 0.0833294689655304,
+    "product__co_offline__product": 0.0834316834807396,
+    "product__co_quick__product": 0.08331073820590973,
+    "keyword__rev_has_kw__product": 0.08326300978660583,
+    "keyword__rev_has_kw__ip": 0.0833294689655304,
+    "keyword__rev_trend_to__keyword": 0.0833294689655304,
+    "ip__rev_has_ip__product": 0.08321879059076309,
+    "product__rev_co_offline__product": 0.08344066888093948,
+    "product__rev_co_quick__product": 0.08335834741592407
+  }
+]

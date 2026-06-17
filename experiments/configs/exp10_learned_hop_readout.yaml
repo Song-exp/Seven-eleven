@@ -1,0 +1,73 @@
+# exp10 — Learned 1/2-hop Influence Readout
+# 목적: exp07 그래프/HP를 유지하되 classifier가 마지막 2-hop 표현만 쓰지 않고
+#      layer별 product 표현 H¹, H²를 학습 가중합해 성공확률을 예측하는지 검증.
+# 해석: S = λ1·A_learned¹ + λ2·A_learned² 라는 영향력 가중합 아이디어를
+#      기존 실험 포맷(PR-AUC/AUC-ROC) 안에서 먼저 성능 검증한다.
+# 변경점: model.readout_hop_mode: learned_hop_sum (그 외 exp07과 동일)
+
+graph:
+  node_types: [product, keyword, ip]
+  edge_types:
+    - [product, has_kw, keyword]
+    - [ip, has_kw, keyword]
+    - [keyword, trend_to, keyword]
+    - [product, has_ip, ip]
+    - [product, co_offline, product]
+    - [product, co_quick, product]
+  add_reverse_edges: true
+  include_offline_copurchase: true
+  offline_copurchase_path: data/processed/offline_commerce_edge_lift_pair_out.csv
+  include_quick_copurchase: true
+  quick_copurchase_path: data/processed/quick_commerce_edge_lift_pair_out.csv
+  lift_normalization: log1p
+  use_lift_weights: false
+  use_idf_keyword_weights: false
+
+node_feat:
+  product_init: content_aggregation
+  product_aggr: mean
+  use_has_promo_feature: true
+  keyword_emb_init: random
+  ip_emb_init: random
+
+model:
+  hidden_dim: 128
+  num_layers: 2
+  num_heads: 4
+  dropout: 0.3
+  use_diffmg_gate: true
+  diffmg_temperature: 0.5
+  readout_hop_mode: learned_hop_sum
+
+label:
+  target_col: 성공여부
+  positive_value: 성공
+  imbalance: weighted_bce
+  pos_weight: 3.24
+
+split:
+  scheme: stratified
+  stratify_by: [편의점명, 성공여부]
+  ratios: [0.70, 0.15, 0.15]
+  seed: 42
+
+train:
+  optimizer: adam
+  lr_w: 0.005
+  weight_decay_w: 0.0005
+  lr_alpha: 0.02
+  weight_decay_alpha: 0.001
+  epochs: 200
+  early_stopping_patience: 30
+  early_stopping_metric: val_pr_auc
+  device: auto
+
+eval:
+  primary_metric: pr_auc
+  metrics: [pr_auc, auc_roc, f1]
+
+recommend:
+  score_fn: hybrid_alpha_success
+  meta_path: [keyword, product, keyword]
+  top_k: 20
+  beam_width: 50

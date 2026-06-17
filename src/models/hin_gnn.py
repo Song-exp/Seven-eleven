@@ -50,6 +50,7 @@ class HINGNN(nn.Module):
         diffmg_temperature: float = 1.0,
         product_aggr: str = "mean",
         use_has_promo: bool = True,
+        readout_hop_mode: str = "final",
     ) -> None:
         super().__init__()
         self.node_types = node_types
@@ -59,6 +60,7 @@ class HINGNN(nn.Module):
         self.product_aggr = product_aggr
         self.use_has_promo = use_has_promo
         self.use_diffmg = use_diffmg
+        self.readout_hop_mode = readout_hop_mode
 
         # 학습 임베딩 테이블: keyword, ip (product 제외 — content aggregation)
         self.keyword_emb = nn.Embedding(num_nodes["keyword"], hidden_dim)
@@ -80,6 +82,10 @@ class HINGNN(nn.Module):
         self.kgat = nn.ModuleList(
             [KGATUpdate(hidden_dim, node_types, dropout) for _ in range(num_layers)]
         )
+        if readout_hop_mode == "learned_hop_sum":
+            self.hop_logits = nn.Parameter(torch.zeros(num_layers))
+        elif readout_hop_mode != "final":
+            raise ValueError(f"unknown readout_hop_mode: {readout_hop_mode}")
 
         # readout: product 임베딩 -> 성공 로짓
         self.head = nn.Sequential(
@@ -158,13 +164,23 @@ class HINGNN(nn.Module):
             full_attrs.update(build_reverse_edge_attrs(edge_attr_dict))
 
         # 3) L 층 전파: DiffMG 게이트 -> HGT 메시지(+Lift 가중치) -> KGAT 업데이트
+        product_hops: List[torch.Tensor] = []
         for layer_i in range(len(self.hgt)):
             rel_alpha = self.gates[layer_i]() if self.use_diffmg else None
             agg_dict = self.hgt[layer_i](x_dict, full_edges, rel_alpha, full_attrs)
             x_dict = self.kgat[layer_i](x_dict, agg_dict)               # (N, d) per type
+            product_hops.append(x_dict["product"])
 
-        self._product_emb = x_dict["product"]                          # (P, d) 캐시(XAI)
-        logits = self.head(x_dict["product"]).squeeze(-1)              # (P,)
+        if self.readout_hop_mode == "learned_hop_sum":
+            hop_w = torch.softmax(self.hop_logits, dim=0)               # (L,)
+            product_emb = torch.stack(product_hops, dim=0)              # (L, P, d)
+            product_emb = (hop_w.view(-1, 1, 1) * product_emb).sum(dim=0)
+            self._hop_weights = hop_w.detach().cpu()
+        else:
+            product_emb = x_dict["product"]
+
+        self._product_emb = product_emb                                # (P, d) 캐시(XAI)
+        logits = self.head(product_emb).squeeze(-1)                    # (P,)
         return logits
 
     # --- XAI / 추천 순회용 추출 ---

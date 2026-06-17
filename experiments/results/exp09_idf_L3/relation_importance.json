@@ -1,0 +1,44 @@
+[
+  {
+    "product__has_kw__keyword": 0.051788054406642914,
+    "ip__has_kw__keyword": 0.05324726551771164,
+    "keyword__trend_to__keyword": 0.05323024094104767,
+    "product__has_ip__ip": 0.047180283814668655,
+    "product__co_offline__product": 0.18592438101768494,
+    "product__co_quick__product": 0.0635993629693985,
+    "keyword__rev_has_kw__product": 0.05367352068424225,
+    "keyword__rev_has_kw__ip": 0.05322536453604698,
+    "keyword__rev_trend_to__keyword": 0.05323494225740433,
+    "ip__rev_has_ip__product": 0.053442660719156265,
+    "product__rev_co_offline__product": 0.08557330071926117,
+    "product__rev_co_quick__product": 0.24588067829608917
+  },
+  {
+    "product__has_kw__keyword": 0.05877946689724922,
+    "ip__has_kw__keyword": 0.058779217302799225,
+    "keyword__trend_to__keyword": 0.0587792806327343,
+    "product__has_ip__ip": 0.05877961218357086,
+    "product__co_offline__product": 0.22093181312084198,
+    "product__co_quick__product": 0.10325951129198074,
+    "keyword__rev_has_kw__product": 0.04672592133283615,
+    "keyword__rev_has_kw__ip": 0.058778807520866394,
+    "keyword__rev_trend_to__keyword": 0.058779820799827576,
+    "ip__rev_has_ip__product": 0.04647844284772873,
+    "product__rev_co_offline__product": 0.10869135707616806,
+    "product__rev_co_quick__product": 0.12123667448759079
+  },
+  {
+    "product__has_kw__keyword": 0.06140679121017456,
+    "ip__has_kw__keyword": 0.06140679121017456,
+    "keyword__trend_to__keyword": 0.06140679121017456,
+    "product__has_ip__ip": 0.06140679121017456,
+    "product__co_offline__product": 0.19398942589759827,
+    "product__co_quick__product": 0.09631231427192688,
+    "keyword__rev_has_kw__product": 0.04721895977854729,
+    "keyword__rev_has_kw__ip": 0.06140679121017456,
+    "keyword__rev_trend_to__keyword": 0.06140679121017456,
+    "ip__rev_has_ip__product": 0.04713567718863487,
+    "product__rev_co_offline__product": 0.12025707215070724,
+    "product__rev_co_quick__product": 0.12664580345153809
+  }
+]

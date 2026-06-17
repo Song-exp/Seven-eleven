@@ -71,19 +71,34 @@ def run_experiment(
     dict
         {"metrics": {split: {...}}, "rel_importance": [...], "recs": {seed: [...]}, "history": [...]}
     """
+    import torch
     from src.train.trainer import train
     from src.eval.export_results import export_experiment
+    from src.data_builder.build_hetero_data import graph_signature
 
     save_dir = os.path.join(RESULTS_ROOT, exp_name)
     ckpt_path = os.path.join(save_dir, "hin_gnn_best.pt")
 
-    if os.path.exists(ckpt_path) and not force:
-        print(f"[{exp_name}] 기존 체크포인트 발견 → export만 수행 (재학습 건너뜀). force=True로 재학습 가능.")
-        results = export_experiment(ckpt_path, out_dir=save_dir, sample_seeds=SAMPLE_SEEDS)
-        results["history"] = []
-        return results
-
     cfg = _apply_overrides(_load_config(config_path), overrides)
+    data_dir = cfg.get("graph", {}).get("data_dir", "data/processed/hin")
+
+    # 캐시 재사용은 '현재 네트워크와 동일'할 때만. 04 재실행으로 그래프가 갱신되면
+    # 체크포인트 지문이 달라져 자동 재학습 → 모든 실험이 항상 최신 네트워크 반영.
+    if os.path.exists(ckpt_path) and not force:
+        reuse = False
+        try:
+            ck = torch.load(ckpt_path, map_location="cpu", weights_only=False)
+            old_sig = (ck.get("maps") or {}).get("graph_signature")
+            reuse = old_sig is not None and old_sig == graph_signature(data_dir)
+        except Exception as e:
+            print(f"[{exp_name}] 체크포인트 점검 실패({e}) → 재학습")
+        if reuse:
+            print(f"[{exp_name}] 그래프 동일 → 기존 체크포인트 export (재학습 건너뜀, force=True로 강제 가능).")
+            results = export_experiment(ckpt_path, out_dir=save_dir, sample_seeds=SAMPLE_SEEDS)
+            results["history"] = []
+            return results
+        print(f"[{exp_name}] 네트워크 변경/지문 불일치 감지 → 자동 재학습.")
+
     os.makedirs(save_dir, exist_ok=True)
 
     # 실제 사용된 config 보존 (재현용)

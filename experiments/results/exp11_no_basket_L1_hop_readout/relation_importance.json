@@ -1,0 +1,12 @@
+[
+  {
+    "product__has_kw__keyword": 0.12509125471115112,
+    "ip__has_kw__keyword": 0.12509125471115112,
+    "keyword__trend_to__keyword": 0.12509125471115112,
+    "product__has_ip__ip": 0.12509125471115112,
+    "keyword__rev_has_kw__product": 0.12453877925872803,
+    "keyword__rev_has_kw__ip": 0.12509125471115112,
+    "keyword__rev_trend_to__keyword": 0.12509125471115112,
+    "ip__rev_has_ip__product": 0.12491369992494583
+  }
+]

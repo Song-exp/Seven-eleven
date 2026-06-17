@@ -30,6 +30,30 @@ def norm_id(x) -> str:
         return str(x)
 
 
+def graph_signature(data_dir: str = "data/processed/hin") -> str:
+    """현재 HIN parquet 기반 그래프 지문.
+
+    노드 id 목록(개수·내용·순서) + 엣지 행수를 해시. 04 노트북 재실행으로
+    네트워크가 갱신되면 지문이 바뀌어, 옛 체크포인트 캐시를 자동 무효화한다.
+    """
+    import hashlib
+    import pyarrow.parquet as pq
+
+    pj = lambda f: os.path.join(data_dir, f)
+    parts: List[str] = []
+    for f, col, is_id in [("product_nodes.parquet", "ITEM_CD", True),
+                          ("keyword_nodes.parquet", "keyword", False),
+                          ("ip_nodes.parquet", "ip_name", False)]:
+        s = pd.read_parquet(pj(f), columns=[col])[col]
+        s = s.map(norm_id) if is_id else s.astype(str)
+        h = hashlib.md5("|".join(s.tolist()).encode("utf-8")).hexdigest()[:12]
+        parts.append(f"{f}={len(s)}:{h}")
+    for f in ["product_keyword_edges.parquet", "ip_keyword_edges.parquet",
+              "trend_keyword_edges.parquet", "product_ip_edges.parquet"]:
+        parts.append(f"{f}={pq.read_metadata(pj(f)).num_rows}")
+    return hashlib.md5("||".join(parts).encode("utf-8")).hexdigest()[:16]
+
+
 def _stratified_masks(
     strata: np.ndarray, ratios=(0.70, 0.15, 0.15), seed: int = 42
 ) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
@@ -61,6 +85,11 @@ def build_graph(
     quick_copurchase_path: str = "data/processed/quick_commerce_edge_lift_pair_out.csv",
     lift_norm: str = "log1p",
     use_lift_weights: bool = True,
+    use_idf_keyword_weights: bool = False,
+    idf_normalization: str = "max",
+    add_2hop_edges: bool = False,
+    hop2_kw_min_shared: int = 5,
+    hop2_ip_min_shared: int = 2,
 ) -> Tuple[HeteroData, Dict[str, object]]:
     """HIN parquet 로드 -> (HeteroData, maps).
 
@@ -121,9 +150,42 @@ def build_graph(
 
     drops = {}
     data["product", "has_kw", "keyword"].edge_index, drops["pk"] = _edge(pk, "ITEM_CD", "keyword", p2i, k2i, src_norm=True)
+
+    # P-K(has_kw) IDF 가중치 (선택) — 흔한 키워드 down-weight (EDA 05: gap 0.006→0.043).
+    # df_k = 키워드별 등장 제품 수(= has_kw dst in-degree). 성공라벨 무관 → 누수 없음.
+    if use_idf_keyword_weights:
+        pk_ei = data["product", "has_kw", "keyword"].edge_index      # (2, E) [product, keyword]
+        n_kw = len(kw_ids)
+        df_k = torch.bincount(pk_ei[1], minlength=n_kw).clamp(min=1)  # (K,) 키워드별 제품 수
+        idf = torch.log(float(len(prod_ids)) / df_k.float())         # (K,)
+        if idf_normalization == "max":
+            idf = idf / (idf.max() + 1e-8)                           # [0,1] 정규화 (Lift attr와 동일 스케일)
+        data["product", "has_kw", "keyword"].edge_attr = idf[pk_ei[1]]  # (E,) 엣지별 IDF
+
     data["ip", "has_kw", "keyword"].edge_index, drops["ik"] = _edge(ik, "ip_name", "keyword", i2i, k2i)
     data["keyword", "trend_to", "keyword"].edge_index, drops["tk"] = _edge(tk, "src_keyword", "tgt_keyword", k2i, k2i)
     data["product", "has_ip", "ip"].edge_index, drops["pi"] = _edge(pi, "ITEM_CD", "ip_name", p2i, i2i, src_norm=True)
+
+    # 2홉 메타패스 엣지 사전 구성 (exp18 — 멀티홉 1-어텐션용).
+    # P-K-P(공유 키워드 수≥thr) / P-I-P(공유 IP 수≥thr)를 product↔product 엣지로 추가 →
+    # 1-layer 모델이 어텐션 1번으로 2홉(유사 제품)에 도달. 가중은 DiffMG 게이트가 학습.
+    if add_2hop_edges:
+        import scipy.sparse as sp
+
+        def _hop2(ei, n_dst, min_shared):
+            r = ei[0].numpy(); c = ei[1].numpy()
+            A = sp.csr_matrix((np.ones(len(r), dtype=np.float32), (r, c)),
+                              shape=(len(prod_ids), int(n_dst)))
+            S = (A @ A.T).tocoo()
+            m = (S.data >= min_shared) & (S.row != S.col)
+            return torch.tensor([S.row[m].tolist(), S.col[m].tolist()], dtype=torch.long)
+
+        data["product", "sim_kw", "product"].edge_index = _hop2(
+            data["product", "has_kw", "keyword"].edge_index, len(kw_ids), hop2_kw_min_shared)
+        data["product", "sim_ip", "product"].edge_index = _hop2(
+            data["product", "has_ip", "ip"].edge_index, len(ip_ids), hop2_ip_min_shared)
+        drops["sim_kw"] = int(data["product", "sim_kw", "product"].edge_index.size(1))
+        drops["sim_ip"] = int(data["product", "sim_ip", "product"].edge_index.size(1))
 
     if include_offline_copurchase and os.path.exists(offline_copurchase_path):
         df_off = pd.read_csv(offline_copurchase_path, encoding="utf-8-sig")
@@ -174,6 +236,7 @@ def build_graph(
         "product_names": pnodes["ITEM_NM"].astype(str).tolist(),
         "edges_dropped": drops,
         "label_pos": int(y.sum()), "label_neg": int((y == 0).sum()),
+        "graph_signature": graph_signature(data_dir),   # 캐시 무효화용 그래프 지문
     }
     return data, maps
 

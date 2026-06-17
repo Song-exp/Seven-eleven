@@ -50,6 +50,11 @@ def train(config_path: str = "configs/train_config.yaml", save_dir: str = "check
         include_quick_copurchase=g.get("include_quick_copurchase", False),
         lift_norm=g.get("lift_normalization", "log1p"),
         use_lift_weights=g.get("use_lift_weights", True),
+        use_idf_keyword_weights=g.get("use_idf_keyword_weights", False),
+        idf_normalization=g.get("idf_normalization", "max"),
+        add_2hop_edges=g.get("add_2hop_edges", False),
+        hop2_kw_min_shared=g.get("hop2_kw_min_shared", 5),
+        hop2_ip_min_shared=g.get("hop2_ip_min_shared", 2),
     )
     edge_index_dict = {et: ei.to(device) for et, ei in forward_edge_index_dict(data).items()}
     raw_attrs = forward_edge_attr_dict(data)
@@ -73,6 +78,7 @@ def train(config_path: str = "configs/train_config.yaml", save_dir: str = "check
         use_diffmg=m["use_diffmg_gate"], diffmg_temperature=m["diffmg_temperature"],
         product_aggr=cfg["node_feat"]["product_aggr"],
         use_has_promo=cfg["node_feat"]["use_has_promo_feature"],
+        readout_hop_mode=m.get("readout_hop_mode", "final"),
     ).to(device)
 
     # --- 이중 Optimizer 분리 ---
@@ -131,9 +137,9 @@ def train(config_path: str = "configs/train_config.yaml", save_dir: str = "check
     torch.save({"model": model.state_dict(), "maps": maps, "config": cfg},
                os.path.join(save_dir, "hin_gnn_best.pt"))
 
-    # 최종 test 평가
+    # 최종 test 평가 (학습과 동일하게 edge_attr_dict 적용 — train/test 일관성)
     test_mask = data["product"].test_mask.to(device)
-    test_m = evaluate_mask(model, edge_index_dict, has_promo, y, test_mask, insta_m30=insta_m30)
+    test_m = evaluate_mask(model, edge_index_dict, has_promo, y, test_mask, edge_attr_dict, insta_m30=insta_m30)
     print("TEST:", {k: round(v, 4) for k, v in test_m.items()})
     return model, history, test_m
 
