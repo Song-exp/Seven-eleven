@@ -41,15 +41,15 @@ def graph_signature(data_dir: str = "data/processed/hin") -> str:
 
     pj = lambda f: os.path.join(data_dir, f)
     parts: List[str] = []
-    for f, col, is_id in [("product_nodes.parquet", "ITEM_CD", True),
-                          ("keyword_nodes.parquet", "keyword", False),
-                          ("ip_nodes.parquet", "ip_name", False)]:
+    for f, col, is_id in [("product_nodes_final.parquet", "ITEM_CD", True),
+                          ("keyword_nodes_final.parquet", "keyword", False),
+                          ("ip_nodes_final.parquet", "ip_name", False)]:
         s = pd.read_parquet(pj(f), columns=[col])[col]
         s = s.map(norm_id) if is_id else s.astype(str)
         h = hashlib.md5("|".join(s.tolist()).encode("utf-8")).hexdigest()[:12]
         parts.append(f"{f}={len(s)}:{h}")
-    for f in ["product_keyword_edges.parquet", "ip_keyword_edges.parquet",
-              "trend_keyword_edges.parquet", "product_ip_edges.parquet"]:
+    for f in ["product_keyword_edges_final.parquet", "ip_keyword_edges_final.parquet",
+              "trend_keyword_edges_final.parquet", "product_ip_edges_final.parquet"]:
         parts.append(f"{f}={pq.read_metadata(pj(f)).num_rows}")
     return hashlib.md5("||".join(parts).encode("utf-8")).hexdigest()[:16]
 
@@ -96,13 +96,13 @@ def build_graph(
     maps: product_ids/keyword_ids/ip_ids (idx->원본키), 역방향 dict 포함.
     """
     pj = lambda f: os.path.join(data_dir, f)
-    pnodes = pd.read_parquet(pj("product_nodes.parquet"))
-    knodes = pd.read_parquet(pj("keyword_nodes.parquet"))
-    inodes = pd.read_parquet(pj("ip_nodes.parquet"))
-    pk = pd.read_parquet(pj("product_keyword_edges.parquet"))
-    ik = pd.read_parquet(pj("ip_keyword_edges.parquet"))
-    tk = pd.read_parquet(pj("trend_keyword_edges.parquet"))
-    pi = pd.read_parquet(pj("product_ip_edges.parquet"))
+    pnodes = pd.read_parquet(pj("product_nodes_final.parquet"))
+    knodes = pd.read_parquet(pj("keyword_nodes_final.parquet"))
+    inodes = pd.read_parquet(pj("ip_nodes_final.parquet"))
+    pk = pd.read_parquet(pj("product_keyword_edges_final.parquet"))
+    ik = pd.read_parquet(pj("ip_keyword_edges_final.parquet"))
+    tk = pd.read_parquet(pj("trend_keyword_edges_final.parquet"))
+    pi = pd.read_parquet(pj("product_ip_edges_final.parquet"))
 
     # --- 노드 id 맵 ---
     pnodes["_id"] = pnodes["ITEM_CD"].map(norm_id)

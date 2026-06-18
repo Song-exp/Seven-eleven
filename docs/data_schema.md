@@ -142,6 +142,40 @@
 
 ---
 
+## 최종 전처리 산출물 7종 (`data/processed/hin/*_final.parquet`)  ★ 모델링 직접 입력
+
+> **2026-06-18 생성.** 위 HIN 6종 + `product_ip_edges`에 **키워드 검수표 정제 규칙**을 일괄 적용한 최종본.
+> 생성 스크립트: `src/data_builder/build_hin_network_final.py` (04 노트북과 독립, 원본 7종은 Read-Only 보존).
+> **GNN 학습·서빙은 이 `_final` 파일을 읽음** (`build_hetero_data.py`, `serve.py`). 원본(무접미사) 파일은 정제 전 상태이므로 모델링에 사용하지 않음.
+
+### 정제 규칙 소스
+- **검수표**: `data/processed/hin/keyword_nodes_검토_마무리_final.xlsx` **Sheet1**, `keyword` + `뺄 키워드` 두 컬럼만 사용
+  - ⚠ Strict OOXML 포맷이라 pandas/openpyxl이 못 읽음 → 스크립트에 zip+XML 파서 내장
+  - 규칙 의미론: `O`=제거 / 단일값=대체(rename) / 쉼표(`A, B`)=분할(split) / 빈칸=유지
+- **51개 수동 보정**(검수표 미수록 키워드, 스크립트 상수 `MANUAL_REMOVE`/`MANUAL_RENAME`):
+  - 제거 34 (분할 잔여 조각 19 + 고유명/브랜드 조각 15)
+  - 대체 3: `앙념→양념`, `케첩→케찹`, `오리지날→오리지널`
+  - 나머지 14개 유지
+- **최종 규칙 세트**: 제거 **613** / 대체 **238** / 분할 **194** → 감사 로그 `keyword_review_map_final.json` 저장
+  - 데이터 품질 자동 방어: 무변경 대체(`당→당` 등) 제거, 대체 순환(`떠먹는↔떠먹음`)은 사전순 대표값 병합
+  - 충돌 1건: `오리지널`은 Sheet1에서 제거(O)였으나 수동 대체 대상이라 **생존 우선** 처리 (제거 614→613)
+
+### 산출 파일 (원본 → final 행수)
+| 파일 | 행수 | 처리 |
+|---|---|---|
+| `product_nodes_final.parquet` | 5,033 | `키워드_final`·`키워드_개수` 정규화 갱신 |
+| `ip_nodes_final.parquet` | 281 | `키워드_final` 정규화 갱신 |
+| `keyword_nodes_final.parquet` | 2,443 → **2,039** | 최종 그래프 등장 키워드 합집합으로 재구성, 메타 left-join 이식 |
+| `product_keyword_edges_final.parquet` | 39,266 → **37,333** | 정규화 노드 리스트 explode 재생성 |
+| `ip_keyword_edges_final.parquet` | 1,642 → **1,295** | 정규화 노드 리스트 explode 재생성 |
+| `trend_keyword_edges_final.parquet` | 2,080 → **2,019** | src/tgt 양쪽 정규화 + self-loop 제거 |
+| `product_ip_edges_final.parquet` | 1,213 | 키워드 무관 → 그대로 복사 (불변) |
+
+> **무결성 보장**: 고아 엣지 0, 제거 키워드 잔존 0, 대체 소스 잔존 0 (스크립트 assert). 멱등 — 규칙 수정 후 재실행 안전.
+> **규칙 수정 위치**: Excel Sheet1 `뺄 키워드` 컬럼 또는 스크립트 상단 `MANUAL_REMOVE`/`MANUAL_RENAME` → 재실행.
+
+---
+
 ## IP 정규화 검수 파일 — `data/processed/hin/product_ip_mapping.xlsx`
 
 > IP 명칭 통일 및 제품-IP 매핑 검수 결과물 (2026-06-10). 원본 데이터 수정 없이 별도 생성.

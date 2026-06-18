@@ -13,7 +13,7 @@ import json
 import os
 from collections import defaultdict
 from functools import lru_cache
-from typing import Dict, List, Tuple
+from typing import Dict, List, Optional, Tuple
 
 import pandas as pd
 
@@ -38,7 +38,7 @@ def _data() -> Dict[str, object]:
     rdir = os.path.join(RESULTS_ROOT, SERVING_EXP)
     scores = pd.read_parquet(os.path.join(rdir, "learned_product_scores.parquet"))
     wedges = pd.read_parquet(os.path.join(rdir, "weighted_product_keyword_edges.parquet"))
-    pnodes = pd.read_parquet(os.path.join(HIN_DIR, "product_nodes.parquet"))
+    pnodes = pd.read_parquet(os.path.join(HIN_DIR, "product_nodes_final.parquet"))
     pnodes["_id"] = pnodes["ITEM_CD"].map(norm_id)
     scores["_id"] = scores["ITEM_CD"].map(norm_id)
 
@@ -112,10 +112,18 @@ def _data() -> Dict[str, object]:
             for kw, _ in lst:
                 cat_keywords[c].add(kw)
 
+    # IP → 키워드 역참조 (infer_attrs IP fallback용)
+    ip2kw: Dict[str, List[str]] = defaultdict(list)
+    for (ntype, nname), neighbors in hadj.items():
+        if ntype == "ip":
+            for ttype, tname, _ in neighbors:
+                if ttype == "keyword":
+                    ip2kw[nname].append(tname)
+
     return dict(scores=scores, prod2kw=prod2kw, kw2prod=kw2prod, success=success,
                 trend_attrs=trend_attrs, graph_kw=graph_kw, category_of=category_of,
                 deg=deg, success_label=success_label, hadj=hadj, gates=gates,
-                prod_cat=prod_cat, cat_keywords=cat_keywords)
+                prod_cat=prod_cat, cat_keywords=cat_keywords, ip2kw=dict(ip2kw))
 
 
 def _load_gates(rdir: str) -> Dict[str, float]:
@@ -170,22 +178,27 @@ def _ollama_base() -> str:
     rel = platform.uname().release.lower()
     if "microsoft" in rel or os.path.exists("/proc/sys/fs/binfmt_misc/WSLInterop"):
         return "http://localhost:11434"          # WSL 내부 실행
-    return "http://localhost:11435"              # Windows → WSL 포워딩 포트
+    return "http://localhost:11435"              # Windows → WSL Ollama (한글경로 우회)
 
 
 OLLAMA_URL = _ollama_base() + "/api/generate"
-GEMMA_MODEL = "gemma4:e4b"
+GEMMA_MODEL = "gemma4:12b"
 
 _P_EXPAND = """[SYSTEM]
 당신은 세븐일레븐 상품 네트워크의 '검색어→속성 매핑 AI'다.
-입력된 [검색어]가 의미하는 편의점 식품 속성(맛·식감·재료·컨셉)을 한국어 단어로
+입력된 [검색어]가 트렌드 키워드든 인물·IP·브랜드든 상관없이,
+그와 어울리는 편의점 식품 속성(맛·식감·재료·분위기·컨셉)을 한국어 단어로
 8~12개 폭넓게 확장하라. 네트워크 매칭용 후보이므로 풍부하게.
 [제약]
-1. 일반 속성 단어만 (매콤, 바삭, 돈까스, 자극적, 감칠맛, 달콤, 쫀득 …).
+1. 속성 단어만 (입력어 자체·인물명·브랜드명 제외).
 2. 쉼표 구분, 설명·따옴표·마침표 금지.
 [예시]
 입력: 디진다 돈까스 → 출력: 돈까스,매콤,매운맛,자극적,바삭,튀김,육즙,감칠맛,불맛,도파민,야식
 입력: 할매니얼 → 출력: 전통,뉴트로,인절미,콩고물,흑임자,쑥,팥,구수,옛날,한과
+입력: 유재석 → 출력: 친근,든든,국민,편안,가족,부드럽,대중적,따뜻,정겨운,풍성
+입력: 추성훈 → 출력: 단백질,에너지,강인,든든,볼륨,건강,남성적,자극적,짭짤,파이터
+입력: BTS → 출력: 청량,달콤,팬덤,아이돌,화려,트렌디,에너지,상큼,글로벌,젊음
+입력: 티니핑 → 출력: 달콤,귀여운,핑크,어린이,딸기,캐릭터,사탕,젤리,말랑,화사
 [USER]
 검색어: {query}"""
 
@@ -277,6 +290,8 @@ def gemma_expand(query: str) -> List[str]:
     return [t.strip() for t in out.replace("\n", " ").split(",") if t.strip()]
 
 
+
+
 # ── 1. 검색어 → 네트워크 키워드 (entry point) ────────────────────
 def infer_attrs(query: str) -> List[str]:
     """검색어를 네트워크에 존재하는 키워드(시작점)로 매핑.
@@ -295,7 +310,7 @@ def infer_attrs(query: str) -> List[str]:
             m = [a for a in attrs if a in gk]
             if m:
                 return m
-    # 임의 입력: Gemma 의미 확장 → 네트워크 키워드 매칭
+    # 미등재 입력 (트렌드·IP 모두): Gemma 단일 프롬프트로 식품 속성 확장
     expanded = gemma_expand(query)
     matched = _match_to_graph(expanded + _tokens(query), gk)
     return matched
@@ -623,7 +638,7 @@ def _greedy_walk_from(start: str, d, max_steps: int, min_support: int,
 
 
 # ── 출발점별 1-hop 네트워크 (개편된 대시보드 코어) ──────────────────────
-def _keyword_net(start: str, d, max_steps: int = 3, branch: int = 3) -> dict:
+def _keyword_net(start: str, d, max_steps: int = 3, branch: Optional[int] = None) -> dict:
     """단일 출발 키워드의 네트워크 = 가중치 최대 체인(백본) + 각 백본 노드의 1-hop 가지.
 
     노드: {id, label, type, success?, full?, layer, branch(bool), parent?}
@@ -669,13 +684,18 @@ def _keyword_net(start: str, d, max_steps: int = 3, branch: int = 3) -> dict:
         backbone.append((node["type"], nid, tgt_id, layer))
         cur = (node["type"], nid)
 
-    # 각 백본 노드의 1-hop 가지 (top-branch)
+    # 각 백본 노드의 1-hop 가지 (top-branch, 가중치 내림차순)
     backbone_set = {(t, i) for (t, i, _, _) in backbone}
     used = set(backbone_set)
     for (bt, bid, bkey, blayer) in backbone:
+        neighbors_sorted = sorted(
+            hadj.get((bt, bid), []),
+            key=lambda x: x[2] * (success.get(x[1], 0.0) if x[0] == "product" else 1.0),
+            reverse=True,
+        )
         cnt = 0
-        for ntype, nid, base_w in hadj.get((bt, bid), []):
-            if cnt >= branch:
+        for ntype, nid, base_w in neighbors_sorted:
+            if branch is not None and cnt >= branch:
                 break
             if (ntype, nid) in used:
                 continue
@@ -694,7 +714,7 @@ def _keyword_net(start: str, d, max_steps: int = 3, branch: int = 3) -> dict:
 
 
 def attr_network(seed_keywords: List[str], trend: str = "",
-                 max_steps: int = 3, branch: int = 3) -> dict:
+                 max_steps: int = 3, branch: Optional[int] = None) -> dict:
     """선택된 출발 속성(최대 3개)별 1-hop 네트워크 + 교집합 병합 종합 네트워크.
 
     반환: {trend, seeds, keyword_nets:[{start,nodes,edges}], merged:{nodes,edges,has_overlap}}
