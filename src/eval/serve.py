@@ -120,10 +120,35 @@ def _data() -> Dict[str, object]:
                 if ttype == "keyword":
                     ip2kw[nname].append(tname)
 
+    # ── 제품 메타 (브리핑 패널용): 프로모션·인스타 지표·성공소스 — ITEM_NM 키 ──
+    promo_cols = [c for c in pnodes.columns if c.startswith("promo_")]
+
+    def _promo_label(c: str) -> str:
+        s = c[len("promo_"):]
+        mm = re.match(r"\d{4}_(.+)", s)         # 'promo_0101_번들증정' → '번들증정'
+        return mm.group(1) if mm else s          # 'promo_1+1' → '1+1'
+
+    promo_labels = [_promo_label(c) for c in promo_cols]
+    pv = pnodes[promo_cols].to_numpy() if promo_cols else None
+    nm_list = pnodes["ITEM_NM"].astype(str).tolist()
+    src_list = pnodes["성공_소스"].tolist() if "성공_소스" in pnodes.columns else [None] * len(nm_list)
+    men_list = pnodes["인스타_언급횟수"].tolist() if "인스타_언급횟수" in pnodes.columns else [0] * len(nm_list)
+    m30_list = pnodes["insta_mention_30d"].tolist() if "insta_mention_30d" in pnodes.columns else [0] * len(nm_list)
+    prod_meta: Dict[str, dict] = {}
+    for i, nm in enumerate(nm_list):
+        promos = [promo_labels[j] for j in range(len(promo_cols)) if pv is not None and pv[i, j] == 1]
+        prod_meta[nm] = {
+            "promo": promos,
+            "insta_mentions": int(men_list[i]) if pd.notna(men_list[i]) else 0,
+            "insta_30d": int(m30_list[i]) if pd.notna(m30_list[i]) else 0,
+            "success_src": (str(src_list[i]) if pd.notna(src_list[i]) else None),
+        }
+
     return dict(scores=scores, prod2kw=prod2kw, kw2prod=kw2prod, success=success,
                 trend_attrs=trend_attrs, graph_kw=graph_kw, category_of=category_of,
                 deg=deg, success_label=success_label, hadj=hadj, gates=gates,
-                prod_cat=prod_cat, cat_keywords=cat_keywords, ip2kw=dict(ip2kw))
+                prod_cat=prod_cat, cat_keywords=cat_keywords, ip2kw=dict(ip2kw),
+                prod_meta=prod_meta)
 
 
 def _load_gates(rdir: str) -> Dict[str, float]:
@@ -638,6 +663,11 @@ def _greedy_walk_from(start: str, d, max_steps: int, min_support: int,
 
 
 # ── 출발점별 1-hop 네트워크 (개편된 대시보드 코어) ──────────────────────
+# 백본 노드별 1-hop 가지 기본 상한. '고소'처럼 한 키워드에 제품이 다수 연결되면
+# 네트워크가 폭발하므로, branch 미지정 시 가중치 상위 N개만 노출.
+TOP_BRANCH_1HOP = 10
+
+
 def _keyword_net(start: str, d, max_steps: int = 3, branch: Optional[int] = None) -> dict:
     """단일 출발 키워드의 네트워크 = 가중치 최대 체인(백본) + 각 백본 노드의 1-hop 가지.
 
@@ -645,6 +675,7 @@ def _keyword_net(start: str, d, max_steps: int = 3, branch: Optional[int] = None
     백본은 layer 0,1,2…; 가지(leaf)는 parent 백본 노드 아래(branch=True, parent=백본 id).
     """
     success, deg, hadj = d["success"], d["deg"], d["hadj"]
+    pmeta = d.get("prod_meta", {})
     nodes: Dict[str, dict] = {}
     edges: Dict[tuple, dict] = {}
 
@@ -657,6 +688,8 @@ def _keyword_net(start: str, d, max_steps: int = 3, branch: Optional[int] = None
                 nd["success"] = round(succ, 3)
             if full is not None:
                 nd["full"] = full
+            if ntype == "product" and full is not None and str(full) in pmeta:
+                nd.update(pmeta[str(full)])      # promo·insta_mentions·insta_30d·success_src
             nodes[key] = nd
         else:                                            # 이미 백본이면 가지로 덮지 않음
             nodes[key]["layer"] = min(nodes[key]["layer"], layer)
@@ -694,8 +727,9 @@ def _keyword_net(start: str, d, max_steps: int = 3, branch: Optional[int] = None
             reverse=True,
         )
         cnt = 0
+        cap = branch if branch is not None else TOP_BRANCH_1HOP
         for ntype, nid, base_w in neighbors_sorted:
-            if branch is not None and cnt >= branch:
+            if cnt >= cap:
                 break
             if (ntype, nid) in used:
                 continue
@@ -737,7 +771,7 @@ def attr_network(seed_keywords: List[str], trend: str = "",
     for kn in knets:
         for n in kn["nodes"]:
             if n["id"] not in m_nodes:
-                m_nodes[n["id"]] = dict(n, shared=(appear[n["id"]] >= 2))
+                m_nodes[n["id"]] = dict(n, shared=(appear[n["id"]] >= 2), deg=appear[n["id"]])
             else:
                 m_nodes[n["id"]]["layer"] = min(m_nodes[n["id"]]["layer"], n["layer"])
                 if not n.get("branch"):
@@ -764,8 +798,6 @@ def explain_attr_network(net: dict) -> str:
     merged = net.get("merged", {})
     nodes = merged.get("nodes", [])
     shared = [n["label"] for n in nodes if n.get("shared")]
-    prods = [n for n in nodes if n["type"] == "product" and n.get("success") is not None]
-    top_prod = max(prods, key=lambda n: n["success"]) if prods else None
     ips = [n["label"] for n in nodes if n["type"] == "ip"][:5]
 
     lines = [f"**'{trend}'**의 출발 속성 **{', '.join(seeds)}** 각각에서 1-hop 네트워크를 "
@@ -775,9 +807,6 @@ def explain_attr_network(net: dict) -> str:
                      f"(= 함께 밀어줄 핵심 축).")
     else:
         lines.append("- 출발 속성 간 공유 노드가 없어 각 네트워크가 **독립적**입니다.")
-    if top_prod:
-        lines.append(f"- 가장 성공 가능성 높은 인접 제품: **{top_prod['label']}** "
-                     f"(성공확률 {int(top_prod['success'] * 100)}%).")
     if ips:
         lines.append(f"- 연결된 IP: **{', '.join(ips)}**.")
     return "\n".join(lines)

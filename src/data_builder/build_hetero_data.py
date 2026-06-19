@@ -49,7 +49,8 @@ def graph_signature(data_dir: str = "data/processed/hin") -> str:
         h = hashlib.md5("|".join(s.tolist()).encode("utf-8")).hexdigest()[:12]
         parts.append(f"{f}={len(s)}:{h}")
     for f in ["product_keyword_edges_final.parquet", "ip_keyword_edges_final.parquet",
-              "trend_keyword_edges_final.parquet", "product_ip_edges_final.parquet"]:
+              "trend_keyword_edges_final.parquet", "product_ip_edges_final.parquet",
+              "ip_ip_edges_final.parquet"]:
         parts.append(f"{f}={pq.read_metadata(pj(f)).num_rows}")
     return hashlib.md5("||".join(parts).encode("utf-8")).hexdigest()[:16]
 
@@ -103,6 +104,7 @@ def build_graph(
     ik = pd.read_parquet(pj("ip_keyword_edges_final.parquet"))
     tk = pd.read_parquet(pj("trend_keyword_edges_final.parquet"))
     pi = pd.read_parquet(pj("product_ip_edges_final.parquet"))
+    ii = pd.read_parquet(pj("ip_ip_edges_final.parquet"))
 
     # --- 노드 id 맵 ---
     pnodes["_id"] = pnodes["ITEM_CD"].map(norm_id)
@@ -165,6 +167,7 @@ def build_graph(
     data["ip", "has_kw", "keyword"].edge_index, drops["ik"] = _edge(ik, "ip_name", "keyword", i2i, k2i)
     data["keyword", "trend_to", "keyword"].edge_index, drops["tk"] = _edge(tk, "src_keyword", "tgt_keyword", k2i, k2i)
     data["product", "has_ip", "ip"].edge_index, drops["pi"] = _edge(pi, "ITEM_CD", "ip_name", p2i, i2i, src_norm=True)
+    data["ip", "has_ip", "ip"].edge_index, drops["ii"]      = _edge(ii, "src_ip", "tgt_ip", i2i, i2i)
 
     # 2홉 메타패스 엣지 사전 구성 (exp18 — 멀티홉 1-어텐션용).
     # P-K-P(공유 키워드 수≥thr) / P-I-P(공유 IP 수≥thr)를 product↔product 엣지로 추가 →
