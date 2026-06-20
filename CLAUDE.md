@@ -63,3 +63,11 @@ KGAT·HGT·DiffMG 3편의 적용 논리 및 각 논문이 해결하는 문제가
 데이터 파일 커버리지, 매핑 관계, 파생 파일 구조를 분석하기 전에 반드시 `@docs/data_schema.md`를 먼저 정독하고 시작하십시오.
 * 파일 간 매핑 구조(fuzzy 매칭, bridge 테이블, 파생 관계 등)를 파악한 뒤 분석해야 "데이터가 없다"와 "연결이 안 됐다"를 혼동하는 오류를 방지할 수 있습니다.
 * 특히 `blog_keywords_with_pos`처럼 상위 파일에서 파생된 테이블은, 상위 파일(`blog_keywords_processed`)을 먼저 확인하지 않으면 커버리지를 잘못 판단할 수 있습니다.
+
+## 11. MD 처방 시스템 (EDA · 키워드 확정 · 대시보드 서빙)
+학습된 HIN-GNN로 **성공/실패/일반 키워드 장부**를 뽑고, **흥행 유발 키워드를 인과(Δprob)로 검증**해 확정하고, **대시보드로 서빙**하는 시스템 관련 작업(`src/eval/md/`, `serve.py`, `keyword_finalization`, dashboard) 시 아래 운영 가이드를 **진입점으로 먼저 참조**하십시오.
+* 모듈맵(engine/tasks/prescription/validate/inspector), 인과 killer 방법론(Purity 상관만으론 부족 → `Δprob>0`이 흥행 유발), 확정→대시보드 파이프라인(`keyword_final.csv` → `serve.py` 훅 → `export_dashboard` → `config.js`)이 정의되어 있습니다.
+* 시스템 구조가 바뀌면 이 가이드도 함께 갱신하십시오 (실험 대장 §10 규칙과 동일 정신).
+* 관련 상세: 모델 전환 `docs/final_model_leakfree_switch_plan.md` / EDA·처방 설계 `docs/eda_channel_prescription_plan.md` / v2 어댑터 `docs/v2_serving_transition.md`.
+
+@docs/md_prescription_system_guide.md

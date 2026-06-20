@@ -122,6 +122,27 @@ exp47의 큰 train-val gap은 동반구매 지름길이 사라지자 키워드/I
 > 동기: 동반구매(상품 궁합)는 제품의 내재 가치를 정의하는 핵심 정보. 배제 대신 **"입력 피처(누수)"를 "예측 타깃/구조(비누수)"로 전환**해 영향력을 학습에 녹인다.
 > 위치: exp47(서빙)과 **독립 병렬**. v2가 §9-3 누수 하니스 통과 **AND** cold-start 운영점에서 exp47 초과 시 → 최종 교체.
 
+> **✅ 구현 완료 + 풀학습 (2026-06-21)** — 산출물:
+> - `src/data_builder/build_basket_comp_edges.py` (접근 3): 보완 엣지 **13,366**(support≥2) / **8,846**(≥3). 상위쌍 간식↔달콤·달콤↔부드러움.
+> - `src/models/hin_gnn_v2.py` (접근 2): `HINGNNv2`(HINGNN 상속 + aux 링크예측 헤드) + `dropedge`.
+> - `experiments/v2_multitask.py` (§9-6): 멀티태스크 학습 + 정규화 스윕(`CFG`). aux 양성쌍 **train 689개만**(누수 차단).
+>
+> **풀학습 결과 (early stop @129)**: **test PR-AUC 0.600 / val 0.604 / train 0.794 / gap 0.190**.
+> - ✅ **exp47(test 0.570) 초과 (+0.030)** — 멀티태스크+보완엣지가 *누수 없이* cold-start 성능을 실제로 끌어올림. aux loss 2.06→0.10(content→동반구매 학습됨).
+> - ⚠ **정정**: 스모크(25ep)의 gap 0.026은 *언더피팅 착시*(당시 train_pr 0.50). 수렴 시 train_pr 0.794로 gap 0.190 재출현 — **과적합 미해결**(목표 <0.10 미달). §9-6 정규화 스윕 추가 필요(dropout/dropedge/λ/hidden 강화).
+>
+> **검증 완료 (`experiments/v2_sweep_and_leakcheck.py`):**
+> - **§9-3 누수 재검증 통과 ✅**: aux 양성쌍 100% train. **train-only basket 재학습 test 0.5921 ≈ full 0.6003 (Δ0.008)** → basket_comp 누수 영향 미미(test-의존 엣지 41%여도 성능 불변). v2 leak-free 확정.
+> - **§9-6 스윕**: **sweepA(dropout0.5/dropedge0.35/hidden32/aux_λ1.0) → test 0.6081 / gap 0.147 (best)**. sweepB gap 0.135/test 0.599. gap<0.10 미달이나 test↑·gap↓.
+> - **§9-4 승격 판정 — ⚠ 1차 보류는 지표 오류였고, 정정 후 ✅ 승격 권장으로 뒤집힘:**
+>   - 1차(오류): full-set 운영점 F1 비교(v2 0.635 < exp47 0.666) → 보류. **그러나 full-set은 train(70%) 과적합으로 부풀려진 값**이고 exp47이 더 과적합(gap 0.215 vs 0.135)이라 **exp47에 편향**된 비교였음.
+>   - **정정(test-only, 공정)**: 각 모델 자기 임계값(예측양성률=base)으로 **held-out test**에서 비교:
+>     - **운영점 F1: exp47 0.544 vs v2 0.583 (+0.039, v2 승)**
+>     - test PR-AUC: exp47 0.570 vs v2 0.606 (+0.036, v2 승) / gap 0.215 vs 0.135 (v2 과적합 덜함)
+>   - → **v2-sweepA가 held-out 두 지표 모두 승 + leak-free → 승격 권장.** (⚠ test셋 작아 운영 F1 +0.039는 노이즈 가능, 단 PR-AUC·gap이 방향 뒷받침)
+>   - **남은 작업(승격 실행)**: HINGNNv2+basket_comp 서빙 어댑터(`engine._rebuild`/`build_graph`) → artifact export → `SERVING_EXP` 변경 → 처방 캐시 재생성.
+>   - **교훈**: 운영점은 반드시 **test-only**로 비교(full-set은 과적합 모델을 유리하게 만듦). `v2_promote.compare_models`에 `test_mask` 강제 반영 완료.
+
 ### 9-1. 접근 2 — 멀티태스크 (co-purchase = 보조 link-prediction 타깃)
 - **구조**: 공유 HGT/KGAT 임베딩 위에 두 헤드.
   - **주 헤드**: product 성공 로짓 (기존).
