@@ -55,6 +55,9 @@ def train(config_path: str = "configs/train_config.yaml", save_dir: str = "check
         add_2hop_edges=g.get("add_2hop_edges", False),
         hop2_kw_min_shared=g.get("hop2_kw_min_shared", 5),
         hop2_ip_min_shared=g.get("hop2_ip_min_shared", 2),
+        add_via_ip_edges=g.get("add_via_ip_edges", False),
+        add_ipip_kw_edges=g.get("add_ipip_kw_edges", False),
+        add_trend_kw_edges=g.get("add_trend_kw_edges", False),
     )
     edge_index_dict = {et: ei.to(device) for et, ei in forward_edge_index_dict(data).items()}
     raw_attrs = forward_edge_attr_dict(data)
