@@ -20,6 +20,9 @@ graph:
   - - product
     - has_ip
     - ip
+  - - ip
+    - has_ip
+    - ip
   - - product
     - co_offline
     - product
