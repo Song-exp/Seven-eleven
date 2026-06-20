@@ -19,6 +19,9 @@ graph:
   - - product
     - has_ip
     - ip
+  - - ip
+    - has_ip
+    - ip
   include_offline_copurchase: false
   include_quick_copurchase: false
   lift_normalization: log1p

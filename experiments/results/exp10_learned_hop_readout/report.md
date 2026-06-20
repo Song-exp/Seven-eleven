@@ -12,56 +12,60 @@
 
 | split | PR-AUC | AUC-ROC | F1@best | threshold |
 |---|---|---|---|---|
-| train | 0.8096 | 0.9480 | 0.7912 | 0.6449 |
-| val | 0.7428 | 0.8654 | 0.6800 | 0.8317 |
-| test | 0.6777 | 0.8621 | 0.6685 | 0.8436 |
+| train | 0.8064 | 0.9435 | 0.7822 | 0.8422 |
+| val | 0.7381 | 0.8633 | 0.6720 | 0.8469 |
+| test | 0.6684 | 0.8560 | 0.6545 | 0.8665 |
 
 > 양성 23.6% → 랜덤 PR-AUC=0.236 기준. test PR-AUC 가 그 약 2배면 유의미한 신호.
 
 ## 3. DiffMG 관계 중요도 α_r (XAI)
 
 **layer 0**
-- `product__co_offline__product`: 0.2752
-- `product__rev_co_quick__product`: 0.1887
-- `product__rev_co_offline__product`: 0.0668
-- `keyword__rev_has_kw__product`: 0.0626
-- `product__has_kw__keyword`: 0.0535
-- `keyword__trend_to__keyword`: 0.0535
-- `keyword__rev_trend_to__keyword`: 0.0535
-- `ip__has_kw__keyword`: 0.0535
-- `keyword__rev_has_kw__ip`: 0.0535
-- `product__has_ip__ip`: 0.0535
-- `product__co_quick__product`: 0.0510
-- `ip__rev_has_ip__product`: 0.0346
+- `product__co_offline__product`: 0.3646
+- `product__rev_co_quick__product`: 0.1195
+- `keyword__rev_has_kw__product`: 0.1192
+- `product__rev_co_offline__product`: 0.0538
+- `product__co_quick__product`: 0.0364
+- `ip__rev_has_ip__product`: 0.0364
+- `product__has_ip__ip`: 0.0338
+- `ip__has_ip__ip`: 0.0338
+- `keyword__rev_has_kw__ip`: 0.0338
+- `ip__rev_has_ip__ip`: 0.0338
+- `keyword__trend_to__keyword`: 0.0338
+- `keyword__rev_trend_to__keyword`: 0.0338
+- `ip__has_kw__keyword`: 0.0338
+- `product__has_kw__keyword`: 0.0338
 
 **layer 1**
-- `keyword__rev_has_kw__product`: 0.0994
-- `product__has_kw__keyword`: 0.0826
-- `ip__has_kw__keyword`: 0.0826
-- `keyword__trend_to__keyword`: 0.0826
-- `product__has_ip__ip`: 0.0826
-- `keyword__rev_has_kw__ip`: 0.0826
-- `keyword__rev_trend_to__keyword`: 0.0826
-- `ip__rev_has_ip__product`: 0.0822
-- `product__rev_co_quick__product`: 0.0819
-- `product__co_quick__product`: 0.0815
-- `product__rev_co_offline__product`: 0.0807
-- `product__co_offline__product`: 0.0787
+- `product__has_kw__keyword`: 0.0718
+- `ip__has_kw__keyword`: 0.0718
+- `keyword__trend_to__keyword`: 0.0718
+- `product__has_ip__ip`: 0.0718
+- `ip__has_ip__ip`: 0.0718
+- `keyword__rev_has_kw__ip`: 0.0718
+- `keyword__rev_trend_to__keyword`: 0.0718
+- `ip__rev_has_ip__ip`: 0.0718
+- `product__rev_co_quick__product`: 0.0714
+- `product__co_quick__product`: 0.0714
+- `ip__rev_has_ip__product`: 0.0713
+- `product__co_offline__product`: 0.0708
+- `keyword__rev_has_kw__product`: 0.0707
+- `product__rev_co_offline__product`: 0.0700
 
 > α_r 가 거의 균등(≈1/R)하면 관계 게이트 미분화 상태 → lr_alpha↑·temperature↓ 재학습 권장.
 
 ## 4. 순회 추천 샘플 (시드 → 조합 키워드 top10)
 
-- **마라** → 도쿠시마(0.04160), 향라(0.04025), 탄탄(0.03939), 박은영(0.01902), 샹궈(0.01646), 중독성(0.01536), 피(0.01364), 짜파게티(0.01348), 적음(0.01313), 마라탕(0.00930)
-- **로제** → 바리스타룰스(0.01897), 원데이(0.01897), 늘어남(0.01707), 중독성(0.01471), 마카로니(0.01138), 고단백(0.00376), 파마산(0.00304), 누들(0.00289), 하트(0.00267), 클래식(0.00237)
-- **흑임자** → 공룡(0.01914), 알(0.00821), 시루떡(0.00400), 마카롱(0.00256), 비비빅(0.00200), 묵직함(0.00185), 파운드케이크(0.00155), 컵(0.00084), KBO(0.00078), 바나나(0.00070)
-- **단백질** → 헬스(0.00976), 엽떡(0.00947), 동물(0.00927), 베노프(0.00880), 밸런스밀(0.00694), 이지프로틴(0.00603), 아르기닌(0.00603), 편함(0.00589), 소이조이(0.00486), 테이크핏(0.00459)
-- **위스키** → 블랙서클(0.00635), 예술(0.00581), 맥캘란(0.00496), 산토리(0.00488), 티처스위스키(0.00488), 컬렉션(0.00409), 아이리쉬(0.00337), 메이커스마크(0.00301), 캐리비안(0.00290), 건조(0.00275)
-- **딸기** → 분홍(0.00433), 몽쉘(0.00412), 돌직구(0.00400), 고칸(0.00393), 4D(0.00388), 쿠냥이(0.00377), 톡핑(0.00362), 픽업(0.00290), 포장(0.00290), 데이(0.00281)
+- **마라** → 도쿠시마(0.04179), 향라(0.04103), 탄탄(0.04050), 샹궈(0.01979), 중독성(0.01545), 피(0.01374), 짜파게티(0.01371), 적음(0.01350), 곤약(0.01073), 자극적(0.01009)
+- **로제** → 늘어남(0.01885), 중독성(0.01544), 마카로니(0.01256), 고단백(0.00573), 당면(0.00547), 넘버원(0.00447), 떡볶이(0.00351), 파마산(0.00344), 분식(0.00313), 누들(0.00308)
+- **흑임자** → 공룡(0.02318), 알(0.00992), 마카롱(0.00332), 묵직함(0.00224), 파운드케이크(0.00164), 컵(0.00102), 바나나(0.00101), 바닐라(0.00074), 케이크(0.00070), 담백(0.00044)
+- **단백질** → 헬스(0.01104), 엽떡(0.01087), 동물(0.01080), 베노프(0.00969), 소이조이(0.00904), 밸런스밀(0.00761), 이지프로틴(0.00670), 아르기닌(0.00670), 테이크핏(0.00534), 닥터유(0.00494)
+- **위스키** → 블랙서클(0.00643), 예술(0.00597), 산토리(0.00504), 맥캘란(0.00475), 후드티(0.00340), 캐리비안(0.00301), 메이커스마크(0.00286), 건조(0.00278), 트레이스(0.00257), 클레이모어(0.00229)
+- **딸기** → 분홍(0.00443), 몽쉘(0.00425), 고칸(0.00404), 톡핑(0.00396), 통크(0.00375), 픽업(0.00283), 포장(0.00283), 쌍둥이(0.00224), 트위스트(0.00218), 스키틀즈(0.00217)
 
 ## 5. 영속화 산출물
 
-- `data/processed/hin/weighted_product_keyword_edges.parquet` — 가중 네트워크 (40,168행)
+- `data/processed/hin/weighted_product_keyword_edges.parquet` — 가중 네트워크 (37,333행)
 - `data/processed/hin/learned_product_scores.parquet` — product 예측확률+임베딩norm (5,033행)
 - `data/processed/hin/relation_importance.json` — 층별 α_r
 - `checkpoints/hin_gnn_best.pt` — 학습된 모델 가중치

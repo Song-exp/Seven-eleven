@@ -1,69 +1,86 @@
-# exp06 — 오프라인 + 퀵커머스 동반구매 엣지 동시 적용
-# 목적: 두 채널 Lift 가중 엣지를 함께 넣었을 때 DiffMG α_r로 채널별 기여도 비교
-# 가설: α_r(co_offline) vs α_r(co_quick) 차이 → 어떤 구매 채널 맥락이 NPD 성공에 중요한가 해석
-# 변경점: offline + quick 모두 true
-
+eval:
+  metrics:
+  - pr_auc
+  - auc_roc
+  - f1
+  primary_metric: pr_auc
 graph:
-  node_types: [product, keyword, ip]
-  edge_types:
-    - [product, has_kw, keyword]
-    - [ip, has_kw, keyword]
-    - [keyword, trend_to, keyword]
-    - [product, has_ip, ip]
-    - [product, co_offline, product]   # ← 추가
-    - [product, co_quick, product]     # ← 추가
   add_reverse_edges: true
+  edge_types:
+  - - product
+    - has_kw
+    - keyword
+  - - ip
+    - has_kw
+    - keyword
+  - - keyword
+    - trend_to
+    - keyword
+  - - product
+    - has_ip
+    - ip
+  - - ip
+    - has_ip
+    - ip
+  - - product
+    - co_offline
+    - product
+  - - product
+    - co_quick
+    - product
   include_complement_edges: false
-  include_offline_copurchase: true     # ← 변경
-  offline_copurchase_path: data/processed/offline_commerce_edge_lift_pair_out.csv
-  include_quick_copurchase: true       # ← 변경
-  quick_copurchase_path: data/processed/quick_commerce_edge_lift_pair_out.csv
+  include_offline_copurchase: true
+  include_quick_copurchase: true
   lift_normalization: log1p
-
-node_feat:
-  product_init: content_aggregation
-  product_aggr: mean
-  use_has_promo_feature: true
-  keyword_emb_init: random
-  ip_emb_init: random
-
-model:
-  hidden_dim: 128
-  num_layers: 2
-  num_heads: 4
-  dropout: 0.3
-  use_diffmg_gate: true
-  diffmg_temperature: 0.5
-
+  node_types:
+  - product
+  - keyword
+  - ip
+  offline_copurchase_path: data/processed/offline_commerce_edge_lift_pair_out.csv
+  quick_copurchase_path: data/processed/quick_commerce_edge_lift_pair_out.csv
 label:
-  target_col: 성공여부
-  positive_value: 성공
   imbalance: weighted_bce
   pos_weight: 3.24
-
-split:
-  scheme: stratified
-  stratify_by: [편의점명, 성공여부]
-  ratios: [0.70, 0.15, 0.15]
-  seed: 42
-
-train:
-  optimizer: adam
-  lr_w: 0.005
-  weight_decay_w: 0.0005
-  lr_alpha: 0.02
-  weight_decay_alpha: 0.001
-  epochs: 200
-  early_stopping_patience: 30
-  early_stopping_metric: val_pr_auc
-  device: auto
-
-eval:
-  primary_metric: pr_auc
-  metrics: [pr_auc, auc_roc, f1]
-
+  positive_value: 성공
+  target_col: 성공여부
+model:
+  diffmg_temperature: 0.5
+  dropout: 0.3
+  hidden_dim: 128
+  num_heads: 4
+  num_layers: 2
+  use_diffmg_gate: true
+node_feat:
+  ip_emb_init: random
+  keyword_emb_init: random
+  product_aggr: mean
+  product_init: content_aggregation
+  use_has_promo_feature: true
 recommend:
-  score_fn: hybrid_alpha_success
-  meta_path: [keyword, product, keyword]
-  top_k: 20
   beam_width: 50
+  meta_path:
+  - keyword
+  - product
+  - keyword
+  score_fn: hybrid_alpha_success
+  top_k: 20
+split:
+  ratios:
+  - 0.7
+  - 0.15
+  - 0.15
+  scheme: stratified
+  seed: 42
+  stratify_by:
+  - 편의점명
+  - 성공여부
+train:
+  device: auto
+  early_stopping_metric: val_pr_auc
+  early_stopping_patience: 30
+  epochs: 200
+  lr_alpha: 0.02
+  lr_w: 0.005
+  optimizer: adam
+  weight_decay_alpha: 0.001
+  weight_decay_w: 0.0005

@@ -91,6 +91,9 @@ def build_graph(
     add_2hop_edges: bool = False,
     hop2_kw_min_shared: int = 5,
     hop2_ip_min_shared: int = 2,
+    add_via_ip_edges: bool = False,
+    add_ipip_kw_edges: bool = False,
+    add_trend_kw_edges: bool = False,
 ) -> Tuple[HeteroData, Dict[str, object]]:
     """HIN parquet 로드 -> (HeteroData, maps).
 
@@ -189,6 +192,53 @@ def build_graph(
             data["product", "has_ip", "ip"].edge_index, len(ip_ids), hop2_ip_min_shared)
         drops["sim_kw"] = int(data["product", "sim_kw", "product"].edge_index.size(1))
         drops["sim_ip"] = int(data["product", "sim_ip", "product"].edge_index.size(1))
+
+    # 확장 메타패스 엣지 사전 계산 (pre-computed collapsed paths → product 1홉 도달)
+    # has_kw_via_ip  (P-I-K):    A_PI @ A_IK         — IP가 가진 키워드를 제품에 직접 연결
+    # has_kw_ipip    (P-I-IP-K): A_PI @ A_II @ A_IK  — IP-IP 경로 거쳐 연결
+    # has_kw_trend   (P-K-K):    A_PK @ A_KK         — 트렌드 키워드 속성을 제품에 연결
+    if add_via_ip_edges or add_ipip_kw_edges or add_trend_kw_edges:
+        import scipy.sparse as sp
+
+        nP, nI, nK = len(prod_ids), len(ip_ids), len(kw_ids)
+        pi_ei = data["product", "has_ip", "ip"].edge_index.numpy()
+        ik_ei = data["ip", "has_kw", "keyword"].edge_index.numpy()
+        A_PI = sp.csr_matrix(
+            (np.ones(pi_ei.shape[1], np.float32), (pi_ei[0], pi_ei[1])),
+            shape=(nP, nI))
+        A_IK = sp.csr_matrix(
+            (np.ones(ik_ei.shape[1], np.float32), (ik_ei[0], ik_ei[1])),
+            shape=(nI, nK))
+
+        if add_via_ip_edges:
+            M = (A_PI @ A_IK).tocoo()
+            ei = torch.tensor([M.row.tolist(), M.col.tolist()], dtype=torch.long)
+            data["product", "has_kw_via_ip", "keyword"].edge_index = ei
+            drops["has_kw_via_ip"] = int(ei.size(1))
+
+        if add_ipip_kw_edges:
+            ii_ei = data["ip", "has_ip", "ip"].edge_index.numpy()
+            A_II = sp.csr_matrix(
+                (np.ones(ii_ei.shape[1], np.float32), (ii_ei[0], ii_ei[1])),
+                shape=(nI, nI))
+            M = (A_PI @ A_II @ A_IK).tocoo()
+            ei = torch.tensor([M.row.tolist(), M.col.tolist()], dtype=torch.long)
+            data["product", "has_kw_ipip", "keyword"].edge_index = ei
+            drops["has_kw_ipip"] = int(ei.size(1))
+
+        if add_trend_kw_edges:
+            pk_ei = data["product", "has_kw", "keyword"].edge_index.numpy()
+            tk_ei = data["keyword", "trend_to", "keyword"].edge_index.numpy()
+            A_PK = sp.csr_matrix(
+                (np.ones(pk_ei.shape[1], np.float32), (pk_ei[0], pk_ei[1])),
+                shape=(nP, nK))
+            A_KK = sp.csr_matrix(
+                (np.ones(tk_ei.shape[1], np.float32), (tk_ei[0], tk_ei[1])),
+                shape=(nK, nK))
+            M = (A_PK @ A_KK).tocoo()
+            ei = torch.tensor([M.row.tolist(), M.col.tolist()], dtype=torch.long)
+            data["product", "has_kw_trend", "keyword"].edge_index = ei
+            drops["has_kw_trend"] = int(ei.size(1))
 
     if include_offline_copurchase and os.path.exists(offline_copurchase_path):
         df_off = pd.read_csv(offline_copurchase_path, encoding="utf-8-sig")

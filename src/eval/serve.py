@@ -18,7 +18,7 @@ from typing import Dict, List, Optional, Tuple
 import pandas as pd
 
 # ── 서빙 모델 선택 (best 교체 지점) ──────────────────────────────
-SERVING_EXP = "exp22_2hop_kw3"   # 메인 모델 확정 (멀티홉 1-어텐션 sim_kw≥3/ip≥2, test PR-AUC 0.6852 — 2홉 후보 최고)
+SERVING_EXP = "exp41_trend_kw3_ip1"   # 최종 모델 확정 (+all edges, kw=3, ip=1, h=64, test PR-AUC 0.6959)
 RESULTS_ROOT = "experiments/results"
 HIN_DIR = "data/processed/hin"
 POS_PATH = "data/processed/pos_product_features.parquet"

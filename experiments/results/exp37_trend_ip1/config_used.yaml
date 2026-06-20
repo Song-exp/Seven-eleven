@@ -1,0 +1,109 @@
+eval:
+  metrics:
+  - pr_auc
+  - auc_roc
+  - f1
+  primary_metric: pr_auc
+graph:
+  add_2hop_edges: true
+  add_ipip_kw_edges: true
+  add_reverse_edges: true
+  add_trend_kw_edges: true
+  add_via_ip_edges: true
+  edge_types:
+  - - product
+    - has_kw
+    - keyword
+  - - ip
+    - has_kw
+    - keyword
+  - - keyword
+    - trend_to
+    - keyword
+  - - product
+    - has_ip
+    - ip
+  - - ip
+    - has_ip
+    - ip
+  - - product
+    - co_offline
+    - product
+  - - product
+    - co_quick
+    - product
+  - - product
+    - sim_kw
+    - product
+  - - product
+    - sim_ip
+    - product
+  - - product
+    - has_kw_via_ip
+    - keyword
+  - - product
+    - has_kw_ipip
+    - keyword
+  - - product
+    - has_kw_trend
+    - keyword
+  hop2_ip_min_shared: 1
+  hop2_kw_min_shared: 5
+  include_offline_copurchase: true
+  include_quick_copurchase: true
+  lift_normalization: log1p
+  node_types:
+  - product
+  - keyword
+  - ip
+  offline_copurchase_path: data/processed/offline_commerce_edge_lift_pair_out.csv
+  quick_copurchase_path: data/processed/quick_commerce_edge_lift_pair_out.csv
+  use_idf_keyword_weights: false
+  use_lift_weights: false
+label:
+  imbalance: weighted_bce
+  pos_weight: 3.24
+  positive_value: 성공
+  target_col: 성공여부
+model:
+  diffmg_temperature: 0.5
+  dropout: 0.3
+  hidden_dim: 64
+  num_heads: 4
+  num_layers: 1
+  readout_hop_mode: final
+  use_diffmg_gate: true
+node_feat:
+  ip_emb_init: random
+  keyword_emb_init: random
+  product_aggr: mean
+  product_init: content_aggregation
+  use_has_promo_feature: true
+recommend:
+  beam_width: 50
+  meta_path:
+  - keyword
+  - product
+  - keyword
+  score_fn: hybrid_alpha_success
+  top_k: 20
+split:
+  ratios:
+  - 0.7
+  - 0.15
+  - 0.15
+  scheme: stratified
+  seed: 42
+  stratify_by:
+  - 편의점명
+  - 성공여부
+train:
+  device: auto
+  early_stopping_metric: val_pr_auc
+  early_stopping_patience: 30
+  epochs: 200
+  lr_alpha: 0.02
+  lr_w: 0.005
+  optimizer: adam
+  weight_decay_alpha: 0.001
+  weight_decay_w: 0.0005
