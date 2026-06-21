@@ -18,7 +18,7 @@ from typing import Dict, List, Optional, Tuple
 import pandas as pd
 
 # ── 서빙 모델 선택 (best 교체 지점) ──────────────────────────────
-SERVING_EXP = "exp41_trend_kw3_ip1"   # 최종 모델 확정 (+all edges, kw=3, ip=1, h=64, test PR-AUC 0.6959)
+SERVING_EXP = "v2_sweepA"   # 최종 채택 (HINGNNv2 멀티태스크+basket_comp, leak-free, 2026-06-21). test PR-AUC 0.608 > exp47 0.570, 과적합 gap 0.115 < 0.224. THR=0.7757. 산출물: experiments.v2_export_serving. 이전 exp47_no_copurchase / exp41(누수)은 docs/v2_serving_transition.md 참조
 RESULTS_ROOT = "experiments/results"
 HIN_DIR = "data/processed/hin"
 POS_PATH = "data/processed/pos_product_features.parquet"
@@ -80,6 +80,11 @@ def _data() -> Dict[str, object]:
                    zip(trend["트렌드_키워드"], trend["추출_속성_final"])}
 
     graph_kw = set(kw2prod.keys())
+    # ── 확정 키워드 훅 (keyword_final.csv) — include 필터 + tag 색 ──
+    #    파일 없으면 전체 통과(하위호환). 생성: src.eval.md.inspector.export_keyword_final
+    kw_include, kw_tag = _load_keyword_final()
+    if kw_include is not None:
+        graph_kw = graph_kw & kw_include
     deg = {k: len(v) for k, v in kw2prod.items()}      # 키워드별 제품 수 (빈도 보정용)
 
     # product_nodes 성공여부 라벨 (성공/실패) 맵
@@ -148,7 +153,23 @@ def _data() -> Dict[str, object]:
                 trend_attrs=trend_attrs, graph_kw=graph_kw, category_of=category_of,
                 deg=deg, success_label=success_label, hadj=hadj, gates=gates,
                 prod_cat=prod_cat, cat_keywords=cat_keywords, ip2kw=dict(ip2kw),
-                prod_meta=prod_meta)
+                prod_meta=prod_meta, kw_tag=kw_tag)
+
+
+def _load_keyword_final() -> Tuple[Optional[set], Dict[str, str]]:
+    """data/processed/hin/keyword_final.csv → (include 키워드 집합, 키워드→tag).
+
+    파일 부재 시 (None, {}) = 전체 통과(하위호환). include 컬럼 Y/N, tag=killer/mine/hub/neutral.
+    생성·갱신: `python -m src.eval.md.export_keyword_final` 또는 키워드 확정 노트북.
+    """
+    fp = os.path.join(HIN_DIR, "keyword_final.csv")
+    if not os.path.exists(fp):
+        return None, {}
+    df = pd.read_csv(fp, encoding="utf-8-sig")
+    inc = df[df["include"].astype(str).str.upper().isin(["Y", "YES", "TRUE", "1"])]
+    include_set = set(inc["keyword"].astype(str))
+    tag_map = {str(k): str(t) for k, t in zip(inc["keyword"], inc["tag"]) if str(t) != "neutral"}
+    return include_set, tag_map
 
 
 def _load_gates(rdir: str) -> Dict[str, float]:
@@ -682,6 +703,10 @@ def _keyword_net(start: str, d, max_steps: int = 3, branch: Optional[int] = None
     def reg(key, label, ntype, layer, branch_=False, parent=None, succ=None, full=None):
         if key not in nodes:
             nd = {"id": key, "label": label, "type": ntype, "layer": layer, "branch": branch_}
+            if ntype == "keyword":
+                tg = d.get("kw_tag", {}).get(label)
+                if tg:
+                    nd["tag"] = tg          # killer/mine/hub → 대시보드 색·뱃지
             if parent:
                 nd["parent"] = parent
             if succ is not None:

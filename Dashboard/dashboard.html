@@ -3,115 +3,194 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>7-Eleven NPD — 트렌드 속성 네트워크</title>
+<title>7-ELEVEN · 신상품 기획 어시스턴트</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#FAFAFB; --surface:#FFFFFF; --surface-2:#F4F5F7;
-  --border:rgba(0,0,0,0.12); --text:#16181D; --text-2:#3C4250; --text-3:#8B90A0;
-  --blue:#4A9EFF; --blue-dim:rgba(74,158,255,0.1); --blue-border:rgba(74,158,255,0.35);
-  --orange:#FF6B35; --green:#00C896; --purple:#9B7FFF;
-  --radius:12px; --radius-sm:8px;
+  --bg:#FFFFFF; --surface:#FFFFFF; --surface-2:#F7F8FA;
+  --line:#E8EAED; --line-soft:#EEF0F2;
+  --text:#1F2430; --text-2:#4B5563; --text-3:#9AA0AC; --text-4:#BFC4CC;
+  --green:#16A34A; --green-soft:#22C55E; --green-fill:#EAF8F0; --green-border:#8FE0AD;
+  --red:#EF4444; --orange:#F2994A; --ip:#F59E0B;
+  --radius:14px; --radius-sm:9px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Noto Sans KR',sans-serif;font-size:14px}
-.header{display:flex;align-items:center;gap:12px;padding:14px 24px;border-bottom:1px solid var(--border);background:var(--surface)}
-.header .logo{font-weight:700;font-size:16px}
-.header .logo b{color:var(--orange)}
-.header .sub{font-size:12px;color:var(--text-3)}
-.wrap{display:grid;grid-template-columns:330px 1fr;gap:18px;padding:18px 24px;align-items:start}
-.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px}
-.label{font-size:12px;font-weight:700;color:var(--text-2);margin-bottom:8px}
-.sblock{border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;margin-bottom:10px;background:var(--surface-2)}
-.sblock-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
-.sblock-title{font-size:11px;font-weight:700;color:var(--blue)}
-.sblock-del{font-size:11px;color:var(--text-3);cursor:pointer;border:none;background:none}
-.trend-row{display:flex;gap:6px}
-.trend-row input{flex:1;padding:8px 10px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;font-family:inherit}
-.btn{padding:8px 12px;border:none;border-radius:var(--radius-sm);background:var(--orange);color:#fff;font-weight:700;cursor:pointer;font-size:13px}
-.btn:hover{filter:brightness(1.05)}
-.btn.sec{background:var(--blue)}
-.btn.ghost{background:none;color:var(--blue);border:1px dashed var(--blue-border);width:100%;margin-bottom:10px}
-.btn:disabled{opacity:.5;cursor:not-allowed}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.chip{padding:5px 10px;border:1px solid var(--border);border-radius:16px;font-size:12px;cursor:pointer;background:var(--surface);transition:.12s}
-.chip:hover{border-color:var(--blue-border)}
-.chip.on{background:var(--blue-dim);border-color:var(--blue);color:var(--blue);font-weight:700}
-.chip.dim{opacity:.4;cursor:not-allowed}
-.sel-count{font-size:10.5px;color:var(--text-3);margin-top:6px}
-.hint{font-size:11px;color:var(--text-3);margin:6px 0 12px;line-height:1.6}
-.net-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px}
-.net-title{font-size:14px;font-weight:700}
-.legend{display:flex;gap:12px;font-size:11px;color:var(--text-2)}
-.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;vertical-align:middle}
-.mini-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
-.mtab{padding:6px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:12px;cursor:pointer;background:var(--surface-2)}
-.mtab.on{background:var(--text);color:#fff;font-weight:700}
-.mtab.all{border-color:var(--purple)}
-.mtab.all.on{background:var(--purple)}
-#net-canvas{width:100%;height:680px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface)}
-/* 전체화면: 스테이지(경로바+뷰포트) 전체를 띄움 → 패널·경로바도 함께 보임 */
-#net-stage.fs{position:fixed;inset:0;z-index:1000;background:var(--surface);padding:12px;display:flex;flex-direction:column}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);font-family:'Pretendard','Noto Sans KR',system-ui,sans-serif;font-size:14px;-webkit-font-smoothing:antialiased}
+b{color:var(--text);font-weight:700}
+
+/* ── 헤더 ─────────────────────────────────────── */
+.header{display:flex;align-items:center;gap:18px;padding:18px 32px;border-bottom:1px solid var(--line);background:#fff}
+.brand{display:flex;align-items:center;gap:18px}
+.logo7e{font-family:'Arial Black','Helvetica Neue',Arial,sans-serif;font-weight:900;font-size:27px;font-style:italic;letter-spacing:-1.5px;line-height:1;white-space:nowrap}
+.logo7e .s7{color:#F47216}
+.logo7e .se{color:#1C8A47}
+.logo7e .sn{color:#ED1B2E}
+.logo7e .reg{font-size:9px;vertical-align:super;color:#1C8A47;font-style:normal;margin-left:1px;letter-spacing:0}
+.app-title{font-size:22px;font-weight:800;color:var(--text);letter-spacing:-.4px}
+.head-meta{margin-left:auto;color:var(--text-3);font-size:15px;font-weight:500;white-space:nowrap}
+.head-meta .arrow{margin:0 4px;color:var(--text-4)}
+.head-meta #serving-tag{font-size:12px;margin-left:8px;color:var(--text-4)}
+
+/* ── 레이아웃 ─────────────────────────────────── */
+.wrap{display:grid;grid-template-columns:300px 1fr;min-height:calc(100vh - 71px)}
+.col-left{padding:26px 24px;border-right:1px solid var(--line)}
+.col-right{padding:26px 32px}
+
+/* ── 좌: 검색 패널 ───────────────────────────── */
+.left-title{font-size:17px;font-weight:800;color:var(--text);margin-bottom:8px;letter-spacing:-.3px}
+.left-sub{font-size:13px;color:var(--text-3);line-height:1.75;margin-bottom:18px}
+.sblock{background:var(--surface-2);border:1px solid var(--line-soft);border-radius:14px;padding:18px;margin-bottom:14px}
+.sblock-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.sblock-title{font-size:14px;font-weight:700;color:var(--text)}
+.sblock-del{font-size:12px;color:var(--text-3);cursor:pointer;border:none;background:none;font-family:inherit}
+.sblock-del:hover{color:var(--red)}
+.trend-row{display:flex;gap:8px}
+.trend-row input{flex:1;min-width:0;padding:9px 12px;border:1px solid var(--line);border-radius:9px;font-size:13px;font-family:inherit;background:#fff;color:var(--text)}
+.trend-row input::placeholder{color:var(--text-4)}
+.trend-row input:focus{outline:none;border-color:var(--green-soft);box-shadow:0 0 0 3px rgba(34,197,94,.12)}
+
+.btn{padding:9px 16px;border:none;border-radius:9px;background:var(--orange);color:#fff;font-weight:700;cursor:pointer;font-size:13px;font-family:inherit;transition:.12s}
+.btn:hover{filter:brightness(1.04)}
+.btn:disabled{opacity:.45;cursor:not-allowed;filter:none}
+.btn.sec{background:var(--green)}
+.btn.ghost{background:none;color:var(--green);border:1px dashed var(--green-border);width:100%;margin:6px 0 12px;padding:11px;border-radius:11px;font-weight:700}
+.btn.ghost:hover{background:var(--green-fill);filter:none}
+#gen-btn{width:100%;padding:13px;border-radius:11px;font-size:14px}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{padding:7px 14px;border:1px solid var(--line);border-radius:18px;font-size:13px;cursor:pointer;background:#fff;color:var(--text-3);font-weight:500;transition:.12s}
+.chip:hover{border-color:var(--green-border);color:var(--green)}
+.chip.on{background:var(--green-fill);border-color:var(--green-soft);color:var(--green);font-weight:600}
+.chip.dim{opacity:.45;cursor:not-allowed}
+.chip.dim:hover{border-color:var(--line);color:var(--text-3)}
+.sel-count{font-size:11px;color:var(--text-3);margin-top:9px}
+
+/* ── 우: 네트워크 패널 ───────────────────────── */
+.right-title{font-size:16px;font-weight:700;color:var(--green);line-height:1.55;margin-bottom:16px;letter-spacing:-.2px}
+.right-title.muted{color:var(--text-3);font-weight:500}
+.right-title.muted b{color:var(--text-2)}
+.right-title b{color:var(--green);font-weight:800}
+
+.mini-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.mtab{padding:8px 16px;border:1px solid var(--line);border-radius:9px;font-size:13px;cursor:pointer;background:#fff;color:var(--text-2);font-weight:500;font-family:inherit;transition:.12s}
+.mtab:hover{border-color:var(--green-border)}
+.mtab.on{background:var(--green-fill);border-color:var(--green-soft);color:var(--green);font-weight:700}
+.mtab.all.on{background:var(--red);border-color:var(--red);color:#fff}
+.mtab.all:hover{border-color:var(--red)}
+
+.insight-card{border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:24px;background:#fff}
+.insight-head{font-size:14px;font-weight:700;color:var(--text);margin-bottom:10px}
+#net-explain{font-size:13.5px;line-height:1.9;color:var(--text-2)}
+#net-explain b{color:var(--text);font-weight:700}
+#net-explain.muted{color:var(--text-3)}
+
+.net-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+.net-title{font-size:16px;font-weight:800;color:var(--text);letter-spacing:-.3px}
+.net-head-right{display:flex;align-items:center;gap:16px}
+.legend{display:flex;align-items:center;gap:14px;font-size:12px;color:var(--text-2)}
+.legend-line{display:flex;align-items:center;gap:6px}
+.legend-line svg{flex:none}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.fs-btn{padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--text-2);font-size:12px;cursor:pointer;font-family:inherit}
+.fs-btn:hover{border-color:var(--green-border);color:var(--green)}
+
+#net-canvas{width:100%;height:640px;border:1px solid var(--line);border-radius:14px;background:#fff;background-image:radial-gradient(var(--line-soft) 1px,transparent 1px);background-size:22px 22px}
+.placeholder{color:var(--text-3);text-align:center;padding:200px 0;font-size:13px}
+
+/* 전체화면: 스테이지(경로바+뷰포트) 전체를 띄움 */
+#net-stage{position:relative}
+#net-stage.fs{position:fixed;inset:0;z-index:1000;background:#fff;padding:14px;display:flex;flex-direction:column}
 #net-stage.fs #net-viewport{flex:1;min-height:0}
 #net-stage.fs #net-canvas{height:100%;border-radius:0}
-#net-explain{margin-top:12px;font-size:12.5px;line-height:1.8;color:var(--text-2)}
-.placeholder{color:var(--text-3);text-align:center;padding:60px 0;font-size:13px}
-b{color:var(--text)}
+
 /* 경로 추적기 */
-#path-tracker{display:none;align-items:center;gap:4px;flex-wrap:wrap;margin-bottom:10px;padding:8px 10px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:12px}
+#path-tracker{display:none;align-items:center;gap:4px;flex-wrap:wrap;margin-bottom:12px;padding:9px 11px;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius-sm);font-size:12px}
 #path-tracker .pt-lab{color:var(--text-3);font-weight:700;margin-right:4px}
-#path-tracker .pt-node{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:14px;background:var(--surface);border:1px solid var(--border);font-weight:700}
+#path-tracker .pt-node{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:14px;background:#fff;border:1px solid var(--line);font-weight:700}
 #path-tracker .pt-node i{width:8px;height:8px;border-radius:50%}
 #path-tracker .pt-w{color:var(--orange);font-size:11px;font-weight:700;padding:0 2px}
+
 /* 브리핑 패널 */
-#net-stage{position:relative}
 #net-viewport{position:relative}
-.brief{position:absolute;top:0;right:0;width:300px;height:100%;background:var(--surface);border-left:1px solid var(--border);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:16px 16px 16px;overflow:auto;box-shadow:-6px 0 16px rgba(0,0,0,.07);font-size:12.5px}
+.brief{position:absolute;top:0;right:0;width:300px;height:100%;background:#fff;border-left:1px solid var(--line);border-radius:0 var(--radius) var(--radius) 0;padding:18px;overflow:auto;box-shadow:-8px 0 20px rgba(0,0,0,.06);font-size:12.5px}
 .brief.hidden{display:none}
-.brief .cls{position:absolute;top:10px;right:12px;cursor:pointer;color:var(--text-3);font-size:15px;line-height:1}
-.brief h4{margin:0 0 2px;font-size:15px}
-.brief .sub{color:var(--text-3);font-size:11px;margin-bottom:12px}
-.brief .sec{font-weight:700;font-size:11px;color:var(--text-3);margin:14px 0 6px;text-transform:uppercase;letter-spacing:.04em}
-.brief .nb{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:4px 0;border-bottom:1px dashed var(--border)}
-.brief .nb .nm{display:flex;align-items:center;gap:6px}
+.brief .cls{position:absolute;top:12px;right:14px;cursor:pointer;color:var(--text-3);font-size:15px;line-height:1}
+.brief h4{margin:0 0 3px;font-size:16px;font-weight:800}
+.brief .sub{color:var(--text-3);font-size:12px;margin-bottom:14px;line-height:1.6}
+.brief .sec{font-weight:700;font-size:11.5px;color:var(--text-3);margin:16px 0 8px;letter-spacing:.01em}
+.brief .nb{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--line-soft)}
+.brief .nb:last-child{border-bottom:none}
+.brief .nb .nm{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text)}
 .brief .nb i{width:8px;height:8px;border-radius:50%;flex:none}
-.brief .nb .w{color:var(--orange);font-weight:700;font-size:11px}
-.brief .row{margin:5px 0;color:var(--text-2);line-height:1.6}
+.brief .nb-right{display:flex;align-items:center;gap:7px;flex:none}
+.brief .strength-bar{display:flex;gap:2px}
+.brief .strength-bar span{width:6px;height:9px;border-radius:2px;background:var(--line)}
+.brief .strength-bar span.fill-strong{background:var(--green)}
+.brief .strength-bar span.fill-medium{background:#F59E0B}
+.brief .strength-bar span.fill-weak{background:var(--text-4)}
+.brief .strength-label{font-size:10.5px;font-weight:700;width:30px;text-align:right}
+.brief .strength-label.strong{color:var(--green)}
+.brief .strength-label.medium{color:#F59E0B}
+.brief .strength-label.weak{color:var(--text-3)}
+.brief .empty-note{font-size:12.5px;color:var(--text-3);line-height:1.7;padding:6px 0}
+.brief .row{margin:6px 0;color:var(--text-2);line-height:1.65;font-size:13px}
 .brief .row b{color:var(--text)}
-.brief .tag{display:inline-block;padding:2px 7px;margin:2px 3px 0 0;border-radius:10px;background:var(--surface-2);border:1px solid var(--border);font-size:11px}
+.brief .tag{display:inline-block;padding:3px 9px;margin:2px 4px 0 0;border-radius:11px;background:var(--surface-2);border:1px solid var(--line);font-size:11.5px;color:var(--text-2)}
+
+@media (max-width:860px){
+  .wrap{grid-template-columns:1fr}
+  .col-left{border-right:none;border-bottom:1px solid var(--line)}
+  .head-meta{display:none}
+}
 </style>
 </head>
 <body>
 <header class="header">
-  <div class="logo">7-ELEVEN <b>NPD</b> · 트렌드 속성 네트워크</div>
-  <div class="sub" id="serving-tag"></div>
+  <div class="brand">
+    <div class="logo7e" aria-label="7-ELEVEN"><span class="s7">7</span><span class="se">-ELEVE</span><span class="sn">n</span><span class="reg">&reg;</span></div>
+    <h1 class="app-title">신상품 기획 어시스턴트</h1>
+  </div>
+  <div class="head-meta">2025년 네트워크 기반<span class="arrow">&rarr;</span>2026년 1월 기획 적용<span id="serving-tag"></span></div>
 </header>
 
 <div class="wrap">
   <!-- 좌: 검색 블록들 -->
-  <div class="panel">
-    <div class="label">검색어별 트렌드 추론 → 출발점 선택 (검색당 최대 3)</div>
-    <div class="hint">검색어를 추론해 나온 속성 중 출발점을 고르세요. <b>+ 검색어 추가</b>로 검색어를 여러 개 둘 수 있고, 각 검색어가 시트 탭이 됩니다.</div>
+  <div class="col-left">
+    <div class="left-title">검색어별 트렌드 추론</div>
+    <div class="left-sub">검색어를 추론해 나온 속성 중 출발점을 고르세요. 검색어 추가로 검색어를 여러 개 둘 수 있고, 각 검색어가 시트 탭이 됩니다.</div>
     <div id="blocks"></div>
     <button class="btn ghost" onclick="addBlock()">+ 검색어 추가</button>
-    <button class="btn" id="gen-btn" style="width:100%" onclick="runNetworks()" disabled>네트워크 생성 →</button>
+    <button class="btn" id="gen-btn" onclick="runNetworks()" disabled>네트워크 생성</button>
   </div>
 
   <!-- 우: 네트워크 -->
-  <div class="panel">
+  <div class="col-right">
+    <div class="right-title muted" id="right-title">검색어를 추론하고 출발 속성을 선택한 뒤 <b>네트워크 생성</b>을 눌러주세요.</div>
+
+    <div class="mini-tabs" id="mini-tabs"></div>
+
+    <div class="insight-card">
+      <div class="insight-head">📌 AI 요약 인사이트</div>
+      <div id="net-explain" class="muted">출발 속성을 선택하고 네트워크를 생성하면, 검색어들이 공유하는 핵심 속성과 연결 구조 요약이 여기에 표시됩니다.</div>
+    </div>
+
     <div class="net-head">
-      <div class="net-title">출발 속성 1-hop 네트워크</div>
-      <div style="display:flex;align-items:center;gap:12px">
+      <div class="net-title">네트워크</div>
+      <div class="net-head-right">
         <div class="legend">
-          <span><i style="background:var(--blue)"></i>속성 키워드</span>
-          <span><i style="background:var(--orange)"></i>제품</span>
-          <span><i style="background:var(--purple)"></i>IP</span>
+          <span><i style="background:var(--green)"></i>속성 키워드</span>
+          <span><i style="background:var(--red)"></i>제품</span>
+          <span><i style="background:var(--ip)"></i>IP</span>
+          <span class="legend-line"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="1" y1="5" x2="21" y2="5" stroke="#5B6270" stroke-width="3.5" stroke-linecap="round"/></svg>선이 굵을수록 연결이 강함</span>
         </div>
-        <button class="mtab" id="fs-btn" onclick="toggleFS()">⛶ 전체화면</button>
+        <button class="fs-btn" id="fs-btn" onclick="toggleFS()">⛶ 전체화면</button>
       </div>
     </div>
-    <div class="mini-tabs" id="mini-tabs"></div>
+
     <div id="net-stage">
       <div id="path-tracker"></div>
       <div id="net-viewport">
@@ -119,23 +198,36 @@ b{color:var(--text)}
         <div id="brief-panel" class="brief hidden"></div>
       </div>
     </div>
-    <div id="net-explain"></div>
   </div>
 </div>
 
 <script src="config.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="vendor/vis-network.min.css" />
+<script src="vendor/vis-network.min.js"></script>
 <script>
 const DATA = window.DASHBOARD_DATA || {};
 const API_BASE = window.DASHBOARD_API || 'http://localhost:8000';
-const COL = { keyword:'#4A9EFF', product:'#FF6B35', ip:'#9B7FFF' };
+const COL = { keyword:'#16A34A', product:'#EF4444', ip:'#F59E0B' };
 let UID = 0;
 const STATE = { blocks:[], view:null };  // blocks: {id,trend,attrs,selected,net}
 
-document.getElementById('serving-tag').textContent = (DATA._meta && DATA._meta.serving_exp) ? 'model: '+DATA._meta.serving_exp : '';
+document.getElementById('serving-tag').textContent = (DATA._meta && DATA._meta.serving_exp) ? ' · model: '+DATA._meta.serving_exp : '';
 
 function mdToHtml(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>'); }
+
+// 우측 상단 동적 제목
+function setRightTitle(trends){
+  const el=document.getElementById('right-title');
+  if(!trends || !trends.length){
+    el.classList.add('muted');
+    el.innerHTML='검색어를 추론하고 출발 속성을 선택한 뒤 <b>네트워크 생성</b>을 눌러주세요.';
+    return;
+  }
+  el.classList.remove('muted');
+  const t=trends.map(x=>`<b>${_esc(x)}</b>`).join(' · ');
+  el.innerHTML=`${t} 키워드를 바탕으로 신상품 기획 도출 인사이트를 제공해드려요.`;
+}
+
 async function apiInfer(trend){ try{const r=await fetch(`${API_BASE}/infer`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({trend})});return r.ok?(await r.json()).attrs:[];}catch(e){return [];} }
 async function apiNetwork(trend,attrs){ try{const r=await fetch(`${API_BASE}/network`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({trend,attrs})});return r.ok?await r.json():null;}catch(e){return null;} }
 
@@ -243,6 +335,7 @@ async function runNetworks(){
   const active=STATE.blocks.filter(b=>b.selected.length>0);
   if(!active.length) return;
   const cv=document.getElementById('net-canvas'); cv.innerHTML='<div class="placeholder">⏳ 네트워크 생성 중…</div>';
+  document.getElementById('net-explain').classList.remove('muted');
   document.getElementById('net-explain').innerHTML='';
   for(const b of active){
     const res=await getNetwork(b.trend,b.selected);
@@ -267,7 +360,8 @@ function buildTabs(ok){
   if(ok.length>1){
     const ga=grandMerge(ok);
     const t=document.createElement('div'); t.className='mtab all';
-    t.textContent='전체종합'+(ga.has_overlap?' (연결됨)':' (분리)');
+    t.textContent='전체';
+    t.title = ga.has_overlap ? '검색어들이 공유 노드로 연결됨' : '검색어 간 공유 노드 없음 (분리)';
     t.onclick=()=>{STATE.view='__all__';renderView();}; tabs.appendChild(t);
   }
 }
@@ -281,6 +375,7 @@ function renderView(){
   if(STATE.view==='__all__'){
     const ga=grandMerge(ok);
     renderForce(ga, ga.seedSet);
+    setRightTitle(ok.map(b=>b.trend));
     const shared=ga.nodes.filter(n=>n.shared).map(n=>n.label);
     document.getElementById('net-explain').innerHTML=mdToHtml(
       `검색어 **${ok.map(b=>b.trend).join(', ')}**의 종합망을 합쳤습니다 (노드 ${ga.nodes.length}). `+
@@ -289,6 +384,7 @@ function renderView(){
     const b=ok.find(x=>x.id===STATE.view); if(!b) return;
     const m=b.net.net.merged;
     renderForce({nodes:m.nodes,edges:m.edges}, new Set((b.net.net.seeds||[]).map(s=>'keyword\x01'+s)));
+    setRightTitle([b.trend]);
     document.getElementById('net-explain').innerHTML=mdToHtml(b.net.explain);
   }
 }
@@ -327,41 +423,50 @@ function renderForce(g, seedSet){
   _children = {}; _expanded = new Set(); _nodeMeta = {};
   g.nodes.forEach(n=>{ _nodeMeta[n.id]=n; if(n.branch && n.parent){ (_children[n.parent]=_children[n.parent]||[]).push(n.id); } });
 
+  const DARK = { keyword:'#0E7A38', product:'#C81E1E', ip:'#B45309' };
+  const maxEdgeW = Math.max(0.0001, ...g.edges.map(e=>e.weight||0));
+
   const visNodes = g.nodes.map(n=>{
     const c = COL[n.type]||'#8B90A0';
+    const dk = DARK[n.type]||'#5B6270';
     const isSeed = seedSet && seedSet.has(n.id);
     const deg = n.deg || (n.shared ? 2 : 1);   // 연결 정도 = 이 노드가 등장한 서브망 수
-    const lbl = n.label.length>8 ? n.label.slice(0,8)+'…' : n.label;
+    const lbl = n.label.length>9 ? n.label.slice(0,9)+'…' : n.label;
     let label = lbl;
     if(n.type==='product' && n.success!=null) label += '\n'+Math.round(n.success*100)+'%';
-    if(isSeed) label += '\n출발';
+    if(isSeed) label += '\n● 출발';
     const color = {
-      background: c+(isSeed?'55':'22'),
-      border: c,
-      highlight:{ background:c+'88', border:c },
-      hover:{ background:c+'44', border:c },
+      background: c,
+      border: isSeed ? '#1F2430' : dk,
+      highlight:{ background:c, border:'#1F2430' },
+      hover:{ background:c, border:'#1F2430' },
     };
-    const borderWidth = isSeed ? 3 : (deg>=2 ? 2.5 : 1.3);
-    const font = { color: n.type==='product' ? '#8B90A0' : c, size:(isSeed?18:(deg>=2?Math.min(24,14+deg*3):14)), face:'DM Mono,monospace', multi:true };
+    const borderWidth = isSeed ? 4 : (deg>=2 ? 3 : 2);
+    const font = { color:(isSeed?'#1F2430':dk), size:(isSeed?15:(deg>=2?Math.min(19,13+deg*2):13)), face:'Pretendard, sans-serif', bold:(isSeed?{color:'#1F2430'}:{color:dk}), strokeWidth:4, strokeColor:'#FFFFFF' };
     _origNodes[n.id] = { color: JSON.parse(JSON.stringify(color)), borderWidth, font: JSON.parse(JSON.stringify(font)) };
     const hasKids = !!(_children[n.id] && _children[n.id].length);
     return {
       id: n.id, label: label + (hasKids ? '  ⊕' : ''),
       title: (n.full||n.label)+(n.shared?' (공유)':'')+(hasKids?' · 더블클릭: 1-hop 펼침/접기':''),
       level: n.layer || 0,
-      size: isSeed ? 30 : (deg>=2 ? 12+deg*6 : (n.type==='product' ? 11 : 13)),
+      size: isSeed ? 36 : (deg>=2 ? 18+deg*5 : (n.type==='product' ? 17 : 19)),
       color, borderWidth,
-      shapeProperties: n.shared ? { borderDashes:[2,1.5] } : {},
+      shapeProperties: n.shared ? { borderDashes:[3,2] } : {},
+      shadow:{ enabled:true, color:'rgba(0,0,0,0.12)', size:6, x:0, y:2 },
       font,
     };
   });
 
   const visEdges = g.edges.map((e,i)=>{
-    const color = { color:'#8B90A0', opacity: 0.4 };
-    const width = e.branch ? 1 : 1.4;
+    const w = e.weight||0;
+    const ratio = maxEdgeW>0 ? Math.min(1, w/maxEdgeW) : 0;
+    const width = e.branch ? 1.2 : (1.6 + ratio*4.4);          // 1.6 ~ 6px, 강한 연결일수록 굵게
+    const baseColor = e.branch ? '#D5D9E0' : (ratio>=0.5 ? '#5B6270' : '#9CA3AF');
+    const opacity = e.branch ? 0.55 : (0.45 + ratio*0.5);       // 0.45 ~ 0.95
+    const color = { color:baseColor, opacity };
     const dashes = e.branch ? [3,2] : false;
     _origEdges[i] = { color: JSON.parse(JSON.stringify(color)), width, dashes };
-    return { id:i, from:e.src, to:e.tgt, _weight:e.weight||0, color, width, dashes,
+    return { id:i, from:e.src, to:e.tgt, _weight:w, color, width, dashes,
              smooth:{type:'cubicBezier', forceDirection:'horizontal', roundness:0.4} };
   });
 
@@ -474,15 +579,14 @@ function _highlightGreedyPath(startId){
   _visNodeDS.update(_visNodeDS.get().map(n => {
     if(pNodeSet.has(n.id)){
       const orig = _origNodes[n.id];
-      const c = orig.color.border;
-      return { id:n.id, color:{ background:c+'CC', border:c, highlight:orig.color.highlight, hover:orig.color.hover }, borderWidth: orig.borderWidth+2, opacity:1 };
+      return { id:n.id, color:{ background:orig.color.background, border:'#1F2430', highlight:orig.color.highlight, hover:orig.color.hover }, borderWidth: orig.borderWidth+2, opacity:1 };
     }
-    return { id:n.id, ...(_origNodes[n.id]||{}), opacity:0.45 };
+    return { id:n.id, ...(_origNodes[n.id]||{}), opacity:0.28 };
   }));
   _visEdgeDS.update(_visEdgeDS.get().map(e => {
     if(pEdgeSet.has(e.id))
-      return { id:e.id, color:{ color:'#FF6B35', opacity:1.0 }, width:4, dashes:false };
-    return { id:e.id, ...(_origEdges[e.id]||{}), color:{ color:'#8B90A0', opacity:0.15 } };
+      return { id:e.id, color:{ color:'#F2994A', opacity:1.0 }, width:5.5, dashes:false };
+    return { id:e.id, ...(_origEdges[e.id]||{}), color:{ color:'#C7CCD4', opacity:0.18 } };
   }));
 }
 
@@ -514,35 +618,57 @@ function _neighbors(id){
   out.sort((a,b)=>b.w-a.w);
   return out;
 }
+function _strengthOf(w, maxW){
+  if(w<=0.005) return null; // 사실상 연결 없음 → 표시 안 함
+  const ratio = maxW>0 ? w/maxW : 0;
+  if(ratio>=0.66) return 'strong';
+  if(ratio>=0.33) return 'medium';
+  return 'weak';
+}
+const _strengthText={strong:'강함',medium:'보통',weak:'약함'};
 function _renderPathTracker(id){
   const el=document.getElementById('path-tracker');
   const path=_greedyPath(id);
   if(path.length<2){ el.style.display='none'; return; }
+  // 0.00 가중치(사실상 무연결) 구간에서 경로를 끊는다 — 약한 연결로 무관한 군집까지 이어 보이지 않도록
+  let cut=path.length;
+  for(let i=0;i<path.length-1;i++){
+    if(_edgeW(path[i],path[i+1])<=0.005){ cut=i+1; break; }
+  }
+  const trimmed = path.slice(0,cut);
+  if(trimmed.length<2){ el.style.display='none'; return; }
   let html='<span class="pt-lab">경로 추적기</span>';
-  for(let i=0;i<path.length;i++){
-    const m=_nodeMeta[path[i]]; if(!m) continue;
-    const cur = path[i]===id ? ' style="outline:2px solid var(--orange);outline-offset:1px"' : '';
+  for(let i=0;i<trimmed.length;i++){
+    const m=_nodeMeta[trimmed[i]]; if(!m) continue;
+    const cur = trimmed[i]===id ? ' style="outline:2px solid var(--orange);outline-offset:1px"' : '';
     html+=`<span class="pt-node"${cur}>${_dot(m.type)}${_esc(m.label)}</span>`;
-    if(i<path.length-1) html+=`<span class="pt-w">─ α${_edgeW(path[i],path[i+1]).toFixed(2)} →</span>`;
+    if(i<trimmed.length-1) html+=`<span class="pt-w">→</span>`;
   }
   el.innerHTML=html; el.style.display='flex';
 }
 function _renderBrief(id,m){
-  const nb=_neighbors(id);
+  const nbAll=_neighbors(id);
+  // 0.00(사실상 무연결) 이웃은 목록에서 제외 — MD에게 실제 연결만 보여준다
+  const nb=nbAll.filter(x=>x.w>0.005);
   const ofType=t=>nb.filter(x=>x.node.type===t);
   const cntP=ofType('product').length, cntI=ofType('ip').length, cntK=ofType('keyword').length;
   const typeLab={keyword:'속성 키워드',product:'제품',ip:'IP'}[m.type]||m.type;
   let h=`<span class="cls" onclick="_hideBrief()">✖</span>`;
   h+=`<h4>${_dot(m.type)} ${_esc(m.full||m.label)}</h4>`;
-  h+=`<div class="sub">${typeLab} · 1-hop 제품 ${cntP} · IP ${cntI} · 키워드 ${cntK}</div>`;
-  // 가중치 상위 이웃
-  h+=`<div class="sec">가중치 상위 이웃</div>`;
+  const parts=[];
+  if(cntP) parts.push(`제품 ${cntP}개`); if(cntI) parts.push(`IP ${cntI}개`); if(cntK) parts.push(`키워드 ${cntK}개`);
+  h+=`<div class="sub">${typeLab}${parts.length?' · 실제로 연결된 '+parts.join(' · '):' · 뚜렷하게 연결된 항목 없음'}</div>`;
+  // 가중치 상위 이웃 → 연결 강도
+  h+=`<div class="sec">연결이 강한 순서</div>`;
   if(nb.length){
+    const maxW = nb[0].w;
     nb.slice(0,6).forEach(x=>{
-      const s=(x.node.type==='product'&&x.node.success!=null)?` <span style="color:var(--text-3)">성공 ${Math.round(x.node.success*100)}%</span>`:'';
-      h+=`<div class="nb"><span class="nm">${_dot(x.node.type)}${_esc(x.node.label)}${s}</span><span class="w">α${x.w.toFixed(2)}</span></div>`;
+      const s=(x.node.type==='product'&&x.node.success!=null)?` <span style="color:var(--text-3)">· 성공 ${Math.round(x.node.success*100)}%</span>`:'';
+      const lv=_strengthOf(x.w,maxW)||'weak';
+      const bars=[1,2,3].map(n=>`<span class="${n<=({weak:1,medium:2,strong:3}[lv])?('fill-'+lv):''}"></span>`).join('');
+      h+=`<div class="nb"><span class="nm">${_dot(x.node.type)}${_esc(x.node.label)}${s}</span><span class="nb-right"><span class="strength-bar">${bars}</span><span class="strength-label ${lv}">${_strengthText[lv]}</span></span></div>`;
     });
-  } else h+=`<div class="row" style="color:var(--text-3)">연결된 이웃 없음</div>`;
+  } else h+=`<div class="empty-note">이 항목과 뚜렷하게 연결된 제품·키워드·IP가 없어요. 그래프에 보이는 다른 연결은 거의 의미 없는 수준(연결 강도 0에 가까움)이라 제외했습니다.</div>`;
   // 타입별 브리핑
   h+=`<div class="sec">📊 브리핑</div>`;
   const ipTags=ofType('ip').map(x=>`<span class="tag">${_esc(x.node.label)}</span>`).join('');
@@ -562,6 +688,7 @@ function _renderBrief(id,m){
   el.innerHTML=h; el.classList.remove('hidden');
 }
 
+setRightTitle(null);
 addBlock();  // 시작 시 검색어 1개
 </script>
 </body>
