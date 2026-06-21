@@ -35,8 +35,9 @@ pd.set_option("display.max_rows", 200)
 from src.eval.md.engine import MDEngine, EngineConfig
 from src.eval.md import inspector as I
 from src.eval.md.inspector import keyword_evidence, evidence_table, ledger_keywords, export_keyword_final
+from src.eval.md.inspector import keyword_context_breakdown, keyword_disentangle
 
-MODEL = "exp47"   # "exp47" | "v2_sweepA"  (장부는 모델 거의 불변 — 보통 exp47로 충분)
+MODEL = "v2_sweepA"   # "v2_sweepA" | "exp47"  (최종 채택=v2_sweepA. 장부는 모델 거의 불변)
 print("model:", MODEL)"""))
 
 cells.append(md("## 1. 엔진 로드 + 장부 (파라미터는 EngineConfig)"))
@@ -69,6 +70,20 @@ e = keyword_evidence(eng, SEED)
 for k,v in e.items():
     if k != "예시제품": print(f"  {k}: {v}")
 display(e["예시제품"])"""))
+
+cells.append(md(r"""## 3.5 캐리어별 절제 분해 — 상호작용(modifier) 판정
+
+`keyword_evidence`의 Δprob는 캐리어 평균이라 상호작용을 뭉갠다. 여기선 **실제 보유 제품마다** 키워드를 빼본 기여(`contrib`)를 분리 → "비스킷엔 +, 캔디엔 ≈0" 같은 조건부 효과가 드러난다.
+- `contrib` ≫ 0: 이 제품에서 진짜 일함 / ≈0: 무의미 / <0: 악재
+- `keyword_disentangle`: 동반 키워드(예: 고창↔꿀고구마) 중 실제 드라이버 분리"""))
+cells.append(code(r"""# 캐리어별 in-context 절제 — 같은 키워드가 '무엇에 붙느냐'로 성공이 갈리는지
+bd = keyword_context_breakdown(eng, SEED)
+print(f"[{SEED}] 보유 {len(bd)}개 제품 · contrib = 이 제품에서 키워드를 빼면 떨어지는 성공확률 (클수록 진짜 일함)")
+display(bd)
+
+# 교란 분리 — 동반 키워드 중 진짜 신호의 주인은? (예: 고창 vs 꿀고구마)
+print(f"\n[{SEED}] 교란 분리 (동반키워드별 평균 기여 비교):")
+display(keyword_disentangle(eng, SEED))"""))
 
 cells.append(md("## 4. 확정 export → keyword_final.csv"))
 cells.append(code(r"""# 전 키워드 + 태그 + Δprob 증거 + 추천액션. (태그 키워드 Δprob 계산에 수 분)

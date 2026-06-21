@@ -8,8 +8,8 @@
 ## 0. TL;DR
 - **두 모델을 한 파이프라인에서 명시적으로 선택** 가능해짐: `EngineConfig.exp47()` / `EngineConfig.v2_sweepA()`.
 - 엔진이 체크포인트 `config.model.model_class`로 **자동 분기**(HINGNN vs HINGNNv2) + v2면 `basket_comp` 엣지 주입.
-- EDA 노트북 상단에 **모델 선택 셀**(`MODEL = "exp47" | "v2_sweepA"`) 추가, 출력은 모델별 폴더 분리.
-- **현 서빙 기본값은 여전히 exp47** (안전). v2는 검증된 우세 후보로 *선택 로드 가능* 상태.
+- EDA 노트북 상단에 **모델 선택 셀**(`MODEL = "v2_sweepA" | "exp47"`) 추가, 출력은 모델별 폴더 분리.
+- **2026-06-21 v2 전면 승격 완료** — 서빙(`serve.py SERVING_EXP="v2_sweepA"`)·EDA·확정·대시보드 기본값 모두 v2. 산출물 생성: `python -m experiments.v2_export_serving`. exp47은 `MODEL="exp47"`로 비교용 선택 가능.
 
 ---
 
@@ -93,6 +93,9 @@ eng = MDEngine(EngineConfig.v2_sweepA()).run_single_inference()  # v2 (HINGNNv2+
 
 ---
 
-## 5. 아직 안 된 것 (범위 밖)
-- **FastAPI 서빙(`src/eval/serve.py`)은 미적용.** serve.py는 자체 로직이 많아 별도 어댑터 필요. (현재 `SERVING_EXP="exp47_no_copurchase"` 유지)
-- **기본 서빙 모델 교체는 미실행.** v2를 "기본"으로 바꾸려면: ① test셋 확대/교차검증으로 운영점 우위 재확인 → ② `EngineConfig` 기본값·serve.py 포인터 변경. 현재는 **선택 로드만 가능**(안전한 상태).
+## 5. 서빙 전면 승격 — 완료 (2026-06-21)
+- **FastAPI/오프라인 서빙(`src/eval/serve.py`)이 v2로 전환됨.** serve.py는 torch 추론이 아니라 export된 parquet을 읽는 **오프라인 서빙**이라, 별도 torch 어댑터 없이 **v2 서빙 산출물 생성**만으로 전환됨:
+  - `python -m experiments.v2_export_serving` → `v2_sweepA/`에 `weighted_product_keyword_edges`·`weighted_{ip_keyword,product_ip,trend_keyword}_edges`·`relation_importance.json` 생성 (`MDEngine` 재사용, basket_comp 주입 자동).
+  - `serve.py SERVING_EXP="v2_sweepA"`, `scripts.export_dashboard` 재실행 → `Dashboard/config.js` (`serving_exp: v2_sweepA`).
+- **노트북·CLI 기본값도 v2**: `_build_notebook.py`/`_build_finalization_notebook.py`/`export_keyword_final.py` 기본 `MODEL="v2_sweepA"`.
+- **남은 비고**: `EngineConfig()` 무프리셋 기본값(exp_dir)은 exp47 fallback으로 둠 — 실제 진입점은 모두 프리셋(`.v2_sweepA()`) 명시라 영향 없음. `keyword_final.csv`는 장부 모델불변이라 재생성 불필요(원하면 `python -m src.eval.md.export_keyword_final v2_sweepA`).

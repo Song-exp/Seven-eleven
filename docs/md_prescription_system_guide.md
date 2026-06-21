@@ -85,6 +85,12 @@ Hub_Score(k)  = Σ_경로 Σ_{p} att(p,k) × Mass[p]                 # Mass=z(si
 ### 데이터 품질 플래그
 `강아지`처럼 **4경로 지지도(support_succ)와 직접 has_kw 성공률이 어긋나는**(우회 경로로만 성공 연결) 키워드는 확정에서 제외 후보. 인스펙터에서 `성공률` vs `support_succ` 불일치로 식별.
 
+### 상호작용 — modifier vs base 강도 (캐리어별 절제)
+평균 Δprob는 **여러 캐리어에 더해본 평균**이라 상호작용을 뭉갠다. `keyword_context_breakdown`(노트북 §3.5)은 *실제 보유 제품마다* 키워드를 빼본 기여(`contrib`)를 분리한다. `keyword_disentangle`은 동반 키워드(예: 고창↔꿀고구마) 중 진짜 드라이버를 가른다.
+> 예: **고창** — 성공을 가르는 건 고창이 아니라 캐리어 base 강도. 고창은 +0.3쯤 일정 리프트를 주는 *증폭기*(충분조건 아님), 진짜 드라이버는 지역브랜딩 '고창'이지 꿀고구마가 아님. 상세: [`docs/findings/`](findings/README.md).
+
+> **발견 누적**: 노트북에서 키워드를 드릴다운하며 얻은 인과·상호작용 인사이트는 `docs/findings/`에 한 발견 = 한 파일로 모은다 (인덱스 + 템플릿은 [findings/README.md](findings/README.md)).
+
 ---
 
 ## 4. 키워드 확정 → 대시보드 파이프라인 (운영)
@@ -117,12 +123,15 @@ Hub_Score(k)  = Σ_경로 Σ_{p} att(p,k) × Mass[p]                 # Mass=z(si
 
 ## 5. 두 모델 운영
 
-| | exp47 (현 서빙) | v2_sweepA |
+| | **v2_sweepA (현 서빙)** | exp47 (비교용) |
 |---|---|---|
-| 구조 | HINGNN, copurchase 제거 | HINGNNv2 멀티태스크 + basket_comp |
-| held-out PR-AUC | 0.570 | 0.606 |
+| 구조 | HINGNNv2 멀티태스크 + basket_comp | HINGNN, copurchase 제거 |
+| held-out PR-AUC | **0.608** | 0.570 |
+| 과적합 gap | **0.115** | 0.224 |
 | 누수 | leak-free | leak-free |
-| 선택 | `EngineConfig.exp47()` / serve `SERVING_EXP` | `EngineConfig.v2_sweepA()` |
+| 선택 | `EngineConfig.v2_sweepA()` / serve `SERVING_EXP="v2_sweepA"` (기본) | `EngineConfig.exp47()` |
+
+> **2026-06-21 v2 전면 승격**: 서빙·EDA·확정·대시보드 기본값 모두 `v2_sweepA`. v2 서빙 산출물은 `python -m experiments.v2_export_serving`로 생성(weighted 엣지 4종 + relation gate). serve.py는 torch 추론이 아니라 export parquet을 읽는 오프라인 서빙이라 어댑터 없이 산출물 생성만으로 전환됨. 상세: [v2 전환 §5](v2_serving_transition.md).
 
 장부·A_diff·처방어휘는 **모델 거의 불변**(어텐션=구조 지배). 모델이 바꾸는 건 prob 기반 부분(혼동행렬·파트너 랭킹·Δprob). 상세: [v2 전환 §3.5](v2_serving_transition.md).
 

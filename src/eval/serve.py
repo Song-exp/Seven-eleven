@@ -18,7 +18,7 @@ from typing import Dict, List, Optional, Tuple
 import pandas as pd
 
 # ── 서빙 모델 선택 (best 교체 지점) ──────────────────────────────
-SERVING_EXP = "exp47_no_copurchase"   # 최종 채택 (leak-free, 2026-06-21). exp41은 동반구매 누수로 폐기 — docs/final_model_leakfree_switch_plan.md / experiments_master_log §2.5. THR=0.7755
+SERVING_EXP = "v2_sweepA"   # 최종 채택 (HINGNNv2 멀티태스크+basket_comp, leak-free, 2026-06-21). test PR-AUC 0.608 > exp47 0.570, 과적합 gap 0.115 < 0.224. THR=0.7757. 산출물: experiments.v2_export_serving. 이전 exp47_no_copurchase / exp41(누수)은 docs/v2_serving_transition.md 참조
 RESULTS_ROOT = "experiments/results"
 HIN_DIR = "data/processed/hin"
 POS_PATH = "data/processed/pos_product_features.parquet"

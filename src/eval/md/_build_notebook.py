@@ -65,7 +65,7 @@ cells.append(md(r"""## 🔀 모델 선택 — exp47 vs v2_sweepA
 `MODEL` 한 줄만 바꿔 두 모델 중 선택. 출력은 모델별 폴더로 분리 저장됩니다."""))
 
 cells.append(code(r"""# ── 모델 선택 (여기만 바꾸면 됨) ──
-MODEL = "exp47"          # "exp47"  또는  "v2_sweepA"
+MODEL = "v2_sweepA"      # "v2_sweepA"(최종 채택)  또는  "exp47"
 
 ENGINE_CFG = EngineConfig.exp47() if MODEL == "exp47" else EngineConfig.v2_sweepA()
 OUT_DIR = f"experiments/results/md_prescription/{MODEL}"

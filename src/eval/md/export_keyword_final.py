@@ -10,7 +10,7 @@ from .inspector import export_keyword_final
 
 
 def main():
-    model = sys.argv[1] if len(sys.argv) > 1 else "exp47"
+    model = sys.argv[1] if len(sys.argv) > 1 else "v2_sweepA"
     cfg = EngineConfig.exp47() if model == "exp47" else EngineConfig.v2_sweepA()
     eng = MDEngine(cfg).run_single_inference()
     eng.build_mass()

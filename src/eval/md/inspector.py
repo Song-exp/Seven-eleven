@@ -76,6 +76,92 @@ def keyword_evidence(eng: MDEngine, keyword: str, universe: str = "full",
                 예시제품=pd.DataFrame(rows))
 
 
+def _pos_meta(eng: MDEngine) -> dict:
+    """ITEM_CD(norm) → 중분류명. 세븐 POS 제품만 존재 (CU/GS25는 NA)."""
+    fp = "data/processed/pos_product_features.parquet"
+    if not os.path.exists(fp):
+        return {}
+    from src.data_builder.build_hetero_data import norm_id
+    df = pd.read_parquet(fp, columns=["ITEM_CD", "ITEM_MDDV_NM"])
+    return {norm_id(c): str(m) for c, m in zip(df["ITEM_CD"], df["ITEM_MDDV_NM"])}
+
+
+def keyword_context_breakdown(eng: MDEngine, keyword: str, n_co: int = 8,
+                              sales_map: Optional[dict] = None, meta_map: Optional[dict] = None) -> pd.DataFrame:
+    """캐리어별 in-context 절제 분해 — '같은 키워드가 무엇에 붙느냐로 성공이 갈리는가'.
+
+    `keyword_evidence`의 Δprob는 여러 캐리어 평균이라 상호작용을 뭉갠다.
+    여기선 *실제 보유 제품마다* 그 키워드를 빼봤을 때의 기여(contrib)를 분리한다.
+      contrib = score(보유) − score(제거) = 이 제품에서 이 키워드가 끌어올린 성공확률.
+      contrib ≫ 0 → 이 캐리어에선 진짜 일함 / ≈0 → 무의미 / <0 → 오히려 악재.
+    동반키워드·중분류를 함께 보면 'A 카테고리엔 killer, B엔 무효' 같은 조건부 판정이 보인다.
+
+    반환: 제품별 [product, 성공, prob, contrib, 동반키워드, 중분류, 매출30d], contrib 내림차순.
+    """
+    k = eng.seed_to_idx(keyword)
+    if k is None:
+        return pd.DataFrame([{"error": f"'{keyword}' 그래프에 없음"}])
+    if sales_map is None:
+        sales_map = _pos_sales(eng)
+    if meta_map is None:
+        meta_map = _pos_meta(eng)
+    c = eng.cache
+    ei = c["eidx"][PK_MAIN].numpy()
+    carriers = ei[0][ei[1] == k]
+    y, prob = c["y"], c["prob"]
+    rows = []
+    for p in carriers:
+        p = int(p)
+        kws = eng.product_keywords(p)
+        contrib = -eng.delta_prob(kws, remove=[k])  # 제거 시 하락폭 = 이 제품에서의 기여
+        co = [eng.kw_name(j) for j in kws if j != k]
+        cid = c["product_ids"][p]
+        rows.append(dict(
+            product=c["product_names"][p],
+            성공=("성공" if y[p] else "실패"),
+            prob=round(float(prob[p]), 3),
+            contrib=round(float(contrib), 4),
+            동반키워드=", ".join(co[:n_co]) + ("…" if len(co) > n_co else ""),
+            중분류=meta_map.get(cid, "—"),
+            매출30d=sales_map.get(cid),
+        ))
+    df = pd.DataFrame(rows).sort_values("contrib", ascending=False).reset_index(drop=True)
+    return df
+
+
+def keyword_disentangle(eng: MDEngine, keyword: str, top_co: int = 6) -> pd.DataFrame:
+    """교란 분리 — 이 키워드와 자주 동반하는 키워드 중 진짜 신호의 주인은 누구인가.
+
+    예: '고창'은 거의 항상 '꿀고구마'와 동반 출현 → 둘을 각각 절제해 평균 기여를 비교.
+    동반 빈도 상위 키워드 각각에 대해, 그 둘을 함께 가진 제품들에서
+      contrib(keyword)  vs  contrib(동반키워드)  를 캐리어 평균으로 산출.
+    contrib 큰 쪽이 실제 드라이버.
+    """
+    k = eng.seed_to_idx(keyword)
+    if k is None:
+        return pd.DataFrame([{"error": f"'{keyword}' 그래프에 없음"}])
+    c = eng.cache
+    ei = c["eidx"][PK_MAIN].numpy()
+    carriers = set(ei[0][ei[1] == k].tolist())
+    # 동반 빈도 집계
+    from collections import Counter
+    co_cnt = Counter()
+    for p in carriers:
+        for j in eng.product_keywords(int(p)):
+            if j != k:
+                co_cnt[j] += 1
+    out = []
+    for j, cnt in co_cnt.most_common(top_co):
+        shared = [int(p) for p in carriers if j in eng.product_keywords(int(p))]
+        d_k = np.mean([-eng.delta_prob(eng.product_keywords(p), remove=[k]) for p in shared])
+        d_j = np.mean([-eng.delta_prob(eng.product_keywords(p), remove=[j]) for p in shared])
+        out.append(dict(동반키워드=eng.kw_name(j), 동반횟수=cnt,
+                        contrib_본키워드=round(float(d_k), 4),
+                        contrib_동반=round(float(d_j), 4),
+                        드라이버=(keyword if d_k >= d_j else eng.kw_name(j))))
+    return pd.DataFrame(out)
+
+
 def evidence_table(eng: MDEngine, keywords: List[str], universe: str = "full", n_causal: int = 15) -> pd.DataFrame:
     """여러 키워드를 한 표로 스캔 (확정 작업용). 예시제품 컬럼 제외."""
     sm = _pos_sales(eng)
