@@ -29,9 +29,18 @@ async def _warmup():
             serve.llm_warmup()      # 로컬 Ollama만 콜드로드 (DeepSeek API면 no-op)
             print(f"[warmup] LLM 준비 완료 (provider={serve.LLM_PROVIDER})")
         except Exception as e:
-            print(f"[warmup] 실패: {e}")
+            print(f"[warmup] LLM 실패: {e}")
+        try:
+            # combo 엔진 + 라이브 분류(Δprob 배치)를 미리 계산·캐시 → /combo 첫 요청이 안 막힘
+            from src.eval import combo_serve
+            from src.eval.md.classify import classify_keywords_live
+            eng, _ = combo_serve._engine()
+            classify_keywords_live(eng)
+            print("[warmup] combo 엔진 + 키워드 분류 준비 완료")
+        except Exception as e:
+            print(f"[warmup] combo/분류 준비 실패: {e}")
     threading.Thread(target=_do, daemon=True).start()
-    print(f"[warmup] LLM 백그라운드 준비 시작… (provider={serve.LLM_PROVIDER})")
+    print(f"[warmup] 백그라운드 준비 시작… (provider={serve.LLM_PROVIDER})")
 app.add_middleware(
     CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"],
 )

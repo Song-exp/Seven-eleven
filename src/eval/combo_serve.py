@@ -59,26 +59,32 @@ def build_seed(eng, seed, sc, max_hops=MAX_HOPS, eps=EPS, cand_pool=CAND_POOL,
                               cand_pool=cand_pool, n_headroom=n_headroom, sc=sc)
     if net.get("error"):
         return None
-    # 전역 분류(1층) 라이브 태그를 키워드 노드에 부착 — killer/mine/매개/hub (A안, 엔진 1회 캐시)
-    try:
-        from src.eval.md.classify import classify_keywords_live
-        gtags = classify_keywords_live(eng)
+    # 전역 분류(1층) 태그 부착 — killer/mine/매개/hub.
+    # ★ 논블로킹: 분류 Δprob 배치는 무거워서 요청 경로에서 계산하지 않는다(첫 /combo 타임아웃 방지).
+    #   api.py warmup이 백그라운드에서 미리 캐시(eng._live_tags)해 두고, 여기선 준비됐을 때만 붙인다.
+    cached = getattr(eng, "_live_tags", None)
+    gtags = cached[1] if cached else {}
+    if gtags:
         for n in net["nodes"]:
             if n["type"] in ("rail", "trend", "basket", "ip2"):
                 t = gtags.get(n["label"])
                 if t:
                     n["gtag"] = t
-    except Exception:
-        pass
-    # IP 추천: 어텐션 대신 인과 margin(pair_synergy_ip, seed 기준) — 클릭 시 궁합 패널과 동일 수치 = 일관
-    for n in net["nodes"]:
-        if n["type"] == "ip":
-            try:
-                r = SN.pair_synergy_ip(eng, seed, n["label"], n_headroom=SYN_HEADROOM)
-                if "margin_b_given_a" in r:
-                    n["ip_margin"] = round(float(r["margin_b_given_a"]), 4)
-            except Exception:
-                pass
+    # IP 추천: 어텐션 대신 인과 margin(pair_synergy_ip, seed 기준) — 클릭 시 궁합 패널과 동일 수치 = 일관.
+    # 비용 캡: 어텐션 상위 IP만 margin 계산(프론트는 4개 노출) → CPU 응답시간 보호.
+    ip_w = {}
+    for e in net["edges"]:
+        if e.get("type") == "ip":
+            ip_w[e["tgt"]] = max(ip_w.get(e["tgt"], 0.0), e.get("weight", 0.0))
+    ip_nodes = sorted((n for n in net["nodes"] if n["type"] == "ip"),
+                      key=lambda n: -ip_w.get(n["id"], 0.0))
+    for n in ip_nodes[:6]:
+        try:
+            r = SN.pair_synergy_ip(eng, seed, n["label"], n_headroom=SYN_HEADROOM)
+            if "margin_b_given_a" in r:
+                n["ip_margin"] = round(float(r["margin_b_given_a"]), 4)
+        except Exception:
+            pass
     pool = [n["label"] for n in net["nodes"] if n["type"] in ("rail", "trend", "basket", "ip2")]
     rec = SN.recommend_within(eng, seed, pool, n_headroom=n_headroom, top=10, sc=sc)
     core = _core_nodes(net)
