@@ -62,6 +62,16 @@ class ComboRecReq(BaseModel):
     top: int = 10
 
 
+class ExtractOneReq(BaseModel):       # 시트2: 단건 설명문 → 키워드
+    itemCode: Optional[str] = ""
+    itemName: Optional[str] = ""
+    sourceText: str = ""
+
+
+class ExtractBatchReq(BaseModel):     # 시트2: CSV 배치
+    rows: List[dict] = []
+
+
 @app.get("/")
 def dashboard():
     return FileResponse(os.path.join(_DASHBOARD_DIR, "dashboard.html"))
@@ -122,3 +132,22 @@ def combo_recommend(req: ComboRecReq):
     """서브네트 내 seed에 붙일 best 노드 (headroom Δ)."""
     from src.eval import combo_serve
     return {"recommend": combo_serve.combo_recommend(req.seed, req.pool, req.top)}
+
+
+# ── 시트2: 네트워크 업데이트 (상품 설명문 → 키워드 추출, Kiwi) ──────────
+#    현호 keyword_api_server(:8010) 폐기 → 단일호스트. 파이프라인 지연 로드(첫 호출 1회).
+@app.post("/extract-one")
+def extract_one(req: ExtractOneReq):
+    """단건: 설명문 → 기존/신규 키워드 분리 + 근거."""
+    from src.eval.keyword_extract import service
+    return {"ok": True, "row": service.build_review_row(req.itemCode, req.itemName, req.sourceText)}
+
+
+@app.post("/extract-batch")
+def extract_batch(req: ExtractBatchReq):
+    """CSV 배치: rows[] → 상품별 추출 결과."""
+    from src.eval.keyword_extract import service
+    out = [service.build_review_row_from_csv_row(r, i + 1)
+           for i, r in enumerate(req.rows) if isinstance(r, dict)]
+    out = [r for r in out if r["sourceText"]]
+    return {"ok": True, "rows": out}

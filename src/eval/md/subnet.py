@@ -21,7 +21,6 @@ import numpy as np
 
 from .combo import _ConceptCache, combo_grow, keyword_support
 from .engine import MDEngine, PK_MAIN
-from . import tasks as T
 
 IP_HASKW = ("ip", "has_kw", "keyword")
 TREND = ("keyword", "trend_to", "keyword")
@@ -209,20 +208,12 @@ def build_subnetwork(eng: MDEngine, seed: str, eps: float = 0.02, max_hops: int 
     # ── 척추(레일) ──
     for i, k in enumerate(rail_idx):
         add_node(f"kw:{k}", "rail" if i > 0 else "rail", eng.kw_name(k), hop=i, seed=(i == 0))
-    succ_mask = eng.cache["y"] == 1
     for a in grow["accepted"]:
         ki = eng.seed_to_idx(a["keyword"])
-        # 직전 레일 노드와 연결
+        # 직전 레일 노드와 직접 연결 (제품 bridge 노드는 혼란만 가중 → 제거)
         prev = rail_idx[rail_idx.index(ki) - 1]
         edges.append(dict(src=f"kw:{prev}", tgt=f"kw:{ki}", type="rail",
                           weight=a["margin"], label=f"{a['label']} Δ{a['margin']:+.3f}"))
-        # K-P-K 경유 제품 (Top-1) — prev·ki를 실제 공유한 성공 제품을 중간 노드로 복원
-        br = T.bridge_product(eng, prev, ki, mask=succ_mask)
-        if br:
-            p, _, pname = br
-            add_node(f"p:{p}", "product", _pshort(pname))
-            edges.append(dict(src=f"kw:{prev}", tgt=f"p:{p}", type="bridge", weight=1.0))
-            edges.append(dict(src=f"p:{p}", tgt=f"kw:{ki}", type="bridge", weight=1.0))
 
     # ── 1-hop 문맥 (타입별) ──
     for k in rail_idx:

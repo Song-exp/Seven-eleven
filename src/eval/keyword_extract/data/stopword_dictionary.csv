@@ -1,0 +1,910 @@
+﻿stopword,살릴_후보,살리기,불용어_결정_이유,source,pos_list,count,intro_bgr_count,item_crtr_count
+톡,O,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,21,2,19
+앱,O,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,14,14,0
+상품,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,3397,1549,1848
+운영,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,884,348,536
+출시,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,856,585,271
+전용,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,726,352,374
+세븐,X,,수동 제거,removed_candidate_keywords_217.csv,NNP,478,245,233
+보,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG|VV|VX,441,260,181
+도입,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,414,323,91
+브랜드,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,399,201,198
+코드,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,395,205,190
+추천,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,352,280,72
+인기,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,347,193,154
+세트,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,332,187,145
+함유,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,327,16,311
+사용,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,300,17,283
+구색,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,286,275,11
+입,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG|VV-R,267,21,246
+기,X,,품사 기준 미충족|수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,ETN|NNB|NNG|XSN,266,89,177
+제품,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,260,104,156
+구성,X,,수동 제거,removed_candidate_keywords_217.csv,NNG|NNP,243,17,226
+점,X,,품사 기준 미충족|수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,MAG|NNB|NNG,233,106,127
+미,X,,품사 기준 미충족|수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG|NNP|XPN,226,4,222
+국내,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,224,43,181
+종,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG,211,20,191
+용량,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,209,96,113
+판매,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,204,72,132
+모양,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,197,17,180
+단독,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,195,68,127
+특징,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,194,6,188
+신규,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,193,144,49
+강화,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,188,173,15
+확대,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,183,131,52
+기존,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,172,61,111
+냉장,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,170,74,96
+활용,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,170,63,107
+트렌드,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,165,135,30
+안,X,,품사 기준 미충족|수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,MAG|NNG,161,8,153
+원,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNB|NNG,161,32,129
+속,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG,153,24,129
+구현,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,151,11,140
+위,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNB|NNG,150,43,107
+대응,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,149,99,50
+발주,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,142,40,102
+대표,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,141,52,89
+데이,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,140,133,7
+타입,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,140,55,85
+플레이버,X,,수동 제거,removed_candidate_keywords_217.csv,NNG|NNP,137,66,71
+당사,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,136,35,101
+일반,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,130,86,44
+가능,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,122,20,102
+도수,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,122,0,122
+볼,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG,122,40,82
+동봉,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,121,12,109
+예약,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,116,65,51
+보관,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,114,9,105
+후,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG,113,7,106
+매출,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,112,89,23
+수량,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,112,28,84
+차별,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,108,35,73
+기획,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,105,89,16
+조합,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,99,8,91
+베스트,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,97,59,38
+당도,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,95,0,95
+부담,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,94,6,88
+식,X,,품사 기준 미충족|수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNB|NNG|XSN,92,17,75
+하절,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,88,59,29
+형태,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,88,9,79
+리뉴얼,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,87,68,19
+점포,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,87,38,49
+최고,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,86,9,77
+컨셉,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,85,46,39
+가격,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,83,31,52
+드라이,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,82,0,82
+살,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNB|NNG|VV,81,2,79
+함량,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,81,8,73
+고객,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,78,34,44
+하이,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,78,34,44
+소비,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,77,34,43
+직,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG,77,41,36
+별도,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,75,32,43
+특수,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,74,32,42
+사랑,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,73,24,49
+수입,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,73,53,20
+이상,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,73,13,60
+세계,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,72,22,50
+대비,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,70,4,66
+사이즈,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,70,12,58
+추가,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,70,32,38
+시장,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,69,56,13
+최초,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,69,21,48
+선호,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,67,14,53
+증가,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,67,59,8
+납,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG,66,34,32
+소비자,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,66,35,31
+취,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG,66,6,60
+상온,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,64,25,39
+개발,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,61,35,26
+매력,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,61,7,54
+한국인,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,61,5,56
+민생,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,60,35,25
+설,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG,59,47,12
+유지,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,59,3,56
+이달,X,,수동 제거,removed_candidate_keywords_217.csv,NNG|NNP,59,47,12
+용기,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,57,18,39
+지속,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,57,41,16
+글로벌,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,56,29,27
+동시,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,56,0,56
+반영,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,56,41,15
+인상,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,56,34,22
+지역,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,56,22,34
+케이스,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,56,0,56
+지원금,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,55,30,25
+메뉴,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,54,11,43
+기한,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,53,8,45
+디자인,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,53,11,42
+특화,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,53,27,26
+마트,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,51,30,21
+첨가,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,51,4,47
+군,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNB|NNG,50,4,46
+등급,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,50,10,40
+분말,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,50,0,50
+끼,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNB|NNG,49,5,44
+중량,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,46,11,35
+만남,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,45,14,31
+원료,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,45,7,38
+일품,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,45,2,43
+본연,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,44,2,42
+색,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG,44,10,34
+완성,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,44,3,41
+적합,X,,수동 제거,removed_candidate_keywords_217.csv,NNG|XR,44,8,36
+단,X,,품사 기준 미충족|수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,ETM|MM|NNG,43,9,34
+대용,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,43,12,31
+성장,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,43,39,4
+적용,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,43,2,41
+크기,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,43,5,38
+샌딩,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,42,2,40
+포함,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,42,6,36
+개별,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,41,3,38
+기능,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,41,17,24
+박스,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,41,9,32
+우수,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,41,5,36
+음식,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,41,2,39
+물량,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,40,6,34
+완벽,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,40,8,32
+입맛,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,40,3,37
+최근,X,,품사 기준 미충족|수동 제거,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,MAG|NNG,40,28,12
+예정,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,39,5,34
+겹,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG,38,3,35
+변경,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,38,19,19
+상승,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,38,31,7
+와이너리,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,38,3,35
+중독,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,38,3,35
+스타일,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,37,19,18
+시트,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,37,0,37
+타겟,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,37,18,19
+기본,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,36,16,20
+니즈,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,36,31,5
+대형,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,36,17,19
+리얼,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,36,6,30
+선수,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,36,3,33
+섭취,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,36,3,33
+소싱,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,36,27,9
+특유,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,36,0,36
+기준,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,35,1,34
+바코드,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,35,17,18
+생산,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,35,9,26
+제공,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,35,7,28
+틴,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG,35,10,25
+공동,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,34,20,14
+수요,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,34,27,7
+배합,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,33,3,30
+재료,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,33,4,29
+낱개,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,32,6,26
+베이스,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,32,1,31
+사,X,,품사 기준 미충족|수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,EC|NNG|NR|VV,32,16,16
+필요,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,32,6,26
+공법,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,31,4,27
+농축액,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,31,0,31
+동원,X,,수동 제거,removed_candidate_keywords_217.csv,NNG|NNP,31,17,14
+인,X,,품사 기준 미충족|수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG|NNP|XSN,31,13,18
+단백,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,30,11,19
+용이,X,,수동 제거,removed_candidate_keywords_217.csv,NNG|XR,30,0,30
+대체,X,,품사 기준 미충족|수동 제거,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,MAG|NNG,28,2,26
+때,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG,28,2,26
+특제,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,28,4,24
+대중,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,27,14,13
+라인업,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,27,21,6
+식이,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,27,0,27
+우,X,,품사 기준 미충족|수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,IC|NNG|NNP,27,7,20
+탄생,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,27,9,18
+사이,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,26,1,25
+섬유,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,26,0,26
+종류,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,26,1,25
+특허,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,26,0,26
+구매,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,25,1,24
+세대,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,25,12,13
+유,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG|NNP,25,7,18
+지방,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,25,0,25
+겉,X,,수동 제거|1글자,0621_NP_INFO_ST_processed.csv/Kiwi|removed_candidate_keywords_217.csv,NNG,24,0,24
+기념,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,24,13,11
+봉지,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,24,3,21
+원산지,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,24,0,24
+필수,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,24,9,15
+버전,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,23,8,15
+선사,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,23,1,22
+엄선,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,23,2,21
+종료,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,23,0,23
+공급,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,22,5,17
+도움,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,22,5,17
+메인,X,,수동 제거,removed_candidate_keywords_217.csv,NNG|NNP,22,2,20
+방법,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,22,1,21
+밸런스,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,22,1,21
+음용,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,22,6,16
+최적,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,22,3,19
+국민,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,21,2,19
+수령,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,20,0,20
+제조,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,20,7,13
+관심,X,,수동 제거,removed_candidate_keywords_217.csv,NNG,19,15,4
+하,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,IC|NNG|VV|VX|XSA|XSV,5103,767,4336
+이,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,JKC|JKS|MM|NNB|NNG|NP|VCP|VV,3575,778,2797
+의,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,JKG|NNG,2821,634,2187
+는,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,ETM|JX,2550,418,2132
+어,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EC|EF|IC|NNG,2429,257,2172
+을,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,ETM|JKO|NNG,2176,349,1827
+은,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,ETM|JX|NNG,1578,228,1350
+에,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,IC|JKB|JKG,1575,385,1190
+있,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA|VV|VX,1358,145,1213
+를,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,JKO,1179,247,932
+고,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EC|MM|NNG|XPN,1110,156,954
+과,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,JC|JKB|NNG,976,108,868
+로,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,JKB|NNG|XSM,910,106,804
+가,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,JKC|JKS|NNG|VV|VX|XSN,872,130,742
+수,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG,795,73,722
+와,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,JC|JKB|MAG|NNG,718,113,605
+되,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV|XSA|XSV,663,90,573
+들,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV|VX|XSN,372,76,296
+개,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG,371,21,350
+한,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM,344,62,282
+먹,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|VV,337,57,280
+지,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EC|NNB|NNG|VV|VX,320,25,295
+더,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|NNG|NNP,268,28,240
+신,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|XPN,264,201,63
+적,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG|VA|VV|XSN,262,73,189
+산,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|XSN,259,33,226
+넣,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,219,17,202
+대,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG|XPN|XSN,214,84,130
+도,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,JX|NNB|NNG,190,40,150
+월,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG,181,63,118
+화,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|XSN,180,67,113
+좋,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,165,25,140
+만,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,JX|NNB|NR,155,24,131
+등,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB,151,30,121
+시,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EP|NNB|VA,148,16,132
+나,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EC|JC|JX|NNG|NP|VV|VX,142,30,112
+담,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,131,26,105
+성,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|XSN,130,39,91
+용,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|XSN,128,37,91
+었,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EP,120,16,104
+및,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|MAJ,114,46,68
+내,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|VV|VX,112,15,97
+않,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VX,110,8,102
+깊,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,105,6,99
+분,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG|XSN,99,8,91
+생,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XPN|XSN,99,17,82
+잘,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|VA,97,7,90
+굽,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV-I,94,9,85
+일,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG,93,12,81
+롭,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XSA-I,91,6,85
+받,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV-R|XSV,91,27,64
+음,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EF|ETN,87,5,82
+며,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EC,85,5,80
+없,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,85,16,69
+형,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XSN,83,45,38
+중,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG,80,17,63
+맵,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA-I,77,11,66
+본,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM|NNG,73,1,72
+두,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM|VV,71,13,58
+높,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,60,11,49
+재,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XPN,59,28,31
+저,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM|NP|XPN,58,27,31
+다,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EC|EF|JX|MAG,57,11,46
+초,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG|XPN,57,10,47
+자,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EC|EF|NNB|NNG|VV|XSN,45,23,22
+서,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,JKB|NNG|VV,43,12,31
+약,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM|NNG,41,5,36
+오,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,IC|NNP|NR|VV|VX,41,7,34
+총,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM,41,2,39
+말,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG|VV|VX,39,11,28
+층,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|XSN,39,15,24
+같,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,38,2,36
+맞,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,37,16,21
+볶,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,34,1,33
+얇,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,33,9,24
+메,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|VV,32,8,24
+부,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG,32,15,17
+비,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|VV|XPN,32,12,20
+씹,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV-R,32,0,32
+채,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|NNB|NNG,31,3,28
+탄,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG,31,20,11
+최,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XPN,30,3,27
+던,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,ETM,29,19,10
+라,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EC|EF|NNG,29,2,27
+많,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,27,3,24
+찌,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|VV,26,5,21
+구,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM|NNG|NR,25,10,15
+마,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EC|IC|NNG,25,1,24
+째,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XSN,24,5,19
+품,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|VV,24,3,21
+니,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EC|NNG,23,5,18
+삼,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|NR,23,8,15
+잇,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV-I,23,11,12
+키,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,23,7,16
+갓,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|NNG,22,2,20
+꽉,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,22,5,17
+르,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,22,0,22
+매,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM|NNB|NNG,22,14,8
+섞,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,22,1,21
+쉽,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA-I,22,4,18
+짜,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|VA|VV,22,3,19
+히,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EC|NNG|XSM,22,10,12
+길,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|VA,21,6,15
+듯,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB,21,1,20
+판,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG|XSN,21,11,10
+상,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|XSN,20,8,12
+양,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM|NNG,20,6,14
+요,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EC|EF|MM,20,6,14
+잡,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV-R,20,2,18
+크,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,20,8,12
+베,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,19,0,19
+손,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,19,3,16
+씩,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XSN,19,1,18
+각,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM|NNG,18,0,18
+것,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB,18,2,16
+님,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|XSN,18,10,8
+삶,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|VV,18,4,14
+짤,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,18,5,13
+콕,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,18,5,13
+특,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,18,7,11
+건,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EC|NNB|NNG,17,7,10
+드,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,17,1,16
+득,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,17,7,10
+락,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,17,0,17
+급,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,16,10,6
+동,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM|NNB|NNG,16,3,13
+린,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|NNP,16,3,13
+목,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,16,1,15
+율,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XSN,16,6,10
+끝,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,15,1,14
+록,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,15,5,10
+료,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,15,0,15
+블,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VX,15,0,15
+빚,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,15,2,13
+제,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XSN,15,3,12
+쪼,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,15,7,8
+찍,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|VV,15,6,9
+첫,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM,15,3,12
+그,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM,14,8,6
+눈,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,14,3,11
+립,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,14,6,8
+순,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|MM|NNG,14,3,11
+억,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NR,14,2,12
+태,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,14,2,12
+낮,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,13,1,12
+든,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EC|JX,13,6,7
+띠,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|VV,13,0,13
+량,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,13,3,10
+썰,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,13,1,12
+진,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|NNP,13,5,8
+틱,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,13,1,12
+디,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG|NNP,12,3,9
+얼,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|NNP|VV,12,7,5
+짐,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|NNP,12,5,7
+찾,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,12,7,5
+풉,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,12,6,6
+강,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|XR,11,2,9
+몸,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,11,6,5
+빔,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNP,11,5,6
+세,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM|NNB,11,4,7
+싶,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VX,11,1,10
+쏘,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,11,2,9
+아,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,IC|JKV|NNG,11,6,5
+얻,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV-R,11,4,7
+치,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|VV|XSN,11,0,11
+넘,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,10,2,8
+몰,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,10,2,8
+뿐,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,JX|NNB,10,0,10
+선,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,10,1,9
+액,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,10,0,10
+업,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,10,2,8
+연,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM|NNG,10,1,9
+젊,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,10,3,7
+짓,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV-I,10,0,10
+튀,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,10,0,10
+픽,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,IC|MAG,10,7,3
+호,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG,10,1,9
+곱,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA-I,9,0,9
+곳,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,9,0,9
+딱,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,9,0,9
+믿,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV-R,9,0,9
+반,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,9,2,7
+북,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,9,2,7
+붓,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|VV-I,9,1,8
+슛,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,9,4,5
+쏙,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,9,3,6
+앤,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNP,9,3,6
+익,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA|VV,9,2,7
+작,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|VA,9,1,8
+카,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,9,1,8
+컷,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,9,0,9
+킹,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,9,1,8
+터,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG,9,4,5
+해,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,9,5,4
+희,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,9,5,4
+거,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB,8,0,8
+계,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|XSN,8,5,3
+권,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|XSN,8,3,5
+란,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,ETM|JX|NNG,8,1,7
+붉,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,8,4,4
+빛,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,8,1,7
+언,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,8,5,3
+얹,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,8,0,8
+온,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM|NNG,8,2,6
+올,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM,8,3,5
+참,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|NNG,8,0,8
+천,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|NR,8,0,8
+퍼,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,8,1,7
+포,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,8,2,6
+풍,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XSN,8,3,5
+결,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG,7,0,7
+균,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,7,0,7
+까,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAJ|VV,7,2,5
+땡,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,7,2,5
+또,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,7,1,6
+리,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EC|NNG|NNP|XSN,7,5,2
+막,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|NNG,7,1,6
+뻥,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|NNG,7,3,4
+습,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,7,2,5
+옷,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,7,0,7
+잉,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,7,0,7
+퐁,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNP,7,1,6
+현,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM|NNG,7,2,5
+교,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,6,0,6
+극,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,6,1,5
+뒤,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,6,0,6
+떼,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|VV,6,0,6
+럭,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNP,6,3,3
+붙,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,6,0,6
+스,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,6,2,4
+여,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XSN,6,4,2
+족,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,6,1,5
+존,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,6,3,3
+줄,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG,6,2,4
+찬,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,6,2,4
+첨,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,6,0,6
+체,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG,6,1,5
+타,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM|VV,6,1,5
+트,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,6,4,2
+검,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,5,0,5
+끓,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,5,0,5
+뜻,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,5,1,4
+런,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,5,2,3
+률,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XSN,5,4,1
+명,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG,5,1,4
+쉬,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|VV,5,1,4
+쌓,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,5,0,5
+정,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,5,2,3
+탭,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,5,0,5
+틀,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,5,1,4
+함,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|NNP,5,2,3
+행,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG,5,2,3
+혼,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,5,2,3
+훈,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNP,5,0,5
+께,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,JKB,4,1,3
+꼭,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,4,2,2
+남,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|VV,4,2,2
+노,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,4,0,4
+놓,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV|VX,4,0,4
+누,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,4,1,3
+독,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,4,0,4
+딜,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,4,2,2
+따,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|VV,4,3,1
+뜨,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,4,0,4
+뜯,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV-R,4,1,3
+띄,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,4,0,4
+레,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,4,1,3
+맘,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,4,0,4
+몽,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNP,4,0,4
+밭,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,4,0,4
+법,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,4,0,4
+복,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,4,0,4
+샌,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNP,4,0,4
+솔,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,4,1,3
+솥,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,4,0,4
+숯,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,4,0,4
+싸,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA|VV,4,2,2
+얘,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NP,4,2,2
+옥,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,4,1,3
+질,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|XSN,4,0,4
+친,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XPN,4,0,4
+코,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,4,0,4
+혈,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,4,0,4
+홍,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|NNP,4,1,3
+갈,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,3,1,2
+갖,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,3,2,1
+객,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,3,2,1
+굵,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,3,0,3
+깐,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,3,2,1
+낱,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,3,1,2
+네,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM|XSN,3,1,2
+넥,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,3,0,3
+덮,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,3,0,3
+딩,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,3,0,3
+랑,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,JKB,3,2,1
+묵,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,3,0,3
+밝,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,3,0,3
+방,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB,3,0,3
+뽑,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV-R,3,0,3
+뿍,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|NNP,3,0,3
+석,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM|NNG,3,0,3
+송,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,3,0,3
+싹,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,3,0,3
+쓰,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,3,0,3
+앉,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,3,0,3
+젓,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|VV-I,3,1,2
+짙,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,3,3,0
+추,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|NNP,3,2,1
+충,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,3,0,3
+캐,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,3,2,1
+킥,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,3,0,3
+풋,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|XPN,3,2,1
+핏,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,3,3,0
+합,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,3,0,3
+휘,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,3,1,2
+갑,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+경,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+관,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+근,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+금,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+깎,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,2,0,2
+깔,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|VV,2,1,1
+꺾,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,2,0,2
+꼬,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,2,0,2
+끌,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,2,1,1
+낳,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,2,0,2
+냉,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,1,1
+너,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NP,2,0,2
+농,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+뉴,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,1,1
+늘,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,2,2,0
+닮,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,2,0,2
+답,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XSA-I,2,0,2
+덜,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+덤,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+데,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB|NNG,2,1,1
+델,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,2,1,1
+듬,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|NNP,2,0,2
+떫,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,2,0,2
+릭,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNP,2,1,1
+망,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,1,1
+몬,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,1,1
+문,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+묻,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV-R,2,0,2
+민,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+봇,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+붐,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+빨,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,2,1,1
+빼,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,2,1,1
+뽀,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+새,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM,2,1,1
+셉,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,2,0
+션,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNP,2,2,0
+슬,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+실,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,1,1
+앙,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,1,1
+야,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EC|JX,2,1,1
+엇,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EP,2,2,0
+엽,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+왜,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,2,0
+울,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,2,0,2
+으,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,JKG|NNG,2,0,2
+잠,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+접,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+준,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XPN,2,0,2
+쥬,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EF,2,0,2
+즈,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NP,2,1,1
+짭,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+춤,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+춥,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA-I,2,1,1
+콜,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,1,1
+탈,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG|XPN,2,0,2
+테,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+톤,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+팅,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNP,2,0,2
+팡,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNP,2,0,2
+펜,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,1,1
+표,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+프,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VX,2,2,0
+환,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XR,2,0,2
+힙,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,2,0,2
+값,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,1,0
+걷,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV-I,1,1,0
+격,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB,1,0,1
+겸,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB,1,1,0
+골,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+굳,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA-R,1,0,1
+굿,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+궁,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+깍,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+꺼,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB,1,0,1
+꺽,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+껏,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XSN,1,1,0
+끈,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+넉,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM,1,0,1
+넓,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,1,1,0
+념,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+놀,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,1,0,1
+뇌,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+뉘,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+닉,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNP,1,0,1
+덧,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+돕,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV-I,1,1,0
+둠,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+똑,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+뚝,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+뛰,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,1,0,1
+뜸,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+럼,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+렛,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+력,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,XSN,1,1,0
+롸,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNP,1,0,1
+맑,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VA,1,0,1
+맥,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+맨,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+멋,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+멜,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+몇,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NR,1,1,0
+모,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MM,1,1,0
+못,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+뮤,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNP,1,0,1
+빠,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+빻,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,1,0,1
+뻔,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB,1,0,1
+뿔,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+삭,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,1,0
+샤,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,1,0
+샵,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+셀,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNP,1,0,1
+쇼,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+숍,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,1,0
+심,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,1,0
+씁,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,IC,1,0,1
+앞,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+엠,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,1,0
+영,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,1,0
+옆,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+욱,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+운,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,ETM,1,0,1
+워,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+웜,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+웰,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+조,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+죠,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,EF,1,0,1
+즐,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+쨈,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,1,0
+쪽,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNB,1,0,1
+쭈,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNP,1,0,1
+찡,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+찢,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,1,0,1
+착,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+찹,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+챔,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+철,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+춘,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+칠,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NR,1,0,1
+캉,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,1,0
+쾅,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+탁,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+텐,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,1,0
+투,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NR,1,0,1
+펴,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,VV,1,0,1
+푹,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+필,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNP,1,0,1
+항,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+홀,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+확,X,,품사 기준 미충족|1글자,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+힘,X,,1글자,0621_NP_INFO_ST_processed.csv/Kiwi,NNG,1,0,1
+ᆸ니다,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC|EF,2045,748,1297
+으로,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JKB,1071,134,937
+에서,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JKB,259,65,194
+습니다,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EF,220,2,218
+더욱,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,163,15,148
+없이,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,115,12,103
+까지,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JX,113,20,93
+함께,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,112,20,92
+듬뿍,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,95,15,80
+그대로,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,82,12,70
+가장,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,76,12,64
+으며,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,53,1,52
+어서,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,50,9,41
+모두,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|NNG,49,9,40
+면서,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,45,4,41
+부터,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JX,45,11,34
+새콤달콤,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,45,1,44
+에게,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JKB,43,12,31
+보다,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JKB|MAG,42,10,32
+아삭,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,41,1,40
+시키,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,VV|XSV,40,4,36
+으면,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,40,2,38
+언제,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|NP,31,7,24
+비비,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|VV,30,9,21
+진짜,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|NNG,30,5,25
+콕콕,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,28,8,20
+사르르,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,26,0,26
+아니,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,IC|VCN,26,1,25
+처럼,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JKB,26,2,24
+어도,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,24,4,20
+톡톡,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,23,0,23
+바로,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,22,2,20
+같이,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,18,3,15
+아이,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,IC|NNG,18,2,16
+지만,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,18,1,17
+직접,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,17,2,15
+또는,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|MAJ,16,2,14
+라고,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC|EF|JKQ,16,9,7
+한층,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,15,0,15
+꾸준히,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,14,5,9
+으면서,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,14,2,12
+매일,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,12,0,12
+살짝,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,12,0,12
+ᆫ다,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC|EF,11,3,8
+ᆯ까,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EF,11,11,0
+실제,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|NNG,11,3,8
+오랜,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MM,11,2,9
+이나,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JC|JX,11,1,10
+제일,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|NNG|NNP,11,9,2
+다른,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MM,10,0,10
+라는,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,ETM,10,2,8
+많이,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,10,1,9
+매우,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,10,0,10
+어요,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC|EF,10,1,9
+너무,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,9,0,9
+달리,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|VV,9,0,9
+세요,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EF,9,2,7
+거나,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,8,0,8
+언제나,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,8,0,8
+을수록,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,8,0,8
+전혀,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,8,0,8
+간단히,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,7,0,7
+계속,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,7,0,7
+끼리,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,XSN,7,1,6
+도록,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,7,0,7
+오래,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,7,1,6
+겹겹이,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,6,0,6
+고자,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,6,6,0
+그리고,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAJ,6,1,5
+기에,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,6,0,6
+동글동글,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,6,1,5
+로부터,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JKB,6,0,6
+어야,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,6,0,6
+자꾸,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,6,0,6
+제대로,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,6,0,6
+물론,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,5,1,4
+쏘옥,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,5,0,5
+어떤,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MM,5,1,4
+여러,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MM,5,0,5
+오늘,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|NNG,5,3,2
+천천히,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,5,0,5
+최대한,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|NNG,5,0,5
+하고,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JC,5,0,5
+다시,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,4,3,1
+돌돌,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,4,0,4
+두루,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,4,0,4
+뚱뚱,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,4,2,2
+약간,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG|NNG,4,1,3
+어느,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MM,4,1,3
+어라,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC|EF,4,0,4
+오직,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,4,3,1
+으로부터,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JKB,4,0,4
+이라고,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JKQ,4,3,1
+충분히,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,4,0,4
+통으로,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,4,1,3
+ᆫ가,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,3,3,0
+고슬고슬,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,3,0,3
+다가,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,3,0,3
+다고,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC|EF,3,0,3
+마음껏,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,3,0,3
+마치,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,3,0,3
+말랑말랑,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,3,0,3
+모든,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MM,3,1,2
+솔솔,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,3,0,3
+아낌없이,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,3,1,2
+와우,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,IC,3,3,0
+이제,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,3,1,2
+자주,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,3,0,3
+쭈욱,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,3,0,3
+한가득,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,3,0,3
+현재,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,3,1,2
+혹은,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,3,0,3
+ᆫ지,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,2,2,0
+그냥,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+그래,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,IC,2,0,2
+그만,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,2,0
+꽉꽉,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+널리,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+노릇노릇,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+단단히,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+더라도,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,2,0,2
+도저히,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+따로,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+또한,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+뚝딱,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+려고,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,2,2,0
+마주,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+맘대로,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,2,0
+매년,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,2,0
+무난히,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+무려,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+물씬,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,1,1
+보들보들,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,1,1
+빵빵,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,1,1
+사각사각,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,1,1
+상관없이,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+쏙쏙,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+완벽히,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+으시,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EP,2,0,2
+을까,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EF,2,2,0
+일체,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+잘록,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+적절히,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+정말,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+정성껏,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+즉각,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+찰싹,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+특별히,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+한껏,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+홀로,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,2,0,2
+ᆫ다고,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EF,1,0,1
+ᆯ라,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,1,0,1
+ᆯ지,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,1,0,1
+각별히,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+갖은,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MM,1,0,1
+거의,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+고루,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+골고루,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+그래도,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAJ,1,1,0
+그치만,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAJ,1,0,1
+꼬들,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+꽁꽁,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+꿀꺽,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+꿈틀,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+나마,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JX,1,0,1
+내내,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+는지,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,1,0,1
+다는,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,ETM,1,0,1
+다시금,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+대로,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JX,1,0,1
+두고두고,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+든지,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,1,0,1
+듬뿍듬뿍,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+라니요,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EF,1,0,1
+로써,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JKB,1,1,0
+마다,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JX,1,0,1
+먼저,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+몽땅,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+밖에,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JX,1,0,1
+반드시,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+반짝,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+뽀드득,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+새록새록,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+서로,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+술술,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+쉐킷쉐킷,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+실제로,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+쓱쓱,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+아주,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+어다,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,1,0,1
+어두,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,1,1,0
+에서부터,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,JKB,1,0,1
+여느,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MM,1,0,1
+여서,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,1,0,1
+오돌토돌,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+오동통,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,1,0
+올록볼록,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+우에,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+울퉁불퉁,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+으나,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,1,0,1
+은데,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,1,0,1
+음직,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,1,0,1
+이글이글,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+자마자,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,EC,1,0,1
+조금,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+줄줄이,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+지글지글,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+차마,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,1,0
+층층이,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+큼직큼직,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+통통,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+특히,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,1,0
+틈틈이,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+편히,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+포실포실,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+필히,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+하하,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+한꺼번에,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+호호,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+훨씬,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+흔들흔들,X,,품사 기준 미충족,0621_NP_INFO_ST_processed.csv/Kiwi,MAG,1,0,1
+,, ,,,,,,

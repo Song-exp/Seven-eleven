@@ -15,3 +15,7 @@ numpy==2.4.4
 scikit-learn==1.8.0
 scipy==1.17.1
 requests
+
+# 시트2 키워드 추출 (Kiwi 형태소분석) — 바이너리·모델 페어 버전 일치 필수
+kiwipiepy==0.23.0
+kiwipiepy_model==0.23.0

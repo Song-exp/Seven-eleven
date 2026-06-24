@@ -146,6 +146,78 @@ b{color:var(--text);font-weight:700}
   .col-left{border-right:none;border-bottom:1px solid var(--line)}
   .head-meta{display:none}
 }
+
+/* ── 시트 전환 (병합: 시트1 네트워크 / 시트2 키워드추출) ─────────── */
+.sheet-nav{display:flex;align-items:center;gap:8px;padding:14px 32px;border-bottom:1px solid var(--line);background:#fff}
+.sheet-tab{padding:9px 18px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--text-2);font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:.12s}
+.sheet-tab:hover{border-color:var(--green-border);color:var(--green)}
+.sheet-tab.on{background:var(--green-fill);border-color:var(--green-soft);color:var(--green)}
+.sheet-note{margin-left:auto;color:var(--text-3);font-size:12px;font-weight:500}
+.sheet-panel{display:none}
+.sheet-panel.on{display:block}
+
+/* ── 시트2: 네트워크 키워드 자동 추출 ───────────── */
+.sheet2-wrap{display:grid;grid-template-columns:360px 1fr;min-height:calc(100vh - 126px)}
+.sheet2-left{padding:18px 18px;border-right:1px solid var(--line);background:#fff}
+.sheet2-right{padding:26px 32px;background:#fff}
+.panel-box{background:var(--surface-2);border:1px solid var(--line-soft);border-radius:14px;padding:14px;margin-bottom:10px}
+.field{margin-bottom:9px}
+.field label{display:block;font-size:12px;font-weight:700;color:var(--text-2);margin-bottom:5px}
+.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--text);font-family:inherit;font-size:13px;padding:8px 10px}
+.field textarea{min-height:72px;resize:vertical;line-height:1.6}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--green-soft);box-shadow:0 0 0 3px rgba(34,197,94,.12)}
+.file-box{border:1px dashed var(--green-border);border-radius:11px;background:#fff;padding:9px;margin-top:6px}
+.file-box input{font-size:12px;max-width:100%;color:var(--text-2)}
+.help-text{font-size:12px;color:var(--text-3);line-height:1.45;margin-top:6px}
+.sheet2-left .left-title{margin-bottom:12px}
+.sheet2-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.sheet2-actions .btn{width:100%;padding:11px 12px}
+.btn.two-line{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1.2}
+.btn.line{background:#fff;color:var(--green);border:1px solid var(--green-border)}
+.btn.line:hover{background:var(--green-fill);filter:none}
+.btn.redline{background:#fff;color:var(--red);border:1px solid #F8B4B4}
+.btn.redline:hover{background:#FFF1F2;filter:none}
+.upload-status{padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--text-2);font-size:12px;line-height:1.45;margin-top:8px}
+.upload-status b{color:var(--green)}
+.section-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:16px}
+.section-title{font-size:17px;font-weight:800;color:var(--text);letter-spacing:-.3px}
+.section-sub{font-size:13px;color:var(--text-3);line-height:1.75;margin-top:5px}
+.summary-grid{display:flex;align-items:stretch;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.summary-card{width:148px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:12px 14px}
+.summary-card .lab{font-size:11px;color:var(--text-3);font-weight:700;margin-bottom:7px;white-space:nowrap}
+.summary-card .num{font-size:26px;font-weight:800;color:var(--text);line-height:1}
+.summary-card .num.green{color:var(--green)}
+.summary-card .num.orange{color:#C76A1D}
+.review-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.review-toolbar input{width:220px;border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-family:inherit;font-size:13px}
+.review-toolbar select{border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-family:inherit;font-size:13px;background:#fff;color:var(--text)}
+.result-list{display:grid;gap:12px}
+.result-card{border:1px solid var(--line);border-radius:14px;background:#fff;padding:16px 18px}
+.result-head{margin-bottom:12px}
+.product-meta-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:5px}
+.product-title{font-size:15px;font-weight:800;color:var(--text);line-height:1.45}
+.product-meta{font-size:12px;color:var(--text-3)}
+.status-badge{display:inline-flex;align-items:center;border-radius:14px;padding:4px 10px;font-size:11px;font-weight:800;white-space:nowrap}
+.status-badge.ready{background:var(--green-fill);color:var(--green);border:1px solid var(--green-border)}
+.status-badge.none{background:var(--surface-2);color:var(--text-3);border:1px solid var(--line)}
+.source-label{font-size:12px;color:var(--text-3);font-weight:800;margin:14px 0 8px}
+.source-text{font-size:13px;color:var(--text-2);line-height:1.75;background:var(--surface-2);border:1px solid var(--line-soft);border-radius:10px;padding:10px 12px;margin-bottom:12px}
+.keyword-group{margin-top:10px}
+.keyword-group-title{font-size:12px;color:var(--text-3);font-weight:800;margin-bottom:8px}
+.keyword-chip-row{display:flex;flex-wrap:wrap;gap:8px}
+.result-card .chip{cursor:default}
+.result-card .chip.candidate{background:#FFF4E8;border-color:#F2994A;color:#C76A1D}
+.detail-toggle{margin-top:12px;border:1px solid var(--line-soft);border-radius:10px;background:#fff;overflow:hidden}
+.detail-toggle summary{list-style:none;cursor:pointer;padding:10px 12px;font-size:12px;font-weight:800;color:var(--text-2);background:var(--surface-2);display:flex;align-items:center;gap:7px}
+.detail-toggle summary::-webkit-details-marker{display:none}
+.detail-toggle summary::before{content:'▶';display:inline-block;color:var(--green);font-size:10px;transition:transform .12s ease}
+.detail-toggle[open] summary::before{transform:rotate(90deg)}
+.evidence-table{width:100%;border-collapse:collapse;font-size:12px}
+.evidence-table th,.evidence-table td{border-bottom:1px solid var(--line-soft);padding:8px;text-align:left;vertical-align:top;line-height:1.55}
+.evidence-table th{color:var(--text-3);font-weight:800;background:var(--surface-2)}
+.empty-state{border:1px dashed var(--line);border-radius:14px;background:var(--surface-2);padding:70px 20px;text-align:center;color:var(--text-3);line-height:1.8}
+.loading-state{border:1px solid var(--green-border);border-radius:14px;background:linear-gradient(180deg,#EAF8F0 0%,#F4FBF7 100%);padding:74px 20px;text-align:center;color:var(--green);line-height:1.8;font-size:22px;font-weight:800}
+.loading-state .sub{display:block;margin-top:8px;font-size:13px;font-weight:600;color:var(--text-2)}
 </style>
 </head>
 <body>
@@ -157,6 +229,13 @@ b{color:var(--text);font-weight:700}
   <div class="head-meta">2025년 네트워크 기반<span class="arrow">&rarr;</span>2026년 1월 기획 적용<span id="serving-tag"></span></div>
 </header>
 
+<nav class="sheet-nav">
+  <button class="sheet-tab on" data-sheet="sheet1" onclick="switchSheet('sheet1')">신상품 기획 인사이트</button>
+  <button class="sheet-tab" data-sheet="sheet2" onclick="switchSheet('sheet2')">네트워크 업데이트</button>
+  <div class="sheet-note">현재 네트워크 활용과 향후 네트워크 확장을 한 화면에서 관리합니다.</div>
+</nav>
+
+<section id="sheet1" class="sheet-panel on">
 <div class="wrap">
   <!-- 좌: 검색 블록들 -->
   <div class="col-left">
@@ -200,6 +279,61 @@ b{color:var(--text);font-weight:700}
     </div>
   </div>
 </div>
+</section>
+
+<section id="sheet2" class="sheet-panel">
+  <div class="sheet2-wrap">
+    <aside class="sheet2-left">
+      <div class="left-title">제품-키워드 자동 추출</div>
+      <div class="panel-box">
+        <div class="sblock-head"><span class="sblock-title">단건 입력</span></div>
+        <div class="field"><label for="single-code">상품코드</label><input id="single-code" inputmode="numeric" placeholder="예: 123456"></div>
+        <div class="field"><label for="single-name">상품명</label><input id="single-name" placeholder="예: 딸기초코디저트"></div>
+        <div class="field"><label for="single-desc">상품 설명문</label><textarea id="single-desc" placeholder="예: 빼빼로데이 시즌 한정 초콜릿 딸기맛 디저트를 출시합니다."></textarea></div>
+        <button class="btn sec" style="width:100%" onclick="runSingleExtract()">키워드 추출</button>
+      </div>
+      <div class="panel-box">
+        <div class="sblock-head"><span class="sblock-title">CSV 파일 업로드</span></div>
+        <div class="field">
+          <label for="csv-file">신상품 설명서 CSV</label>
+          <div class="file-box"><input id="csv-file" type="file" accept=".csv,text/csv"></div>
+          <div class="help-text">권장 컬럼명: 상품코드, 상품명, 상품 설명문입니다. 기존 영문 컬럼명도 자동으로 인식합니다.</div>
+        </div>
+        <button class="btn sec" style="width:100%" onclick="runCsvExtract()">업로드 파일 추출</button>
+        <div id="csv-status" class="upload-status">아직 업로드된 파일이 없습니다.</div>
+      </div>
+    </aside>
+    <main class="sheet2-right">
+      <div class="section-title-row">
+        <div>
+          <div class="section-title">네트워크 키워드 자동 추출</div>
+          <div class="section-sub">백엔드 키워드 사전 기준으로 상품 설명문에서 기존 키워드와 신규 키워드를 자동 추출해 업데이트용 CSV로 저장합니다.</div>
+        </div>
+        <div class="sheet2-actions" style="width:310px;margin-top:0">
+          <button class="btn line two-line" onclick="downloadReviewedCsv()"><span>추출 결과</span><span>CSV 다운로드</span></button>
+          <button class="btn redline" onclick="clearSheet2()">결과 초기화</button>
+        </div>
+      </div>
+      <div class="summary-grid">
+        <div class="summary-card"><div class="lab">처리 상품 수</div><div class="num" id="sum-products">0</div></div>
+        <div class="summary-card"><div class="lab">전체 키워드 수</div><div class="num green" id="sum-selected">0</div></div>
+        <div class="summary-card"><div class="lab">기존 키워드</div><div class="num green" id="sum-existing">0</div></div>
+        <div class="summary-card"><div class="lab">신규 키워드</div><div class="num orange" id="sum-candidate">0</div></div>
+      </div>
+      <div class="review-toolbar">
+        <input id="review-search" placeholder="상품명 또는 키워드 검색" oninput="renderReviewList()">
+        <select id="review-filter" onchange="renderReviewList()">
+          <option value="all">전체 보기</option>
+          <option value="candidate">신규 키워드 포함</option>
+          <option value="empty">추출 키워드 없음</option>
+        </select>
+      </div>
+      <div id="review-list" class="result-list">
+        <div class="empty-state">단건 입력 또는 CSV 업로드로 키워드를 추출하면 상품별 결과가 표시됩니다.</div>
+      </div>
+    </main>
+  </div>
+</section>
 
 <script src="config.js"></script>
 <script src="combo_data.js"></script>
@@ -599,15 +733,15 @@ async function _comboPair(aId,bId){
   // ── 함께 쓰면? — margin(절대 기여) 헤드라인 (단일 노드 목록과 동일 지표) ──
   h+=`<div class="sec">함께 쓰면? (궁합)</div>`;
   if(s && s.margin!==undefined){
-    const good=s.margin>0.001, bad=s.margin<-0.001;
+    const good=s.margin>0.01, bad=s.margin<-0.01;   // 단일 노이즈 플로어 ±0.01 (2·SE, 전역 분류와 통일)
     const mk=good?'✅':(bad?'⚠':'➖'), col=good?'var(--green)':(bad?'var(--red)':'var(--text-3)');
     h+=`<div class="row"><b style="color:${col}">${mk} 함께 쓰면 성공 가능성 ${_pct(s.margin)}</b></div>`;
     if(!good&&!bad) h+=`<div class="row" style="color:var(--text-3);font-size:12px">영향이 거의 없어요 — 각자 제 몫을 하는 조합.</div>`;
     if(s.kind==='kw-ip' && s.synergy!==undefined){   // IP 증폭/잠식
-      const amp=s.synergy>0.001, sup=s.synergy<-0.001;
+      const amp=s.synergy>0.01, sup=s.synergy<-0.01;
       if(amp) h+=`<div class="row" style="color:var(--text-3);font-size:12px">이 IP가 키워드 효과를 <b style="color:var(--green)">키워줘요</b> (단독 대비 ${_pct(s.synergy)}).</div>`;
       else if(sup) h+=`<div class="row" style="color:var(--text-3);font-size:12px">이 IP는 키워드 효과를 살짝 <b style="color:var(--red)">눌러요</b> (단독 대비 ${_pct(s.synergy)}).</div>`;
-    } else if(s.synergy!==undefined && s.synergy<-0.001)   // 키워드끼리 겹침
+    } else if(s.synergy!==undefined && s.synergy<-0.01)   // 키워드끼리 겹침
       h+=`<div class="row" style="color:var(--text-3);font-size:12px">단, <b>${_esc(a)}</b>와 결이 겹쳐요 — <b>${_esc(b)}</b> 단독보다 회복분이 ${_pct(s.synergy)} 줄어요(이미 강한 것과 중복).</div>`;
   } else if(!computable) h+=`<div class="row" style="color:var(--text-2)">제품 노드는 궁합 계산 대상이 아니에요. (속성 키워드 또는 IP를 클릭하세요)</div>`;
   else h+=`<div class="row" style="color:var(--text-2)">정밀 궁합은 라이브 서버에서 계산돼요. 아래 경로의 구간 수치를 참고하세요.</div>`;
@@ -619,7 +753,7 @@ async function _comboPair(aId,bId){
       row+=`<b>${_esc(_comboLabel(path[i]))}</b>`;
       if(i<path.length-1){ const mg=_edgeMargin(path[i],path[i+1]);
         const lab=(mg===null)?(EDGE_WHY[_edgeType(path[i],path[i+1])]||'연결'):_pct(mg);
-        const col=(mg===null)?'var(--text-3)':(mg>0.001?'var(--green)':(mg<-0.001?'var(--red)':'var(--text-3)'));
+        const col=(mg===null)?'var(--text-3)':(mg>0.01?'var(--green)':(mg<-0.01?'var(--red)':'var(--text-3)'));
         row+=` <span style="color:${col};font-size:11px">—(${lab})→</span> `; }
     }
     h+=row+'</div>';
@@ -632,13 +766,23 @@ function _fitRow(name, val, good){
   const why = good ? `함께 쓰면 성공 가능성 ${_pct(val)}` : `같이 쓰면 ${_pct(val)} (겹침)`;
   return `<div class="nb"><span class="nm">${_esc(name)}</span><span class="nb-right"><b style="color:${good?'var(--green)':'var(--red)'}">${good?'✅':'⚠'}</b> <span style="font-size:11px;color:var(--text-3)">${why}</span></span></div>`;
 }
+// 전역 분류(1층) 뱃지·설명 — 한 키워드 클릭 시 "이 단어 자체가 무엇인가" (killer/mine/매개/hub, 2025 prior)
+const GTAG_INFO={
+  killer:{badge:'🔑 killer',color:'#1C8A47',bg:'#E6F7EC',border:'#9BD9B4',desc:'전체 네트워크에서 <b>성공을 유발</b>하는 경향(2025 prior). 단독 주입 시 성공 확률을 끌어올립니다.'},
+  mine:{badge:'⚠ mine',color:'#C0392B',bg:'#FDECEA',border:'#F0B4AC',desc:'전체에서 <b>실패에 쏠린</b> 주의 키워드(2025 prior). 금지룰이 아니라 — 강한 killer·조합으로 상쇄되면 도전 가능.'},
+  '매개':{badge:'🧪 매개',color:'#5B4FCF',bg:'#EEF0FF',border:'#C3C6F0',desc:'혼자선 약하지만 <b>어디 붙여도</b> 성공 확률을 올리는 보편 증폭제입니다.'},
+  hub:{badge:'⚙ hub',color:'#777',bg:'#F2F2F2',border:'#DDD',desc:'성패에 중립인 <b>범용 백본</b> 키워드입니다.'}
+};
+function _gtagBadge(t){ const g=GTAG_INFO[t]; return g?` <span class="tag" style="background:${g.bg};border-color:${g.border};color:${g.color};font-weight:700">${g.badge}</span>`:''; }
+function _gtagRow(t){ const g=GTAG_INFO[t]; return g?`<div class="sec">전역 분류 <span style="font-weight:400;color:var(--text-3);font-size:11px">(이 키워드 자체)</span></div><div class="row" style="font-size:12px;color:var(--text-2)">${g.desc}</div>`:''; }
 function _comboBrief(id){
   const C=_comboCur, m=_nodeMeta[id]; if(!m) return;
   let h=`<span class="cls" onclick="_showComboGuide()">✖</span>`;
   const isIP=(m.type==='ip');
   const badge = (m.type==='trend') ? ` <span class="tag" style="background:#FFF4E5;border-color:#F2994A;color:#B45309">🔥 트렌드</span>` : '';
-  h+=`<h4>${_cdot(m.type)}${_esc(m.label)}${badge}</h4>`;
+  h+=`<h4>${_cdot(m.type)}${_esc(m.label)}${badge}${_gtagBadge(m.gtag)}</h4>`;
   h+=`<div class="sub">${isIP?'IP':(m.seed?'시작 속성':'속성 키워드')}</div>`;
+  h+=_gtagRow(m.gtag);
   if(m.seed){
     const recs=(C.recommend||[]);
     const pos=recs.filter(r=>r.margin>0).slice(0,5), neg=recs.filter(r=>r.margin<0).slice(-3);
@@ -665,14 +809,19 @@ function renderComboExplain(seed){
   const C=CD.data[seed], acc=C.accepted||[];
   const emg=acc.filter(a=>/찐보완재/.test(a.label||'')).map(a=>a.keyword);
   const rest=C.rail.slice(1);
-  // 시드/레일 속성에 직접 붙는 IP(type 'ip' 엣지) — 어텐션 가중(선 굵기) 내림차순 상위
-  const ipName={}; (C.nodes||[]).forEach(n=>{ if(n.type==='ip') ipName[n.id]=n.label; });
-  const ipW={};
-  (C.edges||[]).forEach(e=>{ if(e.type==='ip' && ipName[e.tgt]!==undefined) ipW[e.tgt]=Math.max(ipW[e.tgt]||0, e.weight||0); });
-  const topIPs=Object.keys(ipW).sort((a,b)=>ipW[b]-ipW[a]).slice(0,4).map(id=>ipName[id]);
+  // 시드에 붙는 IP — 인과 margin(pair_synergy_ip, seed 기준) 내림차순. 클릭 시 궁합 패널과 동일 수치 = 일관.
+  const ipNodes=(C.nodes||[]).filter(n=>n.type==='ip');
+  let topIPs;
+  if(ipNodes.some(n=>n.ip_margin!==undefined)){
+    topIPs=ipNodes.filter(n=>n.ip_margin>0.01).sort((a,b)=>b.ip_margin-a.ip_margin).slice(0,4).map(n=>n.label);
+  } else {   // 구버전 캐시 호환: 어텐션 가중 fallback
+    const ipName={}; ipNodes.forEach(n=>ipName[n.id]=n.label);
+    const ipW={}; (C.edges||[]).forEach(e=>{ if(e.type==='ip' && ipName[e.tgt]!==undefined) ipW[e.tgt]=Math.max(ipW[e.tgt]||0, e.weight||0); });
+    topIPs=Object.keys(ipW).sort((a,b)=>ipW[b]-ipW[a]).slice(0,4).map(id=>ipName[id]);
+  }
   const L=[`**${seed}**로 신상품을 기획하면, 성공 확률을 **가장 크게 끌어올리는 순서**로 ${rest.length?'**'+rest.join(' → ')+'**':''} 속성이 이어집니다.`];
   if(emg.length) L.push(`- 💚 **같이 쓸수록 좋아지는 속성**: ${emg.join(', ')}`);
-  if(topIPs.length) L.push(`- 🧡 **잘 어울리는 IP(콜라보 후보)**: ${topIPs.join(', ')}`);
+  if(topIPs.length) L.push(`- 🧡 **잘 어울리는 IP(콜라보 후보)**: ${topIPs.join(', ')} (성공 확률 기여 순)`);
   const el=document.getElementById('net-explain'); el.classList.remove('muted'); el.innerHTML=mdToHtml(L.join('\n'));
 }
 
@@ -962,6 +1111,173 @@ function _renderBrief(id,m){
 
 setRightTitle(null);
 addBlock();  // 시작 시 검색어 1개
+
+// ════════════════════════════════════════════════════════════════════
+//  시트2: 네트워크 업데이트 — 상품 설명문 → 키워드 자동 추출 (Kiwi 백엔드)
+//  서버: /extract-one · /extract-batch (api.py, same-origin). _esc는 시트1 정의 재사용.
+// ════════════════════════════════════════════════════════════════════
+const UPDATE_STATE = { rows: [], rawCsvRows: [] };
+
+function switchSheet(sheetId){
+  document.querySelectorAll('.sheet-tab').forEach(b=>b.classList.toggle('on', b.dataset.sheet===sheetId));
+  document.querySelectorAll('.sheet-panel').forEach(p=>p.classList.toggle('on', p.id===sheetId));
+  if(sheetId==='sheet1' && typeof _visNet!=='undefined' && _visNet) setTimeout(()=>{ _visNet.redraw(); _visNet.fit({animation:false}); }, 60);
+}
+
+function normalize2(t){ return String(t??'').replace(/\s+/g,' ').trim(); }
+function csvEscape2(v){ const s=String(v??''); return /[",\n\r]/.test(s) ? `"${s.replace(/"/g,'""')}"` : s; }
+function rowsToCsv2(rows, headers){ return '﻿' + [headers.join(','), ...rows.map(r=>headers.map(h=>csvEscape2(r[h])).join(','))].join('\n'); }
+function readFileText2(file){ return new Promise((res,rej)=>{ if(!file){res('');return;} const r=new FileReader(); r.onload=()=>res(String(r.result||'')); r.onerror=()=>rej(r.error); r.readAsText(file,'utf-8'); }); }
+function parseCsvText2(text){
+  const rows=[]; let row=[], cell='', quote=false;
+  text=String(text||'').replace(/^﻿/,'');
+  for(let i=0;i<text.length;i++){ const ch=text[i], next=text[i+1];
+    if(quote){ if(ch==='"'&&next==='"'){cell+='"';i++;} else if(ch==='"')quote=false; else cell+=ch; continue; }
+    if(ch==='"'){quote=true;continue;}
+    if(ch===','){row.push(cell);cell='';continue;}
+    if(ch==='\n'){row.push(cell);rows.push(row);row=[];cell='';continue;}
+    if(ch==='\r')continue; cell+=ch;
+  }
+  row.push(cell);
+  if(row.some(v=>String(v).trim()!=='')) rows.push(row);
+  if(!rows.length) return [];
+  const headers=rows[0].map(h=>normalize2(h));
+  return rows.slice(1).filter(r=>r.some(v=>normalize2(v))).map(r=>{ const o={}; headers.forEach((h,i)=>{o[h]=r[i]??'';}); return o; });
+}
+
+function normalizeKeywordType2(type){
+  if(type==='기존 등록 키워드') return '기존 키워드';
+  if(type==='신규 후보 키워드') return '신규 키워드';
+  return type || '신규 키워드';
+}
+function normalizeServerRow2(row){
+  const out=Object.assign({ id:Date.now().toString(36)+Math.random().toString(36).slice(2,7), itemCode:'', itemName:'', sourceText:'', memo:'', confirmed:false, keywords:[] }, row||{});
+  out.id=out.id||(Date.now().toString(36)+Math.random().toString(36).slice(2,7));
+  out.keywords=(out.keywords||[]).map(k=>Object.assign({keyword:'',keywordType:'신규 키워드',selected:true,inputTerm:'',method:'',methodLabel:'',detail:''},k))
+    .map(k=>Object.assign(k,{keywordType:normalizeKeywordType2(k.keywordType),selected:true}));
+  return out;
+}
+function resetSheet2ResultsForNewRun(){
+  UPDATE_STATE.rows=[]; UPDATE_STATE.rawCsvRows=[];
+  const s=document.getElementById('review-search'), f=document.getElementById('review-filter');
+  if(s)s.value=''; if(f)f.value='all'; renderReviewList();
+}
+
+function showKeywordLoading(message='키워드 추출 중...'){
+  const root=document.getElementById('review-list');
+  if(root) root.innerHTML=`<div class="loading-state">${message}<span class="sub">상품 설명문을 분석해 기존 키워드와 신규 키워드를 분리하고 있습니다.</span></div>`;
+}
+async function callSheet2Api2(path, payload){
+  let res;
+  try{ res=await fetch(`${API_BASE}${path}`, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}); }
+  catch(e){ throw new Error('키워드 추출 서버에 연결할 수 없습니다. 백엔드(api.py)가 실행 중인지 확인해 주세요.'); }
+  const data=await res.json().catch(()=>({ok:false,error:'응답을 읽지 못했습니다.'}));
+  if(!res.ok || !data.ok) throw new Error(data.error || '키워드 추출에 실패했습니다.');
+  return data;
+}
+async function runSingleExtract(){
+  const code=document.getElementById('single-code').value.trim();
+  const name=document.getElementById('single-name').value.trim();
+  const desc=document.getElementById('single-desc').value.trim();
+  if(!code || !desc){ alert('상품코드와 상품 설명문을 입력해 주세요.'); return; }
+  resetSheet2ResultsForNewRun(); showKeywordLoading('키워드 추출 중...');
+  try{
+    const data=await callSheet2Api2('/extract-one', {itemCode:code, itemName:name, sourceText:desc});
+    UPDATE_STATE.rows=[normalizeServerRow2(data.row)]; UPDATE_STATE.rawCsvRows=[];
+    const st=document.getElementById('csv-status'); if(st) st.textContent='단건 입력 결과를 표시 중입니다.';
+    const s=document.getElementById('review-search'), f=document.getElementById('review-filter'); if(s)s.value=''; if(f)f.value='all';
+    renderReviewList();
+  }catch(e){ alert(e.message); document.getElementById('review-list').innerHTML='<div class="empty-state">추출에 실패했습니다.</div>'; }
+}
+async function runCsvExtract(){
+  const file=document.getElementById('csv-file').files[0];
+  if(!file){ alert('CSV 파일을 첨부해 주세요.'); return; }
+  resetSheet2ResultsForNewRun(); showKeywordLoading('업로드 파일 추출 중...');
+  const rows=parseCsvText2(await readFileText2(file)); UPDATE_STATE.rawCsvRows=rows;
+  try{
+    const data=await callSheet2Api2('/extract-batch', {rows});
+    const built=(data.rows||[]).map(normalizeServerRow2); UPDATE_STATE.rows=built;
+    document.getElementById('csv-status').innerHTML=built.length ? `<b>${built.length}</b>개 상품을 추출했습니다.` : '설명문 컬럼을 찾지 못했습니다.';
+    renderReviewList();
+  }catch(e){ alert(e.message); document.getElementById('review-list').innerHTML='<div class="empty-state">추출에 실패했습니다.</div>'; }
+}
+function clearSheet2(){
+  if(!UPDATE_STATE.rows.length || confirm('추출 결과를 모두 초기화할까요?')){
+    UPDATE_STATE.rows=[]; UPDATE_STATE.rawCsvRows=[]; renderReviewList();
+    const st=document.getElementById('csv-status'); if(st) st.textContent='아직 업로드된 파일이 없습니다.';
+  }
+}
+function statusForRow2(row){ return row.keywords.length ? {cls:'ready', text:'자동 추출 완료'} : {cls:'none', text:'매칭 없음'}; }
+function attrEsc2(s){ return _esc(s).replace(/"/g,'&quot;'); }
+function keywordFlow2(k){ const i=normalize2(k.inputTerm||''), kw=normalize2(k.keyword||''); return (i&&kw&&i!==kw) ? `<b>${_esc(i)} → ${_esc(kw)}</b>` : _esc(kw||i||'-'); }
+function renderSummary2(){
+  const rows=UPDATE_STATE.rows;
+  const sel=rows.reduce((s,r)=>s+r.keywords.length,0);
+  const ex=rows.reduce((s,r)=>s+r.keywords.filter(k=>k.keywordType==='기존 키워드').length,0);
+  const ca=rows.reduce((s,r)=>s+r.keywords.filter(k=>k.keywordType==='신규 키워드').length,0);
+  document.getElementById('sum-products').textContent=rows.length.toLocaleString();
+  document.getElementById('sum-selected').textContent=sel.toLocaleString();
+  document.getElementById('sum-existing').textContent=ex.toLocaleString();
+  document.getElementById('sum-candidate').textContent=ca.toLocaleString();
+}
+function renderReviewList(){
+  renderSummary2();
+  const root=document.getElementById('review-list');
+  const q=normalize2(document.getElementById('review-search')?.value||'').toLowerCase();
+  const filter=document.getElementById('review-filter')?.value||'all';
+  const rows=UPDATE_STATE.rows.filter(row=>{
+    const hay=[row.itemCode,row.itemName,row.sourceText,...row.keywords.map(k=>k.keyword)].join(' ').toLowerCase();
+    if(q && !hay.includes(q)) return false;
+    if(filter==='candidate' && !row.keywords.some(k=>k.keywordType==='신규 키워드')) return false;
+    if(filter==='empty' && row.keywords.length) return false;
+    return true;
+  });
+  if(!rows.length){ root.innerHTML='<div class="empty-state">표시할 추출 결과가 없습니다.</div>'; return; }
+  root.innerHTML='';
+  rows.forEach(row=>{
+    const st=statusForRow2(row);
+    const ex=row.keywords.filter(k=>k.keywordType==='기존 키워드');
+    const ca=row.keywords.filter(k=>k.keywordType==='신규 키워드');
+    const card=document.createElement('div'); card.className='result-card';
+    card.innerHTML=`
+      <div class="result-head">
+        <div class="product-title">${_esc(row.itemName || '상품명 없음')}</div>
+        <div class="product-meta-row">
+          <div class="product-meta">상품코드 ${_esc(row.itemCode || '-')} · 기존 ${ex.length}개 / 신규 ${ca.length}개 / 전체 ${row.keywords.length}개</div>
+          <span class="status-badge ${st.cls}">${st.text}</span>
+        </div>
+      </div>
+      <div class="keyword-group"><div class="keyword-group-title">기존 키워드</div>
+        <div class="keyword-chip-row">${ex.length ? ex.map(k=>`<span class="chip on" title="${attrEsc2(k.detail)}">${_esc(k.keyword)}</span>`).join('') : '<span class="help-text">매칭된 기존 키워드가 없습니다.</span>'}</div>
+      </div>
+      <div class="keyword-group"><div class="keyword-group-title">신규 키워드</div>
+        <div class="keyword-chip-row">${ca.length ? ca.map(k=>`<span class="chip candidate" title="${attrEsc2(k.detail)}">${_esc(k.keyword)}</span>`).join('') : '<span class="help-text">신규 키워드가 없습니다.</span>'}</div>
+      </div>
+      <div class="source-label">상품 설명문</div>
+      <div class="source-text">${_esc(row.sourceText || '설명문 없음')}</div>
+      <details class="detail-toggle">
+        <summary><span>상세 추출 근거</span></summary>
+        <table class="evidence-table">
+          <thead><tr><th>추출 키워드</th><th>입력 표현</th><th>등록 여부</th><th>추출 근거</th></tr></thead>
+          <tbody>${row.keywords.map(k=>`<tr><td>${_esc(k.keyword)}</td><td>${keywordFlow2(k)}</td><td>${_esc(k.keywordType)}</td><td>${_esc(k.detail)}</td></tr>`).join('') || '<tr><td colspan="4">추출 근거가 없습니다.</td></tr>'}</tbody>
+        </table>
+      </details>`;
+    root.appendChild(card);
+  });
+}
+function downloadReviewedCsv(){
+  const out=[];
+  UPDATE_STATE.rows.forEach(row=>{
+    const ex=row.keywords.filter(k=>k.keywordType==='기존 키워드').map(k=>normalize2(k.keyword)).filter(Boolean);
+    const fr=row.keywords.filter(k=>k.keywordType==='신규 키워드').map(k=>normalize2(k.keyword)).filter(Boolean);
+    if(ex.length || fr.length) out.push({'상품코드':row.itemCode,'상품명':row.itemName,'원문 설명':row.sourceText,'기존 키워드':ex.join('|'),'신규 키워드':fr.join('|')});
+  });
+  if(!out.length){ alert('다운로드할 추출 키워드가 없습니다.'); return; }
+  const headers=['상품코드','상품명','원문 설명','기존 키워드','신규 키워드'];
+  const blob=new Blob([rowsToCsv2(out,headers)],{type:'text/csv;charset=utf-8'});
+  const url=URL.createObjectURL(blob); const a=document.createElement('a');
+  a.href=url; a.download='네트워크_키워드_자동추출.csv'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+}
 </script>
 </body>
 </html>

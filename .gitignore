@@ -54,6 +54,10 @@ experiments/results/**/*.parquet
 # 배포 번들(serving_assets)은 추적 — *.pt 전역 무시에서 예외 처리 (Railway 배포 산출물)
 !serving_assets/model/hin_gnn_best.pt
 
+# 시트2 키워드 추출 사전 — `data/` 전역 무시에서 예외 처리 (배포에 필요, 코드와 함께 추적)
+!src/eval/keyword_extract/data/
+!src/eval/keyword_extract/data/*.csv
+
 # EDA 데이터 파생물 및 발표 자료 (비공개)
 eda/**/*.xlsx
 eda/**/*.csv
