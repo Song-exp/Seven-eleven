@@ -40,7 +40,7 @@ wheels/
 mcp_config.json
 eda/seven_trend/.env
 *.DS_Store
-.env
+.env
 .env
 
 # Model checkpoints (재현 가능, git 불필요)
@@ -50,6 +50,9 @@ checkpoints/
 # Experiment result binaries (재실행으로 재생성 가능)
 experiments/results/**/hin_gnn_best.pt
 experiments/results/**/*.parquet
+
+# 배포 번들(serving_assets)은 추적 — *.pt 전역 무시에서 예외 처리 (Railway 배포 산출물)
+!serving_assets/model/hin_gnn_best.pt
 
 # EDA 데이터 파생물 및 발표 자료 (비공개)
 eda/**/*.xlsx

@@ -5734,8 +5734,7 @@ window.DASHBOARD_DATA = {
      "label": "가루",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "product\u0001해태)연양갱인절미호두맛55g",
@@ -5816,6 +5815,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001가루"
     },
     {
@@ -5824,6 +5824,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001가루"
     },
     {
@@ -5832,7 +5833,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001가루"
     },
     {
@@ -5915,7 +5916,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001해태)연양갱땅콩맛55g"
     },
     {
@@ -5924,7 +5925,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001해태)연양갱땅콩맛55g"
     },
     {
@@ -5933,7 +5934,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001해태)연양갱땅콩맛55g"
     }
    ],
@@ -6101,8 +6101,7 @@ window.DASHBOARD_DATA = {
      "label": "가벼움",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001볶음",
@@ -6139,7 +6138,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001가벼움"
     },
     {
@@ -6181,7 +6179,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001가벼움"
     },
     {
@@ -6238,7 +6235,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -6255,7 +6251,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -6264,7 +6259,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -6273,7 +6268,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -6282,7 +6277,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -6308,7 +6303,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001콕콕콕"
     },
     {
@@ -6368,7 +6362,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001콕콕콕"
     },
     {
@@ -6377,7 +6370,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001콕콕콕"
     },
     {
@@ -6457,6 +6449,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쫄깃함"
     },
     {
@@ -6473,7 +6466,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001쫄깃함"
     },
     {
@@ -6816,7 +6808,8 @@ window.DASHBOARD_DATA = {
      "label": "가을",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "product\u0001삼립)25년듬뿍피자호빵(4입)",
@@ -6952,7 +6945,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)25년듬뿍피자호빵(4입)"
     },
     {
@@ -6961,6 +6953,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001삼립)25년듬뿍피자호빵(4입)"
     },
     {
@@ -6977,7 +6970,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)25년듬뿍피자호빵(4입)"
     },
     {
@@ -6986,7 +6978,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)25년듬뿍피자호빵(4입)"
     },
     {
@@ -6995,7 +6986,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)25년듬뿍피자호빵(4입)"
     },
     {
@@ -7068,6 +7058,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001APP예약)제육열무비빔밥"
     },
     {
@@ -7093,6 +7084,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001APP예약)제육열무비빔밥"
     },
     {
@@ -7101,6 +7093,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001APP예약)제육열무비빔밥"
     },
     {
@@ -7117,7 +7110,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "product\u0001APP예약)제육열무비빔밥"
     },
     {
@@ -7336,8 +7328,7 @@ window.DASHBOARD_DATA = {
      "label": "간식",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001세이카",
@@ -7423,7 +7414,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001간식"
     },
     {
@@ -7432,7 +7422,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001간식"
     },
     {
@@ -7449,7 +7438,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001세이카"
     },
     {
@@ -8042,8 +8030,7 @@ window.DASHBOARD_DATA = {
      "label": "간장",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001BHC",
@@ -8072,6 +8059,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001간장"
     },
     {
@@ -8218,7 +8206,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001BHC"
     },
     {
@@ -8227,7 +8214,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001BHC"
     },
     {
@@ -8413,7 +8399,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001미니언즈"
     },
     {
@@ -8707,8 +8692,7 @@ window.DASHBOARD_DATA = {
      "label": "면",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001우동",
@@ -8722,7 +8706,8 @@ window.DASHBOARD_DATA = {
      "label": "국물",
      "type": "keyword",
      "layer": 3,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001닭",
@@ -8730,7 +8715,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001간편"
     },
     {
@@ -8739,6 +8723,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001간편"
     },
     {
@@ -8747,7 +8732,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001간편"
     },
     {
@@ -8756,6 +8740,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001간편"
     },
     {
@@ -8949,7 +8934,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001우동"
     },
     {
@@ -8958,7 +8942,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001우동"
     },
     {
@@ -9022,6 +9005,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001국물"
     },
     {
@@ -9422,8 +9406,7 @@ window.DASHBOARD_DATA = {
      "label": "소주",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "keyword\u0001양념",
@@ -9556,6 +9539,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001명륜진사"
     },
     {
@@ -9602,7 +9586,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001회식"
     },
     {
@@ -9611,7 +9594,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001회식"
     },
     {
@@ -9620,7 +9602,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001회식"
     },
     {
@@ -9734,7 +9715,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001소주"
     },
     {
@@ -10065,7 +10045,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001라이언",
@@ -10079,8 +10059,7 @@ window.DASHBOARD_DATA = {
      "label": "슈",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "product\u0001디저트39)저당슈크림모나카140ml",
@@ -10175,7 +10154,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001감귤"
     },
     {
@@ -10184,7 +10162,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001감귤"
     },
     {
@@ -10215,7 +10192,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -10224,7 +10201,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -10233,7 +10210,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -10242,7 +10218,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -10251,7 +10226,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -10260,7 +10234,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -10269,7 +10242,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -10278,7 +10251,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -10435,6 +10408,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001디저트39)저당슈크림모나카140ml"
     },
     {
@@ -10443,6 +10417,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001디저트39)저당슈크림모나카140ml"
     },
     {
@@ -10459,7 +10434,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001디저트39)저당슈크림모나카140ml"
     },
     {
@@ -10468,7 +10442,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001디저트39)저당슈크림모나카140ml"
     }
    ],
@@ -10741,15 +10714,15 @@ window.DASHBOARD_DATA = {
      "label": "감자",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001해장",
      "label": "해장",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001새우",
@@ -10779,6 +10752,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001감자"
     },
     {
@@ -10835,6 +10809,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001감자"
     },
     {
@@ -11116,6 +11091,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001삼진어묵"
     },
     {
@@ -11148,7 +11124,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001삼진어묵"
     },
     {
@@ -11165,7 +11141,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001삼진어묵"
     }
    ],
@@ -11473,8 +11448,7 @@ window.DASHBOARD_DATA = {
      "label": "설렁탕",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "product\u0001M_현)비비고설렁탕500g",
@@ -11503,7 +11477,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001감칠맛"
     },
     {
@@ -11520,7 +11493,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001감칠맛"
     },
     {
@@ -11529,6 +11501,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001감칠맛"
     },
     {
@@ -11554,7 +11527,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001감칠맛"
     },
     {
@@ -11589,7 +11561,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001한촌설렁탕"
     },
     {
@@ -11976,7 +11947,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001건강"
     },
     {
@@ -12771,7 +12741,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "product\u0001CJ)햇반버섯야채죽268g"
     },
     {
@@ -12780,6 +12749,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001CJ)햇반버섯야채죽268g"
     },
     {
@@ -12788,7 +12758,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001CJ)햇반버섯야채죽268g"
     },
     {
@@ -12883,6 +12852,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001CJ)햇반전복죽267g"
     },
     {
@@ -12891,7 +12861,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001CJ)햇반전복죽267g"
     }
    ],
@@ -13031,7 +13001,8 @@ window.DASHBOARD_DATA = {
      "label": "신라면",
      "type": "keyword",
      "layer": 1,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001라면",
@@ -13039,7 +13010,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001옐로우즈",
@@ -13110,6 +13081,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001신라면"
     },
     {
@@ -13326,6 +13298,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001옐로우즈"
     },
     {
@@ -13334,7 +13307,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001옐로우즈"
     },
     {
@@ -13586,16 +13559,14 @@ window.DASHBOARD_DATA = {
      "label": "걸쭉함",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001인삼",
      "label": "인삼",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001삼계탕",
@@ -13618,7 +13589,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001걸쭉함"
     },
     {
@@ -13627,6 +13598,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001걸쭉함"
     },
     {
@@ -13666,7 +13638,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -13691,6 +13663,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -13713,7 +13686,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -13736,7 +13708,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -13745,7 +13716,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -13784,7 +13755,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001삼계탕"
     },
     {
@@ -13852,7 +13822,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001삼계탕"
     },
     {
@@ -14296,8 +14265,7 @@ window.DASHBOARD_DATA = {
      "label": "게",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "product\u0001한입)게맛살깡와사비맛30g",
@@ -14469,6 +14437,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001한입)게맛살깡와사비맛30g"
     },
     {
@@ -14477,7 +14446,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001한입)게맛살깡와사비맛30g"
     },
     {
@@ -14494,7 +14463,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한입)게맛살깡와사비맛30g"
     },
     {
@@ -14503,6 +14471,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001한입)게맛살깡와사비맛30g"
     },
     {
@@ -14520,7 +14489,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001한입)게맛살깡와사비맛30g"
     },
     {
@@ -14529,7 +14498,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한입)게맛살깡와사비맛30g"
     },
     {
@@ -14552,7 +14520,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001한입)게맛살깡오리지널30g"
     }
    ],
@@ -14734,8 +14702,7 @@ window.DASHBOARD_DATA = {
      "label": "위로",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001망그러진곰",
@@ -14913,7 +14880,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001경동나비엔"
     },
     {
@@ -15370,7 +15337,8 @@ window.DASHBOARD_DATA = {
      "label": "곤약",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "product\u0001위스트)마라곤약 향라맛",
@@ -15394,6 +15362,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001삼립)초계겨자곤약면샐러드132g"
     },
     {
@@ -15402,6 +15371,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001삼립)초계겨자곤약면샐러드132g"
     },
     {
@@ -15418,7 +15388,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
+     "tag": "매개",
      "parent": "product\u0001삼립)초계겨자곤약면샐러드132g"
     },
     {
@@ -15427,7 +15397,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001삼립)초계겨자곤약면샐러드132g"
     },
     {
@@ -15436,7 +15406,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)초계겨자곤약면샐러드132g"
     },
     {
@@ -15445,7 +15414,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)초계겨자곤약면샐러드132g"
     },
     {
@@ -15454,7 +15422,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)초계겨자곤약면샐러드132g"
     },
     {
@@ -15641,7 +15608,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001위스트)마라곤약 향라맛"
     },
     {
@@ -15882,8 +15848,7 @@ window.DASHBOARD_DATA = {
      "label": "식감",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001들기름",
@@ -15923,7 +15888,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -15932,7 +15896,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -16757,8 +16720,7 @@ window.DASHBOARD_DATA = {
      "label": "계란",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001산리오",
@@ -16772,7 +16734,8 @@ window.DASHBOARD_DATA = {
      "label": "빼빼로",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "ip\u0001뉴진스",
@@ -16803,7 +16766,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001계란"
     },
     {
@@ -16812,7 +16774,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001계란"
     },
     {
@@ -16829,7 +16791,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001계란"
     },
     {
@@ -16846,7 +16807,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001계란"
     },
     {
@@ -16855,6 +16815,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001계란"
     },
     {
@@ -16888,7 +16849,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001산리오"
     },
     {
@@ -16897,7 +16857,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001산리오"
     },
     {
@@ -16906,7 +16865,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001산리오"
     },
     {
@@ -16915,7 +16873,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001산리오"
     },
     {
@@ -16924,6 +16881,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001산리오"
     },
     {
@@ -16932,7 +16890,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001산리오"
     },
     {
@@ -17103,6 +17060,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001뉴진스"
     },
     {
@@ -17119,7 +17077,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001뉴진스"
     },
     {
@@ -17136,7 +17093,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001뉴진스"
     }
    ],
@@ -17424,7 +17381,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001라이언",
@@ -17438,8 +17395,7 @@ window.DASHBOARD_DATA = {
      "label": "슈",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "product\u0001디저트39)저당슈크림모나카140ml",
@@ -17599,7 +17555,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -17608,7 +17564,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -17617,7 +17573,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -17626,7 +17581,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -17635,7 +17589,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -17644,7 +17597,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -17653,7 +17605,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -17662,7 +17614,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -17819,6 +17771,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001디저트39)저당슈크림모나카140ml"
     },
     {
@@ -17835,6 +17788,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001디저트39)저당슈크림모나카140ml"
     },
     {
@@ -17851,7 +17805,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001디저트39)저당슈크림모나카140ml"
     },
     {
@@ -17860,7 +17813,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001디저트39)저당슈크림모나카140ml"
     }
    ],
@@ -18154,7 +18106,8 @@ window.DASHBOARD_DATA = {
      "label": "돼지",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "ip\u0001명륜진사",
@@ -18201,7 +18154,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001고기"
     },
     {
@@ -18210,7 +18162,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001고기"
     },
     {
@@ -18243,7 +18194,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001고기"
     },
     {
@@ -18252,6 +18202,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001디진다 돈까스"
     },
     {
@@ -18260,7 +18211,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001디진다 돈까스"
     },
     {
@@ -18294,7 +18244,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001디진다 돈까스"
     },
     {
@@ -18387,6 +18337,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001돼지"
     },
     {
@@ -18805,7 +18756,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "ip\u0001버터베어",
@@ -18820,7 +18771,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "product\u0001PB)자이언츠쌔리라메이플볼60g",
@@ -18852,7 +18803,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001고소"
     },
     {
@@ -18910,7 +18860,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001고소"
     },
     {
@@ -18927,7 +18876,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001버터베어"
     },
     {
@@ -18936,7 +18884,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001버터베어"
     },
     {
@@ -18945,7 +18892,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001버터베어"
     },
     {
@@ -19060,7 +19006,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)자이언츠쌔리라메이플볼60g"
     },
     {
@@ -19077,6 +19022,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001PB)자이언츠쌔리라메이플볼60g"
     }
    ],
@@ -19303,7 +19249,8 @@ window.DASHBOARD_DATA = {
      "label": "타코",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "product\u0001삼립)타코샐러드칠리포크152g",
@@ -19356,6 +19303,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001오리온)스윙칩고수타코맛50g"
     },
     {
@@ -19372,6 +19320,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001오리온)스윙칩고수타코맛50g"
     },
     {
@@ -19412,7 +19361,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001타코"
     },
     {
@@ -19443,7 +19391,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001타코"
     },
     {
@@ -19488,7 +19435,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)타코샐러드칠리포크152g"
     },
     {
@@ -19497,6 +19443,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001삼립)타코샐러드칠리포크152g"
     },
     {
@@ -19505,7 +19452,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001삼립)타코샐러드칠리포크152g"
     },
     {
@@ -19514,7 +19461,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
+     "tag": "매개",
      "parent": "product\u0001삼립)타코샐러드칠리포크152g"
     },
     {
@@ -19523,7 +19470,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)타코샐러드칠리포크152g"
     },
     {
@@ -19532,7 +19478,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)타코샐러드칠리포크152g"
     },
     {
@@ -19550,7 +19495,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)타코샐러드칠리포크152g"
     }
    ],
@@ -19746,7 +19690,8 @@ window.DASHBOARD_DATA = {
      "label": "고추",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001삼진어묵",
@@ -19948,7 +19893,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001삼진어묵"
     },
     {
@@ -19965,7 +19910,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001삼진어묵"
     },
     {
@@ -19974,7 +19918,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001새우"
     },
     {
@@ -19983,6 +19926,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001새우"
     },
     {
@@ -20128,6 +20072,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001탕"
     },
     {
@@ -20145,6 +20090,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001탕"
     },
     {
@@ -20161,6 +20107,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001탕"
     }
    ],
@@ -20440,16 +20387,14 @@ window.DASHBOARD_DATA = {
      "label": "곡물",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001소주",
      "label": "소주",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "ip\u0001여자아이들",
@@ -20463,8 +20408,7 @@ window.DASHBOARD_DATA = {
      "label": "슈거",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "keyword\u0001증류",
@@ -20512,6 +20456,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001곡물"
     },
     {
@@ -20536,7 +20481,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001곡물"
     },
     {
@@ -20545,6 +20489,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001곡물"
     },
     {
@@ -20715,7 +20660,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001여자아이들"
     },
     {
@@ -21188,14 +21133,16 @@ window.DASHBOARD_DATA = {
      "label": "소르베",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001녹음",
      "label": "녹음",
      "type": "keyword",
      "layer": 3,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "ip\u0001조야",
@@ -21251,7 +21198,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001과일"
     },
     {
@@ -21268,7 +21214,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001과일"
     },
     {
@@ -21293,7 +21238,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001프룻팝스"
     },
     {
@@ -21302,6 +21247,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001프룻팝스"
     },
     {
@@ -21392,7 +21338,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001소르베"
     },
     {
@@ -21905,7 +21850,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001호두",
@@ -21927,7 +21872,8 @@ window.DASHBOARD_DATA = {
      "label": "감자",
      "type": "keyword",
      "layer": 3,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001앙금",
@@ -21935,7 +21881,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001과자"
     },
     {
@@ -22215,7 +22160,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001부창제과"
     },
     {
@@ -22232,7 +22177,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001부창제과"
     },
     {
@@ -22241,7 +22185,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001감자"
     },
     {
@@ -22258,6 +22201,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001감자"
     },
     {
@@ -22306,6 +22250,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001감자"
     },
     {
@@ -22607,7 +22552,8 @@ window.DASHBOARD_DATA = {
      "label": "막걸리",
      "type": "keyword",
      "layer": 1,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001양사미",
@@ -22662,7 +22608,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001구수함"
     },
     {
@@ -22671,6 +22616,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001구수함"
     },
     {
@@ -22812,7 +22758,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001막걸리"
     },
     {
@@ -22837,6 +22782,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001양사미"
     },
     {
@@ -22853,7 +22799,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001양사미"
     },
     {
@@ -22941,7 +22887,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001하이볼"
     },
     {
@@ -22950,7 +22895,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001하이볼"
     },
     {
@@ -23238,7 +23182,8 @@ window.DASHBOARD_DATA = {
      "label": "국물",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001마녀스프",
@@ -23252,14 +23197,16 @@ window.DASHBOARD_DATA = {
      "label": "스프",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001신라면",
      "label": "신라면",
      "type": "keyword",
      "layer": 3,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001권성준",
@@ -23308,6 +23255,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001국물"
     },
     {
@@ -23466,7 +23414,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001스프"
     },
     {
@@ -23489,7 +23436,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001스프"
     },
     {
@@ -23520,7 +23466,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001신라면"
     },
     {
@@ -23889,8 +23835,7 @@ window.DASHBOARD_DATA = {
      "label": "안동",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "product\u0001팔도한끼안동찜닭덮밥",
@@ -24051,7 +23996,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001이모카세"
     },
     {
@@ -24178,7 +24122,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001팔도한끼안동찜닭덮밥"
     },
     {
@@ -24187,6 +24130,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001팔도한끼안동찜닭덮밥"
     },
     {
@@ -24195,7 +24139,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001팔도한끼안동찜닭덮밥"
     },
     {
@@ -24213,7 +24156,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001팔도한끼안동찜닭덮밥"
     }
    ],
@@ -24452,8 +24394,7 @@ window.DASHBOARD_DATA = {
      "label": "가벼움",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001볶음",
@@ -24490,7 +24431,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001APP예약)3,900나시고랭볶음밥"
     },
     {
@@ -24508,7 +24448,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001APP예약)3,900나시고랭볶음밥"
     },
     {
@@ -24517,7 +24457,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001APP예약)3,900나시고랭볶음밥"
     },
     {
@@ -24534,7 +24473,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001가벼움"
     },
     {
@@ -24576,7 +24514,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001가벼움"
     },
     {
@@ -24641,7 +24578,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -24658,7 +24594,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -24667,7 +24603,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -24931,8 +24867,7 @@ window.DASHBOARD_DATA = {
      "label": "식감",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001견과류",
@@ -25044,7 +24979,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001그래놀라"
     },
     {
@@ -25158,7 +25093,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001그래놀라"
     },
     {
@@ -25334,7 +25268,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -25343,7 +25276,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -25729,7 +25661,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001라이언",
@@ -25840,7 +25772,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001나무)아삭귤젤리35g"
     },
     {
@@ -25849,7 +25780,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001나무)아삭귤젤리35g"
     },
     {
@@ -25858,7 +25788,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001나무)아삭귤젤리35g"
     },
     {
@@ -25867,7 +25796,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001나무)아삭귤젤리35g"
     },
     {
@@ -25920,7 +25848,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001감귤"
     },
     {
@@ -25979,7 +25906,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001감귤"
     },
     {
@@ -25988,7 +25915,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -25997,7 +25923,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -26006,7 +25932,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -26015,7 +25941,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -26024,7 +25949,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -26033,7 +25957,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -26042,7 +25965,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -26051,7 +25973,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -26060,7 +25982,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     }
    ],
@@ -26313,7 +26235,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001폭신함",
@@ -26344,7 +26266,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001글레이즈드"
     },
     {
@@ -26353,7 +26274,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001글레이즈드"
     },
     {
@@ -26376,7 +26296,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001글레이즈드"
     },
     {
@@ -26385,7 +26304,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001글레이즈드"
     },
     {
@@ -26394,7 +26313,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001글레이즈드"
     },
     {
@@ -26403,7 +26321,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001글레이즈드"
     },
     {
@@ -26428,7 +26346,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001빵"
     },
     {
@@ -26461,7 +26378,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001빵"
     },
     {
@@ -26470,7 +26386,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001빵"
     },
     {
@@ -26479,7 +26395,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001빵"
     },
     {
@@ -26567,7 +26482,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001폭신함"
     },
     {
@@ -26576,7 +26490,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001폭신함"
     },
     {
@@ -26585,7 +26499,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001폭신함"
     },
     {
@@ -26594,7 +26507,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001폭신함"
     }
    ],
@@ -27008,7 +26921,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)김맛나160g"
     },
     {
@@ -27017,7 +26929,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001PB)김맛나160g"
     },
     {
@@ -27026,7 +26938,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)김맛나160g"
     },
     {
@@ -27075,7 +26986,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001안주"
     },
     {
@@ -27092,7 +27002,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001안주"
     },
     {
@@ -27110,7 +27019,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001안주"
     },
     {
@@ -27127,7 +27035,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001KBS"
     },
     {
@@ -27162,7 +27069,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001KBS"
     },
     {
@@ -27179,7 +27085,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001KBS"
     },
     {
@@ -27188,7 +27093,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001KBS"
     },
     {
@@ -27197,7 +27101,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001KBS"
     }
    ],
@@ -27463,8 +27366,7 @@ window.DASHBOARD_DATA = {
      "label": "김치",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001찌개",
@@ -27742,7 +27644,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001찌개"
     },
     {
@@ -27927,6 +27828,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -27935,7 +27837,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -27952,7 +27853,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -27961,6 +27861,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -27969,7 +27870,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -27978,7 +27878,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -27987,7 +27887,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     }
    ],
@@ -28807,8 +28707,7 @@ window.DASHBOARD_DATA = {
      "label": "소주",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "ip\u0001여자아이들",
@@ -28822,8 +28721,7 @@ window.DASHBOARD_DATA = {
      "label": "슈거",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "keyword\u0001증류",
@@ -28992,7 +28890,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001소주"
     },
     {
@@ -29122,7 +29019,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001여자아이들"
     },
     {
@@ -29608,8 +29505,7 @@ window.DASHBOARD_DATA = {
      "label": "푸드",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "product\u0001직화떡갈비김밥",
@@ -29669,7 +29565,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001어남선생의진미채김밥"
     },
     {
@@ -29687,7 +29582,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001어남선생의진미채김밥"
     },
     {
@@ -30097,6 +29991,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001족발"
     },
     {
@@ -30167,6 +30062,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -30175,7 +30071,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -30192,7 +30087,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -30201,6 +30095,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -30209,7 +30104,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -30218,7 +30112,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -30227,7 +30121,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -30673,7 +30567,8 @@ window.DASHBOARD_DATA = {
      "label": "고추",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001불닭",
@@ -30822,7 +30717,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001삼진어묵"
     },
     {
@@ -30839,7 +30734,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001삼진어묵"
     },
     {
@@ -31562,7 +31456,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001스노우폭스"
     },
     {
@@ -31859,7 +31752,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001타쿠미야"
     },
     {
@@ -31876,6 +31768,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001타쿠미야"
     },
     {
@@ -31884,7 +31777,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001타쿠미야"
     },
     {
@@ -31893,7 +31785,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001타쿠미야"
     },
     {
@@ -31910,7 +31801,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001타쿠미야"
     },
     {
@@ -32247,21 +32137,23 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001브라우니",
      "label": "브라우니",
      "type": "keyword",
      "layer": 1,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001카카오",
      "label": "카카오",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "product\u0001롯데)프리미엄몽쉘말차딸기432g",
@@ -32434,7 +32326,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브라우니"
     },
     {
@@ -32459,7 +32350,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브라우니"
     },
     {
@@ -32512,6 +32402,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001브라우니"
     },
     {
@@ -32690,6 +32581,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001롯데)프리미엄몽쉘말차딸기432g"
     },
     {
@@ -32707,6 +32599,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001롯데)프리미엄몽쉘말차딸기432g"
     },
     {
@@ -32724,6 +32617,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001롯데)프리미엄몽쉘말차딸기432g"
     },
     {
@@ -32732,7 +32626,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001롯데)프리미엄몽쉘말차딸기432g"
     }
    ],
@@ -33020,7 +32913,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001요아정",
@@ -33049,7 +32942,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001꿀"
     },
     {
@@ -33090,6 +32982,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001꿀"
     },
     {
@@ -33166,7 +33059,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001요아정"
     },
     {
@@ -33343,7 +33235,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
+     "tag": "매개",
      "parent": "keyword\u0001바질"
     },
     {
@@ -33403,7 +33295,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001바질"
     },
     {
@@ -33724,8 +33615,7 @@ window.DASHBOARD_DATA = {
      "label": "면",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001우동",
@@ -33915,7 +33805,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001비빔"
     },
     {
@@ -34083,6 +33972,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001우동"
     },
     {
@@ -34147,7 +34037,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001우동"
     },
     {
@@ -34476,7 +34365,8 @@ window.DASHBOARD_DATA = {
      "label": "녹음",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001샤베트",
@@ -34507,6 +34397,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001녹음"
     },
     {
@@ -34674,7 +34565,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001샤베트"
     },
     {
@@ -34691,7 +34582,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001샤베트"
     },
     {
@@ -35307,8 +35197,7 @@ window.DASHBOARD_DATA = {
      "label": "누룩",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "ip\u0001한영석",
@@ -35322,8 +35211,7 @@ window.DASHBOARD_DATA = {
      "label": "약주",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "product\u0001한국술)니모메11도 375ml",
@@ -35392,6 +35280,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001한영석"
     },
     {
@@ -35472,7 +35361,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001한국술)니모메11도 375ml"
     },
     {
@@ -35497,7 +35386,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한국술)니모메11도 375ml"
     },
     {
@@ -35514,7 +35402,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한국술)니모메11도 375ml"
     },
     {
@@ -35523,7 +35410,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한국술)니모메11도 375ml"
     }
    ],
@@ -35698,7 +35584,8 @@ window.DASHBOARD_DATA = {
      "label": "막걸리",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001양사미",
@@ -35722,7 +35609,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001누룽지"
     },
     {
@@ -35834,7 +35720,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001누룽지"
     },
     {
@@ -35867,7 +35753,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001구수함"
     },
     {
@@ -35876,6 +35761,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001구수함"
     },
     {
@@ -36082,6 +35968,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001양사미"
     },
     {
@@ -36098,7 +35985,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001양사미"
     },
     {
@@ -36407,8 +36294,7 @@ window.DASHBOARD_DATA = {
      "label": "다양성",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "product\u0001하늘)크랜베리베이글칩60g",
@@ -36505,7 +36391,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001하늘)크랜베리베이글칩60g"
     },
     {
@@ -36514,7 +36400,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001하늘)크랜베리베이글칩60g"
     },
     {
@@ -36523,6 +36408,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001하늘)크랜베리베이글칩60g"
     },
     {
@@ -36531,7 +36417,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001하늘)크랜베리베이글칩60g"
     },
     {
@@ -36540,7 +36426,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001하늘)크랜베리베이글칩60g"
     },
     {
@@ -36630,7 +36515,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
+     "tag": "매개",
      "parent": "product\u0001삼립)런치킨크랜베리콤보샐러드"
     },
     {
@@ -36639,7 +36524,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)런치킨크랜베리콤보샐러드"
     },
     {
@@ -36648,7 +36532,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)런치킨크랜베리콤보샐러드"
     },
     {
@@ -36657,7 +36540,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001삼립)런치킨크랜베리콤보샐러드"
     },
     {
@@ -36666,7 +36549,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)런치킨크랜베리콤보샐러드"
     },
     {
@@ -36897,7 +36779,8 @@ window.DASHBOARD_DATA = {
      "label": "마시멜로",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "product\u0001PB)수건모양초코마시멜로100g",
@@ -36932,7 +36815,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001행사하리보)스위트러브100g"
     },
     {
@@ -36941,7 +36823,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001행사하리보)스위트러브100g"
     },
     {
@@ -36950,7 +36832,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001행사하리보)스위트러브100g"
     },
     {
@@ -37104,7 +36985,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)수건모양초코마시멜로100g"
     },
     {
@@ -37146,7 +37026,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001PB)수건모양초코마시멜로100g"
     },
     {
@@ -37155,7 +37035,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)수건모양초코마시멜로100g"
     }
    ],
@@ -37358,7 +37237,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001라이언",
@@ -37401,7 +37280,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001단호박"
     },
     {
@@ -37418,7 +37296,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001단호박"
     },
     {
@@ -37427,7 +37304,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001단호박"
     },
     {
@@ -37436,7 +37312,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001단호박"
     },
     {
@@ -37445,7 +37320,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001단호박"
     },
     {
@@ -37454,7 +37329,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001단호박"
     },
     {
@@ -37477,7 +37352,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
+     "tag": "매개",
      "parent": "product\u0001MDS)고구마&단호박샐러드200g"
     },
     {
@@ -37631,7 +37506,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -37640,7 +37514,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -37649,7 +37523,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -37658,7 +37532,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -37667,7 +37540,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -37676,7 +37548,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -37685,7 +37556,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -37694,7 +37564,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -37703,7 +37573,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     }
    ],
@@ -37955,8 +37825,7 @@ window.DASHBOARD_DATA = {
      "label": "달콤",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001팥",
@@ -37993,7 +37862,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001달콤"
     },
     {
@@ -38002,7 +37870,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001달콤"
     },
     {
@@ -38083,7 +37950,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001팥"
     },
     {
@@ -38109,6 +37975,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001팥"
     },
     {
@@ -38178,6 +38045,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001경기떡집"
     },
     {
@@ -38216,6 +38084,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001찹쌀"
     },
     {
@@ -38617,15 +38486,15 @@ window.DASHBOARD_DATA = {
      "label": "닭",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001닭가슴살",
      "label": "닭가슴살",
      "type": "keyword",
      "layer": 1,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001운동",
@@ -38648,6 +38517,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001닭"
     },
     {
@@ -38712,7 +38582,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001닭"
     },
     {
@@ -38729,7 +38598,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001닭가슴살"
     },
     {
@@ -39331,22 +39199,23 @@ window.DASHBOARD_DATA = {
      "label": "닭가슴살",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001닭",
      "label": "닭",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001후추",
      "label": "후추",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "product\u0001대림)안심닭가슴살(블랙페퍼)100g",
@@ -39380,7 +39249,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001닭가슴살"
     },
     {
@@ -39570,7 +39438,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001닭"
     },
     {
@@ -39757,6 +39624,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001대림)안심닭가슴살(블랙페퍼)100g"
     },
     {
@@ -39790,7 +39658,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001대림)안심닭가슴살(블랙페퍼)100g"
     },
     {
@@ -39799,7 +39667,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001대림)안심닭가슴살(블랙페퍼)100g"
     }
    ],
@@ -40147,7 +40015,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001닭껍질"
     },
     {
@@ -40188,7 +40055,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001닭껍질"
     },
     {
@@ -40197,7 +40063,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001닭껍질"
     },
     {
@@ -40206,7 +40072,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001PB)오리지널후라이드닭껍질30g"
     },
     {
@@ -40215,7 +40081,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001PB)오리지널후라이드닭껍질30g"
     },
     {
@@ -40224,7 +40090,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)오리지널후라이드닭껍질30g"
     },
     {
@@ -40233,6 +40098,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001PB)오리지널후라이드닭껍질30g"
     },
     {
@@ -40308,6 +40174,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001APP전용)스리라차골드후라이드치킨버거"
     },
     {
@@ -40324,7 +40191,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001APP전용)스리라차골드후라이드치킨버거"
     },
     {
@@ -40333,7 +40199,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001APP전용)스리라차골드후라이드치킨버거"
     },
     {
@@ -40351,7 +40217,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001APP전용)스리라차골드후라이드치킨버거"
     }
    ],
@@ -40591,7 +40457,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001닭발"
     },
     {
@@ -40707,6 +40573,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001마늘"
     },
     {
@@ -40799,7 +40666,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001미니언즈"
     },
     {
@@ -41351,7 +41217,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001담백"
     },
     {
@@ -41400,7 +41265,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -41409,7 +41273,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -41418,7 +41281,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -41427,7 +41289,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -41436,7 +41298,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -41445,7 +41307,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -41471,7 +41333,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001콕콕콕"
     },
     {
@@ -41531,7 +41392,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001콕콕콕"
     },
     {
@@ -41540,7 +41400,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001콕콕콕"
     },
     {
@@ -41628,6 +41487,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쫄깃함"
     },
     {
@@ -41644,7 +41504,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001쫄깃함"
     },
     {
@@ -41993,8 +41852,7 @@ window.DASHBOARD_DATA = {
      "label": "적음",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "ip\u0001스칼렛스톰",
@@ -42025,7 +41883,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001당"
     },
     {
@@ -42066,6 +41923,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001당"
     },
     {
@@ -42082,7 +41940,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001당"
     },
     {
@@ -42282,7 +42139,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001스칼렛스톰"
     },
     {
@@ -42299,6 +42155,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001스칼렛스톰"
     },
     {
@@ -42693,7 +42550,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001불고기"
     },
     {
@@ -42710,7 +42566,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001불고기"
     },
     {
@@ -42719,7 +42574,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001불고기"
     },
     {
@@ -42736,7 +42590,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001불고기"
     },
     {
@@ -42766,7 +42619,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001불고기"
     },
     {
@@ -42820,7 +42673,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001김혜자"
     },
     {
@@ -42837,7 +42689,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001김혜자"
     },
     {
@@ -42846,6 +42697,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001김혜자"
     },
     {
@@ -42854,6 +42706,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001김혜자"
     },
     {
@@ -42887,7 +42740,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001김혜자"
     },
     {
@@ -44087,7 +43939,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001대창"
     },
     {
@@ -44118,6 +43970,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001대창"
     },
     {
@@ -44150,7 +44003,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001대창"
     },
     {
@@ -44159,7 +44011,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001대창"
     },
     {
@@ -44168,7 +44019,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001대창"
     },
     {
@@ -44177,7 +44028,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001회식"
     },
     {
@@ -44186,7 +44036,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001회식"
     },
     {
@@ -44195,7 +44044,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001회식"
     },
     {
@@ -44204,7 +44052,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001회식"
     },
     {
@@ -44278,6 +44125,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001명륜진사"
     },
     {
@@ -44744,7 +44592,8 @@ window.DASHBOARD_DATA = {
      "label": "대파",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "product\u0001롯데)치폴레대파닭파스타",
@@ -44773,8 +44622,7 @@ window.DASHBOARD_DATA = {
      "label": "치즈",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "product\u0001주)백종원스페셜대파제육",
@@ -44954,7 +44802,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001롯데)치폴레대파닭파스타"
     },
     {
@@ -44963,6 +44810,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001롯데)치폴레대파닭파스타"
     },
     {
@@ -44971,7 +44819,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001롯데)치폴레대파닭파스타"
     },
     {
@@ -44980,6 +44827,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001치폴레"
     },
     {
@@ -45093,7 +44941,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001치폴레"
     },
     {
@@ -45118,6 +44965,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001치즈"
     },
     {
@@ -45474,8 +45322,7 @@ window.DASHBOARD_DATA = {
      "label": "면",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001우동",
@@ -45629,7 +45476,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001냉면"
     },
     {
@@ -45711,7 +45558,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001냉면"
     },
     {
@@ -45817,6 +45663,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001우동"
     },
     {
@@ -45881,7 +45728,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001우동"
     },
     {
@@ -46203,8 +46049,7 @@ window.DASHBOARD_DATA = {
      "label": "도가니",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "ip\u0001한촌설렁탕",
@@ -46218,8 +46063,7 @@ window.DASHBOARD_DATA = {
      "label": "설렁탕",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "product\u0001M_현)비비고설렁탕500g",
@@ -46545,8 +46389,7 @@ window.DASHBOARD_DATA = {
      "label": "도시락",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001온더고",
@@ -46575,7 +46418,8 @@ window.DASHBOARD_DATA = {
      "label": "로제",
      "type": "keyword",
      "layer": 3,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001스노우폭스",
@@ -46688,7 +46532,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001절대지지!마라떡볶이"
     },
     {
@@ -46705,6 +46548,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001절대지지!마라떡볶이"
     },
     {
@@ -47087,7 +46931,8 @@ window.DASHBOARD_DATA = {
      "label": "돼지",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "ip\u0001디진다 돈까스",
@@ -47101,7 +46946,8 @@ window.DASHBOARD_DATA = {
      "label": "바삭",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001타코야끼",
@@ -47141,7 +46987,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001돼지"
     },
     {
@@ -47150,6 +46995,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001돼지"
     },
     {
@@ -47217,7 +47063,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001디진다 돈까스"
     },
     {
@@ -47259,7 +47104,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001디진다 돈까스"
     },
     {
@@ -47335,6 +47180,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001바삭"
     },
     {
@@ -47541,7 +47387,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001타코야끼"
     },
     {
@@ -47550,7 +47395,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001타코야끼"
     }
    ],
@@ -48055,6 +47899,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -48063,7 +47908,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -48080,7 +47924,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -48089,6 +47932,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -48097,7 +47941,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -48106,7 +47949,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -48115,7 +47958,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -48177,6 +48020,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001족발"
     },
     {
@@ -48676,7 +48520,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
+     "tag": "매개",
      "parent": "product\u0001삼립)타임핏프로틴치킨샐러드113g"
     },
     {
@@ -48685,7 +48529,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)타임핏프로틴치킨샐러드113g"
     },
     {
@@ -48694,7 +48537,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)타임핏프로틴치킨샐러드113g"
     },
     {
@@ -48703,7 +48545,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)타임핏프로틴치킨샐러드113g"
     },
     {
@@ -48712,7 +48553,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)타임핏프로틴치킨샐러드113g"
     },
     {
@@ -48865,7 +48705,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001최강야구"
     },
     {
@@ -48874,7 +48714,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001최강야구"
     },
     {
@@ -48883,7 +48723,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001최강야구"
     },
     {
@@ -48892,7 +48731,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001최강야구"
     },
     {
@@ -48901,7 +48739,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001최강야구"
     },
     {
@@ -48910,6 +48748,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001최강야구"
     },
     {
@@ -48918,7 +48757,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001최강야구"
     }
    ],
@@ -49149,7 +48987,8 @@ window.DASHBOARD_DATA = {
      "label": "든든",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001국밥",
@@ -49170,8 +49009,7 @@ window.DASHBOARD_DATA = {
      "label": "한우",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "ip\u0001교보생명",
@@ -49441,7 +49279,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001국밥"
     },
     {
@@ -49546,6 +49383,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001한우"
     },
     {
@@ -49602,7 +49440,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001한우"
     }
    ],
@@ -50295,6 +50132,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001에스프레소"
     },
     {
@@ -50351,7 +50189,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001에스프레소"
     },
     {
@@ -50374,7 +50211,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001에스프레소"
     }
    ],
@@ -50707,7 +50544,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001들깨"
     },
     {
@@ -50752,7 +50588,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001들깨"
     },
     {
@@ -50761,7 +50597,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001들깨"
     },
     {
@@ -50798,7 +50634,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -50831,7 +50666,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -50840,7 +50674,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -51520,8 +51353,7 @@ window.DASHBOARD_DATA = {
      "label": "디저트",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001아티제",
@@ -51535,15 +51367,15 @@ window.DASHBOARD_DATA = {
      "label": "감자",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001해장",
      "label": "해장",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "ip\u0001온더고",
@@ -51656,7 +51488,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001아티제"
     },
     {
@@ -51665,7 +51496,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001아티제"
     },
     {
@@ -51736,6 +51567,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001감자"
     },
     {
@@ -51784,6 +51616,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001감자"
     },
     {
@@ -52236,14 +52069,16 @@ window.DASHBOARD_DATA = {
      "label": "붕어빵",
      "type": "keyword",
      "layer": 1,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001바삭",
      "label": "바삭",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001타코야끼",
@@ -52346,7 +52181,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001붕어빵"
     },
     {
@@ -52675,7 +52509,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001타코야끼"
     },
     {
@@ -52684,7 +52517,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001타코야끼"
     }
    ],
@@ -52999,8 +52831,7 @@ window.DASHBOARD_DATA = {
      "label": "딸기",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001잼",
@@ -53015,7 +52846,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001콤부차",
@@ -53030,7 +52861,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001딸기"
     },
     {
@@ -53208,7 +53038,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001잼"
     },
     {
@@ -53247,7 +53076,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001새콤"
     },
     {
@@ -53356,6 +53184,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001콤부차"
     },
     {
@@ -53440,7 +53269,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001콤부차"
     }
    ],
@@ -53756,8 +53584,7 @@ window.DASHBOARD_DATA = {
      "label": "식감",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001견과류",
@@ -53779,7 +53606,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001땅콩"
     },
     {
@@ -54087,7 +53913,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -54645,7 +54470,8 @@ window.DASHBOARD_DATA = {
      "label": "떡",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "ip\u0001제라헌",
@@ -54810,6 +54636,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001제라헌"
     },
     {
@@ -54827,7 +54654,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001제라헌"
     },
     {
@@ -55025,7 +54851,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001서주)말차바75ml"
     },
     {
@@ -55264,8 +55090,7 @@ window.DASHBOARD_DATA = {
      "label": "떡볶이",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001미정당",
@@ -55279,7 +55104,8 @@ window.DASHBOARD_DATA = {
      "label": "경주",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "product\u0001경주빵",
@@ -55415,7 +55241,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001미정당"
     },
     {
@@ -55565,7 +55390,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001경주빵"
     },
     {
@@ -55574,7 +55399,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001경주빵"
     },
     {
@@ -55583,7 +55408,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001경주빵"
     },
     {
@@ -55592,7 +55417,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001경주빵"
     },
     {
@@ -55601,7 +55426,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001경주빵"
     }
    ],
@@ -55889,7 +55713,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001또띠아"
     },
     {
@@ -55906,7 +55729,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001또띠아"
     },
     {
@@ -55945,7 +55767,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001또띠아"
     },
     {
@@ -55954,7 +55775,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001또띠아"
     },
     {
@@ -55963,7 +55784,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001또띠아"
     },
     {
@@ -55972,6 +55793,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001바삭치킨스윗칠리랩"
     },
     {
@@ -55988,6 +55810,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001바삭치킨스윗칠리랩"
     },
     {
@@ -55996,7 +55819,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001바삭치킨스윗칠리랩"
     },
     {
@@ -56005,7 +55827,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001바삭치킨스윗칠리랩"
     },
     {
@@ -56022,6 +55843,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001바삭치킨스윗칠리랩"
     },
     {
@@ -56039,7 +55861,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001바삭치킨스윗칠리랩"
     },
     {
@@ -56048,7 +55870,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001바삭치킨스윗칠리랩"
     },
     {
@@ -56123,7 +55944,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
+     "tag": "매개",
      "parent": "product\u0001SB)케이준치킨시저샐러드랩1"
     },
     {
@@ -56369,8 +56190,7 @@ window.DASHBOARD_DATA = {
      "label": "베이커리",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001시럽",
@@ -56442,7 +56262,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001라떼"
     },
     {
@@ -56451,7 +56270,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001라떼"
     },
     {
@@ -56964,14 +56782,15 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001신라면",
      "label": "신라면",
      "type": "keyword",
      "layer": 1,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001건조",
@@ -57079,6 +56898,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001신라면"
     },
     {
@@ -57240,7 +57060,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "product\u0001몽뜨)동결건조사우어벨트40g"
     },
     {
@@ -57249,6 +57068,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001몽뜨)동결건조사우어벨트40g"
     },
     {
@@ -57257,7 +57077,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001몽뜨)동결건조사우어벨트40g"
     },
     {
@@ -57266,7 +57086,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001몽뜨)동결건조사우어벨트40g"
     },
     {
@@ -57275,6 +57094,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001몽뜨)동결건조사우어벨트40g"
     },
     {
@@ -57283,7 +57103,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001몽뜨)동결건조사우어벨트40g"
     }
    ],
@@ -57521,8 +57340,7 @@ window.DASHBOARD_DATA = {
      "label": "라임",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001노제",
@@ -57699,7 +57517,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001노제"
     },
     {
@@ -57902,6 +57719,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001가나디자몽드링크"
     },
     {
@@ -57910,6 +57728,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001가나디자몽드링크"
     }
    ],
@@ -58336,6 +58155,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001가나디레몬비타워터"
     },
     {
@@ -58845,7 +58665,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001해소",
@@ -58886,7 +58706,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001루이보스"
     },
     {
@@ -58895,7 +58714,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001루이보스"
     },
     {
@@ -59058,7 +58877,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001꿀"
     },
     {
@@ -59099,6 +58917,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001꿀"
     },
     {
@@ -59385,8 +59204,7 @@ window.DASHBOARD_DATA = {
      "label": "스무디",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "product\u0001리코타치즈치킨버거",
@@ -59436,7 +59254,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
+     "tag": "매개",
      "parent": "product\u0001삼립)타임핏리코타요거샐러드110g"
     },
     {
@@ -59453,7 +59271,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)타임핏리코타요거샐러드110g"
     },
     {
@@ -59462,7 +59279,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001삼립)타임핏리코타요거샐러드110g"
     },
     {
@@ -59597,7 +59414,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001스무디"
     },
     {
@@ -59614,7 +59430,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001스무디"
     },
     {
@@ -59972,6 +59787,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001마늘"
     },
     {
@@ -60050,7 +59866,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001미니언즈"
     },
     {
@@ -60257,7 +60072,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)노랑노랑바나나우유500ml"
     },
     {
@@ -60266,6 +60080,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001PB)노랑노랑바나나우유500ml"
     },
     {
@@ -60274,7 +60089,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)노랑노랑바나나우유500ml"
     },
     {
@@ -60283,7 +60097,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)노랑노랑바나나우유500ml"
     }
    ],
@@ -60680,7 +60493,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001탕"
     },
     {
@@ -60689,6 +60501,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001탕"
     },
     {
@@ -60737,6 +60550,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001탕"
     },
     {
@@ -60745,6 +60559,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001탕"
     },
     {
@@ -60908,6 +60723,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001삼진어묵"
     },
     {
@@ -60940,7 +60756,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001삼진어묵"
     },
     {
@@ -60957,7 +60773,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001삼진어묵"
     }
    ],
@@ -61251,7 +61066,8 @@ window.DASHBOARD_DATA = {
      "label": "말차",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001타쿠미야",
@@ -61424,7 +61240,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001타쿠미야"
     },
     {
@@ -61441,7 +61256,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001타쿠미야"
     },
     {
@@ -61450,7 +61264,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001타쿠미야"
     },
     {
@@ -61467,7 +61280,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001타쿠미야"
     },
     {
@@ -61554,7 +61366,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001타르트"
     },
     {
@@ -61627,7 +61438,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001타르트"
     },
     {
@@ -61636,7 +61446,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001하이브"
     },
     {
@@ -61661,7 +61470,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001하이브"
     },
     {
@@ -61679,7 +61488,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001하이브"
     }
    ],
@@ -61966,8 +61775,7 @@ window.DASHBOARD_DATA = {
      "label": "맑음",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001미연",
@@ -62065,7 +61873,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001미연"
     },
     {
@@ -62082,6 +61889,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001서울우유우유크림빵"
     },
     {
@@ -62090,7 +61898,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001서울우유우유크림빵"
     },
     {
@@ -62099,7 +61906,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001서울우유우유크림빵"
     },
     {
@@ -62108,7 +61915,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001서울우유우유크림빵"
     },
     {
@@ -62117,7 +61923,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001서울우유우유크림빵"
     },
     {
@@ -62126,7 +61932,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001서울우유우유크림빵"
     },
     {
@@ -62463,7 +62268,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001프룻팝스",
@@ -62477,14 +62282,16 @@ window.DASHBOARD_DATA = {
      "label": "소르베",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001녹음",
      "label": "녹음",
      "type": "keyword",
      "layer": 3,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "ip\u0001성심당",
@@ -62633,6 +62440,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001프룻팝스"
     },
     {
@@ -62723,7 +62531,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001소르베"
     },
     {
@@ -63250,7 +63057,8 @@ window.DASHBOARD_DATA = {
      "label": "돼지",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "ip\u0001명륜진사",
@@ -63289,7 +63097,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001매콤"
     },
     {
@@ -63298,7 +63105,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001매콤"
     },
     {
@@ -63315,6 +63121,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001매콤"
     },
     {
@@ -63349,6 +63156,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001디진다 돈까스"
     },
     {
@@ -63357,7 +63165,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001디진다 돈까스"
     },
     {
@@ -63390,7 +63197,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001디진다 돈까스"
     },
     {
@@ -63474,7 +63281,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001돼지"
     },
     {
@@ -63483,6 +63289,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001돼지"
     },
     {
@@ -63901,7 +63708,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001맥앤치즈",
@@ -64018,7 +63825,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001맥앤치즈"
     },
     {
@@ -64088,7 +63894,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001맥앤치즈"
     },
     {
@@ -64097,7 +63902,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001맥앤치즈"
     },
     {
@@ -64162,7 +63966,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001파스타"
     },
     {
@@ -64171,7 +63974,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001파스타"
     },
     {
@@ -64212,7 +64014,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001파스타"
     },
     {
@@ -64245,7 +64046,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001매드포갈릭"
     },
     {
@@ -64254,7 +64055,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001매드포갈릭"
     },
     {
@@ -64758,7 +64558,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001막국수"
     },
     {
@@ -64784,7 +64584,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001막국수"
     },
     {
@@ -64793,7 +64592,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001막국수"
     },
     {
@@ -64818,7 +64616,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001막국수"
     },
     {
@@ -65066,7 +64864,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한도초과)폭풍햄가득참치김밥"
     },
     {
@@ -65075,7 +64872,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한도초과)폭풍햄가득참치김밥"
     },
     {
@@ -65084,7 +64880,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001한도초과)폭풍햄가득참치김밥"
     }
    ],
@@ -65379,7 +65175,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "mine"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001북해도",
@@ -65400,8 +65196,7 @@ window.DASHBOARD_DATA = {
      "label": "우유",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "product\u0001픽셀리)공룡메론소보로",
@@ -65552,7 +65347,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001북해도"
     },
     {
@@ -65569,7 +65363,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001북해도"
     },
     {
@@ -65592,7 +65385,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001유제품"
     },
     {
@@ -66021,8 +65813,7 @@ window.DASHBOARD_DATA = {
      "label": "면",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001우동",
@@ -66036,7 +65827,8 @@ window.DASHBOARD_DATA = {
      "label": "국물",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001마녀스프",
@@ -66188,7 +65980,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001우동"
     },
     {
@@ -66197,7 +65988,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001우동"
     },
     {
@@ -66253,6 +66043,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001국물"
     },
     {
@@ -66338,6 +66129,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001마녀스프"
     }
    ],
@@ -66589,16 +66381,14 @@ window.DASHBOARD_DATA = {
      "label": "면역력",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001인삼",
      "label": "인삼",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001삼계탕",
@@ -66635,7 +66425,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -66660,6 +66450,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -66682,7 +66473,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -66705,7 +66495,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -66714,7 +66503,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -66753,7 +66542,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001삼계탕"
     },
     {
@@ -66821,7 +66609,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001삼계탕"
     },
     {
@@ -67260,7 +67047,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "ip\u0001헬로키티",
@@ -67470,7 +67257,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001고래사어묵선물세트眞"
     },
     {
@@ -67645,7 +67431,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -67654,7 +67439,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -67663,6 +67448,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -67679,7 +67465,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -67688,7 +67473,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -67697,7 +67481,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -67706,7 +67489,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -67715,7 +67497,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -67724,7 +67505,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     }
    ],
@@ -68053,8 +67833,7 @@ window.DASHBOARD_DATA = {
      "label": "위로",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "product\u0001APP예약)이정후치즈독",
@@ -68220,7 +67999,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001망곰이치즈피자"
     },
     {
@@ -68229,7 +68007,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001망곰이치즈피자"
     },
     {
@@ -68254,7 +68031,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001망곰이치즈피자"
     },
     {
@@ -68263,7 +68039,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001망곰이치즈피자"
     },
     {
@@ -68272,7 +68047,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001망곰이치즈피자"
     },
     {
@@ -68702,8 +68477,7 @@ window.DASHBOARD_DATA = {
      "label": "모찌",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "ip\u0001쿠냥이",
@@ -68754,7 +68528,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001모찌"
     },
     {
@@ -68870,7 +68644,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001쿠냥이"
     },
     {
@@ -68879,7 +68652,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001쿠냥이"
     },
     {
@@ -68888,7 +68660,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001쿠냥이"
     },
     {
@@ -68905,6 +68677,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001쿠냥이의딸기모찌팬케이크"
     },
     {
@@ -68913,7 +68686,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001쿠냥이의딸기모찌팬케이크"
     },
     {
@@ -68944,6 +68716,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001히나쿠우"
     },
     {
@@ -68952,7 +68725,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001히나쿠우"
     }
    ],
@@ -69154,7 +68927,8 @@ window.DASHBOARD_DATA = {
      "label": "아삭함",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001수박",
@@ -69267,6 +69041,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001싱그람)치킨무200g"
     },
     {
@@ -69275,7 +69050,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001싱그람)치킨무200g"
     },
     {
@@ -69284,7 +69059,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001싱그람)치킨무200g"
     },
     {
@@ -69293,7 +69068,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001싱그람)치킨무200g"
     },
     {
@@ -69310,7 +69084,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001싱그람)치킨무200g"
     },
     {
@@ -69534,7 +69307,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001수박"
     },
     {
@@ -69856,7 +69628,8 @@ window.DASHBOARD_DATA = {
      "label": "무스",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "product\u0001풍림)뵈르뵈르초코딥무스푸딩90g",
@@ -70007,7 +69780,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001풍림)뵈르뵈르초코딥무스푸딩90g"
     },
     {
@@ -70024,6 +69796,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001풍림)뵈르뵈르초코딥무스푸딩90g"
     },
     {
@@ -70040,6 +69813,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001풍림)뵈르뵈르초코딥무스푸딩90g"
     },
     {
@@ -70048,7 +69822,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001풍림)뵈르뵈르초코딥무스푸딩90g"
     },
     {
@@ -70057,7 +69831,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001풍림)뵈르뵈르초코딥무스푸딩90g"
     },
     {
@@ -70066,7 +69839,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001풍림)뵈르뵈르초코딥무스푸딩90g"
     },
     {
@@ -70075,7 +69848,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001풍림)뵈르뵈르초코딥무스푸딩90g"
     },
     {
@@ -70084,7 +69856,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001뵈르뵈르"
     },
     {
@@ -70165,7 +69936,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001뵈르뵈르"
     },
     {
@@ -70239,7 +70010,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브런치"
     },
     {
@@ -70248,7 +70018,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브런치"
     },
     {
@@ -70257,7 +70026,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브런치"
     },
     {
@@ -70266,7 +70034,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브런치"
     },
     {
@@ -70275,7 +70042,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001브런치"
     }
    ],
@@ -70575,8 +70342,7 @@ window.DASHBOARD_DATA = {
      "label": "샌드위치",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "ip\u0001헬로키티",
@@ -70619,6 +70385,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001무화과크림치즈샌드"
     },
     {
@@ -70627,7 +70394,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001무화과크림치즈샌드"
     },
     {
@@ -70636,7 +70402,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001무화과크림치즈샌드"
     },
     {
@@ -70645,7 +70411,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001무화과크림치즈샌드"
     },
     {
@@ -70654,7 +70419,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001무화과크림치즈샌드"
     },
     {
@@ -70663,7 +70428,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001무화과크림치즈샌드"
     },
     {
@@ -70672,7 +70437,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001무화과크림치즈샌드"
     },
     {
@@ -70783,7 +70547,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -70792,7 +70555,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -70801,7 +70564,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -70810,6 +70573,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -70826,7 +70590,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -70835,7 +70598,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -70844,7 +70606,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -70853,7 +70614,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -70862,7 +70622,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     }
    ],
@@ -71321,6 +71080,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001에스프레소"
     },
     {
@@ -71377,7 +71137,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001에스프레소"
     },
     {
@@ -71834,8 +71593,7 @@ window.DASHBOARD_DATA = {
      "label": "수건",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001소금",
@@ -71843,7 +71601,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001문어"
     },
     {
@@ -71874,7 +71631,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001문어"
     },
     {
@@ -71907,7 +71663,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001문어"
     },
     {
@@ -72104,6 +71859,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001PB)수건모양초코마시멜로100g"
     },
     {
@@ -72129,7 +71885,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)수건모양초코마시멜로100g"
     },
     {
@@ -72138,7 +71893,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001PB)수건모양초코마시멜로100g"
     },
     {
@@ -72147,7 +71902,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)수건모양초코마시멜로100g"
     },
     {
@@ -72156,7 +71910,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001PB)수건모양초코마시멜로100g"
     },
     {
@@ -72165,7 +71919,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)수건모양초코마시멜로100g"
     },
     {
@@ -72572,8 +72325,7 @@ window.DASHBOARD_DATA = {
      "label": "소주",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "ip\u0001여자아이들",
@@ -72587,8 +72339,7 @@ window.DASHBOARD_DATA = {
      "label": "슈거",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "keyword\u0001수박",
@@ -72612,6 +72363,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001물"
     },
     {
@@ -72747,7 +72499,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001소주"
     },
     {
@@ -72877,7 +72628,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001여자아이들"
     },
     {
@@ -73414,6 +73165,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001얼큰추어탕"
     },
     {
@@ -73542,7 +73294,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001하림)더미식차돌된장찌개700g"
     },
     {
@@ -73711,8 +73462,7 @@ window.DASHBOARD_DATA = {
      "label": "미나리",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "ip\u0001부자영",
@@ -73824,6 +73574,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001부자영"
     },
     {
@@ -73848,7 +73599,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001부자영"
     },
     {
@@ -73857,7 +73607,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001부자영"
     },
     {
@@ -74019,6 +73768,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001롯데)삼겹살김치볶음밥삼각"
     },
     {
@@ -74027,6 +73777,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001롯데)삼겹살김치볶음밥삼각"
     },
     {
@@ -74035,7 +73786,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "product\u0001롯데)삼겹살김치볶음밥삼각"
     },
     {
@@ -74044,6 +73794,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001롯데)삼겹살김치볶음밥삼각"
     },
     {
@@ -74068,7 +73819,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001롯데)삼겹살김치볶음밥삼각"
     },
     {
@@ -74077,7 +73827,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001롯데)삼겹살김치볶음밥삼각"
     },
     {
@@ -74331,8 +74080,7 @@ window.DASHBOARD_DATA = {
      "label": "민트",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "product\u0001듀오버스터민트볼",
@@ -74354,7 +74102,8 @@ window.DASHBOARD_DATA = {
      "label": "페퍼",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "product\u0001대림)안심닭가슴살(블랙페퍼)100g",
@@ -74435,7 +74184,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001듀오버스터민트볼"
     },
     {
@@ -74607,6 +74355,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001대림)안심닭가슴살(블랙페퍼)100g"
     },
     {
@@ -74615,6 +74364,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001대림)안심닭가슴살(블랙페퍼)100g"
     },
     {
@@ -74656,7 +74406,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001대림)안심닭가슴살(블랙페퍼)100g"
     },
     {
@@ -74665,7 +74414,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001대림)안심닭가슴살(블랙페퍼)100g"
     },
     {
@@ -74674,7 +74423,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001대림)안심닭가슴살(블랙페퍼)100g"
     }
    ],
@@ -74946,7 +74695,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001밀"
     },
     {
@@ -74955,6 +74704,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001밀"
     },
     {
@@ -74979,7 +74729,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001밀"
     },
     {
@@ -74988,6 +74737,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001밀"
     },
     {
@@ -75004,7 +74754,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001베이글"
     },
     {
@@ -75186,7 +74935,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001폭신함"
     },
     {
@@ -75211,7 +74959,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001폭신함"
     },
     {
@@ -75220,7 +74967,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001폭신함"
     },
     {
@@ -75229,7 +74976,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001폭신함"
     }
    ],
@@ -75503,6 +75250,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001밀크"
     },
     {
@@ -75519,7 +75267,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001밀크"
     },
     {
@@ -75528,7 +75275,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001밀크"
     },
     {
@@ -75537,6 +75283,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001밀크"
     },
     {
@@ -75545,7 +75292,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001밀크"
     },
     {
@@ -75618,7 +75364,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001페코짱"
     },
     {
@@ -75932,8 +75677,7 @@ window.DASHBOARD_DATA = {
      "label": "바나나",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001미니언즈",
@@ -76291,7 +76035,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)노랑노랑바나나우유500ml"
     },
     {
@@ -76300,6 +76043,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001PB)노랑노랑바나나우유500ml"
     },
     {
@@ -76308,7 +76052,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)노랑노랑바나나우유500ml"
     },
     {
@@ -76317,7 +76060,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)노랑노랑바나나우유500ml"
     }
    ],
@@ -76757,7 +76499,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브륄레"
     },
     {
@@ -76882,7 +76623,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001마루와유지"
     },
     {
@@ -76963,7 +76703,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "killer",
      "parent": "product\u0001G)마루짱모찌우동109g"
     },
     {
@@ -76972,6 +76711,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001G)마루짱모찌우동109g"
     },
     {
@@ -76980,7 +76720,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001G)마루짱모찌우동109g"
     },
     {
@@ -76989,7 +76728,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001G)마루짱모찌우동109g"
     },
     {
@@ -76998,7 +76737,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001G)마루짱모찌우동109g"
     }
    ],
@@ -77264,7 +77002,8 @@ window.DASHBOARD_DATA = {
      "label": "바삭",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001타코야끼",
@@ -77291,7 +77030,8 @@ window.DASHBOARD_DATA = {
      "label": "가쓰오부시",
      "type": "keyword",
      "layer": 3,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001붕어빵",
@@ -77299,6 +77039,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001바삭"
     },
     {
@@ -77485,7 +77226,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001타코야끼"
     },
     {
@@ -77494,7 +77234,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001타코야끼"
     },
     {
@@ -77884,7 +77623,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": false,
-     "tag": "mine"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001치이카와",
@@ -77899,7 +77638,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001토핑",
@@ -77966,7 +77705,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001바질"
     },
     {
@@ -78186,7 +77924,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001치이카와"
     },
     {
@@ -78195,7 +77932,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001치이카와"
     },
     {
@@ -78237,6 +77973,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001카레"
     },
     {
@@ -78572,7 +78309,8 @@ window.DASHBOARD_DATA = {
      "label": "반찬",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001오늘뭐먹지",
@@ -79261,7 +78999,8 @@ window.DASHBOARD_DATA = {
      "label": "발효",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "ip\u0001한영석",
@@ -79275,8 +79014,7 @@ window.DASHBOARD_DATA = {
      "label": "약주",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "product\u0001한국술)니모메11도 375ml",
@@ -79510,7 +79248,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001한국술)니모메11도 375ml"
     },
     {
@@ -79535,7 +79273,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한국술)니모메11도 375ml"
     },
     {
@@ -79552,7 +79289,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한국술)니모메11도 375ml"
     },
     {
@@ -79561,7 +79297,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한국술)니모메11도 375ml"
     }
    ],
@@ -79764,16 +79499,14 @@ window.DASHBOARD_DATA = {
      "label": "밤",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001몽블랑",
      "label": "몽블랑",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "product\u0001405몽블랑데니쉬",
@@ -79793,8 +79526,7 @@ window.DASHBOARD_DATA = {
      "label": "데니쉬",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "product\u0001자이언츠)쌔리라마롱미니샌드65g",
@@ -80002,7 +79734,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001몽블랑"
     },
     {
@@ -80025,7 +79756,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001몽블랑"
     },
     {
@@ -80034,7 +79764,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001몽블랑"
     },
     {
@@ -80043,7 +79772,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001몽블랑"
     },
     {
@@ -80052,7 +79780,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001몽블랑"
     },
     {
@@ -80061,7 +79789,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001405몽블랑데니쉬"
     },
     {
@@ -80094,7 +79821,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001405몽블랑데니쉬"
     },
     {
@@ -80103,7 +79830,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001405몽블랑데니쉬"
     },
     {
@@ -80479,7 +80206,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001밥"
     },
     {
@@ -80497,7 +80223,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001밥"
     },
     {
@@ -80522,7 +80247,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001밥"
     },
     {
@@ -80563,7 +80287,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -80572,7 +80295,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -80589,7 +80311,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -80598,7 +80319,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -80607,7 +80328,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -80616,7 +80337,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -80625,7 +80346,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001콕콕콕"
     },
     {
@@ -80685,7 +80405,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001콕콕콕"
     },
     {
@@ -80694,7 +80413,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001콕콕콕"
     },
     {
@@ -80782,6 +80500,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쫄깃함"
     },
     {
@@ -80798,7 +80517,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001쫄깃함"
     },
     {
@@ -81221,6 +80939,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001빙그레)탱크보이제로"
     },
     {
@@ -81367,7 +81086,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001티처스)초코쭈쭈바125ml"
     }
    ],
@@ -81521,8 +81239,7 @@ window.DASHBOARD_DATA = {
      "label": "버섯",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "ip\u0001슈퍼마리오",
@@ -81536,8 +81253,7 @@ window.DASHBOARD_DATA = {
      "label": "스파게티",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001고독한미식가",
@@ -81705,7 +81421,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001슈퍼마리오"
     },
     {
@@ -81714,7 +81429,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001슈퍼마리오"
     },
     {
@@ -81723,7 +81437,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001슈퍼마리오"
     },
     {
@@ -81732,7 +81445,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001슈퍼마리오"
     },
     {
@@ -81741,7 +81453,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001슈퍼마리오"
     },
     {
@@ -81750,7 +81461,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001슈퍼마리오"
     },
     {
@@ -81759,7 +81469,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001슈퍼마리오"
     },
     {
@@ -81768,7 +81477,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001슈퍼마리오"
     },
     {
@@ -81786,7 +81494,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001슈퍼마리오"
     },
     {
@@ -81957,7 +81665,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001고독한미식가"
     },
     {
@@ -81966,7 +81673,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001고독한미식가"
     },
     {
@@ -81983,7 +81689,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001고독한미식가"
     },
     {
@@ -81992,7 +81697,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001고독한미식가"
     }
    ],
@@ -82286,8 +81991,7 @@ window.DASHBOARD_DATA = {
      "label": "버터",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001버터베어",
@@ -82302,7 +82006,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "product\u0001PB)자이언츠쌔리라메이플볼60g",
@@ -82390,7 +82094,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001버터"
     },
     {
@@ -82407,7 +82110,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001버터베어"
     },
     {
@@ -82416,7 +82119,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001버터베어"
     },
     {
@@ -82425,7 +82127,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001버터베어"
     },
     {
@@ -82540,7 +82241,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)자이언츠쌔리라메이플볼60g"
     },
     {
@@ -82557,6 +82257,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001PB)자이언츠쌔리라메이플볼60g"
     }
    ],
@@ -82759,8 +82460,7 @@ window.DASHBOARD_DATA = {
      "label": "벚꽃",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "ip\u0001부즈앤버즈",
@@ -82774,7 +82474,8 @@ window.DASHBOARD_DATA = {
      "label": "발효",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "ip\u0001한영석",
@@ -82831,7 +82532,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001부즈앤버즈"
     },
     {
@@ -82849,6 +82550,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001부즈앤버즈"
     },
     {
@@ -82979,7 +82681,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001한영석"
     },
     {
@@ -83400,6 +83101,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001KBO)삼성라이온즈블루베리패스츄리100g"
     },
     {
@@ -83408,6 +83110,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001KBO)삼성라이온즈블루베리패스츄리100g"
     },
     {
@@ -83433,6 +83136,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001KBO)삼성라이온즈블루베리패스츄리100g"
     },
     {
@@ -83441,6 +83145,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001KBO)삼성라이온즈블루베리패스츄리100g"
     },
     {
@@ -83449,7 +83154,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001KBO)삼성라이온즈블루베리패스츄리100g"
     },
     {
@@ -83608,6 +83313,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001KBO)기아타이거즈호랑이초코롤85g"
     },
     {
@@ -83616,7 +83322,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001KBO)기아타이거즈호랑이초코롤85g"
     },
     {
@@ -83625,7 +83330,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001KBO)기아타이거즈호랑이초코롤85g"
     },
     {
@@ -83634,7 +83339,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001KBO)기아타이거즈호랑이초코롤85g"
     },
     {
@@ -83643,7 +83347,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001KBO)기아타이거즈호랑이초코롤85g"
     },
     {
@@ -83652,7 +83355,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001KBO)기아타이거즈호랑이초코롤85g"
     }
    ],
@@ -83957,7 +83659,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001베이글"
     },
     {
@@ -84125,7 +83826,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001폭신함"
     },
     {
@@ -84134,7 +83834,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001폭신함"
     },
     {
@@ -84159,7 +83859,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001폭신함"
     },
     {
@@ -84168,7 +83867,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001폭신함"
     }
    ],
@@ -84336,8 +84035,7 @@ window.DASHBOARD_DATA = {
      "label": "베이커리",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "product\u0001선우)베이커리초콜릿39g",
@@ -84358,7 +84056,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "ip\u0001키키블룸",
@@ -84465,6 +84163,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001선우)베이커리초콜릿39g"
     },
     {
@@ -84473,7 +84172,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001선우)베이커리초콜릿39g"
     },
     {
@@ -84482,7 +84180,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001선우)베이커리초콜릿39g"
     },
     {
@@ -84491,7 +84188,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001촉촉"
     },
     {
@@ -84500,7 +84196,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001촉촉"
     },
     {
@@ -84509,7 +84204,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001촉촉"
     },
     {
@@ -84559,7 +84253,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001촉촉"
     },
     {
@@ -84576,7 +84269,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001키키블룸"
     }
    ],
@@ -84801,8 +84493,7 @@ window.DASHBOARD_DATA = {
      "label": "토스트",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001빵",
@@ -84810,7 +84501,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "product\u0001존쿡델리미트시그니처세트",
@@ -84976,6 +84667,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001적토마토)베이컨듬뿍토스트샌드"
     },
     {
@@ -85008,6 +84700,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001적토마토)베이컨듬뿍토스트샌드"
     },
     {
@@ -85016,7 +84709,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001적토마토)베이컨듬뿍토스트샌드"
     },
     {
@@ -85025,7 +84718,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001적토마토)베이컨듬뿍토스트샌드"
     },
     {
@@ -85034,7 +84726,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001적토마토)베이컨듬뿍토스트샌드"
     },
     {
@@ -85043,7 +84735,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001적토마토)베이컨듬뿍토스트샌드"
     },
     {
@@ -85052,7 +84744,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001적토마토)베이컨듬뿍토스트샌드"
     },
     {
@@ -85061,7 +84752,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001토스트"
     },
     {
@@ -85235,7 +84925,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001빵"
     },
     {
@@ -85268,7 +84957,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001빵"
     },
     {
@@ -85277,7 +84966,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001빵"
     },
     {
@@ -85615,8 +85303,7 @@ window.DASHBOARD_DATA = {
      "label": "인삼",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001꿀",
@@ -85624,7 +85311,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "product\u0001PB)영양반계탕600g",
@@ -85806,7 +85493,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001삼계탕"
     },
     {
@@ -85858,7 +85544,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001삼계탕"
     },
     {
@@ -85899,6 +85584,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -85921,7 +85607,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -85944,7 +85629,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -85953,7 +85637,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -86016,6 +85700,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001꿀"
     },
     {
@@ -86390,8 +86075,7 @@ window.DASHBOARD_DATA = {
      "label": "맑음",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001미연",
@@ -86458,7 +86142,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001복분자"
     },
     {
@@ -86525,7 +86209,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001복분자"
     },
     {
@@ -86586,7 +86269,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001미연"
     },
     {
@@ -86611,6 +86293,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001서울우유우유크림빵"
     },
     {
@@ -86619,7 +86302,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001서울우유우유크림빵"
     },
     {
@@ -86628,7 +86310,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001서울우유우유크림빵"
     },
     {
@@ -86637,7 +86319,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001서울우유우유크림빵"
     },
     {
@@ -86646,7 +86327,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001서울우유우유크림빵"
     }
    ],
@@ -86888,7 +86569,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -86897,7 +86577,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -86914,7 +86593,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -86923,7 +86601,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -86932,7 +86610,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -86941,7 +86619,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001볶음"
     },
     {
@@ -86950,7 +86628,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001콕콕콕"
     },
     {
@@ -87010,7 +86687,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001콕콕콕"
     },
     {
@@ -87019,7 +86695,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001콕콕콕"
     },
     {
@@ -87099,6 +86774,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쫄깃함"
     },
     {
@@ -87115,7 +86791,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001쫄깃함"
     },
     {
@@ -87456,7 +87131,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "ip\u0001장민호",
@@ -87555,7 +87230,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001부드러움"
     },
     {
@@ -87572,6 +87246,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001장민호)호소주375ml"
     },
     {
@@ -87596,7 +87271,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001복분자"
     },
     {
@@ -87641,7 +87315,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001복분자"
     },
     {
@@ -87694,7 +87368,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001복분자"
     }
    ],
@@ -87890,7 +87563,8 @@ window.DASHBOARD_DATA = {
      "label": "불",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001부자영",
@@ -87904,8 +87578,7 @@ window.DASHBOARD_DATA = {
      "label": "미나리",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "product\u0001야쿠르트그랜드(미나리그랜드라이트복숭아)",
@@ -88124,7 +87797,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001부자영"
     },
     {
@@ -88147,7 +87819,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001부자영"
     },
     {
@@ -88224,6 +87895,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001야쿠르트그랜드(미나리그랜드라이트복숭아)"
     },
     {
@@ -88232,7 +87904,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "product\u0001야쿠르트그랜드(미나리그랜드라이트복숭아)"
     },
     {
@@ -88241,7 +87912,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001야쿠르트그랜드(미나리그랜드라이트복숭아)"
     },
     {
@@ -88250,7 +87920,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001야쿠르트그랜드(미나리그랜드라이트복숭아)"
     }
    ],
@@ -88481,8 +88150,7 @@ window.DASHBOARD_DATA = {
      "label": "그릭",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "product\u0001요즘)오!그래놀라저당그릭요거트115g",
@@ -88571,7 +88239,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브런치"
     },
     {
@@ -88580,7 +88247,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브런치"
     },
     {
@@ -88589,7 +88255,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브런치"
     },
     {
@@ -88598,7 +88263,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브런치"
     },
     {
@@ -88607,7 +88271,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001브런치"
     },
     {
@@ -88833,6 +88497,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001요즘)오!그래놀라저당그릭요거트115g"
     },
     {
@@ -88849,7 +88514,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001요즘)오!그래놀라저당그릭요거트115g"
     },
     {
@@ -88858,7 +88523,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001요즘)오!그래놀라저당그릭요거트115g"
     }
    ],
@@ -89847,7 +89512,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001비빔"
     },
     {
@@ -89881,7 +89545,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001비빔"
     },
     {
@@ -90105,6 +89768,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001행사)맛장우전주식비빔밥"
     },
     {
@@ -90121,6 +89785,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001행사)맛장우전주식비빔밥"
     },
     {
@@ -90520,7 +90185,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001폭신함",
@@ -90559,7 +90224,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001빵"
     },
     {
@@ -90592,7 +90256,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001빵"
     },
     {
@@ -90601,7 +90264,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001빵"
     },
     {
@@ -90610,7 +90273,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001빵"
     },
     {
@@ -90698,7 +90360,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001폭신함"
     },
     {
@@ -90707,7 +90368,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001폭신함"
     },
     {
@@ -90716,7 +90377,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001폭신함"
     },
     {
@@ -90725,7 +90385,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001폭신함"
     }
    ],
@@ -90886,8 +90546,7 @@ window.DASHBOARD_DATA = {
      "label": "뼈",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001탕",
@@ -90918,6 +90577,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001뼈"
     },
     {
@@ -90970,7 +90630,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001탕"
     },
     {
@@ -90979,6 +90638,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001탕"
     },
     {
@@ -91035,6 +90695,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001탕"
     },
     {
@@ -91508,8 +91169,7 @@ window.DASHBOARD_DATA = {
      "label": "설렁탕",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "product\u0001M_현)비비고설렁탕500g",
@@ -91677,7 +91337,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001한촌설렁탕"
     },
     {
@@ -92001,16 +91660,14 @@ window.DASHBOARD_DATA = {
      "label": "사과",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001파이",
      "label": "파이",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001헬로키티",
@@ -92025,7 +91682,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001시나몬",
@@ -92082,7 +91739,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001사과"
     },
     {
@@ -92105,7 +91761,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001사과"
     },
     {
@@ -92128,7 +91784,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001파이"
     },
     {
@@ -92267,7 +91922,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -92276,6 +91931,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -92292,7 +91948,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -92301,7 +91956,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -92310,7 +91964,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -92319,7 +91972,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -92328,7 +91980,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -92337,7 +91988,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -92346,6 +91996,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -92371,7 +92022,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001카스테라"
     },
     {
@@ -92799,7 +92449,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "ip\u0001장민호",
@@ -92902,7 +92552,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001사케"
     },
     {
@@ -92936,6 +92585,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001다이긴죠"
     },
     {
@@ -92944,7 +92594,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001다이긴죠"
     },
     {
@@ -93079,7 +92729,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001부드러움"
     },
     {
@@ -93096,7 +92745,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001부드러움"
     },
     {
@@ -93583,7 +93231,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001와인"
     },
     {
@@ -93592,7 +93239,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001와인"
     },
     {
@@ -93820,7 +93467,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "product\u0001별모아젤리별"
     },
     {
@@ -93829,7 +93475,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001별모아젤리별"
     }
    ],
@@ -94117,8 +93762,7 @@ window.DASHBOARD_DATA = {
      "label": "미나리",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "product\u0001야쿠르트그랜드(미나리그랜드라이트복숭아)",
@@ -94288,6 +93932,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001부자영"
     },
     {
@@ -94312,7 +93957,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001부자영"
     },
     {
@@ -94335,7 +93979,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001부자영"
     },
     {
@@ -94412,6 +94055,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001야쿠르트그랜드(미나리그랜드라이트복숭아)"
     },
     {
@@ -94420,7 +94064,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "product\u0001야쿠르트그랜드(미나리그랜드라이트복숭아)"
     },
     {
@@ -94429,7 +94072,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001야쿠르트그랜드(미나리그랜드라이트복숭아)"
     },
     {
@@ -94438,7 +94080,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001야쿠르트그랜드(미나리그랜드라이트복숭아)"
     }
    ],
@@ -94655,8 +94296,7 @@ window.DASHBOARD_DATA = {
      "label": "상쾌",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001바질",
@@ -94671,7 +94311,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "mine"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001치이카와",
@@ -94759,7 +94399,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001바질"
     },
     {
@@ -94955,7 +94594,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001치이카와"
     },
     {
@@ -94988,7 +94627,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001치이카와"
     },
     {
@@ -94997,7 +94635,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001치이카와"
     }
    ],
@@ -95221,8 +94858,7 @@ window.DASHBOARD_DATA = {
      "label": "상큼",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001조야",
@@ -95277,7 +94913,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001상큼"
     },
     {
@@ -95319,7 +94954,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001상큼"
     },
     {
@@ -95336,6 +94970,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001상큼"
     },
     {
@@ -95577,7 +95212,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001서울)올데이프룻매실제로250ml"
     },
     {
@@ -95586,7 +95221,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001서울)올데이프룻매실제로250ml"
     }
    ],
@@ -95852,7 +95486,8 @@ window.DASHBOARD_DATA = {
      "label": "고추",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001불닭",
@@ -95876,7 +95511,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001새우"
     },
     {
@@ -95885,6 +95519,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001새우"
     },
     {
@@ -95989,7 +95624,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001삼진어묵"
     },
     {
@@ -96006,7 +95641,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001삼진어묵"
     },
     {
@@ -96570,7 +96204,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001잼",
@@ -96584,16 +96218,14 @@ window.DASHBOARD_DATA = {
      "label": "딸기",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001우유",
      "label": "우유",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001콤부차",
@@ -96617,7 +96249,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001새콤"
     },
     {
@@ -96809,7 +96440,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001잼"
     },
     {
@@ -97307,7 +96937,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "mine"
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001바질",
@@ -97532,7 +97162,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001바질"
     },
     {
@@ -97729,7 +97358,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001요아정"
     },
     {
@@ -97746,7 +97375,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001요아정"
     },
     {
@@ -98076,8 +97704,7 @@ window.DASHBOARD_DATA = {
      "label": "장어",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001회식",
@@ -98115,6 +97742,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001한마리민물장어덮밥"
     },
     {
@@ -98132,7 +97760,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한마리민물장어덮밥"
     },
     {
@@ -98187,7 +97814,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001장어"
     },
     {
@@ -98196,7 +97822,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001장어"
     },
     {
@@ -98219,7 +97845,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001장어"
     },
     {
@@ -98250,7 +97876,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001회식"
     },
     {
@@ -98259,7 +97884,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001회식"
     },
     {
@@ -98268,7 +97892,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001회식"
     },
     {
@@ -98564,8 +98187,7 @@ window.DASHBOARD_DATA = {
      "label": "김치",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001한식",
@@ -98589,6 +98211,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001M_김치찌개꽁치400g"
     },
     {
@@ -98597,7 +98220,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001M_김치찌개꽁치400g"
     },
     {
@@ -98696,7 +98318,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001찌개"
     },
     {
@@ -99117,6 +98738,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001설탕"
     },
     {
@@ -99125,7 +98747,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001설탕"
     },
     {
@@ -99134,7 +98755,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001설탕"
     },
     {
@@ -99159,6 +98779,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001설탕"
     },
     {
@@ -99497,6 +99118,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001뉴진스"
     },
     {
@@ -99505,6 +99127,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001뉴진스"
     },
     {
@@ -99521,7 +99144,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001뉴진스"
     },
     {
@@ -99538,7 +99160,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001뉴진스"
     },
     {
@@ -99547,7 +99169,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001뉴진스"
     }
    ],
@@ -99921,7 +99542,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001겟네츄럴설향딸기칩"
     },
     {
@@ -100048,8 +99668,7 @@ window.DASHBOARD_DATA = {
      "label": "스테이크",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001육즙",
@@ -100080,7 +99699,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001소고기"
     },
     {
@@ -100315,7 +99933,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001스테이크"
     },
     {
@@ -100517,7 +100134,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001롯데)오리지날프랑크90g"
     },
     {
@@ -100542,7 +100159,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001롯데)오리지날프랑크90g"
     },
     {
@@ -100551,7 +100168,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001롯데)오리지날프랑크90g"
     },
     {
@@ -100560,7 +100176,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001롯데)오리지날프랑크90g"
     }
    ],
@@ -100854,8 +100470,7 @@ window.DASHBOARD_DATA = {
      "label": "소금",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001베이크하우스405",
@@ -100907,7 +100522,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001소금"
     },
     {
@@ -100924,7 +100539,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001소금"
     },
     {
@@ -100957,7 +100571,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001소금"
     },
     {
@@ -100966,6 +100579,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001소금"
     },
     {
@@ -100974,7 +100588,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001베이크하우스405"
     },
     {
@@ -100983,6 +100596,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001베이크하우스405"
     },
     {
@@ -100991,7 +100605,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001베이크하우스405"
     },
     {
@@ -101008,7 +100621,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001베이크하우스405"
     },
     {
@@ -101131,7 +100744,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001990오리지널바"
     },
     {
@@ -101157,7 +100770,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001990오리지널바"
     },
     {
@@ -101166,7 +100779,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001990오리지널바"
     },
     {
@@ -101175,7 +100787,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001990오리지널바"
     },
     {
@@ -101184,7 +100796,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001990오리지널바"
     }
    ],
@@ -101594,6 +101205,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001한일)가쓰오냉소바184.7g"
     },
     {
@@ -101610,7 +101222,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한일)가쓰오냉소바184.7g"
     },
     {
@@ -101619,7 +101230,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한일)가쓰오냉소바184.7g"
     },
     {
@@ -101628,7 +101238,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한일)가쓰오냉소바184.7g"
     },
     {
@@ -101646,7 +101255,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001냉면"
     },
     {
@@ -101712,7 +101321,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001냉면"
     },
     {
@@ -102197,7 +101805,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001소스"
     },
     {
@@ -102222,7 +101829,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001소스"
     },
     {
@@ -102239,7 +101845,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001소스"
     },
     {
@@ -102256,6 +101861,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001오뚜기"
     },
     {
@@ -102273,7 +101879,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001오뚜기"
     },
     {
@@ -102282,7 +101887,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001오뚜기"
     },
     {
@@ -102291,7 +101895,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001오뚜기"
     },
     {
@@ -102300,7 +101903,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001오뚜기"
     },
     {
@@ -102309,7 +101911,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001오뚜기"
     },
     {
@@ -102489,6 +102091,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001롯데)맛장우삼각더커진비빔참치"
     },
     {
@@ -102513,6 +102116,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001롯데)맛장우삼각더커진비빔참치"
     },
     {
@@ -102529,7 +102133,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001롯데)맛장우삼각더커진비빔참치"
     },
     {
@@ -102538,7 +102142,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001롯데)맛장우삼각더커진비빔참치"
     },
     {
@@ -102547,7 +102150,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001롯데)맛장우삼각더커진비빔참치"
     }
    ],
@@ -102842,7 +102445,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001매드포갈릭",
@@ -103031,7 +102634,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001핫도그"
     },
     {
@@ -103103,7 +102706,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001매드포갈릭"
     },
     {
@@ -103136,7 +102738,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001매드포갈릭"
     },
     {
@@ -103145,7 +102746,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001매드포갈릭"
     },
     {
@@ -103628,8 +103228,7 @@ window.DASHBOARD_DATA = {
      "label": "소주",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "ip\u0001여자아이들",
@@ -103643,8 +103242,7 @@ window.DASHBOARD_DATA = {
      "label": "슈거",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "product\u0001MDS)젤리블리제로납작복숭아60g",
@@ -103709,7 +103307,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001소주"
     },
     {
@@ -103823,7 +103420,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001여자아이들"
     },
     {
@@ -103994,7 +103591,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "killer",
      "parent": "product\u0001MDS)젤리블리제로납작복숭아60g"
     },
     {
@@ -104011,6 +103607,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001MDS)젤리블리제로납작복숭아60g"
     },
     {
@@ -104027,7 +103624,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "product\u0001MDS)젤리블리제로납작복숭아60g"
     },
     {
@@ -104036,7 +103632,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001MDS)젤리블리제로납작복숭아60g"
     },
     {
@@ -104045,7 +103640,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001MDS)젤리블리제로납작복숭아60g"
     },
     {
@@ -104054,7 +103648,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001MDS)젤리블리제로납작복숭아60g"
     }
    ],
@@ -104371,6 +103964,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001수박"
     },
     {
@@ -104420,7 +104014,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001수박"
     },
     {
@@ -104471,7 +104064,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001수박"
     },
     {
@@ -104564,7 +104156,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u00012프로아쿠아제로"
     },
     {
@@ -104573,7 +104164,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u00012프로아쿠아제로"
     },
     {
@@ -104980,7 +104570,8 @@ window.DASHBOARD_DATA = {
      "label": "아삭함",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "product\u0001이정후)포크바베큐플래터도시락",
@@ -105144,7 +104735,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001수박"
     },
     {
@@ -105195,7 +104785,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001수박"
     },
     {
@@ -105381,7 +104970,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001이정후)포크바베큐플래터도시락"
     },
     {
@@ -105390,7 +104978,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001이정후)포크바베큐플래터도시락"
     },
     {
@@ -105424,6 +105011,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001이정후)포크바베큐플래터도시락"
     },
     {
@@ -105448,7 +105036,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001이정후)포크바베큐플래터도시락"
     },
     {
@@ -105773,8 +105360,7 @@ window.DASHBOARD_DATA = {
      "label": "소주",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "product\u0001드링크)패스포트200ml",
@@ -105995,7 +105581,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001증류"
     },
     {
@@ -106036,7 +105621,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001증류"
     },
     {
@@ -106045,7 +105629,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001증류"
     },
     {
@@ -106645,7 +106229,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001요아정",
@@ -106806,7 +106390,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001동아)모닝케어프레스온G(위)"
     },
     {
@@ -106815,7 +106398,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001꿀"
     },
     {
@@ -106856,6 +106438,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001꿀"
     },
     {
@@ -107469,7 +107052,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001농심)누들핏튀김우동맛"
     },
     {
@@ -107486,7 +107069,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001농심)누들핏튀김우동맛"
     },
     {
@@ -107503,6 +107086,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001농심)누들핏튀김우동맛"
     },
     {
@@ -107511,7 +107095,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001농심)누들핏튀김우동맛"
     },
     {
@@ -107520,7 +107104,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001농심)누들핏튀김우동맛"
     },
     {
@@ -107529,7 +107112,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001농심)누들핏튀김우동맛"
     },
     {
@@ -108069,7 +107651,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001순두부"
     },
     {
@@ -108092,7 +107674,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001순두부"
     },
     {
@@ -108101,7 +107683,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001순두부"
     },
     {
@@ -108292,6 +107874,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -108300,7 +107883,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -108317,7 +107899,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -108326,6 +107907,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -108334,7 +107916,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -108343,7 +107924,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -108352,7 +107933,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -108422,6 +108003,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001족발"
     },
     {
@@ -108877,7 +108459,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001순두부"
     },
     {
@@ -108900,7 +108482,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001순두부"
     },
     {
@@ -108909,7 +108491,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001순두부"
     },
     {
@@ -109109,6 +108691,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -109117,7 +108700,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -109134,7 +108716,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -109143,6 +108724,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -109151,7 +108733,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -109160,7 +108741,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -109169,7 +108750,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     }
    ],
@@ -109435,8 +109016,7 @@ window.DASHBOARD_DATA = {
      "label": "약주",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "product\u0001한국술)니모메11도 375ml",
@@ -109506,7 +109086,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001술"
     },
     {
@@ -109531,7 +109110,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001술"
     },
     {
@@ -109549,6 +109127,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001한영석"
     },
     {
@@ -109637,7 +109216,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001한국술)니모메11도 375ml"
     },
     {
@@ -109662,7 +109241,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한국술)니모메11도 375ml"
     },
     {
@@ -109679,7 +109257,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한국술)니모메11도 375ml"
     },
     {
@@ -109688,7 +109265,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한국술)니모메11도 375ml"
     }
    ],
@@ -109898,7 +109474,8 @@ window.DASHBOARD_DATA = {
      "label": "스프",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001마녀스프",
@@ -109912,7 +109489,8 @@ window.DASHBOARD_DATA = {
      "label": "국물",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001권성준",
@@ -109927,6 +109505,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001스프"
     },
     {
@@ -110014,7 +109593,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001스프"
     },
     {
@@ -110078,6 +109656,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001국물"
     },
     {
@@ -110188,7 +109767,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001권성준"
     },
     {
@@ -110197,7 +109775,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001권성준"
     },
     {
@@ -110526,8 +110103,7 @@ window.DASHBOARD_DATA = {
      "label": "일식",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "product\u0001롯데)최강록의간장들기름비빔밥",
@@ -110569,6 +110145,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001롯데)최강록의소보로삼각"
     },
     {
@@ -110585,7 +110162,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001롯데)최강록의소보로삼각"
     },
     {
@@ -110594,6 +110170,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001롯데)최강록의소보로삼각"
     },
     {
@@ -110602,6 +110179,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001롯데)최강록의소보로삼각"
     },
     {
@@ -110635,6 +110213,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001롯데)최강록의소보로삼각"
     },
     {
@@ -110643,7 +110222,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001롯데)최강록의소보로삼각"
     },
     {
@@ -111003,16 +110581,14 @@ window.DASHBOARD_DATA = {
      "label": "사과",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001파이",
      "label": "파이",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001헬로키티",
@@ -111206,7 +110782,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001사과"
     },
     {
@@ -111229,7 +110804,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001사과"
     },
     {
@@ -111252,7 +110827,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001사과"
     },
     {
@@ -111261,7 +110835,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001파이"
     },
     {
@@ -111400,7 +110973,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -111409,7 +110982,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -111418,6 +110991,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -111434,7 +111008,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -111443,7 +111016,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -111452,7 +111024,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -111461,7 +111032,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -111470,7 +111040,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -111479,7 +111048,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     }
    ],
@@ -111831,7 +111399,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001시럽"
     },
     {
@@ -112011,7 +111579,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001라떼"
     },
     {
@@ -112020,7 +111587,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001라떼"
     },
     {
@@ -112029,7 +111595,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001라떼"
     },
     {
@@ -112171,7 +111736,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001빌로우"
     },
     {
@@ -112473,7 +112037,8 @@ window.DASHBOARD_DATA = {
      "label": "호떡",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001BT21",
@@ -112597,6 +112162,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001오레오"
     },
     {
@@ -112605,7 +112171,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001오레오"
     },
     {
@@ -112614,7 +112179,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001오레오"
     },
     {
@@ -112623,7 +112187,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001오레오"
     },
     {
@@ -112648,7 +112211,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001오레오"
     },
     {
@@ -112657,7 +112219,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001오레오"
     },
     {
@@ -112666,7 +112227,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001오레오"
     },
     {
@@ -112675,7 +112236,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001오레오"
     },
     {
@@ -112825,6 +112385,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001BT21"
     },
     {
@@ -112842,7 +112403,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001BT21"
     },
     {
@@ -112859,7 +112420,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001BT21"
     },
     {
@@ -112868,7 +112429,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001BT21"
     },
     {
@@ -112877,7 +112437,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001BT21"
     },
     {
@@ -112895,7 +112454,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001BT21"
     }
    ],
@@ -113328,7 +112887,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001조야"
     },
     {
@@ -113552,7 +113110,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001서울)올데이프룻매실제로250ml"
     },
     {
@@ -113561,7 +113119,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001서울)올데이프룻매실제로250ml"
     }
    ],
@@ -114006,6 +113563,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001프라임하이드레이션MLB시트러스키위"
     },
     {
@@ -114022,7 +113580,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001프라임하이드레이션MLB시트러스키위"
     },
     {
@@ -114132,6 +113689,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001생키위샌드"
     },
     {
@@ -114140,7 +113698,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001생키위샌드"
     },
     {
@@ -114149,7 +113706,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001생키위샌드"
     }
    ],
@@ -114345,8 +113901,7 @@ window.DASHBOARD_DATA = {
      "label": "식감",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001견과류",
@@ -114542,7 +114097,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -114551,7 +114105,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -115474,7 +115027,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한도초과)폭풍햄가득참치김밥"
     },
     {
@@ -115483,7 +115035,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한도초과)폭풍햄가득참치김밥"
     },
     {
@@ -115492,7 +115043,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001한도초과)폭풍햄가득참치김밥"
     },
     {
@@ -115986,6 +115537,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001오츠카)소이조이후르츠&치즈30g"
     },
     {
@@ -115994,6 +115546,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001오츠카)소이조이후르츠&치즈30g"
     },
     {
@@ -116010,7 +115563,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001오츠카)소이조이후르츠&치즈30g"
     },
     {
@@ -116064,7 +115616,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001오츠카)소이조이4입기획"
     },
     {
@@ -116073,7 +115624,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001오츠카)소이조이4입기획"
     },
     {
@@ -116082,7 +115633,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001오츠카)소이조이4입기획"
     }
    ],
@@ -116222,8 +115772,7 @@ window.DASHBOARD_DATA = {
      "label": "식후",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001브륄레",
@@ -116313,7 +115862,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브륄레"
     },
     {
@@ -116424,7 +115972,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001마루와유지"
     },
     {
@@ -116505,7 +116052,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "killer",
      "parent": "product\u0001G)마루짱모찌우동109g"
     },
     {
@@ -116514,6 +116060,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001G)마루짱모찌우동109g"
     },
     {
@@ -116522,7 +116069,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001G)마루짱모찌우동109g"
     },
     {
@@ -116531,7 +116077,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001G)마루짱모찌우동109g"
     },
     {
@@ -116540,7 +116086,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001G)마루짱모찌우동109g"
     }
    ],
@@ -116773,7 +116318,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "mine"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001치이카와",
@@ -116933,7 +116478,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001바질"
     },
     {
@@ -117143,7 +116687,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001치이카와"
     },
     {
@@ -117176,7 +116720,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001치이카와"
     },
     {
@@ -117185,7 +116728,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001치이카와"
     }
    ],
@@ -117494,8 +117036,7 @@ window.DASHBOARD_DATA = {
      "label": "모찌",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "ip\u0001한영석",
@@ -117511,6 +117052,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쌀"
     },
     {
@@ -117560,6 +117102,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쌀"
     },
     {
@@ -117568,6 +117111,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쌀"
     },
     {
@@ -117598,6 +117142,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001경기떡집"
     },
     {
@@ -117797,7 +117342,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001모찌"
     },
     {
@@ -118281,6 +117826,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001고기덕후고추장삼겹"
     },
     {
@@ -118289,6 +117835,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001고기덕후고추장삼겹"
     },
     {
@@ -118305,7 +117852,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "product\u0001고기덕후고추장삼겹"
     },
     {
@@ -118322,7 +117868,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001고기덕후고추장삼겹"
     },
     {
@@ -118348,7 +117893,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001고기덕후고추장삼겹"
     },
     {
@@ -118504,7 +118048,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001부자영"
     },
     {
@@ -118513,6 +118056,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001부자영"
     },
     {
@@ -118537,7 +118081,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001부자영"
     },
     {
@@ -118546,7 +118089,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001부자영"
     }
    ],
@@ -118791,8 +118333,7 @@ window.DASHBOARD_DATA = {
      "label": "인삼",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001삼계탕",
@@ -118951,7 +118492,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -118968,6 +118509,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -118990,7 +118532,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -119013,7 +118554,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -119022,7 +118562,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -119061,7 +118601,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001삼계탕"
     },
     {
@@ -119129,7 +118668,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001삼계탕"
     },
     {
@@ -119623,7 +119161,8 @@ window.DASHBOARD_DATA = {
      "label": "차",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001JTBC",
@@ -119823,6 +119362,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -119839,7 +119379,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -119848,7 +119387,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -119857,7 +119395,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -119866,7 +119403,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     }
    ],
@@ -120156,6 +119692,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001에스프레소"
     },
     {
@@ -120212,7 +119749,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001에스프레소"
     },
     {
@@ -120593,8 +120129,7 @@ window.DASHBOARD_DATA = {
      "label": "씨",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001수박",
@@ -120647,6 +120182,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001수박"
     },
     {
@@ -120696,7 +120232,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001수박"
     },
     {
@@ -120747,7 +120282,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001수박"
     },
     {
@@ -120849,7 +120383,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u00012프로아쿠아제로"
     },
     {
@@ -120858,7 +120391,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u00012프로아쿠아제로"
     },
     {
@@ -121048,7 +120580,8 @@ window.DASHBOARD_DATA = {
      "label": "아몬드",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "product\u0001초코아몬드쿠키",
@@ -121242,7 +120775,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001초코아몬드쿠키"
     },
     {
@@ -121251,7 +120783,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001초코아몬드쿠키"
     },
     {
@@ -121282,6 +120813,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001수키도키"
     },
     {
@@ -121290,7 +120822,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001수키도키"
     },
     {
@@ -121307,7 +120839,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001마카롱"
     },
     {
@@ -121316,7 +120847,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001마카롱"
     },
     {
@@ -121341,7 +120871,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001마카롱"
     }
    ],
@@ -121616,7 +121145,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001아사이"
     },
     {
@@ -121661,7 +121189,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001아사이"
     },
     {
@@ -121865,7 +121393,8 @@ window.DASHBOARD_DATA = {
      "label": "아삭함",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001수박",
@@ -122107,7 +121636,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001수박"
     },
     {
@@ -122158,7 +121686,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001수박"
     },
     {
@@ -122274,7 +121801,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u00012프로아쿠아제로"
     },
     {
@@ -122283,7 +121809,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u00012프로아쿠아제로"
     },
     {
@@ -122550,8 +122075,7 @@ window.DASHBOARD_DATA = {
      "label": "초코",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001오레오",
@@ -122582,6 +122106,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001아이스크림"
     },
     {
@@ -122739,7 +122264,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001투움바"
     },
     {
@@ -122756,7 +122280,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001투움바"
     },
     {
@@ -122765,6 +122288,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001투움바"
     },
     {
@@ -122773,6 +122297,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001초코"
     },
     {
@@ -122853,7 +122378,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001오레오"
     },
     {
@@ -122945,7 +122469,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001오레오"
     },
     {
@@ -122954,7 +122477,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001오레오"
     },
     {
@@ -123353,7 +122876,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001아침"
     },
     {
@@ -123394,7 +122916,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001던킨"
     },
     {
@@ -123510,7 +123031,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브런치"
     },
     {
@@ -123519,7 +123039,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브런치"
     },
     {
@@ -123528,7 +123047,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브런치"
     },
     {
@@ -123537,7 +123055,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브런치"
     },
     {
@@ -123546,7 +123063,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001브런치"
     },
     {
@@ -123555,7 +123072,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브런치"
     },
     {
@@ -123564,7 +123080,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001YOZM"
     },
     {
@@ -123937,7 +123452,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001안주"
     },
     {
@@ -123954,7 +123468,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001안주"
     },
     {
@@ -123972,7 +123485,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001안주"
     },
     {
@@ -123981,7 +123493,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001KBS"
     },
     {
@@ -124016,7 +123527,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001KBS"
     },
     {
@@ -124033,7 +123543,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001KBS"
     },
     {
@@ -124042,7 +123551,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001KBS"
     },
     {
@@ -124051,7 +123559,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001KBS"
     },
     {
@@ -124060,7 +123567,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001KBS"
     },
     {
@@ -124077,7 +123583,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001소스"
     },
     {
@@ -124102,7 +123607,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001소스"
     },
     {
@@ -124173,6 +123677,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001오뚜기"
     },
     {
@@ -124190,7 +123695,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001오뚜기"
     },
     {
@@ -124199,7 +123703,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001오뚜기"
     },
     {
@@ -124208,7 +123711,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001오뚜기"
     },
     {
@@ -124217,7 +123719,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001오뚜기"
     },
     {
@@ -124527,7 +124029,8 @@ window.DASHBOARD_DATA = {
      "label": "알싸함",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "product\u0001PB)제트콘김와사비맛90g",
@@ -124550,7 +124053,8 @@ window.DASHBOARD_DATA = {
      "label": "와사비",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "product\u0001롯데)맛장우김밥참치크래미",
@@ -124646,7 +124150,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001PB)제트콘김와사비맛90g"
     },
     {
@@ -124655,6 +124159,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001PB)제트콘김와사비맛90g"
     },
     {
@@ -124663,7 +124168,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001PB)제트콘김와사비맛90g"
     },
     {
@@ -124680,7 +124185,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)제트콘김와사비맛90g"
     },
     {
@@ -124689,6 +124193,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001PB)제트콘김와사비맛90g"
     },
     {
@@ -124706,7 +124211,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001PB)제트콘김와사비맛90g"
     },
     {
@@ -124715,7 +124220,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)제트콘김와사비맛90g"
     },
     {
@@ -124888,6 +124392,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001롯데)맛장우김밥참치크래미"
     },
     {
@@ -124920,7 +124425,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001롯데)맛장우김밥참치크래미"
     }
    ],
@@ -125165,8 +124669,7 @@ window.DASHBOARD_DATA = {
      "label": "앙금",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001호두",
@@ -125188,7 +124691,8 @@ window.DASHBOARD_DATA = {
      "label": "감자",
      "type": "keyword",
      "layer": 3,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "product\u0001삼립꿀고구마호빵",
@@ -125534,7 +125038,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001부창제과"
     },
     {
@@ -125551,7 +125055,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001부창제과"
     },
     {
@@ -125560,7 +125063,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001감자"
     },
     {
@@ -125577,6 +125079,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001감자"
     },
     {
@@ -125625,6 +125128,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001감자"
     },
     {
@@ -125957,7 +125461,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001야식"
     },
     {
@@ -125974,6 +125477,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001야식"
     },
     {
@@ -125990,6 +125494,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001야식"
     },
     {
@@ -126031,7 +125536,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -126072,7 +125576,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -126081,7 +125584,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -126749,15 +126251,14 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001치킨",
      "label": "치킨",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001BHC",
@@ -126772,7 +126273,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001양념"
     },
     {
@@ -126781,7 +126281,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001양념"
     },
     {
@@ -126815,7 +126314,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001양념"
     },
     {
@@ -126857,7 +126355,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001튀김"
     },
     {
@@ -127018,7 +126515,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001BHC"
     },
     {
@@ -127035,7 +126531,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001BHC"
     },
     {
@@ -127379,7 +126874,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001라이언",
@@ -127408,7 +126903,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001닭갈비"
     },
     {
@@ -127531,7 +127025,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001닭갈비"
     },
     {
@@ -127685,7 +127178,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -127694,7 +127186,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -127703,7 +127195,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -127712,7 +127204,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -127721,7 +127212,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -127730,7 +127220,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -127739,7 +127228,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -127748,7 +127236,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -127757,7 +127245,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     }
    ],
@@ -128002,8 +127490,7 @@ window.DASHBOARD_DATA = {
      "label": "양파",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "product\u0001MQ)프링글스양파맛70g",
@@ -128026,7 +127513,8 @@ window.DASHBOARD_DATA = {
      "label": "프링글스",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "product\u0001MQ)프링글스한국식닭강정맛100g",
@@ -128204,6 +127692,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001MQ)프링글스양파맛70g"
     },
     {
@@ -128220,6 +127709,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001MQ)프링글스양파맛70g"
     },
     {
@@ -128228,7 +127718,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001MQ)프링글스양파맛70g"
     },
     {
@@ -128314,7 +127803,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001MQ)프링글스한국식닭강정맛100g"
     },
     {
@@ -128331,7 +127819,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001MQ)프링글스한국식닭강정맛100g"
     },
     {
@@ -128340,6 +127827,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001MQ)프링글스한국식닭강정맛100g"
     },
     {
@@ -128357,7 +127845,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001MQ)프링글스한국식닭강정맛100g"
     },
     {
@@ -128366,7 +127854,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001MQ)프링글스한국식닭강정맛100g"
     }
    ],
@@ -128584,7 +128071,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "ip\u0001헬로키티",
@@ -128598,16 +128085,14 @@ window.DASHBOARD_DATA = {
      "label": "파이",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001사과",
      "label": "사과",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001삼진어묵",
@@ -128755,7 +128240,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -128764,6 +128249,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -128780,7 +128266,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -128789,7 +128274,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -128798,7 +128282,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -128807,7 +128290,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -128816,7 +128298,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -128825,7 +128306,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -128834,6 +128314,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -128867,7 +128348,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001파이"
     },
     {
@@ -128876,7 +128356,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001파이"
     },
     {
@@ -128997,7 +128476,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001사과"
     },
     {
@@ -129020,7 +128499,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001사과"
     },
     {
@@ -129385,7 +128863,8 @@ window.DASHBOARD_DATA = {
      "label": "얼음",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001빙수",
@@ -129406,7 +128885,8 @@ window.DASHBOARD_DATA = {
      "label": "페스츄리",
      "type": "keyword",
      "layer": 3,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "product\u0001미정)얼음동동물비빔냉면242g",
@@ -129490,7 +128970,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001빙수"
     },
     {
@@ -129516,7 +128995,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001빙수"
     },
     {
@@ -129525,7 +129003,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001빙수"
     },
     {
@@ -129603,6 +129080,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001성심당"
     },
     {
@@ -129619,7 +129097,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001성심당"
     },
     {
@@ -129628,7 +129106,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001성심당"
     },
     {
@@ -129637,7 +129114,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001성심당"
     },
     {
@@ -129646,7 +129123,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001성심당"
     },
     {
@@ -129655,7 +129131,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001성심당"
     },
     {
@@ -129664,7 +129140,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001성심당"
     },
     {
@@ -130106,7 +129582,8 @@ window.DASHBOARD_DATA = {
      "label": "피넛",
      "type": "keyword",
      "layer": 3,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001토트넘",
@@ -130210,7 +129687,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001마즈)스니커즈피넛70g"
     },
     {
@@ -130219,7 +129696,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001마즈)스니커즈피넛70g"
     },
     {
@@ -130228,7 +129704,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001마즈)스니커즈피넛70g"
     },
     {
@@ -130673,6 +130148,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001에스프레소"
     },
     {
@@ -130729,7 +130205,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001에스프레소"
     },
     {
@@ -130911,6 +130386,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001PB)테디베어디카페인아메리카노250ml"
     },
     {
@@ -130919,7 +130395,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001PB)테디베어디카페인아메리카노250ml"
     },
     {
@@ -130928,7 +130404,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)테디베어디카페인아메리카노250ml"
     }
    ],
@@ -131173,7 +130648,8 @@ window.DASHBOARD_DATA = {
      "label": "편의점",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001프룻팝스",
@@ -131204,7 +130680,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001여름"
     },
     {
@@ -131245,6 +130720,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001여름"
     },
     {
@@ -131316,7 +130792,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001무무씨"
     },
     {
@@ -131504,7 +130980,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001프룻팝스"
     },
     {
@@ -132049,7 +131525,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001너쿠리"
     },
     {
@@ -132058,6 +131534,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001너쿠리"
     },
     {
@@ -132249,7 +131726,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001TXT별모아젤리별"
     },
     {
@@ -132258,7 +131735,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001TXT별모아젤리별"
     },
     {
@@ -132267,7 +131743,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001TXT별모아젤리별"
     },
     {
@@ -132276,7 +131751,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001TXT별모아젤리별"
     }
    ],
@@ -132521,16 +131995,14 @@ window.DASHBOARD_DATA = {
      "label": "영화",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001팝콘",
      "label": "팝콘",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001라이언",
@@ -132544,8 +132016,7 @@ window.DASHBOARD_DATA = {
      "label": "슈",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001넷플릭스",
@@ -132651,7 +132122,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001팝콘"
     },
     {
@@ -132660,7 +132130,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001팝콘"
     },
     {
@@ -132669,7 +132138,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001팝콘"
     },
     {
@@ -132724,7 +132192,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -132733,7 +132201,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -132742,7 +132210,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -132751,7 +132219,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -132760,7 +132227,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -132769,7 +132235,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001라이언"
     },
     {
@@ -132778,7 +132243,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -132787,7 +132252,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001라이언"
     },
     {
@@ -133216,8 +132681,7 @@ window.DASHBOARD_DATA = {
      "label": "식감",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001땅콩",
@@ -133404,7 +132868,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -133413,7 +132876,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -134127,8 +133589,7 @@ window.DASHBOARD_DATA = {
      "label": "충전",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001오레오",
@@ -134312,7 +133773,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001PB)젤리초코볼오렌지42g"
     },
     {
@@ -134321,7 +133782,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)젤리초코볼오렌지42g"
     },
     {
@@ -134330,7 +133790,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)젤리초코볼오렌지42g"
     },
     {
@@ -134339,7 +133798,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001PB)젤리초코볼오렌지42g"
     },
     {
@@ -134348,7 +133807,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)젤리초코볼오렌지42g"
     },
     {
@@ -134357,6 +133815,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001충전"
     },
     {
@@ -134373,7 +133832,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001충전"
     },
     {
@@ -134446,7 +133904,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001오레오"
     },
     {
@@ -134538,7 +133995,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001오레오"
     },
     {
@@ -135017,6 +134474,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001맛제일)오리불고기&왕교자도시락"
     },
     {
@@ -135042,7 +134500,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001맛제일)오리불고기&왕교자도시락"
     },
     {
@@ -135118,7 +134575,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001맛제일"
     },
     {
@@ -135135,6 +134592,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001맛제일"
     },
     {
@@ -135151,6 +134609,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001맛제일)스팸마요계란볶음밥"
     },
     {
@@ -135183,7 +134642,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001맛제일)스팸마요계란볶음밥"
     },
     {
@@ -135201,6 +134659,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001맛제일)스팸마요계란볶음밥"
     },
     {
@@ -135209,7 +134668,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001맛제일)스팸마요계란볶음밥"
     },
     {
@@ -135218,7 +134676,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001맛제일)스팸마요계란볶음밥"
     }
    ],
@@ -135470,8 +134928,7 @@ window.DASHBOARD_DATA = {
      "label": "오이",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001막국수",
@@ -135581,7 +135038,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001막국수"
     },
     {
@@ -135607,7 +135064,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001막국수"
     },
     {
@@ -135616,7 +135072,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001막국수"
     },
     {
@@ -135723,6 +135178,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001삼립)프로H.메밀꿀호떡90g"
     },
     {
@@ -135731,7 +135187,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001삼립)프로H.메밀꿀호떡90g"
     },
     {
@@ -135748,7 +135204,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001삼립)프로H.메밀꿀호떡90g"
     },
     {
@@ -135757,7 +135213,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001삼립)프로H.메밀꿀호떡90g"
     },
     {
@@ -135766,7 +135222,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)프로H.메밀꿀호떡90g"
     }
    ],
@@ -137002,7 +136457,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001위스키"
     },
     {
@@ -137027,7 +136481,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001위스키"
     },
     {
@@ -137036,7 +136489,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001위스키"
     },
     {
@@ -137246,7 +136699,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)타임핏스모키포크샐러드120g"
     },
     {
@@ -137263,6 +136715,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001삼립)타임핏스모키포크샐러드120g"
     },
     {
@@ -137271,7 +136724,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
+     "tag": "매개",
      "parent": "product\u0001삼립)타임핏스모키포크샐러드120g"
     },
     {
@@ -137280,7 +136733,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001삼립)타임핏스모키포크샐러드120g"
     },
     {
@@ -137654,7 +137107,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001M_직납)셰프오후딸기"
     },
     {
@@ -137671,7 +137123,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001M_직납)셰프오후딸기"
     },
     {
@@ -137728,6 +137179,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001기원X셰프에드워드리에디션레드페퍼캐스크"
     },
     {
@@ -137736,6 +137188,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001기원X셰프에드워드리에디션레드페퍼캐스크"
     },
     {
@@ -137891,8 +137344,7 @@ window.DASHBOARD_DATA = {
      "label": "컵",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001빙수",
@@ -138054,6 +137506,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001포차코"
     },
     {
@@ -138062,7 +137515,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001포차코"
     },
     {
@@ -138071,6 +137523,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001포차코"
     },
     {
@@ -138079,7 +137532,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001포차코"
     },
     {
@@ -138097,7 +137550,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001포차코"
     },
     {
@@ -138261,6 +137714,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001빙수"
     },
     {
@@ -138286,7 +137740,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001빙수"
     },
     {
@@ -138295,7 +137748,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001빙수"
     },
     {
@@ -138829,7 +138281,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001알리오올리오"
     },
     {
@@ -138838,7 +138289,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001알리오올리오"
     },
     {
@@ -138847,7 +138297,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001알리오올리오"
     },
     {
@@ -138864,7 +138313,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001알리오올리오"
     },
     {
@@ -138873,7 +138321,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001알리오올리오"
     },
     {
@@ -138882,7 +138330,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001알리오올리오"
     },
     {
@@ -138899,6 +138347,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001이장우)오일스타알리오올리오"
     },
     {
@@ -139261,7 +138710,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001와인"
     },
     {
@@ -139270,7 +138718,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001와인"
     },
     {
@@ -139465,7 +138913,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001우진)샤또꾸떼16"
     },
     {
@@ -139878,8 +139326,7 @@ window.DASHBOARD_DATA = {
      "label": "와플",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001레고",
@@ -139893,8 +139340,7 @@ window.DASHBOARD_DATA = {
      "label": "스낵",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001BT21",
@@ -140010,7 +139456,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001레고"
     },
     {
@@ -140019,7 +139464,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001레고"
     },
     {
@@ -140028,7 +139472,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001레고"
     },
     {
@@ -140101,7 +139545,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001스낵"
     },
     {
@@ -140118,6 +139561,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001BT21"
     },
     {
@@ -140126,6 +139570,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001BT21"
     },
     {
@@ -140134,6 +139579,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001BT21"
     },
     {
@@ -140151,7 +139597,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001BT21"
     },
     {
@@ -140168,7 +139614,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001BT21"
     },
     {
@@ -140177,7 +139622,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001BT21"
     },
     {
@@ -140186,7 +139631,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001BT21"
     },
     {
@@ -140195,7 +139639,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001BT21"
     }
    ],
@@ -140447,8 +139890,7 @@ window.DASHBOARD_DATA = {
      "label": "스무디",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001잠바주스",
@@ -140462,7 +139904,8 @@ window.DASHBOARD_DATA = {
      "label": "주스",
      "type": "keyword",
      "layer": 3,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001파르페",
@@ -140588,7 +140031,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001스무디"
     },
     {
@@ -140605,7 +140047,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001스무디"
     },
     {
@@ -140677,7 +140118,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001스무디"
     },
     {
@@ -141852,7 +141292,8 @@ window.DASHBOARD_DATA = {
      "label": "국물",
      "type": "keyword",
      "layer": 1,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001마녀스프",
@@ -141866,7 +141307,8 @@ window.DASHBOARD_DATA = {
      "label": "스프",
      "type": "keyword",
      "layer": 3,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001우동당",
@@ -141914,7 +141356,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001우동"
     },
     {
@@ -141939,7 +141380,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001우동"
     },
     {
@@ -141948,7 +141388,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001우동"
     },
     {
@@ -141990,6 +141429,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001국물"
     },
     {
@@ -142075,6 +141515,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001스프"
     },
     {
@@ -142162,7 +141603,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001스프"
     },
     {
@@ -142185,7 +141625,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001스프"
     }
    ],
@@ -142430,8 +141869,7 @@ window.DASHBOARD_DATA = {
      "label": "우유",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001유제품",
@@ -142445,8 +141883,7 @@ window.DASHBOARD_DATA = {
      "label": "딸기",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001잼",
@@ -142671,7 +142108,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001딸기"
     },
     {
@@ -142696,7 +142133,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001딸기"
     },
     {
@@ -143159,7 +142595,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001운동"
     },
     {
@@ -143168,6 +142603,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001운동"
     },
     {
@@ -143478,7 +142914,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001마이노멀"
     },
     {
@@ -143991,6 +143426,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001에스프레소"
     },
     {
@@ -144047,7 +143483,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001에스프레소"
     },
     {
@@ -144498,7 +143933,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001위스키"
     },
     {
@@ -144523,7 +143957,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001위스키"
     },
     {
@@ -144532,7 +143965,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001위스키"
     },
     {
@@ -144720,7 +144153,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)타임핏스모키포크샐러드120g"
     },
     {
@@ -144737,6 +144169,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001삼립)타임핏스모키포크샐러드120g"
     },
     {
@@ -144745,7 +144178,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
+     "tag": "매개",
      "parent": "product\u0001삼립)타임핏스모키포크샐러드120g"
     },
     {
@@ -144754,7 +144187,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001삼립)타임핏스모키포크샐러드120g"
     },
     {
@@ -144869,7 +144302,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001훈연"
     },
     {
@@ -144878,7 +144310,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001훈연"
     }
    ],
@@ -145188,7 +144620,8 @@ window.DASHBOARD_DATA = {
      "label": "저당",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001BTS",
@@ -145376,7 +144809,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001종근당)락토핏마시는유산균저당130ml"
     },
     {
@@ -145385,7 +144817,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001종근당)락토핏마시는유산균저당130ml"
     },
     {
@@ -145394,7 +144826,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001종근당)락토핏마시는유산균저당130ml"
     },
     {
@@ -145572,6 +145003,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001BTS"
     },
     {
@@ -145605,6 +145037,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001BTS"
     },
     {
@@ -145613,7 +145046,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001BTS"
     },
     {
@@ -145622,7 +145054,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001BTS"
     },
     {
@@ -145639,7 +145070,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001BTS"
     }
    ],
@@ -146126,6 +145556,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001추성훈)아키그린500ml"
     },
     {
@@ -146328,16 +145759,14 @@ window.DASHBOARD_DATA = {
      "label": "우유",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001딸기",
      "label": "딸기",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001잼",
@@ -146578,7 +146007,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001딸기"
     },
     {
@@ -146603,7 +146032,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001딸기"
     },
     {
@@ -147064,8 +146492,7 @@ window.DASHBOARD_DATA = {
      "label": "설렁탕",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "product\u0001M_현)비비고설렁탕500g",
@@ -147153,6 +146580,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001육수"
     },
     {
@@ -147187,7 +146615,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001한촌설렁탕"
     },
     {
@@ -147518,8 +146945,7 @@ window.DASHBOARD_DATA = {
      "label": "스테이크",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001냉장고를부탁해",
@@ -147802,7 +147228,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001스테이크"
     },
     {
@@ -147836,7 +147261,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001냉장고를부탁해"
     },
     {
@@ -147886,7 +147310,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001파스타"
     },
     {
@@ -147895,7 +147318,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001파스타"
     },
     {
@@ -147928,7 +147350,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001파스타"
     }
    ],
@@ -148201,8 +147622,7 @@ window.DASHBOARD_DATA = {
      "label": "한우",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "ip\u0001하동관",
@@ -148328,6 +147748,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001한우"
     },
     {
@@ -148376,7 +147797,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001한우"
     },
     {
@@ -148472,7 +147892,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001감칠맛"
     },
     {
@@ -148489,7 +147908,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001감칠맛"
     },
     {
@@ -148498,6 +147916,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001감칠맛"
     },
     {
@@ -148889,7 +148308,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001육회"
     },
     {
@@ -148898,7 +148317,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001육회"
     },
     {
@@ -148907,7 +148325,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001육회"
     },
     {
@@ -148916,7 +148334,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001육회"
     },
     {
@@ -149101,6 +148519,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001행사)맛장우전주식비빔밥"
     },
     {
@@ -149117,6 +148536,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001행사)맛장우전주식비빔밥"
     },
     {
@@ -149133,7 +148553,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001행사)맛장우전주식비빔밥"
     },
     {
@@ -149605,6 +149024,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001음료"
     },
     {
@@ -149631,7 +149051,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001음료"
     },
     {
@@ -149688,6 +149107,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001밀크"
     },
     {
@@ -149704,7 +149124,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001밀크"
     },
     {
@@ -149713,7 +149132,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001밀크"
     },
     {
@@ -149722,6 +149140,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001밀크"
     },
     {
@@ -149730,7 +149149,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001밀크"
     },
     {
@@ -149803,7 +149221,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001페코짱"
     },
     {
@@ -150178,7 +149595,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001이국적"
     },
     {
@@ -150246,6 +149663,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001추성훈)아키그린500ml"
     },
     {
@@ -150571,8 +149989,7 @@ window.DASHBOARD_DATA = {
      "label": "인삼",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001삼계탕",
@@ -150612,7 +150029,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -150637,6 +150054,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -150659,7 +150077,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -150682,7 +150099,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -150691,7 +150107,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -150730,7 +150146,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001삼계탕"
     },
     {
@@ -150798,7 +150213,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001삼계탕"
     },
     {
@@ -150991,6 +150405,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001PB)영양반계탕600g"
     }
    ],
@@ -151339,7 +150754,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001흑임자"
     },
     {
@@ -151384,7 +150798,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001흑임자"
     },
     {
@@ -151393,6 +150806,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001흑임자"
     },
     {
@@ -151443,7 +150857,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001흑임자"
     },
     {
@@ -151452,7 +150865,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -151485,7 +150897,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -151494,7 +150905,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001견과류"
     },
     {
@@ -151985,7 +151395,8 @@ window.DASHBOARD_DATA = {
      "label": "차",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001JTBC",
@@ -152185,6 +151596,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -152201,7 +151613,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -152210,7 +151621,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -152219,7 +151629,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -152228,7 +151637,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     }
    ],
@@ -152574,7 +151982,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001APP예약)고기(肉)올인원도시락"
     },
     {
@@ -152600,7 +152008,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001APP예약)고기(肉)올인원도시락"
     },
     {
@@ -152618,7 +152025,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001APP예약)고기(肉)올인원도시락"
     },
     {
@@ -152627,6 +152033,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001APP예약)고기(肉)올인원도시락"
     },
     {
@@ -152667,7 +152074,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "killer",
      "parent": "product\u0001APP예약)미노리키친미소가츠동"
     },
     {
@@ -152676,7 +152082,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001APP예약)미노리키친미소가츠동"
     },
     {
@@ -152685,7 +152090,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001APP예약)미노리키친미소가츠동"
     }
    ],
@@ -152881,8 +152285,7 @@ window.DASHBOARD_DATA = {
      "label": "장어",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "product\u0001한마리민물장어덮밥",
@@ -152980,7 +152383,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001장어"
     },
     {
@@ -152989,7 +152391,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001장어"
     },
     {
@@ -153012,7 +152414,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001장어"
     },
     {
@@ -153021,6 +152423,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001한마리민물장어덮밥"
     },
     {
@@ -153038,7 +152441,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한마리민물장어덮밥"
     },
     {
@@ -153083,6 +152485,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001M_썬)한마리구이오징어"
     }
    ],
@@ -153243,16 +152646,14 @@ window.DASHBOARD_DATA = {
      "label": "딸기",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001우유",
      "label": "우유",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001유제품",
@@ -153267,7 +152668,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001잼"
     },
     {
@@ -153373,7 +152774,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001잼"
     },
     {
@@ -153462,7 +152862,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001딸기"
     },
     {
@@ -153968,7 +153367,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001전복"
     },
     {
@@ -154007,7 +153405,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001전복"
     },
     {
@@ -154016,7 +153413,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001전복"
     },
     {
@@ -154025,7 +153422,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001전복"
     },
     {
@@ -154050,6 +153447,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001CJ)햇반전복죽267g"
     },
     {
@@ -154144,7 +153542,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "product\u0001CJ)햇반버섯야채죽268g"
     },
     {
@@ -154153,6 +153550,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001CJ)햇반버섯야채죽268g"
     }
    ],
@@ -154406,6 +153804,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001삼양)까르보불닭납작당면"
     },
     {
@@ -154422,7 +153821,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼양)까르보불닭납작당면"
     },
     {
@@ -154440,7 +153838,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼양)까르보불닭납작당면"
     },
     {
@@ -155194,7 +154591,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001막국수"
     },
     {
@@ -155220,7 +154617,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001막국수"
     },
     {
@@ -155229,7 +154625,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001막국수"
     },
     {
@@ -155344,6 +154739,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001삼립)프로H.메밀꿀호떡90g"
     },
     {
@@ -155352,7 +154748,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001삼립)프로H.메밀꿀호떡90g"
     },
     {
@@ -155369,7 +154765,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001삼립)프로H.메밀꿀호떡90g"
     },
     {
@@ -155378,7 +154774,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001삼립)프로H.메밀꿀호떡90g"
     },
     {
@@ -155387,7 +154783,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)프로H.메밀꿀호떡90g"
     }
    ],
@@ -155663,7 +155058,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001프룻팝스",
@@ -155777,6 +155172,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001엔제이)후루츄(망고맛)90g"
     },
     {
@@ -155793,7 +155189,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001엔제이)후루츄(망고맛)90g"
     },
     {
@@ -155802,7 +155198,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001엔제이)후루츄(망고맛)90g"
     },
     {
@@ -155936,6 +155331,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001프룻팝스"
     },
     {
@@ -155960,6 +155356,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001프룻팝스"
     },
     {
@@ -156239,16 +155636,14 @@ window.DASHBOARD_DATA = {
      "label": "젤리",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001푸딩",
      "label": "푸딩",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001코코로카라",
@@ -156263,7 +155658,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001충전",
@@ -156271,7 +155666,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001젤리"
     },
     {
@@ -156384,7 +155778,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001푸딩"
     },
     {
@@ -156463,7 +155856,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001코코로카라"
     },
     {
@@ -156472,7 +155864,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001코코로카라"
     },
     {
@@ -156481,7 +155872,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001코코로카라"
     },
     {
@@ -156512,7 +155903,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001쫀득함"
     },
     {
@@ -156521,7 +155911,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001쫀득함"
     },
     {
@@ -156546,6 +155935,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쫀득함"
     },
     {
@@ -156554,6 +155944,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쫀득함"
     },
     {
@@ -156868,8 +156259,7 @@ window.DASHBOARD_DATA = {
      "label": "조청",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "product\u0001조청달구마옥수수맛탕",
@@ -156933,7 +156323,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001조청달구마옥수수맛탕"
     },
     {
@@ -156942,7 +156332,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001조청달구마옥수수맛탕"
     },
     {
@@ -157098,7 +156487,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001포차코"
     },
     {
@@ -157107,6 +156495,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001포차코"
     },
     {
@@ -157115,7 +156504,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001포차코"
     },
     {
@@ -157124,6 +156512,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001포차코"
     },
     {
@@ -157132,7 +156521,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001포차코"
     },
     {
@@ -157150,7 +156539,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001포차코"
     }
    ],
@@ -157484,7 +156873,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "product\u0001CJ)햇반버섯야채죽268g"
     },
     {
@@ -157493,6 +156881,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001CJ)햇반버섯야채죽268g"
     },
     {
@@ -157501,7 +156890,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001CJ)햇반버섯야채죽268g"
     },
     {
@@ -157557,7 +156945,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001농심)누들핏새우탕맛"
     },
     {
@@ -157566,7 +156954,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001농심)누들핏새우탕맛"
     },
     {
@@ -157575,7 +156963,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001농심)누들핏새우탕맛"
     }
    ],
@@ -157767,8 +157154,7 @@ window.DASHBOARD_DATA = {
      "label": "풍미",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001깔끔",
@@ -157832,7 +157218,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001증류"
     },
     {
@@ -157873,7 +157258,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001증류"
     },
     {
@@ -158148,7 +157533,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001풍미"
     }
    ],
@@ -158407,7 +157791,8 @@ window.DASHBOARD_DATA = {
      "label": "진함",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "ip\u0001강훈목장",
@@ -158421,7 +157806,8 @@ window.DASHBOARD_DATA = {
      "label": "수제",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001경기떡집",
@@ -158452,7 +157838,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001진함"
     },
     {
@@ -158495,6 +157880,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001진함"
     },
     {
@@ -158558,7 +157944,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001강훈목장"
     },
     {
@@ -159117,7 +158502,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001위스키"
     },
     {
@@ -159142,7 +158526,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001위스키"
     },
     {
@@ -159151,7 +158534,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001위스키"
     },
     {
@@ -159361,7 +158744,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)타임핏스모키포크샐러드120g"
     },
     {
@@ -159378,6 +158760,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001삼립)타임핏스모키포크샐러드120g"
     },
     {
@@ -159386,7 +158769,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
+     "tag": "매개",
      "parent": "product\u0001삼립)타임핏스모키포크샐러드120g"
     },
     {
@@ -159395,7 +158778,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001삼립)타임핏스모키포크샐러드120g"
     },
     {
@@ -159712,8 +159095,7 @@ window.DASHBOARD_DATA = {
      "label": "탕수육",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001튀김",
@@ -159721,7 +159103,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001채소",
@@ -159787,7 +159169,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001짜장"
     },
     {
@@ -159813,7 +159194,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001짜장"
     },
     {
@@ -159875,7 +159255,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001보배반점"
     },
     {
@@ -159884,7 +159263,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001보배반점"
     },
     {
@@ -159907,6 +159285,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001탕수육"
     },
     {
@@ -159937,7 +159316,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001탕수육"
     },
     {
@@ -159992,7 +159371,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001탕수육"
     },
     {
@@ -160001,7 +159380,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001튀김"
     },
     {
@@ -160353,8 +159731,7 @@ window.DASHBOARD_DATA = {
      "label": "짭조름함",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001금미옥",
@@ -160432,7 +159809,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001짭조름함"
     },
     {
@@ -160441,7 +159817,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001짭조름함"
     },
     {
@@ -160466,7 +159841,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001금미옥"
     },
     {
@@ -160475,7 +159849,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001금미옥"
     },
     {
@@ -160492,7 +159865,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001금미옥"
     },
     {
@@ -160501,7 +159873,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001금미옥"
     },
     {
@@ -160673,6 +160044,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001옐로우즈"
     },
     {
@@ -160681,7 +160053,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001옐로우즈"
     },
     {
@@ -160690,7 +160062,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001옐로우즈"
     },
     {
@@ -160957,7 +160329,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "ip\u0001코코로카라",
@@ -160971,16 +160343,14 @@ window.DASHBOARD_DATA = {
      "label": "푸딩",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001젤리",
      "label": "젤리",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001너쿠리",
@@ -160996,7 +160366,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001쫀득함"
     },
     {
@@ -161005,7 +160374,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001쫀득함"
     },
     {
@@ -161030,6 +160398,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쫀득함"
     },
     {
@@ -161038,6 +160407,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쫀득함"
     },
     {
@@ -161088,7 +160458,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001코코로카라"
     },
     {
@@ -161097,7 +160466,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001코코로카라"
     },
     {
@@ -161106,7 +160474,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001코코로카라"
     },
     {
@@ -161161,7 +160529,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001푸딩"
     },
     {
@@ -161240,7 +160607,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001젤리"
     },
     {
@@ -161630,7 +160996,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001쫄깃함"
     },
     {
@@ -161655,6 +161020,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쫄깃함"
     },
     {
@@ -161671,7 +161037,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001쫄깃함"
     },
     {
@@ -161875,7 +161240,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001새우"
     },
     {
@@ -161884,6 +161248,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001새우"
     },
     {
@@ -162268,7 +161633,8 @@ window.DASHBOARD_DATA = {
      "label": "붕어빵",
      "type": "keyword",
      "layer": 3,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "product\u0001고기덕후돼지갈비찜세트",
@@ -162364,7 +161730,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001삼립)25년정통단팥호빵(4입)"
     },
     {
@@ -162373,7 +161739,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001삼립)25년정통단팥호빵(4입)"
     },
     {
@@ -162382,7 +161748,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)25년정통단팥호빵(4입)"
     },
     {
@@ -162471,6 +161836,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001붕어빵"
     },
     {
@@ -162479,7 +161845,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001붕어빵"
     },
     {
@@ -162845,7 +162210,8 @@ window.DASHBOARD_DATA = {
      "label": "차",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001JTBC",
@@ -162867,8 +162233,7 @@ window.DASHBOARD_DATA = {
      "label": "김치",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001밀크",
@@ -163027,6 +162392,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -163043,7 +162409,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -163052,7 +162417,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -163061,7 +162425,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -163070,7 +162433,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -163760,6 +163122,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001하림)더미식차돌된장찌개700g"
     },
     {
@@ -163768,7 +163131,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001하림)더미식차돌된장찌개700g"
     },
     {
@@ -163863,7 +163225,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001풀무원)강된장두부덮밥소스170g"
     },
     {
@@ -163880,7 +163241,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001풀무원)강된장두부덮밥소스170g"
     }
    ],
@@ -164269,6 +163629,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001행사)맛장우전주식비빔밥"
     },
     {
@@ -164285,6 +163646,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001행사)맛장우전주식비빔밥"
     },
     {
@@ -164293,7 +163655,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001행사)맛장우전주식비빔밥"
     },
     {
@@ -164458,7 +163819,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001비빔"
     },
     {
@@ -164885,7 +164245,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001찹쌀"
     },
     {
@@ -164910,6 +164269,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001찹쌀"
     },
     {
@@ -165025,6 +164385,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001경기떡집"
     },
     {
@@ -165080,6 +164441,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쌀"
     },
     {
@@ -165088,6 +164450,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쌀"
     },
     {
@@ -165177,7 +164540,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001한영석"
     },
     {
@@ -165186,6 +164548,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001한영석"
     },
     {
@@ -165479,6 +164842,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001채소"
     },
     {
@@ -165521,6 +164885,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001채소"
     },
     {
@@ -165546,7 +164911,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001채소"
     },
     {
@@ -165555,7 +164920,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001채소"
     },
     {
@@ -165833,7 +165198,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001농심)누들핏튀김우동맛"
     },
     {
@@ -165850,6 +165215,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001농심)누들핏튀김우동맛"
     },
     {
@@ -165858,7 +165224,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001농심)누들핏튀김우동맛"
     },
     {
@@ -165867,7 +165233,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001농심)누들핏튀김우동맛"
     },
     {
@@ -165876,7 +165241,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001농심)누들핏튀김우동맛"
     }
    ],
@@ -166193,7 +165557,8 @@ window.DASHBOARD_DATA = {
      "label": "수제",
      "type": "keyword",
      "layer": 3,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "product\u00011865청뱀띠에디션",
@@ -166309,7 +165674,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001하이볼"
     },
     {
@@ -166326,6 +165690,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001양사미"
     },
     {
@@ -166334,7 +165699,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001양사미"
     },
     {
@@ -166727,6 +166092,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001청경채"
     },
     {
@@ -166790,7 +166156,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001청경채"
     },
     {
@@ -166799,7 +166164,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001청경채"
     },
     {
@@ -166863,6 +166228,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001오츠카)소이조이후르츠&치즈30g"
     },
     {
@@ -166871,6 +166237,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001오츠카)소이조이후르츠&치즈30g"
     },
     {
@@ -166887,7 +166254,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001오츠카)소이조이후르츠&치즈30g"
     },
     {
@@ -167156,7 +166522,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001청량함"
     },
     {
@@ -167182,6 +166547,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001청량함"
     },
     {
@@ -167199,6 +166565,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001청량함"
     },
     {
@@ -167232,7 +166599,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001플레이브"
     },
     {
@@ -167396,7 +166762,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "killer",
      "parent": "product\u0001아이돌센터샌드위치"
     },
     {
@@ -167405,6 +166770,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001아이돌센터샌드위치"
     },
     {
@@ -167413,7 +166779,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001아이돌센터샌드위치"
     },
     {
@@ -167422,7 +166787,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001아이돌센터샌드위치"
     }
    ],
@@ -167646,8 +167010,7 @@ window.DASHBOARD_DATA = {
      "label": "초코",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001오레오",
@@ -167684,6 +167047,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001초코"
     },
     {
@@ -167764,7 +167128,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001오레오"
     },
     {
@@ -167790,7 +167153,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001오레오"
     },
     {
@@ -167857,7 +167219,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001오레오"
     },
     {
@@ -167866,7 +167227,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001오레오"
     },
     {
@@ -167883,7 +167244,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001밀카오레오초콜릿"
     }
    ],
@@ -168073,7 +167433,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "ip\u0001키키블룸",
@@ -168087,8 +167447,7 @@ window.DASHBOARD_DATA = {
      "label": "적음",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "ip\u0001마이노멀",
@@ -168103,7 +167462,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001촉촉"
     },
     {
@@ -168112,7 +167470,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001촉촉"
     },
     {
@@ -168121,7 +167478,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001촉촉"
     },
     {
@@ -168171,7 +167527,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001촉촉"
     },
     {
@@ -168558,8 +167913,7 @@ window.DASHBOARD_DATA = {
      "label": "충전",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001오레오",
@@ -168596,7 +167950,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001충전"
     },
     {
@@ -168605,6 +167958,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001충전"
     },
     {
@@ -168621,7 +167975,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001충전"
     },
     {
@@ -168678,7 +168031,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001오레오"
     },
     {
@@ -168687,7 +168039,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001오레오"
     },
     {
@@ -168771,7 +168122,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001오레오"
     },
     {
@@ -168780,7 +168130,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001오레오"
     },
     {
@@ -168970,8 +168320,7 @@ window.DASHBOARD_DATA = {
      "label": "치즈",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001맥앤치즈",
@@ -168986,7 +168335,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001양사미",
@@ -169017,6 +168366,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001치즈"
     },
     {
@@ -169158,7 +168508,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001맥앤치즈"
     },
     {
@@ -169167,7 +168516,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001맥앤치즈"
     },
     {
@@ -169297,6 +168645,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001양사미"
     },
     {
@@ -169313,6 +168662,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001양사미"
     },
     {
@@ -169628,7 +168978,8 @@ window.DASHBOARD_DATA = {
      "label": "녹음",
      "type": "keyword",
      "layer": 1,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001샤베트",
@@ -169745,7 +169096,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001카다이프"
     },
     {
@@ -169754,7 +169104,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001카다이프"
     },
     {
@@ -169763,7 +169112,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001카다이프"
     },
     {
@@ -169772,6 +169120,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001녹음"
     },
     {
@@ -169945,7 +169294,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001샤베트"
     },
     {
@@ -169954,7 +169303,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001샤베트"
     },
     {
@@ -170459,8 +169807,7 @@ window.DASHBOARD_DATA = {
      "label": "카라멜",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001폼폼푸린",
@@ -170474,7 +169821,8 @@ window.DASHBOARD_DATA = {
      "label": "카스타드",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "product\u0001티니핑)반짝핑의카스타드슈크림빵95g",
@@ -170503,7 +169851,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001카라멜"
     },
     {
@@ -170512,7 +169860,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001카라멜"
     },
     {
@@ -170537,7 +169884,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001카라멜"
     },
     {
@@ -170546,7 +169892,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001카라멜"
     },
     {
@@ -170601,6 +169946,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001폼폼푸린"
     },
     {
@@ -170609,7 +169955,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001폼폼푸린"
     },
     {
@@ -170618,7 +169964,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001폼폼푸린"
     },
     {
@@ -170627,6 +169972,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001폼폼푸린"
     },
     {
@@ -170635,7 +169981,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001폼폼푸린"
     },
     {
@@ -170644,7 +169989,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001폼폼푸린"
     },
     {
@@ -170662,7 +170006,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001폼폼푸린"
     },
     {
@@ -170800,7 +170144,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001티니핑)반짝핑의카스타드슈크림빵95g"
     },
     {
@@ -170809,7 +170152,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001티니핑)반짝핑의카스타드슈크림빵95g"
     },
     {
@@ -170818,7 +170160,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001티니핑)반짝핑의카스타드슈크림빵95g"
     },
     {
@@ -170827,7 +170169,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001티니핑)반짝핑의카스타드슈크림빵95g"
     }
    ],
@@ -171087,7 +170428,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001향신료",
@@ -171157,6 +170498,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001카레"
     },
     {
@@ -171265,7 +170607,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001똠양꿍누들"
     },
     {
@@ -171290,6 +170631,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001똠양꿍누들"
     },
     {
@@ -171298,7 +170640,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001똠양꿍누들"
     },
     {
@@ -171505,14 +170846,16 @@ window.DASHBOARD_DATA = {
      "label": "카카오",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001브라우니",
      "label": "브라우니",
      "type": "keyword",
      "layer": 1,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001꾸덕함",
@@ -171520,7 +170863,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "product\u0001농심)신라면툼바봉지",
@@ -171683,7 +171026,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브라우니"
     },
     {
@@ -171724,7 +171066,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001브라우니"
     },
     {
@@ -171777,6 +171118,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001브라우니"
     },
     {
@@ -171971,6 +171313,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001농심)신라면툼바봉지"
     },
     {
@@ -171979,6 +171322,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001농심)신라면툼바봉지"
     },
     {
@@ -171987,7 +171331,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001농심)신라면툼바봉지"
     },
     {
@@ -172005,6 +171349,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001농심)신라면툼바봉지"
     },
     {
@@ -172022,7 +171367,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001농심)신라면툼바봉지"
     }
    ],
@@ -172345,16 +171689,14 @@ window.DASHBOARD_DATA = {
      "label": "사과",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001파이",
      "label": "파이",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001브륄레",
@@ -172370,7 +171712,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001커스터드"
     },
     {
@@ -172379,7 +171720,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001커스터드"
     },
     {
@@ -172388,7 +171729,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001커스터드"
     },
     {
@@ -172397,7 +171737,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001커스터드"
     },
     {
@@ -172453,7 +171792,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001커스터드"
     },
     {
@@ -172476,7 +171814,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001올리마"
     },
     {
@@ -172493,7 +171830,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001올리마"
     },
     {
@@ -172502,7 +171838,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001올리마"
     },
     {
@@ -172511,7 +171846,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001올리마"
     },
     {
@@ -172520,7 +171854,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001올리마"
     },
     {
@@ -172529,6 +171862,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001올리마"
     },
     {
@@ -172587,7 +171921,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001사과"
     },
     {
@@ -172610,7 +171943,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001사과"
     },
     {
@@ -172633,7 +171966,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001사과"
     },
     {
@@ -172650,7 +171982,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001파이"
     },
     {
@@ -173220,6 +172551,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001에스프레소"
     },
     {
@@ -173276,7 +172608,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001에스프레소"
     },
     {
@@ -173691,8 +173022,7 @@ window.DASHBOARD_DATA = {
      "label": "컵",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001빙수",
@@ -173713,7 +173043,8 @@ window.DASHBOARD_DATA = {
      "label": "페스츄리",
      "type": "keyword",
      "layer": 3,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "ip\u0001페이커",
@@ -173859,6 +173190,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001빙수"
     },
     {
@@ -173884,7 +173216,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001빙수"
     },
     {
@@ -173893,7 +173224,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001빙수"
     },
     {
@@ -173971,6 +173301,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001성심당"
     },
     {
@@ -173987,7 +173318,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001성심당"
     },
     {
@@ -173996,7 +173327,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001성심당"
     },
     {
@@ -174005,7 +173335,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001성심당"
     },
     {
@@ -174014,7 +173344,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001성심당"
     },
     {
@@ -174023,7 +173352,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001성심당"
     },
     {
@@ -174032,7 +173361,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001성심당"
     },
     {
@@ -174481,15 +173810,14 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001롤",
      "label": "롤",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001몽슈슈",
@@ -174529,7 +173857,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001케이크"
     },
     {
@@ -174594,7 +173921,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001롤"
     },
     {
@@ -174603,7 +173929,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001롤"
     },
     {
@@ -174612,7 +173937,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001롤"
     },
     {
@@ -174721,7 +174045,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001몽슈슈"
     },
     {
@@ -174800,7 +174123,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001카페"
     },
     {
@@ -175112,8 +174434,7 @@ window.DASHBOARD_DATA = {
      "label": "일식",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "product\u0001안유성)크림카레우동330g",
@@ -175210,6 +174531,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001안유성)나폴리탄파스타230g"
     },
     {
@@ -175226,7 +174548,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001안유성)나폴리탄파스타230g"
     },
     {
@@ -175235,7 +174557,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001안유성)나폴리탄파스타230g"
     },
     {
@@ -175282,6 +174603,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001안유성)크림카레우동330g"
     },
     {
@@ -175290,7 +174612,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001안유성)크림카레우동330g"
     },
     {
@@ -175315,7 +174637,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001안유성)크림카레우동330g"
     },
     {
@@ -175324,7 +174645,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001안유성)크림카레우동330g"
     },
     {
@@ -175333,7 +174653,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001안유성)크림카레우동330g"
     },
     {
@@ -175342,7 +174661,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001안유성)크림카레우동330g"
     }
    ],
@@ -175551,7 +174870,8 @@ window.DASHBOARD_DATA = {
      "label": "녹음",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001샤베트",
@@ -175718,7 +175038,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001고운벗)스노우생초코레트오리지널32g"
     },
     {
@@ -175727,6 +175047,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001고운벗)스노우생초코레트오리지널32g"
     },
     {
@@ -175735,7 +175056,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001고운벗)스노우생초코레트오리지널32g"
     },
     {
@@ -175744,7 +175064,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001고운벗)스노우생초코레트오리지널32g"
     },
     {
@@ -175753,7 +175073,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001고운벗)스노우생초코레트오리지널32g"
     },
     {
@@ -175762,7 +175081,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001고운벗)스노우생초코레트오리지널32g"
     },
     {
@@ -175771,7 +175090,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001고운벗)스노우생초코레트오리지널32g"
     },
     {
@@ -175780,6 +175098,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001녹음"
     },
     {
@@ -175955,7 +175274,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001샤베트"
     },
     {
@@ -175972,7 +175291,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001샤베트"
     },
     {
@@ -176331,7 +175649,8 @@ window.DASHBOARD_DATA = {
      "label": "뻥이요",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "product\u0001허니뻥이요스낵",
@@ -176404,7 +175723,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001시원)허니뻥이요90g"
     },
     {
@@ -176413,7 +175732,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001시원)허니뻥이요90g"
     },
     {
@@ -176439,6 +175758,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001시원)허니뻥이요90g"
     },
     {
@@ -176447,7 +175767,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001시원)허니뻥이요90g"
     },
     {
@@ -176456,7 +175776,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001시원)허니뻥이요90g"
     },
     {
@@ -176507,7 +175826,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001허니뻥이요스낵"
     }
    ],
@@ -176647,7 +175965,8 @@ window.DASHBOARD_DATA = {
      "label": "콘",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "ip\u0001손흥민",
@@ -176661,8 +175980,7 @@ window.DASHBOARD_DATA = {
      "label": "에이드",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001카카오프렌즈",
@@ -176834,7 +176152,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001손흥민"
     },
     {
@@ -176843,7 +176160,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001손흥민"
     },
     {
@@ -176852,7 +176168,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001손흥민"
     },
     {
@@ -176869,6 +176185,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001손흥민"
     },
     {
@@ -176885,7 +176202,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001손흥민"
     },
     {
@@ -176894,7 +176210,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001손흥민"
     },
     {
@@ -177044,7 +176360,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001카카오프렌즈"
     },
     {
@@ -177053,7 +176368,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001카카오프렌즈"
     },
     {
@@ -177062,7 +176376,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001카카오프렌즈"
     },
     {
@@ -177071,7 +176385,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001카카오프렌즈"
     },
     {
@@ -177080,7 +176393,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001카카오프렌즈"
     },
     {
@@ -177089,7 +176402,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001카카오프렌즈"
     },
     {
@@ -177098,7 +176410,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001카카오프렌즈"
     },
     {
@@ -177116,7 +176427,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001카카오프렌즈"
     },
     {
@@ -177125,7 +176436,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001카카오프렌즈"
     }
    ],
@@ -177559,6 +176870,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001족발"
     },
     {
@@ -177629,6 +176941,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -177637,7 +176950,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -177654,7 +176966,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -177663,6 +176974,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -177671,7 +176983,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -177680,7 +176991,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -177689,7 +177000,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001젠슨황"
     },
     {
@@ -178121,7 +177432,8 @@ window.DASHBOARD_DATA = {
      "label": "차",
      "type": "keyword",
      "layer": 1,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001JTBC",
@@ -178198,7 +177510,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001콤부차"
     },
     {
@@ -178237,7 +177549,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001콤부차"
     },
     {
@@ -178406,6 +177717,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -178422,7 +177734,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -178431,7 +177742,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -178440,7 +177750,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -178449,7 +177758,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -178458,7 +177766,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001찌개"
     },
     {
@@ -178842,7 +178149,8 @@ window.DASHBOARD_DATA = {
      "label": "인절미",
      "type": "keyword",
      "layer": 1,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001찹쌀",
@@ -179002,7 +178310,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001인절미"
     },
     {
@@ -179020,7 +178328,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001인절미"
     },
     {
@@ -179130,7 +178437,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001찹쌀"
     },
     {
@@ -179282,6 +178588,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001경기떡집"
     },
     {
@@ -179576,8 +178883,7 @@ window.DASHBOARD_DATA = {
      "label": "쿠키",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001오레오",
@@ -179694,7 +179000,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001오레오"
     },
     {
@@ -179720,7 +179025,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001오레오"
     },
     {
@@ -179787,7 +179091,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001오레오"
     },
     {
@@ -179796,7 +179099,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001오레오"
     },
     {
@@ -179813,7 +179116,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001밀카오레오초콜릿"
     }
    ],
@@ -180132,7 +179434,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
+     "tag": "매개",
      "parent": "product\u0001삼립)런치킨크랜베리콤보샐러드"
     },
     {
@@ -180141,7 +179443,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)런치킨크랜베리콤보샐러드"
     },
     {
@@ -180150,7 +179451,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)런치킨크랜베리콤보샐러드"
     },
     {
@@ -180159,7 +179459,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001삼립)런치킨크랜베리콤보샐러드"
     },
     {
@@ -180168,7 +179468,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)런치킨크랜베리콤보샐러드"
     },
     {
@@ -180247,6 +179546,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001롯데)베스트콤보샌드"
     },
     {
@@ -180271,6 +179571,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001롯데)베스트콤보샌드"
     },
     {
@@ -180279,7 +179580,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001롯데)베스트콤보샌드"
     },
     {
@@ -180297,7 +179597,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001롯데)베스트콤보샌드"
     },
     {
@@ -180306,7 +179606,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001롯데)베스트콤보샌드"
     }
    ],
@@ -180509,8 +179808,7 @@ window.DASHBOARD_DATA = {
      "label": "크림",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001파스타",
@@ -180651,7 +179949,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001파스타"
     },
     {
@@ -180660,7 +179957,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001파스타"
     },
     {
@@ -180717,7 +180013,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001매드포갈릭"
     },
     {
@@ -180726,7 +180022,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001매드포갈릭"
     },
     {
@@ -181270,7 +180565,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001타르트"
     },
     {
@@ -181287,7 +180581,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001타르트"
     },
     {
@@ -181338,7 +180631,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001타쿠미야"
     },
     {
@@ -181355,6 +180647,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001타쿠미야"
     },
     {
@@ -181363,7 +180656,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001타쿠미야"
     },
     {
@@ -181372,7 +180664,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001타쿠미야"
     },
     {
@@ -181608,7 +180899,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001스노우폭스"
     },
     {
@@ -182027,14 +181317,16 @@ window.DASHBOARD_DATA = {
      "label": "바삭",
      "type": "keyword",
      "layer": 1,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001붕어빵",
      "label": "붕어빵",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001따뜻",
@@ -182131,7 +181423,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001타코야끼"
     },
     {
@@ -182140,7 +181431,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001타코야끼"
     },
     {
@@ -182281,7 +181571,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001붕어빵"
     },
     {
@@ -182855,6 +182144,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001쩐주단)흑당버블밀크티콘82g"
     },
     {
@@ -182937,7 +182227,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001모구모구풍선껌젤리P"
     },
     {
@@ -182946,7 +182235,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001모구모구풍선껌젤리P"
     }
    ],
@@ -183086,7 +182374,8 @@ window.DASHBOARD_DATA = {
      "label": "차",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001JTBC",
@@ -183228,7 +182517,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001콤부차"
     },
     {
@@ -183267,7 +182556,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001콤부차"
     },
     {
@@ -183445,6 +182733,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -183461,7 +182750,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -183470,7 +182758,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -183479,7 +182766,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -183488,7 +182774,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     }
    ],
@@ -183821,7 +183106,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001탕"
     },
     {
@@ -183830,6 +183114,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001탕"
     },
     {
@@ -183886,6 +183171,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001탕"
     },
     {
@@ -184515,8 +183801,7 @@ window.DASHBOARD_DATA = {
      "label": "소금",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001베이크하우스405",
@@ -184702,7 +183987,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001문어"
     },
     {
@@ -184735,7 +184019,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001문어"
     },
     {
@@ -184802,7 +184085,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001소금"
     },
     {
@@ -184819,7 +184102,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001소금"
     },
     {
@@ -184844,7 +184126,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001소금"
     },
     {
@@ -184853,6 +184134,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001소금"
     },
     {
@@ -184878,7 +184160,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001베이크하우스405"
     },
     {
@@ -184887,6 +184168,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001베이크하우스405"
     },
     {
@@ -184895,7 +184177,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001베이크하우스405"
     },
     {
@@ -184912,7 +184193,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001베이크하우스405"
     },
     {
@@ -185649,7 +184930,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001한맥캔500ML1묶음(4개)"
     }
    ],
@@ -185859,15 +185140,15 @@ window.DASHBOARD_DATA = {
      "label": "토마토",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001라구",
      "label": "라구",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "ip\u0001매드포갈릭",
@@ -186092,7 +185373,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001라구"
     },
     {
@@ -186101,7 +185381,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001라구"
     },
     {
@@ -186118,7 +185397,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001라구"
     },
     {
@@ -186127,7 +185405,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001라구"
     },
     {
@@ -186166,7 +185443,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001매드포갈릭"
     },
     {
@@ -186175,7 +185452,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001매드포갈릭"
     },
     {
@@ -186184,7 +185460,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001매드포갈릭"
     },
     {
@@ -186675,15 +185950,14 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001인삼",
      "label": "인삼",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001바질",
@@ -186833,7 +186107,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001요아정"
     },
     {
@@ -186902,6 +186175,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001꿀"
     },
     {
@@ -187011,6 +186285,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -187033,7 +186308,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -187056,7 +186330,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -187337,15 +186611,14 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 0,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001치킨",
      "label": "치킨",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001BHC",
@@ -187359,8 +186632,7 @@ window.DASHBOARD_DATA = {
      "label": "간장",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001양념",
@@ -187376,7 +186648,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001튀김"
     },
     {
@@ -187505,7 +186776,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001치킨"
     },
     {
@@ -187539,7 +186809,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001BHC"
     },
     {
@@ -187590,6 +186859,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001간장"
     },
     {
@@ -188014,7 +187284,8 @@ window.DASHBOARD_DATA = {
      "label": "차",
      "type": "keyword",
      "layer": 1,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001JTBC",
@@ -188037,7 +187308,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001티"
     },
     {
@@ -188054,7 +187324,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001티"
     },
     {
@@ -188063,6 +187332,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001티"
     },
     {
@@ -188071,7 +187341,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001티"
     },
     {
@@ -188318,6 +187587,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -188334,7 +187604,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -188343,7 +187612,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -188352,7 +187620,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -188361,7 +187628,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001JTBC"
     },
     {
@@ -188370,7 +187636,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001찌개"
     },
     {
@@ -188813,7 +188078,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001파스타"
     },
     {
@@ -188822,7 +188086,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001파스타"
     },
     {
@@ -188855,7 +188118,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001파스타"
     },
     {
@@ -188880,7 +188142,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001매드포갈릭"
     },
     {
@@ -188889,7 +188151,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001매드포갈릭"
     },
     {
@@ -189080,7 +188341,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "killer",
      "parent": "product\u0001현대)안유성명장샌드명란타마고"
     },
     {
@@ -189097,6 +188357,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001현대)안유성명장샌드명란타마고"
     },
     {
@@ -189113,7 +188374,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001현대)안유성명장샌드명란타마고"
     },
     {
@@ -189122,6 +188382,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001현대)안유성명장샌드명란타마고"
     },
     {
@@ -189147,6 +188408,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001현대)안유성명장샌드명란타마고"
     }
    ],
@@ -189483,7 +188745,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001로로멜로아이스생초콜릿초코맛"
     },
     {
@@ -189492,7 +188753,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001로로멜로아이스생초콜릿초코맛"
     },
     {
@@ -189529,6 +188789,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001로로멜로아이스생초콜릿말차"
     },
     {
@@ -189545,6 +188806,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001로로멜로아이스생초콜릿말차"
     }
    ],
@@ -189642,8 +188904,7 @@ window.DASHBOARD_DATA = {
      "label": "파이",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001헬로키티",
@@ -189658,7 +188919,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "ip\u0001노진구",
@@ -189673,7 +188934,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001파이"
     },
     {
@@ -189707,7 +188967,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001파이"
     },
     {
@@ -189716,7 +188975,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001파이"
     },
     {
@@ -189785,7 +189043,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -189794,6 +189052,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -189810,7 +189069,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -189819,7 +189077,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -189828,7 +189085,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -189837,7 +189093,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -189846,7 +189101,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -189855,7 +189109,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -189864,6 +189117,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001헬로키티"
     },
     {
@@ -189881,7 +189135,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001카스테라"
     },
     {
@@ -190001,7 +189254,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001노진구"
     },
     {
@@ -190027,7 +189279,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001노진구"
     },
     {
@@ -190036,7 +189287,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001노진구"
     },
     {
@@ -190045,7 +189295,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001노진구"
     },
     {
@@ -190363,7 +189612,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001양사미",
@@ -190378,7 +189627,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001파티"
     },
     {
@@ -190387,6 +189635,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001파티"
     },
     {
@@ -190515,7 +189764,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001맥앤치즈"
     },
     {
@@ -190585,7 +189833,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001맥앤치즈"
     },
     {
@@ -190594,7 +189841,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001맥앤치즈"
     },
     {
@@ -190715,6 +189961,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001양사미"
     },
     {
@@ -191017,16 +190264,14 @@ window.DASHBOARD_DATA = {
      "label": "팝콘",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001영화",
      "label": "영화",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001넷플릭스",
@@ -191041,7 +190286,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001라이언",
@@ -191089,7 +190334,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001팝콘"
     },
     {
@@ -191098,7 +190342,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001팝콘"
     },
     {
@@ -191107,7 +190350,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001팝콘"
     },
     {
@@ -191206,7 +190448,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001넷플릭스"
     },
     {
@@ -191789,8 +191030,7 @@ window.DASHBOARD_DATA = {
      "label": "모찌",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "ip\u0001성심당",
@@ -191822,7 +191062,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001팥"
     },
     {
@@ -191840,6 +191079,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001팥"
     },
     {
@@ -191856,7 +191096,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001팥"
     },
     {
@@ -191873,7 +191112,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001팥"
     },
     {
@@ -191891,6 +191129,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001경기떡집"
     },
     {
@@ -191929,6 +191168,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001찹쌀"
     },
     {
@@ -192074,7 +191314,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001모찌"
     },
     {
@@ -192488,7 +191728,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "product\u0001이정후)더블클래식버거",
@@ -192664,7 +191904,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001고독한미식가"
     },
     {
@@ -192673,7 +191912,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001고독한미식가"
     },
     {
@@ -192682,7 +191920,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001고독한미식가"
     },
     {
@@ -192699,7 +191936,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001고독한미식가"
     },
     {
@@ -192708,7 +191944,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001고독한미식가"
     },
     {
@@ -192901,7 +192137,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001핫도그"
     },
     {
@@ -193234,8 +192470,7 @@ window.DASHBOARD_DATA = {
      "label": "편함",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "product\u0001매일)소화가잘되는우유930ml",
@@ -193328,7 +192563,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001매일)소화가잘되는우유930ml"
     },
     {
@@ -193384,7 +192618,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001덴마크)소화가잘되는우유딸기190ml"
     }
    ],
@@ -193735,7 +192968,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001와인"
     },
     {
@@ -193744,7 +192976,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001와인"
     },
     {
@@ -193965,7 +193197,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001우진)샤또꾸떼16"
     },
     {
@@ -194253,15 +193485,15 @@ window.DASHBOARD_DATA = {
      "label": "감자",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001해장",
      "label": "해장",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001칩",
@@ -194370,7 +193602,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001포테이토"
     },
     {
@@ -194495,7 +193726,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001포테이토"
     },
     {
@@ -194504,6 +193734,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001감자"
     },
     {
@@ -194560,6 +193791,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001감자"
     },
     {
@@ -195091,7 +194323,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001폭신함"
     },
     {
@@ -195100,7 +194331,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001폭신함"
     },
     {
@@ -195125,7 +194356,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001폭신함"
     }
    ],
@@ -195216,16 +194446,14 @@ window.DASHBOARD_DATA = {
      "label": "푸딩",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001젤리",
      "label": "젤리",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001쫀득함",
@@ -195233,7 +194461,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "ip\u0001코코로카라",
@@ -195280,7 +194508,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001푸딩"
     },
     {
@@ -195359,7 +194586,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001젤리"
     },
     {
@@ -195448,7 +194674,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001쫀득함"
     },
     {
@@ -195457,7 +194682,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001쫀득함"
     },
     {
@@ -195482,6 +194706,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쫀득함"
     },
     {
@@ -195490,6 +194715,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쫀득함"
     },
     {
@@ -195540,7 +194766,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001코코로카라"
     },
     {
@@ -195549,7 +194774,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001코코로카라"
     },
     {
@@ -195558,7 +194782,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001코코로카라"
     },
     {
@@ -195845,8 +195069,7 @@ window.DASHBOARD_DATA = {
      "label": "풀",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001바질",
@@ -195861,7 +195084,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "mine"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001치이카와",
@@ -195967,7 +195190,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001바질"
     },
     {
@@ -196163,7 +195385,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001치이카와"
     },
     {
@@ -196196,7 +195418,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001치이카와"
     },
     {
@@ -196205,7 +195426,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001치이카와"
     }
    ],
@@ -196436,8 +195656,7 @@ window.DASHBOARD_DATA = {
      "label": "풍미",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "ip\u0001벤앤제리스",
@@ -196467,7 +195686,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": false,
-     "tag": "hub"
+     "tag": "killer"
     },
     {
      "id": "ip\u0001브롤스타즈",
@@ -196547,7 +195766,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001풍미"
     },
     {
@@ -196572,7 +195790,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001벤앤제리스파인트"
     },
     {
@@ -196581,7 +195798,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001벤앤제리스파인트"
     },
     {
@@ -196606,7 +195822,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001쫀득함"
     },
     {
@@ -196615,7 +195830,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001쫀득함"
     },
     {
@@ -196624,7 +195838,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001쫀득함"
     },
     {
@@ -196649,6 +195862,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쫀득함"
     },
     {
@@ -196657,6 +195871,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쫀득함"
     },
     {
@@ -196917,7 +196132,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001퓨레"
     },
     {
@@ -196934,7 +196148,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001퓨레"
     },
     {
@@ -196943,7 +196157,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001퓨레"
     },
     {
@@ -196952,7 +196165,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001퓨레"
     },
     {
@@ -196978,7 +196191,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "product\u0001라벨리)세부망고빙수220ml"
     },
     {
@@ -197167,7 +196380,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001너쿠리"
     },
     {
@@ -197176,6 +196389,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001너쿠리"
     }
    ],
@@ -197399,8 +196613,7 @@ window.DASHBOARD_DATA = {
      "label": "안동",
      "type": "keyword",
      "layer": 2,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "product\u0001팔도한끼안동찜닭덮밥",
@@ -197509,7 +196722,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001이모카세"
     },
     {
@@ -197628,7 +196840,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001팔도한끼안동찜닭덮밥"
     },
     {
@@ -197637,6 +196848,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001팔도한끼안동찜닭덮밥"
     },
     {
@@ -197645,7 +196857,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001팔도한끼안동찜닭덮밥"
     },
     {
@@ -197663,7 +196874,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001팔도한끼안동찜닭덮밥"
     }
    ],
@@ -197880,8 +197090,7 @@ window.DASHBOARD_DATA = {
      "label": "한우",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "ip\u0001하동관",
@@ -197959,6 +197168,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001한우"
     },
     {
@@ -198072,7 +197282,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001감칠맛"
     },
     {
@@ -198089,7 +197298,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001감칠맛"
     },
     {
@@ -198098,6 +197306,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001감칠맛"
     },
     {
@@ -198156,7 +197365,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001한촌설렁탕"
     },
     {
@@ -198174,7 +197382,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001한촌설렁탕"
     },
     {
@@ -198503,8 +197710,7 @@ window.DASHBOARD_DATA = {
      "label": "소금",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "product\u0001썬푸드)고소한구운한치37g",
@@ -198542,7 +197748,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001한치"
     },
     {
@@ -198575,7 +197780,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001한치"
     },
     {
@@ -198827,7 +198031,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001소금"
     },
     {
@@ -198844,7 +198048,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001소금"
     },
     {
@@ -198869,7 +198072,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001소금"
     },
     {
@@ -198878,6 +198080,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001소금"
     }
    ],
@@ -199340,7 +198543,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001쫄깃함"
     },
     {
@@ -199365,6 +198567,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001쫄깃함"
     },
     {
@@ -199381,7 +198584,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001쫄깃함"
     },
     {
@@ -199417,6 +198619,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001미정당"
     },
     {
@@ -199450,7 +198653,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "mine",
      "parent": "ip\u0001미정당"
     },
     {
@@ -199476,7 +198678,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001미정당"
     },
     {
@@ -199968,7 +199169,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001건강"
     },
     {
@@ -200365,8 +199565,7 @@ window.DASHBOARD_DATA = {
      "label": "해장",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001새우",
@@ -200387,7 +199586,8 @@ window.DASHBOARD_DATA = {
      "label": "고추",
      "type": "keyword",
      "layer": 3,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001감자",
@@ -200395,6 +199595,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001해장"
     },
     {
@@ -200524,6 +199725,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001새우"
     },
     {
@@ -200669,7 +199871,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001삼진어묵"
     },
     {
@@ -200686,7 +199888,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001삼진어묵"
     },
     {
@@ -201399,7 +200600,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한도초과)폭풍햄가득참치김밥"
     },
     {
@@ -201408,7 +200608,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한도초과)폭풍햄가득참치김밥"
     },
     {
@@ -201417,7 +200616,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001한도초과)폭풍햄가득참치김밥"
     },
     {
@@ -201494,6 +200693,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u0001한도초과)숯불향가득불고기김밥"
     },
     {
@@ -201502,6 +200702,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001한도초과)숯불향가득불고기김밥"
     },
     {
@@ -201526,7 +200727,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001한도초과)숯불향가득불고기김밥"
     }
    ],
@@ -201764,8 +200964,7 @@ window.DASHBOARD_DATA = {
      "label": "행복",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001하이볼",
@@ -201914,7 +201113,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001하이볼"
     },
     {
@@ -201951,6 +201149,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u00011865청뱀띠에디션"
     },
     {
@@ -202399,6 +201598,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001에스프레소"
     },
     {
@@ -202455,7 +201655,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001에스프레소"
     },
     {
@@ -202478,7 +201677,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001에스프레소"
     },
     {
@@ -202487,7 +201686,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001에스프레소"
     },
     {
@@ -202776,7 +201975,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": false,
-     "tag": "hub"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001치이카와",
@@ -202791,7 +201990,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": false,
-     "tag": "mine"
+     "tag": "매개"
     },
     {
      "id": "product\u0001똠양꿍누들",
@@ -202883,6 +202082,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001카레"
     },
     {
@@ -202988,7 +202188,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001치이카와"
     },
     {
@@ -202997,7 +202196,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001치이카와"
     },
     {
@@ -203396,7 +202594,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": false,
-     "tag": "mine"
+     "tag": "매개"
     },
     {
      "id": "ip\u0001치이카와",
@@ -203517,7 +202715,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001바질"
     },
     {
@@ -203727,7 +202924,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001치이카와"
     },
     {
@@ -203760,7 +202957,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001치이카와"
     },
     {
@@ -203769,7 +202965,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001치이카와"
     }
    ],
@@ -204029,15 +203224,15 @@ window.DASHBOARD_DATA = {
      "label": "감자",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "keyword\u0001해장",
      "label": "해장",
      "type": "keyword",
      "layer": 3,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001앙금",
@@ -204045,7 +203240,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001호두"
     },
     {
@@ -204229,7 +203423,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001부창제과"
     },
     {
@@ -204246,7 +203440,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001부창제과"
     },
     {
@@ -204263,6 +203456,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "keyword\u0001감자"
     },
     {
@@ -204311,6 +203505,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001감자"
     },
     {
@@ -204742,16 +203937,14 @@ window.DASHBOARD_DATA = {
      "label": "홍삼",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001인삼",
      "label": "인삼",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001삼계탕",
@@ -204804,7 +203997,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -204829,6 +204022,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -204851,7 +204045,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -204874,7 +204067,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -204883,7 +204075,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "keyword\u0001인삼"
     },
     {
@@ -204922,7 +204114,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001삼계탕"
     },
     {
@@ -204990,7 +204181,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001삼계탕"
     },
     {
@@ -205428,7 +204618,8 @@ window.DASHBOARD_DATA = {
      "label": "고추",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001삼진어묵",
@@ -205855,7 +205046,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "ip\u0001삼진어묵"
     },
     {
@@ -205872,7 +205063,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001삼진어묵"
     },
     {
@@ -206202,7 +205392,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001회"
     },
     {
@@ -206439,7 +205628,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)김맛나160g"
     },
     {
@@ -206448,7 +205636,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001PB)김맛나160g"
     },
     {
@@ -206457,7 +205645,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001PB)김맛나160g"
     },
     {
@@ -206514,7 +205701,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001안주"
     },
     {
@@ -206531,7 +205717,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001안주"
     },
     {
@@ -206837,7 +206022,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "killer",
      "parent": "keyword\u0001회식"
     },
     {
@@ -206846,7 +206030,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001회식"
     },
     {
@@ -206855,7 +206038,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001회식"
     },
     {
@@ -206864,7 +206046,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001회식"
     },
     {
@@ -206938,6 +206119,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
+     "tag": "killer",
      "parent": "ip\u0001명륜진사"
     },
     {
@@ -207117,7 +206299,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "keyword\u0001양념"
     },
     {
@@ -207126,7 +206308,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001양념"
     },
     {
@@ -207135,7 +206316,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001양념"
     },
     {
@@ -207144,7 +206324,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001양념"
     },
     {
@@ -207466,15 +206645,15 @@ window.DASHBOARD_DATA = {
      "label": "효모",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "killer"
+     "branch": false
     },
     {
      "id": "keyword\u0001막걸리",
      "label": "막걸리",
      "type": "keyword",
      "layer": 1,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "ip\u0001양사미",
@@ -207584,7 +206763,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001막걸리"
     },
     {
@@ -207593,6 +206771,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001양사미"
     },
     {
@@ -207609,7 +206788,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001양사미"
     },
     {
@@ -207697,7 +206876,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001하이볼"
     },
     {
@@ -207706,7 +206884,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001하이볼"
     },
     {
@@ -207931,22 +207108,23 @@ window.DASHBOARD_DATA = {
      "label": "후추",
      "type": "keyword",
      "layer": 0,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001닭",
      "label": "닭",
      "type": "keyword",
      "layer": 1,
-     "branch": false,
-     "tag": "hub"
+     "branch": false
     },
     {
      "id": "keyword\u0001닭가슴살",
      "label": "닭가슴살",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "매개"
     },
     {
      "id": "keyword\u0001운동",
@@ -208176,7 +207354,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001닭"
     },
     {
@@ -208201,7 +207378,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001닭가슴살"
     },
     {
@@ -208968,7 +208144,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001소스"
     },
     {
@@ -208993,7 +208168,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "mine",
      "parent": "keyword\u0001소스"
     },
     {
@@ -209010,7 +208184,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001소스"
     },
     {
@@ -209035,6 +208208,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
+     "tag": "매개",
      "parent": "ip\u0001오뚜기"
     },
     {
@@ -209052,7 +208226,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "killer",
      "parent": "ip\u0001오뚜기"
     },
     {
@@ -209061,7 +208234,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001오뚜기"
     },
     {
@@ -209070,7 +208242,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001오뚜기"
     },
     {
@@ -209079,7 +208250,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
      "parent": "ip\u0001오뚜기"
     },
     {
@@ -209088,7 +208258,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "매개",
      "parent": "ip\u0001오뚜기"
     },
     {
@@ -209558,8 +208728,7 @@ window.DASHBOARD_DATA = {
      "label": "휴식",
      "type": "keyword",
      "layer": 0,
-     "branch": false,
-     "tag": "mine"
+     "branch": false
     },
     {
      "id": "keyword\u0001하이볼",
@@ -209698,7 +208867,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001하이볼"
     },
     {
@@ -209735,6 +208903,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "killer",
      "parent": "product\u00011865청뱀띠에디션"
     },
     {
@@ -209928,7 +209097,8 @@ window.DASHBOARD_DATA = {
      "label": "가을",
      "type": "keyword",
      "layer": 2,
-     "branch": false
+     "branch": false,
+     "tag": "killer"
     },
     {
      "id": "product\u0001삼립)25년듬뿍피자호빵(4입)",
@@ -210059,7 +209229,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 2,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)25년흑당단팥호빵(3입)"
     },
     {
@@ -210140,7 +209309,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)25년듬뿍피자호빵(4입)"
     },
     {
@@ -210149,6 +209317,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
+     "tag": "매개",
      "parent": "product\u0001삼립)25년듬뿍피자호빵(4입)"
     },
     {
@@ -210157,7 +209326,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)25년듬뿍피자호빵(4입)"
     },
     {
@@ -210166,7 +209334,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 4,
      "branch": true,
-     "tag": "hub",
      "parent": "product\u0001삼립)25년듬뿍피자호빵(4입)"
     }
    ],
@@ -210380,7 +209547,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001흑임자"
     },
     {
@@ -210425,7 +209591,6 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
-     "tag": "hub",
      "parent": "keyword\u0001흑임자"
     },
     {
@@ -210434,6 +209599,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 1,
      "branch": true,
+     "tag": "killer",
      "parent": "keyword\u0001흑임자"
     },
     {
@@ -210563,7 +209729,7 @@ window.DASHBOARD_DATA = {
      "type": "keyword",
      "layer": 3,
      "branch": true,
-     "tag": "hub",
+     "tag": "killer",
      "parent": "product\u0001존쿡)불닭킬바사비엔나140g"
     },
     {
@@ -210875,9 +210041,7746 @@ window.DASHBOARD_DATA = {
    ]
   }
  },
+ "keywordEvidence": {
+  "PB": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 0%만 성공(평균 24% 이하) · 넣으면 성공확률 -4.7%p",
+   "n_succ": 0,
+   "n_fail": 4,
+   "succ": [],
+   "fail": [
+    {
+     "name": "딸기잼스콘맛쿠키",
+     "metric": "2,279좋아요"
+    },
+    {
+     "name": "990오리지널바",
+     "metric": "458좋아요"
+    },
+    {
+     "name": "990초코바",
+     "metric": "458좋아요"
+    }
+   ]
+  },
+  "가나": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 59%가 성공(평균 24%의 2.5배) · 넣으면 성공확률 +4.1%p [강증거]",
+   "n_succ": 17,
+   "n_fail": 12,
+   "succ": [
+    {
+     "name": "롯데)가나프리미엄랑드샤말차쇼콜라91g",
+     "metric": "807만"
+    },
+    {
+     "name": "롯데)가나초코바자이언츠기획(4입)",
+     "metric": "708만"
+    },
+    {
+     "name": "롯데)프리미엄가나밤카라멜68g",
+     "metric": "566만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "농심)린도볼하트틴(4입)",
+     "metric": "105만"
+    },
+    {
+     "name": "농심)린도볼밀크(12입)",
+     "metric": "52만"
+    },
+    {
+     "name": "롯데)가나마일드70g(냉장)",
+     "metric": "4만"
+    }
+   ]
+  },
+  "가쓰오부시": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 20% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 3,
+   "n_fail": 12,
+   "succ": [
+    {
+     "name": "한일)가쓰오냉소바184.7g",
+     "metric": "94만"
+    },
+    {
+     "name": "405야끼소바빵",
+     "metric": "3,286좋아요"
+    },
+    {
+     "name": "캐치!티니핑)가쓰오마제덮밥",
+     "metric": "3,026좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "풀무원)진한가쓰오어묵전골330g",
+     "metric": "1만"
+    },
+    {
+     "name": "오코노미야끼빵",
+     "metric": "1,614좋아요"
+    },
+    {
+     "name": "닛신돈베이템푸라우동",
+     "metric": "1,331좋아요"
+    }
+   ]
+  },
+  "가을": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 67%가 성공(평균 24%의 2.8배) · 넣으면 성공확률 +1.5%p [강증거]",
+   "n_succ": 4,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "롯데)프리미엄가나밤카라멜68g",
+     "metric": "566만"
+    },
+    {
+     "name": "삼립)25년듬뿍피자호빵(4입)",
+     "metric": "408만"
+    },
+    {
+     "name": "PB)테디베어피스타치오라떼250ml",
+     "metric": "291만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)25년흑당단팥호빵(3입)",
+     "metric": "22만"
+    },
+    {
+     "name": "PB)바닐라라떼300ml",
+     "metric": "2,019좋아요"
+    }
+   ]
+  },
+  "갈비": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 19%만 성공(평균 24% 이하) · 넣으면 성공확률 -8.0%p",
+   "n_succ": 9,
+   "n_fail": 38,
+   "succ": [
+    {
+     "name": "롯데)안유성명장 마늘갈비정식",
+     "metric": "2152만"
+    },
+    {
+     "name": "맛제일)콘치즈떡갈비김밥",
+     "metric": "2046만"
+    },
+    {
+     "name": "맛제일)남도떡갈비삼각",
+     "metric": "1504만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "그린)맛장우맛자랑 직화닭갈비",
+     "metric": "1475만"
+    },
+    {
+     "name": "하림)직화갈비맛핫바65g",
+     "metric": "172만"
+    },
+    {
+     "name": "포천이동소갈비2kg(4팩)",
+     "metric": "79만"
+    }
+   ]
+  },
+  "감귤": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 25% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 2,
+   "n_fail": 6,
+   "succ": [
+    {
+     "name": "삼립)달콤제주감귤타르트45g",
+     "metric": "208만"
+    },
+    {
+     "name": "나무)아삭귤젤리35g",
+     "metric": "198만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "엔제이)카바야샤리인구미감귤맛52g",
+     "metric": "130만"
+    },
+    {
+     "name": "한국술)니모메11도 375ml",
+     "metric": "8500"
+    },
+    {
+     "name": "해태)젤루조아제주감귤120ml",
+     "metric": "1200"
+    }
+   ]
+  },
+  "감자": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 32%가 성공(평균 24%의 1.3배) · 넣으면 성공확률 +0.4%p [보류]",
+   "n_succ": 30,
+   "n_fail": 64,
+   "succ": [
+    {
+     "name": "삼립)로만밀포테이토햄샌드",
+     "metric": "1330만"
+    },
+    {
+     "name": "농심)감자탕큰사발면",
+     "metric": "1318만"
+    },
+    {
+     "name": "롯데)인가샌드위치",
+     "metric": "1307만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)식사이론 넛츠포테이토샌드",
+     "metric": "668만"
+    },
+    {
+     "name": "그린)쉬포쉬포버거",
+     "metric": "519만"
+    },
+    {
+     "name": "해태)생생감자칩스리라차마요맛55g",
+     "metric": "203만"
+    }
+   ]
+  },
+  "경주": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 20% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 1,
+   "n_fail": 4,
+   "succ": [
+    {
+     "name": "에이스)경주빵32g",
+     "metric": "152만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "경주)경주법주쌀막걸리750ml",
+     "metric": "43만"
+    },
+    {
+     "name": "경주휴게소한우국밥",
+     "metric": "2,213좋아요"
+    },
+    {
+     "name": "경주체리하이볼",
+     "metric": "968좋아요"
+    }
+   ]
+  },
+  "고구마": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 44% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 21,
+   "n_fail": 27,
+   "succ": [
+    {
+     "name": "KBO)키움히어로즈자색고구마팡100g",
+     "metric": "808만"
+    },
+    {
+     "name": "롯데)찰떡파이고창꿀고구마250g",
+     "metric": "755만"
+    },
+    {
+     "name": "G)컨트리맘꿀고구마맛12입",
+     "metric": "750만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)꿀호떡버거",
+     "metric": "240만"
+    },
+    {
+     "name": "G)잭슨스고구마칩할라피뇨28g",
+     "metric": "171만"
+    },
+    {
+     "name": "삼립)고구마생크림팬케익60g",
+     "metric": "149만"
+    }
+   ]
+  },
+  "고소": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 39%가 성공(평균 24%의 1.7배) · 넣으면 성공확률 +3.1%p [보통증거]",
+   "n_succ": 221,
+   "n_fail": 342,
+   "succ": [
+    {
+     "name": "롯데)NEW참치마요네즈삼각",
+     "metric": "4061만"
+    },
+    {
+     "name": "그린)울진대게딱지장김밥",
+     "metric": "2802만"
+    },
+    {
+     "name": "그린)새우튀김김밥",
+     "metric": "2712만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)한입쏙!들기름김밥",
+     "metric": "1661만"
+    },
+    {
+     "name": "롯데)반반김밥_불고기&참치",
+     "metric": "1592만"
+    },
+    {
+     "name": "콕콕콕)더커진스파게티삼각",
+     "metric": "1035만"
+    }
+   ]
+  },
+  "고양이": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 0%만 성공(평균 24% 이하) · 넣으면 성공확률 -7.2%p",
+   "n_succ": 0,
+   "n_fail": 3,
+   "succ": [],
+   "fail": [
+    {
+     "name": "★토이페페",
+     "metric": "5000"
+    },
+    {
+     "name": "치즈냥이빵",
+     "metric": "822좋아요"
+    },
+    {
+     "name": "GS25냥냥팡요거트맛",
+     "metric": "669좋아요"
+    }
+   ]
+  },
+  "고창": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 80%가 성공(평균 24%의 3.4배) · 넣으면 성공확률 +10.6%p [강증거]",
+   "n_succ": 4,
+   "n_fail": 1,
+   "succ": [
+    {
+     "name": "롯데)찰떡파이고창꿀고구마250g",
+     "metric": "755만"
+    },
+    {
+     "name": "롯데)마가렛트고창꿀고구마176g",
+     "metric": "698만"
+    },
+    {
+     "name": "롯데)빈츠고창꿀고구마102g",
+     "metric": "639만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)말랑카우고창꿀고구마158g",
+     "metric": "1,444좋아요"
+    }
+   ]
+  },
+  "고추": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 30% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 22,
+   "n_fail": 51,
+   "succ": [
+    {
+     "name": "한도초과)의성마늘햄&고추장불고기",
+     "metric": "3894만"
+    },
+    {
+     "name": "그린)맛장우맛자랑 반반제육",
+     "metric": "3347만"
+    },
+    {
+     "name": "그린)전주비빔듬뿍김밥",
+     "metric": "2294만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)한입쏙!들기름김밥",
+     "metric": "1661만"
+    },
+    {
+     "name": "그린)반반제육&쏘야도시락",
+     "metric": "655만"
+    },
+    {
+     "name": "롯데)소고기짬뽕밥삼각",
+     "metric": "634만"
+    }
+   ]
+  },
+  "곤약": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 18% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 2,
+   "n_fail": 9,
+   "succ": [
+    {
+     "name": "삼립)초계비빔곤약면샐러드130g",
+     "metric": "139만"
+    },
+    {
+     "name": "삼립)초계겨자곤약면샐러드132g",
+     "metric": "111만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "위스트)마라곤약 향라맛",
+     "metric": "67만"
+    },
+    {
+     "name": "위스트)마라곤약 마라맛",
+     "metric": "51만"
+    },
+    {
+     "name": "몽뜨)설곤약마라탕맛30g",
+     "metric": "7200"
+    }
+   ]
+  },
+  "골드": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 21% 성공으로 약하나 어디 붙여도 +(83% 캐리어에서 성공확률↑)",
+   "n_succ": 6,
+   "n_fail": 22,
+   "succ": [
+    {
+     "name": "롯데)골드후라이드치킨버거3.0",
+     "metric": "1139만"
+    },
+    {
+     "name": "하리보)골드배렌펀에디션80g",
+     "metric": "471만"
+    },
+    {
+     "name": "삼립)와우골든텐더치킨샐러드123g",
+     "metric": "240만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "프로엠)골드바빼빼로8입",
+     "metric": "140만"
+    },
+    {
+     "name": "천하)골든씨씨쉘125g",
+     "metric": "124만"
+    },
+    {
+     "name": "롯데)이너프골든츄이바35g",
+     "metric": "114만"
+    }
+   ]
+  },
+  "공룡": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 100%가 성공(평균 24%의 4.2배) · 넣으면 성공확률 -1.4%p [조건부(IP)]",
+   "n_succ": 3,
+   "n_fail": 0,
+   "succ": [
+    {
+     "name": "KBO)NC다이노스공룡알흑임자컵케익130g",
+     "metric": "747만"
+    },
+    {
+     "name": "픽셀리)공룡메론소보로",
+     "metric": "20,292좋아요"
+    },
+    {
+     "name": "픽셀리후르츠젤리(공룡,잠뜰,수현)",
+     "metric": "17,172좋아요"
+    }
+   ],
+   "fail": []
+  },
+  "과자": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 32%가 성공(평균 24%의 1.3배) · 넣으면 성공확률 +0.6%p [보류]",
+   "n_succ": 113,
+   "n_fail": 242,
+   "succ": [
+    {
+     "name": "롯데)초코필드빼빼로53g(테디베어)",
+     "metric": "3934만"
+    },
+    {
+     "name": "롯데)초코빼빼로54g(테디베어)",
+     "metric": "3288만"
+    },
+    {
+     "name": "농심)메론킥60g",
+     "metric": "2566만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "시원)치즈아몬드스낵80g",
+     "metric": "216만"
+    },
+    {
+     "name": "오리온)마켓오구운김톡80G",
+     "metric": "204만"
+    },
+    {
+     "name": "해태)생생감자칩스리라차마요맛55g",
+     "metric": "203만"
+    }
+   ]
+  },
+  "국물": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 22% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 24,
+   "n_fail": 84,
+   "succ": [
+    {
+     "name": "이스타)도쿠시마라면큰컵",
+     "metric": "1911만"
+    },
+    {
+     "name": "농심)감자탕큰사발면",
+     "metric": "1318만"
+    },
+    {
+     "name": "농심)농심라면큰컵",
+     "metric": "592만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "그린)럭히밥더커진떡볶이삼각",
+     "metric": "1187만"
+    },
+    {
+     "name": "키다리)소고기쌀국수큰컵",
+     "metric": "227만"
+    },
+    {
+     "name": "키다리)진실의미간대파육개장큰컵",
+     "metric": "140만"
+    }
+   ]
+  },
+  "국산": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 16% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 4,
+   "n_fail": 21,
+   "succ": [
+    {
+     "name": "PB)한돈햄200g",
+     "metric": "21만"
+    },
+    {
+     "name": "HEYROO990핫바득템",
+     "metric": "3,052좋아요"
+    },
+    {
+     "name": "HEYROO990핫바득템갈릭",
+     "metric": "3,052좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "PKJ)양파에빠진메밀칩100g",
+     "metric": "115만"
+    },
+    {
+     "name": "롯데)에스코트by스카치블루17년",
+     "metric": "5만"
+    },
+    {
+     "name": "APP예약)더꽉찬한돈돈까스김밥",
+     "metric": "8400"
+    }
+   ]
+  },
+  "김": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 25%만 성공(평균 24% 이하) · 넣으면 성공확률 +2.1%p",
+   "n_succ": 6,
+   "n_fail": 18,
+   "succ": [
+    {
+     "name": "농심)클레오파트라솔트앤김50g",
+     "metric": "467만"
+    },
+    {
+     "name": "매크로)레이즈씨위드(김맛)50g",
+     "metric": "336만"
+    },
+    {
+     "name": "삼립)광천식김우동206g",
+     "metric": "138만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "오리온)마켓오구운김톡80G",
+     "metric": "204만"
+    },
+    {
+     "name": "PB)김맛나160g",
+     "metric": "137만"
+    },
+    {
+     "name": "동서)리츠바삭김73g",
+     "metric": "137만"
+    }
+   ]
+  },
+  "꽃": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 20%만 성공(평균 24% 이하) · 넣으면 성공확률 -5.8%p",
+   "n_succ": 1,
+   "n_fail": 4,
+   "succ": [
+    {
+     "name": "피크민꽃모양스낵밀크맛",
+     "metric": "3,703좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "고운벗)꽃새우쌀과자100g",
+     "metric": "107만"
+    },
+    {
+     "name": "APP)노떼로사베르멘티노",
+     "metric": "3만"
+    },
+    {
+     "name": "PB)꽃모양얼음컵",
+     "metric": "2,739좋아요"
+    }
+   ]
+  },
+  "꾸덕함": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 27% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 10,
+   "n_fail": 27,
+   "succ": [
+    {
+     "name": "벨리)제주에서온말차크림도넛100g",
+     "metric": "466만"
+    },
+    {
+     "name": "삼립)녹차담은초코꾸덕파이70g",
+     "metric": "264만"
+    },
+    {
+     "name": "선우)푸투안초코모찌30g",
+     "metric": "213만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "덴마크)생크림요거트150g",
+     "metric": "311만"
+    },
+    {
+     "name": "삼립)피카츄바닐라롤85g",
+     "metric": "264만"
+    },
+    {
+     "name": "삼양)탱글머쉬룸크림파스타큰컵",
+     "metric": "183만"
+    }
+   ]
+  },
+  "꿀": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 40% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 24,
+   "n_fail": 36,
+   "succ": [
+    {
+     "name": "우진)샤또꾸떼16",
+     "metric": "1174만"
+    },
+    {
+     "name": "KBO)두산베어스곰발바닥꿀빵95g",
+     "metric": "1069만"
+    },
+    {
+     "name": "롯데)찰떡파이고창꿀고구마250g",
+     "metric": "755만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)꿀호떡버거",
+     "metric": "240만"
+    },
+    {
+     "name": "동아)모닝케어프레스온G(위)",
+     "metric": "206만"
+    },
+    {
+     "name": "PB)K리그슛!꿀호떡빵97g",
+     "metric": "200만"
+    }
+   ]
+  },
+  "녹음": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 53%가 성공(평균 24%의 2.2배) · 넣으면 성공확률 +7.6%p [강증거]",
+   "n_succ": 10,
+   "n_fail": 9,
+   "succ": [
+    {
+     "name": "KBO)기아타이거즈호랑이초코롤85g",
+     "metric": "1536만"
+    },
+    {
+     "name": "롯데)필리치즈스테이크버거",
+     "metric": "994만"
+    },
+    {
+     "name": "PB)바밤바알밤초콜릿16g",
+     "metric": "706만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)베이컨맥앤치즈버거",
+     "metric": "514만"
+    },
+    {
+     "name": "드림)훈와리메이진벚꽃모찌26g",
+     "metric": "184만"
+    },
+    {
+     "name": "초코텍)메론멜로볼50g",
+     "metric": "103만"
+    }
+   ]
+  },
+  "녹진함": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 71%가 성공(평균 24%의 3.0배) · 넣으면 성공확률 +2.2%p [강증거]",
+   "n_succ": 5,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "그린)울진대게딱지장김밥",
+     "metric": "2802만"
+    },
+    {
+     "name": "남양)테이크핏몬스터초코바나나350ml",
+     "metric": "1441만"
+    },
+    {
+     "name": "제스트)도쿄브레드까망베르치즈빵",
+     "metric": "420만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "페르)발렌타인12년글렌버기500ml",
+     "metric": "6만"
+    },
+    {
+     "name": "베이스볼크림초코",
+     "metric": "776좋아요"
+    }
+   ]
+  },
+  "농심": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 12% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 3,
+   "n_fail": 23,
+   "succ": [
+    {
+     "name": "농심)메론킥60g",
+     "metric": "2566만"
+    },
+    {
+     "name": "요아정요거트초코쉘팝팝콘딸",
+     "metric": "3,458좋아요"
+    },
+    {
+     "name": "감자면매운맛",
+     "metric": "3,109좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "농심)누룽지팝4입",
+     "metric": "177만"
+    },
+    {
+     "name": "딸기우유",
+     "metric": "2,373좋아요"
+    },
+    {
+     "name": "농심)신라면툼바큰사발",
+     "metric": "1,843좋아요"
+    }
+   ]
+  },
+  "다이어트": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 12%만 성공(평균 24% 이하) · 넣으면 성공확률 -7.9%p",
+   "n_succ": 13,
+   "n_fail": 93,
+   "succ": [
+    {
+     "name": "빙그레)부라보바닐라라이트160ml",
+     "metric": "575만"
+    },
+    {
+     "name": "PB)이정후프로틴바닐라330ml",
+     "metric": "489만"
+    },
+    {
+     "name": "이그니스)랩노쉬프로틴스트로베리350ml",
+     "metric": "408만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "농심)누들핏마라탄탄",
+     "metric": "231만"
+    },
+    {
+     "name": "남양)맛있는우유GT1.8L",
+     "metric": "148만"
+    },
+    {
+     "name": "롯데)이너프골든츄이바35g",
+     "metric": "114만"
+    }
+   ]
+  },
+  "닭가슴살": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 34% 성공으로 약하나 어디 붙여도 +(83% 캐리어에서 성공확률↑)",
+   "n_succ": 19,
+   "n_fail": 36,
+   "succ": [
+    {
+     "name": "롯데)홀그레인머스타드닭가슴살김밥",
+     "metric": "1814만"
+    },
+    {
+     "name": "롯데)케이준치킨&햄샌드",
+     "metric": "1173만"
+    },
+    {
+     "name": "롯데)스리라차치킨샌드",
+     "metric": "1147만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)치폴레치킨김밥",
+     "metric": "977만"
+    },
+    {
+     "name": "롯데)닭가슴살잡곡샌드",
+     "metric": "741만"
+    },
+    {
+     "name": "롯데)베스트콤보샌드",
+     "metric": "722만"
+    }
+   ]
+  },
+  "당충전": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 27% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 3,
+   "n_fail": 8,
+   "succ": [
+    {
+     "name": "롯데)가나초코바자이언츠기획(4입)",
+     "metric": "708만"
+    },
+    {
+     "name": "서주)허쉬초코콘150ml",
+     "metric": "429만"
+    },
+    {
+     "name": "티처스)당충전딥초코와플90g",
+     "metric": "221만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "MZ)밀카편지상자패키지",
+     "metric": "47만"
+    },
+    {
+     "name": "M_동학)구슬코튼캔디",
+     "metric": "9000"
+    },
+    {
+     "name": "빙그레)끌레도르피스타치오90ml",
+     "metric": "5000"
+    }
+   ]
+  },
+  "대게": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 60%가 성공(평균 24%의 2.5배) · 넣으면 성공확률 +8.5%p [보통증거]",
+   "n_succ": 3,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "그린)울진대게딱지장김밥",
+     "metric": "2802만"
+    },
+    {
+     "name": "그린)더커진울진대게딱지장삼각",
+     "metric": "2085만"
+    },
+    {
+     "name": "그린)울진대게장유부초밥",
+     "metric": "1323만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "APP예약)울진대게딱지장김밥",
+     "metric": "1만"
+    },
+    {
+     "name": "APP예약)울진대게장유부초밥",
+     "metric": "3500"
+    }
+   ]
+  },
+  "대파": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 7% 성공으로 약하나 어디 붙여도 +(83% 캐리어에서 성공확률↑)",
+   "n_succ": 1,
+   "n_fail": 14,
+   "succ": [
+    {
+     "name": "홍라면대파치즈볶음면",
+     "metric": "6,226좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)치폴레대파닭구이웜볼",
+     "metric": "334만"
+    },
+    {
+     "name": "키다리)진실의미간대파육개장큰컵",
+     "metric": "140만"
+    },
+    {
+     "name": "롯데)치폴레대파닭파스타",
+     "metric": "77만"
+    }
+   ]
+  },
+  "데리야끼": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 33% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 5,
+   "n_fail": 10,
+   "succ": [
+    {
+     "name": "그린)고소치킨마요덮밥",
+     "metric": "1623만"
+    },
+    {
+     "name": "그린)숯불치킨데리버거",
+     "metric": "1061만"
+    },
+    {
+     "name": "동원)그릴리직화닭꼬치데리야끼75g",
+     "metric": "332만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "CJ)더건강한저당닭가슴살데리야끼맛120g",
+     "metric": "186만"
+    },
+    {
+     "name": "삼립)1,900치킨데리야끼빅브레드100g",
+     "metric": "74만"
+    },
+    {
+     "name": "APP예약)고소치킨마요덮밥",
+     "metric": "7800"
+    }
+   ]
+  },
+  "돼지": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 23%가 성공(평균 24%의 1.0배) · 넣으면 성공확률 +4.0%p [모델신호]",
+   "n_succ": 20,
+   "n_fail": 67,
+   "succ": [
+    {
+     "name": "롯데)제주흑돼지김밥",
+     "metric": "2227만"
+    },
+    {
+     "name": "롯데)흑돼지고추장불고기도시락",
+     "metric": "2118만"
+    },
+    {
+     "name": "롯데)함박&부대볶음 5찬도시락",
+     "metric": "1717만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)미노리키친갓돼지삼각",
+     "metric": "1062만"
+    },
+    {
+     "name": "롯데)미노리키친미소가츠동",
+     "metric": "1060만"
+    },
+    {
+     "name": "동원)개성한입쏙고기만두168g",
+     "metric": "42만"
+    }
+   ]
+  },
+  "드럼스틱": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 60%가 성공(평균 24%의 2.5배) · 넣으면 성공확률 +5.9%p [보통증거]",
+   "n_succ": 3,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "투데이)스위즐스드럼스틱사우어체리&애플 100g",
+     "metric": "280만"
+    },
+    {
+     "name": "투데이)스위즐스드럼스틱오리지널라즈베리&밀크100g",
+     "metric": "195만"
+    },
+    {
+     "name": "나무)드럼스틱모양젤리(바나나&블루베리)50g",
+     "metric": "192만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "드럼스틱딸기밀크",
+     "metric": "769좋아요"
+    },
+    {
+     "name": "드럼스틱풍선껌",
+     "metric": "769좋아요"
+    }
+   ]
+  },
+  "드링크": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 23% 성공으로 약하나 어디 붙여도 +(83% 캐리어에서 성공확률↑)",
+   "n_succ": 5,
+   "n_fail": 17,
+   "succ": [
+    {
+     "name": "오리온)닥터유단백질드링크딸기350ml",
+     "metric": "1834만"
+    },
+    {
+     "name": "이그니스)랩노쉬프로틴스트로베리350ml",
+     "metric": "408만"
+    },
+    {
+     "name": "매일)그릭드링크플레인190ml",
+     "metric": "403만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "매일)그릭드링크바나나190ml",
+     "metric": "314만"
+    },
+    {
+     "name": "칠성)핫식스더프로파인애플355ml",
+     "metric": "221만"
+    },
+    {
+     "name": "링티)씨너지에너지드링크250ml",
+     "metric": "112만"
+    }
+   ]
+  },
+  "든든": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 32%가 성공(평균 24%의 1.3배) · 넣으면 성공확률 -0.9%p [보류]",
+   "n_succ": 9,
+   "n_fail": 19,
+   "succ": [
+    {
+     "name": "한도초과)숯불향가득불고기김밥",
+     "metric": "2969만"
+    },
+    {
+     "name": "맛제일)오리불고기&왕교자도시락",
+     "metric": "1817만"
+    },
+    {
+     "name": "롯데)불닭양념닭강정",
+     "metric": "333만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "PB)럭히밥사골곰탕꾹밥225g",
+     "metric": "39만"
+    },
+    {
+     "name": "APP예약)흑돼지고추장불고기도시락",
+     "metric": "2만"
+    },
+    {
+     "name": "정성김치볶음참치마요",
+     "metric": "2,924좋아요"
+    }
+   ]
+  },
+  "디카페인": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 29%만 성공(평균 24% 이하) · 넣으면 성공확률 -4.6%p",
+   "n_succ": 2,
+   "n_fail": 5,
+   "succ": [
+    {
+     "name": "빙그레)엔초바(디카페인커피)85ml",
+     "metric": "407만"
+    },
+    {
+     "name": "PB)테디베어디카페인아메리카노250ml",
+     "metric": "174만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "동서)디카페인미니120입",
+     "metric": "2만"
+    },
+    {
+     "name": "CAFE25디카페인아메리카노",
+     "metric": "832좋아요"
+    },
+    {
+     "name": "제로윗)디카페인커피&밀크바닐라파르페",
+     "metric": "664좋아요"
+    }
+   ]
+  },
+  "땅콩": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 16%만 성공(평균 24% 이하) · 넣으면 성공확률 -1.3%p",
+   "n_succ": 7,
+   "n_fail": 36,
+   "succ": [
+    {
+     "name": "삼립)프로H.통밀땅콩샌드(5입)100g",
+     "metric": "548만"
+    },
+    {
+     "name": "PB)이정후프로틴바50g",
+     "metric": "379만"
+    },
+    {
+     "name": "KBO)463카라멜땅콩베이스샌드160g",
+     "metric": "353만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "농심)누들핏마라탄탄",
+     "metric": "231만"
+    },
+    {
+     "name": "투데이)씬피넛버터샌드80g",
+     "metric": "208만"
+    },
+    {
+     "name": "삼립)탕종땅콩미니샌드200g(10입)",
+     "metric": "161만"
+    }
+   ]
+  },
+  "땡초": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 83%가 성공(평균 24%의 3.5배) · 넣으면 성공확률 +3.4%p [강증거]",
+   "n_succ": 5,
+   "n_fail": 1,
+   "succ": [
+    {
+     "name": "오뚜기)콕콕콕땡초크림파스타",
+     "metric": "1000만"
+    },
+    {
+     "name": "PB)더블매콤야채땡초바160g",
+     "metric": "277만"
+    },
+    {
+     "name": "놀라운땡초어묵김밥",
+     "metric": "5,223좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "직화땡초간장닭목살",
+     "metric": "344좋아요"
+    }
+   ]
+  },
+  "떡": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 26%가 성공(평균 24%의 1.1배) · 넣으면 성공확률 -0.5%p [보류]",
+   "n_succ": 25,
+   "n_fail": 71,
+   "succ": [
+    {
+     "name": "맛제일)콘치즈떡갈비김밥",
+     "metric": "2046만"
+    },
+    {
+     "name": "맛제일)남도떡갈비삼각",
+     "metric": "1504만"
+    },
+    {
+     "name": "G)마루짱모찌우동109g",
+     "metric": "1097만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "MDS)매콤&로제반반떡볶이200g",
+     "metric": "230만"
+    },
+    {
+     "name": "롯데)찰떡파이초코바나나250g",
+     "metric": "153만"
+    },
+    {
+     "name": "딸기키티)쫀득모찌파이(딸기향)50g",
+     "metric": "141만"
+    }
+   ]
+  },
+  "띠부씰": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 72%가 성공(평균 24%의 3.0배) · 넣으면 성공확률 -0.5%p [보류]",
+   "n_succ": 13,
+   "n_fail": 5,
+   "succ": [
+    {
+     "name": "이정후)불고기김치볶음밥삼각",
+     "metric": "1998만"
+    },
+    {
+     "name": "이정후)고기폭탄홈런비빔밥",
+     "metric": "1467만"
+    },
+    {
+     "name": "이정후)포크바베큐플래터도시락",
+     "metric": "962만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "KBO)양념치킨볼100g",
+     "metric": "204만"
+    },
+    {
+     "name": "선우)이름찾기초콜릿48g\t",
+     "metric": "107만"
+    },
+    {
+     "name": "뽀로로까르보떡볶이",
+     "metric": "578좋아요"
+    }
+   ]
+  },
+  "라면": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 35% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 46,
+   "n_fail": 85,
+   "succ": [
+    {
+     "name": "이스타)도쿠시마라면큰컵",
+     "metric": "1911만"
+    },
+    {
+     "name": "농심)감자탕큰사발면",
+     "metric": "1318만"
+    },
+    {
+     "name": "히밥)럭히밥울트라면볶이(4인분)",
+     "metric": "660만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "농심)누들핏마라탄탄",
+     "metric": "231만"
+    },
+    {
+     "name": "키다리)소고기쌀국수큰컵",
+     "metric": "227만"
+    },
+    {
+     "name": "오뚜기)불오징어볶음면큰컵",
+     "metric": "186만"
+    }
+   ]
+  },
+  "라이트": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 57%가 성공(평균 24%의 2.4배) · 넣으면 성공확률 +8.2%p [강증거]",
+   "n_succ": 4,
+   "n_fail": 3,
+   "succ": [
+    {
+     "name": "빙그레)부라보바닐라라이트160ml",
+     "metric": "575만"
+    },
+    {
+     "name": "동원)라이트참치135g*4입",
+     "metric": "5만"
+    },
+    {
+     "name": "CJ)스팸라이트200G",
+     "metric": "1만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "동원)리챔더블라이트120g",
+     "metric": "8400"
+    },
+    {
+     "name": "불범막걸리",
+     "metric": "298좋아요"
+    },
+    {
+     "name": "그랜드야쿠르트",
+     "metric": "154좋아요"
+    }
+   ]
+  },
+  "랑그드샤": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 56%가 성공(평균 24%의 2.3배) · 넣으면 성공확률 -0.9%p [보류]",
+   "n_succ": 5,
+   "n_fail": 4,
+   "succ": [
+    {
+     "name": "롯데)가나프리미엄랑드샤말차쇼콜라91g",
+     "metric": "807만"
+    },
+    {
+     "name": "스위트)부르봉블란츌딸기랑그드샤40g",
+     "metric": "524만"
+    },
+    {
+     "name": "엔제이)훗카이도밀크초코랑그드샤100g",
+     "metric": "211만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "스위트)부르봉랑드샤말차16입",
+     "metric": "166만"
+    },
+    {
+     "name": "스위트)부르봉랑드샤메론16입",
+     "metric": "130만"
+    },
+    {
+     "name": "엔제이)황금치즈랑그드샤105g",
+     "metric": "106만"
+    }
+   ]
+  },
+  "레몬": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 21%만 성공(평균 24% 이하) · 넣으면 성공확률 -1.8%p",
+   "n_succ": 21,
+   "n_fail": 79,
+   "succ": [
+    {
+     "name": "아영)파이퍼하이직빈티지18",
+     "metric": "3274만"
+    },
+    {
+     "name": "유앤)스웨디시스타일젤리(올믹스드업)120g",
+     "metric": "712만"
+    },
+    {
+     "name": "롯데)레몬진4.5 355ml(6입)(판매용)",
+     "metric": "702만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "산토리)짐빔하이볼레몬350ml팩(6입)",
+     "metric": "144만"
+    },
+    {
+     "name": "스위트)트롤리블루옥토퍼스100g",
+     "metric": "132만"
+    },
+    {
+     "name": "엠즈)크림에빠진얼그레이레몬롤80g",
+     "metric": "118만"
+    }
+   ]
+  },
+  "로제": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 26% 성공으로 약하나 어디 붙여도 +(83% 캐리어에서 성공확률↑)",
+   "n_succ": 6,
+   "n_fail": 17,
+   "succ": [
+    {
+     "name": "앙리마티스)하트와인볼(로제)500ml캔",
+     "metric": "1107만"
+    },
+    {
+     "name": "MDS)로제햄마카로니콘치즈255g",
+     "metric": "336만"
+    },
+    {
+     "name": "미정)미정당스팸로제납작당면338g",
+     "metric": "237만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "MDS)매콤&로제반반떡볶이200g",
+     "metric": "230만"
+    },
+    {
+     "name": "오뚜기)고단백컵누들매콤로제",
+     "metric": "213만"
+    },
+    {
+     "name": "그린)럭히밥로제우동볶이&대왕치즈스틱",
+     "metric": "67만"
+    }
+   ]
+  },
+  "리코타": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 25%만 성공(평균 24% 이하) · 넣으면 성공확률 -2.3%p",
+   "n_succ": 1,
+   "n_fail": 3,
+   "succ": [
+    {
+     "name": "삼립)타임핏리코타요거샐러드110g",
+     "metric": "195만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "리코타치즈치킨버거",
+     "metric": "250좋아요"
+    },
+    {
+     "name": "리코타치즈샐러드+BELT샌드위치",
+     "metric": "143좋아요"
+    },
+    {
+     "name": "리코타치즈샐러드+크랜베리치킨샌드위치",
+     "metric": "143좋아요"
+    }
+   ]
+  },
+  "마라": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 17%만 성공(평균 24% 이하) · 넣으면 성공확률 -1.1%p",
+   "n_succ": 4,
+   "n_fail": 19,
+   "succ": [
+    {
+     "name": "이스타)도쿠시마라면큰컵",
+     "metric": "1911만"
+    },
+    {
+     "name": "농심)마라짜파게티큰사발",
+     "metric": "441만"
+    },
+    {
+     "name": "박은영)마라마파두부덮밥380g",
+     "metric": "272만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "농심)누들핏마라탄탄",
+     "metric": "231만"
+    },
+    {
+     "name": "오뚜기)고단백컵누들마라샹궈",
+     "metric": "226만"
+    },
+    {
+     "name": "하늘)충칭소면컵",
+     "metric": "128만"
+    }
+   ]
+  },
+  "마시멜로": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 17% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 4,
+   "n_fail": 20,
+   "succ": [
+    {
+     "name": "PB)수건모양초코마시멜로100g",
+     "metric": "858만"
+    },
+    {
+     "name": "하리보)사운드큐브80g",
+     "metric": "733만"
+    },
+    {
+     "name": "유앤)스웨디시스타일젤리(올믹스드업)120g",
+     "metric": "712만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "투데이)무이티케이크마시멜로6입",
+     "metric": "163만"
+    },
+    {
+     "name": "초코텍)초코멜로볼50g",
+     "metric": "112만"
+    },
+    {
+     "name": "초코텍)메론멜로볼50g",
+     "metric": "103만"
+    }
+   ]
+  },
+  "막걸리": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 17% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 5,
+   "n_fail": 25,
+   "succ": [
+    {
+     "name": "딸기)알딸막650ml",
+     "metric": "520만"
+    },
+    {
+     "name": "더기와)말차막650ml",
+     "metric": "341만"
+    },
+    {
+     "name": "서울탁)달밤장수막걸리750ml",
+     "metric": "105만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "KTM)복숭아막끌림800ml",
+     "metric": "57만"
+    },
+    {
+     "name": "경주)경주법주쌀막걸리750ml",
+     "metric": "43만"
+    },
+    {
+     "name": "한국술)지장수생막걸리750ml",
+     "metric": "21만"
+    }
+   ]
+  },
+  "만쥬": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 7%만 성공(평균 24% 이하) · 넣으면 성공확률 -4.3%p",
+   "n_succ": 1,
+   "n_fail": 13,
+   "succ": [
+    {
+     "name": "삼립)주종발효밤맛만쥬198g",
+     "metric": "229만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "세븐카페)단팥가득만쥬23g",
+     "metric": "76만"
+    },
+    {
+     "name": "세븐카페)완두가득만쥬23g",
+     "metric": "62만"
+    },
+    {
+     "name": "쿠보타만쥬720ml세트",
+     "metric": "46만"
+    }
+   ]
+  },
+  "말랑함": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 46%가 성공(평균 24%의 1.9배) · 넣으면 성공확률 -0.9%p [보류]",
+   "n_succ": 22,
+   "n_fail": 26,
+   "succ": [
+    {
+     "name": "삼립)시티델리직화그릴모짜렐라버거",
+     "metric": "1116만"
+    },
+    {
+     "name": "일신)캇예스파티프레드175g",
+     "metric": "718만"
+    },
+    {
+     "name": "유앤)스웨디시스타일젤리(올믹스드업)120g",
+     "metric": "712만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "훈스)옥수수콘마요빵110g",
+     "metric": "189만"
+    },
+    {
+     "name": "딸기키티)쫀득모찌파이(딸기향)50g",
+     "metric": "141만"
+    },
+    {
+     "name": "에이스)마하차녹망고젤리64g",
+     "metric": "115만"
+    }
+   ]
+  },
+  "말차": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 38% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 48,
+   "n_fail": 77,
+   "succ": [
+    {
+     "name": "롯데)빼빼로말차37g(청수당)",
+     "metric": "1531만"
+    },
+    {
+     "name": "롯데)빈츠프리미어말차102g",
+     "metric": "1438만"
+    },
+    {
+     "name": "추성훈)아키그린500ml",
+     "metric": "1217만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "빙그레)쿠앤크바말차70ml",
+     "metric": "232만"
+    },
+    {
+     "name": "오리온)초코칩쿠키제주말차라떼104g",
+     "metric": "189만"
+    },
+    {
+     "name": "스위트)부르봉랑드샤말차16입",
+     "metric": "166만"
+    }
+   ]
+  },
+  "맛": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 33% 성공으로 약하나 어디 붙여도 +(75% 캐리어에서 성공확률↑)",
+   "n_succ": 20,
+   "n_fail": 40,
+   "succ": [
+    {
+     "name": "현대)더커진맛다시참치마요",
+     "metric": "1882만"
+    },
+    {
+     "name": "PB)자이언츠새로온팅클메론맛60g",
+     "metric": "840만"
+    },
+    {
+     "name": "해태)생생감자칩바질페스토피자맛55g",
+     "metric": "781만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "해태)생생감자칩랍스터맛85g",
+     "metric": "199만"
+    },
+    {
+     "name": "하림)직화갈비맛핫바65g",
+     "metric": "172만"
+    },
+    {
+     "name": "엔제이)카바야샤리인구미감귤맛52g",
+     "metric": "130만"
+    }
+   ]
+  },
+  "맛장우": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 50%가 성공(평균 24%의 2.1배) · 넣으면 성공확률 +5.1%p [강증거]",
+   "n_succ": 10,
+   "n_fail": 10,
+   "succ": [
+    {
+     "name": "그린)맛장우맛자랑 반반제육",
+     "metric": "3347만"
+    },
+    {
+     "name": "롯데)맛장우김밥참치크래미",
+     "metric": "2363만"
+    },
+    {
+     "name": "롯데)맛장우맛자랑 부대볶음",
+     "metric": "2011만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "그린)맛장우도시락 오늘은소불고기닭!",
+     "metric": "1541만"
+    },
+    {
+     "name": "그린)맛장우맛자랑 직화닭갈비",
+     "metric": "1475만"
+    },
+    {
+     "name": "APP예약)맛장우맛자랑 부대볶음",
+     "metric": "22만"
+    }
+   ]
+  },
+  "망고": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 42% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 22,
+   "n_fail": 31,
+   "succ": [
+    {
+     "name": "스위트)아이스망고75g",
+     "metric": "1212만"
+    },
+    {
+     "name": "코카)몬스터에너지파피용355ml",
+     "metric": "953만"
+    },
+    {
+     "name": "스위트)부르봉 페투치니(프루티맛)47g",
+     "metric": "580만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "칠성)핫식스더프로애플망고355ml",
+     "metric": "194만"
+    },
+    {
+     "name": "서주)망고요거트콘150ml",
+     "metric": "169만"
+    },
+    {
+     "name": "제이탑)망고파르페85g",
+     "metric": "120만"
+    }
+   ]
+  },
+  "매실": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 9%만 성공(평균 24% 이하) · 넣으면 성공확률 -4.3%p",
+   "n_succ": 1,
+   "n_fail": 10,
+   "succ": [
+    {
+     "name": "서울)올데이프룻매실제로250ml",
+     "metric": "140만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "해태)후렌치파이매실맛192g",
+     "metric": "122만"
+    },
+    {
+     "name": "웅)초록매실 500ml 펫",
+     "metric": "12만"
+    },
+    {
+     "name": "M_참이슬담금주1.8L",
+     "metric": "3만"
+    }
+   ]
+  },
+  "매콤": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 31%가 성공(평균 24%의 1.3배) · 넣으면 성공확률 -0.4%p [보류]",
+   "n_succ": 154,
+   "n_fail": 340,
+   "succ": [
+    {
+     "name": "한도초과)의성마늘햄&고추장불고기",
+     "metric": "3894만"
+    },
+    {
+     "name": "그린)맛장우맛자랑 반반제육",
+     "metric": "3347만"
+    },
+    {
+     "name": "롯데)7찬도시락",
+     "metric": "3201만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)한입쏙!들기름김밥",
+     "metric": "1661만"
+    },
+    {
+     "name": "그린)럭히밥떡볶이김밥",
+     "metric": "1548만"
+    },
+    {
+     "name": "그린)럭히밥더커진떡볶이삼각",
+     "metric": "1187만"
+    }
+   ]
+  },
+  "맥스봉": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 67%가 성공(평균 24%의 2.8배) · 넣으면 성공확률 -0.1%p [보류]",
+   "n_succ": 4,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "CJ)맥스봉진한풍미후랑크65g",
+     "metric": "486만"
+    },
+    {
+     "name": "CJ)맥스봉고소한치즈후랑크65g",
+     "metric": "384만"
+    },
+    {
+     "name": "CJ)맥스봉오리지널70g",
+     "metric": "303만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "미니언즈맥스봉(치즈)",
+     "metric": "451좋아요"
+    },
+    {
+     "name": "맥스봉오리지널",
+     "metric": "347좋아요"
+    }
+   ]
+  },
+  "맥주": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 32% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 28,
+   "n_fail": 59,
+   "succ": [
+    {
+     "name": "오리온)포카칩트리플페퍼60g",
+     "metric": "739만"
+    },
+    {
+     "name": "해태)자가비사워크림맛45g",
+     "metric": "719만"
+    },
+    {
+     "name": "농심)포테토칩K양념치킨맛50g",
+     "metric": "530만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "시원)허니뻥이요90g",
+     "metric": "196만"
+    },
+    {
+     "name": "PKJ)양파에빠진메밀칩100g",
+     "metric": "115만"
+    },
+    {
+     "name": "PB)허니버터&솔티카라멜팝콘75g",
+     "metric": "110만"
+    }
+   ]
+  },
+  "머랭": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 25%만 성공(평균 24% 이하) · 넣으면 성공확률 -7.3%p",
+   "n_succ": 1,
+   "n_fail": 3,
+   "succ": [
+    {
+     "name": "풀무원)요거톡레몬비스킷머랭126g",
+     "metric": "325만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "고운벗)말차머랭쿠키40g",
+     "metric": "100만"
+    },
+    {
+     "name": "고운벗)바나나머랭쿠키40g",
+     "metric": "91만"
+    },
+    {
+     "name": "고운벗)벚꽃머랭20g",
+     "metric": "72만"
+    }
+   ]
+  },
+  "메이플": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 75%가 성공(평균 24%의 3.2배) · 넣으면 성공확률 +2.7%p [강증거]",
+   "n_succ": 3,
+   "n_fail": 1,
+   "succ": [
+    {
+     "name": "엔제이)바움쿠헨메이플50g",
+     "metric": "299만"
+    },
+    {
+     "name": "엔제이)메이플시럽팬케익65g",
+     "metric": "245만"
+    },
+    {
+     "name": "PB)자이언츠쌔리라메이플볼60g",
+     "metric": "227만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "크라운)카라멜콘메이플(대)154g",
+     "metric": "48만"
+    }
+   ]
+  },
+  "메타몽": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 80%가 성공(평균 24%의 3.4배) · 넣으면 성공확률 +3.1%p [강증거]",
+   "n_succ": 4,
+   "n_fail": 1,
+   "succ": [
+    {
+     "name": "삼립)메타몽의커스터드롤케익85g",
+     "metric": "335만"
+    },
+    {
+     "name": "메타몽돈까스정식",
+     "metric": "3,175좋아요"
+    },
+    {
+     "name": "메타몽블루베리샌드",
+     "metric": "3,175좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)떠롤에올라간메타몽80g",
+     "metric": "129만"
+    }
+   ]
+  },
+  "멜론": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 29% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 15,
+   "n_fail": 36,
+   "succ": [
+    {
+     "name": "농심)메론킥60g",
+     "metric": "2566만"
+    },
+    {
+     "name": "해태)홈런볼메론우유맛49g",
+     "metric": "902만"
+    },
+    {
+     "name": "PB)자이언츠새로온팅클메론맛60g",
+     "metric": "840만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "빙그레)캔디바메론소다75ml",
+     "metric": "203만"
+    },
+    {
+     "name": "오리온)촉촉한초코칩멜론8P",
+     "metric": "171만"
+    },
+    {
+     "name": "HK)컨디션스파클링메론소다제로100ml",
+     "metric": "165만"
+    }
+   ]
+  },
+  "모나카": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 55%가 성공(평균 24%의 2.3배) · 넣으면 성공확률 -0.2%p [보류]",
+   "n_succ": 6,
+   "n_fail": 5,
+   "succ": [
+    {
+     "name": "롯데)바삭바삭크런키모나카150ml",
+     "metric": "679만"
+    },
+    {
+     "name": "롯데)제로말차크림모나카140ml",
+     "metric": "440만"
+    },
+    {
+     "name": "제스)모리나가밀크카라멜모나카97g",
+     "metric": "351만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "해태)찰떡시모나120ml",
+     "metric": "11만"
+    },
+    {
+     "name": "초코)초코비모나카커피우유맛",
+     "metric": "8000"
+    },
+    {
+     "name": "서주)제주우유모나카140ml",
+     "metric": "5000"
+    }
+   ]
+  },
+  "모짜렐라": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 21%만 성공(평균 24% 이하) · 넣으면 성공확률 +3.1%p",
+   "n_succ": 4,
+   "n_fail": 15,
+   "succ": [
+    {
+     "name": "그린)불닭콘치즈퐁듀삼각",
+     "metric": "1408만"
+    },
+    {
+     "name": "삼립)시티델리직화그릴모짜렐라버거",
+     "metric": "1116만"
+    },
+    {
+     "name": "BIG체다모짜치즈스틱",
+     "metric": "313만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)쉐푸드모짜렐라치즈스틱400g",
+     "metric": "8만"
+    },
+    {
+     "name": "APP예약)이정후치즈독",
+     "metric": "2만"
+    },
+    {
+     "name": "APP전용)빅모짜치즈불고기버거",
+     "metric": "1만"
+    }
+   ]
+  },
+  "몬스터": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 38% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 5,
+   "n_fail": 8,
+   "succ": [
+    {
+     "name": "남양)테이크핏몬스터초코바나나350ml",
+     "metric": "1441만"
+    },
+    {
+     "name": "코카)몬스터스트로베리355ml",
+     "metric": "1247만"
+    },
+    {
+     "name": "남양)테이크핏몬스터고소한맛350ml",
+     "metric": "1235만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "한도초과)몬스터3단치킨버거",
+     "metric": "641만"
+    },
+    {
+     "name": "코카)몬스터에너지스트로베리드림500ml",
+     "metric": "75만"
+    },
+    {
+     "name": "한성)몬스터크랩142g*2",
+     "metric": "41만"
+    }
+   ]
+  },
+  "무스": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 56%가 성공(평균 24%의 2.3배) · 넣으면 성공확률 +1.7%p [강증거]",
+   "n_succ": 5,
+   "n_fail": 4,
+   "succ": [
+    {
+     "name": "풍림)뵈르뵈르초코딥무스푸딩90g",
+     "metric": "287만"
+    },
+    {
+     "name": "롯데)프리미엄가나베리무스케익",
+     "metric": "270만"
+    },
+    {
+     "name": "말차무스쫀덕케",
+     "metric": "12,315좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "MDS)밀크크림고구마무스100g",
+     "metric": "81만"
+    },
+    {
+     "name": "MDS)딸기크림고구마무스100g",
+     "metric": "54만"
+    },
+    {
+     "name": "고구마돈까스김밥",
+     "metric": "1,840좋아요"
+    }
+   ]
+  },
+  "미각": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 62%가 성공(평균 24%의 2.6배) · 넣으면 성공확률 +7.5%p [강증거]",
+   "n_succ": 5,
+   "n_fail": 3,
+   "succ": [
+    {
+     "name": "삼립)미각우유연유카스테라롤128g",
+     "metric": "537만"
+    },
+    {
+     "name": "삼립)미각카이막꿀치즈케익100g",
+     "metric": "490만"
+    },
+    {
+     "name": "삼립)미각아몬드초코브레드90g",
+     "metric": "381만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)미각할라피뇨꽈베이글80g",
+     "metric": "84만"
+    },
+    {
+     "name": "삼립)미각오리지널모카번85g",
+     "metric": "22만"
+    },
+    {
+     "name": "미각제빵소애플시나몬롤",
+     "metric": "767좋아요"
+    }
+   ]
+  },
+  "미역": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 57%가 성공(평균 24%의 2.4배) · 넣으면 성공확률 +15.6%p [강증거]",
+   "n_succ": 4,
+   "n_fail": 3,
+   "succ": [
+    {
+     "name": "PB)럭히밥든든미역꾹밥225g",
+     "metric": "54만"
+    },
+    {
+     "name": "썬푸드)소칸미역줄기30g",
+     "metric": "52만"
+    },
+    {
+     "name": "롯데)진국소고기미역국밥45g",
+     "metric": "50만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "M_해표간편미역20",
+     "metric": "1300"
+    },
+    {
+     "name": "컵국차돌양지미역국",
+     "metric": "884좋아요"
+    },
+    {
+     "name": "2분컵(한우미역국)",
+     "metric": "359좋아요"
+    }
+   ]
+  },
+  "바": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 24%가 성공(평균 24%의 1.0배) · 넣으면 성공확률 +0.5%p [보류]",
+   "n_succ": 34,
+   "n_fail": 105,
+   "succ": [
+    {
+     "name": "서주)말차바75ml",
+     "metric": "878만"
+    },
+    {
+     "name": "롯데)가나초코바자이언츠기획(4입)",
+     "metric": "708만"
+    },
+    {
+     "name": "오리온)닥터유에너지바저당50g",
+     "metric": "576만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "빙그레)따옴바키위75ml",
+     "metric": "256만"
+    },
+    {
+     "name": "빙그레)왕실쿠키샌드바끼리크림치즈",
+     "metric": "243만"
+    },
+    {
+     "name": "빙그레)캔디바메론소다75ml",
+     "metric": "203만"
+    }
+   ]
+  },
+  "바삭": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 30%가 성공(평균 24%의 1.3배) · 넣으면 성공확률 -0.2%p [보류]",
+   "n_succ": 135,
+   "n_fail": 308,
+   "succ": [
+    {
+     "name": "한도초과)기사식당 바싹불고기",
+     "metric": "3219만"
+    },
+    {
+     "name": "그린)새우튀김김밥",
+     "metric": "2712만"
+    },
+    {
+     "name": "농심)메론킥60g",
+     "metric": "2566만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)유자치킨샌드",
+     "metric": "445만"
+    },
+    {
+     "name": "딸기키티)패스츄리딸기샌드",
+     "metric": "258만"
+    },
+    {
+     "name": "시원)치즈아몬드스낵80g",
+     "metric": "216만"
+    }
+   ]
+  },
+  "박카스": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 80%가 성공(평균 24%의 3.4배) · 넣으면 성공확률 +6.7%p [강증거]",
+   "n_succ": 4,
+   "n_fail": 1,
+   "succ": [
+    {
+     "name": "동아)박카스F120ml10입(판매전용) ",
+     "metric": "2017만"
+    },
+    {
+     "name": "동아)박카스F120ml 20입(판매전용) ",
+     "metric": "1050만"
+    },
+    {
+     "name": "얼박사박카스",
+     "metric": "8,419좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "얼박사캔",
+     "metric": "855좋아요"
+    }
+   ]
+  },
+  "반숙": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 40% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 4,
+   "n_fail": 6,
+   "succ": [
+    {
+     "name": "행복담기)동의반숙란2입",
+     "metric": "696만"
+    },
+    {
+     "name": "CJ)1등급반숙대란2구",
+     "metric": "509만"
+    },
+    {
+     "name": "풀무원)동물복지촉촉란2구(떡볶이소스)105g",
+     "metric": "280만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "춘식이반숙간장밥",
+     "metric": "2,163좋아요"
+    },
+    {
+     "name": "감동란",
+     "metric": "854좋아요"
+    },
+    {
+     "name": "생식빵계란샌드",
+     "metric": "726좋아요"
+    }
+   ]
+  },
+  "반찬": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 32% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 19,
+   "n_fail": 40,
+   "succ": [
+    {
+     "name": "한도초과)의성마늘햄&고추장불고기",
+     "metric": "3894만"
+    },
+    {
+     "name": "그린)뷔페한상 11찬도시락",
+     "metric": "3313만"
+    },
+    {
+     "name": "한도초과)고민할필요없는도시락",
+     "metric": "3110만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)로스트치킨&미트볼도시락",
+     "metric": "83만"
+    },
+    {
+     "name": "APP예약)오색찬란풍성한상도시락",
+     "metric": "66만"
+    },
+    {
+     "name": "예약)한끼연구소 간장불고기정식",
+     "metric": "39만"
+    }
+   ]
+  },
+  "발효": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 71%가 성공(평균 24%의 3.0배) · 넣으면 성공확률 +9.7%p [강증거]",
+   "n_succ": 5,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "삼립)주종발효초코크림소보루85g",
+     "metric": "519만"
+    },
+    {
+     "name": "삼립)주종발효완듀앙금소보루95g",
+     "metric": "418만"
+    },
+    {
+     "name": "삼립)주종발효카스타드크림빵105g",
+     "metric": "407만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "코자아)오리지널드링크100ml",
+     "metric": "34만"
+    },
+    {
+     "name": "종가)총각김치2.3kg",
+     "metric": "2만"
+    }
+   ]
+  },
+  "보양식": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 9%만 성공(평균 24% 이하) · 넣으면 성공확률 -2.0%p",
+   "n_succ": 2,
+   "n_fail": 20,
+   "succ": [
+    {
+     "name": "PB)영양반계탕600g",
+     "metric": "177만"
+    },
+    {
+     "name": "CJ)햇반누룽지닭백숙죽267g",
+     "metric": "143만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "순살갈비탕",
+     "metric": "1,251좋아요"
+    },
+    {
+     "name": "얼큰추어탕",
+     "metric": "1,161좋아요"
+    },
+    {
+     "name": "들깨오리탕",
+     "metric": "1,105좋아요"
+    }
+   ]
+  },
+  "부드러움": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 42%가 성공(평균 24%의 1.8배) · 넣으면 성공확률 +2.4%p [보통증거]",
+   "n_succ": 291,
+   "n_fail": 396,
+   "succ": [
+    {
+     "name": "롯데)NEW참치마요네즈삼각",
+     "metric": "4061만"
+    },
+    {
+     "name": "한도초과)의성마늘햄&고추장불고기",
+     "metric": "3894만"
+    },
+    {
+     "name": "롯데)대만식햄치즈샌드위치",
+     "metric": "2514만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "그린)맛장우도시락 오늘은소불고기닭!",
+     "metric": "1541만"
+    },
+    {
+     "name": "그린)맛장우맛자랑 직화닭갈비",
+     "metric": "1475만"
+    },
+    {
+     "name": "롯데)3,900나시고랭볶음밥",
+     "metric": "1137만"
+    }
+   ]
+  },
+  "불": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 32% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 14,
+   "n_fail": 30,
+   "succ": [
+    {
+     "name": "한도초과)숯불향가득불고기김밥",
+     "metric": "2969만"
+    },
+    {
+     "name": "롯데)제주흑돼지불백도시락",
+     "metric": "1923만"
+    },
+    {
+     "name": "롯데)깐부도시락(깐풍기&마파두부)",
+     "metric": "1611만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "그린)맛장우맛자랑 직화닭갈비",
+     "metric": "1475만"
+    },
+    {
+     "name": "롯데)소고기짬뽕밥삼각",
+     "metric": "634만"
+    },
+    {
+     "name": "그린)불닭치킨유부말이",
+     "metric": "616만"
+    }
+   ]
+  },
+  "붕어빵": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 31% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 4,
+   "n_fail": 9,
+   "succ": [
+    {
+     "name": "롯데)크로와상붕어빵80g",
+     "metric": "294만"
+    },
+    {
+     "name": "엔제이)젤리코팥타이야끼175g(5입)",
+     "metric": "209만"
+    },
+    {
+     "name": "엔제이)젤리코카스타드타이야끼150g(5입)",
+     "metric": "206만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "해태)팥붕슈붕젤리60g",
+     "metric": "50만"
+    },
+    {
+     "name": "CJ)비비고붕어빵젤리포도40g",
+     "metric": "48만"
+    },
+    {
+     "name": "던_오리온)호떡품은참붕어빵8P",
+     "metric": "12만"
+    }
+   ]
+  },
+  "브라우니": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 38% 성공으로 약하나 어디 붙여도 +(83% 캐리어에서 성공확률↑)",
+   "n_succ": 5,
+   "n_fail": 8,
+   "succ": [
+    {
+     "name": "오리온)마켓오크림치즈브라우니12P",
+     "metric": "620만"
+    },
+    {
+     "name": "말차무스쫀덕케",
+     "metric": "12,315좋아요"
+    },
+    {
+     "name": "초코무스쫀덕케",
+     "metric": "11,581좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)초코퍼지브라우니115g",
+     "metric": "147만"
+    },
+    {
+     "name": "초코텍)초코멜로볼50g",
+     "metric": "112만"
+    },
+    {
+     "name": "오리온)마켓오브라우니바이트",
+     "metric": "107만"
+    }
+   ]
+  },
+  "블랙": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 18%만 성공(평균 24% 이하) · 넣으면 성공확률 -3.0%p",
+   "n_succ": 11,
+   "n_fail": 51,
+   "succ": [
+    {
+     "name": "롯데)뽀므리블랙750ml",
+     "metric": "1969만"
+    },
+    {
+     "name": "하이트)블랙보리누룽지520ml",
+     "metric": "497만"
+    },
+    {
+     "name": "동서)스타벅스카페베로나블랙275ml",
+     "metric": "402만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "우진)샤또라그랑주 19",
+     "metric": "781만"
+    },
+    {
+     "name": "롯데)산타리타트리플C블랙에디션750ml",
+     "metric": "540만"
+    },
+    {
+     "name": "롯데)거브너블랙750ml",
+     "metric": "329만"
+    }
+   ]
+  },
+  "블루베리": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 32% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 13,
+   "n_fail": 27,
+   "succ": [
+    {
+     "name": "그린)전남친샌드",
+     "metric": "1460만"
+    },
+    {
+     "name": "KBO)삼성라이온즈블루베리패스츄리100g",
+     "metric": "1166만"
+    },
+    {
+     "name": "딸기키티)베리베리마카롱75g",
+     "metric": "591만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)바나나블루베리샌드",
+     "metric": "825만"
+    },
+    {
+     "name": "동서)레드불핑크250ml",
+     "metric": "286만"
+    },
+    {
+     "name": "빙그레)밀키프룻블루베리바나나75ml",
+     "metric": "250만"
+    }
+   ]
+  },
+  "비건": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 57%가 성공(평균 24%의 2.4배) · 넣으면 성공확률 +4.4%p [강증거]",
+   "n_succ": 4,
+   "n_fail": 3,
+   "succ": [
+    {
+     "name": "일신)캇예스프레드페르켈175g",
+     "metric": "433만"
+    },
+    {
+     "name": "일신)캇예스베러버니75g",
+     "metric": "191만"
+    },
+    {
+     "name": "오츠카)소이조이후르츠&치즈30g",
+     "metric": "152만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "풀무원)두부크럼블코코넛커리",
+     "metric": "9900"
+    },
+    {
+     "name": "풀무원)생직화짜장소스180g",
+     "metric": "6000"
+    },
+    {
+     "name": "풀무원)두부크럼블직화짜장",
+     "metric": "3300"
+    }
+   ]
+  },
+  "비스킷": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 30%가 성공(평균 24%의 1.2배) · 넣으면 성공확률 -1.6%p [조건부(IP)]",
+   "n_succ": 11,
+   "n_fail": 26,
+   "succ": [
+    {
+     "name": "롯데)빈츠프리미어말차102g",
+     "metric": "1438만"
+    },
+    {
+     "name": "스위트)알포트카카오사브레52g",
+     "metric": "670만"
+    },
+    {
+     "name": "롯데)빈츠고창꿀고구마102g",
+     "metric": "639만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "KBO)돌직구딸기잼비스킷130g",
+     "metric": "314만"
+    },
+    {
+     "name": "빙그레)쿠앤크바말차70ml",
+     "metric": "232만"
+    },
+    {
+     "name": "SAMG)하츄핑비스킷65g",
+     "metric": "179만"
+    }
+   ]
+  },
+  "비타민": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 50%가 성공(평균 24%의 2.1배) · 넣으면 성공확률 +3.3%p [강증거]",
+   "n_succ": 8,
+   "n_fail": 8,
+   "succ": [
+    {
+     "name": "동아)박카스F120ml 20입(판매전용) ",
+     "metric": "1050만"
+    },
+    {
+     "name": "동아)얼박사355ml",
+     "metric": "916만"
+    },
+    {
+     "name": "동아)모닝케어프레스온H(간)",
+     "metric": "873만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "링티)씨너지에너지드링크250ml",
+     "metric": "112만"
+    },
+    {
+     "name": "매크로)레옹사우어비타민c레몬젤리80g",
+     "metric": "101만"
+    },
+    {
+     "name": "현대)에너린250ml",
+     "metric": "100만"
+    }
+   ]
+  },
+  "빈츠": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 80%가 성공(평균 24%의 3.4배) · 넣으면 성공확률 +8.6%p [강증거]",
+   "n_succ": 4,
+   "n_fail": 1,
+   "succ": [
+    {
+     "name": "롯데)빈츠프리미어말차102g",
+     "metric": "1438만"
+    },
+    {
+     "name": "롯데)빈츠말차102g(청수당)",
+     "metric": "679만"
+    },
+    {
+     "name": "롯데)빈츠고창꿀고구마102g",
+     "metric": "639만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "빈츠",
+     "metric": "127좋아요"
+    }
+   ]
+  },
+  "빈티지": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 22%만 성공(평균 24% 이하) · 넣으면 성공확률 -4.1%p",
+   "n_succ": 4,
+   "n_fail": 14,
+   "succ": [
+    {
+     "name": "아영)파이퍼하이직빈티지18",
+     "metric": "3274만"
+    },
+    {
+     "name": "우진)르볼테21/22 750ml",
+     "metric": "1459만"
+    },
+    {
+     "name": "신세계)까테나자파타아르헨티노말벡750ml",
+     "metric": "1363만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "우진)샤또도작21",
+     "metric": "697만"
+    },
+    {
+     "name": "우진)샤또오브리옹21",
+     "metric": "396만"
+    },
+    {
+     "name": "아영)파이퍼하이직레어07",
+     "metric": "336만"
+    }
+   ]
+  },
+  "빵": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 27%가 성공(평균 24%의 1.1배) · 넣으면 성공확률 +0.7%p [보류]",
+   "n_succ": 137,
+   "n_fail": 366,
+   "succ": [
+    {
+     "name": "KBO)롯데자이언츠거인단팥빵100g",
+     "metric": "2807만"
+    },
+    {
+     "name": "KBO)롯데자이언츠씨앗호떡빵97g",
+     "metric": "2085만"
+    },
+    {
+     "name": "그린)햄듬뿍치즈샌드",
+     "metric": "1966만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)바나나블루베리샌드",
+     "metric": "825만"
+    },
+    {
+     "name": "한도초과)몬스터3단치킨버거",
+     "metric": "641만"
+    },
+    {
+     "name": "그린)트러플머쉬룸비프버거",
+     "metric": "529만"
+    }
+   ]
+  },
+  "빼빼로": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 48%가 성공(평균 24%의 2.0배) · 넣으면 성공확률 +5.6%p [보통증거]",
+   "n_succ": 15,
+   "n_fail": 16,
+   "succ": [
+    {
+     "name": "롯데)아몬드빼빼로37g(테디베어)",
+     "metric": "3942만"
+    },
+    {
+     "name": "롯데)초코필드빼빼로53g(테디베어)",
+     "metric": "3934만"
+    },
+    {
+     "name": "롯데)초코빼빼로54g(테디베어)",
+     "metric": "3288만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "프로엠)골드바빼빼로8입",
+     "metric": "140만"
+    },
+    {
+     "name": "프로엠)하트타워빼빼로세트",
+     "metric": "91만"
+    },
+    {
+     "name": "★몽뜨)베이직러브",
+     "metric": "41만"
+    }
+   ]
+  },
+  "뻥이요": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 60%가 성공(평균 24%의 2.5배) · 넣으면 성공확률 +4.2%p [보통증거]",
+   "n_succ": 3,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "시원)뻥이요100g",
+     "metric": "266만"
+    },
+    {
+     "name": "뻥이요스낵",
+     "metric": "3,935좋아요"
+    },
+    {
+     "name": "허니뻥이요스낵",
+     "metric": "3,935좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "시원)허니뻥이요90g",
+     "metric": "196만"
+    },
+    {
+     "name": "M_뻥이요골드",
+     "metric": "2550"
+    }
+   ]
+  },
+  "사골": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 7%만 성공(평균 24% 이하) · 넣으면 성공확률 -7.4%p",
+   "n_succ": 1,
+   "n_fail": 13,
+   "succ": [
+    {
+     "name": "롯데)진국소고기미역국밥45g",
+     "metric": "50만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "농심)신라면햄버거컵",
+     "metric": "96만"
+    },
+    {
+     "name": "롯데)진국사골곰탕국밥45g",
+     "metric": "45만"
+    },
+    {
+     "name": "PB)럭히밥사골곰탕꾹밥225g",
+     "metric": "39만"
+    }
+   ]
+  },
+  "사브레": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 60%가 성공(평균 24%의 2.5배) · 넣으면 성공확률 +2.3%p [보통증거]",
+   "n_succ": 3,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "스위트)알포트카카오사브레52g",
+     "metric": "670만"
+    },
+    {
+     "name": "6스위트)알포트미니사브레초콜릿50g",
+     "metric": "336만"
+    },
+    {
+     "name": "미스티)사브레버터쿠키80g",
+     "metric": "270만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "미스티)사브레초코버터쿠키80g",
+     "metric": "183만"
+    },
+    {
+     "name": "저당초코사브레",
+     "metric": "458좋아요"
+    }
+   ]
+  },
+  "사워": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 30% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 8,
+   "n_fail": 19,
+   "succ": [
+    {
+     "name": "MQ)프링글스양파맛70g",
+     "metric": "788만"
+    },
+    {
+     "name": "해태)자가비사워크림맛45g",
+     "metric": "719만"
+    },
+    {
+     "name": "농심)츄파춥스젤리사워튜브90g",
+     "metric": "700만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "매크로)레옹사우어비타민c레몬젤리80g",
+     "metric": "101만"
+    },
+    {
+     "name": "매크로)레옹사우어비타민C자몽젤리80g",
+     "metric": "87만"
+    },
+    {
+     "name": "일신)캇예스사우어구미75g",
+     "metric": "84만"
+    }
+   ]
+  },
+  "사케": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 6%만 성공(평균 24% 이하) · 넣으면 성공확률 -5.0%p",
+   "n_succ": 2,
+   "n_fail": 29,
+   "succ": [
+    {
+     "name": "추성훈)아키그린500ml",
+     "metric": "1217만"
+    },
+    {
+     "name": "쿠보타준마이다이긴죠720ml",
+     "metric": "229만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "니혼슈)쿠보타센쥬720ml",
+     "metric": "147만"
+    },
+    {
+     "name": "태산)간바레오또상900ml",
+     "metric": "133만"
+    },
+    {
+     "name": "카브루)리얼유자사케하이볼500ml캔",
+     "metric": "111만"
+    }
+   ]
+  },
+  "사탕": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 14%만 성공(평균 24% 이하) · 넣으면 성공확률 -2.2%p",
+   "n_succ": 3,
+   "n_fail": 19,
+   "succ": [
+    {
+     "name": "나무)토마토캔디30.4g",
+     "metric": "7,862좋아요"
+    },
+    {
+     "name": "초코피스마니에팡",
+     "metric": "4,816좋아요"
+    },
+    {
+     "name": "모구모구솜사탕젤리P",
+     "metric": "3,593좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "★아띠)히말라야바좀바메가롤리팝135g",
+     "metric": "81만"
+    },
+    {
+     "name": "★미루)블링블링바구니 ",
+     "metric": "32만"
+    },
+    {
+     "name": "★미루)베스트바구니 ",
+     "metric": "20만"
+    }
+   ]
+  },
+  "산리오": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 31% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 11,
+   "n_fail": 24,
+   "succ": [
+    {
+     "name": "한도초과)아삭아삭햄야채샌드",
+     "metric": "1929만"
+    },
+    {
+     "name": "3테디베어)빼빼로4입기획",
+     "metric": "1188만"
+    },
+    {
+     "name": "롯데)크런키8갑(스키즈25년)",
+     "metric": "1074만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "미스티)산리오초코냠냠25g",
+     "metric": "113만"
+    },
+    {
+     "name": "미스티)산리오딸기냠냠25g",
+     "metric": "66만"
+    },
+    {
+     "name": "미스티)마이초코23g",
+     "metric": "33만"
+    }
+   ]
+  },
+  "산미": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 12%만 성공(평균 24% 이하) · 넣으면 성공확률 -2.8%p",
+   "n_succ": 2,
+   "n_fail": 14,
+   "succ": [
+    {
+     "name": "페르)페리에주에그랑브뤼750ml",
+     "metric": "1710만"
+    },
+    {
+     "name": "우진)샤또꾸떼16",
+     "metric": "1174만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "아영)르그랑까이유 쇼비뇽블랑750ml",
+     "metric": "348만"
+    },
+    {
+     "name": "아영)파이퍼하이직레어07",
+     "metric": "336만"
+    },
+    {
+     "name": "롯데)킬리카눈킬러맨즈런까버750",
+     "metric": "234만"
+    }
+   ]
+  },
+  "삼각": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 32%가 성공(평균 24%의 1.3배) · 넣으면 성공확률 +4.3%p [모델신호]",
+   "n_succ": 27,
+   "n_fail": 57,
+   "succ": [
+    {
+     "name": "롯데)NEW참치마요네즈삼각",
+     "metric": "4061만"
+    },
+    {
+     "name": "롯데)삼겹살김치볶음밥삼각",
+     "metric": "2380만"
+    },
+    {
+     "name": "그린)더커진짜계치삼각김밥",
+     "metric": "2160만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "그린)소불고기삼각김밥",
+     "metric": "1342만"
+    },
+    {
+     "name": "그린)럭히밥더커진떡볶이삼각",
+     "metric": "1187만"
+    },
+    {
+     "name": "롯데)매콤진미채삼각김밥",
+     "metric": "1064만"
+    }
+   ]
+  },
+  "삼겹살": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 8%만 성공(평균 24% 이하) · 넣으면 성공확률 -7.1%p",
+   "n_succ": 1,
+   "n_fail": 11,
+   "succ": [
+    {
+     "name": "롯데)삼겹살김치볶음밥삼각",
+     "metric": "2380만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)2분삼겹김치찌개",
+     "metric": "951만"
+    },
+    {
+     "name": "APP예약)2분삼겹김치찌개",
+     "metric": "3만"
+    },
+    {
+     "name": "CJ)육공육리얼직화삼겹225g",
+     "metric": "1만"
+    }
+   ]
+  },
+  "새콤": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 39%가 성공(평균 24%의 1.6배) · 넣으면 성공확률 +8.0%p [보통증거]",
+   "n_succ": 76,
+   "n_fail": 118,
+   "succ": [
+    {
+     "name": "그린)참치김치볶음밥김밥",
+     "metric": "3057만"
+    },
+    {
+     "name": "그린)더꽉찬돈까스김밥",
+     "metric": "1827만"
+    },
+    {
+     "name": "딸기키티)딸기샌드위치",
+     "metric": "1470만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "콕콕콕)스파게티김밥",
+     "metric": "1201만"
+    },
+    {
+     "name": "콕콕콕)더커진스파게티삼각",
+     "metric": "1035만"
+    },
+    {
+     "name": "롯데)식사이론 치킨타르타르삼각",
+     "metric": "926만"
+    }
+   ]
+  },
+  "샌드": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 34% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 51,
+   "n_fail": 98,
+   "succ": [
+    {
+     "name": "삼립)프리미엄햄에그샌드",
+     "metric": "2297만"
+    },
+    {
+     "name": "롯데)대만식딸기샌드",
+     "metric": "2061만"
+    },
+    {
+     "name": "롯데)최강록의로스팜에그샌드",
+     "metric": "2010만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)바나나블루베리샌드",
+     "metric": "825만"
+    },
+    {
+     "name": "롯데)닭가슴살잡곡샌드",
+     "metric": "741만"
+    },
+    {
+     "name": "롯데)베스트콤보샌드",
+     "metric": "722만"
+    }
+   ]
+  },
+  "샐러드": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 31% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 30,
+   "n_fail": 67,
+   "succ": [
+    {
+     "name": "롯데)안유성명장 치킨난반정식",
+     "metric": "1860만"
+    },
+    {
+     "name": "그린)치킨텐더샌드",
+     "metric": "1602만"
+    },
+    {
+     "name": "삼립)로만밀포테이토햄샌드",
+     "metric": "1330만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "그린)트윈샐러드샌드",
+     "metric": "1005만"
+    },
+    {
+     "name": "롯데)식사이론 넛츠포테이토샌드",
+     "metric": "668만"
+    },
+    {
+     "name": "삼립)꿀호떡버거",
+     "metric": "240만"
+    }
+   ]
+  },
+  "샤베트": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 14%만 성공(평균 24% 이하) · 넣으면 성공확률 -0.0%p",
+   "n_succ": 4,
+   "n_fail": 24,
+   "succ": [
+    {
+     "name": "롯데)설레임x쿨리쉬160ml",
+     "metric": "374만"
+    },
+    {
+     "name": "동그린)빙꽃바사과80ml",
+     "metric": "276만"
+    },
+    {
+     "name": "아임낫어후르츠",
+     "metric": "4,245좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "빙그레)따옴트위스트딸기바나나",
+     "metric": "213만"
+    },
+    {
+     "name": "서주)망고요거트콘150ml",
+     "metric": "169만"
+    },
+    {
+     "name": "스마일)프룻자몽캔샤베트250ml",
+     "metric": "123만"
+    }
+   ]
+  },
+  "선물": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 21%만 성공(평균 24% 이하) · 넣으면 성공확률 -1.9%p",
+   "n_succ": 22,
+   "n_fail": 81,
+   "succ": [
+    {
+     "name": "하정우)마키키쇼비뇽블랑750ml",
+     "metric": "1.8억"
+    },
+    {
+     "name": "이스타)도쿠시마라면큰컵",
+     "metric": "1911만"
+    },
+    {
+     "name": "롯데)안유성명장 치킨난반정식",
+     "metric": "1860만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "APP)파이퍼하이직레어퀸에디션750ml",
+     "metric": "782만"
+    },
+    {
+     "name": "천하)골든씨씨쉘125g",
+     "metric": "124만"
+    },
+    {
+     "name": "스위트)부르봉루몽드크레페88g",
+     "metric": "107만"
+    }
+   ]
+  },
+  "셰프": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 0%만 성공(평균 24% 이하) · 넣으면 성공확률 -6.3%p",
+   "n_succ": 0,
+   "n_fail": 3,
+   "succ": [],
+   "fail": [
+    {
+     "name": "M_직납)셰프오후딸기",
+     "metric": "2000"
+    },
+    {
+     "name": "M_직납)셰프오후카라멜",
+     "metric": "1500"
+    },
+    {
+     "name": "기원X셰프에드워드리에디션레드페퍼캐스크",
+     "metric": "205좋아요"
+    }
+   ]
+  },
+  "소다": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 5%만 성공(평균 24% 이하) · 넣으면 성공확률 -6.7%p",
+   "n_succ": 1,
+   "n_fail": 19,
+   "succ": [
+    {
+     "name": "PB)자이언츠쌔리라짱셔요소다믹스맛49g",
+     "metric": "294만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)개굴닌자밀키소다롤85g",
+     "metric": "296만"
+    },
+    {
+     "name": "빙그레)캔디바메론소다75ml",
+     "metric": "203만"
+    },
+    {
+     "name": "HK)컨디션스파클링메론소다제로100ml",
+     "metric": "165만"
+    }
+   ]
+  },
+  "소르베": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 32% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 6,
+   "n_fail": 13,
+   "succ": [
+    {
+     "name": "스위트)아이스복숭아75g",
+     "metric": "1325만"
+    },
+    {
+     "name": "스위트)아이스망고75g",
+     "metric": "1212만"
+    },
+    {
+     "name": "프로즌레몬소르베",
+     "metric": "5,983좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "엔제이)후르츠소르베미니믹스150ml",
+     "metric": "132만"
+    },
+    {
+     "name": "프로즌포도소르베",
+     "metric": "2,657좋아요"
+    },
+    {
+     "name": "프로즌딸기소르베",
+     "metric": "2,537좋아요"
+    }
+   ]
+  },
+  "소보로": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 50%가 성공(평균 24%의 2.1배) · 넣으면 성공확률 +2.6%p [강증거]",
+   "n_succ": 9,
+   "n_fail": 9,
+   "succ": [
+    {
+     "name": "롯데)최강록의소보로삼각",
+     "metric": "1544만"
+    },
+    {
+     "name": "삼립)주종발효초코크림소보루85g",
+     "metric": "519만"
+    },
+    {
+     "name": "삼립)주종발효완듀앙금소보루95g",
+     "metric": "418만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)소보루꿀호떡90g",
+     "metric": "102만"
+    },
+    {
+     "name": "삼립)해피옥수수소보루빵(3입)",
+     "metric": "77만"
+    },
+    {
+     "name": "초코텍)제주소보루구좌당근228g",
+     "metric": "30만"
+    }
+   ]
+  },
+  "송이": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 60%가 성공(평균 24%의 2.5배) · 넣으면 성공확률 +2.8%p [보통증거]",
+   "n_succ": 3,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "오리온)초코송이딸기45g",
+     "metric": "542만"
+    },
+    {
+     "name": "오리온)딸기송이50g(봄한정)",
+     "metric": "467만"
+    },
+    {
+     "name": "오리온)초코송이말차45g",
+     "metric": "333만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "스위트)메이지버섯모양초코송이73g",
+     "metric": "155만"
+    },
+    {
+     "name": "오리온)초코송이4P",
+     "metric": "79만"
+    }
+   ]
+  },
+  "수분": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 0%만 성공(평균 24% 이하) · 넣으면 성공확률 -4.2%p",
+   "n_succ": 0,
+   "n_fail": 7,
+   "succ": [],
+   "fail": [
+    {
+     "name": "서주)비타500아이스쿨",
+     "metric": "3000"
+    },
+    {
+     "name": "에버데이이온",
+     "metric": "2,638좋아요"
+    },
+    {
+     "name": "리얼아미노워터",
+     "metric": "413좋아요"
+    }
+   ]
+  },
+  "수제": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 17% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 1,
+   "n_fail": 5,
+   "succ": [
+    {
+     "name": "그린)촵촵스테이크버거",
+     "metric": "780만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "25설)존쿡프리미엄수제델리미트세트",
+     "metric": "8만"
+    },
+    {
+     "name": "★초코렛 팩토리",
+     "metric": "5000"
+    },
+    {
+     "name": "강훈목장수제요거트딸기",
+     "metric": "907좋아요"
+    }
+   ]
+  },
+  "숙성": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 13%만 성공(평균 24% 이하) · 넣으면 성공확률 +3.4%p",
+   "n_succ": 12,
+   "n_fail": 81,
+   "succ": [
+    {
+     "name": "아영)파이퍼하이직레어퀸에디션",
+     "metric": "7795만"
+    },
+    {
+     "name": "CSR)텍스트북나파까버네에디션750ml",
+     "metric": "5473만"
+    },
+    {
+     "name": "우진)지오도BDM 18",
+     "metric": "3523만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "APP)파이퍼하이직레어퀸에디션750ml",
+     "metric": "782만"
+    },
+    {
+     "name": "아영)벡스리슬링750ml",
+     "metric": "333만"
+    },
+    {
+     "name": "금양)라파우라불파독쇼비뇽블랑750ml",
+     "metric": "283만"
+    }
+   ]
+  },
+  "숙취": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 8%만 성공(평균 24% 이하) · 넣으면 성공확률 -7.3%p",
+   "n_succ": 1,
+   "n_fail": 11,
+   "succ": [
+    {
+     "name": "HK)컨디션스파클링자몽제로100ml",
+     "metric": "392만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "동아)모닝케어프레스온G(위)",
+     "metric": "206만"
+    },
+    {
+     "name": "유한)내일N스파클링100ml",
+     "metric": "95만"
+    },
+    {
+     "name": "M_숙취해소간개무량150ml",
+     "metric": "5000"
+    }
+   ]
+  },
+  "순대": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 11%만 성공(평균 24% 이하) · 넣으면 성공확률 -7.7%p",
+   "n_succ": 1,
+   "n_fail": 8,
+   "succ": [
+    {
+     "name": "PB)장충동고기순대300g",
+     "metric": "169만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "육즙고기순대",
+     "metric": "965좋아요"
+    },
+    {
+     "name": "쫀득한찰순대",
+     "metric": "965좋아요"
+    },
+    {
+     "name": "씨앗쌈장순대",
+     "metric": "832좋아요"
+    }
+   ]
+  },
+  "쉐이크": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 21% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 4,
+   "n_fail": 15,
+   "succ": [
+    {
+     "name": "롯데)설레임말차160ml",
+     "metric": "607만"
+    },
+    {
+     "name": "롯데)설레임밀크쉐이크저당",
+     "metric": "530만"
+    },
+    {
+     "name": "PB)이정후프로틴바닐라330ml",
+     "metric": "489만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)설레임카카오쉐이크160ml",
+     "metric": "2만"
+    },
+    {
+     "name": "롯데)설레임쿠키앤크림160ml",
+     "metric": "2000"
+    },
+    {
+     "name": "설레임(밀크쉐이크)",
+     "metric": "906좋아요"
+    }
+   ]
+  },
+  "스타벅스": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 67%가 성공(평균 24%의 2.8배) · 넣으면 성공확률 +5.2%p [강증거]",
+   "n_succ": 4,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "동서)스타벅스바닐라(병)281ml",
+     "metric": "457만"
+    },
+    {
+     "name": "동서)스타벅스시그니처밀크티325ml",
+     "metric": "442만"
+    },
+    {
+     "name": "동서)스타벅스카페베로나블랙275ml",
+     "metric": "402만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "동서)스타벅스파이크200ml",
+     "metric": "2만"
+    },
+    {
+     "name": "동서)스타벅스헤이즐넛(병)281ml",
+     "metric": "6000"
+    }
+   ]
+  },
+  "스팀": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 60%가 성공(평균 24%의 2.5배) · 넣으면 성공확률 -0.3%p [보류]",
+   "n_succ": 3,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "엔제이)훈와리스팀케이크카스타드",
+     "metric": "704만"
+    },
+    {
+     "name": "삼립)잘익은쑥이야기110g",
+     "metric": "215만"
+    },
+    {
+     "name": "맛폴리디아볼라피자스팀베이글",
+     "metric": "3,250좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "맥앤치즈스팀베이글",
+     "metric": "285좋아요"
+    },
+    {
+     "name": "햄치즈스팀베이글",
+     "metric": "285좋아요"
+    }
+   ]
+  },
+  "스팸": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 38% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 10,
+   "n_fail": 16,
+   "succ": [
+    {
+     "name": "그린)스팸마요계란김밥",
+     "metric": "2195만"
+    },
+    {
+     "name": "그린)스팸김치볶음김밥",
+     "metric": "2146만"
+    },
+    {
+     "name": "그린)스팸계란마요삼각",
+     "metric": "1946만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "맛제일)스팸아라비아따파스타",
+     "metric": "81만"
+    },
+    {
+     "name": "APP예약)3900스팸&비엔나도시락",
+     "metric": "7800"
+    },
+    {
+     "name": "APP예약)스팸아라비아따파스타",
+     "metric": "4900"
+    }
+   ]
+  },
+  "스포츠": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 39%가 성공(평균 24%의 1.6배) · 넣으면 성공확률 -2.3%p [조건부(IP)]",
+   "n_succ": 7,
+   "n_fail": 11,
+   "succ": [
+    {
+     "name": "빙그레)폴라포스포츠Zero120ml",
+     "metric": "283만"
+    },
+    {
+     "name": "PB)K리그슛!허니카라멜팝콘75g",
+     "metric": "208만"
+    },
+    {
+     "name": "K리그)슛!더비라면",
+     "metric": "196만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "광동)온더게임400ml",
+     "metric": "3000"
+    },
+    {
+     "name": "치킨25)맥시칸양념순살",
+     "metric": "1,212좋아요"
+    },
+    {
+     "name": "치킨25)맥시칸크리스피순살",
+     "metric": "1,212좋아요"
+    }
+   ]
+  },
+  "스프": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 14% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 1,
+   "n_fail": 6,
+   "succ": [
+    {
+     "name": "오뚜기)콘크림스프크리스피롤55g",
+     "metric": "460만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "하림)용가리까르보나라볶음면큰컵",
+     "metric": "69만"
+    },
+    {
+     "name": "CJ)소프트밀베이컨감자수프",
+     "metric": "7800"
+    },
+    {
+     "name": "바프)콘스프맛바프볼70g",
+     "metric": "6000"
+    }
+   ]
+  },
+  "시나몬": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 0%만 성공(평균 24% 이하) · 넣으면 성공확률 -14.9%p",
+   "n_succ": 0,
+   "n_fail": 12,
+   "succ": [],
+   "fail": [
+    {
+     "name": "오리온)오뜨애플파이(6입)",
+     "metric": "192만"
+    },
+    {
+     "name": "크라운)츄러스애플시나몬84g",
+     "metric": "143만"
+    },
+    {
+     "name": "APP)와일드터키레어브리드750ml",
+     "metric": "142만"
+    }
+   ]
+  },
+  "시원": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 17%만 성공(평균 24% 이하) · 넣으면 성공확률 -10.5%p",
+   "n_succ": 17,
+   "n_fail": 85,
+   "succ": [
+    {
+     "name": "PB)밀크딸기콘170ml",
+     "metric": "1230만"
+    },
+    {
+     "name": "칠성)핫식스더킹애플홀릭355ml",
+     "metric": "795만"
+    },
+    {
+     "name": "칠성)핫식스더킹아이스피치제로355ml",
+     "metric": "676만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "그린)럭히밥더커진떡볶이삼각",
+     "metric": "1187만"
+    },
+    {
+     "name": "삼립)개굴닌자밀키소다롤85g",
+     "metric": "296만"
+    },
+    {
+     "name": "빙그레)따옴바키위75ml",
+     "metric": "256만"
+    }
+   ]
+  },
+  "시즌": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 54%가 성공(평균 24%의 2.3배) · 넣으면 성공확률 +2.6%p [강증거]",
+   "n_succ": 112,
+   "n_fail": 96,
+   "succ": [
+    {
+     "name": "KBO)롯데자이언츠거인단팥빵100g",
+     "metric": "2807만"
+    },
+    {
+     "name": "롯데)저당소고기고추장김밥",
+     "metric": "2192만"
+    },
+    {
+     "name": "KBO)롯데자이언츠씨앗호떡빵97g",
+     "metric": "2085만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)미노리키친갓돼지삼각",
+     "metric": "1062만"
+    },
+    {
+     "name": "롯데)베이컨맥앤치즈버거",
+     "metric": "514만"
+    },
+    {
+     "name": "7P)스트롱사와거봉500ml",
+     "metric": "273만"
+    }
+   ]
+  },
+  "시트러스": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 6%만 성공(평균 24% 이하) · 넣으면 성공확률 -6.0%p",
+   "n_succ": 1,
+   "n_fail": 15,
+   "succ": [
+    {
+     "name": "우진)샤또꾸떼16",
+     "metric": "1174만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "아영)파이퍼하이직레어07",
+     "metric": "336만"
+    },
+    {
+     "name": "에이스)시트러스레몬젤리64g",
+     "metric": "61만"
+    },
+    {
+     "name": "디앤피스)볼스핑크자몽",
+     "metric": "11만"
+    }
+   ]
+  },
+  "신라면": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 18% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 3,
+   "n_fail": 14,
+   "succ": [
+    {
+     "name": "쿡인페이퍼)즉석신라면",
+     "metric": "234만"
+    },
+    {
+     "name": "쿡인페이퍼)즉석신라면블랙",
+     "metric": "61만"
+    },
+    {
+     "name": "아리)즉석신라면블랙",
+     "metric": "53만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "농심)신라면슈퍼스타컵",
+     "metric": "142만"
+    },
+    {
+     "name": "농심)신라면스파이시퀸컵",
+     "metric": "132만"
+    },
+    {
+     "name": "농심)신라면햄버거컵",
+     "metric": "96만"
+    }
+   ]
+  },
+  "신선함": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 9%만 성공(평균 24% 이하) · 넣으면 성공확률 -5.3%p",
+   "n_succ": 1,
+   "n_fail": 10,
+   "succ": [
+    {
+     "name": "그린)치킨텐더샌드",
+     "metric": "1602만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "강훈목장수제요거트딸기",
+     "metric": "907좋아요"
+    },
+    {
+     "name": "강훈목장수제요거트블루베리",
+     "metric": "907좋아요"
+    },
+    {
+     "name": "신선가득꿀호떡",
+     "metric": "493좋아요"
+    }
+   ]
+  },
+  "쌀": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 23%만 성공(평균 24% 이하) · 넣으면 성공확률 -5.7%p",
+   "n_succ": 18,
+   "n_fail": 61,
+   "succ": [
+    {
+     "name": "맛제일)오리불고기&왕교자도시락",
+     "metric": "1817만"
+    },
+    {
+     "name": "글로브)밀크쌀과자우유맛56g(미니)",
+     "metric": "238만"
+    },
+    {
+     "name": "글로브)밀크쌀과자메론맛56g(미니)",
+     "metric": "219만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "키다리)소고기쌀국수큰컵",
+     "metric": "227만"
+    },
+    {
+     "name": "오리온)땅콩강정147g",
+     "metric": "152만"
+    },
+    {
+     "name": "고운벗)꽃새우쌀과자100g",
+     "metric": "107만"
+    }
+   ]
+  },
+  "쑥": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 62%가 성공(평균 24%의 2.6배) · 넣으면 성공확률 +6.2%p [강증거]",
+   "n_succ": 5,
+   "n_fail": 3,
+   "succ": [
+    {
+     "name": "삼립)잘익은쑥이야기110g",
+     "metric": "215만"
+    },
+    {
+     "name": "삼립)빚은제주쑥대박찹쌀떡95g",
+     "metric": "194만"
+    },
+    {
+     "name": "삼립)방앗간기정떡(쑥)95g",
+     "metric": "104만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "25수능)빚은찹쌀떡(6입)",
+     "metric": "26만"
+    },
+    {
+     "name": "쑥쑥달콤밤샌드",
+     "metric": "1,345좋아요"
+    },
+    {
+     "name": "즉석포차우동",
+     "metric": "398좋아요"
+    }
+   ]
+  },
+  "쓴맛": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 0%만 성공(평균 24% 이하) · 넣으면 성공확률 -6.7%p",
+   "n_succ": 0,
+   "n_fail": 3,
+   "succ": [],
+   "fail": [
+    {
+     "name": "APP)와일드터키레어브리드750ml",
+     "metric": "142만"
+    },
+    {
+     "name": "동서)콜롬비아나오리지날블랙",
+     "metric": "1300"
+    },
+    {
+     "name": "와이)생드래프트블랙500ml캔",
+     "metric": "295좋아요"
+    }
+   ]
+  },
+  "아몬드": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 35% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 14,
+   "n_fail": 26,
+   "succ": [
+    {
+     "name": "롯데)아몬드빼빼로37g(테디베어)",
+     "metric": "3942만"
+    },
+    {
+     "name": "롯데)아몬드8갑(스키즈25년)",
+     "metric": "1405만"
+    },
+    {
+     "name": "롯데)빼빼로자이언츠기획(2입)",
+     "metric": "818만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "시원)치즈아몬드스낵80g",
+     "metric": "216만"
+    },
+    {
+     "name": "삼립)로만밀아몬드파운드95g",
+     "metric": "96만"
+    },
+    {
+     "name": "매일)로쉐틴T-18",
+     "metric": "95만"
+    }
+   ]
+  },
+  "아사이": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 13%만 성공(평균 24% 이하) · 넣으면 성공확률 -7.3%p",
+   "n_succ": 2,
+   "n_fail": 13,
+   "succ": [
+    {
+     "name": "APP)아사이볼113g",
+     "metric": "7,078좋아요"
+    },
+    {
+     "name": "APP)망고볼113g",
+     "metric": "7,078좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "프루타프루타아사이볼오리지널",
+     "metric": "1,381좋아요"
+    },
+    {
+     "name": "아사이치케아",
+     "metric": "1,193좋아요"
+    },
+    {
+     "name": "라벨리아사이요거트볼",
+     "metric": "1,171좋아요"
+    }
+   ]
+  },
+  "아삭함": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 34% 성공으로 약하나 어디 붙여도 +(92% 캐리어에서 성공확률↑)",
+   "n_succ": 20,
+   "n_fail": 38,
+   "succ": [
+    {
+     "name": "롯데)삼겹살김치볶음밥삼각",
+     "metric": "2380만"
+    },
+    {
+     "name": "롯데)에그마요묵은지김밥",
+     "metric": "2336만"
+    },
+    {
+     "name": "삼립)프리미엄햄에그샌드",
+     "metric": "2297만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)치폴레치킨김밥",
+     "metric": "977만"
+    },
+    {
+     "name": "그린)백묵은지참치유부말이",
+     "metric": "506만"
+    },
+    {
+     "name": "삼립)타코샐러드풀드치킨154g",
+     "metric": "67만"
+    }
+   ]
+  },
+  "알싸함": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 60%가 성공(평균 24%의 2.5배) · 넣으면 성공확률 +7.1%p [보통증거]",
+   "n_succ": 3,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "오리온)포카칩트리플페퍼60g",
+     "metric": "739만"
+    },
+    {
+     "name": "롯데)사천식마파두부덮밥",
+     "metric": "292만"
+    },
+    {
+     "name": "삼립)불고기메밀면샐러드175g",
+     "metric": "221만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "PB)제트콘김와사비맛90g",
+     "metric": "49만"
+    },
+    {
+     "name": "종가)돌산갓김치3kg",
+     "metric": "4만"
+    }
+   ]
+  },
+  "알포트": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 83%가 성공(평균 24%의 3.5배) · 넣으면 성공확률 +7.7%p [강증거]",
+   "n_succ": 5,
+   "n_fail": 1,
+   "succ": [
+    {
+     "name": "스위트)부르봉알포트미니코이베리60g",
+     "metric": "796만"
+    },
+    {
+     "name": "스위트)알포트카카오사브레52g",
+     "metric": "670만"
+    },
+    {
+     "name": "스위트)알포트미니몽블랑초콜릿55g",
+     "metric": "483만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "스위트)알포트미니우지말차55g",
+     "metric": "4500"
+    }
+   ]
+  },
+  "야채": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 35% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 7,
+   "n_fail": 13,
+   "succ": [
+    {
+     "name": "롯데)탱글쏘야&불고기도시락",
+     "metric": "2953만"
+    },
+    {
+     "name": "한도초과)아삭아삭햄야채샌드",
+     "metric": "1929만"
+    },
+    {
+     "name": "삼립)25년생생야채호빵(4입)",
+     "metric": "423만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "그린)반반제육&쏘야도시락",
+     "metric": "655만"
+    },
+    {
+     "name": "롯데)야채크래커83g",
+     "metric": "144만"
+    },
+    {
+     "name": "삼립)야채호빵100g(1입)",
+     "metric": "129만"
+    }
+   ]
+  },
+  "약과": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 11% 성공으로 약하나 어디 붙여도 +(83% 캐리어에서 성공확률↑)",
+   "n_succ": 1,
+   "n_fail": 8,
+   "succ": [
+    {
+     "name": "삼립)초당옥수수미니꿀약과70g",
+     "metric": "167만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "하늘)브라우니약과60g",
+     "metric": "85만"
+    },
+    {
+     "name": "SAMG)하츄핑미니꿀약과90g",
+     "metric": "43만"
+    },
+    {
+     "name": "유앤)미니약과도넛초코18g",
+     "metric": "36만"
+    }
+   ]
+  },
+  "어린이": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 8%만 성공(평균 24% 이하) · 넣으면 성공확률 -2.4%p",
+   "n_succ": 1,
+   "n_fail": 11,
+   "succ": [
+    {
+     "name": "하츄핑라면얼큰소고기맛",
+     "metric": "3,817좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "빙그레)요맘때복숭아70ml",
+     "metric": "258만"
+    },
+    {
+     "name": "빙그레)따옴바키위75ml",
+     "metric": "256만"
+    },
+    {
+     "name": "덴마크)소화가잘되는우유딸기190ml",
+     "metric": "159만"
+    }
+   ]
+  },
+  "어묵": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 36%가 성공(평균 24%의 1.5배) · 넣으면 성공확률 +3.6%p [보통증거]",
+   "n_succ": 20,
+   "n_fail": 35,
+   "succ": [
+    {
+     "name": "롯데)매콤어묵듬뿍김밥",
+     "metric": "1903만"
+    },
+    {
+     "name": "고래사)닭가슴살치즈바80g",
+     "metric": "467만"
+    },
+    {
+     "name": "한성)와일드크래미쉬림프150g",
+     "metric": "313만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "그린)럭히밥떡볶이김밥",
+     "metric": "1548만"
+    },
+    {
+     "name": "동원)어단백피쉬프로틴바두부70g",
+     "metric": "160만"
+    },
+    {
+     "name": "농심)신라면햄버거컵",
+     "metric": "96만"
+    }
+   ]
+  },
+  "얼음": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 60%가 성공(평균 24%의 2.5배) · 넣으면 성공확률 +1.8%p [보통증거]",
+   "n_succ": 3,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "미정)얼음동동물비빔냉면242g",
+     "metric": "114만"
+    },
+    {
+     "name": "미정)얼음동동물냉면245g",
+     "metric": "100만"
+    },
+    {
+     "name": "얼박사",
+     "metric": "4,728좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "PB)꽃모양얼음컵",
+     "metric": "2,739좋아요"
+    },
+    {
+     "name": "수박망고화채컵",
+     "metric": "585좋아요"
+    }
+   ]
+  },
+  "얼큰함": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 25%만 성공(평균 24% 이하) · 넣으면 성공확률 -2.4%p",
+   "n_succ": 3,
+   "n_fail": 9,
+   "succ": [
+    {
+     "name": "PB)중화식얼큰짬뽕300g",
+     "metric": "12만"
+    },
+    {
+     "name": "빵빵이의얼큰포장마차어묵국수",
+     "metric": "4,572좋아요"
+    },
+    {
+     "name": "하츄핑라면얼큰소고기맛",
+     "metric": "3,817좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)얼큰온면192g",
+     "metric": "54만"
+    },
+    {
+     "name": "풀무원)얼큰순두부찌개KIT",
+     "metric": "4600"
+    },
+    {
+     "name": "얼큰추어탕",
+     "metric": "1,161좋아요"
+    }
+   ]
+  },
+  "에스프레소": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 8%만 성공(평균 24% 이하) · 넣으면 성공확률 -9.4%p",
+   "n_succ": 1,
+   "n_fail": 11,
+   "succ": [
+    {
+     "name": "서울)말차에스프레소200ml",
+     "metric": "538만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "로투스)비스코프에스프레소바",
+     "metric": "4400"
+    },
+    {
+     "name": "KP)펀와인카버네에스프레소250ml",
+     "metric": "3300"
+    },
+    {
+     "name": "밀크믹스프레소프라페",
+     "metric": "2,507좋아요"
+    }
+   ]
+  },
+  "에일": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 57%가 성공(평균 24%의 2.4배) · 넣으면 성공확률 +3.3%p [강증거]",
+   "n_succ": 4,
+   "n_fail": 3,
+   "succ": [
+    {
+     "name": "데이지에일",
+     "metric": "48,252좋아요"
+    },
+    {
+     "name": "데이지에일지드래곤맥주",
+     "metric": "3,558좋아요"
+    },
+    {
+     "name": "히타치노네스트",
+     "metric": "3,491좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "지드래곤맥주데이지에일",
+     "metric": "2,843좋아요"
+    },
+    {
+     "name": "데이지에일4캔기획패키지",
+     "metric": "1,315좋아요"
+    },
+    {
+     "name": "G-DRAGONwith데이지에일골든에일",
+     "metric": "1,224좋아요"
+    }
+   ]
+  },
+  "여유": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 100%가 성공(평균 24%의 4.2배) · 넣으면 성공확률 +7.9%p [강증거]",
+   "n_succ": 4,
+   "n_fail": 0,
+   "succ": [
+    {
+     "name": "하와이안갈릭쉬림프",
+     "metric": "4,849좋아요"
+    },
+    {
+     "name": "하와이안쉬림프김밥",
+     "metric": "4,849좋아요"
+    },
+    {
+     "name": "하와이안코코넛쉬림프",
+     "metric": "4,849좋아요"
+    }
+   ],
+   "fail": []
+  },
+  "연유": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 30%가 성공(평균 24%의 1.3배) · 넣으면 성공확률 -1.9%p [조건부(IP)]",
+   "n_succ": 3,
+   "n_fail": 7,
+   "succ": [
+    {
+     "name": "PB)돌체라떼320ml",
+     "metric": "629만"
+    },
+    {
+     "name": "그린)초코딸기샌드",
+     "metric": "620만"
+    },
+    {
+     "name": "삼립)미각우유연유카스테라롤128g",
+     "metric": "537만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "서주)망고쏙연유바70ml",
+     "metric": "89만"
+    },
+    {
+     "name": "라벨리)세부망고빙수220ml",
+     "metric": "8685"
+    },
+    {
+     "name": "직납)연유콘",
+     "metric": "1500"
+    }
+   ]
+  },
+  "옐로우": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 8%만 성공(평균 24% 이하) · 넣으면 성공확률 -3.0%p",
+   "n_succ": 1,
+   "n_fail": 11,
+   "succ": [
+    {
+     "name": "PB)노랑노랑바나나우유500ml",
+     "metric": "280만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "언노운)옐로우코드쉬라즈750ml",
+     "metric": "200만"
+    },
+    {
+     "name": "언노운)옐로우코드쇼비뇽블랑750ml",
+     "metric": "141만"
+    },
+    {
+     "name": "언노운)옐로우코드소비뇽블랑187ml",
+     "metric": "67만"
+    }
+   ]
+  },
+  "오뚜기": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 12%만 성공(평균 24% 이하) · 넣으면 성공확률 -3.3%p",
+   "n_succ": 7,
+   "n_fail": 54,
+   "succ": [
+    {
+     "name": "오뚜기)콕콕콕땡초크림파스타",
+     "metric": "1000만"
+    },
+    {
+     "name": "오뚜기)WOW새우진짬뽕컵",
+     "metric": "260만"
+    },
+    {
+     "name": "오뚜기)WOW고기열라면컵",
+     "metric": "248만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "로로멜로아이스브륄레말차",
+     "metric": "2,861좋아요"
+    },
+    {
+     "name": "오뚜기)라면볶이큰컵",
+     "metric": "1,455좋아요"
+    },
+    {
+     "name": "오징어게임달고나쫀득쿠키",
+     "metric": "1,435좋아요"
+    }
+   ]
+  },
+  "오리지널": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 25% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 11,
+   "n_fail": 33,
+   "succ": [
+    {
+     "name": "고운벗)스노우생초코레트오리지널32g",
+     "metric": "486만"
+    },
+    {
+     "name": "롯데)오리지날프랑크90g",
+     "metric": "446만"
+    },
+    {
+     "name": "MH)글렌모렌지오리지널12년350ml",
+     "metric": "445만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "로투스)비스코프샌드오리지널110g",
+     "metric": "170만"
+    },
+    {
+     "name": "롯데)길리안템테이션오리지널(17입)",
+     "metric": "93만"
+    },
+    {
+     "name": "롯데)길리안템테이션오리지널(7입)",
+     "metric": "67만"
+    }
+   ]
+  },
+  "오징어": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 28% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 13,
+   "n_fail": 34,
+   "succ": [
+    {
+     "name": "청정)페스츄리오징어150g",
+     "metric": "235만"
+    },
+    {
+     "name": "삼진)1953어묵순살바80g(오징어맛)",
+     "metric": "213만"
+    },
+    {
+     "name": "한양)꽃보다오징어스키니40g",
+     "metric": "179만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "오뚜기)불오징어볶음면큰컵",
+     "metric": "186만"
+    },
+    {
+     "name": "하림)맛닭가슴살오징어100g",
+     "metric": "182만"
+    },
+    {
+     "name": "하림)오징어초빔면큰컵",
+     "metric": "73만"
+    }
+   ]
+  },
+  "오크": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 15%만 성공(평균 24% 이하) · 넣으면 성공확률 -1.4%p",
+   "n_succ": 5,
+   "n_fail": 29,
+   "succ": [
+    {
+     "name": "신세계)까테나자파타아르헨티노말벡750ml",
+     "metric": "1363만"
+    },
+    {
+     "name": "윌리엄)발베니싱글배럴12년700ml",
+     "metric": "522만"
+    },
+    {
+     "name": "APP)히비키하모니700ml",
+     "metric": "268만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "APP)카발란솔리스트비노바리끄700ml",
+     "metric": "123만"
+    },
+    {
+     "name": "APP)맥캘란 18년 셰리오크",
+     "metric": "49만"
+    },
+    {
+     "name": "골든)카발란디스틸러리셀렉트NO.1",
+     "metric": "41만"
+    }
+   ]
+  },
+  "옥수수": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 28%가 성공(평균 24%의 1.2배) · 넣으면 성공확률 +2.4%p [모델신호]",
+   "n_succ": 15,
+   "n_fail": 39,
+   "succ": [
+    {
+     "name": "그린)불닭콘치즈퐁듀삼각",
+     "metric": "1408만"
+    },
+    {
+     "name": "해태)구운버터옥수수60g",
+     "metric": "613만"
+    },
+    {
+     "name": "PB)자이언츠육각꼬깔콘군옥수수맛134g",
+     "metric": "475만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "훈스)옥수수콘마요빵110g",
+     "metric": "189만"
+    },
+    {
+     "name": "스윗)콘톡톡콤비네이션피자랩105g",
+     "metric": "85만"
+    },
+    {
+     "name": "삼립)해피옥수수소보루빵(3입)",
+     "metric": "77만"
+    }
+   ]
+  },
+  "와사비": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 54%가 성공(평균 24%의 2.3배) · 넣으면 성공확률 -0.2%p [보류]",
+   "n_succ": 7,
+   "n_fail": 6,
+   "succ": [
+    {
+     "name": "그린)새우튀김김밥",
+     "metric": "2712만"
+    },
+    {
+     "name": "롯데)맛장우김밥참치크래미",
+     "metric": "2363만"
+    },
+    {
+     "name": "농심)와사비새우깡70g",
+     "metric": "1315만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "PB)제트콘김와사비맛90g",
+     "metric": "49만"
+    },
+    {
+     "name": "한입)게맛살깡와사비맛30g",
+     "metric": "36만"
+    },
+    {
+     "name": "풀무원)와사비맛무쌈300g",
+     "metric": "1만"
+    }
+   ]
+  },
+  "와인": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 10%만 성공(평균 24% 이하) · 넣으면 성공확률 -9.7%p",
+   "n_succ": 29,
+   "n_fail": 271,
+   "succ": [
+    {
+     "name": "하정우)마키키쇼비뇽블랑750ml",
+     "metric": "1.8억"
+    },
+    {
+     "name": "아영)파이퍼하이직레어퀸에디션",
+     "metric": "7795만"
+    },
+    {
+     "name": "CSR)텍스트북나파까버네에디션750ml",
+     "metric": "5473만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "나라)몬텔레나나파밸리샤도네이750ml",
+     "metric": "909만"
+    },
+    {
+     "name": "비노)콜미레이터스프링시드비올라쉬라즈",
+     "metric": "854만"
+    },
+    {
+     "name": "언노운)드보뀌베D블랑드블랑750ml",
+     "metric": "852만"
+    }
+   ]
+  },
+  "요리": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 18%만 성공(평균 24% 이하) · 넣으면 성공확률 -1.7%p",
+   "n_succ": 3,
+   "n_fail": 14,
+   "succ": [
+    {
+     "name": "CJ)1등급반숙대란2구",
+     "metric": "509만"
+    },
+    {
+     "name": "맛폴리쉬림프알리오올리오",
+     "metric": "6,056좋아요"
+    },
+    {
+     "name": "맛폴리트러플머쉬룸누들",
+     "metric": "4,849좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)얼큰온면192g",
+     "metric": "54만"
+    },
+    {
+     "name": "고래사어묵선물세트善",
+     "metric": "11만"
+    },
+    {
+     "name": "PB)사골떡만둣국194g",
+     "metric": "7만"
+    }
+   ]
+  },
+  "운동": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 12%만 성공(평균 24% 이하) · 넣으면 성공확률 -1.4%p",
+   "n_succ": 3,
+   "n_fail": 23,
+   "succ": [
+    {
+     "name": "남양)테이크핏몬스터초코바나나350ml",
+     "metric": "1441만"
+    },
+    {
+     "name": "롯데)이지프로틴아르기닌(자몽)150g",
+     "metric": "322만"
+    },
+    {
+     "name": "G)차바코코넛워터310ml",
+     "metric": "117만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "하림)오늘단백돌체라떼250ml",
+     "metric": "330만"
+    },
+    {
+     "name": "칠성)핫식스더프로파인애플355ml",
+     "metric": "221만"
+    },
+    {
+     "name": "씨드)리얼닭가슴살칩오리지널30g",
+     "metric": "27만"
+    }
+   ]
+  },
+  "유기농": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 8%만 성공(평균 24% 이하) · 넣으면 성공확률 -3.1%p",
+   "n_succ": 1,
+   "n_fail": 11,
+   "succ": [
+    {
+     "name": "이균말차막걸리",
+     "metric": "3,263좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "비노)콜미레이터스프링시드비올라쉬라즈",
+     "metric": "854만"
+    },
+    {
+     "name": "CSR)아다라스알데아750ml",
+     "metric": "2만"
+    },
+    {
+     "name": "M_떼르드글라스초코",
+     "metric": "4500"
+    }
+   ]
+  },
+  "육수": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 24%만 성공(평균 24% 이하) · 넣으면 성공확률 -3.5%p",
+   "n_succ": 5,
+   "n_fail": 16,
+   "succ": [
+    {
+     "name": "자이언츠)쌔리라빠지락라면",
+     "metric": "362만"
+    },
+    {
+     "name": "쿡인페이퍼)즉석신라면",
+     "metric": "234만"
+    },
+    {
+     "name": "팔도)남자라면큰컵",
+     "metric": "232만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "농심)신라면햄버거컵",
+     "metric": "96만"
+    },
+    {
+     "name": "롯데)진국사골곰탕국밥45g",
+     "metric": "45만"
+    },
+    {
+     "name": "PB)럭히밥사골곰탕꾹밥225g",
+     "metric": "39만"
+    }
+   ]
+  },
+  "육포": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 40% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 4,
+   "n_fail": 6,
+   "succ": [
+    {
+     "name": "코주부)소고기육포튀김50g",
+     "metric": "86만"
+    },
+    {
+     "name": "비첸향골든코인",
+     "metric": "4,232좋아요"
+    },
+    {
+     "name": "비첸향골든코인칠리",
+     "metric": "4,232좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "망곰산더미육포",
+     "metric": "845좋아요"
+    },
+    {
+     "name": "한성)쇠고기육포",
+     "metric": "279좋아요"
+    },
+    {
+     "name": "한성)일품도톰육포",
+     "metric": "279좋아요"
+    }
+   ]
+  },
+  "인절미": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 17% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 4,
+   "n_fail": 20,
+   "succ": [
+    {
+     "name": "G)치로루초코인절미모찌35g",
+     "metric": "671만"
+    },
+    {
+     "name": "롯데)빼빼로인절미팥빙수맛37g",
+     "metric": "613만"
+    },
+    {
+     "name": "405인절미모찌페스트리",
+     "metric": "3,422좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)인절미팥빙수비먹케100g",
+     "metric": "46만"
+    },
+    {
+     "name": "PB)인절미스낵56g",
+     "metric": "41만"
+    },
+    {
+     "name": "해태)찰떡시모나120ml",
+     "metric": "11만"
+    }
+   ]
+  },
+  "입자감": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 0%만 성공(평균 24% 이하) · 넣으면 성공확률 -5.8%p",
+   "n_succ": 0,
+   "n_fail": 3,
+   "succ": [],
+   "fail": [
+    {
+     "name": "카브루)리얼패션후르츠하이볼355ml캔",
+     "metric": "186만"
+    },
+    {
+     "name": "존쿡)불닭킬바사비엔나140g",
+     "metric": "120만"
+    },
+    {
+     "name": "롯데)의성마늘그릴프랑크350g",
+     "metric": "46만"
+    }
+   ]
+  },
+  "장": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 40% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 14,
+   "n_fail": 21,
+   "succ": [
+    {
+     "name": "한도초과)의성마늘햄&고추장불고기",
+     "metric": "3894만"
+    },
+    {
+     "name": "그린)맛장우맛자랑 반반제육",
+     "metric": "3347만"
+    },
+    {
+     "name": "그린)울진대게딱지장김밥",
+     "metric": "2802만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "굿지앤)직화석쇠고추장불고기150g",
+     "metric": "110만"
+    },
+    {
+     "name": "APP예약)의성마늘햄&고추장불고기",
+     "metric": "72만"
+    },
+    {
+     "name": "APP예약)제육열무비빔밥",
+     "metric": "24만"
+    }
+   ]
+  },
+  "저당": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 34% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 24,
+   "n_fail": 47,
+   "succ": [
+    {
+     "name": "롯데)저당소고기고추장김밥",
+     "metric": "2192만"
+    },
+    {
+     "name": "빙그레)바나나우유무가당240ml",
+     "metric": "1824만"
+    },
+    {
+     "name": "남양)테이크핏몬스터고소한맛350ml",
+     "metric": "1235만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "일동)하이뮨액티브바나나250ml",
+     "metric": "239만"
+    },
+    {
+     "name": "PB)디저트39솔티카라멜우유500ml",
+     "metric": "231만"
+    },
+    {
+     "name": "CJ)더건강한저당닭가슴살데리야끼맛120g",
+     "metric": "186만"
+    }
+   ]
+  },
+  "적당": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 60%가 성공(평균 24%의 2.5배) · 넣으면 성공확률 +0.4%p [보류]",
+   "n_succ": 3,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "오리온)초코송이딸기45g",
+     "metric": "542만"
+    },
+    {
+     "name": "벨리)제주에서온말차크림도넛100g",
+     "metric": "466만"
+    },
+    {
+     "name": "동원)저스트후르츠칵테일822g",
+     "metric": "4만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "APP예약)바싹불고기&함박도시락",
+     "metric": "8만"
+    },
+    {
+     "name": "행사하리보)해피콜라젤리100g",
+     "metric": "2000"
+    }
+   ]
+  },
+  "정식": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 26% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 6,
+   "n_fail": 17,
+   "succ": [
+    {
+     "name": "롯데)안유성명장 마늘갈비정식",
+     "metric": "2152만"
+    },
+    {
+     "name": "롯데)안유성명장 치킨난반정식",
+     "metric": "1860만"
+    },
+    {
+     "name": "APP예약)안유성명장 마늘갈비정식",
+     "metric": "11만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)트러플촉촉함박도시락",
+     "metric": "1558만"
+    },
+    {
+     "name": "롯데)모둠초밥정식",
+     "metric": "272만"
+    },
+    {
+     "name": "예약)한끼연구소 간장불고기정식",
+     "metric": "39만"
+    }
+   ]
+  },
+  "정통": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 40% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 4,
+   "n_fail": 6,
+   "succ": [
+    {
+     "name": "삼립)정통단팥빵85g",
+     "metric": "282만"
+    },
+    {
+     "name": "정통마라탕면",
+     "metric": "3,669좋아요"
+    },
+    {
+     "name": "따끈정통숯불치킨정식",
+     "metric": "3,411좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "풀무원)정통도가니탕500g",
+     "metric": "9900"
+    },
+    {
+     "name": "정통가쓰오우동",
+     "metric": "1,133좋아요"
+    },
+    {
+     "name": "정통얼큰어묵우동",
+     "metric": "1,133좋아요"
+    }
+   ]
+  },
+  "제육": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 13%만 성공(평균 24% 이하) · 넣으면 성공확률 -9.2%p",
+   "n_succ": 6,
+   "n_fail": 40,
+   "succ": [
+    {
+     "name": "그린)맛장우맛자랑 반반제육",
+     "metric": "3347만"
+    },
+    {
+     "name": "총동원)그릴리직화후랑크&제육도시락",
+     "metric": "2945만"
+    },
+    {
+     "name": "롯데)반반김밥_돈까스&제육",
+     "metric": "2475만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "그린)반반제육&쏘야도시락",
+     "metric": "655만"
+    },
+    {
+     "name": "롯데)제육치즈독",
+     "metric": "175만"
+    },
+    {
+     "name": "APP예약)제육열무비빔밥",
+     "metric": "24만"
+    }
+   ]
+  },
+  "조화": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 40% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 8,
+   "n_fail": 12,
+   "succ": [
+    {
+     "name": "롯데)대만식딸기샌드",
+     "metric": "2061만"
+    },
+    {
+     "name": "롯데)스리라차치킨샌드",
+     "metric": "1147만"
+    },
+    {
+     "name": "부창제과)우유니소금크림호두단팥빵110g",
+     "metric": "537만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "이정후)치즈독",
+     "metric": "412만"
+    },
+    {
+     "name": "SAMG)하츄핑비스킷65g",
+     "metric": "179만"
+    },
+    {
+     "name": "PB)솔티스위트팝콘80g",
+     "metric": "147만"
+    }
+   ]
+  },
+  "족발": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 50%가 성공(평균 24%의 2.1배) · 넣으면 성공확률 +1.9%p [보통증거]",
+   "n_succ": 3,
+   "n_fail": 3,
+   "succ": [
+    {
+     "name": "에프투)두레미니족발400g",
+     "metric": "247만"
+    },
+    {
+     "name": "PB)장충동쫄깃한족발265g",
+     "metric": "211만"
+    },
+    {
+     "name": "장충동미니불족발",
+     "metric": "6,310좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "HEYROO순살족발득템",
+     "metric": "534좋아요"
+    },
+    {
+     "name": "HEYROO순살족발득템매콤",
+     "metric": "534좋아요"
+    },
+    {
+     "name": "족발향머릿고기수육",
+     "metric": "530좋아요"
+    }
+   ]
+  },
+  "주스": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 21%가 성공(평균 24%의 0.9배) · 넣으면 성공확률 -0.1%p [보류]",
+   "n_succ": 3,
+   "n_fail": 11,
+   "succ": [
+    {
+     "name": "위드)유니프그린베지주스200ml",
+     "metric": "163만"
+    },
+    {
+     "name": "위드)유니프믹스베리주스200ml",
+     "metric": "160만"
+    },
+    {
+     "name": "G)차바코코넛워터310ml",
+     "metric": "117만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "M_롯데)델몬트포도190ml",
+     "metric": "7000"
+    },
+    {
+     "name": "M_황성주과채습관퍼플190",
+     "metric": "3000"
+    },
+    {
+     "name": "세종)노슈가애디드사과주750ml",
+     "metric": "2800"
+    }
+   ]
+  },
+  "즉석": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 42% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 14,
+   "n_fail": 19,
+   "succ": [
+    {
+     "name": "최강록의진심)지파이",
+     "metric": "323만"
+    },
+    {
+     "name": "쿡인페이퍼)즉석신라면",
+     "metric": "234만"
+    },
+    {
+     "name": "쿡인페이퍼)즉석너구리",
+     "metric": "151만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "쿡인페이퍼)즉석진짬뽕",
+     "metric": "51만"
+    },
+    {
+     "name": "쿡인페이퍼)즉석삼양라면",
+     "metric": "49만"
+    },
+    {
+     "name": "CJ)정희원교수의파로통곡물밥190g*4입",
+     "metric": "30만"
+    }
+   ]
+  },
+  "진함": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 38%가 성공(평균 24%의 1.6배) · 넣으면 성공확률 -0.3%p [보류]",
+   "n_succ": 62,
+   "n_fail": 99,
+   "succ": [
+    {
+     "name": "이스타)도쿠시마라면큰컵",
+     "metric": "1911만"
+    },
+    {
+     "name": "롯데)리얼소프트에그샌드",
+     "metric": "1652만"
+    },
+    {
+     "name": "롯데)빼빼로말차37g(청수당)",
+     "metric": "1531만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)2분삼겹김치찌개",
+     "metric": "951만"
+    },
+    {
+     "name": "시원)치즈아몬드스낵80g",
+     "metric": "216만"
+    },
+    {
+     "name": "매일)멸균초코200ml",
+     "metric": "203만"
+    }
+   ]
+  },
+  "짜장": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 11%만 성공(평균 24% 이하) · 넣으면 성공확률 -5.9%p",
+   "n_succ": 2,
+   "n_fail": 16,
+   "succ": [
+    {
+     "name": "농심)마라짜파게티큰사발",
+     "metric": "441만"
+    },
+    {
+     "name": "초코비의짜장라면",
+     "metric": "4,739좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "하림)볶짜면큰컵",
+     "metric": "78만"
+    },
+    {
+     "name": "오뚜기)오즈키친직화유니짜장",
+     "metric": "28만"
+    },
+    {
+     "name": "팔도)뽀로로짜장컵",
+     "metric": "27만"
+    }
+   ]
+  },
+  "짬뽕": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 25%만 성공(평균 24% 이하) · 넣으면 성공확률 +0.9%p",
+   "n_succ": 5,
+   "n_fail": 15,
+   "succ": [
+    {
+     "name": "오뚜기)컵누들짬뽕맛소컵",
+     "metric": "326만"
+    },
+    {
+     "name": "오뚜기)WOW새우진짬뽕컵",
+     "metric": "260만"
+    },
+    {
+     "name": "PB)이봉원의봉짬뽕224g",
+     "metric": "197만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)소고기짬뽕밥삼각",
+     "metric": "634만"
+    },
+    {
+     "name": "쿡인페이퍼)즉석진짬뽕",
+     "metric": "51만"
+    },
+    {
+     "name": "풀무원)짬뽕몽글순두부450g",
+     "metric": "1만"
+    }
+   ]
+  },
+  "쫀득함": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 36%가 성공(평균 24%의 1.5배) · 넣으면 성공확률 +2.1%p [보통증거]",
+   "n_succ": 101,
+   "n_fail": 181,
+   "succ": [
+    {
+     "name": "그린)더커진짜계치삼각김밥",
+     "metric": "2160만"
+    },
+    {
+     "name": "롯데)매콤어묵듬뿍김밥",
+     "metric": "1903만"
+    },
+    {
+     "name": "그린)더꽉찬돈까스김밥",
+     "metric": "1827만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)미노리키친갓돼지삼각",
+     "metric": "1062만"
+    },
+    {
+     "name": "천하)구카누가필링크래커100g",
+     "metric": "178만"
+    },
+    {
+     "name": "해태)오예스요것이그릭습니다",
+     "metric": "173만"
+    }
+   ]
+  },
+  "찌개": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 0%만 성공(평균 24% 이하) · 넣으면 성공확률 -10.5%p",
+   "n_succ": 0,
+   "n_fail": 23,
+   "succ": [],
+   "fail": [
+    {
+     "name": "롯데)2분삼겹김치찌개",
+     "metric": "951만"
+    },
+    {
+     "name": "예소담특포기김치10kg",
+     "metric": "13만"
+    },
+    {
+     "name": "CJ)비비고썰은배추김치1.8kg",
+     "metric": "9만"
+    }
+   ]
+  },
+  "차": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 25% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 5,
+   "n_fail": 15,
+   "succ": [
+    {
+     "name": "자임)유자레몬티245ml ",
+     "metric": "637만"
+    },
+    {
+     "name": "하이트)블랙보리누룽지520ml",
+     "metric": "497만"
+    },
+    {
+     "name": "동서)스타벅스시그니처밀크티325ml",
+     "metric": "442만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "동원)윤곽NINE차500ml",
+     "metric": "267만"
+    },
+    {
+     "name": "웅진)카무트현미차500ml",
+     "metric": "247만"
+    },
+    {
+     "name": "WED)히핏자스민차500ml ",
+     "metric": "67만"
+    }
+   ]
+  },
+  "청": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 0%만 성공(평균 24% 이하) · 넣으면 성공확률 -9.0%p",
+   "n_succ": 0,
+   "n_fail": 3,
+   "succ": [],
+   "fail": [
+    {
+     "name": "조닌프로세코750ml",
+     "metric": "1만"
+    },
+    {
+     "name": "직납)더블더블(청귤)",
+     "metric": "800"
+    },
+    {
+     "name": "1865청뱀띠에디션",
+     "metric": "225좋아요"
+    }
+   ]
+  },
+  "청포도": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 25% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 3,
+   "n_fail": 9,
+   "succ": [
+    {
+     "name": "이노엔)티로그청포도아이스티500ml",
+     "metric": "390만"
+    },
+    {
+     "name": "자임)콜라겐젤리청포도130g",
+     "metric": "137만"
+    },
+    {
+     "name": "뚜또)코코포도210g",
+     "metric": "132만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "APP)뽀므리브뤼로얄750",
+     "metric": "7만"
+    },
+    {
+     "name": "해태)아이스가이청포도200ml",
+     "metric": "2만"
+    },
+    {
+     "name": "롯데)청포도젤리72g",
+     "metric": "9600"
+    }
+   ]
+  },
+  "촉촉": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 47%가 성공(평균 24%의 2.0배) · 넣으면 성공확률 +6.7%p [보통증거]",
+   "n_succ": 125,
+   "n_fail": 141,
+   "succ": [
+    {
+     "name": "롯데)NEW참치마요네즈삼각",
+     "metric": "4061만"
+    },
+    {
+     "name": "한도초과)바싹불고기&함박도시락",
+     "metric": "2872만"
+    },
+    {
+     "name": "그린)더커진짜계치삼각김밥",
+     "metric": "2160만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)트러플촉촉함박도시락",
+     "metric": "1558만"
+    },
+    {
+     "name": "그린)맛장우맛자랑 직화닭갈비",
+     "metric": "1475만"
+    },
+    {
+     "name": "롯데)베스트콤보샌드",
+     "metric": "722만"
+    }
+   ]
+  },
+  "칠리": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 29% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 5,
+   "n_fail": 12,
+   "succ": [
+    {
+     "name": "그린)게맛있는샌드",
+     "metric": "1299만"
+    },
+    {
+     "name": "오리온)눈을감자칠리치즈프라이즈",
+     "metric": "1068만"
+    },
+    {
+     "name": "롯데)칠리불새버거",
+     "metric": "909만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)타코샐러드칠리포크152g",
+     "metric": "43만"
+    },
+    {
+     "name": "APP전용)칠리불새버거",
+     "metric": "3만"
+    },
+    {
+     "name": "찍먹깐쇼새우칩",
+     "metric": "1,776좋아요"
+    }
+   ]
+  },
+  "카레": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 27% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 6,
+   "n_fail": 16,
+   "succ": [
+    {
+     "name": "삼양)푸팟퐁커리불닭볶음면큰컵",
+     "metric": "529만"
+    },
+    {
+     "name": "농심)비29카레맛55g",
+     "metric": "298만"
+    },
+    {
+     "name": "안유성)크림카레우동330g",
+     "metric": "53만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)버터치킨카레덮밥",
+     "metric": "697만"
+    },
+    {
+     "name": "오뚜기)카레크리스피롤약간매운맛55g",
+     "metric": "153만"
+    },
+    {
+     "name": "사조)육식맨커리부어스트80g",
+     "metric": "127만"
+    }
+   ]
+  },
+  "카스타드": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 44%가 성공(평균 24%의 1.9배) · 넣으면 성공확률 +0.1%p [보류]",
+   "n_succ": 4,
+   "n_fail": 5,
+   "succ": [
+    {
+     "name": "엔제이)훈와리스팀케이크카스타드",
+     "metric": "704만"
+    },
+    {
+     "name": "롯데)카스타드고창꿀고구마210g",
+     "metric": "452만"
+    },
+    {
+     "name": "삼립)주종발효카스타드크림빵105g",
+     "metric": "407만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "오리온)카스타드로얄밀크티12입",
+     "metric": "190만"
+    },
+    {
+     "name": "티니핑)반짝핑의카스타드슈크림빵95g",
+     "metric": "130만"
+    },
+    {
+     "name": "롯데)카스타드딸기230g",
+     "metric": "107만"
+    }
+   ]
+  },
+  "카스테라": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 30%가 성공(평균 24%의 1.3배) · 넣으면 성공확률 +2.3%p [모델신호]",
+   "n_succ": 9,
+   "n_fail": 21,
+   "succ": [
+    {
+     "name": "삼립)미각우유연유카스테라롤128g",
+     "metric": "537만"
+    },
+    {
+     "name": "롯데)가나쇼콜라카스테라120g",
+     "metric": "449만"
+    },
+    {
+     "name": "삼립)미각초코카스테라롤128g",
+     "metric": "327만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)프로H.바닐라빈카스테라85g",
+     "metric": "185만"
+    },
+    {
+     "name": "삼립)허쉬초코딸기카스테라85g",
+     "metric": "163만"
+    },
+    {
+     "name": "삼립)시그니처얼그레이카스테라125g",
+     "metric": "161만"
+    }
+   ]
+  },
+  "카이막": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 80%가 성공(평균 24%의 3.4배) · 넣으면 성공확률 +1.5%p [강증거]",
+   "n_succ": 4,
+   "n_fail": 1,
+   "succ": [
+    {
+     "name": "삼립)미각카이막꿀치즈케익100g",
+     "metric": "490만"
+    },
+    {
+     "name": "삼립)카이막크림치즈점보롤225g",
+     "metric": "407만"
+    },
+    {
+     "name": "삼립)카이막꿀크림카스테라95g",
+     "metric": "265만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "서울우유쫀득모찌볼(카이막)",
+     "metric": "1,786좋아요"
+    }
+   ]
+  },
+  "카카오": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 25% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 4,
+   "n_fail": 12,
+   "succ": [
+    {
+     "name": "스위트)알포트카카오사브레52g",
+     "metric": "670만"
+    },
+    {
+     "name": "롯데)프리미엄몽쉘말차딸기432g",
+     "metric": "426만"
+    },
+    {
+     "name": "롯데)드림카카오82% 86g",
+     "metric": "286만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "★몽뜨)벨지안4P세트",
+     "metric": "66만"
+    },
+    {
+     "name": "빙그레)라이언바제로자두맛70ml",
+     "metric": "50만"
+    },
+    {
+     "name": "M_로아커웨하스쿼드라티니다크초",
+     "metric": "2만"
+    }
+   ]
+  },
+  "칼로리": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 8%만 성공(평균 24% 이하) · 넣으면 성공확률 -3.5%p",
+   "n_succ": 1,
+   "n_fail": 12,
+   "succ": [
+    {
+     "name": "칠성)솔의눈제로500ml",
+     "metric": "378만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "농심)누들핏마라탄탄",
+     "metric": "231만"
+    },
+    {
+     "name": "칠성)델몬트사과제로200ml",
+     "metric": "106만"
+    },
+    {
+     "name": "빙그레)라이언바제로자두맛70ml",
+     "metric": "50만"
+    }
+   ]
+  },
+  "캐릭터": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 36% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 4,
+   "n_fail": 7,
+   "succ": [
+    {
+     "name": "CJ)1등급훈제대란2구",
+     "metric": "449만"
+    },
+    {
+     "name": "쿡인페이퍼)즉석신라면",
+     "metric": "234만"
+    },
+    {
+     "name": "천하)골든씨씨쉘250g",
+     "metric": "159만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "천하)골든씨씨쉘125g",
+     "metric": "124만"
+    },
+    {
+     "name": "언노운)옐로우코드쉬라즈187ml",
+     "metric": "57만"
+    },
+    {
+     "name": "APP)간바레오또상 캔 잔세트(캠핑추천)",
+     "metric": "4만"
+    }
+   ]
+  },
+  "캐스크": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 28% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 5,
+   "n_fail": 13,
+   "succ": [
+    {
+     "name": "윌리엄)발베니싱글배럴12년700ml",
+     "metric": "522만"
+    },
+    {
+     "name": "APP)발베니14년캐리비안캐스크700ml",
+     "metric": "253만"
+    },
+    {
+     "name": "윌리엄)발베니16년프렌치오크700",
+     "metric": "194만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "APP)카발란 솔리스트 포트",
+     "metric": "90만"
+    },
+    {
+     "name": "APP)글렌피딕16년 리미티드 에디션700ml",
+     "metric": "89만"
+    },
+    {
+     "name": "칠성)글렌고인12년700ml",
+     "metric": "34만"
+    }
+   ]
+  },
+  "캠핑": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 27%만 성공(평균 24% 이하) · 넣으면 성공확률 -7.1%p",
+   "n_succ": 3,
+   "n_fail": 8,
+   "succ": [
+    {
+     "name": "삼진)1953어묵순살바80g(야채맛)",
+     "metric": "221만"
+    },
+    {
+     "name": "삼진)1953어묵순살바80g(오징어맛)",
+     "metric": "213만"
+    },
+    {
+     "name": "보일라면",
+     "metric": "15,821좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "스윗)콘톡톡콤비네이션피자랩105g",
+     "metric": "85만"
+    },
+    {
+     "name": "롯데)의성마늘그릴프랑크350g",
+     "metric": "46만"
+    },
+    {
+     "name": "한성)비바크부어스트260g*2",
+     "metric": "35만"
+    }
+   ]
+  },
+  "커스터드": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 61%가 성공(평균 24%의 2.6배) · 넣으면 성공확률 +8.1%p [강증거]",
+   "n_succ": 11,
+   "n_fail": 7,
+   "succ": [
+    {
+     "name": "엔제이)훈와리스팀케이크카스타드",
+     "metric": "704만"
+    },
+    {
+     "name": "PKJ)에그푸딩100g",
+     "metric": "441만"
+    },
+    {
+     "name": "삼립)주종발효카스타드크림빵105g",
+     "metric": "407만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)피카츄바닐라롤85g",
+     "metric": "264만"
+    },
+    {
+     "name": "티니핑)반짝핑의카스타드슈크림빵95g",
+     "metric": "130만"
+    },
+    {
+     "name": "405커스터드슈크레",
+     "metric": "2,784좋아요"
+    }
+   ]
+  },
+  "케이크": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 34% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 43,
+   "n_fail": 82,
+   "succ": [
+    {
+     "name": "KBO)기아타이거즈호랑이초코롤85g",
+     "metric": "1536만"
+    },
+    {
+     "name": "우진)PVG에끌라 드 켈케어23",
+     "metric": "943만"
+    },
+    {
+     "name": "KBO)NC다이노스공룡알흑임자컵케익130g",
+     "metric": "747만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "서주)밤티라미수바",
+     "metric": "186만"
+    },
+    {
+     "name": "투데이)무이티케이크마시멜로6입",
+     "metric": "163만"
+    },
+    {
+     "name": "엠즈)쫀득라바녹차케이크80g",
+     "metric": "162만"
+    }
+   ]
+  },
+  "콘": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 25%가 성공(평균 24%의 1.1배) · 넣으면 성공확률 +2.6%p [모델신호]",
+   "n_succ": 18,
+   "n_fail": 53,
+   "succ": [
+    {
+     "name": "맛제일)콘치즈떡갈비김밥",
+     "metric": "2046만"
+    },
+    {
+     "name": "롯데)딸기이즘콘160ml",
+     "metric": "1474만"
+    },
+    {
+     "name": "그린)불닭콘치즈퐁듀삼각",
+     "metric": "1408만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "그린)불닭콘참치유부초밥",
+     "metric": "587만"
+    },
+    {
+     "name": "빙그레)요맘때콘플레인150ml",
+     "metric": "197만"
+    },
+    {
+     "name": "훈스)옥수수콘마요빵110g",
+     "metric": "189만"
+    }
+   ]
+  },
+  "콜라겐": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 100%가 성공(평균 24%의 4.2배) · 넣으면 성공확률 +5.4%p [강증거]",
+   "n_succ": 3,
+   "n_fail": 0,
+   "succ": [
+    {
+     "name": "자임)콜라겐젤리애사비130g",
+     "metric": "165만"
+    },
+    {
+     "name": "자임)콜라겐젤리복숭아130g",
+     "metric": "140만"
+    },
+    {
+     "name": "자임)콜라겐젤리청포도130g",
+     "metric": "137만"
+    }
+   ],
+   "fail": []
+  },
+  "콜라보": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 61%가 성공(평균 24%의 2.6배) · 넣으면 성공확률 +6.0%p [강증거]",
+   "n_succ": 60,
+   "n_fail": 38,
+   "succ": [
+    {
+     "name": "롯데)삼겹살김치볶음밥삼각",
+     "metric": "2380만"
+    },
+    {
+     "name": "맛제일)콘치즈떡갈비김밥",
+     "metric": "2046만"
+    },
+    {
+     "name": "이정후)불고기김치볶음밥삼각",
+     "metric": "1998만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "매일)원데이헤이즐넛190ml",
+     "metric": "227만"
+    },
+    {
+     "name": "농심)신라면슈퍼스타컵",
+     "metric": "142만"
+    },
+    {
+     "name": "삼립)야채호빵100g(1입)",
+     "metric": "129만"
+    }
+   ]
+  },
+  "콩": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 10%만 성공(평균 24% 이하) · 넣으면 성공확률 -4.5%p",
+   "n_succ": 2,
+   "n_fail": 18,
+   "succ": [
+    {
+     "name": "롯데)렌틸콩유부초밥&에그샐러드",
+     "metric": "1205만"
+    },
+    {
+     "name": "찰떡콩떡맘모스",
+     "metric": "3,104좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "APP예약)렌틸콩유부초밥&에그샐러드",
+     "metric": "139만"
+    },
+    {
+     "name": "CJ)정희원교수의파로통곡물밥190g*4입",
+     "metric": "30만"
+    },
+    {
+     "name": "CJ)정희원교수의렌틸콩현미밥190g*4입",
+     "metric": "23만"
+    }
+   ]
+  },
+  "쿠앤크": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 20% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 4,
+   "n_fail": 16,
+   "succ": [
+    {
+     "name": "제스)오레오아이스크림샌드위치110g",
+     "metric": "709만"
+    },
+    {
+     "name": "서울)비요뜨쿠키앤크림131g",
+     "metric": "587만"
+    },
+    {
+     "name": "삼립)따라큐의쿠앤크팡팡80g",
+     "metric": "349만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "빙그레)쿠앤크바말차70ml",
+     "metric": "232만"
+    },
+    {
+     "name": "미성)허쉬쿠앤크라운즈96g",
+     "metric": "172만"
+    },
+    {
+     "name": "끌레도르)파르페쿠앤크",
+     "metric": "132만"
+    }
+   ]
+  },
+  "큐브": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 57%가 성공(평균 24%의 2.4배) · 넣으면 성공확률 +8.2%p [강증거]",
+   "n_succ": 4,
+   "n_fail": 3,
+   "succ": [
+    {
+     "name": "제이탑)큐브쫀득쿠키(초코쿠키)50g",
+     "metric": "568만"
+    },
+    {
+     "name": "제이탑)큐브쫀득쿠키(후르츠)50g",
+     "metric": "377만"
+    },
+    {
+     "name": "롯데)이너프바나나&피넛큐브케이크60g",
+     "metric": "156만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "시원)터프큐브젤리80g",
+     "metric": "106만"
+    },
+    {
+     "name": "삼경)필러즈미스터리큐브46g",
+     "metric": "86만"
+    },
+    {
+     "name": "괌)큐브스테이크볶음밥",
+     "metric": "509좋아요"
+    }
+   ]
+  },
+  "크런키": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 44% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 8,
+   "n_fail": 10,
+   "succ": [
+    {
+     "name": "롯데)크런키8갑(스키즈25년)",
+     "metric": "1074만"
+    },
+    {
+     "name": "롯데)바삭바삭크런키모나카150ml",
+     "metric": "679만"
+    },
+    {
+     "name": "롯데)바삭바삭크런키바80ml",
+     "metric": "420만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "MQ)켈로그크런치넛에너지바40g",
+     "metric": "125만"
+    },
+    {
+     "name": "던_오리온)닥터유프로단백질바크런치미니27P",
+     "metric": "7만"
+    },
+    {
+     "name": "빙그레)초코붕어싸만코150ml",
+     "metric": "4400"
+    }
+   ]
+  },
+  "클래식": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 36%가 성공(평균 24%의 1.5배) · 넣으면 성공확률 +4.4%p [모델신호]",
+   "n_succ": 5,
+   "n_fail": 9,
+   "succ": [
+    {
+     "name": "이정후)더블클래식버거",
+     "metric": "833만"
+    },
+    {
+     "name": "롯데)바삭바삭크런키바80ml",
+     "metric": "420만"
+    },
+    {
+     "name": "매일)원데이클래식라떼190ml",
+     "metric": "323만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "레뱅드)도츠브룻클래식750ml",
+     "metric": "5만"
+    },
+    {
+     "name": "APP전용)이정후더블클래식버거",
+     "metric": "4만"
+    },
+    {
+     "name": "나라)몬테스클래식멜롯750ml",
+     "metric": "3만"
+    }
+   ]
+  },
+  "키링": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 40%가 성공(평균 24%의 1.7배) · 넣으면 성공확률 +5.2%p [보통증거]",
+   "n_succ": 2,
+   "n_fail": 3,
+   "succ": [
+    {
+     "name": "K리그)슛!비타민워터레몬340ml",
+     "metric": "491만"
+    },
+    {
+     "name": "붕어빵스노우메이커키링캔디",
+     "metric": "3,450좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "이탈리안브레인롯키링캔디",
+     "metric": "877좋아요"
+    },
+    {
+     "name": "운세부적키링팝핑캔디",
+     "metric": "350좋아요"
+    },
+    {
+     "name": "유즈유",
+     "metric": "205좋아요"
+    }
+   ]
+  },
+  "킷캣": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 60%가 성공(평균 24%의 2.5배) · 넣으면 성공확률 +0.7%p [보류]",
+   "n_succ": 3,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "네슬레)킷캣청키로투스",
+     "metric": "374만"
+    },
+    {
+     "name": "네슬레)킷캣하트틴",
+     "metric": "210만"
+    },
+    {
+     "name": "네슬레)킷캣산타10입",
+     "metric": "206만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "네슬레)킷캣미니어처밀크",
+     "metric": "143만"
+    },
+    {
+     "name": "네슬레)킷캣대왕청키",
+     "metric": "66만"
+    }
+   ]
+  },
+  "타르트": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 17%만 성공(평균 24% 이하) · 넣으면 성공확률 +0.0%p",
+   "n_succ": 2,
+   "n_fail": 10,
+   "succ": [
+    {
+     "name": "롯데)프리미엄가나레몬치즈타르트",
+     "metric": "249만"
+    },
+    {
+     "name": "삼립)달콤제주감귤타르트45g",
+     "metric": "208만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "엔제이)타쿠미야사과타르트144g",
+     "metric": "109만"
+    },
+    {
+     "name": "엔제이)타쿠미야녹차타르트144g",
+     "metric": "95만"
+    },
+    {
+     "name": "몽뜨)타르트젤리35g",
+     "metric": "80만"
+    }
+   ]
+  },
+  "타우린": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 67%가 성공(평균 24%의 2.8배) · 넣으면 성공확률 +5.4%p [강증거]",
+   "n_succ": 4,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "동아)박카스F120ml10입(판매전용) ",
+     "metric": "2017만"
+    },
+    {
+     "name": "동아)박카스F120ml 20입(판매전용) ",
+     "metric": "1050만"
+    },
+    {
+     "name": "동아)모닝케어프레스온H(간)",
+     "metric": "873만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "현대)에너린250ml",
+     "metric": "100만"
+    },
+    {
+     "name": "에버데이에너지",
+     "metric": "2,638좋아요"
+    }
+   ]
+  },
+  "타코": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 17% 성공으로 약하나 어디 붙여도 +(83% 캐리어에서 성공확률↑)",
+   "n_succ": 2,
+   "n_fail": 10,
+   "succ": [
+    {
+     "name": "오리온)스윙칩고수타코맛50g",
+     "metric": "984만"
+    },
+    {
+     "name": "캐치!티니핑)옥수수타코우동",
+     "metric": "3,026좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)타코샐러드풀드치킨154g",
+     "metric": "67만"
+    },
+    {
+     "name": "삼립)타코샐러드칠리포크152g",
+     "metric": "43만"
+    },
+    {
+     "name": "스노우폭스타코풀밥",
+     "metric": "975좋아요"
+    }
+   ]
+  },
+  "탕": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 18%만 성공(평균 24% 이하) · 넣으면 성공확률 -6.9%p",
+   "n_succ": 7,
+   "n_fail": 32,
+   "succ": [
+    {
+     "name": "농심)감자탕큰사발면",
+     "metric": "1318만"
+    },
+    {
+     "name": "농심)농심라면큰컵",
+     "metric": "592만"
+    },
+    {
+     "name": "PB)박은영셰프의유산슬탕면큰컵",
+     "metric": "389만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "하늘)충칭소면컵",
+     "metric": "128만"
+    },
+    {
+     "name": "롯데)진국사골곰탕국밥45g",
+     "metric": "45만"
+    },
+    {
+     "name": "PB)럭히밥사골곰탕꾹밥225g",
+     "metric": "39만"
+    }
+   ]
+  },
+  "토닉": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 33%가 성공(평균 24%의 1.4배) · 넣으면 성공확률 +2.4%p [모델신호]",
+   "n_succ": 3,
+   "n_fail": 6,
+   "succ": [
+    {
+     "name": "IGIN애플토닉",
+     "metric": "7,958좋아요"
+    },
+    {
+     "name": "달콤토닉",
+     "metric": "4,010좋아요"
+    },
+    {
+     "name": "새콤토닉",
+     "metric": "4,010좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "페르)몽키47 500ml",
+     "metric": "10만"
+    },
+    {
+     "name": "블루레몬우주토닉",
+     "metric": "596좋아요"
+    },
+    {
+     "name": "핑크피치우주토닉",
+     "metric": "596좋아요"
+    }
+   ]
+  },
+  "토마토": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 26% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 12,
+   "n_fail": 34,
+   "succ": [
+    {
+     "name": "오리온)스윙칩고수타코맛50g",
+     "metric": "984만"
+    },
+    {
+     "name": "이정후)함박스테이크김밥",
+     "metric": "683만"
+    },
+    {
+     "name": "삼립)NEW슈퍼슈프림치즈부리또120g",
+     "metric": "446만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "콕콕콕)스파게티김밥",
+     "metric": "1201만"
+    },
+    {
+     "name": "콕콕콕)더커진스파게티삼각",
+     "metric": "1035만"
+    },
+    {
+     "name": "삼양)탱글청크토마토파스타큰컵",
+     "metric": "121만"
+    }
+   ]
+  },
+  "튀김": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 34% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 11,
+   "n_fail": 21,
+   "succ": [
+    {
+     "name": "그린)새우튀김김밥",
+     "metric": "2712만"
+    },
+    {
+     "name": "이정후)멘치카츠&미트홈런볼",
+     "metric": "1942만"
+    },
+    {
+     "name": "오리온)눈을감자칠리치즈프라이즈",
+     "metric": "1068만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "APP예약)3,900매콤닭껍질튀김",
+     "metric": "3만"
+    },
+    {
+     "name": "APP예약)고기(肉)올인원도시락",
+     "metric": "2만"
+    },
+    {
+     "name": "매콤치즈바삭튀김버거",
+     "metric": "2,359좋아요"
+    }
+   ]
+  },
+  "트러플": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 31% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 5,
+   "n_fail": 11,
+   "succ": [
+    {
+     "name": "매크로)레이즈트러플50g",
+     "metric": "370만"
+    },
+    {
+     "name": "해태)자가비핫트러플맛90g",
+     "metric": "288만"
+    },
+    {
+     "name": "써라클)베노프단백질바(트러플피넛)50g",
+     "metric": "143만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)트러플촉촉함박도시락",
+     "metric": "1558만"
+    },
+    {
+     "name": "그린)트러플머쉬룸비프버거",
+     "metric": "529만"
+    },
+    {
+     "name": "삼양)탱글머쉬룸크림파스타큰컵",
+     "metric": "183만"
+    }
+   ]
+  },
+  "트로피컬": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 62%가 성공(평균 24%의 2.6배) · 넣으면 성공확률 +1.3%p [강증거]",
+   "n_succ": 5,
+   "n_fail": 3,
+   "succ": [
+    {
+     "name": "하와이안갈릭쉬림프",
+     "metric": "4,849좋아요"
+    },
+    {
+     "name": "하와이안쉬림프김밥",
+     "metric": "4,849좋아요"
+    },
+    {
+     "name": "하와이안코코넛쉬림프",
+     "metric": "4,849좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "네슬레)프루팁스트로피컬믹스",
+     "metric": "6000"
+    },
+    {
+     "name": "레뱅드)상그리아프리산떼275ml",
+     "metric": "5900"
+    },
+    {
+     "name": "모구모구제로슈가트로피칼딜라이트",
+     "metric": "394좋아요"
+    }
+   ]
+  },
+  "페스츄리": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 55%가 성공(평균 24%의 2.3배) · 넣으면 성공확률 +6.8%p [강증거]",
+   "n_succ": 11,
+   "n_fail": 9,
+   "succ": [
+    {
+     "name": "KBO)삼성라이온즈블루베리패스츄리100g",
+     "metric": "1166만"
+    },
+    {
+     "name": "KBO)홈런배트롤150g",
+     "metric": "463만"
+    },
+    {
+     "name": "딸기키티)딸기크림치즈패스츄리100g",
+     "metric": "383만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "PB)이정후애플패스츄리90g",
+     "metric": "307만"
+    },
+    {
+     "name": "딸기키티)패스츄리딸기샌드",
+     "metric": "258만"
+    },
+    {
+     "name": "삼립)포켓피스화이트슈가패스츄리105g",
+     "metric": "161만"
+    }
+   ]
+  },
+  "페퍼": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 24% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 5,
+   "n_fail": 16,
+   "succ": [
+    {
+     "name": "오리온)포카칩트리플페퍼60g",
+     "metric": "739만"
+    },
+    {
+     "name": "대림)안심닭가슴살(블랙페퍼)100g",
+     "metric": "291만"
+    },
+    {
+     "name": "PB)베이컨매콤크림파스타280g",
+     "metric": "22만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "즉석)블랙페퍼페퍼로니피자세트",
+     "metric": "20만"
+    },
+    {
+     "name": "즉석)블랙페퍼페퍼로니2판세트",
+     "metric": "1만"
+    },
+    {
+     "name": "APP전용)빅블랙페퍼마요불고기버거",
+     "metric": "3500"
+    }
+   ]
+  },
+  "편의점": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 14% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 4,
+   "n_fail": 25,
+   "succ": [
+    {
+     "name": "MQ)프링글스스윗어니언100g",
+     "metric": "473만"
+    },
+    {
+     "name": "청정)오징어튀김120g",
+     "metric": "140만"
+    },
+    {
+     "name": "쿡인페이퍼)즉석신라면블랙",
+     "metric": "61만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "빙그레)까페오레75ml",
+     "metric": "129만"
+    },
+    {
+     "name": "포천이동소갈비2kg(4팩)",
+     "metric": "79만"
+    },
+    {
+     "name": "★몽뜨)초코폴러브유",
+     "metric": "53만"
+    }
+   ]
+  },
+  "포도": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 17%만 성공(평균 24% 이하) · 넣으면 성공확률 -6.2%p",
+   "n_succ": 7,
+   "n_fail": 34,
+   "succ": [
+    {
+     "name": "스위트)아이스포도75g",
+     "metric": "960만"
+    },
+    {
+     "name": "훼밀리)포도무케루푸루푸루구미40g",
+     "metric": "325만"
+    },
+    {
+     "name": "마즈)스키틀즈젤리(후르츠믹스)",
+     "metric": "293만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "언노운)옐로우코드쉬라즈750ml",
+     "metric": "200만"
+    },
+    {
+     "name": "동학)빅구슬아이스 포도&파인애플",
+     "metric": "188만"
+    },
+    {
+     "name": "해태)후렌치파이샤인머스캣192g",
+     "metric": "139만"
+    }
+   ]
+  },
+  "폭신함": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 75%가 성공(평균 24%의 3.2배) · 넣으면 성공확률 +0.0%p [보류]",
+   "n_succ": 3,
+   "n_fail": 1,
+   "succ": [
+    {
+     "name": "롯데)리얼소프트에그샌드",
+     "metric": "1652만"
+    },
+    {
+     "name": "삼립)시티델리직화그릴모짜렐라버거",
+     "metric": "1116만"
+    },
+    {
+     "name": "더블뚱쿠아즈",
+     "metric": "4,202좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)말랑카우고창꿀고구마158g",
+     "metric": "1,444좋아요"
+    }
+   ]
+  },
+  "프랑스": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 8%만 성공(평균 24% 이하) · 넣으면 성공확률 -3.8%p",
+   "n_succ": 1,
+   "n_fail": 12,
+   "succ": [
+    {
+     "name": "엔제이)메이플시럽팬케익65g",
+     "metric": "245만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "언노운)드보스테노페13",
+     "metric": "21만"
+    },
+    {
+     "name": "레뱅드)부띠노샴페인기라포르주",
+     "metric": "3만"
+    },
+    {
+     "name": "신세계)이기갈꼬뜨뒤론블랑750ml",
+     "metric": "2만"
+    }
+   ]
+  },
+  "프링글스": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 62%가 성공(평균 24%의 2.6배) · 넣으면 성공확률 -0.9%p [보류]",
+   "n_succ": 5,
+   "n_fail": 3,
+   "succ": [
+    {
+     "name": "MQ)프링글스양파맛70g",
+     "metric": "788만"
+    },
+    {
+     "name": "MQ)프링글스스윗어니언100g",
+     "metric": "473만"
+    },
+    {
+     "name": "MQ)프링글스한국식닭강정맛100g",
+     "metric": "336만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "MQ)프링글스구운김맛97g",
+     "metric": "4000"
+    },
+    {
+     "name": "MQ)프링글스양파맛110g",
+     "metric": "1,894좋아요"
+    },
+    {
+     "name": "MQ)프링글스매운맛53g",
+     "metric": "649좋아요"
+    }
+   ]
+  },
+  "피넛": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 24% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 5,
+   "n_fail": 16,
+   "succ": [
+    {
+     "name": "롯데)프리미엄가나밤카라멜68g",
+     "metric": "566만"
+    },
+    {
+     "name": "롯데)프리미엄가나사과피넛버터68g",
+     "metric": "431만"
+    },
+    {
+     "name": "써라클)베노프단백질바(청키초코)50g",
+     "metric": "239만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "투데이)씬피넛버터샌드80g",
+     "metric": "208만"
+    },
+    {
+     "name": "하늘)틴비스피넛133g",
+     "metric": "99만"
+    },
+    {
+     "name": "CJ)밸런스밀프로틴바(피넛버터)34g",
+     "metric": "43만"
+    }
+   ]
+  },
+  "하와이": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 83%가 성공(평균 24%의 3.5배) · 넣으면 성공확률 +12.9%p [강증거]",
+   "n_succ": 10,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "하와이안갈릭쉬림프",
+     "metric": "4,849좋아요"
+    },
+    {
+     "name": "하와이안떠먹는피자",
+     "metric": "4,849좋아요"
+    },
+    {
+     "name": "하와이안로코모코",
+     "metric": "4,849좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "M_돌)파인애플통조림439g",
+     "metric": "7000"
+    },
+    {
+     "name": "직납)블루하와이바",
+     "metric": "600"
+    }
+   ]
+  },
+  "하이볼": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 14%만 성공(평균 24% 이하) · 넣으면 성공확률 -4.2%p",
+   "n_succ": 13,
+   "n_fail": 82,
+   "succ": [
+    {
+     "name": "앙리마티스)와인볼쇼비뇽블랑500ml캔",
+     "metric": "2034만"
+    },
+    {
+     "name": "7P)스트롱사와복숭아500ml",
+     "metric": "1145만"
+    },
+    {
+     "name": "카브루)말차하이볼500ml캔",
+     "metric": "1070만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "7P)스트롱사와거봉500ml",
+     "metric": "273만"
+    },
+    {
+     "name": "카브루)리얼패션후르츠하이볼355ml캔",
+     "metric": "186만"
+    },
+    {
+     "name": "산토리)짐빔하이볼플레인350ml캔",
+     "metric": "162만"
+    }
+   ]
+  },
+  "한돈": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 20% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 2,
+   "n_fail": 8,
+   "succ": [
+    {
+     "name": "PB)한돈햄200g",
+     "metric": "21만"
+    },
+    {
+     "name": "PB)안유성장수회관마늘한돈육포30g",
+     "metric": "3,228좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)트러플촉촉함박도시락",
+     "metric": "1558만"
+    },
+    {
+     "name": "25설)최현석의한돈한우더블치즈함박스테이크",
+     "metric": "7만"
+    },
+    {
+     "name": "APP예약)더꽉찬한돈돈까스김밥",
+     "metric": "8400"
+    }
+   ]
+  },
+  "한정": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 60%가 성공(평균 24%의 2.5배) · 넣으면 성공확률 +10.7%p [강증거]",
+   "n_succ": 102,
+   "n_fail": 69,
+   "succ": [
+    {
+     "name": "롯데)아몬드빼빼로37g(테디베어)",
+     "metric": "3942만"
+    },
+    {
+     "name": "KBO)롯데자이언츠거인단팥빵100g",
+     "metric": "2807만"
+    },
+    {
+     "name": "롯데)저당소고기고추장김밥",
+     "metric": "2192만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)미노리키친갓돼지삼각",
+     "metric": "1062만"
+    },
+    {
+     "name": "롯데)베이컨맥앤치즈버거",
+     "metric": "514만"
+    },
+    {
+     "name": "7P)스트롱사와거봉500ml",
+     "metric": "273만"
+    }
+   ]
+  },
+  "함박": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 22%만 성공(평균 24% 이하) · 넣으면 성공확률 +1.5%p",
+   "n_succ": 4,
+   "n_fail": 14,
+   "succ": [
+    {
+     "name": "한도초과)바싹불고기&함박도시락",
+     "metric": "2872만"
+    },
+    {
+     "name": "롯데)함박&부대볶음 5찬도시락",
+     "metric": "1717만"
+    },
+    {
+     "name": "이정후)함박스테이크김밥",
+     "metric": "683만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "롯데)트러플촉촉함박도시락",
+     "metric": "1558만"
+    },
+    {
+     "name": "APP예약)트러플촉촉함박도시락",
+     "metric": "16만"
+    },
+    {
+     "name": "APP예약)바싹불고기&함박도시락",
+     "metric": "8만"
+    }
+   ]
+  },
+  "핫도그": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 26% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 6,
+   "n_fail": 17,
+   "succ": [
+    {
+     "name": "총동원)통그릴참치핫도그",
+     "metric": "721만"
+    },
+    {
+     "name": "해태)구운양파명랑핫도그맛110g",
+     "metric": "400만"
+    },
+    {
+     "name": "훈스)불고기&소시지핫도그145g",
+     "metric": "235만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "이정후)치즈독",
+     "metric": "412만"
+    },
+    {
+     "name": "롯데)제육치즈독",
+     "metric": "175만"
+    },
+    {
+     "name": "APP예약)이정후치즈독",
+     "metric": "2만"
+    }
+   ]
+  },
+  "해소": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 12%만 성공(평균 24% 이하) · 넣으면 성공확률 -5.3%p",
+   "n_succ": 1,
+   "n_fail": 7,
+   "succ": [
+    {
+     "name": "HK)컨디션스파클링자몽제로100ml",
+     "metric": "392만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "동화)배러푸룬120ml",
+     "metric": "160만"
+    },
+    {
+     "name": "유한)내일N스파클링100ml",
+     "metric": "95만"
+    },
+    {
+     "name": "M_숙취해소간개무량150ml",
+     "metric": "5000"
+    }
+   ]
+  },
+  "향신료": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 0%만 성공(평균 24% 이하) · 넣으면 성공확률 -6.2%p",
+   "n_succ": 0,
+   "n_fail": 4,
+   "succ": [],
+   "fail": [
+    {
+     "name": "한성)비바크부어스트260g*2",
+     "metric": "35만"
+    },
+    {
+     "name": "메타)글렌알라키10cs #9",
+     "metric": "17만"
+    },
+    {
+     "name": "굵게간유자후추",
+     "metric": "500좋아요"
+    }
+   ]
+  },
+  "허브": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 0%만 성공(평균 24% 이하) · 넣으면 성공확률 -7.2%p",
+   "n_succ": 0,
+   "n_fail": 4,
+   "succ": [],
+   "fail": [
+    {
+     "name": "롯데)조이베지5발사믹허브맛50g",
+     "metric": "116만"
+    },
+    {
+     "name": "디앤피스)바카리삼부카",
+     "metric": "4만"
+    },
+    {
+     "name": "APP)롱클라우드 리저브 말보로 소비뇽블랑",
+     "metric": "2만"
+    }
+   ]
+  },
+  "허쉬": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 36% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 9,
+   "n_fail": 16,
+   "succ": [
+    {
+     "name": "서주)허쉬초코탑콘크리미아몬드130ml",
+     "metric": "467만"
+    },
+    {
+     "name": "서주)허쉬초코콘150ml",
+     "metric": "429만"
+    },
+    {
+     "name": "서주)허쉬생초코바90ml",
+     "metric": "399만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)허쉬초코바나나샌드80g",
+     "metric": "179만"
+    },
+    {
+     "name": "미성)허쉬쿠앤크라운즈96g",
+     "metric": "172만"
+    },
+    {
+     "name": "삼립)허쉬초코딸기카스테라85g",
+     "metric": "163만"
+    }
+   ]
+  },
+  "호두": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 32%가 성공(평균 24%의 1.3배) · 넣으면 성공확률 -1.4%p [조건부(IP)]",
+   "n_succ": 6,
+   "n_fail": 13,
+   "succ": [
+    {
+     "name": "부창제과)호두샌드아이스180ml",
+     "metric": "670만"
+    },
+    {
+     "name": "부창제과)우유니소금크림호두단팥빵110g",
+     "metric": "537만"
+    },
+    {
+     "name": "부창제과)호두단팥호빵(3입)",
+     "metric": "221만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)프로H.호두휘낭시에43g",
+     "metric": "109만"
+    },
+    {
+     "name": "APP)호땅6도750ml(4입)",
+     "metric": "1만"
+    },
+    {
+     "name": "대명)뉴케어당플랜아셉틱200ml",
+     "metric": "6800"
+    }
+   ]
+  },
+  "호떡": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 35% 성공으로 약하나 어디 붙여도 +(83% 캐리어에서 성공확률↑)",
+   "n_succ": 6,
+   "n_fail": 11,
+   "succ": [
+    {
+     "name": "KBO)롯데자이언츠씨앗호떡빵97g",
+     "metric": "2085만"
+    },
+    {
+     "name": "롯데)꿀고구마납짝호떡92g",
+     "metric": "371만"
+    },
+    {
+     "name": "삼립)프로H.메밀꿀호떡90g",
+     "metric": "291만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)꿀호떡버거",
+     "metric": "240만"
+    },
+    {
+     "name": "PB)K리그슛!꿀호떡빵97g",
+     "metric": "200만"
+    },
+    {
+     "name": "삼립)마누카꿀호떡90g",
+     "metric": "185만"
+    }
+   ]
+  },
+  "홈런": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 57%가 성공(평균 24%의 2.4배) · 넣으면 성공확률 +0.8%p [보류]",
+   "n_succ": 4,
+   "n_fail": 3,
+   "succ": [
+    {
+     "name": "이정후)멘치카츠&미트홈런볼",
+     "metric": "1942만"
+    },
+    {
+     "name": "이정후)고기폭탄홈런비빔밥",
+     "metric": "1467만"
+    },
+    {
+     "name": "KBO)끝내기홈런미트부리또130g",
+     "metric": "618만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "APP예약)이정후고기폭탄홈런비빔밥",
+     "metric": "4만"
+    },
+    {
+     "name": "KBO홈런배트롤",
+     "metric": "1,764좋아요"
+    },
+    {
+     "name": "초코홈런볼",
+     "metric": "645좋아요"
+    }
+   ]
+  },
+  "화끈함": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 0%만 성공(평균 24% 이하) · 넣으면 성공확률 -4.7%p",
+   "n_succ": 0,
+   "n_fail": 7,
+   "succ": [],
+   "fail": [
+    {
+     "name": "고메소바바치킨레드핫",
+     "metric": "600좋아요"
+    },
+    {
+     "name": "치즈열장추가버거",
+     "metric": "585좋아요"
+    },
+    {
+     "name": "이글이글!불패떡볶이",
+     "metric": "400좋아요"
+    }
+   ]
+  },
+  "화이트": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 13%만 성공(평균 24% 이하) · 넣으면 성공확률 -6.3%p",
+   "n_succ": 11,
+   "n_fail": 75,
+   "succ": [
+    {
+     "name": "하정우)마키키쇼비뇽블랑750ml",
+     "metric": "1.8억"
+    },
+    {
+     "name": "롯데)플럼샤도네이22",
+     "metric": "1398만"
+    },
+    {
+     "name": "크리스탈)더피플스쇼비뇽블랑750ml",
+     "metric": "1042만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "나라)몬텔레나나파밸리샤도네이750ml",
+     "metric": "909만"
+    },
+    {
+     "name": "언노운)드보뀌베D블랑드블랑750ml",
+     "metric": "852만"
+    },
+    {
+     "name": "하이트)머드하우스라파우라쇼비뇽블랑750ml",
+     "metric": "687만"
+    }
+   ]
+  },
+  "황치즈": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 60%가 성공(평균 24%의 2.5배) · 넣으면 성공확률 +1.8%p [보통증거]",
+   "n_succ": 3,
+   "n_fail": 2,
+   "succ": [
+    {
+     "name": "황치즈버터바",
+     "metric": "5,506좋아요"
+    },
+    {
+     "name": "연세우유황치즈맘모스",
+     "metric": "5,048좋아요"
+    },
+    {
+     "name": "황치즈뚱쿠키샌드",
+     "metric": "3,242좋아요"
+    }
+   ],
+   "fail": [
+    {
+     "name": "삼립)미각황치즈호떡90g",
+     "metric": "138만"
+    },
+    {
+     "name": "황치즈버터파이",
+     "metric": "622좋아요"
+    }
+   ]
+  },
+  "회식": {
+   "tag": "mine",
+   "tag_ko": "지뢰(회피)",
+   "why": "실패 신호(회피) · 단 제품의 0%만 성공(평균 24% 이하) · 넣으면 성공확률 -4.9%p",
+   "n_succ": 0,
+   "n_fail": 4,
+   "succ": [],
+   "fail": [
+    {
+     "name": "진짬뽕",
+     "metric": "854좋아요"
+    },
+    {
+     "name": "와이)생스트롱비어500ml캔",
+     "metric": "248좋아요"
+    },
+    {
+     "name": "크러시캔",
+     "metric": "227좋아요"
+    }
+   ]
+  },
+  "후르츠": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 67%가 성공(평균 24%의 2.8배) · 넣으면 성공확률 +2.7%p [강증거]",
+   "n_succ": 12,
+   "n_fail": 6,
+   "succ": [
+    {
+     "name": "K리그)슛!비타민워터믹스후르츠340ml",
+     "metric": "450만"
+    },
+    {
+     "name": "제이탑)큐브쫀득쿠키(후르츠)50g",
+     "metric": "377만"
+    },
+    {
+     "name": "마즈)스키틀즈젤리(후르츠믹스)",
+     "metric": "293만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "빙그레)따옴바패션프루트75ml",
+     "metric": "160만"
+    },
+    {
+     "name": "엔제이)후르츠소르베미니믹스150ml",
+     "metric": "132만"
+    },
+    {
+     "name": "롯데)배비치포비든쇼비뇽블랑750",
+     "metric": "1만"
+    }
+   ]
+  },
+  "후추": {
+   "tag": "매개",
+   "tag_ko": "매개(보편 강화)",
+   "why": "보편 강화제 · 혼자선 단 제품 43% 성공으로 약하나 어디 붙여도 +(100% 캐리어에서 성공확률↑)",
+   "n_succ": 6,
+   "n_fail": 8,
+   "succ": [
+    {
+     "name": "오리온)포카칩트리플페퍼60g",
+     "metric": "739만"
+    },
+    {
+     "name": "오리온)꼬북칩후라이드치킨맛76g",
+     "metric": "377만"
+    },
+    {
+     "name": "대림)안심닭가슴살(블랙페퍼)100g",
+     "metric": "291만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "아리)즉석맵탱흑후추소고기라면",
+     "metric": "44만"
+    },
+    {
+     "name": "쿡인페이퍼)즉석맵탱흑후추소고기라면",
+     "metric": "1만"
+    },
+    {
+     "name": "APP전용)빅블랙페퍼마요불고기버거",
+     "metric": "3500"
+    }
+   ]
+  },
+  "흰": {
+   "tag": "killer",
+   "tag_ko": "성공 키워드",
+   "why": "성공 신호 · 이 속성을 단 제품의 50%가 성공(평균 24%의 2.1배) · 넣으면 성공확률 +6.2%p [보통증거]",
+   "n_succ": 3,
+   "n_fail": 3,
+   "succ": [
+    {
+     "name": "PB)1등급흰우유900ml",
+     "metric": "334만"
+    },
+    {
+     "name": "서울)저지방멸균흰우유200ml",
+     "metric": "310만"
+    },
+    {
+     "name": "서울)멸균흰우유200ml",
+     "metric": "295만"
+    }
+   ],
+   "fail": [
+    {
+     "name": "흰둥이흰국물라면",
+     "metric": "2,809좋아요"
+    },
+    {
+     "name": "서울우유흰우유미니컵",
+     "metric": "1,764좋아요"
+    },
+    {
+     "name": "서울우유",
+     "metric": "679좋아요"
+    }
+   ]
+  }
+ },
  "_meta": {
   "serving_exp": "v2_sweepA",
   "n_trends": 450,
-  "n_networks": 326
+  "n_networks": 326,
+  "n_evidence": 238
  }
 };

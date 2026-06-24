@@ -64,6 +64,8 @@ class ChannelDiff:
     A_diff_pos: np.ndarray     # POS 매출 독점망 (내실화 속성)
     A_diff_insta: np.ndarray   # 인스타 반응 독점망 (카피 속성)
     track: str
+    pos_mask: Optional[np.ndarray] = None      # A_diff_pos 우주 (경유 제품 복원용)
+    insta_mask: Optional[np.ndarray] = None    # A_diff_insta 우주
 
 
 def stage_g2_channel(eng: MDEngine, track: str = "track1") -> ChannelDiff:
@@ -83,7 +85,8 @@ def stage_g2_channel(eng: MDEngine, track: str = "track1") -> ChannelDiff:
         insta_mask = succ & np.isin(src, list(INSTA_SRC))
     A_p = projection_matrix(eng, pos_mask, W)
     A_i = projection_matrix(eng, insta_mask, W)
-    return ChannelDiff(A_p, A_i, np.maximum(0, A_p - A_i), np.maximum(0, A_i - A_p), track)
+    return ChannelDiff(A_p, A_i, np.maximum(0, A_p - A_i), np.maximum(0, A_i - A_p), track,
+                       pos_mask=pos_mask, insta_mask=insta_mask)
 
 
 # ============================================================ Cell 4a 정량 개요
@@ -184,3 +187,26 @@ def top_diff_partners(eng: MDEngine, A_diff: np.ndarray, seed_idx: int, top_k: i
     row[seed_idx] = 0
     order = np.argsort(-row)[:top_k]
     return [(eng.kw_name(int(j)), float(row[j])) for j in order if row[j] > 0]
+
+
+def bridge_product(eng: MDEngine, k1: int, k2: int,
+                   mask: Optional[np.ndarray] = None) -> Optional[tuple]:
+    """K-P-K 경유 제품 Top-1 복원.
+
+    A_diff[k1,k2] = Σ_p W[p,k1]·W[p,k2] (W=has_kw 어텐션 가중) 는 두 키워드가
+    '같은 제품을 공유'해 묶인 것 — 행렬곱이 그 경유 제품 p를 summation으로 합쳐 없앤 상태.
+    기여도 W[p,k1]·W[p,k2] 최대 제품을 되살림. mask(bool, P) 주면 그 우주(예: 성공/POS)로 한정.
+    반환 (p_idx, contrib, product_name) 또는 None (공유 제품 없음).
+    """
+    ei = eng.cache["eidx"][PK_MAIN].numpy()
+    a = eng.cache["att"][_rk(PK_MAIN)]
+    P = eng.cache["P"]
+    w1 = np.zeros(P); w2 = np.zeros(P)
+    m1, m2 = ei[1] == k1, ei[1] == k2
+    np.add.at(w1, ei[0][m1], a[m1])
+    np.add.at(w2, ei[0][m2], a[m2])
+    contrib = w1 * w2
+    if mask is not None:
+        contrib = contrib * mask.astype(float)
+    p = int(np.argmax(contrib))
+    return (p, float(contrib[p]), eng.product_name(p)) if contrib[p] > 0 else None

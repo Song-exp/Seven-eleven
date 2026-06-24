@@ -91,6 +91,8 @@ def build_graph(
     add_2hop_edges: bool = False,
     hop2_kw_min_shared: int = 5,
     hop2_ip_min_shared: int = 2,
+    hop2_kw_idf: bool = False,          # sim_kw를 IDF 가중 공유합으로 구축(일반어 노이즈 제거). True면 min_shared=float τ
+    hop2_kw_idf_tau: float = 1.0,       # IDF 모드 임계(가중 공유합 ≥ τ). 노트북 idf_sim_sweep로 튜닝
     add_via_ip_edges: bool = False,
     add_ipip_kw_edges: bool = False,
     add_trend_kw_edges: bool = False,
@@ -178,16 +180,27 @@ def build_graph(
     if add_2hop_edges:
         import scipy.sparse as sp
 
-        def _hop2(ei, n_dst, min_shared):
+        def _hop2(ei, n_dst, min_shared, idf=None):
+            """공유 dst 수(또는 IDF 가중 공유합) ≥ 임계인 제품쌍을 sim 엣지로.
+
+            idf 주어지면 S = A·diag(idf)·Aᵀ = Σ_{공유 k} idf(k) (일반어는 idf≈0 → 노이즈 제거).
+            """
             r = ei[0].numpy(); c = ei[1].numpy()
             A = sp.csr_matrix((np.ones(len(r), dtype=np.float32), (r, c)),
                               shape=(len(prod_ids), int(n_dst)))
-            S = (A @ A.T).tocoo()
+            Aw = A.multiply(idf[None, :]).tocsr() if idf is not None else A   # 열(키워드) 가중
+            S = (Aw @ A.T).tocoo()
             m = (S.data >= min_shared) & (S.row != S.col)
             return torch.tensor([S.row[m].tolist(), S.col[m].tolist()], dtype=torch.long)
 
+        kw_idf = None
+        if hop2_kw_idf:
+            pk_ei = data["product", "has_kw", "keyword"].edge_index
+            df_k = np.bincount(pk_ei[1].numpy(), minlength=len(kw_ids)).clip(min=1)
+            kw_idf = np.log(float(len(prod_ids)) / df_k).astype(np.float32)     # idf(k)=log(P/df_k)
         data["product", "sim_kw", "product"].edge_index = _hop2(
-            data["product", "has_kw", "keyword"].edge_index, len(kw_ids), hop2_kw_min_shared)
+            data["product", "has_kw", "keyword"].edge_index, len(kw_ids),
+            hop2_kw_idf_tau if hop2_kw_idf else hop2_kw_min_shared, idf=kw_idf)
         data["product", "sim_ip", "product"].edge_index = _hop2(
             data["product", "has_ip", "ip"].edge_index, len(ip_ids), hop2_ip_min_shared)
         drops["sim_kw"] = int(data["product", "sim_kw", "product"].edge_index.size(1))

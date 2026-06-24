@@ -18,6 +18,16 @@ from .engine import MDEngine, PK_MAIN, _rk, norm_id
 from . import tasks as T
 
 
+def _pshort(name: str, n: int = 12) -> str:
+    """제품명 짧게 — 브랜드 접두(`롯데)…`) 제거 + 길이 컷."""
+    name = str(name)
+    if ")" in name:
+        tail = name.split(")")[-1].strip()
+        if tail:
+            name = tail
+    return name[:n] + "…" if len(name) > n else name
+
+
 @dataclass
 class Prescription:
     seed: str
@@ -42,6 +52,8 @@ class MDPrescriptionEngine:
         self.lg = eng.ledger.get(universe) or eng.build_ledger(universe)
         self.A_diff_pos = g2.A_diff_pos
         self.A_diff_insta = g2.A_diff_insta
+        self.pos_mask = getattr(g2, "pos_mask", None)
+        self.insta_mask = getattr(g2, "insta_mask", None)
         self._build_metapath_index()
         self._build_saturation(hin_dir)
         self._load_basket(data_dir)
@@ -146,15 +158,49 @@ class MDPrescriptionEngine:
         # mine 장부 동반도 포함
         return sorted(scored, key=lambda x: x[1])[:top_k]
 
-    # ------------------------------------------------ (F) 실패 컨셉 소생
+    # ------------------------------------------------ (F) 서브넷 내 보강/대체
     def revive(self, concept_kw: List[int], pool: Optional[List[int]] = None, top_k: int = 5) -> List[tuple]:
-        """개입 머신 전수조사: Δprob 극대화하는 단일 보완 키워드."""
-        if pool is None:
-            pool = list(self.lg.killer)
+        """서브넷 내 보강/대체 — 시드 **자신의 메타패스+1hop 이웃** 중 시너지(보완) 상위.
+
+        전역 killer 풀은 '범용 증폭기'로 수렴해 시드 특이성이 사라짐(=무의미). 대신 풀을 시드
+        서브네트워크로 한정하면 후보가 시드마다 달라 차별화가 구조적으로 보장됨. 각 이웃을
+        synergy(margin(k|seed) − margin(k|∅), explain과 동일)로 재랭킹해 '이 컨셉에서 강화/대체할
+        속성'을 제시. pool 주면 그 idx로 추가 필터(예: killer만). 단일 시드 base에서만 의미.
+        """
         base = list(concept_kw)
-        scored = [(self.eng.kw_name(k), round(self.eng.delta_prob(base, add=[k]), 4))
-                  for k in pool if k not in base]
-        return sorted(scored, key=lambda x: -x[1])[:top_k]
+        if len(base) != 1:
+            return []
+        from .subnet import build_subnetwork, synergy_within
+        from .combo import _ConceptCache
+        seed = self.eng.kw_name(base[0])
+        sc = _ConceptCache(self.eng)
+        sn = build_subnetwork(self.eng, seed, sc=sc)
+        if sn.get("error"):
+            return []
+        neigh = [n["label"] for n in sn["nodes"]
+                 if n["id"].startswith("kw:") and not n.get("seed")]
+        if pool is not None:                                  # 선택 필터 (예: killer만)
+            keep = {self.eng.kw_name(k) for k in pool}
+            neigh = [n for n in neigh if n in keep]
+        neigh = [n for n in dict.fromkeys(neigh) if n != seed]
+        if not neigh:
+            return []
+        df = synergy_within(self.eng, seed, neigh, top=top_k, sc=sc)
+        return list(zip(df["keyword"].tolist(), df["synergy"].tolist()))
+
+    # ------------------------------------------------ K-P-K 경유 제품 복원
+    def _bridges(self, seed_idx: int, partners: List[tuple],
+                 mask: Optional[np.ndarray], top_n: int = 4) -> List[tuple]:
+        """표시되는 파트너(top_n) 각각의 경유 제품 Top-1 → [(파트너명, 제품짧은명), ...]."""
+        out = []
+        for name, _ in partners[:top_n]:
+            k2 = self.eng.seed_to_idx(name)
+            if k2 is None:
+                continue
+            br = T.bridge_product(self.eng, seed_idx, k2, mask)
+            if br:
+                out.append((name, _pshort(br[2])))
+        return out
 
     # ------------------------------------------------ 통합 처방
     def get(self, seed: str, top_k: int = 8) -> Prescription:
@@ -179,25 +225,36 @@ class MDPrescriptionEngine:
         supp = int(self.lg.support_succ[idx] + self.lg.support_fail[idx])
         conf = "높음" if supp >= 10 else ("중간" if supp >= 3 else "낮음")
 
-        text = self._render(resolved, verdict, sat, pos, insta, anti, basket, revive, conf, supp)
+        # K-P-K 경유 제품 (파트너 엣지가 실제로 공유한 제품 복원)
+        pos_br = self._bridges(idx, pos, self.pos_mask)
+        insta_br = self._bridges(idx, insta, self.insta_mask)
+
+        text = self._render(resolved, verdict, sat, pos, insta, anti, basket, revive, conf, supp,
+                            pos_br, insta_br)
         return Prescription(seed, resolved, verdict, sat, pos, insta, anti, basket, revive, text, conf)
 
     @staticmethod
-    def _render(seed, verdict, sat, pos, insta, anti, basket, revive, conf="?", supp=0):
+    def _render(seed, verdict, sat, pos, insta, anti, basket, revive, conf="?", supp=0,
+                pos_br=None, insta_br=None):
         pj = lambda lst: ", ".join(k for k, _ in lst[:4]) if lst else "(없음)"
         bj = ", ".join(f"{n}({l})" for _, n, l in basket[:3]) if basket else "(없음)"
+        brj = lambda br: " · ".join(f"{kw}←{prod}" for kw, prod in br) if br else ""
         lines = [
             f"MD님께서 활용하실 '{seed}' 키워드는 성공 특이망 분석 결과 [{verdict}] 대상입니다. "
             f"(포화도: {sat} · 근거 신뢰도: {conf}/지지도 {supp})",
             f"· 함께 조합할 [{pj(pos)}] 속성은 POS 매출 독점망 기반 → 제품 속성으로 내실화하십시오.",
-            f"· [{pj(insta)}] 속성은 인스타 반응 독점망 기반 → 초기 마케팅 카피로 활용하십시오.",
         ]
+        if pos_br:
+            lines.append(f"   ↳ K-P-K 경유 제품: {brj(pos_br)}")
+        lines.append(f"· [{pj(insta)}] 속성은 인스타 반응 독점망 기반 → 초기 마케팅 카피로 활용하십시오.")
+        if insta_br:
+            lines.append(f"   ↳ K-P-K 경유 제품: {brj(insta_br)}")
         if anti:
             lines.append(f"· ⚠ 피해야 할 조합(점수 하락): [{pj(anti)}].")
         if basket:
             lines.append(f"· 🛒 장바구니 보완재(번들 제안): {bj}.")
         if revive:
-            lines.append(f"· 💉 점수 보강이 필요하면 [{pj(revive)}] 추가를 검토하십시오.")
+            lines.append(f"· 💉 서브넷 내 강화/대체(시너지 상위): [{pj(revive)}].")
         return "\n".join(lines)
 
 

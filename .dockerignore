@@ -1,0 +1,12 @@
+# 이미지에 들어갈 것만 남기고 전부 제외 (빌드 컨텍스트·이미지 슬림화)
+*
+!src/
+!Dashboard/
+!serving_assets/
+!requirements-deploy.txt
+
+# 위에서 포함된 폴더 내 불필요물 재제외
+**/__pycache__/
+**/*.pyc
+.env
+.git/
