@@ -1,9 +1,0 @@
-{
-  "mode": "food_only",
-  "rows": 92357,
-  "plotly_available": true,
-  "html_outputs": [
-    "hierarchy_sunburst.html",
-    "hierarchy_treemap.html"
-  ]
-}

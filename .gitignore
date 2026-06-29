@@ -1,17 +1,77 @@
-# Data
+# --- Local agent/worktree artifacts ---
+.claude/worktrees/
+**/.claude/worktrees/
+
+# --- Secrets & local config ---
+.env
+.env.*
+!.env.example
+!**/.env.example
+.envrc
+mcp_config.json
+
+# --- Data & large files ---
 data/
+data/raw/
+data/processed/
+*.parquet
+*.csv
+*.xlsx
+*.zip
+*.pickle
+*.pkl
+*.h5
+*.sql
+*.sqlite
 
-# Virtual environment
-.venv/
-venv/
+# --- Model checkpoints & experiment binaries ---
+checkpoints/
+*.pt
+experiments/results/**/hin_gnn_best.pt
+experiments/results/**/*.parquet
 
-# Python
+# Deployment bundle exception: serving assets are intentionally tracked.
+!serving_assets/
+!serving_assets/**
+
+# Keyword extraction dictionary exception: needed by app/runtime code.
+!src/eval/keyword_extract/data/
+!src/eval/keyword_extract/data/*.csv
+
+# --- EDA, crawling, and generated outputs ---
+eda/outputs_*/
+eda/**/*.png
+eda/**/*.jpg
+eda/**/*.html
+eda/**/*.xlsx
+eda/**/*.csv
+eda/중간발표/
+eda/*.png
+tests/**/*.csv
+tests/**/*.html
+tests/**/*.json
+기말발표/
+중간발표/
+
+# --- Temporary run outputs ---
+temp_*
+_tmp_*
+logs/
+*.log
+.cache/
+.matplotlib/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Python ---
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
 *$py.class
 *.so
 .Python
-env/
 build/
 develop-eggs/
 dist/
@@ -24,47 +84,36 @@ parts/
 sdist/
 var/
 wheels/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
-# Jupyter Notebook
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+python/
+
+# --- Jupyter Notebook ---
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
+# Notebook 용량이 커지는 것을 방지하기 위해 선택적으로 제외 (필요시 주석 처리)
+# *.ipynb
 
-# IDEs
+# --- OS & IDE ---
+.DS_Store
+.DS_Store?
+*.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
 .vscode/
 .idea/
-
-# Config
-mcp_config.json
-eda/seven_trend/.env
-*.DS_Store
-.env
-.env
-
-# Model checkpoints (재현 가능, git 불필요)
-checkpoints/
-*.pt
-
-# Experiment result binaries (재실행으로 재생성 가능)
-experiments/results/**/hin_gnn_best.pt
-experiments/results/**/*.parquet
-
-# 배포 번들(serving_assets)은 추적 — *.pt 전역 무시에서 예외 처리 (Railway 배포 산출물)
-!serving_assets/model/hin_gnn_best.pt
-
-# 시트2 키워드 추출 사전 — `data/` 전역 무시에서 예외 처리 (배포에 필요, 코드와 함께 추적)
-!src/eval/keyword_extract/data/
-!src/eval/keyword_extract/data/*.csv
-
-# EDA 데이터 파생물 및 발표 자료 (비공개)
-eda/**/*.xlsx
-eda/**/*.csv
-eda/중간발표/
-eda/*.png
-eda/sunk_cost_diagnosis.png
-
-# Temporary run outputs
-temp_*
-_tmp_*
+*.swp
+*.swo
