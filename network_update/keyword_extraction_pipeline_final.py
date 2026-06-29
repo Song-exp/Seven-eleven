@@ -191,9 +191,6 @@ SENSORY_CONTEXT_ANCHORS = {
 }
 
 SENSORY_EXCLUDE_STEMS = {
-    # 맛/품질에 대한 일반 평가어는 신규 네트워크 키워드로 명사화하지 않는다.
-    "맛있",
-    "맛나",
     "새롭",
     "다르",
     "진",
@@ -276,6 +273,10 @@ CANDIDATE_PARTICLES = (
     "에",
 )
 
+FOOD_NAME_PARTICLE_EXCEPTIONS = {
+    "용과",
+}
+
 CANDIDATE_BOUNDARY_TERMS = {
     "맛",
     "향",
@@ -296,107 +297,6 @@ CANDIDATE_BOUNDARY_TERMS = {
     "번",
     "펄",
 }
-
-PROPER_NOUN_EVENT_EXACT_TERMS = {
-    "월드컵",
-    "올림픽",
-    "아시안게임",
-    "패럴림픽",
-    "슈퍼볼",
-    "광복절",
-    "현충일",
-    "삼일절",
-    "제헌절",
-    "개천절",
-    "한글날",
-    "국군의날",
-    "근로자의날",
-    "어린이날",
-    "어버이날",
-    "스승의날",
-    "성년의날",
-    "설날",
-    "추석",
-    "크리스마스",
-    "성탄절",
-    "할로윈",
-    "발렌타인데이",
-    "화이트데이",
-    "빼빼로데이",
-    "대선",
-    "총선",
-    "지방선거",
-    "선거일",
-}
-
-PROPER_NOUN_EVENT_SUFFIXES = (
-    # 스포츠/대회
-    "월드컵",
-    "올림픽",
-    "아시안컵",
-    "슈퍼컵",
-    "리그컵",
-    "챔피언스리그",
-    "프리미어리그",
-    "챔피언십",
-    "선수권",
-    "토너먼트",
-    "그랑프리",
-    "마라톤",
-    # 국가/기념 행사
-    "기념식",
-    "선포식",
-    "출범식",
-    "개막식",
-    "폐막식",
-    # 전시/박람/비즈니스 행사
-    "전시회",
-    "특별전",
-    "기획전",
-    "회고전",
-    "사진전",
-    "미술전",
-    "개인전",
-    "아트페어",
-    "비엔날레",
-    "트리엔날레",
-    "박람회",
-    "엑스포",
-    "컨벤션",
-    "컨퍼런스",
-    "포럼",
-    "세미나",
-    "심포지엄",
-    "서밋",
-    "국제회의",
-    "정상회의",
-    "페어",
-    "쇼",
-    "모터쇼",
-    "오토쇼",
-    "게임쇼",
-    "패션쇼",
-    "쇼케이스",
-    "팝업",
-    "팝업스토어",
-    # 공연/문화 행사
-    "페스티벌",
-    "콘서트",
-    "공연",
-    "뮤지컬",
-    "연극제",
-    "오페라",
-    "영화제",
-    "음악제",
-    "가요제",
-    "축제",
-    "위크",
-    "마켓",
-    "퍼레이드",
-    "카니발",
-    "어워즈",
-    "시상식",
-)
 
 WHOLE_CANDIDATE_SUFFIXES = (
     "바이오틱",
@@ -615,6 +515,8 @@ def strip_candidate_particle(text: str) -> str:
     stripped = remove_spaces(text)
     changed = True
     while changed:
+        if stripped in FOOD_NAME_PARTICLE_EXCEPTIONS:
+            break
         changed = False
         for particle in CANDIDATE_PARTICLES:
             if not (len(stripped) > len(particle) and stripped.endswith(particle)):
@@ -636,17 +538,6 @@ def is_fragment_like_candidate(text: str) -> bool:
     if len(compact_text) == 2 and compact_text[1] in {"감", "맛", "향", "식", "층", "길", "수"}:
         return True
     return False
-
-
-def is_proper_noun_event_shape(text: str) -> bool:
-    compact_text = remove_spaces(strip_candidate_particle(text))
-    if not compact_text or is_symbol_only(compact_text):
-        return False
-    if compact_text in PROPER_NOUN_EVENT_EXACT_TERMS:
-        return True
-    if len(compact_text) < 3:
-        return False
-    return any(compact_text.endswith(suffix) for suffix in PROPER_NOUN_EVENT_SUFFIXES)
 
 
 def fuzzy_threshold_for_length(length: int) -> float | None:
@@ -790,7 +681,6 @@ class MDKeywordPipeline:
         evidence.extend(self._attribute_expression_matches(normalized))
         evidence = self._suppress_generic_event_evidence(evidence)
         evidence = self._suppress_contextual_only_evidence(evidence, normalized)
-        evidence = self._suppress_proper_noun_inner_evidence(evidence, normalized)
         final_evidence = self._sentence_ordered_evidence(evidence, normalized)
         candidate_evidence = self._candidate_keywords(normalized, final_evidence)
 
@@ -1334,49 +1224,6 @@ class MDKeywordPipeline:
             if not self._is_contextual_only_noise(ev, text)
         ]
 
-    def _suppress_proper_noun_inner_evidence(
-        self, evidence: list[MatchEvidence], text: str
-    ) -> list[MatchEvidence]:
-        """행사성 고유명사 안의 컵/쇼/축제 같은 조각 키워드는 억제한다."""
-        protected_terms = [
-            remove_spaces(match.group(0))
-            for match in re.finditer(r"[0-9A-Za-z가-힣]+", text)
-            if is_proper_noun_event_shape(match.group(0))
-        ]
-        if not protected_terms:
-            return evidence
-
-        suppress_methods = {
-            "token_exact",
-            "short_keyword_exact",
-            "safe_contains",
-            "compound_token",
-        }
-        filtered: list[MatchEvidence] = []
-        for ev in evidence:
-            if ev.match_method not in suppress_methods:
-                filtered.append(ev)
-                continue
-
-            input_compact = remove_spaces(ev.input_term)
-            keyword_compact = remove_spaces(ev.network_keyword)
-            is_inner_piece = any(
-                (
-                    input_compact
-                    and input_compact != protected
-                    and input_compact in protected
-                )
-                or (
-                    keyword_compact
-                    and keyword_compact != protected
-                    and keyword_compact in protected
-                )
-                for protected in protected_terms
-            )
-            if not is_inner_piece:
-                filtered.append(ev)
-        return filtered
-
     def _is_contextual_only_noise(self, ev: MatchEvidence, text: str) -> bool:
         if ev.network_keyword in SUPPRESSED_OUTPUT_KEYWORDS:
             return True
@@ -1485,15 +1332,6 @@ class MDKeywordPipeline:
         if token in self.stopwords or token in CANDIDATE_EXCLUDE_TERMS:
             return []
 
-        proper_noun_candidate = self._proper_noun_event_candidate(compact_token)
-        if proper_noun_candidate:
-            return [
-                (
-                    proper_noun_candidate,
-                    f"행사성 고유명사 '{token}' 전체를 신규 후보로 보존",
-                )
-            ]
-
         whole_semantic_candidate = self._semantic_whole_candidate(compact_token)
         if whole_semantic_candidate:
             return [
@@ -1556,18 +1394,6 @@ class MDKeywordPipeline:
         if allow_direct_candidate:
             return [(compact_token, "네트워크 의미 축과 함께 등장한 미등록 고유명사/외국어")]
         return []
-
-    def _proper_noun_event_candidate(self, compact_token: str) -> str:
-        whole = strip_candidate_particle(compact_token)
-        if not is_proper_noun_event_shape(whole):
-            return ""
-        if has_digit(whole):
-            return ""
-        if whole in self.stopwords or whole in CANDIDATE_EXCLUDE_TERMS:
-            return ""
-        if self._maps_to_whole_keyword(whole):
-            return ""
-        return whole
 
     def _whole_compound_candidate(
         self,
@@ -1674,12 +1500,9 @@ class MDKeywordPipeline:
             for term, reason in self._candidate_terms_from_token(
                 chunk, allow_direct_candidate=False
             ):
-                if not (
-                    reason.startswith("복합 token")
-                    or reason.startswith("행사성 고유명사")
-                ):
+                if not reason.startswith("복합 token"):
                     continue
-                terms.append((term, chunk, reason))
+                terms.append((term, chunk, f"원문 chunk '{chunk}' 내부의 미등록 의미어"))
         return terms
 
     def _longest_candidate_boundary_at(self, token: str, position: int) -> str | None:
