@@ -61,6 +61,8 @@ def export_v2(model, ctx, metrics: dict, out_dir: str, op: dict) -> str:
     cfg["graph"]["include_offline_copurchase"] = False
     cfg["graph"]["include_quick_copurchase"] = False
     cfg["graph"]["add_basket_comp_edges"] = True
+    cfg["graph"]["hop2_kw_idf"] = ctx["cfg"].get("hop2_kw_idf", False)        # C안 IDF sim_kw (engine 재로드 정합)
+    cfg["graph"]["hop2_kw_idf_tau"] = ctx["cfg"].get("hop2_kw_idf_tau", 1.0)
     cfg["_note"] = "Model v2 sweepA — leak-free 멀티태스크. 서빙 로더는 HINGNNv2+basket_comp 어댑터 필요."
     torch.save({"model": model.state_dict(), "maps": ctx["maps"], "config": cfg},
                os.path.join(out_dir, "hin_gnn_best.pt"))

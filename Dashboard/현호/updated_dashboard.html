@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7-ELEVEN · 신상품 기획 어시스턴트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --surface:#FFFFFF; --surface-2:#F7F8FA;
+  --line:#E8EAED; --line-soft:#EEF0F2;
+  --text:#1F2430; --text-2:#4B5563; --text-3:#9AA0AC; --text-4:#BFC4CC;
+  --green:#16A34A; --green-soft:#22C55E; --green-fill:#EAF8F0; --green-border:#8FE0AD;
+  --red:#EF4444; --orange:#F2994A; --ip:#F59E0B;
+  --radius:14px; --radius-sm:9px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);font-family:'Pretendard','Noto Sans KR',system-ui,sans-serif;font-size:14px;-webkit-font-smoothing:antialiased}
+b{color:var(--text);font-weight:700}
+
+/* ── 헤더 ─────────────────────────────────────── */
+.header{display:flex;align-items:center;gap:18px;padding:18px 32px;border-bottom:1px solid var(--line);background:#fff}
+.brand{display:flex;align-items:center;gap:18px}
+.logo7e{font-family:'Arial Black','Helvetica Neue',Arial,sans-serif;font-weight:900;font-size:27px;font-style:italic;letter-spacing:-1.5px;line-height:1;white-space:nowrap}
+.logo7e .s7{color:#F47216}
+.logo7e .se{color:#1C8A47}
+.logo7e .sn{color:#ED1B2E}
+.logo7e .reg{font-size:9px;vertical-align:super;color:#1C8A47;font-style:normal;margin-left:1px;letter-spacing:0}
+.app-title{font-size:22px;font-weight:800;color:var(--text);letter-spacing:-.4px}
+.head-meta{margin-left:auto;color:var(--text-3);font-size:15px;font-weight:500;white-space:nowrap}
+.head-meta .arrow{margin:0 4px;color:var(--text-4)}
+.head-meta #serving-tag{font-size:12px;margin-left:8px;color:var(--text-4)}
+
+/* ── 시트 전환 ─────────────────────────────────── */
+.sheet-nav{display:flex;align-items:center;gap:8px;padding:14px 32px;border-bottom:1px solid var(--line);background:#fff}
+.sheet-tab{padding:9px 18px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--text-2);font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:.12s}
+.sheet-tab:hover{border-color:var(--green-border);color:var(--green)}
+.sheet-tab.on{background:var(--green-fill);border-color:var(--green-soft);color:var(--green)}
+.sheet-note{margin-left:auto;color:var(--text-3);font-size:12px;font-weight:500}
+.sheet-panel{display:none}
+.sheet-panel.on{display:block}
+
+/* ── 레이아웃 ─────────────────────────────────── */
+.wrap{display:grid;grid-template-columns:300px 1fr;min-height:calc(100vh - 71px)}
+.col-left{padding:26px 24px;border-right:1px solid var(--line)}
+.col-right{padding:26px 32px}
+
+/* ── 좌: 검색 패널 ───────────────────────────── */
+.left-title{font-size:17px;font-weight:800;color:var(--text);margin-bottom:8px;letter-spacing:-.3px}
+.left-sub{font-size:13px;color:var(--text-3);line-height:1.75;margin-bottom:18px}
+.sblock{background:var(--surface-2);border:1px solid var(--line-soft);border-radius:14px;padding:18px;margin-bottom:14px}
+.sblock-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.sblock-title{font-size:14px;font-weight:700;color:var(--text)}
+.sblock-del{font-size:12px;color:var(--text-3);cursor:pointer;border:none;background:none;font-family:inherit}
+.sblock-del:hover{color:var(--red)}
+.trend-row{display:flex;gap:8px}
+.trend-row input{flex:1;min-width:0;padding:9px 12px;border:1px solid var(--line);border-radius:9px;font-size:13px;font-family:inherit;background:#fff;color:var(--text)}
+.trend-row input::placeholder{color:var(--text-4)}
+.trend-row input:focus{outline:none;border-color:var(--green-soft);box-shadow:0 0 0 3px rgba(34,197,94,.12)}
+
+.btn{padding:9px 16px;border:none;border-radius:9px;background:var(--orange);color:#fff;font-weight:700;cursor:pointer;font-size:13px;font-family:inherit;transition:.12s}
+.btn:hover{filter:brightness(1.04)}
+.btn:disabled{opacity:.45;cursor:not-allowed;filter:none}
+.btn.sec{background:var(--green)}
+.btn.ghost{background:none;color:var(--green);border:1px dashed var(--green-border);width:100%;margin:6px 0 12px;padding:11px;border-radius:11px;font-weight:700}
+.btn.ghost:hover{background:var(--green-fill);filter:none}
+#gen-btn{width:100%;padding:13px;border-radius:11px;font-size:14px}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{padding:7px 14px;border:1px solid var(--line);border-radius:18px;font-size:13px;cursor:pointer;background:#fff;color:var(--text-3);font-weight:500;transition:.12s}
+.chip:hover{border-color:var(--green-border);color:var(--green)}
+.chip.on{background:var(--green-fill);border-color:var(--green-soft);color:var(--green);font-weight:600}
+.chip.candidate,.chip.candidate.on{background:#FFF4E8;border-color:#F2994A;color:#C76A1D}
+.chip.locked{background:var(--green-fill);border-color:var(--green-soft);color:var(--green);font-weight:700}
+.chip.dim{opacity:.45;cursor:not-allowed}
+.chip.dim:hover{border-color:var(--line);color:var(--text-3)}
+.sel-count{font-size:11px;color:var(--text-3);margin-top:9px}
+
+/* ── 시트2: 네트워크 키워드 자동 추출 ───────────── */
+.sheet2-wrap{display:grid;grid-template-columns:360px 1fr;min-height:calc(100vh - 126px)}
+.sheet2-left{padding:26px 24px;border-right:1px solid var(--line);background:#fff}
+.sheet2-right{padding:26px 32px;background:#fff}
+.panel-box{background:var(--surface-2);border:1px solid var(--line-soft);border-radius:14px;padding:18px;margin-bottom:14px}
+.panel-box.white{background:#fff;border-color:var(--line)}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:12px;font-weight:700;color:var(--text-2);margin-bottom:6px}
+.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--text);font-family:inherit;font-size:13px;padding:9px 12px}
+.field textarea{min-height:96px;resize:vertical;line-height:1.6}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--green-soft);box-shadow:0 0 0 3px rgba(34,197,94,.12)}
+.file-box{border:1px dashed var(--green-border);border-radius:11px;background:#fff;padding:12px;margin-top:8px}
+.file-box input{font-size:12px;max-width:100%;color:var(--text-2)}
+.help-text{font-size:12px;color:var(--text-3);line-height:1.7;margin-top:8px}
+.sheet2-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.sheet2-actions .btn{width:100%;padding:11px 12px}
+.btn.two-line{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1.2}
+.btn.line{background:#fff;color:var(--green);border:1px solid var(--green-border)}
+.btn.line:hover{background:var(--green-fill);filter:none}
+.btn.redline{background:#fff;color:var(--red);border:1px solid #F8B4B4}
+.btn.redline:hover{background:#FFF1F2;filter:none}
+.upload-status{padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--text-2);font-size:12px;line-height:1.65;margin-top:10px}
+.upload-status b{color:var(--green)}
+.sheet2-left{padding:18px 18px}
+.sheet2-left .left-title{margin-bottom:12px}
+.sheet2-left .panel-box{padding:14px;margin-bottom:10px}
+.sheet2-left .sblock-head{margin-bottom:8px}
+.sheet2-left .field{margin-bottom:9px}
+.sheet2-left .field label{margin-bottom:5px}
+.sheet2-left .field input,.sheet2-left .field textarea,.sheet2-left .field select{padding:8px 10px}
+.sheet2-left .field textarea{min-height:72px}
+.sheet2-left .file-box{padding:9px;margin-top:6px}
+.sheet2-left .help-text{line-height:1.45;margin-top:6px}
+.sheet2-left .upload-status{padding:8px 10px;line-height:1.45;margin-top:8px}
+.sheet2-left .btn{padding:10px 12px}
+.section-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:16px}
+.section-title{font-size:17px;font-weight:800;color:var(--text);letter-spacing:-.3px}
+.section-sub{font-size:13px;color:var(--text-3);line-height:1.75;margin-top:5px}
+.summary-grid{display:flex;align-items:stretch;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.summary-card{width:148px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:12px 14px}
+.summary-card .lab{font-size:11px;color:var(--text-3);font-weight:700;margin-bottom:7px;white-space:nowrap}
+.summary-card .num{font-size:26px;font-weight:800;color:var(--text);line-height:1}
+.summary-card .num.green{color:var(--green)}
+.summary-card .num.orange{color:#C76A1D}
+.review-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.review-toolbar input{width:220px;border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-family:inherit;font-size:13px}
+.review-toolbar select{border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-family:inherit;font-size:13px;background:#fff;color:var(--text)}
+.result-list{display:grid;gap:12px}
+.result-card{border:1px solid var(--line);border-radius:14px;background:#fff;padding:16px 18px}
+.result-head{margin-bottom:12px}
+.product-meta-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:5px}
+.confirm-btn{min-width:84px;padding:5px 10px;font-size:11px}
+.product-title{font-size:15px;font-weight:800;color:var(--text);line-height:1.45}
+.product-meta{font-size:12px;color:var(--text-3)}
+.status-badge{display:inline-flex;align-items:center;border-radius:14px;padding:4px 10px;font-size:11px;font-weight:800;white-space:nowrap}
+.status-badge.ready{background:var(--green-fill);color:var(--green);border:1px solid var(--green-border)}
+.status-badge.wait{background:#FFF4E8;color:#C76A1D;border:1px solid #F6C58D}
+.status-badge.none{background:var(--surface-2);color:var(--text-3);border:1px solid var(--line)}
+.source-label{font-size:12px;color:var(--text-3);font-weight:800;margin:14px 0 8px}
+.source-text{font-size:13px;color:var(--text-2);line-height:1.75;background:var(--surface-2);border:1px solid var(--line-soft);border-radius:10px;padding:10px 12px;margin-bottom:12px}
+.keyword-group{margin-top:10px}
+.keyword-group-title{font-size:12px;color:var(--text-3);font-weight:800;margin-bottom:8px}
+.keyword-chip-row{display:flex;flex-wrap:wrap;gap:8px}
+.result-card .chip{cursor:default}
+.result-card .chip:hover{border-color:inherit;color:inherit}
+.detail-toggle{margin-top:12px;border:1px solid var(--line-soft);border-radius:10px;background:#fff;overflow:hidden}
+.detail-toggle summary{list-style:none;cursor:pointer;padding:10px 12px;font-size:12px;font-weight:800;color:var(--text-2);background:var(--surface-2);display:flex;align-items:center;gap:7px}
+.detail-toggle summary::-webkit-details-marker{display:none}
+.detail-toggle summary::before{content:'▶';display:inline-block;color:var(--green);font-size:10px;transition:transform .12s ease}
+.detail-toggle[open] summary::before{transform:rotate(90deg)}
+.detail-toggle .toggle-state{color:var(--green);font-weight:800}
+.detail-toggle:not([open]) .toggle-state::before{content:'펼치기'}
+.detail-toggle[open] .toggle-state::before{content:'접기'}
+.evidence-table{width:100%;border-collapse:collapse;font-size:12px}
+.evidence-table th,.evidence-table td{border-bottom:1px solid var(--line-soft);padding:8px;text-align:left;vertical-align:top;line-height:1.55}
+.evidence-table th{color:var(--text-3);font-weight:800;background:var(--surface-2)}
+.memo-row{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:12px}
+.memo-row input{border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-family:inherit;font-size:13px}
+.empty-state{border:1px dashed var(--line);border-radius:14px;background:var(--surface-2);padding:70px 20px;text-align:center;color:var(--text-3);line-height:1.8}
+.loading-state{border:1px solid var(--green-border);border-radius:14px;background:linear-gradient(180deg,#EAF8F0 0%,#F4FBF7 100%);padding:74px 20px;text-align:center;color:var(--green);line-height:1.8;font-size:22px;font-weight:800}
+.loading-state .sub{display:block;margin-top:8px;font-size:13px;font-weight:600;color:var(--text-2)}
+
+/* ── 우: 네트워크 패널 ───────────────────────── */
+.right-title{font-size:16px;font-weight:700;color:var(--green);line-height:1.55;margin-bottom:16px;letter-spacing:-.2px}
+.right-title.muted{color:var(--text-3);font-weight:500}
+.right-title.muted b{color:var(--text-2)}
+.right-title b{color:var(--green);font-weight:800}
+
+.mini-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.mtab{padding:8px 16px;border:1px solid var(--line);border-radius:9px;font-size:13px;cursor:pointer;background:#fff;color:var(--text-2);font-weight:500;font-family:inherit;transition:.12s}
+.mtab:hover{border-color:var(--green-border)}
+.mtab.on{background:var(--green-fill);border-color:var(--green-soft);color:var(--green);font-weight:700}
+.mtab.all.on{background:var(--red);border-color:var(--red);color:#fff}
+.mtab.all:hover{border-color:var(--red)}
+
+.insight-card{border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:24px;background:#fff}
+.insight-head{font-size:14px;font-weight:700;color:var(--text);margin-bottom:10px}
+#net-explain{font-size:13.5px;line-height:1.9;color:var(--text-2)}
+#net-explain b{color:var(--text);font-weight:700}
+#net-explain.muted{color:var(--text-3)}
+
+.net-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+.net-title{font-size:16px;font-weight:800;color:var(--text);letter-spacing:-.3px}
+.net-head-right{display:flex;align-items:center;gap:16px}
+.legend{display:flex;align-items:center;gap:14px;font-size:12px;color:var(--text-2)}
+.legend-line{display:flex;align-items:center;gap:6px}
+.legend-line svg{flex:none}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.fs-btn{padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--text-2);font-size:12px;cursor:pointer;font-family:inherit}
+.fs-btn:hover{border-color:var(--green-border);color:var(--green)}
+
+#net-canvas{width:100%;height:640px;border:1px solid var(--line);border-radius:14px;background:#fff;background-image:radial-gradient(var(--line-soft) 1px,transparent 1px);background-size:22px 22px}
+.placeholder{color:var(--text-3);text-align:center;padding:200px 0;font-size:13px}
+
+/* 전체화면: 스테이지(경로바+뷰포트) 전체를 띄움 */
+#net-stage{position:relative}
+#net-stage.fs{position:fixed;inset:0;z-index:1000;background:#fff;padding:14px;display:flex;flex-direction:column}
+#net-stage.fs #net-viewport{flex:1;min-height:0}
+#net-stage.fs #net-canvas{height:100%;border-radius:0}
+
+/* 경로 추적기 */
+#path-tracker{display:none;align-items:center;gap:4px;flex-wrap:wrap;margin-bottom:12px;padding:9px 11px;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius-sm);font-size:12px}
+#path-tracker .pt-lab{color:var(--text-3);font-weight:700;margin-right:4px}
+#path-tracker .pt-node{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:14px;background:#fff;border:1px solid var(--line);font-weight:700}
+#path-tracker .pt-node i{width:8px;height:8px;border-radius:50%}
+#path-tracker .pt-w{color:var(--orange);font-size:11px;font-weight:700;padding:0 2px}
+
+/* 브리핑 패널 */
+#net-viewport{position:relative}
+.brief{position:absolute;top:0;right:0;width:300px;height:100%;background:#fff;border-left:1px solid var(--line);border-radius:0 var(--radius) var(--radius) 0;padding:18px;overflow:auto;box-shadow:-8px 0 20px rgba(0,0,0,.06);font-size:12.5px}
+.brief.hidden{display:none}
+.brief .cls{position:absolute;top:12px;right:14px;cursor:pointer;color:var(--text-3);font-size:15px;line-height:1}
+.brief h4{margin:0 0 3px;font-size:16px;font-weight:800}
+.brief .sub{color:var(--text-3);font-size:12px;margin-bottom:14px;line-height:1.6}
+.brief .sec{font-weight:700;font-size:11.5px;color:var(--text-3);margin:16px 0 8px;letter-spacing:.01em}
+.brief .nb{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--line-soft)}
+.brief .nb:last-child{border-bottom:none}
+.brief .nb .nm{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text)}
+.brief .nb i{width:8px;height:8px;border-radius:50%;flex:none}
+.brief .nb-right{display:flex;align-items:center;gap:7px;flex:none}
+.brief .strength-bar{display:flex;gap:2px}
+.brief .strength-bar span{width:6px;height:9px;border-radius:2px;background:var(--line)}
+.brief .strength-bar span.fill-strong{background:var(--green)}
+.brief .strength-bar span.fill-medium{background:#F59E0B}
+.brief .strength-bar span.fill-weak{background:var(--text-4)}
+.brief .strength-label{font-size:10.5px;font-weight:700;width:30px;text-align:right}
+.brief .strength-label.strong{color:var(--green)}
+.brief .strength-label.medium{color:#F59E0B}
+.brief .strength-label.weak{color:var(--text-3)}
+.brief .empty-note{font-size:12.5px;color:var(--text-3);line-height:1.7;padding:6px 0}
+.brief .row{margin:6px 0;color:var(--text-2);line-height:1.65;font-size:13px}
+.brief .row b{color:var(--text)}
+.brief .tag{display:inline-block;padding:3px 9px;margin:2px 4px 0 0;border-radius:11px;background:var(--surface-2);border:1px solid var(--line);font-size:11.5px;color:var(--text-2)}
+
+@media (max-width:860px){
+  .wrap{grid-template-columns:1fr}
+  .sheet2-wrap{grid-template-columns:1fr}
+  .col-left{border-right:none;border-bottom:1px solid var(--line)}
+  .sheet2-left{border-right:none;border-bottom:1px solid var(--line)}
+  .summary-card{width:calc(50% - 5px)}
+  .head-meta{display:none}
+  .sheet-note{display:none}
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="brand">
+    <div class="logo7e" aria-label="7-ELEVEN"><span class="s7">7</span><span class="se">-ELEVE</span><span class="sn">n</span><span class="reg">&reg;</span></div>
+    <h1 class="app-title">신상품 기획 어시스턴트</h1>
+  </div>
+  <div class="head-meta">2025년 네트워크 기반<span class="arrow">&rarr;</span>2026년 상품 기획 적용<span id="serving-tag"></span></div>
+</header>
+
+<nav class="sheet-nav">
+  <button class="sheet-tab on" data-sheet="sheet1" onclick="switchSheet('sheet1')">신상품 기획 인사이트</button>
+  <button class="sheet-tab" data-sheet="sheet2" onclick="switchSheet('sheet2')">네트워크 업데이트</button>
+  <div class="sheet-note">현재 네트워크 활용과 향후 네트워크 확장을 한 화면에서 관리합니다.</div>
+</nav>
+
+<section id="sheet1" class="sheet-panel on">
+<div class="wrap">
+  <!-- 좌: 검색 블록들 -->
+  <div class="col-left">
+    <div class="left-title">검색어별 트렌드 추론</div>
+    <div class="left-sub">검색어를 추론해 나온 속성 중 출발점을 고르세요. 검색어 추가로 검색어를 여러 개 둘 수 있고, 각 검색어가 시트 탭이 됩니다.</div>
+    <div id="blocks"></div>
+    <button class="btn ghost" onclick="addBlock()">+ 검색어 추가</button>
+    <button class="btn" id="gen-btn" onclick="runNetworks()" disabled>네트워크 생성</button>
+  </div>
+
+  <!-- 우: 네트워크 -->
+  <div class="col-right">
+    <div class="right-title muted" id="right-title">검색어를 추론하고 출발 속성을 선택한 뒤 <b>네트워크 생성</b>을 눌러주세요.</div>
+
+    <div class="mini-tabs" id="mini-tabs"></div>
+
+    <div class="insight-card">
+      <div class="insight-head">📌 AI 요약 인사이트</div>
+      <div id="net-explain" class="muted">출발 속성을 선택하고 네트워크를 생성하면, 검색어들이 공유하는 핵심 속성과 연결 구조 요약이 여기에 표시됩니다.</div>
+    </div>
+
+    <div class="net-head">
+      <div class="net-title">네트워크</div>
+      <div class="net-head-right">
+        <div class="legend">
+          <span><i style="background:var(--green)"></i>속성 키워드</span>
+          <span><i style="background:var(--red)"></i>제품</span>
+          <span><i style="background:var(--ip)"></i>IP</span>
+          <span class="legend-line"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="1" y1="5" x2="21" y2="5" stroke="#5B6270" stroke-width="3.5" stroke-linecap="round"/></svg>선이 굵을수록 연결이 강함</span>
+        </div>
+        <button class="fs-btn" id="fs-btn" onclick="toggleFS()">⛶ 전체화면</button>
+      </div>
+    </div>
+
+    <div id="net-stage">
+      <div id="path-tracker"></div>
+      <div id="net-viewport">
+        <div id="net-canvas"><div class="placeholder">검색어 추론 → 출발점 선택 → 네트워크 생성</div></div>
+        <div id="brief-panel" class="brief hidden"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="sheet2" class="sheet-panel">
+  <div class="sheet2-wrap">
+    <aside class="sheet2-left">
+      <div class="left-title">제품-키워드 자동 추출</div>
+
+      <div class="panel-box">
+        <div class="sblock-head">
+          <span class="sblock-title">단건 입력</span>
+        </div>
+        <div class="field">
+          <label for="single-code">상품코드</label>
+          <input id="single-code" inputmode="numeric" placeholder="예: 123456">
+        </div>
+        <div class="field">
+          <label for="single-name">상품명</label>
+          <input id="single-name" placeholder="예: 딸기초코디저트">
+        </div>
+        <div class="field">
+          <label for="single-desc">상품 설명문</label>
+          <textarea id="single-desc" placeholder="예: 빼빼로데이 시즌 한정 초콜릿 딸기맛 디저트를 출시합니다."></textarea>
+        </div>
+        <button class="btn sec" style="width:100%" onclick="runSingleExtract()">키워드 추출</button>
+      </div>
+
+      <div class="panel-box">
+        <div class="sblock-head">
+          <span class="sblock-title">CSV 파일 업로드</span>
+        </div>
+        <div class="field">
+          <label for="csv-file">신상품 설명서 CSV</label>
+          <div class="file-box">
+            <input id="csv-file" type="file" accept=".csv,text/csv">
+          </div>
+          <div class="help-text">권장 컬럼명: 상품코드, 상품명, 상품 설명문입니다. 기존 영문 컬럼명도 자동으로 인식합니다.</div>
+        </div>
+        <button class="btn sec" style="width:100%" onclick="runCsvExtract()">업로드 파일 추출</button>
+        <div id="csv-status" class="upload-status">아직 업로드된 파일이 없습니다.</div>
+      </div>
+    </aside>
+
+    <main class="sheet2-right">
+      <div class="section-title-row">
+        <div>
+          <div class="section-title">네트워크 키워드 자동 추출</div>
+          <div class="section-sub">백엔드에 지정된 키워드 파일을 기준으로 상품 설명문에서 기존 키워드와 신규 키워드를 자동 추출해 업데이트용 CSV로 저장합니다.</div>
+        </div>
+        <div class="sheet2-actions" style="width:310px;margin-top:0">
+          <button class="btn line two-line" onclick="downloadReviewedCsv()"><span>추출 결과</span><span>CSV 다운로드</span></button>
+          <button class="btn redline" onclick="clearSheet2()">결과 초기화</button>
+        </div>
+      </div>
+
+      <div class="summary-grid">
+        <div class="summary-card"><div class="lab">처리 상품 수</div><div class="num" id="sum-products">0</div></div>
+        <div class="summary-card"><div class="lab">전체 키워드 수</div><div class="num green" id="sum-selected">0</div></div>
+        <div class="summary-card"><div class="lab">기존 키워드</div><div class="num green" id="sum-existing">0</div></div>
+        <div class="summary-card"><div class="lab">신규 키워드</div><div class="num orange" id="sum-candidate">0</div></div>
+      </div>
+
+      <div class="review-toolbar">
+        <input id="review-search" placeholder="상품명 또는 키워드 검색" oninput="renderReviewList()">
+        <select id="review-filter" onchange="renderReviewList()">
+          <option value="all">전체 보기</option>
+          <option value="candidate">신규 키워드 포함</option>
+          <option value="empty">추출 키워드 없음</option>
+        </select>
+      </div>
+
+      <div id="review-list" class="result-list">
+        <div class="empty-state">단건 입력 또는 CSV 업로드로 키워드를 추출하면 상품별 결과가 표시됩니다.</div>
+      </div>
+    </main>
+  </div>
+</section>
+
+<script src="config.js"></script>
+<link rel="stylesheet" href="vendor/vis-network.min.css" />
+<script src="vendor/vis-network.min.js"></script>
+<script>
+const DATA = window.DASHBOARD_DATA || {};
+const API_BASE = window.DASHBOARD_API || 'http://localhost:8000';
+const SHEET2_API_BASE = window.SHEET2_KEYWORD_API || 'http://127.0.0.1:8010';
+const COL = { keyword:'#16A34A', product:'#EF4444', ip:'#F59E0B' };
+let UID = 0;
+const STATE = { blocks:[], view:null };  // blocks: {id,trend,attrs,selected,net}
+const UPDATE_STATE = {
+  rows: [],
+  rawCsvRows: [],
+  dictReady: false,
+  networkKeywords: [],
+  networkSet: new Set(),
+  stopwords: new Set(),
+  allowedEnglish: new Map(),
+  curatedMapping: new Map(),
+};
+
+function switchSheet(sheetId){
+  document.querySelectorAll('.sheet-tab').forEach(btn=>btn.classList.toggle('on', btn.dataset.sheet===sheetId));
+  document.querySelectorAll('.sheet-panel').forEach(panel=>panel.classList.toggle('on', panel.id===sheetId));
+  if(sheetId==='sheet1' && _visNet) setTimeout(()=>{ _visNet.redraw(); _visNet.fit({animation:false}); }, 60);
+}
+
+// ── 시트2: MD 설명문 → 네트워크 키워드 자동 추출 ─────────────────────
+const SAFE_SUFFIXES2 = new Set(['맛','향','풍','식','형','용','류','급','산','넛','칩','바','볼','컵','콘','티','차','빵','번','펄','함','감','와','과','에','의','가','를','을','은','는','이','란','로','으로','도']);
+const CANDIDATE_CONTEXT_ANCHORS2 = new Set(['맛','향','풍미','식감','질감','촉감','목넘김','바디감','텍스처','제형','음료','주스','에이드','스무디','커피','라떼','티','차','탄산','제로','디저트','케이크','빵','쿠키','젤리','초코','초콜릿','아이스크림','요거트','샐러드','도시락','김밥','라면','떡볶이','파스타','버거','샌드위치','스낵','과자','간식','치킨','닭','고기','과일','채소','야채','소스','시즈닝','매운','매콤','어린이날','크리스마스','빼빼로데이','OTT','IP','캐릭터','게임','방송','브랜드','한국','미국','일본','중국','태국','이탈리아','멕시코','멕시칸','프랑스','대만','비건','건강']);
+const SENSORY_CONTEXT_ANCHORS2 = new Set(['식감','질감','촉감','풍미','맛','향','향미','목넘김','바디감','씹는맛','텍스처','제형']);
+const SENSORY_EXCLUDE_STEMS2 = new Set(['새롭','새로','다르','진','은은','산뜻','같','없','있','좋','나쁘','많','적']);
+const SENSORY_CONTEXT_WINDOW2 = 28;
+const EVENT_NORMALIZATION_RULES2 = [
+  {pattern: /(?<![0-9A-Za-z가-힣])(?:11\s*월\s*11\s*일|11\s*[/.\\-]\s*11)(?:을|를|은|는|이|가|에|엔|에는|부터|까지)?(?![0-9A-Za-z가-힣])/g, keyword:'빼빼로데이'},
+  {pattern: /(?<![0-9A-Za-z가-힣])발렌타인\s*(?:데이|시즌)?(?:을|를|은|는|이|가|에|엔|에는|부터|까지)?(?![0-9A-Za-z가-힣])/g, keyword:'발렌타인'},
+  {pattern: /(?<![0-9A-Za-z가-힣])화이트\s*데이\s*(?:시즌)?(?:을|를|은|는|이|가|에|엔|에는|부터|까지)?(?![0-9A-Za-z가-힣])/g, keyword:'화이트데이'},
+];
+const ATTRIBUTE_NORMALIZATION_RULES2 = [
+  {pattern: /(?<![0-9A-Za-z가-힣])미니\s*사이즈(?![0-9A-Za-z가-힣])/g, keyword:'미니'},
+];
+const CONTEXTUAL_ONLY_KEYWORDS2 = new Set(['조리','포장']);
+const SUPPRESSED_OUTPUT_KEYWORDS2 = new Set(['포장']);
+const CONTEXTUAL_KEEP_CUES2 = new Set(['간편','전용','즉석','렌지업','전자레인지용','조리형','패키지']);
+const CONTEXTUAL_CUE_WINDOW2 = 18;
+const CANDIDATE_BOUNDARY_TERMS2 = new Set(['맛','향','풍','식','형','용','류','산','칩','바','볼','컵','콘','티','차','빵','번','펄']);
+const WHOLE_CANDIDATE_SUFFIXES2 = ['바이오틱'];
+const WHOLE_TERMINAL_BOUNDARY_TERMS2 = new Set(['페퍼']);
+const FORMULATION_SUFFIX_TERMS2 = ['드레싱','소스','시럽','마요'];
+const CANDIDATE_EXCLUDE_TERMS2 = new Set(['기획','구성','준비','강조','시청','상황','겨냥','반영','중심','최신','트렌드','출시','상품','제품','신상품','신규','전용','활용','가능','고객','타겟','타깃','컨셉','콘셉트','협업','콜라보','스타일','타입','사이즈','막대','포장','소포장','개별포장','느낌','개발','운영','판매','제안','합니다','입니다','습니다']);
+const CANDIDATE_PARTICLES2 = ['으로서','으로써','에게서','한테서','에서','에게','한테','부터','까지','처럼','보다','으로','로서','로써','이며','이고','이나','이나마','만큼','와','과','의','을','를','은','는','이','가','도','만','로','에'];
+const METHOD_LABELS2 = {
+  event_normalization:'행사 표현 정리',
+  substring_original:'원문 직접 발견',
+  substring_no_space:'공백 제거 후 발견',
+  token_exact:'단어 단위 일치',
+  short_keyword_exact:'짧은 키워드 발견',
+  safe_contains:'맛/향 표현 정리',
+  curated_mapping:'사전 변환 기준 매칭',
+  sensory_normalization:'감각 표현 정리',
+  attribute_normalization:'상품 형태 표현 정리',
+  fuzzy:'오타 보정',
+  compound_token:'복합 단어 분리',
+  candidate:'신규 키워드',
+};
+const METHOD_PRIORITY2 = {event_normalization:1, substring_original:2, substring_no_space:3, token_exact:4, short_keyword_exact:5, safe_contains:6, curated_mapping:7, sensory_normalization:8, attribute_normalization:9, fuzzy:10, compound_token:11, candidate:12};
+
+function normalize2(text){ return String(text??'').replace(/\s+/g,' ').trim(); }
+function compact2(text){ return normalize2(text).replace(/\s+/g,''); }
+function isEnglishOnly2(text){ return /^[A-Za-z]+$/.test(text||''); }
+function hasDigit2(text){ return /\d/.test(text||''); }
+function isSymbolOnly2(text){ return !!text && !/[0-9A-Za-z가-힣]/.test(text); }
+function isFunctionCandidate2(text){ return /^[가-힣]+$/.test(compact2(text)) && /(하게|스럽게|롭게|답게|되게|같이|처럼|하고|하며|하면서|해서|하여|하기|하도록|한다|하는|된다|되는)$/.test(compact2(text)); }
+function isSuppressedDescriptorCandidate2(text){
+  const c=compact2(text);
+  if(!/^[가-힣]+$/.test(c)) return false;
+  const stems=new Set([c]);
+  ['함','감','한','하게','하고','하며','해서','하여','하다'].forEach(suffix=>{
+    if(c.length>suffix.length && c.endsWith(suffix)) stems.add(c.slice(0,-suffix.length));
+  });
+  [...stems].forEach(stem=>{
+    if(stem.endsWith('하') && stem.length>1) stems.add(stem.slice(0,-1));
+  });
+  return [...stems].some(stem=>SENSORY_EXCLUDE_STEMS2.has(stem));
+}
+function isFragmentLikeCandidate2(text){
+  const c=compact2(text);
+  if(!c || !/^[가-힣]+$/.test(c)) return false;
+  if(c.length<2) return true;
+  return c.length===2 && ['감','맛','향','식','층','길','수'].includes(c[1]);
+}
+function hasFinalConsonant2(text){
+  const c=compact2(text);
+  if(!c) return null;
+  const code=c.charCodeAt(c.length-1);
+  if(code<0xAC00 || code>0xD7A3) return null;
+  return ((code-0xAC00)%28)!==0;
+}
+function canStripCandidateParticle2(stem, particle){
+  const finalConsonant=hasFinalConsonant2(stem);
+  if(finalConsonant===null) return true;
+  const consonantParticles=new Set(['이','을','은','과','으로','이며','이고','이나','이나마','으로서','으로써']);
+  const vowelParticles=new Set(['가','를','는','와','로','로서','로써']);
+  if(consonantParticles.has(particle)) return finalConsonant;
+  if(vowelParticles.has(particle)) return !finalConsonant;
+  return true;
+}
+function stripCandidateParticle2(text){
+  let out = compact2(text);
+  let changed = true;
+  while(changed){
+    changed = false;
+    for(const particle of CANDIDATE_PARTICLES2){
+      if(out.length > particle.length && out.endsWith(particle)){
+        const stem = out.slice(0, -particle.length);
+        if(!canStripCandidateParticle2(stem, particle)) continue;
+        out = stem;
+        changed = true;
+        break;
+      }
+    }
+  }
+  return out;
+}
+function csvEscape2(value){ const s=String(value??''); return /[",\n\r]/.test(s) ? `"${s.replace(/"/g,'""')}"` : s; }
+
+function parseCsvText2(text){
+  const rows=[]; let row=[], cell='', quote=false;
+  text = String(text||'').replace(/^\uFEFF/,'');
+  for(let i=0;i<text.length;i++){
+    const ch=text[i], next=text[i+1];
+    if(quote){
+      if(ch==='"' && next==='"'){ cell+='"'; i++; }
+      else if(ch==='"') quote=false;
+      else cell+=ch;
+      continue;
+    }
+    if(ch==='"'){ quote=true; continue; }
+    if(ch===','){ row.push(cell); cell=''; continue; }
+    if(ch==='\n'){ row.push(cell); rows.push(row); row=[]; cell=''; continue; }
+    if(ch==='\r') continue;
+    cell+=ch;
+  }
+  row.push(cell);
+  if(row.some(v=>String(v).trim()!=='')) rows.push(row);
+  if(!rows.length) return [];
+  const headers=rows[0].map(h=>normalize2(h));
+  return rows.slice(1).filter(r=>r.some(v=>normalize2(v))).map(r=>{
+    const obj={};
+    headers.forEach((h,i)=>{ obj[h]=r[i]??''; });
+    return obj;
+  });
+}
+
+function rowsToCsv2(rows, headers){
+  return '\uFEFF' + [headers.join(','), ...rows.map(r=>headers.map(h=>csvEscape2(r[h])).join(','))].join('\n');
+}
+
+function readFileText2(file){
+  return new Promise((resolve,reject)=>{
+    if(!file){ resolve(''); return; }
+    const reader=new FileReader();
+    reader.onload=()=>resolve(String(reader.result||''));
+    reader.onerror=()=>reject(reader.error);
+    reader.readAsText(file, 'utf-8');
+  });
+}
+
+function getColumn2(row, names){
+  const keys=Object.keys(row||{});
+  for(const name of names){
+    const direct=keys.find(k=>k===name);
+    if(direct) return row[direct];
+    const lower=keys.find(k=>k.toLowerCase()===name.toLowerCase());
+    if(lower) return row[lower];
+  }
+  return '';
+}
+
+function keywordColumn2(rows){
+  if(!rows.length) return '';
+  const keys=Object.keys(rows[0]);
+  return keys.find(k=>['Keyword','keyword','키워드','네트워크키워드'].includes(k)) || keys[0];
+}
+
+function mappingColumns2(rows){
+  if(!rows.length) return ['', ''];
+  const keys=Object.keys(rows[0]);
+  const src=keys.find(k=>['NP_INFO_keyword','입력키워드','원문키워드','source','source_keyword'].includes(k)) || keys[0];
+  const tgt=keys.find(k=>['network_keyword','네트워크키워드','매핑키워드','target','target_keyword'].includes(k)) || keys[1] || keys[0];
+  return [src,tgt];
+}
+
+async function tryFetchCsv2(path){
+  try{
+    const res=await fetch(path);
+    if(!res.ok) return [];
+    return parseCsvText2(await res.text());
+  }catch(e){ return []; }
+}
+
+function rebuildDictionary2(){
+  const fromData = [];
+  if(DATA.trendAttrs){
+    Object.values(DATA.trendAttrs).forEach(list => (list||[]).forEach(k=>fromData.push(k)));
+  }
+  if(DATA.networks){
+    Object.values(DATA.networks).forEach(net => (net.nodes||[]).forEach(n=>{ if(n.type==='keyword') fromData.push(n.label); }));
+  }
+  const uniq = [];
+  const seen = new Set();
+  [...UPDATE_STATE.networkKeywords, ...fromData].forEach(k=>{
+    const kw=normalize2(k);
+    if(kw && !seen.has(kw)){ seen.add(kw); uniq.push(kw); }
+  });
+  UPDATE_STATE.networkKeywords = uniq;
+  UPDATE_STATE.networkSet = new Set(uniq);
+  UPDATE_STATE.dictReady = uniq.length > 0;
+  updateDictStatus2();
+}
+
+function updateDictStatus2(){
+  const el=document.getElementById('dict-status');
+  if(!el) return;
+  if(UPDATE_STATE.dictReady){
+    el.innerHTML=`기존 키워드 <b>${UPDATE_STATE.networkKeywords.length.toLocaleString()}</b>개를 사용할 수 있습니다.`;
+  }else{
+    el.innerHTML='지정된 키워드 파일을 읽지 못했습니다. 백엔드 파일 구성을 확인해 주세요.';
+  }
+}
+
+async function initDictionary2(){
+  const kwRows = await tryFetchCsv2('network_keyword_dictionary.csv');
+  const swRows = await tryFetchCsv2('stopword_dictionary.csv');
+  const enRows = await tryFetchCsv2('english_keyword_allowlist.csv');
+  const mpRows = await tryFetchCsv2('output/curated_keyword_mapping.csv');
+
+  if(kwRows.length){
+    const col=keywordColumn2(kwRows);
+    UPDATE_STATE.networkKeywords = kwRows.map(r=>normalize2(r[col])).filter(Boolean);
+  }
+  if(swRows.length){
+    const col=Object.keys(swRows[0]).find(k=>k==='stopword'||k==='불용어') || Object.keys(swRows[0])[0];
+    UPDATE_STATE.stopwords = new Set(swRows.map(r=>normalize2(r[col])).filter(Boolean));
+  }
+  if(enRows.length){
+    const col=Object.keys(enRows[0]).find(k=>k==='keyword'||k==='키워드') || Object.keys(enRows[0])[0];
+    enRows.forEach(r=>{ const kw=normalize2(r[col]); if(kw && isEnglishOnly2(kw)) UPDATE_STATE.allowedEnglish.set(kw.toLowerCase(), kw); });
+  }
+  if(mpRows.length){
+    const [src,tgt]=mappingColumns2(mpRows);
+    mpRows.forEach(r=>{ const s=normalize2(r[src]), t=normalize2(r[tgt]); if(s&&t) UPDATE_STATE.curatedMapping.set(s,t); });
+  }
+  rebuildDictionary2();
+}
+
+function outputKeywords2(){
+  const out = new Set(UPDATE_STATE.networkKeywords);
+  UPDATE_STATE.curatedMapping.forEach(v=>out.add(v));
+  UPDATE_STATE.allowedEnglish.forEach(v=>out.add(v));
+  return [...out].sort((a,b)=>compact2(b).length-compact2(a).length || a.localeCompare(b,'ko'));
+}
+
+function substringKeywords2(){
+  return UPDATE_STATE.networkKeywords
+    .filter(k=>compact2(k).length>=3)
+    .sort((a,b)=>compact2(b).length-compact2(a).length || a.localeCompare(b,'ko'));
+}
+
+function tokenize2(text){
+  return (normalize2(text).match(/[A-Za-z]+|[가-힣A-Za-z0-9]+/g)||[])
+    .map(t=>normalizeToken2(t)).filter(Boolean);
+}
+
+function normalizeToken2(token){
+  token=normalize2(token);
+  if(!token || isSymbolOnly2(token)) return null;
+  if(isEnglishOnly2(token)) return UPDATE_STATE.allowedEnglish.get(token.toLowerCase()) || null;
+  const outSet=new Set(outputKeywords2());
+  if(outSet.has(token)) return token;
+  if(token.length===1 || hasDigit2(token) || UPDATE_STATE.stopwords.has(token)) return null;
+  return token;
+}
+
+function evidence2(inputTerm, keyword, method, detail, confidence=1){
+  return {inputTerm, keyword, method, detail, confidence};
+}
+
+function eventMatches2(text, outSet){
+  const matches=[];
+  EVENT_NORMALIZATION_RULES2.forEach(rule=>{
+    if(!outSet.has(rule.keyword)) return;
+    rule.pattern.lastIndex=0;
+    for(const match of normalize2(text).matchAll(rule.pattern)){
+      matches.push(evidence2(normalize2(match[0]), rule.keyword, 'event_normalization', '행사/시즌 표현을 등록 키워드로 정리', .96));
+    }
+  });
+  return matches;
+}
+
+function shortKeywordMatches2(text){
+  const matches=[];
+  UPDATE_STATE.networkKeywords.filter(k=>compact2(k).length===2).forEach(keyword=>{
+    const pattern=new RegExp(`(?<![0-9A-Za-z가-힣])${keyword.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}(?![0-9A-Za-z가-힣])`);
+    if(pattern.test(text)) matches.push(evidence2(keyword, keyword, 'short_keyword_exact', '짧은 등록 키워드가 독립 표현으로 등장', .97));
+  });
+  return matches;
+}
+
+function filterCoveredSubstrings2(evidence){
+  const methods=new Set(['substring_original','substring_no_space']);
+  const covered=new Set();
+  evidence.filter(ev=>methods.has(ev.method)).forEach(shortEv=>{
+    const short=compact2(shortEv.keyword);
+    evidence.filter(ev=>methods.has(ev.method)).forEach(longEv=>{
+      const long=compact2(longEv.keyword);
+      if(shortEv.keyword!==longEv.keyword && long.length>=4 && long.length>short.length && long.includes(short)) covered.add(shortEv.keyword);
+    });
+  });
+  return evidence.filter(ev=>!(methods.has(ev.method)&&covered.has(ev.keyword)));
+}
+
+function safeContains2(token, outKeywords){
+  for(const keyword of outKeywords){
+    if(keyword.length<2 || token===keyword) continue;
+    if(!token.startsWith(keyword)) continue;
+    const suffix=token.slice(keyword.length);
+    if(SAFE_SUFFIXES2.has(suffix)) return evidence2(token, keyword, 'safe_contains', '맛/향 표현에서 핵심 키워드 발견', .95);
+  }
+  return null;
+}
+
+function similarRatio2(a,b){
+  a=compact2(a); b=compact2(b);
+  const m=a.length, n=b.length;
+  if(!m && !n) return 1;
+  const dp=Array.from({length:m+1},()=>Array(n+1).fill(0));
+  for(let i=0;i<=m;i++) dp[i][0]=i;
+  for(let j=0;j<=n;j++) dp[0][j]=j;
+  for(let i=1;i<=m;i++){
+    for(let j=1;j<=n;j++){
+      dp[i][j]=Math.min(dp[i-1][j]+1, dp[i][j-1]+1, dp[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
+    }
+  }
+  return 1 - dp[m][n] / Math.max(m,n);
+}
+
+function fuzzyThreshold2(len){ if(len<=3) return null; if(len<=5) return .8; if(len<=8) return .85; return .9; }
+
+function fuzzy2(token, outKeywords){
+  const tc=compact2(token), th=fuzzyThreshold2(tc.length);
+  if(th==null || isEnglishOnly2(token)) return null;
+  let best='', score=0;
+  outKeywords.forEach(keyword=>{
+    const kc=compact2(keyword);
+    if(kc.length<3 || tc[0]!==kc[0] || Math.abs(tc.length-kc.length)>1) return;
+    const s=similarRatio2(tc,kc);
+    if(s>score){ best=keyword; score=s; }
+  });
+  return best && score>=th ? evidence2(token,best,'fuzzy','문자열 유사도 기반 오타 보정',Number(score.toFixed(4))) : null;
+}
+
+function compoundMatches2(token, outKeywords){
+  if(token.length<4 || isEnglishOnly2(token)) return [];
+  const tc=compact2(token);
+  const inner=outKeywords.filter(k=>compact2(k).length>=2);
+  const matches=[]; let pos=0;
+  while(pos<tc.length){
+    const kw=inner.find(k=>tc.startsWith(compact2(k),pos));
+    if(!kw) break;
+    const ck=compact2(kw);
+    matches.push(evidence2(tc.slice(pos,pos+ck.length),kw,'compound_token',`복합 token '${token}' 내부에서 네트워크 키워드 분해`,.88));
+    pos+=ck.length;
+  }
+  return matches;
+}
+
+function reduceReduplicatedStem2(stem){
+  if(stem.length<4 || stem.length%2) return stem;
+  const half=stem.length/2;
+  return stem.slice(0,half)===stem.slice(half) ? stem.slice(0,half) : stem;
+}
+
+function sensoryBaseCandidates2(token){
+  const raw=compact2(token);
+  if(!/^[가-힣]+$/.test(raw)) return [];
+  const stems=[];
+  let stripped=false;
+  const endings=['스럽게','스럽고','스럽다','합니다','해요','하고','하며','해서','하여','하게','하다','한'];
+  endings.forEach(ending=>{
+    if(raw.length>ending.length && raw.endsWith(ending)){
+      stems.push(raw.slice(0,-ending.length));
+      stripped=true;
+    }
+  });
+  if(raw.length>3 && raw.endsWith('운')){
+    stems.push(raw.slice(0,-1));
+    stripped=true;
+  }
+  if(!stripped) stems.push(raw);
+
+  const bases=[];
+  stems.forEach(stem=>{
+    if(stem.endsWith('하') && stem.length>1) stem=stem.slice(0,-1);
+    [reduceReduplicatedStem2(stem), stem].forEach(base=>{
+      if(!base || bases.includes(base) || SENSORY_EXCLUDE_STEMS2.has(base) || base.length<2) return;
+      bases.push(base);
+    });
+  });
+  return bases;
+}
+
+function sensoryFormsFromToken2(token){
+  const forms=[];
+  const raw=compact2(token);
+  sensoryBaseCandidates2(token).forEach(base=>{
+    const candidates=[];
+    if(base.endsWith('럽') && base.length>1) candidates.push(`${base.slice(0,-1)}러움`);
+    if(base.endsWith('롭') && base.length>1) candidates.push(`${base.slice(0,-1)}로움`);
+    if(raw.endsWith('운') || base.endsWith('러') || base.endsWith('벼')) candidates.push(`${base}움`);
+    candidates.push(`${base}함`, `${base}감`, base);
+    candidates.forEach(candidate=>{ if(!forms.includes(candidate)) forms.push(candidate); });
+  });
+  return forms;
+}
+
+function sensoryExistingKeyword2(forms, outKeywords, outSet){
+  for(const form of forms){ if(outSet.has(form)) return form; }
+  const compactMap=new Map(outKeywords.map(k=>[compact2(k), k]));
+  for(const form of forms){
+    const keyword=compactMap.get(compact2(form));
+    if(keyword) return keyword;
+  }
+  return '';
+}
+
+function sensoryContextNear2(text, start, end){
+  const window=text.slice(Math.max(0,start-SENSORY_CONTEXT_WINDOW2), Math.min(text.length,end+SENSORY_CONTEXT_WINDOW2));
+  if([...SENSORY_CONTEXT_ANCHORS2].some(anchor=>window.includes(anchor))) return true;
+  const before=Math.max(text.lastIndexOf('.',start), text.lastIndexOf('!',start), text.lastIndexOf('?',start));
+  const afterCandidates=['.','!','?'].map(mark=>text.indexOf(mark,end)).filter(pos=>pos>=0);
+  const after=afterCandidates.length ? Math.min(...afterCandidates) : text.length;
+  const sentence=text.slice(before+1, after);
+  return [...SENSORY_CONTEXT_ANCHORS2].some(anchor=>sentence.includes(anchor));
+}
+
+function sensoryMatches2(text, outKeywords, outSet){
+  const matches=[];
+  for(const match of normalize2(text).matchAll(/[가-힣]+/g)){
+    const token=match[0], start=match.index||0, forms=sensoryFormsFromToken2(token);
+    if(!forms.length) continue;
+    const keyword=sensoryExistingKeyword2(forms, outKeywords, outSet);
+    if(keyword) matches.push(evidence2(token, keyword, 'sensory_normalization', '식감/질감 표현을 키워드형으로 정리', .91));
+  }
+  return matches;
+}
+
+function sensoryCandidateTerms2(text, finalSet, outKeywords, outSet){
+  const candidates=[];
+  for(const match of normalize2(text).matchAll(/[가-힣]+/g)){
+    const token=match[0], start=match.index||0, end=start+token.length;
+    const forms=sensoryFormsFromToken2(token);
+    if(!forms.length || sensoryExistingKeyword2(forms, outKeywords, outSet)) continue;
+    if(!sensoryContextNear2(text, start, end)) continue;
+    const kw=normalizeCandidate2(forms[0], finalSet, outKeywords, outSet);
+    if(kw) candidates.push({keyword:kw, inputTerm:token, method:'candidate', detail:'식감/질감 표현을 키워드형으로 정리', confidence:.75});
+  }
+  return candidates;
+}
+
+function attributeTerms2(text, outSet){
+  const terms=[];
+  ATTRIBUTE_NORMALIZATION_RULES2.forEach(rule=>{
+    rule.pattern.lastIndex=0;
+    for(const match of normalize2(text).matchAll(rule.pattern)){
+      terms.push({inputTerm:normalize2(match[0]), keyword:rule.keyword, existing:outSet.has(rule.keyword)});
+    }
+  });
+  return terms;
+}
+
+function attributeMatches2(text, outSet){
+  return attributeTerms2(text,outSet)
+    .filter(term=>term.existing)
+    .map(term=>evidence2(term.inputTerm, term.keyword, 'attribute_normalization', '상품 형태 표현을 키워드형으로 정리', .9));
+}
+
+function attributeCandidateTerms2(text, finalSet, outKeywords, outSet){
+  const candidates=[];
+  attributeTerms2(text,outSet).filter(term=>!term.existing).forEach(term=>{
+    const kw=normalizeCandidate2(term.keyword, finalSet, outKeywords, outSet);
+    if(kw) candidates.push({keyword:kw, inputTerm:term.inputTerm, method:'candidate', detail:'상품 형태 표현을 키워드형으로 정리', confidence:.75});
+  });
+  return candidates;
+}
+
+function mapsToKeyword2(term, outKeywords, outSet){
+  const sensoryKeyword=sensoryExistingKeyword2(sensoryFormsFromToken2(term), outKeywords, outSet);
+  return outSet.has(term) || !!safeContains2(term,outKeywords) || UPDATE_STATE.curatedMapping.has(term) || mapsToKeywordVariant2(term) || !!sensoryKeyword || !!fuzzy2(term,outKeywords);
+}
+
+function mapsToWholeKeyword2(term, outKeywords, outSet){
+  const sensoryKeyword=sensoryExistingKeyword2(sensoryFormsFromToken2(term), outKeywords, outSet);
+  return outSet.has(term) || UPDATE_STATE.curatedMapping.has(term) || mapsToKeywordVariant2(term) || !!sensoryKeyword || !!fuzzy2(term,outKeywords);
+}
+
+function mapsToKeywordVariant2(term){
+  const c=compact2(term);
+  const variants=new Set([c]);
+  ['함','감','한'].forEach(suffix=>{
+    if(c.length>suffix.length+1 && c.endsWith(suffix)) variants.add(c.slice(0,-suffix.length));
+  });
+  return [...variants].some(v=>UPDATE_STATE.curatedMapping.has(v));
+}
+
+function suppressSimilarEvidence2(evidence){
+  const sorted=[...evidence].sort((a,b)=>compact2(b.keyword).length-compact2(a.keyword).length || (METHOD_PRIORITY2[a.method]||99)-(METHOD_PRIORITY2[b.method]||99) || b.confidence-a.confidence);
+  const kept=[];
+  sorted.forEach(ev=>{
+    const dup=kept.some(k=>{
+      const l=compact2(ev.keyword), r=compact2(k.keyword);
+      if(l===r) return true;
+      const [shorter,longer]=[l,r].sort((a,b)=>a.length-b.length);
+      if(shorter.length===1 && longer.length>=2 && longer.includes(shorter)) return true;
+      if(shorter.length>=2 && longer.length>=4 && longer.includes(shorter)) return true;
+      return l.length>=3 && r.length>=3 && l[0]===r[0] && Math.abs(l.length-r.length)<=2 && similarRatio2(l,r)>=.92;
+    });
+    if(!dup) kept.push(ev);
+  });
+  return kept;
+}
+
+function evidencePosition2(ev,text){
+  const candidates=[ev.inputTerm, ev.keyword].map(t=>text.indexOf(t)).filter(p=>p>=0);
+  if(candidates.length) return Math.min(...candidates);
+  const nt=compact2(text);
+  for(const t of [ev.inputTerm, ev.keyword]){
+    const p=nt.indexOf(compact2(t));
+    if(p>=0) return p;
+  }
+  return text.length + (METHOD_PRIORITY2[ev.method]||99);
+}
+
+function uniqueEvidence2(evidence,text){
+  const byKeyword=new Map();
+  evidence.forEach(ev=>{
+    const cur=byKeyword.get(ev.keyword);
+    const rank=[METHOD_PRIORITY2[ev.method]||99, -ev.confidence, -compact2(ev.keyword).length].join('|');
+    const curRank=cur ? [METHOD_PRIORITY2[cur.method]||99, -cur.confidence, -compact2(cur.keyword).length].join('|') : null;
+    if(!cur || rank<curRank) byKeyword.set(ev.keyword,ev);
+  });
+  return suppressSimilarEvidence2([...byKeyword.values()])
+    .sort((a,b)=>evidencePosition2(a,text)-evidencePosition2(b,text) || (METHOD_PRIORITY2[a.method]||99)-(METHOD_PRIORITY2[b.method]||99));
+}
+
+function suppressGenericEventEvidence2(evidence){
+  const hasSeasonEvent=evidence.some(ev=>ev.method==='event_normalization' && String(ev.inputTerm||'').includes('시즌'));
+  if(!hasSeasonEvent) return evidence;
+  return evidence.filter(ev=>!(ev.keyword==='시즌' && ['token_exact','substring_original','short_keyword_exact'].includes(ev.method)));
+}
+
+function suppressContextualOnlyEvidence2(evidence,text){
+  return evidence.filter(ev=>{
+    if(SUPPRESSED_OUTPUT_KEYWORDS2.has(ev.keyword)) return false;
+    if(!CONTEXTUAL_ONLY_KEYWORDS2.has(ev.keyword)) return true;
+    const term=ev.inputTerm || ev.keyword;
+    let pos=text.indexOf(term);
+    if(pos<0) pos=text.indexOf(ev.keyword);
+    if(pos<0) return false;
+    const window=text.slice(Math.max(0,pos-CONTEXTUAL_CUE_WINDOW2), Math.min(text.length,pos+term.length+CONTEXTUAL_CUE_WINDOW2));
+    return [...CONTEXTUAL_KEEP_CUES2].some(cue=>window.includes(cue));
+  });
+}
+
+function candidateTermsFromToken2(token, finalSet){
+  const c=compact2(token);
+  if(!c || UPDATE_STATE.stopwords.has(token) || CANDIDATE_EXCLUDE_TERMS2.has(token)) return [];
+  const outKeywords=outputKeywords2();
+  const outSet=new Set(outKeywords);
+  const semanticWhole=semanticWholeCandidate2(c, outKeywords, outSet);
+  if(semanticWhole) return [{keyword:semanticWhole, source:token, reason:`복합 token '${token}' 전체의 전문/기능성 소재 표현`}];
+  const suffixCandidate=formulationSuffixCandidate2(c, outKeywords, outSet);
+  if(suffixCandidate) return [{keyword:suffixCandidate, source:token, reason:`복합 token '${token}' 제형 접미어 제거 후 핵심 소재`}];
+  const boundaries=[...new Set([...outKeywords.map(compact2).filter(k=>k.length>=2), ...CANDIDATE_BOUNDARY_TERMS2])].sort((a,b)=>b.length-a.length||a.localeCompare(b,'ko'));
+  let pos=0, start=0, found=false, unknown=[], boundaryMatches=[];
+  while(pos<c.length){
+    const bd=boundaries.find(b=>c.startsWith(b,pos) && (b.length>1 || pos+b.length===c.length));
+    if(bd){
+      found=true;
+      boundaryMatches.push({position:pos, boundary:bd});
+      if(start<pos) unknown.push(c.slice(start,pos));
+      pos+=bd.length;
+      start=pos;
+      continue;
+    }
+    pos++;
+  }
+  if(found){
+    if(start<c.length) unknown.push(c.slice(start));
+    const whole=wholeCompoundCandidate2(c, boundaryMatches, unknown, outKeywords, outSet);
+    if(whole) return [{keyword:whole, source:token, reason:`복합 token '${token}' 전체의 미등록 의미어`}];
+    return unknown
+      .filter(term=>!isFragmentLikeCandidate2(stripCandidateParticle2(term)))
+      .map(term=>({keyword:term, source:token, reason:`복합 token '${token}' 내부의 미등록 의미어`}));
+  }
+  if(isEnglishOnly2(token)) return [{keyword:c, source:token, reason:'네트워크 의미 축과 함께 등장한 미등록 외국어'}];
+  if(/^[가-힣]{3,}$/.test(c)) return [{keyword:c, source:token, reason:'네트워크 의미 축과 함께 등장한 미등록 표현'}];
+  return [];
+}
+
+function wholeCompoundCandidate2(token, boundaryMatches, unknownTerms, outKeywords, outSet){
+  const terminal=terminalBoundaryWholeCandidate2(token, boundaryMatches, unknownTerms, outKeywords, outSet);
+  if(terminal) return terminal;
+  if(boundaryMatches.length!==1 || boundaryMatches[0].position!==0) return '';
+  if(unknownTerms.length!==1) return '';
+  const tail=stripCandidateParticle2(unknownTerms[0]);
+  if(isFragmentLikeCandidate2(tail)) return '';
+  if(mapsToKeyword2(tail,outKeywords,outSet)) return '';
+
+  const whole=stripCandidateParticle2(token);
+  const boundary=boundaryMatches[0].boundary;
+  if(whole.length<=boundary.length+1) return '';
+  if(UPDATE_STATE.stopwords.has(whole) || CANDIDATE_EXCLUDE_TERMS2.has(whole)) return '';
+  if(mapsToWholeKeyword2(whole,outKeywords,outSet)) return '';
+  return whole;
+}
+
+function semanticWholeCandidate2(token, outKeywords, outSet){
+  const whole=stripCandidateParticle2(token);
+  if(whole.length<4) return '';
+  if(UPDATE_STATE.stopwords.has(whole) || CANDIDATE_EXCLUDE_TERMS2.has(whole)) return '';
+  if(mapsToWholeKeyword2(whole,outKeywords,outSet)) return '';
+  return WHOLE_CANDIDATE_SUFFIXES2.some(suffix=>whole.endsWith(suffix)) ? whole : '';
+}
+
+function terminalBoundaryWholeCandidate2(token, boundaryMatches, unknownTerms, outKeywords, outSet){
+  if(boundaryMatches.length!==1) return '';
+  const match=boundaryMatches[0];
+  if(!WHOLE_TERMINAL_BOUNDARY_TERMS2.has(match.boundary)) return '';
+  if(match.position + match.boundary.length !== token.length) return '';
+  if(unknownTerms.length!==1) return '';
+  const prefix=stripCandidateParticle2(unknownTerms[0]);
+  if(isFragmentLikeCandidate2(prefix)) return '';
+  if(mapsToWholeKeyword2(prefix,outKeywords,outSet)) return '';
+  const whole=stripCandidateParticle2(token);
+  if(UPDATE_STATE.stopwords.has(whole) || CANDIDATE_EXCLUDE_TERMS2.has(whole)) return '';
+  if(mapsToWholeKeyword2(whole,outKeywords,outSet)) return '';
+  return whole;
+}
+
+function formulationSuffixCandidate2(token, outKeywords, outSet){
+  const whole=stripCandidateParticle2(token);
+  for(const suffix of FORMULATION_SUFFIX_TERMS2){
+    if(!whole.endsWith(suffix) || whole.length<=suffix.length+1) continue;
+    const stem=whole.slice(0,-suffix.length);
+    if(isFragmentLikeCandidate2(stem)) continue;
+    if(UPDATE_STATE.stopwords.has(stem) || CANDIDATE_EXCLUDE_TERMS2.has(stem)) continue;
+    if(mapsToWholeKeyword2(stem,outKeywords,outSet)) continue;
+    return stem;
+  }
+  return '';
+}
+
+function normalizeCandidate2(term, finalSet, outKeywords, outSet){
+  const cand=stripCandidateParticle2(term), cc=compact2(cand);
+  if(cc.length<2 || isSymbolOnly2(cand) || hasDigit2(cand) || isFunctionCandidate2(cand) || isSuppressedDescriptorCandidate2(cand)) return null;
+  if(isFragmentLikeCandidate2(cand)) return null;
+  if(/(합니다|입니다|습니다)$/.test(cand)) return null;
+  if(isEnglishOnly2(cand)){
+    if(cand===cand.toUpperCase() || cand.length<3) return null;
+    return cand;
+  }
+  if(UPDATE_STATE.stopwords.has(cand) || CANDIDATE_EXCLUDE_TERMS2.has(cand)) return null;
+  if(mapsToKeywordVariant2(cand)) return null;
+  if(outSet.has(cand) || finalSet.has(cand)) return null;
+  if([...finalSet].some(k=>cc!==compact2(k) && compact2(k).includes(cc))) return null;
+  if(mapsToWholeKeyword2(cand,outKeywords,outSet)) return null;
+  return cand;
+}
+
+function suppressContainedCandidates2(candidates){
+  const kept=[];
+  [...candidates]
+    .sort((a,b)=>compact2(b.keyword).length-compact2(a.keyword).length || a.keyword.localeCompare(b.keyword,'ko'))
+    .forEach(candidate=>{
+      const cc=compact2(candidate.keyword);
+      const contained=kept.some(k=>{
+        const kc=compact2(k.keyword);
+        return cc!==kc && cc.length>=2 && kc.includes(cc);
+      });
+      if(!contained) kept.push(candidate);
+    });
+  return kept;
+}
+
+function sortCandidateEvidence2(candidates,text){
+  return suppressContainedCandidates2(candidates).sort((a,b)=>{
+    const pa=text.indexOf(a.keyword)>=0?text.indexOf(a.keyword):text.indexOf(a.inputTerm);
+    const pb=text.indexOf(b.keyword)>=0?text.indexOf(b.keyword):text.indexOf(b.inputTerm);
+    return (pa<0?9999:pa)-(pb<0?9999:pb) || a.keyword.localeCompare(b.keyword,'ko');
+  });
+}
+
+function candidateKeywords2(text, finalEvidence, outKeywords, outSet){
+  const finalSet=new Set(finalEvidence.map(ev=>ev.keyword));
+  const candidates=[
+    ...attributeCandidateTerms2(text, finalSet, outKeywords, outSet),
+    ...sensoryCandidateTerms2(text, finalSet, outKeywords, outSet),
+  ];
+  if(![...finalSet].some(k=>CANDIDATE_CONTEXT_ANCHORS2.has(k))){
+    if(!candidates.length) return [];
+    const best=new Map();
+    candidates.forEach(c=>{
+      const cur=best.get(c.keyword);
+      if(!cur || cur.inputTerm.length>c.inputTerm.length) best.set(c.keyword,c);
+    });
+    return sortCandidateEvidence2([...best.values()], text);
+  }
+  const tokens=(normalize2(text).match(/[A-Za-z]+|[가-힣A-Za-z0-9]+/g)||[]);
+  tokens.forEach(token=>{
+    if(mapsToWholeKeyword2(token,outKeywords,outSet)) return;
+    candidateTermsFromToken2(token, finalSet).forEach(c=>{
+      const kw=normalizeCandidate2(c.keyword, finalSet, outKeywords, outSet);
+      if(kw) candidates.push({keyword:kw, inputTerm:c.source, method:'candidate', detail:c.reason, confidence:.75});
+    });
+  });
+  const best=new Map();
+  candidates.forEach(c=>{
+    const cur=best.get(c.keyword);
+    if(!cur || cur.inputTerm.length>c.inputTerm.length) best.set(c.keyword,c);
+  });
+  return sortCandidateEvidence2([...best.values()], text);
+}
+
+function extractMdKeywords2(text){
+  const normalized=normalize2(text);
+  const noSpace=compact2(normalized);
+  const outKeywords=outputKeywords2();
+  const outSet=new Set(outKeywords);
+  const substr=substringKeywords2();
+  let evidence=[];
+  evidence.push(...eventMatches2(normalized,outSet));
+  substr.forEach(keyword=>{ if(normalized.includes(keyword)) evidence.push(evidence2(keyword,keyword,'substring_original','원문에 네트워크 키워드가 그대로 등장',1)); });
+  evidence.push(...shortKeywordMatches2(normalized));
+  const already=new Set(evidence.filter(ev=>ev.method==='substring_original').map(ev=>ev.keyword));
+  substr.forEach(keyword=>{
+    const ck=compact2(keyword);
+    if(!already.has(keyword) && ck && noSpace.includes(ck) && !normalized.includes(keyword)) evidence.push(evidence2(keyword,keyword,'substring_no_space','공백 제거 후 네트워크 키워드가 등장',.98));
+  });
+  evidence=filterCoveredSubstrings2(evidence);
+  const covered=new Set();
+  evidence.forEach(ev=>{
+    if(['substring_original','substring_no_space'].includes(ev.method) && compact2(ev.keyword).length>=4){
+      tokenize2(ev.keyword).forEach(t=>{ if(t!==ev.keyword) covered.add(t); });
+    }
+  });
+  tokenize2(normalized).filter(t=>!covered.has(t)).forEach(token=>{
+    if(outSet.has(token)){ evidence.push(evidence2(token,token,'token_exact','문장 token이 네트워크 키워드와 완전 일치',1)); return; }
+    const safe=safeContains2(token,outKeywords); if(safe){ evidence.push(safe); return; }
+    const mapped=UPDATE_STATE.curatedMapping.get(token); if(mapped){ evidence.push(evidence2(token,mapped,'curated_mapping','설명문 키워드 매핑 사전 적용',.93)); return; }
+    const fuzzy=fuzzy2(token,outKeywords); if(fuzzy){ evidence.push(fuzzy); return; }
+    evidence.push(...compoundMatches2(token,outKeywords));
+  });
+  evidence.push(...sensoryMatches2(normalized,outKeywords,outSet));
+  evidence.push(...attributeMatches2(normalized,outSet));
+  evidence=suppressGenericEventEvidence2(evidence);
+  evidence=suppressContextualOnlyEvidence2(evidence,normalized);
+  const finalEvidence=uniqueEvidence2(evidence,normalized);
+  const candidateEvidence=candidateKeywords2(normalized, finalEvidence, outKeywords, outSet);
+  return {inputText:text, normalizedText:normalized, finalEvidence, candidateEvidence};
+}
+
+function buildReviewRow2(itemCode,itemName,sourceText){
+  const result=extractMdKeywords2(sourceText);
+  const kwMap=new Map();
+  result.finalEvidence.forEach(ev=>{
+    const existing=UPDATE_STATE.networkSet.has(ev.keyword);
+    kwMap.set(ev.keyword,{
+      keyword:ev.keyword,
+      keywordType: existing ? '기존 키워드' : '신규 키워드',
+      selected: true,
+      inputTerm:ev.inputTerm,
+      method:ev.method,
+      methodLabel:METHOD_LABELS2[ev.method]||ev.method,
+      detail:ev.detail,
+    });
+  });
+  result.candidateEvidence.forEach(ev=>{
+    if(!kwMap.has(ev.keyword)){
+      kwMap.set(ev.keyword,{
+        keyword:ev.keyword,
+        keywordType:'신규 키워드',
+        selected:true,
+        inputTerm:ev.inputTerm,
+        method:ev.method,
+        methodLabel:METHOD_LABELS2[ev.method]||'신규 키워드',
+        detail:ev.detail,
+      });
+    }
+  });
+  return {
+    id: Date.now().toString(36) + Math.random().toString(36).slice(2,7),
+    itemCode: normalize2(itemCode),
+    itemName: normalize2(itemName),
+    sourceText: normalize2(sourceText),
+    memo: '',
+    confirmed: false,
+    keywords:[...kwMap.values()],
+  };
+}
+
+function normalizeKeywordType2(type){
+  if(type==='기존 등록 키워드') return '기존 키워드';
+  if(type==='신규 후보 키워드') return '신규 키워드';
+  return type || '신규 키워드';
+}
+
+function normalizeServerRow2(row){
+  const out = Object.assign({
+    id: Date.now().toString(36) + Math.random().toString(36).slice(2,7),
+    itemCode: '',
+    itemName: '',
+    sourceText: '',
+    memo: '',
+    confirmed: false,
+    keywords: [],
+  }, row || {});
+  out.id = out.id || (Date.now().toString(36) + Math.random().toString(36).slice(2,7));
+  out.memo = out.memo || '';
+  out.confirmed = Boolean(out.confirmed);
+  out.keywords = (out.keywords || []).map(k => Object.assign({
+    keyword: '',
+    keywordType: '신규 키워드',
+    selected: true,
+    inputTerm: '',
+    method: '',
+    methodLabel: '',
+    detail: '',
+  }, k)).map(k => Object.assign(k, {
+    keywordType: normalizeKeywordType2(k.keywordType),
+    selected: true,
+  }));
+  return out;
+}
+
+function resetSheet2ResultsForNewRun(){
+  UPDATE_STATE.rows = [];
+  UPDATE_STATE.rawCsvRows = [];
+  const search=document.getElementById('review-search');
+  const filter=document.getElementById('review-filter');
+  if(search) search.value='';
+  if(filter) filter.value='all';
+  renderReviewList();
+}
+
+function showKeywordLoading(message='키워드 추출 중...'){
+  const root=document.getElementById('review-list');
+  if(root){
+    root.innerHTML=`<div class="loading-state">${message}<span class="sub">상품 설명문을 분석해 기존 키워드와 신규 키워드를 분리하고 있습니다.</span></div>`;
+  }
+}
+
+async function callSheet2Api2(path, payload){
+  let res;
+  try{
+    res = await fetch(`${SHEET2_API_BASE}${path}`, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(payload),
+    });
+  }catch(e){
+    throw new Error('Python 파이프라인 서버가 실행 중이 아닙니다. keyword_api_server.py를 먼저 실행해 주세요.');
+  }
+  const data = await res.json().catch(()=>({ok:false,error:'응답을 읽지 못했습니다.'}));
+  if(!res.ok || !data.ok) throw new Error(data.error || '키워드 추출에 실패했습니다.');
+  return data;
+}
+
+async function runSingleExtract(){
+  const code=document.getElementById('single-code').value.trim();
+  const name=document.getElementById('single-name').value.trim();
+  const desc=document.getElementById('single-desc').value.trim();
+  if(!code || !desc){ alert('상품코드와 상품 설명문을 입력해 주세요.'); return; }
+  resetSheet2ResultsForNewRun();
+  showKeywordLoading('키워드 추출 중...');
+  try{
+    const data = await callSheet2Api2('/extract-one', {itemCode:code, itemName:name, sourceText:desc});
+    UPDATE_STATE.rows = [normalizeServerRow2(data.row)];
+    UPDATE_STATE.rawCsvRows = [];
+    const status=document.getElementById('csv-status');
+    if(status) status.textContent='단건 입력 결과를 표시 중입니다.';
+    const search=document.getElementById('review-search');
+    const filter=document.getElementById('review-filter');
+    if(search) search.value='';
+    if(filter) filter.value='all';
+    renderReviewList();
+  }catch(e){
+    alert(e.message);
+  }
+}
+
+async function runCsvExtract(){
+  const file=document.getElementById('csv-file').files[0];
+  if(!file){ alert('CSV 파일을 첨부해 주세요.'); return; }
+  resetSheet2ResultsForNewRun();
+  showKeywordLoading('업로드 파일 추출 중...');
+  const rows=parseCsvText2(await readFileText2(file));
+  UPDATE_STATE.rawCsvRows=rows;
+  try{
+    const data = await callSheet2Api2('/extract-batch', {rows});
+    const built = (data.rows || []).map(normalizeServerRow2);
+    UPDATE_STATE.rows = built;
+    document.getElementById('csv-status').innerHTML = built.length ? `<b>${built.length}</b>개 상품을 추출했습니다.` : '설명문 컬럼을 찾지 못했습니다.';
+    renderReviewList();
+  }catch(e){
+    alert(e.message);
+  }
+}
+
+function toggleReviewKeyword(rowId, keyword){
+  const row=UPDATE_STATE.rows.find(r=>r.id===rowId); if(!row) return;
+  const item=row.keywords.find(k=>k.keyword===keyword); if(!item) return;
+  item.selected=!item.selected;
+  row.confirmed=false;
+  renderReviewList();
+}
+
+function saveMemo2(rowId){
+  const row=UPDATE_STATE.rows.find(r=>r.id===rowId); if(!row) return;
+  const el=document.getElementById(`memo-${rowId}`);
+  row.memo=el ? el.value : '';
+  renderSummary2();
+}
+
+function selectAllExisting(){
+  UPDATE_STATE.rows.forEach(row=>{
+    row.keywords.forEach(k=>{ k.selected=true; });
+    row.confirmed=false;
+  });
+  renderReviewList();
+}
+
+function confirmKeywords2(rowId){
+  const row=UPDATE_STATE.rows.find(r=>r.id===rowId); if(!row) return;
+  if(row.confirmed){
+    row.confirmed=false;
+    renderReviewList();
+    return;
+  }
+  if(!row.keywords.some(k=>k.selected)){
+    alert('추출된 키워드가 없습니다.');
+    return;
+  }
+  row.confirmed=true;
+  renderReviewList();
+}
+
+function clearSheet2(){
+  if(!UPDATE_STATE.rows.length || confirm('추출 결과를 모두 초기화할까요?')){
+    UPDATE_STATE.rows=[]; UPDATE_STATE.rawCsvRows=[]; renderReviewList();
+    const status=document.getElementById('csv-status'); if(status) status.textContent='아직 업로드된 파일이 없습니다.';
+  }
+}
+
+function statusForRow2(row){
+  if(!row.keywords.length) return {cls:'none', text:'매칭 없음'};
+  if(row.keywords.length) return {cls:'ready', text:'자동 추출 완료'};
+  return {cls:'none', text:'매칭 없음'};
+}
+function jsArg2(s){ return String(s??'').replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,'\\n').replace(/\r/g,''); }
+function attrEsc2(s){ return _esc(s).replace(/"/g,'&quot;'); }
+function keywordFlow2(k){
+  const input=normalize2(k.inputTerm || '');
+  const keyword=normalize2(k.keyword || '');
+  if(input && keyword && input !== keyword) return `<b>${_esc(input)} → ${_esc(keyword)}</b>`;
+  return _esc(keyword || input || '-');
+}
+
+function renderSummary2(){
+  const rows=UPDATE_STATE.rows;
+  const selected=rows.reduce((sum,r)=>sum+r.keywords.length,0);
+  const existing=rows.reduce((sum,r)=>sum+r.keywords.filter(k=>k.keywordType==='기존 키워드').length,0);
+  const cand=rows.reduce((sum,r)=>sum+r.keywords.filter(k=>k.keywordType==='신규 키워드').length,0);
+  document.getElementById('sum-products').textContent=rows.length.toLocaleString();
+  document.getElementById('sum-selected').textContent=selected.toLocaleString();
+  document.getElementById('sum-existing').textContent=existing.toLocaleString();
+  document.getElementById('sum-candidate').textContent=cand.toLocaleString();
+}
+
+function renderReviewList(){
+  renderSummary2();
+  const root=document.getElementById('review-list');
+  const q=normalize2(document.getElementById('review-search')?.value||'').toLowerCase();
+  const filter=document.getElementById('review-filter')?.value||'all';
+  const rows=UPDATE_STATE.rows.filter(row=>{
+    const hay=[row.itemCode,row.itemName,row.sourceText,...row.keywords.map(k=>k.keyword)].join(' ').toLowerCase();
+    if(q && !hay.includes(q)) return false;
+    if(filter==='candidate' && !row.keywords.some(k=>k.keywordType==='신규 키워드')) return false;
+    if(filter==='empty' && row.keywords.length) return false;
+    return true;
+  });
+  if(!rows.length){
+    root.innerHTML='<div class="empty-state">표시할 추출 결과가 없습니다.</div>';
+    return;
+  }
+  root.innerHTML='';
+  rows.forEach(row=>{
+    const st=statusForRow2(row);
+    const existing=row.keywords.filter(k=>k.keywordType==='기존 키워드');
+    const candidate=row.keywords.filter(k=>k.keywordType==='신규 키워드');
+    const keywordCount=row.keywords.length;
+    const card=document.createElement('div');
+    card.className='result-card';
+    card.innerHTML=`
+      <div class="result-head">
+        <div class="product-title">${_esc(row.itemName || '상품명 없음')}</div>
+        <div class="product-meta-row">
+          <div class="product-meta">상품코드 ${_esc(row.itemCode || '-')} · 기존 ${existing.length}개 / 신규 ${candidate.length}개 / 전체 ${keywordCount}개</div>
+          <span class="status-badge ${st.cls}">${st.text}</span>
+        </div>
+      </div>
+      <div class="keyword-group">
+        <div class="keyword-group-title">기존 키워드</div>
+        <div class="keyword-chip-row">
+          ${existing.length ? existing.map(k=>`<span class="chip on" title="${attrEsc2(k.detail)}">${_esc(k.keyword)}</span>`).join('') : '<span class="help-text">매칭된 기존 키워드가 없습니다.</span>'}
+        </div>
+      </div>
+      <div class="keyword-group">
+        <div class="keyword-group-title">신규 키워드</div>
+        <div class="keyword-chip-row">
+          ${candidate.length ? candidate.map(k=>`<span class="chip candidate" title="${attrEsc2(k.detail)}">${_esc(k.keyword)}</span>`).join('') : '<span class="help-text">신규 키워드가 없습니다.</span>'}
+        </div>
+      </div>
+      <div class="source-label">상품 설명문</div>
+      <div class="source-text">${_esc(row.sourceText || '설명문 없음')}</div>
+      <details class="detail-toggle">
+        <summary><span>상세 추출 근거</span><span class="toggle-state"></span></summary>
+        <table class="evidence-table">
+          <thead><tr><th>추출 키워드</th><th>입력 표현</th><th>등록 여부</th><th>추출 근거</th></tr></thead>
+          <tbody>
+            ${row.keywords.map(k=>`<tr><td>${_esc(k.keyword)}</td><td>${keywordFlow2(k)}</td><td>${_esc(k.keywordType)}</td><td>${_esc(k.detail)}</td></tr>`).join('') || '<tr><td colspan="4">추출 근거가 없습니다.</td></tr>'}
+          </tbody>
+        </table>
+      </details>`;
+    root.appendChild(card);
+  });
+}
+
+function downloadReviewedCsv(){
+  const out=[];
+  UPDATE_STATE.rows.forEach(row=>{
+    const existing=row.keywords
+      .filter(k=>k.keywordType==='기존 키워드')
+      .map(k=>normalize2(k.keyword))
+      .filter(Boolean);
+    const fresh=row.keywords
+      .filter(k=>k.keywordType==='신규 키워드')
+      .map(k=>normalize2(k.keyword))
+      .filter(Boolean);
+    if(existing.length || fresh.length){
+      out.push({
+        '상품코드': row.itemCode,
+        '상품명': row.itemName,
+        '원문 설명': row.sourceText,
+        '기존 키워드': existing.join('|'),
+        '신규 키워드': fresh.join('|'),
+      });
+    }
+  });
+  if(!out.length){ alert('다운로드할 추출 키워드가 없습니다.'); return; }
+  const headers=['상품코드','상품명','원문 설명','기존 키워드','신규 키워드'];
+  const blob=new Blob([rowsToCsv2(out,headers)],{type:'text/csv;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url; a.download='네트워크_키워드_자동추출.csv';
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+}
+
+document.getElementById('serving-tag').textContent = (DATA._meta && DATA._meta.serving_exp) ? ' · model: '+DATA._meta.serving_exp : '';
+
+function mdToHtml(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>'); }
+
+// 우측 상단 동적 제목
+function setRightTitle(trends){
+  const el=document.getElementById('right-title');
+  if(!trends || !trends.length){
+    el.classList.add('muted');
+    el.innerHTML='검색어를 추론하고 출발 속성을 선택한 뒤 <b>네트워크 생성</b>을 눌러주세요.';
+    return;
+  }
+  el.classList.remove('muted');
+  const t=trends.map(x=>`<b>${_esc(x)}</b>`).join(' · ');
+  el.innerHTML=`${t} 키워드를 바탕으로 신상품 기획 도출 인사이트를 제공해드려요.`;
+}
+
+async function apiInfer(trend){ try{const r=await fetch(`${API_BASE}/infer`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({trend})});return r.ok?(await r.json()).attrs:[];}catch(e){return [];} }
+async function apiNetwork(trend,attrs){ try{const r=await fetch(`${API_BASE}/network`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({trend,attrs})});return r.ok?await r.json():null;}catch(e){return null;} }
+
+// 네트워크: DATA.networks(사전계산) 있으면 오프라인 로컬 병합, 없으면 라이브 API
+const OFFLINE = !!(DATA.networks && Object.keys(DATA.networks).length);
+async function getNetwork(trend,attrs){
+  if(OFFLINE){ const net=localNetwork(trend,attrs); return {net, explain:localExplain(net)}; }
+  return apiNetwork(trend,attrs);
+}
+// serve.attr_network 의 병합 로직을 JS로 재현 (속성별 1-hop 합집합 + 공유 노드 표시)
+function localNetwork(trend,attrs){
+  const NET=DATA.networks||{};
+  const seeds=(attrs||[]).filter(s=>NET[s]).slice(0,3);
+  if(!seeds.length) return {trend, seeds:[], keyword_nets:[], merged:{}};
+  const knets=seeds.map(s=>({start:s, nodes:NET[s].nodes, edges:NET[s].edges}));
+  const appear={};
+  knets.forEach(kn=>{ const ids=new Set(kn.nodes.map(n=>n.id)); ids.forEach(id=>appear[id]=(appear[id]||0)+1); });
+  const mN={}, mE={};
+  knets.forEach(kn=>{
+    kn.nodes.forEach(n=>{
+      if(!mN[n.id]) mN[n.id]=Object.assign({},n,{shared:appear[n.id]>=2, deg:appear[n.id]});
+      else { mN[n.id].layer=Math.min(mN[n.id].layer,n.layer); if(!n.branch) mN[n.id].branch=false; }
+    });
+    kn.edges.forEach(e=>{ const k=e.src+'\x01'+e.tgt; if(!mE[k]||e.weight>mE[k].weight) mE[k]=e; });
+  });
+  return {trend, seeds, keyword_nets:knets,
+          merged:{nodes:Object.values(mN), edges:Object.values(mE),
+                  has_overlap:Object.values(appear).some(c=>c>=2)}};
+}
+function localExplain(net){
+  const trend=net.trend||'이 트렌드', seeds=net.seeds||[];
+  if(!seeds.length) return `'${trend}'에서 네트워크 출발점을 찾지 못했습니다.`;
+  const nodes=(net.merged&&net.merged.nodes)||[];
+  const shared=nodes.filter(n=>n.shared).map(n=>n.label);
+  const ips=nodes.filter(n=>n.type==='ip').map(n=>n.label).slice(0,5);
+  const L=[`**'${trend}'**의 출발 속성 **${seeds.join(', ')}** 각각에서 1-hop 네트워크를 펼쳤습니다 (노드 ${nodes.length}).`];
+  L.push((net.merged&&net.merged.has_overlap&&shared.length)
+    ? `- 출발 속성들이 **${shared.slice(0,6).join(', ')}**를 공유 → 하나의 **종합 네트워크**로 연결됩니다 (= 함께 밀어줄 핵심 축).`
+    : '- 출발 속성 간 공유 노드가 없어 각 네트워크가 **독립적**입니다.');
+  if(ips.length) L.push(`- 연결된 IP: **${ips.join(', ')}**.`);
+  return L.join('\n');
+}
+
+// ── 검색 블록 관리 ─────────────────────────────────────────
+function addBlock(){
+  STATE.blocks.push({id:++UID, trend:'', attrs:[], selected:[], net:null});
+  renderBlocks();
+}
+function delBlock(id){ STATE.blocks = STATE.blocks.filter(b=>b.id!==id); renderBlocks(); updateGen(); }
+function renderBlocks(){
+  const root=document.getElementById('blocks'); root.innerHTML='';
+  STATE.blocks.forEach((b,idx)=>{
+    const el=document.createElement('div'); el.className='sblock';
+    el.innerHTML=`
+      <div class="sblock-head">
+        <span class="sblock-title">검색어 ${idx+1}</span>
+        ${STATE.blocks.length>1?`<button class="sblock-del" onclick="delBlock(${b.id})">✕ 삭제</button>`:''}
+      </div>
+      <div class="trend-row">
+        <input placeholder="예: 마라, 로제, 단백질" value="${b.trend||''}"
+          onchange="STATE.blocks.find(x=>x.id===${b.id}).trend=this.value"
+          onkeydown="if(event.key==='Enter')runInfer(${b.id})">
+        <button class="btn sec" onclick="runInfer(${b.id})">추론</button>
+      </div>
+      <div class="chips" id="chips-${b.id}"></div>
+      <div class="sel-count" id="sel-${b.id}"></div>`;
+    root.appendChild(el);
+    renderChips(b);
+  });
+}
+async function runInfer(id){
+  const b=STATE.blocks.find(x=>x.id===id); if(!b) return;
+  const inp=document.querySelector(`#blocks .sblock:nth-child(${STATE.blocks.indexOf(b)+1}) input`);
+  b.trend=(inp?inp.value:b.trend).trim(); if(!b.trend) return;
+  b.selected=[];
+  const chips=document.getElementById('chips-'+id);
+  chips.innerHTML='<span style="color:var(--text-3);font-size:11px">⏳ 추론 중…(새 트렌드는 Gemma)</span>';
+  let attrs=(DATA.trendAttrs && DATA.trendAttrs[b.trend])?DATA.trendAttrs[b.trend]:await apiInfer(b.trend);
+  b.attrs=attrs||[];
+  if(!b.attrs.length){ chips.innerHTML='<span style="color:var(--text-3);font-size:11px">추론 결과 없음</span>'; return; }
+  renderChips(b); updateGen();
+}
+function renderChips(b){
+  const chips=document.getElementById('chips-'+b.id); if(!chips) return; chips.innerHTML='';
+  b.attrs.forEach(a=>{
+    const el=document.createElement('span'); el.className='chip'+(b.selected.includes(a)?' on':'')+((!b.selected.includes(a)&&b.selected.length>=3)?' dim':'');
+    el.textContent=a; el.onclick=()=>toggleChip(b,a); chips.appendChild(el);
+  });
+  document.getElementById('sel-'+b.id).textContent = b.attrs.length?`선택 ${b.selected.length} / 3`:'';
+}
+function toggleChip(b,a){
+  const i=b.selected.indexOf(a);
+  if(i>=0) b.selected.splice(i,1);
+  else { if(b.selected.length>=3) return; b.selected.push(a); }
+  renderChips(b); updateGen();
+  if(STATE.generated) runNetworks();   // 이미 생성됐으면 선택 바뀔 때마다 즉시 재생성
+}
+function updateGen(){
+  const any=STATE.blocks.some(b=>b.selected.length>0);
+  document.getElementById('gen-btn').disabled=!any;
+}
+
+// ── 네트워크 생성 (검색어별 /network + 전체종합 병합) ──────────
+async function runNetworks(){
+  const active=STATE.blocks.filter(b=>b.selected.length>0);
+  if(!active.length) return;
+  const cv=document.getElementById('net-canvas'); cv.innerHTML='<div class="placeholder">⏳ 네트워크 생성 중…</div>';
+  document.getElementById('net-explain').classList.remove('muted');
+  document.getElementById('net-explain').innerHTML='';
+  for(const b of active){
+    const res=await getNetwork(b.trend,b.selected);
+    b.net = (res&&res.net&&res.net.seeds.length)?res:null;
+  }
+  const ok=active.filter(b=>b.net);
+  if(!ok.length){ cv.innerHTML='<div class="placeholder">네트워크 없음</div>'; return; }
+  buildTabs(ok);
+  // 현재 보던 탭 유지(라이브 재생성 시 점프 방지), 유효하지 않으면 기본값
+  const valid = STATE.view==='__all__' ? ok.length>1 : ok.some(b=>b.id===STATE.view);
+  if(!valid) STATE.view = ok.length>1 ? '__all__' : ok[0].id;
+  STATE.generated=true;
+  renderView();
+}
+function buildTabs(ok){
+  const tabs=document.getElementById('mini-tabs'); tabs.innerHTML='';
+  ok.forEach(b=>{
+    const t=document.createElement('div'); t.className='mtab'; t.textContent=b.trend;
+    t.dataset.blockId=b.id;
+    t.onclick=()=>{STATE.view=b.id;renderView();}; tabs.appendChild(t);
+  });
+  if(ok.length>1){
+    const ga=grandMerge(ok);
+    const t=document.createElement('div'); t.className='mtab all';
+    t.textContent='전체';
+    t.title = ga.has_overlap ? '검색어들이 공유 노드로 연결됨' : '검색어 간 공유 노드 없음 (분리)';
+    t.onclick=()=>{STATE.view='__all__';renderView();}; tabs.appendChild(t);
+  }
+}
+function renderView(){
+  const ok=STATE.blocks.filter(b=>b.net);
+  document.querySelectorAll('.mtab').forEach(t=>{
+    const isAll=t.classList.contains('all');
+    const bid=t.dataset.blockId!==undefined ? Number(t.dataset.blockId) : null;
+    t.classList.toggle('on', (STATE.view==='__all__'&&isAll) || (!isAll && bid===STATE.view));
+  });
+  if(STATE.view==='__all__'){
+    const ga=grandMerge(ok);
+    renderForce(ga, ga.seedSet);
+    setRightTitle(ok.map(b=>b.trend));
+    const shared=ga.nodes.filter(n=>n.shared).map(n=>n.label);
+    document.getElementById('net-explain').innerHTML=mdToHtml(
+      `검색어 **${ok.map(b=>b.trend).join(', ')}**의 종합망을 합쳤습니다 (노드 ${ga.nodes.length}). `+
+      (ga.has_overlap?`검색어들이 **${shared.slice(0,8).join(', ')}**를 공유 → 하나로 연결됩니다.`:`검색어 간 공유 노드가 없어 각각 독립적입니다.`));
+  }else{
+    const b=ok.find(x=>x.id===STATE.view); if(!b) return;
+    const m=b.net.net.merged;
+    renderForce({nodes:m.nodes,edges:m.edges}, new Set((b.net.net.seeds||[]).map(s=>'keyword\x01'+s)));
+    setRightTitle([b.trend]);
+    document.getElementById('net-explain').innerHTML=mdToHtml(b.net.explain);
+  }
+}
+
+// 검색어망(merged)들을 합집합 → 전체종합
+function grandMerge(ok){
+  const appear={}, nmap={}, emap={}, seedSet=new Set();
+  ok.forEach(b=>{
+    (b.net.net.seeds||[]).forEach(s=>seedSet.add('keyword\x01'+s));
+    const m=b.net.net.merged;
+    const ids=new Set(m.nodes.map(n=>n.id));
+    ids.forEach(id=>appear[id]=(appear[id]||0)+1);
+    m.nodes.forEach(n=>{ if(!nmap[n.id]) nmap[n.id]=Object.assign({},n); else nmap[n.id].layer=Math.min(nmap[n.id].layer,n.layer); });
+    m.edges.forEach(e=>{const k=e.src+'>'+e.tgt; if(!emap[k]||e.weight>emap[k].weight)emap[k]=e;});
+  });
+  const nodes=Object.values(nmap).map(n=>Object.assign(n,{shared:appear[n.id]>=2, deg:appear[n.id]||1}));
+  return {nodes, edges:Object.values(emap), has_overlap:Object.values(appear).some(c=>c>=2), seedSet};
+}
+
+// ── vis-network 렌더 ───────────────────────────────────────────
+let _visNet = null, _visNodeDS = null, _visEdgeDS = null;
+let _origNodes = {}, _origEdges = {};
+let _children = {}, _expanded = new Set();   // 가지 접기: 백본 id → [가지 id], 펼쳐진 백본 집합
+let _nodeMeta = {};                           // 노드 id → 원본 노드 객체 (브리핑·경로용)
+
+function renderForce(g, seedSet){
+  const cv = document.getElementById('net-canvas');
+  _hideBrief();
+  if(!g.nodes.length){ cv.innerHTML='<div class="placeholder">네트워크 없음</div>'; return; }
+  if(_visNet){ _visNet.destroy(); _visNet=null; }
+  cv.innerHTML='';
+  _origNodes={}; _origEdges={};
+
+  // 가지 접기: 백본(branch=false) 아래 가지(branch=true, parent=백본) 매핑 → 초기엔 가지 숨김
+  // _nodeMeta: 클릭 시 브리핑/경로 추적기에서 노드 속성 조회용
+  _children = {}; _expanded = new Set(); _nodeMeta = {};
+  g.nodes.forEach(n=>{ _nodeMeta[n.id]=n; if(n.branch && n.parent){ (_children[n.parent]=_children[n.parent]||[]).push(n.id); } });
+
+  const DARK = { keyword:'#0E7A38', product:'#C81E1E', ip:'#B45309' };
+  const maxEdgeW = Math.max(0.0001, ...g.edges.map(e=>e.weight||0));
+
+  const visNodes = g.nodes.map(n=>{
+    const c = COL[n.type]||'#8B90A0';
+    const dk = DARK[n.type]||'#5B6270';
+    const isSeed = seedSet && seedSet.has(n.id);
+    const deg = n.deg || (n.shared ? 2 : 1);   // 연결 정도 = 이 노드가 등장한 서브망 수
+    const lbl = n.label.length>9 ? n.label.slice(0,9)+'…' : n.label;
+    let label = lbl;
+    if(n.type==='product' && n.success!=null) label += '\n'+Math.round(n.success*100)+'%';
+    if(isSeed) label += '\n● 출발';
+    const color = {
+      background: c,
+      border: isSeed ? '#1F2430' : dk,
+      highlight:{ background:c, border:'#1F2430' },
+      hover:{ background:c, border:'#1F2430' },
+    };
+    const borderWidth = isSeed ? 4 : (deg>=2 ? 3 : 2);
+    const font = { color:(isSeed?'#1F2430':dk), size:(isSeed?15:(deg>=2?Math.min(19,13+deg*2):13)), face:'Pretendard, sans-serif', bold:(isSeed?{color:'#1F2430'}:{color:dk}), strokeWidth:4, strokeColor:'#FFFFFF' };
+    _origNodes[n.id] = { color: JSON.parse(JSON.stringify(color)), borderWidth, font: JSON.parse(JSON.stringify(font)) };
+    const hasKids = !!(_children[n.id] && _children[n.id].length);
+    return {
+      id: n.id, label: label + (hasKids ? '  ⊕' : ''),
+      title: (n.full||n.label)+(n.shared?' (공유)':'')+(hasKids?' · 더블클릭: 1-hop 펼침/접기':''),
+      level: n.layer || 0,
+      size: isSeed ? 36 : (deg>=2 ? 18+deg*5 : (n.type==='product' ? 17 : 19)),
+      color, borderWidth,
+      shapeProperties: n.shared ? { borderDashes:[3,2] } : {},
+      shadow:{ enabled:true, color:'rgba(0,0,0,0.12)', size:6, x:0, y:2 },
+      font,
+    };
+  });
+
+  const visEdges = g.edges.map((e,i)=>{
+    const w = e.weight||0;
+    const ratio = maxEdgeW>0 ? Math.min(1, w/maxEdgeW) : 0;
+    const width = e.branch ? 1.2 : (1.6 + ratio*4.4);          // 1.6 ~ 6px, 강한 연결일수록 굵게
+    const baseColor = e.branch ? '#D5D9E0' : (ratio>=0.5 ? '#5B6270' : '#9CA3AF');
+    const opacity = e.branch ? 0.55 : (0.45 + ratio*0.5);       // 0.45 ~ 0.95
+    const color = { color:baseColor, opacity };
+    const dashes = e.branch ? [3,2] : false;
+    _origEdges[i] = { color: JSON.parse(JSON.stringify(color)), width, dashes };
+    return { id:i, from:e.src, to:e.tgt, _weight:w, color, width, dashes,
+             smooth:{type:'cubicBezier', forceDirection:'horizontal', roundness:0.4} };
+  });
+
+  _visNodeDS = new vis.DataSet(visNodes);
+  _visEdgeDS = new vis.DataSet(visEdges);
+
+  _visNet = new vis.Network(cv,
+    { nodes: _visNodeDS, edges: _visEdgeDS },
+    {
+      layout:{ hierarchical:{ enabled:true, direction:'LR', sortMethod:'directed',
+               levelSeparation:220, nodeSpacing:110, treeSpacing:160,
+               blockShifting:true, edgeMinimization:true, parentCentralization:true } },
+      physics:false,
+      nodes:{ shape:'dot' },
+      edges:{ arrows:{ to:false } },
+      interaction:{ hover:true, tooltipDelay:100, zoomView:true, dragView:true },
+    }
+  );
+
+  // 전체 배치로 좌표 확정 후, 가지(branch)를 숨겨 출발+백본만 노출 → 펼칠 때 제자리에 등장
+  _visNet.once('afterDrawing', function(){
+    const hN = g.nodes.filter(n=>n.branch).map(n=>({ id:n.id, hidden:true }));
+    const hE = []; g.edges.forEach((e,i)=>{ if(e.branch) hE.push({ id:i, hidden:true }); });
+    if(hN.length) _visNodeDS.update(hN);
+    if(hE.length) _visEdgeDS.update(hE);
+    _visNet.fit({ animation:false });
+  });
+
+  _visNet.on('click', function(params){
+    if(params.nodes.length > 0) _focusNode(params.nodes[0]);   // 포커스: 경로 추적기 + 브리핑 + 강조
+    else { _resetHighlight(); _hideBrief(); }
+  });
+  _visNet.on('doubleClick', function(params){                  // 더블클릭: 1-hop 펼침/접기
+    if(params.nodes.length > 0){
+      const id = params.nodes[0];
+      if(_children[id] && _children[id].length) _toggleExpand(id);
+    }
+  });
+}
+
+// 백본 노드의 1-hop 가지 펼침/접기
+function _toggleExpand(nodeId){
+  const kids = _children[nodeId];
+  if(!kids || !kids.length) return;
+  const expand = !_expanded.has(nodeId);
+  expand ? _expanded.add(nodeId) : _expanded.delete(nodeId);
+  _visNodeDS.update(kids.map(id=>({ id, hidden:!expand })));
+  const eUpd = [];
+  _visEdgeDS.get().forEach(e=>{
+    if((e.from===nodeId && kids.includes(e.to)) || (e.to===nodeId && kids.includes(e.from)))
+      eUpd.push({ id:e.id, hidden:!expand });
+  });
+  if(eUpd.length) _visEdgeDS.update(eUpd);
+  // fit 호출 안 함 → 화면 줌/위치 고정. 가지는 초기 배치에서 잡아둔 빈 자리에 그대로 등장
+}
+
+// 네트워크 전체화면 토글 (스테이지 전체 → 경로바·브리핑 패널 포함)
+function toggleFS(){
+  const stage = document.getElementById('net-stage');
+  stage.classList.toggle('fs');
+  const on = stage.classList.contains('fs');
+  document.getElementById('fs-btn').textContent = on ? '⛶ 닫기' : '⛶ 전체화면';
+  if(_visNet) setTimeout(()=>{ _visNet.redraw(); _visNet.fit({ animation:false }); }, 60);
+}
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape'){ const stage=document.getElementById('net-stage'); if(stage.classList.contains('fs')) toggleFS(); }
+});
+
+// 클릭 노드에서 가중치 최대 엣지만 따라가는 그리디 경로
+function _greedyPathDir(startId, dir){
+  const allEdges = _visEdgeDS.get();
+  const order = [startId];
+  const visited = new Set([startId]);
+  let current = startId;
+  for(let step=0; step<30; step++){
+    const cands = allEdges
+      .filter(e => dir==='out' ? e.from===current : e.to===current)
+      .map(e => ({ next: dir==='out' ? e.to : e.from, weight: e._weight||0 }))
+      .filter(c => !visited.has(c.next));
+    if(!cands.length) break;
+    cands.sort((a,b) => b.weight - a.weight);
+    const best = cands[0];
+    order.push(best.next);
+    visited.add(best.next);
+    current = best.next;
+  }
+  return order;
+}
+
+function _greedyPath(startId){
+  const outTail = _greedyPathDir(startId, 'out').slice(1);        // 클릭 노드 이후 forward
+  const inHead  = _greedyPathDir(startId, 'in').slice(1).reverse(); // 클릭 노드 이전 backward → 정방향으로
+  return [...inHead, startId, ...outTail];
+}
+
+function _highlightGreedyPath(startId){
+  const order = _greedyPath(startId);
+  const pNodeSet = new Set(order);
+
+  // 연속 노드 쌍으로 경로 엣지 직접 탐색
+  const allEdges = _visEdgeDS.get();
+  const pEdgeSet = new Set();
+  for(let i=0; i<order.length-1; i++){
+    const a = order[i], b = order[i+1];
+    allEdges.forEach(e => {
+      if((e.from===a && e.to===b)||(e.from===b && e.to===a)) pEdgeSet.add(e.id);
+    });
+  }
+
+  _visNodeDS.update(_visNodeDS.get().map(n => {
+    if(pNodeSet.has(n.id)){
+      const orig = _origNodes[n.id];
+      return { id:n.id, color:{ background:orig.color.background, border:'#1F2430', highlight:orig.color.highlight, hover:orig.color.hover }, borderWidth: orig.borderWidth+2, opacity:1 };
+    }
+    return { id:n.id, ...(_origNodes[n.id]||{}), opacity:0.28 };
+  }));
+  _visEdgeDS.update(_visEdgeDS.get().map(e => {
+    if(pEdgeSet.has(e.id))
+      return { id:e.id, color:{ color:'#F2994A', opacity:1.0 }, width:5.5, dashes:false };
+    return { id:e.id, ...(_origEdges[e.id]||{}), color:{ color:'#C7CCD4', opacity:0.18 } };
+  }));
+}
+
+function _resetHighlight(){
+  _visNodeDS.update(_visNodeDS.get().map(n => ({ id:n.id, ...(_origNodes[n.id]||{}), opacity:1 })));
+  _visEdgeDS.update(_visEdgeDS.get().map(e => ({ id:e.id, ...(_origEdges[e.id]||{}) })));
+}
+
+// ── 경로 추적기 + 브리핑 패널 (노드 클릭 시 포커스) ───────────────────
+function _focusNode(id){
+  const m = _nodeMeta[id]; if(!m) return;
+  _highlightGreedyPath(id);     // 메인 그래프 디밍 + 경로 강조
+  _renderPathTracker(id);
+  _renderBrief(id, m);
+}
+function _hideBrief(){
+  const bp=document.getElementById('brief-panel'); if(bp) bp.classList.add('hidden');
+  const pt=document.getElementById('path-tracker'); if(pt) pt.style.display='none';
+}
+function _dot(t){ return `<i style="background:${COL[t]||'#8B90A0'}"></i>`; }
+function _esc(s){ return String(s).replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c])); }
+function _edgeW(a,b){ let w=0; _visEdgeDS.get().forEach(e=>{ if((e.from===a&&e.to===b)||(e.from===b&&e.to===a)) w=Math.max(w,e._weight||0); }); return w; }
+function _neighbors(id){
+  const out=[];
+  _visEdgeDS.get().forEach(e=>{
+    let o=null; if(e.from===id) o=e.to; else if(e.to===id) o=e.from;
+    if(o!=null && _nodeMeta[o]) out.push({ node:_nodeMeta[o], w:e._weight||0 });
+  });
+  out.sort((a,b)=>b.w-a.w);
+  return out;
+}
+function _strengthOf(w, maxW){
+  if(w<=0.005) return null; // 사실상 연결 없음 → 표시 안 함
+  const ratio = maxW>0 ? w/maxW : 0;
+  if(ratio>=0.66) return 'strong';
+  if(ratio>=0.33) return 'medium';
+  return 'weak';
+}
+const _strengthText={strong:'강함',medium:'보통',weak:'약함'};
+function _renderPathTracker(id){
+  const el=document.getElementById('path-tracker');
+  const path=_greedyPath(id);
+  if(path.length<2){ el.style.display='none'; return; }
+  // 0.00 가중치(사실상 무연결) 구간에서 경로를 끊는다 — 약한 연결로 무관한 군집까지 이어 보이지 않도록
+  let cut=path.length;
+  for(let i=0;i<path.length-1;i++){
+    if(_edgeW(path[i],path[i+1])<=0.005){ cut=i+1; break; }
+  }
+  const trimmed = path.slice(0,cut);
+  if(trimmed.length<2){ el.style.display='none'; return; }
+  let html='<span class="pt-lab">경로 추적기</span>';
+  for(let i=0;i<trimmed.length;i++){
+    const m=_nodeMeta[trimmed[i]]; if(!m) continue;
+    const cur = trimmed[i]===id ? ' style="outline:2px solid var(--orange);outline-offset:1px"' : '';
+    html+=`<span class="pt-node"${cur}>${_dot(m.type)}${_esc(m.label)}</span>`;
+    if(i<trimmed.length-1) html+=`<span class="pt-w">→</span>`;
+  }
+  el.innerHTML=html; el.style.display='flex';
+}
+function _renderBrief(id,m){
+  const nbAll=_neighbors(id);
+  // 0.00(사실상 무연결) 이웃은 목록에서 제외 — MD에게 실제 연결만 보여준다
+  const nb=nbAll.filter(x=>x.w>0.005);
+  const ofType=t=>nb.filter(x=>x.node.type===t);
+  const cntP=ofType('product').length, cntI=ofType('ip').length, cntK=ofType('keyword').length;
+  const typeLab={keyword:'속성 키워드',product:'제품',ip:'IP'}[m.type]||m.type;
+  let h=`<span class="cls" onclick="_hideBrief()">✖</span>`;
+  h+=`<h4>${_dot(m.type)} ${_esc(m.full||m.label)}</h4>`;
+  const parts=[];
+  if(cntP) parts.push(`제품 ${cntP}개`); if(cntI) parts.push(`IP ${cntI}개`); if(cntK) parts.push(`키워드 ${cntK}개`);
+  h+=`<div class="sub">${typeLab}${parts.length?' · 실제로 연결된 '+parts.join(' · '):' · 뚜렷하게 연결된 항목 없음'}</div>`;
+  // 가중치 상위 이웃 → 연결 강도
+  h+=`<div class="sec">연결이 강한 순서</div>`;
+  if(nb.length){
+    const maxW = nb[0].w;
+    nb.slice(0,6).forEach(x=>{
+      const s=(x.node.type==='product'&&x.node.success!=null)?` <span style="color:var(--text-3)">· 성공 ${Math.round(x.node.success*100)}%</span>`:'';
+      const lv=_strengthOf(x.w,maxW)||'weak';
+      const bars=[1,2,3].map(n=>`<span class="${n<=({weak:1,medium:2,strong:3}[lv])?('fill-'+lv):''}"></span>`).join('');
+      h+=`<div class="nb"><span class="nm">${_dot(x.node.type)}${_esc(x.node.label)}${s}</span><span class="nb-right"><span class="strength-bar">${bars}</span><span class="strength-label ${lv}">${_strengthText[lv]}</span></span></div>`;
+    });
+  } else h+=`<div class="empty-note">이 항목과 뚜렷하게 연결된 제품·키워드·IP가 없어요. 그래프에 보이는 다른 연결은 거의 의미 없는 수준(연결 강도 0에 가까움)이라 제외했습니다.</div>`;
+  // 타입별 브리핑
+  h+=`<div class="sec">📊 브리핑</div>`;
+  const ipTags=ofType('ip').map(x=>`<span class="tag">${_esc(x.node.label)}</span>`).join('');
+  if(m.type==='product'){
+    if(m.success!=null) h+=`<div class="row">- 성공확률: <b>${Math.round(m.success*100)}%</b>${m.success_src?` (소스 ${_esc(m.success_src)})`:''}</div>`;
+    h+=`<div class="row">- 프로모션: ${(m.promo&&m.promo.length)?m.promo.map(p=>`<span class="tag">${_esc(p)}</span>`).join(''):'<span style="color:var(--text-3)">없음</span>'}</div>`;
+    h+=`<div class="row">- 인스타 언급: <b>${m.insta_mentions||0}</b>회 (30일 내 ${m.insta_30d||0}회)</div>`;
+    if(ipTags) h+=`<div class="row">- 연결 IP: ${ipTags}</div>`;
+  } else {
+    const ps=ofType('product');
+    if(ps.length){ const t=ps[0].node; h+=`<div class="row">- 대표 제품: <b>${_esc(t.label)}</b>${t.success!=null?` (성공 ${Math.round(t.success*100)}%)`:''}</div>`; }
+    h+=`<div class="row">- 연결 제품 <b>${cntP}</b> · 키워드 <b>${cntK}</b></div>`;
+    if(ipTags && m.type!=='ip') h+=`<div class="row">- 연결 IP: ${ipTags}</div>`;
+    if(m.shared) h+=`<div class="row">- <b>연결쌍 노드</b>: ${m.deg||2}개 망을 잇는 핵심 축</div>`;
+  }
+  const el=document.getElementById('brief-panel');
+  el.innerHTML=h; el.classList.remove('hidden');
+}
+
+setRightTitle(null);
+addBlock();  // 시작 시 검색어 1개
+initDictionary2();
+renderReviewList();
+</script>
+</body>
+</html>

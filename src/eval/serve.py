@@ -17,6 +17,30 @@ from typing import Dict, List, Optional, Tuple
 
 import pandas as pd
 
+
+def _load_local_env(path: str = ".env") -> None:
+    """의존성 없는 최소 .env 로더 — 프로젝트 루트 .env를 os.environ에 적재(이미 설정된 키는 안 덮음).
+
+    DEEPSEEK_API_KEY·LLM_PROVIDER 등을 코드에 하드코딩하지 않고 .env(gitignore됨)에서 읽기 위함.
+    """
+    try:
+        if not os.path.exists(path):
+            return
+        with open(path, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#") or "=" not in line:
+                    continue
+                k, v = line.split("=", 1)
+                k, v = k.strip(), v.strip().strip('"').strip("'")
+                if k:
+                    os.environ.setdefault(k, v)
+    except Exception:
+        pass
+
+
+_load_local_env()
+
 # ── 서빙 모델 선택 (best 교체 지점) ──────────────────────────────
 SERVING_EXP = "v2_sweepA"   # 최종 채택 (HINGNNv2 멀티태스크+basket_comp, leak-free, 2026-06-21). test PR-AUC 0.608 > exp47 0.570, 과적합 gap 0.115 < 0.224. THR=0.7757. 산출물: experiments.v2_export_serving. 이전 exp47_no_copurchase / exp41(누수)은 docs/v2_serving_transition.md 참조
 RESULTS_ROOT = "experiments/results"
@@ -149,11 +173,14 @@ def _data() -> Dict[str, object]:
             "success_src": (str(src_list[i]) if pd.notna(src_list[i]) else None),
         }
 
+    # mine(지뢰) 키워드 — 그래프엔 남기되(빨강 회피 뱃지) 추천(K-P-K)에서는 제외
+    mine = {k for k, t in kw_tag.items() if t == "mine"}
+
     return dict(scores=scores, prod2kw=prod2kw, kw2prod=kw2prod, success=success,
                 trend_attrs=trend_attrs, graph_kw=graph_kw, category_of=category_of,
                 deg=deg, success_label=success_label, hadj=hadj, gates=gates,
                 prod_cat=prod_cat, cat_keywords=cat_keywords, ip2kw=dict(ip2kw),
-                prod_meta=prod_meta, kw_tag=kw_tag)
+                prod_meta=prod_meta, kw_tag=kw_tag, mine=mine)
 
 
 def _load_keyword_final() -> Tuple[Optional[set], Dict[str, str]]:
@@ -248,6 +275,22 @@ _P_EXPAND = """[SYSTEM]
 [USER]
 검색어: {query}"""
 
+_P_SELECT = """[SYSTEM]
+당신은 세븐일레븐 상품 네트워크의 '검색어→속성 선택 AI'다.
+[검색어]와 가장 잘 어울리는 편의점 식품 속성을, 반드시 아래 [허용 어휘] 목록 안에 있는 단어로만 8~15개 골라라.
+[제약]
+1. 반드시 [허용 어휘]에 그대로 존재하는 단어만 출력. 목록에 없는 단어·변형·신조어·동의어 절대 금지.
+2. 검색어가 재료·맛·특정 디저트/트렌드면, [허용 어휘]에서 **그 정체성을 이루는 핵심 재료**를 1~3개 맨 앞에 먼저 골라라.
+   - 어휘에 **구체 재료**가 있으면 상위 카테고리보다 그것을 우선(예: '피스타치오'가 어휘에 있으면 '견과류'보다 '피스타치오').
+   - 그래프에 없는 외래 재료는 가장 가까운 재료로 치환(예: 우베=보라 얌→타로·고구마).
+   - 특정 디저트·트렌드는 그 **시그니처 재료**를 포함(예: 두바이초콜릿→피스타치오·카다이프·초코, 몽블랑→밤).
+3. 그 다음으로 맛·식감·분위기·컨셉 속성을 채워 총 8~15개. 검색어 자체·인물명·브랜드명은 제외.
+4. 관련도 높은 순서로, 쉼표로만 구분. 설명·따옴표·마침표·번호 금지.
+[허용 어휘]
+{vocab}
+[USER]
+검색어: {query}"""
+
 _P_NAME = """[SYSTEM]
 당신은 세븐일레븐 신제품 네이밍 AI다. 학습된 상품 네트워크가 추천한 [핵심 속성]과
 [참고 히트제품]을 근거로, 편의점 매대에 어울리는 신제품명 1개를 만들어라.
@@ -303,6 +346,47 @@ def _ollama(prompt: str, temperature: float = 0.3, timeout: int = 240) -> str:
         return ""
 
 
+# ── LLM 프로바이더 스위치 (로컬 Ollama ↔ DeepSeek API) ──────────────────
+#   LLM_PROVIDER=deepseek → DeepSeek(OpenAI 호환 /chat/completions), 그 외 → 로컬 Ollama(_ollama).
+#   프롬프트는 동일 — DeepSeek은 기존 프롬프트 전체를 단일 user 메시지로 전달([SYSTEM]/[USER] 텍스트 그대로).
+#   반환 계약도 동일: 실패 시 빈 문자열 → 호출부가 템플릿 fallback.
+LLM_PROVIDER = os.environ.get("LLM_PROVIDER", "ollama").lower()
+DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
+DEEPSEEK_BASE = os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com").rstrip("/")
+DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
+
+
+def _deepseek(prompt: str, temperature: float = 0.3, timeout: int = 240) -> str:
+    """DeepSeek chat completions 호출. 키 없거나 실패 시 빈 문자열 (Ollama와 동일 계약)."""
+    if not DEEPSEEK_API_KEY:
+        return ""
+    try:
+        r = requests.post(
+            DEEPSEEK_BASE + "/chat/completions",
+            headers={"Authorization": "Bearer " + DEEPSEEK_API_KEY,
+                     "Content-Type": "application/json"},
+            json={"model": DEEPSEEK_MODEL, "stream": False, "temperature": temperature,
+                  "messages": [{"role": "user", "content": prompt}]},
+            timeout=timeout)
+        r.raise_for_status()
+        return r.json()["choices"][0]["message"]["content"].strip()
+    except Exception:
+        return ""
+
+
+def _llm(prompt: str, temperature: float = 0.3, timeout: int = 240) -> str:
+    """LLM 디스패처 — LLM_PROVIDER에 따라 DeepSeek API 또는 로컬 Ollama로 라우팅."""
+    if LLM_PROVIDER == "deepseek":
+        return _deepseek(prompt, temperature=temperature, timeout=timeout)
+    return _ollama(prompt, temperature=temperature, timeout=timeout)
+
+
+def llm_warmup() -> None:
+    """프로바이더별 워밍업 — 로컬 Ollama만 콜드로드 의미 있음(DeepSeek API는 불필요)."""
+    if LLM_PROVIDER == "ollama":
+        _ollama("안녕", temperature=0.0, timeout=300)
+
+
 def _tokens(s: str) -> List[str]:
     return [t for t in re.split(r"[\s,/·]+", s) if len(t) >= 2]
 
@@ -330,10 +414,96 @@ def _match_to_graph(terms: List[str], graph_kw: set) -> List[str]:
     return out
 
 
+_KIWI = None
+_KIWI_FAILED = False
+
+
+def _get_kiwi():
+    """Kiwi 싱글톤 지연 로드(첫 호출 1회). 비ASCII(한글) 경로 폴백은 keyword_extract._load_kiwi 재사용."""
+    global _KIWI, _KIWI_FAILED
+    if _KIWI is not None or _KIWI_FAILED:
+        return _KIWI
+    try:
+        from src.eval.keyword_extract.pipeline import _load_kiwi
+        _KIWI = _load_kiwi()
+    except Exception:
+        _KIWI_FAILED = True
+        _KIWI = None
+    return _KIWI
+
+
+def _kiwi_nouns(query: str) -> List[str]:
+    """검색어 형태소 분석 → 명사(NN*) 조각 추출. 복합어 분리(예: 호박인절미 → 호박·인절미).
+
+    Kiwi 미가용·오류 시 빈 리스트(상위에서 토큰·LLM 매칭으로 폴백). graph_kw 매칭 전 후보 확장용.
+    """
+    k = _get_kiwi()
+    if not k:
+        return []
+    try:
+        return [t.form for t in k.tokenize(query)
+                if t.tag.startswith("NN") and len(t.form) >= 2]
+    except Exception:
+        return []
+
+
 def gemma_expand(query: str) -> List[str]:
     # timeout 300s: 첫 호출 콜드 로드(9.6GB, /mnt/c 9p)가 실측 ~190초까지 → 첫 추론 실패 방지
-    out = _ollama(_P_EXPAND.format(query=query), temperature=0.2, timeout=300)
+    out = _llm(_P_EXPAND.format(query=query), temperature=0.2, timeout=300)
     return [t.strip() for t in out.replace("\n", " ").split(",") if t.strip()]
+
+
+@lru_cache(maxsize=1)
+def _graph_vocab_str() -> str:
+    """그래프 키워드 전체를 LLM 허용 어휘 목록 문자열로 1회 구성(캐시). 프롬프트 prefix로 재사용."""
+    return ", ".join(sorted(_data()["graph_kw"]))
+
+
+def vocab_select(query: str, timeout: int = 120) -> List[str]:
+    """어휘 제약 LLM 선택 — 그래프 어휘 목록 안에서만 고르게 + exact 멤버십 후필터.
+
+    substring 억지매칭(스파이시→파이)·어미 누락(부드러운)을 없애고 의미 정확도 확보.
+    출력은 100% graph_kw. 목록 밖·변형은 후필터로 제거.
+    """
+    gk = _data()["graph_kw"]
+    out = _llm(_P_SELECT.format(vocab=_graph_vocab_str(), query=query),
+               temperature=0.2, timeout=timeout)
+    seen: set = set()
+    res: List[str] = []
+    for t in out.replace("\n", ",").split(","):
+        t = t.strip().strip('"').strip("'")
+        if t in gk and t not in seen:
+            seen.add(t); res.append(t)
+    return res
+
+
+def insight_filter(concept: List[str], keywords: List[str], timeout: int = 60) -> List[str]:
+    """AI 인사이트 후보 중 컨셉에 '명백히 안 어울리는' 키워드만 골라 제거 대상(drop)으로 반환.
+
+    같은 카테고리 브랜드·IP·먹거리·맛/식감 키워드는 유지, 전혀 다른 카테고리(치킨·돈까스·라면·핫도그 등)
+    또는 무관한 IP만 제거. LLM 실패/빈 입력 시 빈 리스트(=필터 안 함, 하위호환).
+    """
+    cand = [k for k in (keywords or []) if k]
+    if not cand or not concept:
+        return []
+    prompt = (
+        "신상품 컨셉: " + ", ".join(concept) + "\n"
+        "아래 후보 중 이 컨셉의 신상품 기획에 '명백히 안 어울리는' 것만 제거 대상으로 골라줘.\n"
+        "[유지] 맛/식감/재료/분위기/시즌 키워드, 컨셉과 같은 카테고리의 브랜드·IP·먹거리.\n"
+        "[제거] 컨셉과 전혀 다른 카테고리 음식/브랜드(예: 디저트 컨셉인데 치킨·돈까스·라면·핫도그), 컨셉과 무관한 IP.\n"
+        "후보: " + ", ".join(cand) + "\n"
+        "제거할 키워드만 쉼표로만 출력. 없으면 '없음'."
+    )
+    try:
+        out = _llm(prompt, temperature=0.0, timeout=timeout)
+    except Exception:
+        return []
+    cset, seen, drop = set(cand), set(), []
+    for t in out.replace("\n", ",").split(","):
+        t = t.strip().strip('"').strip("'")
+        if t in cset and t not in seen:        # 환각 방지: 입력 후보에 있는 것만
+            seen.add(t); drop.append(t)
+    return drop
 
 
 
@@ -347,19 +517,38 @@ def infer_attrs(query: str) -> List[str]:
     """
     d = _data()
     gk = d["graph_kw"]
+
+    def _finish(res):
+        # 검색어 자체가 그래프 키워드면 맨 앞에 포함(시작점 보장). 그래프에 없으면 추가 안 함
+        # → '우베'처럼 그래프 미존재 검색어가 속성 칩으로 새는 것 방지.
+        return ([query] + res) if (query in gk and query not in res) else res
+
     if query in d["trend_attrs"]:
         m = [a for a in d["trend_attrs"][query] if a in gk]
         if m:
-            return m
+            return _finish(m)
+    # ★ 트렌드 '부분일치'를 더 이상 즉시 return 하지 않음 — '호박인절미'가 트렌드 '인절미'에 걸려
+    #   단락되며 분절(단호박·인절미)에 도달 못 하던 버그 수정. 분절·LLM을 먼저, 트렌드는 폴백으로만.
+    det = _match_to_graph(_kiwi_nouns(query) + _tokens(query), gk)   # ① 분절(복합어 분리) + 원토큰
+    det += [kw for kw in gk if len(kw) >= 2 and kw in query and kw not in det]  # Kiwi 미분절 복합어 보강(흑임자라떼 → 라떼)
+    det = [kw for kw in det if not any(kw != o and kw in o for o in det)]       # 더 긴 매칭의 조각 제거('떡볶이'의 '볶이')
+    try:
+        selected = vocab_select(query)                              # ② 어휘제약 LLM 선택(의미)
+    except Exception:
+        selected = []                                               # LLM 오류 시에도 분절 매칭 유지
+    merged = list(dict.fromkeys([*det, *selected]))                 # 분절(단호박·인절미) 우선 + LLM 보완
+    if merged:
+        return _finish(merged)
+    # 폴백 — 분절·LLM 모두 실패 시에만 트렌드 부분일치 속성 사용
+    trend_hits = []
     for t, attrs in d["trend_attrs"].items():
         if query in t or t in query:
-            m = [a for a in attrs if a in gk]
-            if m:
-                return m
-    # 미등재 입력 (트렌드·IP 모두): Gemma 단일 프롬프트로 식품 속성 확장
+            trend_hits += [a for a in attrs if a in gk]
+    if trend_hits:
+        return _finish(list(dict.fromkeys(trend_hits)))
+    # fallback — LLM·분절 모두 실패(API 오류 등) 시 Gemma 확장 + 문자열매칭 (여전히 graph_kw만 반환)
     expanded = gemma_expand(query)
-    matched = _match_to_graph(expanded + _tokens(query), gk)
-    return matched
+    return _finish(_match_to_graph(expanded + _tokens(query), gk))
 
 
 # ── 2. 히트 / 부진 상품 (탭2·탭3) ────────────────────────────────
@@ -424,6 +613,7 @@ def recommend_keywords(seed_attrs: List[str], top_k: int = 15,
     if not seeds:
         return []
     seedset = set(seeds)
+    mine = d.get("mine", ())                       # 지뢰는 추천 후보 제외
     score: Dict[str, float] = defaultdict(float)
     for ks in seeds:
         for prod, att_in in d["kw2prod"].get(ks, []):
@@ -436,7 +626,7 @@ def recommend_keywords(seed_attrs: List[str], top_k: int = 15,
                 score[kt] += att_in * pj * att_out
     out = []
     for kt, s in score.items():
-        if deg.get(kt, 0) < min_support or kt in GENERIC_STOPWORDS:
+        if deg.get(kt, 0) < min_support or kt in GENERIC_STOPWORDS or kt in mine:
             continue
         out.append((kt, s * deg[kt] if freq_correct else s))
     return sorted(out, key=lambda x: x[1], reverse=True)[:top_k]
@@ -454,6 +644,7 @@ def recommend_bundle(seed_attrs: List[str], max_size: int = 6,
     cur = list(dict.fromkeys(s for s in seed_attrs if s in d["graph_kw"]))[:2]
     if not cur:
         return []
+    mine = d.get("mine", ())                       # 지뢰는 추천 후보 제외
     first = None
     while len(cur) < max_size:
         curset = set(cur)
@@ -462,7 +653,7 @@ def recommend_bundle(seed_attrs: List[str], max_size: int = 6,
             for prod, att_in in d["kw2prod"].get(ks, []):
                 pj = d["success"].get(prod, 0.0)
                 for kt, att_out in d["prod2kw"].get(prod, []):
-                    if kt in curset or kt in GENERIC_STOPWORDS:
+                    if kt in curset or kt in GENERIC_STOPWORDS or kt in mine:
                         continue
                     cand[kt] += att_in * pj * att_out
         scored = [(kt, s * deg[kt]) for kt, s in cand.items() if deg.get(kt, 0) >= min_support]
@@ -486,10 +677,11 @@ def _kpk_next(k: str, exclude: set, d, deg, topn: int = 15, min_support: int = 3
     """
     att: Dict[str, float] = defaultdict(float)
     cs: Dict[str, float] = defaultdict(float)
+    mine = d.get("mine", ())                       # 지뢰 키워드는 추천 후보에서 제외
     for prod, att_in in d["kw2prod"].get(k, []):
         pj = d["success"].get(prod, 0.0)
         for kt, att_out in d["prod2kw"].get(prod, []):
-            if kt in exclude or kt in GENERIC_STOPWORDS:
+            if kt in exclude or kt in GENERIC_STOPWORDS or kt in mine:
                 continue
             att[kt] += att_in * pj * att_out
             cs[kt] += pj
@@ -1039,8 +1231,8 @@ _P_NAME_BATCH = """편의점 {category} 신제품 네이밍 AI. 트렌드 '{tren
 def gemma_names_batch(category: str, combo_lists: List[List[str]], trend: str = "") -> List[str]:
     """여러 조합의 제품명을 1회 호출로 생성 (긴 prefill 반복 방지 → 속도↑)."""
     combos = "\n".join(f"{i+1}) {','.join(c)}" for i, c in enumerate(combo_lists))
-    out = _ollama(_P_NAME_BATCH.format(category=category, trend=trend or "트렌드", combos=combos),
-                  temperature=0.4)
+    out = _llm(_P_NAME_BATCH.format(category=category, trend=trend or "트렌드", combos=combos),
+               temperature=0.4)
     return [re.sub(r"^\s*\d+[).\s]*", "", ln).strip().strip('"').strip("'")
             for ln in out.splitlines() if ln.strip()]
 
@@ -1134,8 +1326,8 @@ def diagnose(item_name: str, use_rag: bool = True) -> Dict:
     prob = round(float(row["pred_success_prob"].iloc[0]), 3) if len(row) else 0.0
 
     if use_rag and weak:
-        txt = _ollama(_P_DIAG.format(name=item_name, weak_attrs=",".join(weak),
-                                     category=cat, prob=prob), temperature=0.3, timeout=60)
+        txt = _llm(_P_DIAG.format(name=item_name, weak_attrs=",".join(weak),
+                                  category=cat, prob=prob), temperature=0.3, timeout=60)
         p = _parse_diag(txt)
         if p["avoid"] and p["rx"]:
             return {"avoid": p["avoid"], "rx": p["rx"], "text": txt}

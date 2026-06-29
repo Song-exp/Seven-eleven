@@ -34,7 +34,7 @@
 
 | 모듈 | 핵심 객체/함수 | 역할 |
 |---|---|---|
-| `engine.py` | `MDEngine`, `EngineConfig` | 모델 로드(exp47/v2 자동분기) → 단일 추론 캐시 + `Mass` + `build_ledger`(killer/mine/hub) + `delta_prob`(개입 머신) |
+| `engine.py` | `MDEngine`, `EngineConfig` | 모델 로드(exp47/v2 자동분기) → 단일 추론 캐시 + `Mass` + `build_ledger`(killer/mine/hub) + `delta_prob`(개입 머신) + `score_concept_batch`(가상노드 N개 1-forward, 단일과 drift=0·x40~77) + `include_sim`(가상노드 sim_kw/sim_ip 즉석 재계산 = 배포현실 모사; off=직접채널. 영향 EDA: [sim_edge_influence_eda_plan](sim_edge_influence_eda_plan.md)) |
 | `tasks.py` | `stage_g1_macro`, `stage_g2_channel`, `cell_4a/4b/4c` | 혼동행렬 구조 진단 + 성공망/실패망·채널 차분 행렬(A_diff) |
 | `prescription.py` | `MDPrescriptionEngine`, `get_md_prescription` | 시드→처방(승인/반려 + POS/인스타 파트너 + anti-partner + 장바구니 + 소생) |
 | `validate.py` | `run_all` (Tier 1/2/4/5 + Precision@K) | 장부·조합의 통계·인과·hold-out 검증 |
@@ -135,6 +135,14 @@ Hub_Score(k)  = Σ_경로 Σ_{p} att(p,k) × Mass[p]                 # Mass=z(si
 
 장부·A_diff·처방어휘는 **모델 거의 불변**(어텐션=구조 지배). 모델이 바꾸는 건 prob 기반 부분(혼동행렬·파트너 랭킹·Δprob). 상세: [v2 전환 §3.5](v2_serving_transition.md).
 
+> **2026-06-26 대시보드 동작 통일 + 라이브 시너지**: 8개 콤보 시드(마라·로제·흑임자·약과·고창·하와이·두바이·말차)도 일반 키워드와 동일하게 **"선택 속성 각각이 시작점 → 1-hop 메타패스 → 하나의 네트워크로 병합"** 경로를 쓰도록 통일.
+> - **시너지 기반 생성(③)**: 네트워크 생성 시 선택 속성 **각각의 `/combo` 시너지 서브네트워크**(rail = *그 키워드를 조합에 더했을 때 vs 직전 상태의 marginal Δ* 기준으로 성장)를 받아 **병합**(`ensureComboSeed`가 선택 속성 배열 반환 → `renderComboMerged`/`renderComboNet`). 즉 메타패스 엣지 선택 기준 = 어텐션이 아니라 **marginal synergy**. 라이브 `/combo`는 임의 graph_kw에 동작(8시드는 `combo_data.js` 캐시로 오프라인도 가능). **오프라인 임의 키워드**는 combo 데이터가 없어 `getNetwork`(어텐션 1-hop)로 폴백.
+> - **트렌드 편입(보조)**: `export_dashboard.py`의 `_combo_seed_attrs`가 8 콤보 시드를 속성 칩 캐시(`trendAttrs`)에 편입(검색 즉시 rail 속성 노출).
+
+> **2026-06-26 라이브 전용 전환 + 오프라인 제거**: 일관성을 위해 대시보드를 **라이브 단일 모드**로 정리. ① 어텐션 폴백 렌더러(renderForce·localNetwork·grandMerge·_force*/_syn*·_focusNode/_renderBrief 등 ~400줄)와 `getNetwork`/`apiNetwork`/`OFFLINE`/`LIVE_COMBO` 게이팅 **삭제** → 생성·궁합은 전부 라이브 `/combo`(시너지). 서버 미연결 시 안내 메시지. ② `config.js`는 무거운 `networks`(1-hop 어텐션)·`keywordEvidence` 제거하고 **`trendAttrs`(속성 칩 캐시)만** 출력 → 6.7MB→87KB. ③ 점선 범례 일관화(점선=잠식 전용, 어텐션 가지 점선 제거), 선택 토글 `/combo` 재생성 **디바운스(450ms)**, 죽은 코드(comboSeedFor·COL·_children) 정리. **주의: 대시보드는 이제 라이브 서버(`uvicorn src.eval.api:app`)가 떠 있어야 동작**(file:// 단독 구동 불가).
+> - **패스별 시너지(구간별 %p + 시너지 최소경로)**: 통일 네트워크에서 **두 속성(키워드/IP) 클릭 → `_forcePair`가 라이브 `/combo`(=`combo_serve.combo_network`, 임의 키워드 OK)로 첫 속성의 시너지 서브네트워크를 받아** ① `_synPathOver`(Dijkstra, 비용=1−syn)로 **시너지 가중 최소경로**를 찾고 ② 경로의 **구간(사이사이)마다 edge `margin` %p**를 표시(원래 콤보 `_comboSynPath`/`_comboPair` 동작 복원). 헤드라인 궁합은 `synergy` 행렬 `{synergy,margin}` 또는 `/combo/pair` fallback. `/combo`·`/combo/pair`(`combo_serve`)는 임의 graph_kw·키워드×IP 모두 지원(콤보 시드 전용 아님). **오프라인(file://, 서버 없음)이면 시너지 미표시 → 연결 강도(어텐션)만 안내.** 즉 구간 시너지는 `python -m uvicorn src.eval.api:app` 라이브 서빙에서만 나옴(8시드는 `combo_data.js` 캐시로 오프라인도 가능).
+> - **표기/제외**: dashboard.html 로드시 `_sanitizeDashboardData`가 표기 통일(카스타드→커스터드)·제외(경동나비엔)를 config.js 재생성과 무관하게 적용.
+
 ---
 
 ## 6. 빠른 참조 (명령)
@@ -145,6 +153,13 @@ python -m src.eval.md.export_keyword_final exp47      # 또는 v2_sweepA
 
 # 대시보드 캐시 재생성 (확정 후)
 python -m scripts.export_dashboard
+
+# 조합 서브네트 오프라인 캐시 (임원 데모용, 서버 불필요)
+python -m scripts.export_combo_dashboard 마라 로제 약과 흑임자
+
+# 라이브 동적 서빙 (MD 실무 — 아무 키워드나 클릭→~1-2s, /combo 엔드포인트)
+python -m uvicorn src.eval.api:app --port 8000
+#   → dashboard.html이 캐시 미스 시 /combo fetch (file://면 건너뜀=데모 안전)
 
 # 노트북 (Jupyter/VSCode에서)
 experiments/notebooks/md_prescription_pipeline.ipynb   # EDA·처방·검증 (MODEL 선택 셀)

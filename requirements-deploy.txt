@@ -1,0 +1,21 @@
+# 배포(Railway) 백엔드 전용 런타임 — 노트북/EDA 스택 제외, API 서빙 최소 의존성.
+# torch는 CPU 휠 사용(배포엔 GPU 불필요 — LLM은 DeepSeek API로 분리).
+# torch_geometric는 torch_geometric.utils.scatter(순수 파이썬)만 사용 → torch-scatter/sparse 컴파일 확장 불필요.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+torch==2.11.0
+torch_geometric==2.7.0
+
+fastapi
+uvicorn[standard]
+
+pandas==3.0.2
+pyarrow==23.0.1
+numpy==2.4.4
+scikit-learn==1.8.0
+scipy==1.17.1
+requests
+
+# 시트2 키워드 추출 (Kiwi 형태소분석) — 바이너리·모델 페어 버전 일치 필수
+kiwipiepy==0.23.0
+kiwipiepy_model==0.23.0

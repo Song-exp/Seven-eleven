@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>성공 조합 서브네트워크 — MD 콕핏</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vis-network@9.1.9/styles/vis-network.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+<script src="combo_data.js"></script>
+<style>
+  :root{--bg:#0f1115;--panel:#1a1d24;--line:#2a2f3a;--txt:#e6e8ec;--mut:#9aa0ac;
+        --rail:#d9534f;--ip:#9b59b6;--trend:#f0ad4e;--basket:#1abc9c;--ip2:#c39bd3;--anti:#aaaaaa;}
+  *{box-sizing:border-box} body{margin:0;font-family:Pretendard,system-ui,sans-serif;background:var(--bg);color:var(--txt)}
+  header{padding:10px 16px;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  header h1{font-size:15px;margin:0;font-weight:700}
+  select{background:var(--panel);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:14px}
+  .legend{display:flex;gap:10px;font-size:12px;color:var(--mut);flex-wrap:wrap}
+  .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:middle}
+  .wrap{display:grid;grid-template-columns:1fr 340px;height:calc(100vh - 50px)}
+  #net{width:100%;height:100%}
+  aside{border-left:1px solid var(--line);overflow-y:auto;padding:12px 14px;background:var(--panel)}
+  aside h2{font-size:13px;margin:14px 0 6px;color:var(--mut);text-transform:uppercase;letter-spacing:.04em}
+  .rail{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+  .chip{padding:3px 8px;border-radius:14px;font-size:12px;background:#222732;border:1px solid var(--line)}
+  .chip.seed{background:var(--rail);color:#fff;font-weight:700}
+  .chip.emg{border-color:var(--basket);color:var(--basket)}
+  .arrow{color:var(--mut)}
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  td,th{padding:3px 4px;text-align:left;border-bottom:1px solid var(--line)}
+  .pos{color:#5cd6a0}.neg{color:#ff8a8a}
+  .verdict{padding:10px;border-radius:8px;background:#222732;margin-top:6px;font-size:13px}
+  .hint{font-size:12px;color:var(--mut);margin:6px 0}
+  .bypass{font-size:12px;color:var(--anti)}
+  .path{font-weight:700}
+</style>
+</head>
+<body>
+<header>
+  <h1>🧬 성공 조합 서브네트워크</h1>
+  <select id="seedSel"></select>
+  <div class="legend">
+    <span><i style="background:var(--rail)"></i>레일</span>
+    <span><i style="background:var(--ip)"></i>IP</span>
+    <span><i style="background:var(--trend)"></i>트렌드</span>
+    <span><i style="background:var(--basket)"></i>바스켓</span>
+    <span><i style="background:var(--ip2)"></i>IP속성</span>
+    <span><i style="background:var(--anti)"></i>잠식</span>
+  </div>
+  <div class="hint" id="meta"></div>
+</header>
+<div class="wrap">
+  <div id="net"></div>
+  <aside>
+    <div class="hint">노드 1개 클릭 → 추천·이웃 / 2개 클릭 → <b>시너지 + 최적 패스</b></div>
+    <div class="verdict" id="verdict">두 노드를 차례로 클릭하세요.</div>
+    <h2>성공 레일 (combo_grow)</h2>
+    <div class="rail" id="rail"></div>
+    <h2>① 추천 — 시드에 붙이면 좋은 것</h2>
+    <table id="rec"><tbody></tbody></table>
+    <h2>Bypass — 잠식 블랙리스트(피할 것)</h2>
+    <div class="bypass" id="bypass"></div>
+  </aside>
+</div>
+
+<script>
+const CD = window.COMBO_DATA || {seeds:[],data:{}};
+const COL = {rail:'#d9534f',ip:'#9b59b6',trend:'#f0ad4e',basket:'#1abc9c',ip2:'#c39bd3',anti:'#aaaaaa'};
+let NET, NODES, EDGES, CUR, ADJ, PICK=[];
+
+function buildAdj(edges){ const a={}; edges.forEach(e=>{(a[e.src]=a[e.src]||[]).push(e.tgt);(a[e.tgt]=a[e.tgt]||[]).push(e.src);}); return a; }
+function bfs(src,dst){ if(src===dst)return[src]; const q=[[src]],seen=new Set([src]);
+  while(q.length){const p=q.shift(),last=p[p.length-1];
+    for(const nb of (ADJ[last]||[])){ if(nb===dst)return [...p,nb]; if(!seen.has(nb)){seen.add(nb);q.push([...p,nb]);} }}
+  return null; }
+function labelOf(id){ const n=CUR.nodes.find(x=>x.id===id); return n?n.label:id; }
+function idOf(label){ const n=CUR.nodes.find(x=>x.label===label); return n?n.id:null; }
+function synLookup(a,b){ return CUR.synergy[`${a}|${b}`] || CUR.synergy[`${b}|${a}`] || null; }
+
+function loadSeed(seed){
+  CUR = CD.data[seed]; PICK=[]; ADJ = buildAdj(CUR.edges);
+  // vis nodes/edges
+  const vn = CUR.nodes.map(n=>({id:n.id,label:n.label,color:COL[n.type]||'#888',
+      shape:n.seed?'star':'dot', size:n.seed?26:(n.type==='rail'?18:11),
+      font:{color:'#e6e8ec',size:n.seed?16:12,face:'Pretendard'}, _type:n.type}));
+  const ve = CUR.edges.map((e,i)=>({id:i,from:e.src,to:e.tgt,
+      color:{color:COL[e.type]||'#555',opacity:e.type==='anti'?0.5:0.8},
+      width:e.type==='rail'?3:1.2, dashes:e.type==='anti', _type:e.type}));
+  NODES=new vis.DataSet(vn); EDGES=new vis.DataSet(ve);
+  NET=new vis.Network(document.getElementById('net'),{nodes:NODES,edges:EDGES},{
+    physics:{stabilization:true,barnesHut:{springLength:120,gravitationalConstant:-9000}},
+    interaction:{hover:true}});
+  NET.on('click',p=>{ if(p.nodes.length){ onPick(p.nodes[0]); } });
+  renderPanel(seed);
+}
+
+function onPick(id){
+  PICK.push(id);
+  if(PICK.length===1){ highlightOne(id); }
+  else { const [a,b]=PICK; PICK=[]; pairView(a,b); }
+}
+function highlightOne(id){
+  EDGES.forEach(e=> EDGES.update({id:e.id, width:(e._type==='rail'?3:1.2)}));
+  const lab=labelOf(id);
+  // 시드면 추천, 아니면 이 노드의 core 시너지 행
+  if(CUR.nodes.find(n=>n.id===id&&n.seed)){ document.getElementById('verdict').innerHTML=`<b>${lab}</b> = 시드. 우측 ①추천 참고.`; return; }
+  const rows=CUR.coreNodes.filter(c=>c!==lab).map(c=>{const s=synLookup(lab,c);return s?`${c}: <span class="${s.synergy>0?'pos':'neg'}">${s.synergy>0?'✅':'⚠'} ${s.synergy}</span>`:null;}).filter(Boolean);
+  document.getElementById('verdict').innerHTML=`<b>${lab}</b> 와 core 노드 시너지:<br>`+(rows.length?rows.join('<br>'):'(core 외 노드 — 선계산 없음)');
+}
+function pairView(aId,bId){
+  const a=labelOf(aId), b=labelOf(bId);
+  const s=synLookup(a,b);
+  const path=bfs(aId,bId);
+  // 패스 강조
+  EDGES.forEach(e=> EDGES.update({id:e.id, width:(e._type==='rail'?3:1.2), color:{color:COL[e._type]||'#555',opacity:e._type==='anti'?0.5:0.8}}));
+  if(path){ for(let i=0;i<path.length-1;i++){ const eid=findEdge(path[i],path[i+1]); if(eid!=null) EDGES.update({id:eid,width:5,color:{color:'#fff',opacity:1}});} }
+  const pathTxt = path? path.map(labelOf).join(' → ') : '직접 경로 없음';
+  let v=`<div class="path">${a} ↔ ${b}</div>`;
+  v+=`<div>최적 패스: <b>${pathTxt}</b></div>`;
+  if(s){ v+=`<div>시너지: <span class="${s.synergy>0?'pos':'neg'}">${s.label} (${s.synergy})</span></div>`; }
+  else { v+=`<div class="hint">시너지: core 노드쌍만 선계산됨 (이 쌍은 미포함)</div>`; }
+  document.getElementById('verdict').innerHTML=v;
+}
+function findEdge(a,b){ let id=null; EDGES.forEach(e=>{ if((e.from===a&&e.to===b)||(e.from===b&&e.to===a)) id=e.id; }); return id; }
+
+function renderPanel(seed){
+  // rail
+  const acc={}; (CUR.accepted||[]).forEach(a=>acc[a.keyword]=a);
+  document.getElementById('rail').innerHTML = CUR.rail.map((k,i)=>{
+    const a=acc[k]; const emg=a&&a.label&&a.label.includes('찐보완재');
+    const cls='chip'+(i===0?' seed':'')+(emg?' emg':'');
+    const tip=a?` (${a.label} Δ${a.margin})`:'';
+    return (i?'<span class="arrow">➔</span>':'')+`<span class="${cls}" title="${tip}">${k}</span>`;
+  }).join('');
+  // recommend
+  document.getElementById('rec').querySelector('tbody').innerHTML =
+    (CUR.recommend||[]).slice(0,8).map(r=>`<tr><td>${r.keyword}</td><td class="${r.margin>0?'pos':'neg'}">${r.margin>0?'✅':'⚠'} ${r.margin}</td><td>${r.label}</td></tr>`).join('');
+  // bypass
+  const seen=new Set();
+  document.getElementById('bypass').innerHTML = (CUR.bypass||[]).filter(b=>{if(seen.has(b.keyword))return false;seen.add(b.keyword);return true;})
+    .slice(0,8).map(b=>`✗ ${b.keyword} <span class="neg">(Δ${b.margin})</span> sup ${b.support}`).join('<br>');
+}
+
+// init
+(function(){
+  const sel=document.getElementById('seedSel');
+  (CD.seeds||[]).forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=s;sel.appendChild(o);});
+  document.getElementById('meta').textContent = CD.meta? `model ${CD.meta.model} · ${CD.meta.n} seeds`:'';
+  if(!CD.seeds||!CD.seeds.length){ document.getElementById('verdict').textContent='combo_data.js 없음 — python -m scripts.export_combo_dashboard 먼저 실행'; return; }
+  sel.onchange=()=>loadSeed(sel.value);
+  loadSeed(CD.seeds[0]);
+})();
+</script>
+</body>
+</html>

@@ -127,6 +127,8 @@ class MDEngine:
             add_2hop_edges=g.get("add_2hop_edges", False),
             hop2_kw_min_shared=g.get("hop2_kw_min_shared", 3),
             hop2_ip_min_shared=g.get("hop2_ip_min_shared", 1),
+            hop2_kw_idf=g.get("hop2_kw_idf", False),
+            hop2_kw_idf_tau=g.get("hop2_kw_idf_tau", 1.0),
             add_via_ip_edges=g.get("add_via_ip_edges", False),
             add_ipip_kw_edges=g.get("add_ipip_kw_edges", False),
             add_trend_kw_edges=g.get("add_trend_kw_edges", False),
@@ -170,6 +172,9 @@ class MDEngine:
             test_mask=data["product"].test_mask.cpu().numpy(),
             P=data["product"].num_nodes, K=data["keyword"].num_nodes, I=data["ip"].num_nodes,
             base_rate=float(y.mean()),
+            # sim 엣지 빌드 임계 (_hop2와 동일) — include_sim 가상노드 sim 재계산용
+            sim_kw_min_shared=g.get("hop2_kw_min_shared", 3),
+            sim_ip_min_shared=g.get("hop2_ip_min_shared", 1),
             k2i=maps["k2i"], kw_ids=maps["keyword_ids"],
             product_ids=maps["product_ids"], product_names=maps["product_names"],
         )
@@ -310,20 +315,44 @@ class MDEngine:
         return lg
 
     # ---------------------------------------------------------------- 개입 머신
+    def _virtual_sim_neighbors(self, keyword_idx, ip_idx) -> Dict[tuple, np.ndarray]:
+        """가상 노드(키워드/IP 집합)가 sim_kw/sim_ip로 연결될 기존 제품 이웃 인덱스.
+
+        배포 시점의 유사도 재계산을 모사 — `_hop2`와 동일 임계(공유 키워드/IP 수 ≥ min_shared).
+        include_sim=True 일 때만 호출. 모델에 sim 엣지 타입이 없으면(2hop 미사용) 빈 dict.
+        """
+        out: Dict[tuple, np.ndarray] = {}
+        P = self.cache["P"]
+        for et, hkey, thr_key in (
+            (("product", "sim_kw", "product"), PK_MAIN, "sim_kw_min_shared"),
+            (("product", "sim_ip", "product"), ("product", "has_ip", "ip"), "sim_ip_min_shared"),
+        ):
+            members = list(keyword_idx) if hkey == PK_MAIN else list(ip_idx)
+            if not members or et not in self.cache["eidx"]:
+                continue
+            ei = self.cache["eidx"][hkey].numpy()
+            mask = np.isin(ei[1], np.asarray(members))
+            shared = np.bincount(ei[0][mask], minlength=P)
+            out[et] = np.where(shared >= self.cache[thr_key])[0]
+        return out
+
     @torch.no_grad()
     def score_concept(self, keyword_idx: Sequence[int], ip_idx: Sequence[int] = (),
-                      has_promo: float = 0.0, insta_m30: float = 0.0) -> float:
+                      has_promo: float = 0.0, insta_m30: float = 0.0,
+                      include_sim: bool = False) -> float:
         """가상 제품 노드(키워드/IP 집합)를 그래프에 1개 추가 후 재forward → 그 노드 성공확률.
 
         cold-start 시뮬레이션의 핵심 프리미티브. B(anti-partner)·C·F·처방이 공유.
-        가상 노드는 has_kw(+has_ip)로만 연결(via_ip/ipip/trend 미부여 — Δ에서 대부분 상쇄).
+        기본: has_kw(+has_ip)로만 연결(직접 채널 — via_ip/ipip/trend 미부여, Δ에서 대부분 상쇄).
+        include_sim=True: 배포 현실 모사 — 공유 키워드/IP ≥ 임계인 기존 제품과 sim_kw/sim_ip 양방향
+          연결(모델 주력 채널 α_r~0.87). 직접채널 vs 배포현실 비교용. rev_sim_*는 모델이 자동 생성.
         """
         P = self.cache["P"]
         newp = P  # 새 제품 인덱스
         eidx = {et: ei.clone() for et, ei in self.cache["eidx"].items()}
 
         def _append(et, dst_list):
-            if not dst_list:
+            if len(dst_list) == 0:
                 return
             extra = torch.tensor([[newp] * len(dst_list), list(dst_list)], dtype=torch.long)
             eidx[et] = torch.cat([eidx[et], extra], dim=1) if et in eidx else extra
@@ -331,6 +360,13 @@ class MDEngine:
         _append(PK_MAIN, list(keyword_idx))
         if ip_idx:
             _append(("product", "has_ip", "ip"), list(ip_idx))
+        if include_sim:
+            for et, nbrs in self._virtual_sim_neighbors(keyword_idx, ip_idx).items():
+                if len(nbrs):                         # 양방향 (newp↔nbr) — _hop2 대칭 materialize와 동일
+                    src = np.concatenate([np.full(len(nbrs), newp), nbrs])
+                    dst = np.concatenate([nbrs, np.full(len(nbrs), newp)])
+                    extra = torch.tensor([src.tolist(), dst.tolist()], dtype=torch.long)
+                    eidx[et] = torch.cat([eidx[et], extra], dim=1) if et in eidx else extra
 
         eidx_dev = {et: ei.to(self.device) for et, ei in eidx.items()}
         hp = np.append(self.cache["has_promo"], float(has_promo))
@@ -342,6 +378,69 @@ class MDEngine:
             eattr = {et: ea.to(self.device) for et, ea in self.cache["eattr"].items()}
         prob = predict_proba(self.model, eidx_dev, hp_t, eattr, insta_m30=im_t).cpu().numpy()
         return float(prob[newp])
+
+    @torch.no_grad()
+    def score_concept_batch(self, concepts: Sequence, has_promo: float = 0.0,
+                            insta_m30: float = 0.0, chunk_size: int = 64,
+                            include_sim: bool = False) -> np.ndarray:
+        """가상 제품 M개를 한 그래프에 동시 추가 → 1 forward로 M개 성공확률을 한 번에 반환.
+
+        `score_concept`의 배치판 — 콜드스타트 시뮬을 N번 돌릴 때 forward N회 대신 ceil(N/chunk)회.
+        combo_grow·seed_partners·서브넷 빌드의 병목(시드당 ~85s → ~1-2s)을 푸는 핵심 프리미티브.
+
+        concepts: 각 원소가 keyword_idx 시퀀스, 또는 (keyword_idx_seq, ip_idx_seq) 튜플.
+        ⚠ 정확성: 같은 청크의 가상 제품들이 키워드를 공유하면 reverse 엣지로 keyword 임베딩이
+           상호 오염됨(특히 전 노드가 공유하는 seed/rail 키워드). 차분(margin=base+X − base)
+           기준 quantity는 같은 청크 내에서 1차 상쇄되나, 절대 prob은 단일 forward와 미세히 다를
+           수 있음. → chunk_size로 청크당 노드 수를 제한하고, 노트북 drift 셀로 검증 후 사용.
+           chunk_size=1 이면 단일 forward 반복(완전 동일, 느림) — 안전 다이얼.
+        반환: np.ndarray (len(concepts),).
+        """
+        def _split(c):
+            if len(c) == 2 and all(isinstance(s, (list, tuple, np.ndarray)) for s in c):
+                return list(c[0]), list(c[1])
+            return list(c), []
+
+        P = self.cache["P"]
+        ip_et = ("product", "has_ip", "ip")
+        eattr = ({et: ea.to(self.device) for et, ea in self.cache["eattr"].items()}
+                 if self.cache["eattr"] else None)
+        out = np.empty(len(concepts), dtype=float)
+        for start in range(0, len(concepts), max(1, chunk_size)):
+            chunk = concepts[start:start + chunk_size]
+            M = len(chunk)
+            eidx = {et: ei.clone() for et, ei in self.cache["eidx"].items()}
+            pk_s, pk_d, ip_s, ip_d = [], [], [], []
+            sim_app: Dict[tuple, List] = {}        # et → [src_list, dst_list]
+            for i, c in enumerate(chunk):
+                kw_seq, ip_seq = _split(c)
+                newp = P + i
+                pk_s += [newp] * len(kw_seq); pk_d += list(kw_seq)
+                if ip_seq:
+                    ip_s += [newp] * len(ip_seq); ip_d += list(ip_seq)
+                if include_sim:
+                    for et, nbrs in self._virtual_sim_neighbors(kw_seq, ip_seq).items():
+                        if len(nbrs):
+                            s, d = sim_app.setdefault(et, ([], []))
+                            s += [newp] * len(nbrs) + nbrs.tolist()   # 양방향
+                            d += nbrs.tolist() + [newp] * len(nbrs)
+            if pk_d:
+                extra = torch.tensor([pk_s, pk_d], dtype=torch.long)
+                eidx[PK_MAIN] = torch.cat([eidx[PK_MAIN], extra], dim=1) if PK_MAIN in eidx else extra
+            if ip_d:
+                extra = torch.tensor([ip_s, ip_d], dtype=torch.long)
+                eidx[ip_et] = torch.cat([eidx[ip_et], extra], dim=1) if ip_et in eidx else extra
+            for et, (s, d) in sim_app.items():
+                extra = torch.tensor([s, d], dtype=torch.long)
+                eidx[et] = torch.cat([eidx[et], extra], dim=1) if et in eidx else extra
+            eidx_dev = {et: ei.to(self.device) for et, ei in eidx.items()}
+            hp = np.append(self.cache["has_promo"], np.full(M, float(has_promo)))
+            im = np.append(self.cache["insta_m30"], np.full(M, float(insta_m30)))
+            hp_t = torch.tensor(hp, dtype=torch.float, device=self.device)
+            im_t = torch.tensor(im, dtype=torch.float, device=self.device)
+            prob = predict_proba(self.model, eidx_dev, hp_t, eattr, insta_m30=im_t).cpu().numpy()
+            out[start:start + M] = prob[P:P + M]
+        return out
 
     def delta_prob(self, base_keywords: Sequence[int], add: Sequence[int] = (),
                    remove: Sequence[int] = (), **kw) -> float:
@@ -360,6 +459,9 @@ class MDEngine:
 
     def kw_name(self, k_idx: int) -> str:
         return self.cache["kw_ids"][k_idx]
+
+    def product_name(self, p_idx: int) -> str:
+        return self.cache["product_names"][p_idx]
 
     def confusion_quadrant(self) -> np.ndarray:
         """THR 기준 TP/TN/FP/FN 라벨 배열 (P,)."""
