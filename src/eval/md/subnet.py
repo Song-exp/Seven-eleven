@@ -28,13 +28,118 @@ BASKET = ("keyword", "basket_comp", "keyword")
 IPIP = ("ip", "has_ip", "ip")
 
 # 대시보드 3색 계약 (dashboard.html COL3와 일치): 속성=초록 · 제품=빨강 · IP=주황.
-# 서브넷 노드는 키워드 계열(rail/trend/basket/ip2/anti)=초록, ip=주황. 제품 노드는 서브넷에 없음.
+# 서브넷 노드: 키워드 계열(rail/trend/basket/ip2/anti)=초록, ip=주황, product=빨강(레일 2개 이상 공유 제품).
 # 트렌드는 색 대신 🔥 배지, 레일은 색 대신 굵은 테두리+굵은 엣지로 구분 (대시보드와 동일).
 DASH_GREEN = "#16A34A"   # 키워드 계열(속성)
 DASH_ORANGE = "#F59E0B"  # IP
 DASH_RED = "#EF4444"     # 제품(서브넷 미사용, 계약 보존용)
 DASH_GREY = "#9CA3AF"    # 모든 엣지 공통
 KW_FAMILY = {"rail", "trend", "basket", "ip2", "anti"}
+
+
+def _won(v: float) -> str:
+    """매출 금액 → 한글 단위 축약 (억/만)."""
+    if v >= 1e8:
+        return f"매출 {v / 1e8:.1f}억"
+    if v >= 1e4:
+        return f"매출 {int(v / 1e4):,}만"
+    return f"매출 {int(v):,}원"
+
+
+def product_popularity(eng: MDEngine) -> Dict[int, tuple]:
+    """제품 idx → (정규화 점수[0~1], 표시라벨, 원값). 매출(세븐 POS) 우선, 없으면 좋아요(인스타).
+
+    랭킹 비교를 위해 각 지표를 그룹 내 max로 정규화. 결과는 eng._pop_map 캐시.
+    매출: pos_product_features.sales_30d_amt (ITEM_CD) / 좋아요: instagram 좋아요합(편의점명_정규화명).
+    """
+    cached = getattr(eng, "_pop_map", None)
+    if cached is not None:
+        return cached
+    import os
+    import pandas as pd
+
+    def norm_id(x):
+        try:
+            return str(int(float(x)))
+        except (ValueError, TypeError):
+            return str(x)
+
+    # data_dir='data/processed/hin' → 소스 parquet은 상위 'data/processed/'에 있음
+    dd = eng.cfg.data_dir
+    proc = os.path.dirname(dd.rstrip("/\\")) or dd
+    sales: Dict[str, float] = {}
+    try:
+        pos = pd.read_parquet(os.path.join(proc, "pos_product_features.parquet"))
+        for cd, amt in zip(pos["ITEM_CD"], pos["sales_30d_amt"]):
+            sales[norm_id(cd)] = float(amt)
+    except Exception:
+        pass
+    likes: Dict[str, float] = {}                     # CU/GS25 합성 ID(편의점명_정규화명)
+    seven_likes: Dict[str, float] = {}               # 세븐 numeric ITEM_CD → 좋아요 (브릿지 경유)
+    try:
+        ins = pd.read_parquet(os.path.join(proc, "instagram_engagement_with_keywords.parquet"))
+        g = ins.groupby(["편의점명", "정규화명"])["좋아요 수"].sum()
+        for (chain, nm), v in g.items():
+            likes[f"{chain}_{nm}"] = float(v)
+        # 세븐: ITEM_CD(numeric) → 인스타_정규화명 → 세븐일레븐 좋아요합
+        br = pd.read_parquet(os.path.join(proc, "seven_eleven_product_master.parquet"))
+        for cd, nm in zip(br["ITEM_CD"], br["인스타_정규화명"]):
+            if isinstance(nm, str):
+                v = likes.get(f"세븐일레븐_{nm}")
+                if v:
+                    seven_likes[norm_id(cd)] = v
+    except Exception:
+        pass
+    pids = eng.cache["product_ids"]
+    maxs = max(sales.values()) if sales else 1.0
+    alllk = list(likes.values()) + list(seven_likes.values())
+    maxl = max(alllk) if alllk else 1.0
+    out: Dict[int, tuple] = {}
+    for i, cd in enumerate(pids):
+        s = sales.get(norm_id(cd))
+        if s and s > 0:                              # 매출(세븐 NPD) 우선
+            out[i] = (s / maxs, _won(s), s)
+        else:                                        # 좋아요: CU/GS25 합성ID 또는 세븐 브릿지
+            lk = likes.get(str(cd)) or seven_likes.get(norm_id(cd))
+            if lk and lk > 0:
+                out[i] = (lk / maxl, f"♥{int(lk):,}", lk)
+    eng._pop_map = out
+    return out
+
+
+def basket_products(eng: MDEngine, kw_idxs: Sequence[int], top: int = 5,
+                    min_overlap: int = 1) -> List[dict]:
+    """동반구매 키워드(basket_comp) 집합 → 그 키워드 보유 제품 중 **매출/좋아요 상위 N**.
+
+    basket 노드는 '키워드'라 뒤에 단일 제품이 없음(키워드끼리의 동반구매 궁합).
+    이 키워드들을 가진 실제 제품을 찾아 '제품 : 보유 속성'으로 보여주되, 랭킹은 **인기도(매출 또는 좋아요)**.
+    반환: [{product, keywords[보유 basket kw명], pop[표시라벨], success}].
+    """
+    kwset = [int(k) for k in kw_idxs]
+    if not kwset:
+        return []
+    ei = eng.cache["eidx"][PK_MAIN].numpy()          # [0]=product, [1]=keyword
+    sel = np.isin(ei[1], kwset)
+    prods, kws = ei[0][sel], ei[1][sel]
+    if prods.size == 0:
+        return []
+    from collections import defaultdict
+    pmap: Dict[int, set] = defaultdict(set)
+    for p, k in zip(prods.tolist(), kws.tolist()):
+        pmap[p].add(k)
+    y = eng.cache["y"]
+    pop = product_popularity(eng)
+    cands = [(p, ks) for p, ks in pmap.items() if len(ks) >= min_overlap]
+    # 인기도(매출/좋아요 정규화 점수)↓ → 동률·무인기 시 overlap↓ → 성공작 우선
+    cands.sort(key=lambda pk: (-pop.get(pk[0], (0.0,))[0], -len(pk[1]), -int(int(y[pk[0]]) == 1)))
+    out: List[dict] = []
+    for p, ks in cands[:top]:
+        meta = pop.get(p)
+        out.append(dict(product=eng.product_name(p),
+                        keywords=[eng.kw_name(k) for k in sorted(ks)],
+                        pop=(meta[1] if meta else ""),
+                        success=bool(int(y[p]) == 1)))
+    return out
 
 
 def _node_fill(ntype: str) -> str:
@@ -184,7 +289,8 @@ def build_subnetwork(eng: MDEngine, seed: str, eps: float = 0.02, max_hops: int 
                      cand_pool: int = 28, n_headroom: int = 10,
                      top_ip: int = 2, top_trend: int = 2, top_basket: int = 3, ip_2hop: int = 2,
                      top_sim_ip: int = 2, sim_min_shared: int = 1,
-                     show_anti: int = 3, sc: Optional[_ConceptCache] = None) -> dict:
+                     show_anti: int = 3, show_products: int = 5,
+                     sc: Optional[_ConceptCache] = None) -> dict:
     """레일(combo_grow) + 레일 노드별 1-hop 문맥(IP/트렌드/바스켓, 타입분리) + IP 2-hop + anti.
 
     반환: dict(seed, rail[키워드], grow, nodes[{id,type,label,...}], edges[{src,tgt,type,weight,label}]).
@@ -267,6 +373,29 @@ def build_subnetwork(eng: MDEngine, seed: str, eps: float = 0.02, max_hops: int 
                           weight=b["margin"], label=f"잠식 Δ{b['margin']:+.3f}"))
         if len(seen_anti) >= show_anti:
             break
+
+    # ── 제품 브릿지 노드 (레일 키워드 2개 이상 공유 성공/인기 제품) ──
+    if show_products > 0:
+        rail_kw_set = set(rail_idx)
+        ei_pk = eng.cache["eidx"].get(PK_MAIN)
+        if ei_pk is not None:
+            ei_np = ei_pk.numpy()
+            prod_kws: Dict[int, set] = {}
+            for pi, ki in zip(ei_np[0].tolist(), ei_np[1].tolist()):
+                if int(ki) in rail_kw_set:
+                    prod_kws.setdefault(int(pi), set()).add(int(ki))
+            y = eng.cache["y"]
+            pop = product_popularity(eng)
+            cands = [(p, ks) for p, ks in prod_kws.items() if len(ks) >= 2]
+            cands.sort(key=lambda pk: (-pop.get(pk[0], (0.0,))[0], -len(pk[1]),
+                                       -int(int(y[pk[0]]) == 1)))
+            for prod_i, ks in cands[:show_products]:
+                pid = f"prod:{prod_i}"
+                add_node(pid, "product", _pshort(eng.product_name(prod_i)),
+                         success=bool(int(y[prod_i]) == 1))
+                for ki in sorted(ks):
+                    edges.append(dict(src=pid, tgt=f"kw:{ki}", type="prod_kw",
+                                      weight=1.0, label="제품 경유"))
 
     # ── kw-kw 엣지에 margin(절대 기여)·synergy(겹침) 부착 — margin=표시(단일목록과 동일 지표), syn=경로선택 ──
     KW_TYPES = {"rail", "trend", "basket", "anti", "ip2"}

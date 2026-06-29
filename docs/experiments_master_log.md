@@ -112,3 +112,14 @@
     - **정정(test-only 공정 비교)**: **운영점 F1 exp47 0.544 vs v2 0.583(+0.039)** / test PR-AUC 0.570 vs 0.606(+0.036) / gap 0.215 vs 0.135. → **v2가 held-out 두 지표 모두 승 + leak-free.**
     - **결론: v2-sweepA 승격 권장.** 단 (i) test셋 작아 운영 F1 차는 노이즈 가능, (ii) 서빙 교체엔 HINGNNv2+basket_comp 어댑터 필요. 현 서빙은 exp47(어댑터 구현 전까지).
     - 교훈: 운영점은 반드시 **test-only**로 비교(full-set은 과적합 모델 유리).
+
+### 2.6. sim_kw IDF 정규화 시도 (C안) — ★negative result, 폐기 (2026-06-22)
+
+> 배경: network_eda — 어텐션 α_r의 **61%가 `sim_kw`에 집중**인데 sim_kw 단독 변별 PR-AUC 0.332(평탄)·이웃 deg 208·**일반어로만 만든 엣지 66%**. 반면 `sim_ip`(α 0.10)는 단독 PR-AUC **0.617≈전체모델**. → "노이즈 sim_kw가 어텐션을 낭비한다" 가설. 상세 진단: `docs/sim_edge_influence_eda_plan.md`, `docs/findings/2026-06-22_sim엣지-퇴화-sim_ip가신호.md`.
+
+* **C안**: sim_kw를 **키워드 IDF 가중 공유합**(`S=A·diag(idf)·Aᵀ≥τ`, τ=12)으로 재구축 → deg 208→12, 일반어비율 66%→4%(노이즈 96% 제거). 학습 레시피는 sweepA와 동일(그래프 변경 순효과만). 코드: `build_hetero_data._hop2(hop2_kw_idf)` + `experiments/train_sim_idf.py` → `experiments/results/v2_sim_idf`.
+* **결과: test PR-AUC 0.593 (A 0.608 대비 −0.015) / train-val gap 0.204 (A 0.115 대비 +0.089)** — **두 지표 모두 악화.**
+* **진단(왜)**: α_r는 의도대로 재분배됨 (sim_kw 0.61→**0.43**↓, sim_ip 0.10→**0.33**↑). 그런데도 test↓ gap↑. → **퇴화 sim_kw는 "변별자"가 아니라 "정규화기"였다.** 빽빽한 generic 연결(deg 208)이 메시지패싱에서 임베딩을 평균으로 끌어 **암묵적 스무딩=과적합 억제** 역할. 솎으니(deg 12) 스무딩 소멸 → train 과적합(train_pr 0.818). sim_ip로 옮겨갔지만 sim_ip는 희소(보유율 0.20)라 80% 제품의 잃은 스무딩을 못 메움. 전이ablation drop은 여전히 미미(A 0.0005 / C 0.0027 = 누수 아님 재확인).
+* **결론**: **C 폐기, A(v2_sweepA) 유지.** 비변별적이라도 **밀도 자체가 GNN 정규화**라 단순 제거(threshold)는 해롭다. 올바른 방향 = **IDF를 edge_attr로** 붙여 밀도(정규화)는 보존하고 집계 시 generic 기여만 다운웨이트 (다음 실험 후보). 단일 run 변동성 있으나 gap +0.089는 실제 효과.
+* **인과 표현 정밀화**: 증명한 건 "sim_kw가 **기능적으로** 정규화 역할(떼니 gap↑)"이지, DiffMG가 *그 목적으로* α 0.61을 줬다는 동기는 아님(최밀집 관계라 질량을 많이 먹은 것일 수도). 안전한 진술 = "sim_kw 몰림은 누수도 아니고 정규화로 일하므로 제거는 손해."
+* **처방 해석 메모**: MD가 α_r을 "성공 동인"으로 읽을 때 **sim_kw 0.61을 '키워드 유사성이 동인'으로 오해 금지** — 구조적 스무딩일 뿐, 실제 변별 신호는 **sim_ip**. (findings: `2026-06-22_sim엣지-퇴화-sim_ip가신호.md`)

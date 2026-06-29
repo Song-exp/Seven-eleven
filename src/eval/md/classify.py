@@ -16,7 +16,7 @@ from typing import Dict
 import numpy as np
 import pandas as pd
 
-from .engine import MDEngine
+from .engine import MDEngine, PK_MAIN
 from . import review as R
 
 NOISE = R.NOISE   # 0.01 — 단일 노이즈 플로어 (2·SE 스케일)
@@ -132,4 +132,216 @@ def classify_keywords_live(eng: MDEngine, universe: str = "full", verify: bool =
             pass
 
     eng._live_tags = (key, tags)
+    return tags
+
+
+# ────────────────────────────────────────────────────────────────────
+# 채널 적합도 (인스타 vs POS) — docs/channel_fit_methodology_and_results.md
+# gtag(killer/mine)와 동일 패턴: 로드 시 1회 전역 산출 → 캐시 → combo가 노드에 부착.
+# ────────────────────────────────────────────────────────────────────
+INSTA_SRC = ("인스타", "CU_인스타", "GS25_인스타")
+
+
+def classify_channel_live(eng: MDEngine, pos_floor: int = 3, insta_floor: int = 1) -> Dict[str, dict]:
+    """전 키워드 → 채널 태그 {keyword: {"ctag": POS형/인스타형/범용, "low": 저신뢰}}.
+
+    배타 성공군(POS 단독 vs 인스타 단독)에서 ablation Δ를 채널별로 재서, 부호 게이트(Δ>+0.01)+margin으로 분류.
+    드래그/효과미미/미정 키워드는 태그를 부여하지 않는다(=채널 안내 없음). 결과는 eng._channel_tags 캐시.
+    """
+    key = (pos_floor, insta_floor)
+    cached = getattr(eng, "_channel_tags", None)
+    if cached is not None and cached[0] == key:
+        return cached[1]
+
+    y = eng.cache["y"]
+    src = eng.cache["succ_src"]
+    pos_idx = np.where((y == 1) & (src == "POS"))[0]                       # POS 단독성공
+    insta_idx = np.where((y == 1) & np.isin(src, list(INSTA_SRC)))[0]     # 인스타 단독성공
+
+    ei = eng.cache["eidx"][PK_MAIN].numpy()
+    K = eng.cache["K"]
+
+    def _holder_count(idx):
+        m = np.isin(ei[0], idx)
+        return np.bincount(ei[1][m], minlength=K)
+
+    total_cnt = np.bincount(ei[1], minlength=K)
+    pos_n = _holder_count(pos_idx)
+    insta_n = _holder_count(insta_idx)
+    cand = {int(k) for k in range(K)
+            if total_cnt[k] >= 3 and (pos_n[k] >= pos_floor or insta_n[k] >= insta_floor)}
+    if not cand:
+        eng._channel_tags = (key, {})
+        return {}
+
+    HASIP = ("product", "has_ip", "ip")
+    have_ip = HASIP in eng.cache["eidx"]
+    union = sorted(set(pos_idx.tolist()) | set(insta_idx.tolist()))
+    pk = {p: eng.product_keywords(p) for p in union}
+    ip = {p: (eng.product_keywords(p, HASIP) if have_ip else []) for p in union}
+
+    def _channel_delta(idx):
+        """채널 성공작에서 보유 후보 키워드를 빼본 contrib 평균. {k_idx: Δ}."""
+        from collections import defaultdict
+        acc = defaultdict(list)
+        for p in idx:
+            p = int(p)
+            kws, ips = pk[p], ip[p]
+            targets = [k for k in kws if k in cand]
+            if not targets:
+                continue
+            concepts = [(kws, ips)] + [([x for x in kws if x != k], ips) for k in targets]
+            s = eng.score_concept_batch(concepts, chunk_size=len(concepts))  # full/ablate 동일 청크 → 상쇄
+            base = s[0]
+            for i, k in enumerate(targets):
+                acc[k].append(float(base - s[i + 1]))
+        return {k: float(np.mean(v)) for k, v in acc.items()}
+
+    d_pos = _channel_delta(pos_idx)
+    d_insta = _channel_delta(insta_idx)
+
+    tags: Dict[str, dict] = {}
+    for k in cand:
+        dp = d_pos.get(k, np.nan)
+        di = d_insta.get(k, np.nan)
+        pos_drive = (pos_n[k] >= pos_floor) and (not np.isnan(dp)) and (dp > NOISE)
+        ins_drive = (insta_n[k] >= insta_floor) and (not np.isnan(di)) and (di > NOISE)
+        if pos_drive and ins_drive:
+            m = di - dp
+            ctag = "인스타형" if m > NOISE else ("POS형" if m < -NOISE else "범용")
+        elif ins_drive:
+            ctag = "인스타형"
+        elif pos_drive:
+            ctag = "POS형"
+        else:
+            continue   # 드래그(Δ<0)/효과미미/미정 → 채널 태그 없음
+        tags[eng.kw_name(k)] = {"ctag": ctag, "low": bool(ctag == "인스타형" and insta_n[k] < 3)}
+
+    eng._channel_tags = (key, tags)
+    return tags
+
+
+# ────────────────────────────────────────────────────────────────────
+# IP 분류 — 키워드와 동일 체계(역할 killer/매개/일반 + 채널 인스타/POS/범용)를 IP로 이식.
+# 데이터: product→IP(has_ip) 멤버십이 키워드의 has_kw 역할. 개입: score_concept가 ip_idx 네이티브 지원.
+# IP는 제품당 희소 → support_floor=1 (키워드 3 → IP 1로 완화).
+# ────────────────────────────────────────────────────────────────────
+HASIP = ("product", "has_ip", "ip")
+# 대시보드 NODE_DROP_SUBSTR과 동일 — HIN(ip_nodes) 미재빌드라 분류 단계에서 런타임 제외.
+# (정식 제거는 patch_ip_keywords_all.DELETE_IPS 추가 + HIN 재빌드 후 재export)
+IP_DROP_SUBSTR = ("경동나비엔", "APEC정상회의")
+
+
+def classify_ips_live(eng: MDEngine, support_floor: int = 1, n_headroom: int = 12,
+                      chunk: int = 48) -> Dict[str, dict]:
+    """전 IP → {ip_name: {"gtag": killer/mine/매개/hub, "ctag": 인스타형/POS형/범용/None, "low": bool}}.
+
+    역할: 관찰(has_ip 성공/실패 보유율 → 성공특이도) + 인과(헤드룸 캐리어에 IP 주입 시 Δprob).
+    채널: 배타 성공군(POS단독·인스타단독)에서 IP ablation Δ → 부호게이트+margin (키워드 채널핏과 동일).
+    결과는 eng._ip_tags 캐시. has_ip 엣지 없으면 빈 dict.
+    """
+    key = (support_floor, n_headroom)
+    cached = getattr(eng, "_ip_tags", None)
+    if cached is not None and cached[0] == key:
+        return cached[1]
+    if HASIP not in eng.cache["eidx"]:
+        eng._ip_tags = (key, {})
+        return {}
+
+    y = eng.cache["y"]
+    srcv = eng.cache["succ_src"]
+    I = eng.cache["I"]
+    ip_names = eng.cache["maps"]["ip_ids"]
+    ei = eng.cache["eidx"][HASIP].numpy()                  # [0]=product, [1]=ip
+
+    def _hold(idx):
+        m = np.isin(ei[0], idx)
+        return np.bincount(ei[1][m], minlength=I)
+
+    succ_idx = np.where(y == 1)[0]
+    fail_idx = np.where(y == 0)[0]
+    pos_idx = np.where((y == 1) & (srcv == "POS"))[0]
+    insta_idx = np.where((y == 1) & np.isin(srcv, list(INSTA_SRC)))[0]
+    supp_succ, supp_fail = _hold(succ_idx), _hold(fail_idx)
+    pos_n, insta_n = _hold(pos_idx), _hold(insta_idx)
+    total = supp_succ + supp_fail
+    n_succ = max(int((y == 1).sum()), 1)
+    n_fail = max(int((y == 0).sum()), 1)
+
+    cand = [i for i in range(I) if total[i] >= support_floor
+            and not any(s in str(ip_names[i]) for s in IP_DROP_SUBSTR)]
+    if not cand:
+        eng._ip_tags = (key, {})
+        return {}
+    cand_set = set(cand)
+
+    # ── 역할 인과: 헤드룸 캐리어에 IP 주입 시 평균 Δprob (키워드 _batch_delta의 IP판) ──
+    from .subnet import _headroom_products
+    sample = _headroom_products(eng, n_headroom)
+    pk = {c: list(eng.product_keywords(c)) for c in sample}
+    cip = {c: list(eng.product_keywords(c, HASIP)) for c in sample}
+    M = len(sample)
+    base = eng.score_concept_batch([(pk[c], cip[c]) for c in sample])
+    add = eng.score_concept_batch([(pk[c], cip[c] + [i]) for i in cand for c in sample], chunk_size=chunk)
+    head_delta = {i: float(np.mean([add[j * M + t] - base[t] for t in range(M)]))
+                  for j, i in enumerate(cand)}
+
+    # ── 채널 인과: 배타 성공군에서 IP ablation Δ (키워드 _channel_delta의 IP판) ──
+    def _ip_channel_delta(idx):
+        from collections import defaultdict
+        acc = defaultdict(list)
+        for p in idx:
+            p = int(p)
+            kws = eng.product_keywords(p)
+            ips = list(eng.product_keywords(p, HASIP))
+            targets = [i for i in ips if i in cand_set]
+            if not targets:
+                continue
+            concepts = [(kws, ips)] + [(kws, [x for x in ips if x != i]) for i in targets]
+            s = eng.score_concept_batch(concepts, chunk_size=len(concepts))
+            b = s[0]
+            for t, i in enumerate(targets):
+                acc[i].append(float(b - s[t + 1]))
+        return {i: float(np.mean(v)) for i, v in acc.items()}
+
+    d_pos = _ip_channel_delta(pos_idx)
+    d_insta = _ip_channel_delta(insta_idx)
+
+    tags: Dict[str, dict] = {}
+    for i in cand:
+        name = ip_names[i]
+        succ_rate = supp_succ[i] / total[i] if total[i] else 0.0
+        dprob = head_delta.get(i, 0.0)
+        # 역할(gtag): killer=성공특이∧유발 / 매개=비특이인데 보편유발 / mine=실패특이∧무유발 / hub=일반
+        if succ_rate >= 0.50 and dprob > NOISE:
+            gtag = "killer"
+        elif dprob > NOISE:
+            gtag = "매개"
+        elif succ_rate <= 0.15 and dprob < NOISE and supp_fail[i] >= 2:
+            gtag = "mine"          # 싱글톤 실패는 제외 — 반복 실패(≥2) 증거 있을 때만 주의
+        else:
+            gtag = "hub"
+        # 채널(ctag): 부호게이트(Δ>+noise)+margin
+        dp, di = d_pos.get(i, np.nan), d_insta.get(i, np.nan)
+        pos_drive = (pos_n[i] >= support_floor) and (not np.isnan(dp)) and (dp > NOISE)
+        ins_drive = (insta_n[i] >= support_floor) and (not np.isnan(di)) and (di > NOISE)
+        if pos_drive and ins_drive:
+            m = di - dp
+            ctag = "인스타형" if m > NOISE else ("POS형" if m < -NOISE else "범용")
+        elif ins_drive:
+            ctag = "인스타형"
+        elif pos_drive:
+            ctag = "POS형"
+        else:
+            ctag = None
+        tags[name] = {"gtag": gtag, "ctag": ctag,
+                      "low": bool(ctag == "인스타형" and insta_n[i] < 3),
+                      # 근거 수치 (보고서·디버그용; combo_serve는 gtag/ctag/low만 사용)
+                      "supp_succ": int(supp_succ[i]), "supp_fail": int(supp_fail[i]),
+                      "succ_rate": round(succ_rate, 3), "dprob": round(dprob, 4),
+                      "d_pos": (None if np.isnan(dp) else round(dp, 4)),
+                      "d_insta": (None if np.isnan(di) else round(di, 4)),
+                      "pos_n": int(pos_n[i]), "insta_n": int(insta_n[i])}
+
+    eng._ip_tags = (key, tags)
     return tags

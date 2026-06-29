@@ -37,6 +37,8 @@ CFG = dict(
     basket_comp_support=3,  # 보완 엣지 지지도 하한
     lr=0.005, lr_alpha=0.02,
     epochs=25, patience=15,
+    hop2_kw_idf=False,      # C안: sim_kw를 IDF 가중 공유합으로 구축(일반어 노이즈 제거)
+    hop2_kw_idf_tau=12.0,   # IDF 임계 τ (noteook idf_sim_sweep 튜닝: τ≈12에서 deg~12·노이즈 96%↓)
 )
 
 
@@ -107,6 +109,7 @@ def run(full=False, cfg_override=None, basket_train_only=False, tag="v2"):
         include_offline_copurchase=False, include_quick_copurchase=False,  # leak-free
         use_lift_weights=False, use_idf_keyword_weights=False,
         add_2hop_edges=True, hop2_kw_min_shared=g["hop2_kw_min_shared"], hop2_ip_min_shared=g["hop2_ip_min_shared"],
+        hop2_kw_idf=cfg["hop2_kw_idf"], hop2_kw_idf_tau=cfg["hop2_kw_idf_tau"],
         add_via_ip_edges=True, add_ipip_kw_edges=True, add_trend_kw_edges=True,
     )
     eidx = {et: ei.to(dev) for et, ei in forward_edge_index_dict(data).items()}

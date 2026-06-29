@@ -33,10 +33,13 @@ async def _warmup():
         try:
             # combo 엔진 + 라이브 분류(Δprob 배치)를 미리 계산·캐시 → /combo 첫 요청이 안 막힘
             from src.eval import combo_serve
-            from src.eval.md.classify import classify_keywords_live
+            from src.eval.md.classify import (classify_keywords_live, classify_channel_live,
+                                              classify_ips_live)
             eng, _ = combo_serve._engine()
             classify_keywords_live(eng)
-            print("[warmup] combo 엔진 + 키워드 분류 준비 완료")
+            classify_channel_live(eng)      # 채널 태그(인스타/POS/범용) 전역 1회 산출 → 캐시
+            classify_ips_live(eng)          # IP 역할/채널 태그 (support_floor=1) 전역 1회 산출 → 캐시
+            print("[warmup] combo 엔진 + 키워드/채널/IP 분류 준비 완료")
         except Exception as e:
             print(f"[warmup] combo/분류 준비 실패: {e}")
     threading.Thread(target=_do, daemon=True).start()
@@ -93,6 +96,15 @@ def config_js():
 def combo_data_js():
     return FileResponse(os.path.join(_DASHBOARD_DIR, "combo_data.js"), media_type="application/javascript")
 
+@app.get("/{name}.png")
+def dashboard_png(name: str):
+    """대시보드 정적 이미지(로고 등) — Dashboard/ 내부 png만 서빙."""
+    path = os.path.join(_DASHBOARD_DIR, f"{os.path.basename(name)}.png")
+    if not os.path.isfile(path):
+        from fastapi import Response
+        return Response(status_code=404)
+    return FileResponse(path, media_type="image/png")
+
 @app.get("/health")
 def health():
     return {"status": "ok", "serving_exp": serve.SERVING_EXP}
@@ -109,6 +121,17 @@ def infer_get():
 def infer(req: InferReq):
     """검색어 → 네트워크 출발점 후보 키워드. 기지 트렌드 조회 → 임의 입력 Gemma+매칭."""
     return {"trend": req.trend, "attrs": serve.infer_attrs(req.trend)}
+
+
+class InsightFilterReq(BaseModel):
+    concept: List[str] = []      # 선택 시드(컨셉)
+    keywords: List[str] = []     # 인사이트 후보 키워드
+
+
+@app.post("/insight/filter")
+def insight_filter(req: InsightFilterReq):
+    """AI 인사이트 후보 중 컨셉에 안 어울리는 키워드(drop) 반환 — LLM 관련성 필터."""
+    return {"drop": serve.insight_filter(req.concept, req.keywords)}
 
 
 @app.post("/network")

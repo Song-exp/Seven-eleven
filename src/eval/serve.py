@@ -280,8 +280,12 @@ _P_SELECT = """[SYSTEM]
 [검색어]와 가장 잘 어울리는 편의점 식품 속성을, 반드시 아래 [허용 어휘] 목록 안에 있는 단어로만 8~15개 골라라.
 [제약]
 1. 반드시 [허용 어휘]에 그대로 존재하는 단어만 출력. 목록에 없는 단어·변형·신조어·동의어 절대 금지.
-2. 검색어 자체·인물명·브랜드명 제외. 맛·식감·재료·분위기·컨셉 속성 위주.
-3. 관련도 높은 순서로, 쉼표로만 구분. 설명·따옴표·마침표·번호 금지.
+2. 검색어가 재료·맛·특정 디저트/트렌드면, [허용 어휘]에서 **그 정체성을 이루는 핵심 재료**를 1~3개 맨 앞에 먼저 골라라.
+   - 어휘에 **구체 재료**가 있으면 상위 카테고리보다 그것을 우선(예: '피스타치오'가 어휘에 있으면 '견과류'보다 '피스타치오').
+   - 그래프에 없는 외래 재료는 가장 가까운 재료로 치환(예: 우베=보라 얌→타로·고구마).
+   - 특정 디저트·트렌드는 그 **시그니처 재료**를 포함(예: 두바이초콜릿→피스타치오·카다이프·초코, 몽블랑→밤).
+3. 그 다음으로 맛·식감·분위기·컨셉 속성을 채워 총 8~15개. 검색어 자체·인물명·브랜드명은 제외.
+4. 관련도 높은 순서로, 쉼표로만 구분. 설명·따옴표·마침표·번호 금지.
 [허용 어휘]
 {vocab}
 [USER]
@@ -410,6 +414,39 @@ def _match_to_graph(terms: List[str], graph_kw: set) -> List[str]:
     return out
 
 
+_KIWI = None
+_KIWI_FAILED = False
+
+
+def _get_kiwi():
+    """Kiwi 싱글톤 지연 로드(첫 호출 1회). 비ASCII(한글) 경로 폴백은 keyword_extract._load_kiwi 재사용."""
+    global _KIWI, _KIWI_FAILED
+    if _KIWI is not None or _KIWI_FAILED:
+        return _KIWI
+    try:
+        from src.eval.keyword_extract.pipeline import _load_kiwi
+        _KIWI = _load_kiwi()
+    except Exception:
+        _KIWI_FAILED = True
+        _KIWI = None
+    return _KIWI
+
+
+def _kiwi_nouns(query: str) -> List[str]:
+    """검색어 형태소 분석 → 명사(NN*) 조각 추출. 복합어 분리(예: 호박인절미 → 호박·인절미).
+
+    Kiwi 미가용·오류 시 빈 리스트(상위에서 토큰·LLM 매칭으로 폴백). graph_kw 매칭 전 후보 확장용.
+    """
+    k = _get_kiwi()
+    if not k:
+        return []
+    try:
+        return [t.form for t in k.tokenize(query)
+                if t.tag.startswith("NN") and len(t.form) >= 2]
+    except Exception:
+        return []
+
+
 def gemma_expand(query: str) -> List[str]:
     # timeout 300s: 첫 호출 콜드 로드(9.6GB, /mnt/c 9p)가 실측 ~190초까지 → 첫 추론 실패 방지
     out = _llm(_P_EXPAND.format(query=query), temperature=0.2, timeout=300)
@@ -440,6 +477,35 @@ def vocab_select(query: str, timeout: int = 120) -> List[str]:
     return res
 
 
+def insight_filter(concept: List[str], keywords: List[str], timeout: int = 60) -> List[str]:
+    """AI 인사이트 후보 중 컨셉에 '명백히 안 어울리는' 키워드만 골라 제거 대상(drop)으로 반환.
+
+    같은 카테고리 브랜드·IP·먹거리·맛/식감 키워드는 유지, 전혀 다른 카테고리(치킨·돈까스·라면·핫도그 등)
+    또는 무관한 IP만 제거. LLM 실패/빈 입력 시 빈 리스트(=필터 안 함, 하위호환).
+    """
+    cand = [k for k in (keywords or []) if k]
+    if not cand or not concept:
+        return []
+    prompt = (
+        "신상품 컨셉: " + ", ".join(concept) + "\n"
+        "아래 후보 중 이 컨셉의 신상품 기획에 '명백히 안 어울리는' 것만 제거 대상으로 골라줘.\n"
+        "[유지] 맛/식감/재료/분위기/시즌 키워드, 컨셉과 같은 카테고리의 브랜드·IP·먹거리.\n"
+        "[제거] 컨셉과 전혀 다른 카테고리 음식/브랜드(예: 디저트 컨셉인데 치킨·돈까스·라면·핫도그), 컨셉과 무관한 IP.\n"
+        "후보: " + ", ".join(cand) + "\n"
+        "제거할 키워드만 쉼표로만 출력. 없으면 '없음'."
+    )
+    try:
+        out = _llm(prompt, temperature=0.0, timeout=timeout)
+    except Exception:
+        return []
+    cset, seen, drop = set(cand), set(), []
+    for t in out.replace("\n", ",").split(","):
+        t = t.strip().strip('"').strip("'")
+        if t in cset and t not in seen:        # 환각 방지: 입력 후보에 있는 것만
+            seen.add(t); drop.append(t)
+    return drop
+
+
 
 
 # ── 1. 검색어 → 네트워크 키워드 (entry point) ────────────────────
@@ -451,22 +517,38 @@ def infer_attrs(query: str) -> List[str]:
     """
     d = _data()
     gk = d["graph_kw"]
+
+    def _finish(res):
+        # 검색어 자체가 그래프 키워드면 맨 앞에 포함(시작점 보장). 그래프에 없으면 추가 안 함
+        # → '우베'처럼 그래프 미존재 검색어가 속성 칩으로 새는 것 방지.
+        return ([query] + res) if (query in gk and query not in res) else res
+
     if query in d["trend_attrs"]:
         m = [a for a in d["trend_attrs"][query] if a in gk]
         if m:
-            return m
+            return _finish(m)
+    # ★ 트렌드 '부분일치'를 더 이상 즉시 return 하지 않음 — '호박인절미'가 트렌드 '인절미'에 걸려
+    #   단락되며 분절(단호박·인절미)에 도달 못 하던 버그 수정. 분절·LLM을 먼저, 트렌드는 폴백으로만.
+    det = _match_to_graph(_kiwi_nouns(query) + _tokens(query), gk)   # ① 분절(복합어 분리) + 원토큰
+    det += [kw for kw in gk if len(kw) >= 2 and kw in query and kw not in det]  # Kiwi 미분절 복합어 보강(흑임자라떼 → 라떼)
+    det = [kw for kw in det if not any(kw != o and kw in o for o in det)]       # 더 긴 매칭의 조각 제거('떡볶이'의 '볶이')
+    try:
+        selected = vocab_select(query)                              # ② 어휘제약 LLM 선택(의미)
+    except Exception:
+        selected = []                                               # LLM 오류 시에도 분절 매칭 유지
+    merged = list(dict.fromkeys([*det, *selected]))                 # 분절(단호박·인절미) 우선 + LLM 보완
+    if merged:
+        return _finish(merged)
+    # 폴백 — 분절·LLM 모두 실패 시에만 트렌드 부분일치 속성 사용
+    trend_hits = []
     for t, attrs in d["trend_attrs"].items():
         if query in t or t in query:
-            m = [a for a in attrs if a in gk]
-            if m:
-                return m
-    # 미등재 입력 (트렌드·IP 모두): 어휘 제약 LLM 선택(그래프 안에서만, 의미 정확).
-    selected = vocab_select(query)
-    if selected:
-        return selected
-    # fallback — 선택 실패(API 오류 등) 시 기존 확장+문자열매칭 (여전히 graph_kw만 반환)
+            trend_hits += [a for a in attrs if a in gk]
+    if trend_hits:
+        return _finish(list(dict.fromkeys(trend_hits)))
+    # fallback — LLM·분절 모두 실패(API 오류 등) 시 Gemma 확장 + 문자열매칭 (여전히 graph_kw만 반환)
     expanded = gemma_expand(query)
-    return _match_to_graph(expanded + _tokens(query), gk)
+    return _finish(_match_to_graph(expanded + _tokens(query), gk))
 
 
 # ── 2. 히트 / 부진 상품 (탭2·탭3) ────────────────────────────────
