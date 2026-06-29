@@ -1,5 +1,9 @@
 # 최종 모델 요약 — exp41_trend_kw3_ip1
 
+> ⚠️ **구버전 / 폐기 모델 (exp41, 동반구매 누수 포함) — 현행 아님.**
+> 현행 서빙은 **v2_sweepA**(held-out PR-AUC 0.608, leak-free). 아래 수치(PR-AUC 0.6959 등)는 누수가 포함된 exp41 기준이라 운영과 다르다.
+> 현행 근거: [`final_evolution_report.md`](../final_evolution_report.md) · [`final_model_leakfree_switch_plan.md`](../final_model_leakfree_switch_plan.md) · [`md_prescription_system_guide.md`](../md_prescription_system_guide.md).
+
 > 생성일: 2026-06-20  
 > 체크포인트: `checkpoints/hin_gnn_best.pt`  
 > 실험 config: `experiments/configs/exp41_trend_kw3_ip1.yaml`
