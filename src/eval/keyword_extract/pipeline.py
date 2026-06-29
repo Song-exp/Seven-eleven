@@ -607,6 +607,29 @@ def load_curated_mapping(path: Path) -> dict[str, str]:
     return mapping
 
 
+def _load_kiwi():
+    """Kiwi 로드. 비ASCII 경로(한글 폴더)에서 C++ 모델 로더가 실패('Cannot open extract.mdl')하면
+    모델을 ASCII 경로로 복사해 재시도. 배포(Linux /app, ASCII)에선 기본 경로로 바로 성공 → 폴백 미발동."""
+    import os
+    env_path = os.environ.get("KIWI_MODEL_PATH")
+    if env_path:
+        return Kiwi(model_path=env_path)
+    try:
+        return Kiwi()
+    except Exception:
+        import shutil
+        import kiwipiepy_model
+        src = os.path.dirname(kiwipiepy_model.__file__)
+        for dst in (r"C:\kiwi_model", r"C:\Users\Public\kiwi_model"):
+            try:
+                if not os.path.exists(os.path.join(dst, "extract.mdl")):
+                    shutil.copytree(src, dst, dirs_exist_ok=True)
+                return Kiwi(model_path=dst)
+            except Exception:
+                continue
+        raise
+
+
 class MDKeywordPipeline:
     def __init__(
         self,
@@ -655,7 +678,7 @@ class MDKeywordPipeline:
         ]
         self.short_exact_keywords.sort(key=lambda x: (-len(remove_spaces(x)), x))
 
-        self.kiwi = Kiwi()
+        self.kiwi = _load_kiwi()
 
     def extract(self, text: str) -> dict[str, object]:
         normalized = normalize_text(text)

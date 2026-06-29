@@ -15,6 +15,7 @@
   --text:#1F2430; --text-2:#4B5563; --text-3:#9AA0AC; --text-4:#BFC4CC;
   --green:#16A34A; --green-soft:#22C55E; --green-fill:#EAF8F0; --green-border:#8FE0AD;
   --red:#EF4444; --orange:#F2994A; --ip:#F59E0B;
+  --blue:#2563EB; --blue-soft:#EAF1FF; --blue-border:#C9DDFF;
   --radius:14px; --radius-sm:9px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -26,6 +27,7 @@ b{color:var(--text);font-weight:700}
 .header{display:flex;align-items:center;gap:18px;padding:18px 32px;border-bottom:1px solid var(--line);background:#fff}
 .brand{display:flex;align-items:center;gap:18px}
 .logo7e{font-family:'Arial Black','Helvetica Neue',Arial,sans-serif;font-weight:900;font-size:27px;font-style:italic;letter-spacing:-1.5px;line-height:1;white-space:nowrap}
+.logo-img{height:30px;width:auto;display:block;flex:none}
 .logo7e .s7{color:#F47216}
 .logo7e .se{color:#1C8A47}
 .logo7e .sn{color:#ED1B2E}
@@ -70,10 +72,14 @@ b{color:var(--text);font-weight:700}
 .sel-count{font-size:11px;color:var(--text-3);margin-top:9px}
 
 /* ── 우: 네트워크 패널 ───────────────────────── */
-.right-title{font-size:16px;font-weight:700;color:var(--green);line-height:1.55;margin-bottom:16px;letter-spacing:-.2px}
+.right-title{display:none}  /* 검색어›칩 표시 제거 — AI 요약 인사이트가 대신 안내 */
 .right-title.muted{color:var(--text-3);font-weight:500}
 .right-title.muted b{color:var(--text-2)}
 .right-title b{color:var(--green);font-weight:800}
+.rt-trend{font-weight:800;color:var(--green);font-size:17px}
+.rt-sep{color:var(--text-3);margin:0 7px;font-weight:400}
+.rt-div{color:var(--line);margin:0 10px}
+.rt-chip{display:inline-block;padding:2px 9px;margin:0 3px;border:1px solid var(--green-border,#8FE0AD);border-radius:12px;background:var(--green-soft,#EAF8F0);color:#1F2430;font-size:12.5px;font-weight:600;vertical-align:middle}
 
 .mini-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
 .mtab{padding:8px 16px;border:1px solid var(--line);border-radius:9px;font-size:13px;cursor:pointer;background:#fff;color:var(--text-2);font-weight:500;font-family:inherit;transition:.12s}
@@ -97,8 +103,59 @@ b{color:var(--text);font-weight:700}
 .legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
 .fs-btn{padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--text-2);font-size:12px;cursor:pointer;font-family:inherit}
 .fs-btn:hover{border-color:var(--green-border);color:var(--green)}
+.node-search{position:relative}
+.node-search input{width:150px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--text);font-size:12px;font-family:inherit}
+.node-search input:focus{outline:none;border-color:var(--green-border)}
+.ns-list{position:absolute;top:34px;right:0;width:210px;max-height:260px;overflow:auto;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);z-index:40;padding:4px}
+.ns-list.hidden{display:none}
+.ns-item{padding:7px 9px;border-radius:7px;font-size:13px;color:var(--text);cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ns-item:hover{background:var(--green-soft,#EAF8F0)}
+.ns-empty{padding:8px 9px;font-size:12px;color:var(--text-3)}
+.ins-guide{margin-top:12px;border-top:1px solid var(--line-soft,#eee);padding-top:11px}
+.ins-h{font-size:13px;font-weight:800;color:var(--text);margin-bottom:9px}
+.ins-h .ins-sub{font-weight:400;font-size:11px;color:var(--text-3);margin-left:5px}
+.ig-sec{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 11px;margin-bottom:8px}
+.ig-t{font-size:12.5px;font-weight:700;color:var(--text);margin-bottom:2px}
+.ig-d{font-size:11px;color:var(--text-3);line-height:1.5;margin-bottom:6px}
+.ig-chips{display:flex;flex-wrap:wrap;gap:5px}
+.ig-leg{font-size:11px;color:var(--text-3);margin:2px 0 2px;line-height:1.5}
+.ig-bk{margin-top:11px}
+.ig-bk-row{display:flex;align-items:flex-start;gap:7px;margin-bottom:6px;flex-wrap:wrap}
+.ig-bk-sep{color:var(--text-3);font-weight:700}
+.ig-bk-prod{font-size:12.5px;font-weight:700;color:var(--text);flex:none;padding-top:3px}
+.ig-bk-pop{font-size:11px;font-weight:700;color:#B45309;background:#FEF3E2;border-radius:6px;padding:1px 6px;flex:none;align-self:flex-start;margin-top:2px}
+.ig-bk-kws{display:flex;flex-wrap:wrap;gap:5px}
+.kw-pick{display:inline-block;padding:3px 10px;border:1px solid var(--green-border,#8FE0AD);border-radius:13px;background:var(--green-soft,#EAF8F0);color:#1F2430;font-size:12px;font-weight:600;cursor:pointer;transition:background .12s,color .12s}
+.kw-pick:hover{background:var(--green,#16A34A);color:#fff}
+.kw-pick.basket{border-color:#F0C089;background:#FEF3E2;color:#1F2430}
+.kw-pick.basket:hover{background:#D97706;color:#fff}
+.kw-pick.kw-ip{border-color:#F0C089;background:#FEF3E2;color:#1F2430}   /* IP = 주황 배경 */
+.kw-pick.kw-ip:hover{background:#D97706;color:#fff}
+.ins-hint{font-size:11px;color:var(--text-3);margin-top:8px;line-height:1.6}
+/* 문장형 AI 인사이트: 색=역할, 이모지 없음, 단어 클릭=노드 포커스 */
+.ins-word{font-weight:700;cursor:pointer;border-bottom:1px solid currentColor;transition:opacity .12s}
+.ins-word:hover{opacity:.65}
+.ins-sentence{font-size:14px;line-height:1.95;color:var(--text-2)}
+.ins-sentence b{color:var(--text);font-weight:800}
+.ins-legend{margin-top:11px;font-size:11px;color:var(--text-3)}
+/* 도움말 호버 팝업 (ℹ️ 정보 칩 — 마우스 올리면 표시) */
+.help{position:relative;display:inline-block}
+.help-ic{display:inline-flex;align-items:center;gap:4px;cursor:pointer;font-size:11.5px;font-weight:700;color:var(--blue);background:var(--blue-soft);border:1px solid var(--blue-border);border-radius:999px;padding:2px 9px;line-height:1.6;user-select:none;vertical-align:middle;transition:background .12s,box-shadow .12s}
+.help-ic:hover{background:#DCE8FF;box-shadow:0 1px 5px rgba(37,99,235,.20)}
+.help-pop{display:none;position:absolute;z-index:80;top:20px;left:0;width:290px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.15);padding:14px 16px;font-size:12.5px;line-height:1.7;color:var(--text-2);font-weight:400;white-space:normal;text-align:left}
+.help:hover .help-pop{display:block}
+.help-pop h5{font-size:12.5px;font-weight:800;color:var(--text);margin:0 0 8px}
+.help-pop .ht-row{display:flex;gap:8px;align-items:flex-start;margin:4px 0}
+.help-pop .ht-dot{width:9px;height:9px;border-radius:50%;flex:none;margin-top:5px}
+.help-pop b{color:var(--text);font-weight:700}
+.help-pop .ht-foot{margin-top:9px;padding-top:8px;border-top:1px solid var(--line-soft);color:var(--text-3);font-size:11.5px}
+.left-help{margin-bottom:16px}
+.ig-table{width:100%;border-collapse:collapse;margin:4px 0 8px}
+.ig-table tr+tr td{border-top:1px solid var(--line-soft)}
+.ig-row-label{white-space:nowrap;padding:7px 10px 7px 0;font-size:12.5px;font-weight:700;color:var(--text-2);vertical-align:top;width:82px}
+.ig-row-chips{padding:5px 0;vertical-align:middle}
 
-#net-canvas{width:100%;height:640px;border:1px solid var(--line);border-radius:14px;background:#fff;background-image:radial-gradient(var(--line-soft) 1px,transparent 1px);background-size:22px 22px}
+#net-canvas{flex:1;min-width:0;height:640px;border:1px solid var(--line);border-radius:14px 0 0 14px;border-right:none;background:#fff;background-image:radial-gradient(var(--line-soft) 1px,transparent 1px);background-size:22px 22px}
 .placeholder{color:var(--text-3);text-align:center;padding:200px 0;font-size:13px}
 
 /* 전체화면: 스테이지(경로바+뷰포트) 전체를 띄움 */
@@ -106,6 +163,10 @@ b{color:var(--text);font-weight:700}
 #net-stage.fs{position:fixed;inset:0;z-index:1000;background:#fff;padding:14px;display:flex;flex-direction:column}
 #net-stage.fs #net-viewport{flex:1;min-height:0}
 #net-stage.fs #net-canvas{height:100%;border-radius:0}
+#net-stage.fs .brief{border-radius:0}
+/* 전체화면 전용 닫기 버튼 (평소 숨김 → 전체화면일 때만 노출) */
+.fs-close{display:none}
+#net-stage.fs .fs-close{display:inline-flex;align-items:center;gap:6px;position:absolute;top:16px;left:16px;z-index:1001;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.14);font-weight:700;padding:8px 14px}
 
 /* 경로 추적기 */
 #path-tracker{display:none;align-items:center;gap:4px;flex-wrap:wrap;margin-bottom:12px;padding:9px 11px;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius-sm);font-size:12px}
@@ -114,9 +175,9 @@ b{color:var(--text);font-weight:700}
 #path-tracker .pt-node i{width:8px;height:8px;border-radius:50%}
 #path-tracker .pt-w{color:var(--orange);font-size:11px;font-weight:700;padding:0 2px}
 
-/* 브리핑 패널 */
-#net-viewport{position:relative}
-.brief{position:absolute;top:0;right:0;width:300px;height:100%;background:#fff;border-left:1px solid var(--line);border-radius:0 var(--radius) var(--radius) 0;padding:18px;overflow:auto;box-shadow:-8px 0 20px rgba(0,0,0,.06);font-size:12.5px}
+/* 브리핑 패널 — 그래프 옆 고정 칸 (항상 표시, 미선택 시 사용법) */
+#net-viewport{display:flex;align-items:stretch}
+.brief{flex:none;width:300px;background:#fff;border:1px solid var(--line);border-radius:0 var(--radius) var(--radius) 0;padding:18px;overflow:auto;font-size:12.5px}
 .brief.hidden{display:none}
 .brief .cls{position:absolute;top:12px;right:14px;cursor:pointer;color:var(--text-3);font-size:15px;line-height:1}
 .brief h4{margin:0 0 3px;font-size:16px;font-weight:800}
@@ -223,26 +284,24 @@ b{color:var(--text);font-weight:700}
 <body>
 <header class="header">
   <div class="brand">
-    <div class="logo7e" aria-label="7-ELEVEN"><span class="s7">7</span><span class="se">-ELEVE</span><span class="sn">n</span><span class="reg">&reg;</span></div>
+    <img src="SEVEN_LOGO.png" alt="7-ELEVEN" class="logo-img">
     <h1 class="app-title">신상품 기획 어시스턴트</h1>
   </div>
-  <div class="head-meta">2025년 네트워크 기반<span class="arrow">&rarr;</span>2026년 1월 기획 적용<span id="serving-tag"></span></div>
+  <div class="head-meta">최종 업데이트 날짜: 2025-12-31</div>
 </header>
 
 <nav class="sheet-nav">
-  <button class="sheet-tab on" data-sheet="sheet1" onclick="switchSheet('sheet1')">신상품 기획 인사이트</button>
-  <button class="sheet-tab" data-sheet="sheet2" onclick="switchSheet('sheet2')">네트워크 업데이트</button>
-  <div class="sheet-note">현재 네트워크 활용과 향후 네트워크 확장을 한 화면에서 관리합니다.</div>
+  <button class="sheet-tab on" data-sheet="sheet1" onclick="switchSheet('sheet1')">신상품 기획 네트워크</button>
+  <button class="sheet-tab" data-sheet="sheet2" onclick="switchSheet('sheet2')">키워드 추출 자동화</button>
 </nav>
 
 <section id="sheet1" class="sheet-panel on">
 <div class="wrap">
   <!-- 좌: 검색 블록들 -->
   <div class="col-left">
-    <div class="left-title">검색어별 트렌드 추론</div>
-    <div class="left-sub">검색어를 추론해 나온 속성 중 출발점을 고르세요. 검색어 추가로 검색어를 여러 개 둘 수 있고, 각 검색어가 시트 탭이 됩니다.</div>
+    <div class="left-help"><span class="help"><span class="help-ic">ℹ️ 검색 방법</span><div class="help-pop"><h5>검색 방법</h5>검색어를 입력하면 AI가 속성을 추론해 줍니다. 기획에 사용할 속성을 선택하세요.<br><br>검색어는 <b>최대 3개</b>까지 추가할 수 있고, 검색어마다 <b>별도 탭</b>을 만들어 줍니다.</div></span></div>
     <div id="blocks"></div>
-    <button class="btn ghost" onclick="addBlock()">+ 검색어 추가</button>
+    <button class="btn ghost" id="add-btn" onclick="addBlock()">+ 검색어 추가</button>
     <button class="btn" id="gen-btn" onclick="runNetworks()" disabled>네트워크 생성</button>
   </div>
 
@@ -253,28 +312,41 @@ b{color:var(--text);font-weight:700}
     <div class="mini-tabs" id="mini-tabs"></div>
 
     <div class="insight-card">
-      <div class="insight-head">📌 AI 요약 인사이트</div>
-      <div id="net-explain" class="muted">출발 속성을 선택하고 네트워크를 생성하면, 검색어들이 공유하는 핵심 속성과 연결 구조 요약이 여기에 표시됩니다.</div>
+      <div class="insight-head">📌 AI 요약 인사이트 <span class="help"><span class="help-ic">ℹ️ 상세 설명</span><div class="help-pop"><h5>상세 설명</h5>
+        <div style="margin-bottom:4px">네트워크를 생성하면, 네트워크 내 핵심 키워드를 바탕으로 신제품 기획에 활용할 키워드를 추천해드립니다.</div>
+        <h5 style="margin-top:12px">키워드 종류</h5>
+        <div class="ht-row"><span class="ht-dot" style="background:#1C8A47"></span><span style="color:#1C8A47"><b style="color:inherit">흥행</b> — 비슷한 키워드를 쓴 신상품이 성공한 경우가 많아요</span></div>
+        <div class="ht-row"><span class="ht-dot" style="background:#5B4FCF"></span><span style="color:#5B4FCF"><b style="color:inherit">매개</b> — 어디에 붙여도 두루 잘 어울려요</span></div>
+        <div class="ht-row"><span class="ht-dot" style="background:#BE185D"></span><span style="color:#BE185D"><b style="color:inherit">화제</b> — 인스타에서 바이럴되기 좋아요</span></div>
+        <div class="ht-row"><span class="ht-dot" style="background:#D97706"></span><span style="color:#D97706"><b style="color:inherit">IP</b> — 콜라보·캐릭터 IP예요</span></div></div></span></div>
+      <div id="net-explain" class="muted"></div>
     </div>
 
     <div class="net-head">
       <div class="net-title">네트워크</div>
       <div class="net-head-right">
+        <div class="node-search">
+          <input id="node-search" placeholder="🔍 노드 검색" autocomplete="off"
+            oninput="_nodeSearchInput(this.value)"
+            onkeydown="if(event.key==='Enter')_nodeSearchEnter(); else if(event.key==='Escape')_nodeSearchHide()">
+          <div id="node-search-list" class="ns-list hidden"></div>
+        </div>
         <div class="legend">
           <span><i style="background:var(--green)"></i>속성 키워드</span>
-          <span><i style="background:var(--red)"></i>제품</span>
           <span><i style="background:var(--ip)"></i>IP</span>
-          <span class="legend-line"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="1" y1="5" x2="21" y2="5" stroke="#5B6270" stroke-width="3.5" stroke-linecap="round"/></svg>선이 굵을수록 연결이 강함</span>
+          <span class="legend-line"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="1" y1="5" x2="21" y2="5" stroke="#5B6270" stroke-width="3.5" stroke-linecap="round"/></svg>선이 굵을수록 관련성 높음</span>
+          <span class="legend-line"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="1" y1="5" x2="21" y2="5" stroke="#9CA3AF" stroke-width="2" stroke-dasharray="3,2" stroke-linecap="round"/></svg>점선은 관련성 낮음</span>
         </div>
         <button class="fs-btn" id="fs-btn" onclick="toggleFS()">⛶ 전체화면</button>
       </div>
     </div>
 
     <div id="net-stage">
+      <button class="fs-btn fs-close" onclick="toggleFS()">✕ 전체화면 닫기</button>
       <div id="path-tracker"></div>
       <div id="net-viewport">
         <div id="net-canvas"><div class="placeholder">검색어 추론 → 출발점 선택 → 네트워크 생성</div></div>
-        <div id="brief-panel" class="brief hidden"></div>
+        <div id="brief-panel" class="brief"><h4>네트워크 사용법</h4><div class="sub">AI 인사이트가 추천한 키워드를 네트워크에서 직접 살펴볼 수 있어요. 검색어를 생성하면 네트워크가 그려져요.</div><div class="sec">키워드를 하나 누르면</div><div class="row">그 키워드와 주변 키워드의 정보를 보여줘요.</div><div class="sec">키워드를 두 개 누르면</div><div class="row">네트워크 내에서 두 키워드를 잇는 길과 키워드 간 시너지를 보여드려요.</div></div>
       </div>
     </div>
   </div>
@@ -345,82 +417,124 @@ const DATA = window.DASHBOARD_DATA || {};
 //   ② file:// (오프라인/로컬) → localhost:8000  ③ http(s)로 서빙(터널·백엔드가 직접 서빙) → same-origin('')
 const API_BASE = (window.DASHBOARD_API !== undefined) ? window.DASHBOARD_API
   : (location.protocol === 'file:' ? 'http://localhost:8000' : '');
-const COL = { keyword:'#16A34A', product:'#EF4444', ip:'#F59E0B' };
 let UID = 0;
 const STATE = { blocks:[], view:null };  // blocks: {id,trend,attrs,selected,net}
 
-document.getElementById('serving-tag').textContent = (DATA._meta && DATA._meta.serving_exp) ? ' · model: '+DATA._meta.serving_exp : '';
+// ── 대시보드 데이터 보정 레이어 (피드백 반영) ───────────────────────────────
+// config.js / combo_data.js 는 모델 파이프라인 재생성물이라 직접 편집하면 재export 시 사라짐.
+// 표기 통일·제외는 여기서 로드 직후 한 번 적용 → 재생성과 무관하게 항상 반영.
+//   · 카스타드 → 커스터드 (키워드 표기 통일; 제품 실제 상품명은 보존)
+//   · 경동나비엔 IP/콜라보 노드 제외
+// ★ 영구 반영(소스): 키워드 정규화 keyword_frequency_review_final.xlsx 에 카스타드→커스터드,
+//   경동나비엔은 patch_ip_keywords_all.py DELETE_IPS + HIN ip_nodes 재빌드 후 재export.
+const KW_RENAME = { '카스타드':'커스터드' };          // 키워드 노드 표기 통일
+const NODE_DROP_SUBSTR = ['경동나비엔','APEC정상회의'];   // 라벨에 포함되면 제거 (IP+콜라보 제품 일괄)
+const NODE_DROP_TYPES = new Set(['product','bridge','ip2']);  // 제품·브릿지 + IP 속성전개(ip2) 제거 — 서브네트워크 비대·인사이트 과다 방지
+const _KW_NODE_TYPES = new Set(['keyword','rail','trend','basket','anti','ip2']);  // 키워드성 노드 타입
+function _dropNode(n){ if(NODE_DROP_TYPES.has(n.type)) return true; const L=(n.label||'')+' '+(n.full||''); return NODE_DROP_SUBSTR.some(s=>L.includes(s)); }
+function _ren(s){ return KW_RENAME[s] || s; }
+function _sanitizeNetObj(obj){
+  if(!obj || !Array.isArray(obj.nodes)) return;
+  const drop=new Set();
+  obj.nodes=obj.nodes.filter(n=>{ if(_dropNode(n)){ drop.add(n.id); return false; } return true; });
+  obj.nodes.forEach(n=>{ if(_KW_NODE_TYPES.has(n.type) && KW_RENAME[n.label]) n.label=KW_RENAME[n.label]; });
+  if(Array.isArray(obj.edges))
+    obj.edges=obj.edges.filter(e=>![e.src,e.tgt,e.from,e.to].some(x=>x!==undefined&&drop.has(x)));
+}
+function _sanitizeDashboardData(){
+  const D=window.DASHBOARD_DATA;
+  if(D){
+    if(D.networks) Object.values(D.networks).forEach(_sanitizeNetObj);
+    if(D.trendAttrs) Object.values(D.trendAttrs).forEach(a=>{ if(Array.isArray(a)) a.forEach((v,i)=>a[i]=_ren(v)); });
+    if(D.keywordEvidence && D.keywordEvidence['카스타드'] && !D.keywordEvidence['커스터드'])
+      D.keywordEvidence['커스터드']=D.keywordEvidence['카스타드'];
+  }
+  const C=window.COMBO_DATA;
+  if(C && C.data) Object.values(C.data).forEach(c=>{
+    _sanitizeNetObj(c);
+    if(Array.isArray(c.coreNodes)) c.coreNodes=c.coreNodes.map(_ren);
+    if(Array.isArray(c.rail)) c.rail=c.rail.map(_ren);
+    (c.recommend||[]).forEach(r=>{ if(r.keyword) r.keyword=_ren(r.keyword); });
+    (c.accepted||[]).forEach(a=>{ if(a.keyword) a.keyword=_ren(a.keyword); });
+    if(c.synergy){ const ns={}; for(const k in c.synergy) ns[k.split('|').map(_ren).join('|')]=c.synergy[k]; c.synergy=ns; }
+  });
+}
+_sanitizeDashboardData();
+
+const _stEl=document.getElementById('serving-tag'); if(_stEl) _stEl.textContent = (DATA._meta && DATA._meta.serving_exp) ? ' · model: '+DATA._meta.serving_exp : '';
 
 function mdToHtml(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>'); }
 
 // 우측 상단 동적 제목
-function setRightTitle(trends){
+// 상단 검색어 표시 — 검색어 + 그 검색을 대체한 선택 속성 칩. (인사이트 첫 줄을 대체)
+function setRightTitle(blocks){
   const el=document.getElementById('right-title');
-  if(!trends || !trends.length){
+  if(!blocks || !blocks.length){
     el.classList.add('muted');
     el.innerHTML='검색어를 추론하고 출발 속성을 선택한 뒤 <b>네트워크 생성</b>을 눌러주세요.';
     return;
   }
   el.classList.remove('muted');
-  const t=trends.map(x=>`<b>${_esc(x)}</b>`).join(' · ');
-  el.innerHTML=`${t} 키워드를 바탕으로 신상품 기획 도출 인사이트를 제공해드려요.`;
+  const parts=blocks.map(b=>{
+    const chips=(b.selected||[]).filter(a=>a!==b.trend)   // 검색어 자신은 빼고 '대체 속성'만
+      .map(a=>`<span class="rt-chip">${_esc(_ren(a))}</span>`).join('');
+    return `<span class="rt-trend">${_esc(b.trend)}</span>${chips?`<span class="rt-sep">›</span>${chips}`:''}`;
+  }).join('<span class="rt-div">·</span>');
+  el.innerHTML=parts;
 }
 
-async function apiInfer(trend){ try{const r=await fetch(`${API_BASE}/infer`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({trend})});return r.ok?(await r.json()).attrs:[];}catch(e){return [];} }
-async function apiNetwork(trend,attrs){ try{const r=await fetch(`${API_BASE}/network`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({trend,attrs})});return r.ok?await r.json():null;}catch(e){return null;} }
-// 조합 서브네트워크 동적 fetch (오프라인 combo_data.js 미스 시). 서버 서빙 시에만 동작.
-async function apiCombo(seed){ try{const r=await fetch(`${API_BASE}/combo`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({seed})});return r.ok?await r.json():null;}catch(e){return null;} }
+async function apiInfer(trend){ try{const r=await fetch(`${API_BASE}/infer`,{method:'POST',headers:{'Content-Type':'application/json','ngrok-skip-browser-warning':'1'},body:JSON.stringify({trend})});return r.ok?(await r.json()).attrs:[];}catch(e){return [];} }
+// 조합 서브네트워크 동적 fetch (라이브 /combo). 시너지 기반 생성의 단일 소스.
+async function apiCombo(seed){ try{const r=await fetch(`${API_BASE}/combo`,{method:'POST',headers:{'Content-Type':'application/json','ngrok-skip-browser-warning':'1'},body:JSON.stringify({seed})});return r.ok?await r.json():null;}catch(e){return null;} }
 // 두 키워드의 직접 쌍 시너지 (시작-끝 궁합) — 라이브 전용. 오프라인이면 null.
-async function apiComboPair(a,b){ if(!LIVE_COMBO) return null; try{const r=await fetch(`${API_BASE}/combo/pair`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({a,b})});return r.ok?await r.json():null;}catch(e){return null;} }
+async function apiComboPair(a,b){ if(!LIVE_COMBO) return null; try{const r=await fetch(`${API_BASE}/combo/pair`,{method:'POST',headers:{'Content-Type':'application/json','ngrok-skip-browser-warning':'1'},body:JSON.stringify({a,b})});return r.ok?await r.json():null;}catch(e){return null;} }
 
-// 네트워크: DATA.networks(사전계산) 있으면 오프라인 로컬 병합, 없으면 라이브 API
-const OFFLINE = !!(DATA.networks && Object.keys(DATA.networks).length);
-async function getNetwork(trend,attrs){
-  if(OFFLINE){ const net=localNetwork(trend,attrs); return {net, explain:localExplain(net)}; }
-  return apiNetwork(trend,attrs);
+// ── AI 인사이트 LLM 관련성 필터 (컨셉에 안 어울리는 키워드 drop) ──
+let _insightDrop=new Set(), _insightDropKey='', _lastInsightKey='';
+let _insightIds=new Set();   // AI 인사이트 문장에 실제 등장한 노드 id — 미포함 노드는 테두리 얇게
+const _EMPTYSET=new Set();
+function _seedsKey(seeds){ return (seeds||[]).map(_ren).slice().sort().join('|'); }
+async function apiInsightFilter(concept, keywords){
+  try{ const r=await fetch(`${API_BASE}/insight/filter`,{method:'POST',headers:{'Content-Type':'application/json','ngrok-skip-browser-warning':'1'},body:JSON.stringify({concept,keywords})});
+    return r.ok ? ((await r.json()).drop||[]) : []; }catch(e){ return []; }
 }
-// serve.attr_network 의 병합 로직을 JS로 재현 (속성별 1-hop 합집합 + 공유 노드 표시)
-function localNetwork(trend,attrs){
-  const NET=DATA.networks||{};
-  const seeds=(attrs||[]).filter(s=>NET[s]).slice(0,3);
-  if(!seeds.length) return {trend, seeds:[], keyword_nets:[], merged:{}};
-  const knets=seeds.map(s=>({start:s, nodes:NET[s].nodes, edges:NET[s].edges}));
-  const appear={};
-  knets.forEach(kn=>{ const ids=new Set(kn.nodes.map(n=>n.id)); ids.forEach(id=>appear[id]=(appear[id]||0)+1); });
-  const mN={}, mE={};
-  knets.forEach(kn=>{
-    kn.nodes.forEach(n=>{
-      if(!mN[n.id]) mN[n.id]=Object.assign({},n,{shared:appear[n.id]>=2, deg:appear[n.id]});
-      else { mN[n.id].layer=Math.min(mN[n.id].layer,n.layer); if(!n.branch) mN[n.id].branch=false; }
-    });
-    kn.edges.forEach(e=>{ const k=e.src+'\x01'+e.tgt; if(!mE[k]||e.weight>mE[k].weight) mE[k]=e; });
-  });
-  return {trend, seeds, keyword_nets:knets,
-          merged:{nodes:Object.values(mN), edges:Object.values(mE),
-                  has_overlap:Object.values(appear).some(c=>c>=2)}};
+// 생성 시 1회 호출 → drop 캐시 → 인사이트 재렌더. 시드셋 단위 캐시(칩 토글 재호출 안 함). 실패 시 필터 없음.
+// 필터 결과 보장(캐시면 즉시, 아니면 LLM 호출 후 _insightDrop 세팅). 8초 폴백(늦으면 필터 없이 진행).
+function _ensureInsightFilter(C, seeds){
+  const key=_seedsKey(seeds);
+  if(key===_insightDropKey) return Promise.resolve();
+  const cands=[...new Set((C.nodes||[]).filter(n=>!n.seed&&n.type!=='anti').map(n=>_ren(n.label)))];
+  if(!cands.length){ _insightDrop=new Set(); _insightDropKey=key; return Promise.resolve(); }
+  const done=apiInsightFilter((seeds||[]).map(_ren), cands).then(drop=>{ _insightDrop=new Set(drop||[]); _insightDropKey=key; });
+  return Promise.race([done, new Promise(r=>setTimeout(()=>{ if(_insightDropKey!==key){ _insightDrop=new Set(); _insightDropKey=key; } r(); }, 8000))]);
 }
-function localExplain(net){
-  const trend=net.trend||'이 트렌드', seeds=net.seeds||[];
-  if(!seeds.length) return `'${trend}'에서 네트워크 출발점을 찾지 못했습니다.`;
-  const nodes=(net.merged&&net.merged.nodes)||[];
-  const shared=nodes.filter(n=>n.shared).map(n=>n.label);
-  const ips=nodes.filter(n=>n.type==='ip').map(n=>n.label).slice(0,5);
-  const L=[`**'${trend}'**의 출발 속성 **${seeds.join(', ')}** 각각에서 1-hop 네트워크를 펼쳤습니다 (노드 ${nodes.length}).`];
-  L.push((net.merged&&net.merged.has_overlap&&shared.length)
-    ? `- 출발 속성들이 **${shared.slice(0,6).join(', ')}**를 공유 → 하나의 **종합 네트워크**로 연결됩니다 (= 함께 밀어줄 핵심 축).`
-    : '- 출발 속성 간 공유 노드가 없어 각 네트워크가 **독립적**입니다.');
-  if(ips.length) L.push(`- 연결된 IP: **${ips.join(', ')}**.`);
-  return L.join('\n');
+// LLM 필터까지 반영된 뒤 네트워크+인사이트를 한 번에 그림(언필터 깜빡임 제거)
+function _drawAfterFilter(C, seeds, opts){
+  const key=_seedsKey(seeds);
+  const cv=document.getElementById('net-canvas'), el=document.getElementById('net-explain');
+  const draw=()=>{
+    if(_seedsKey(seeds)!==_lastInsightKey) return;          // 그 사이 뷰가 바뀌면 무시
+    const html=_comboInsightSentence(C, seeds);             // 먼저 인사이트 산출(_insightIds 채움) → 노드 테두리 굵기에 반영
+    _drawCombo(C, opts||{});
+    const e=document.getElementById('net-explain'); if(e){ e.classList.remove('muted'); e.innerHTML=html; }
+    _showComboGuide();
+  };
+  if(key===_insightDropKey){ draw(); return; }              // 필터 캐시됨 → 즉시
+  if(cv) cv.innerHTML='<div class="placeholder">⏳ 인사이트 분석 중…</div>';
+  if(el){ el.classList.remove('muted'); el.innerHTML='<span class="muted">⏳ 인사이트 분석 중…</span>'; }
+  _ensureInsightFilter(C, seeds).then(draw);
 }
 
 // ── 검색 블록 관리 ─────────────────────────────────────────
 function addBlock(){
+  if(STATE.blocks.length>=3) return;   // 검색어 최대 3개
   STATE.blocks.push({id:++UID, trend:'', attrs:[], selected:[], net:null});
   renderBlocks();
 }
 function delBlock(id){ STATE.blocks = STATE.blocks.filter(b=>b.id!==id); renderBlocks(); updateGen(); }
 function renderBlocks(){
   const root=document.getElementById('blocks'); root.innerHTML='';
+  const _ab=document.getElementById('add-btn'); if(_ab) _ab.disabled=STATE.blocks.length>=3;   // 최대 3개
   STATE.blocks.forEach((b,idx)=>{
     const el=document.createElement('div'); el.className='sblock';
     el.innerHTML=`
@@ -445,12 +559,14 @@ async function runInfer(id){
   const inp=document.querySelector(`#blocks .sblock:nth-child(${STATE.blocks.indexOf(b)+1}) input`);
   b.trend=(inp?inp.value:b.trend).trim(); if(!b.trend) return;
   b.selected=[];
+  if(STATE.generated) _resetNetUI();   // 재검색 → 선택 초기화 + 기존 네트워크 비움(다시 고르면 재생성)
   const chips=document.getElementById('chips-'+id);
-  chips.innerHTML='<span style="color:var(--text-3);font-size:11px">⏳ 추론 중…(새 트렌드는 Gemma)</span>';
-  let attrs=(DATA.trendAttrs && DATA.trendAttrs[b.trend])?DATA.trendAttrs[b.trend]:await apiInfer(b.trend);
+  chips.innerHTML='<span style="color:var(--text-3);font-size:11px">⏳ 속성 추론 중…</span>';
+  let attrs=(await apiInfer(b.trend)||[]).map(_ren);   // 항상 라이브 /infer (정적 trendAttrs 캐시 제거) + 표기 통일
   b.attrs=attrs||[];
-  if(CD.data && CD.data[b.trend] && !b.attrs.includes(b.trend)) b.attrs.unshift(b.trend);  // 조합 시드는 출발점으로 노출
-  if(!b.attrs.length){ chips.innerHTML='<span style="color:var(--text-3);font-size:11px">추론 결과 없음</span>'; return; }
+  // (제거) 검색어 무조건 unshift — '우베'처럼 그래프 미존재 검색어가 칩으로 새는 문제.
+  //   infer_attrs가 검색어가 graph_kw일 때만 맨 앞에 포함하므로 칩은 항상 실제 노드.
+  if(!b.attrs.length){ chips.innerHTML='<span style="color:var(--text-3);font-size:11px">추론 결과 없음 (그래프에 매칭되는 속성이 없어요)</span>'; return; }
   renderChips(b); updateGen();
 }
 function renderChips(b){
@@ -461,32 +577,58 @@ function renderChips(b){
   });
   document.getElementById('sel-'+b.id).textContent = b.attrs.length?`선택 ${b.selected.length} / 3`:'';
 }
+let _regenTimer=null;
+function _scheduleRegen(){   // 선택 토글마다 /combo(모델) 호출이라 디바운스 — 연속 선택 시 마지막만 생성
+  if(_regenTimer) clearTimeout(_regenTimer);
+  _regenTimer=setTimeout(()=>{ _regenTimer=null; runNetworks(); }, 450);
+}
 function toggleChip(b,a){
   const i=b.selected.indexOf(a);
   if(i>=0) b.selected.splice(i,1);
   else { if(b.selected.length>=3) return; b.selected.push(a); }
   renderChips(b); updateGen();
-  if(STATE.generated) runNetworks();   // 이미 생성됐으면 선택 바뀔 때마다 즉시 재생성
+  if(STATE.generated){   // 이미 생성됐으면 선택 바뀔 때 네트워크를 즉시 비우고 디바운스 재생성
+    const anySel=STATE.blocks.some(x=>x.selected.length>0);
+    if(anySel){ _resetNetUI('⏳ 네트워크 갱신 중…'); _scheduleRegen(); }
+    else _resetNetUI();   // 선택 전부 해제 → 네트워크 사라짐
+  }
 }
 function updateGen(){
   const any=STATE.blocks.some(b=>b.selected.length>0);
   document.getElementById('gen-btn').disabled=!any;
 }
 
+// 네트워크 영역 초기화 — 재검색/칩 재선택 시 기존 네트워크를 비우고 기본(또는 로딩) 상태로.
+// msg를 주면 캔버스에 그 안내(로딩)를 띄우고, 없으면 최초 placeholder로 되돌린다.
+function _resetNetUI(msg){
+  STATE.generated=false; STATE.view='__all__';
+  if(_visNet){ _visNet.destroy(); _visNet=null; }
+  const cv=document.getElementById('net-canvas');
+  if(cv) cv.innerHTML=`<div class="placeholder">${msg||'검색어 추론 → 출발점 선택 → 네트워크 생성'}</div>`;
+  const ne=document.getElementById('net-explain');
+  if(ne){ ne.innerHTML='네트워크를 생성하면, 네트워크 내 핵심 키워드를 바탕으로 신제품 기획에 활용할 키워드를 추천해드립니다.'; ne.classList.add('muted'); }
+  const tabs=document.getElementById('mini-tabs'); if(tabs) tabs.innerHTML='';
+  const nsi=document.getElementById('node-search'); if(nsi) nsi.value=''; _nodeSearchHide();
+  _hideBrief(); _hideTracker();
+}
+
 // ── 네트워크 생성 (검색어별 /network + 전체종합 병합) ──────────
 async function runNetworks(){
   const active=STATE.blocks.filter(b=>b.selected.length>0);
-  if(!active.length) return;
+  if(!active.length){ _resetNetUI(); return; }   // 선택 전무 → 로딩 잔상 없이 기본 상태로
   const cv=document.getElementById('net-canvas'); cv.innerHTML='<div class="placeholder">⏳ 네트워크 생성 중…</div>';
   document.getElementById('net-explain').classList.remove('muted');
   document.getElementById('net-explain').innerHTML='';
   for(const b of active){
-    b.combo = await ensureComboSeed(b);        // 조합 시드면 조합망 (오프라인 캐시 → 미스 시 /combo 동적)
-    const res=await getNetwork(b.trend,b.selected);
-    b.net = (res&&res.net&&res.net.seeds.length)?res:null;
+    b.combo = await ensureComboSeed(b);   // 선택 속성들의 시너지 서브네트워크(배열) — 라이브 시너지 전용
   }
-  const ok=active.filter(b=>b.net||b.combo);
-  if(!ok.length){ cv.innerHTML='<div class="placeholder">네트워크 없음</div>'; return; }
+  const ok=active.filter(b=>b.combo);
+  if(!ok.length){
+    buildTabs([]);
+    cv.innerHTML='<div class="placeholder">시너지 네트워크를 만들 수 없습니다.<br>라이브 서버 연결을 확인하세요 (python -m uvicorn src.eval.api:app)<br>또는 그래프에 없는 키워드일 수 있습니다.</div>';
+    const ne=document.getElementById('net-explain'); ne.innerHTML=''; ne.classList.add('muted');
+    return;
+  }
   buildTabs(ok);
   // 현재 보던 탭 유지(라이브 재생성 시 점프 방지), 유효하지 않으면 기본값
   const valid = STATE.view==='__all__' ? ok.length>1 : ok.some(b=>b.id===STATE.view);
@@ -496,6 +638,7 @@ async function runNetworks(){
 }
 function buildTabs(ok){
   const tabs=document.getElementById('mini-tabs'); tabs.innerHTML='';
+  if(ok.length<=1) return;   // 단일 검색은 상단 타이틀(검색어›칩)로 충분 — 중복 탭(칩) 생략
   ok.forEach(b=>{
     const t=document.createElement('div'); t.className='mtab'; t.textContent=b.trend;
     t.dataset.blockId=b.id;
@@ -509,54 +652,38 @@ function buildTabs(ok){
   }
 }
 function renderView(){
-  const ok=STATE.blocks.filter(b=>b.net||b.combo);
+  const ok=STATE.blocks.filter(b=>b.combo);   // 라이브 시너지 전용 (어텐션 폴백 제거)
   document.querySelectorAll('.mtab').forEach(t=>{
     const isAll=t.classList.contains('all');
     const bid=t.dataset.blockId!==undefined ? Number(t.dataset.blockId) : null;
     t.classList.toggle('on', (STATE.view==='__all__'&&isAll) || (!isAll && bid===STATE.view));
   });
   if(STATE.view==='__all__'){
-    const cb=ok.filter(b=>b.combo);
-    if(cb.length>=2){ renderComboMerged(cb.map(b=>b.combo)); setRightTitle(ok.map(b=>b.trend)); return; }
-    const ga=grandMerge(ok.filter(b=>b.net));
-    renderForce(ga, ga.seedSet);
-    setRightTitle(ok.map(b=>b.trend));
-    const shared=ga.nodes.filter(n=>n.shared).map(n=>n.label);
-    document.getElementById('net-explain').innerHTML=mdToHtml(
-      `검색어 **${ok.map(b=>b.trend).join(', ')}**의 종합망을 합쳤습니다 (노드 ${ga.nodes.length}). `+
-      (ga.has_overlap?`검색어들이 **${shared.slice(0,8).join(', ')}**를 공유 → 하나로 연결됩니다.`:`검색어 간 공유 노드가 없어 각각 독립적입니다.`));
+    const uniq=[...new Set([].concat(...ok.map(b=>b.combo)))];   // 모든 블록의 선택 속성 시너지망 병합
+    if(!uniq.length) return;
+    if(uniq.length>=2) renderComboMerged(uniq); else renderComboNet(uniq[0]);
+    setRightTitle(ok);
   }else{
     const b=ok.find(x=>x.id===STATE.view); if(!b) return;
-    if(b.combo){ renderComboNet(b.combo); renderComboExplain(b.combo); setRightTitle([b.trend]); return; }
-    const m=b.net.net.merged;
-    renderForce({nodes:m.nodes,edges:m.edges}, new Set((b.net.net.seeds||[]).map(s=>'keyword\x01'+s)));
-    setRightTitle([b.trend]);
-    document.getElementById('net-explain').innerHTML=mdToHtml(b.net.explain);
+    // 선택 속성들의 시너지 서브네트워크 병합 (각 속성=시작점, rail=marginal synergy 성장)
+    if(b.combo.length>=2) renderComboMerged(b.combo); else renderComboNet(b.combo[0]);   // 단일은 renderComboNet이 explain까지
+    setRightTitle([b]);
   }
-}
-
-// 검색어망(merged)들을 합집합 → 전체종합
-function grandMerge(ok){
-  const appear={}, nmap={}, emap={}, seedSet=new Set();
-  ok.forEach(b=>{
-    (b.net.net.seeds||[]).forEach(s=>seedSet.add('keyword\x01'+s));
-    const m=b.net.net.merged;
-    const ids=new Set(m.nodes.map(n=>n.id));
-    ids.forEach(id=>appear[id]=(appear[id]||0)+1);
-    m.nodes.forEach(n=>{ if(!nmap[n.id]) nmap[n.id]=Object.assign({},n); else nmap[n.id].layer=Math.min(nmap[n.id].layer,n.layer); });
-    m.edges.forEach(e=>{const k=e.src+'>'+e.tgt; if(!emap[k]||e.weight>emap[k].weight)emap[k]=e;});
-  });
-  const nodes=Object.values(nmap).map(n=>Object.assign(n,{shared:appear[n.id]>=2, deg:appear[n.id]||1}));
-  return {nodes, edges:Object.values(emap), has_overlap:Object.values(appear).some(c=>c>=2), seedSet};
 }
 
 // ── 조합 서브네트(combo_grow) — 확정된 네트워크 전개 ─────────────
 const CD = window.COMBO_DATA || { seeds:[], data:{} };
-// 노드 색 3종: 속성 키워드=초록 / 제품=빨강 / IP=주황 (트렌드는 별도색 아님 — 클릭 상세에서 배지)
+// 노드 색 = 타입색만: 속성 키워드=초록 / 제품=빨강 / IP=주황.
+// (채널 POS형/인스타형/범용은 노드색이 아님 — 노드 하나 클릭 시 세부 패널 뱃지로만 표시)
 const COL3 = { keyword:'#16A34A', product:'#EF4444', ip:'#F59E0B' };
+function _nodeCol(m){ return COL3[_nodeClass(m.type)]; }
 function _nodeClass(t){ return (t==='ip')?'ip':(t==='product')?'product':'keyword'; }
-const EDGE_WHY = { rail:'성공 레일에서 이어짐', basket:'함께 담기는 조합', trend:'트렌드로 이어짐', ip:'같은 IP', ip2:'같은 IP', ip_attr:'핵심 공통 속성', attr_ip:'대체 IP 후보', anti:'겹침/잠식' };
-let _comboCur=null, _comboPick=[], _comboAdj={}, _comboEdgeSyn={}, _comboEdgeMargin={};
+// hex 색을 흰색 쪽으로 t(0~1)만큼 밝게 — 노드 파스텔 채움용
+function _lighten(hex,t){ const h=(hex||'#16A34A').replace('#',''); const r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
+  const m=c=>Math.round(c+(255-c)*t).toString(16).padStart(2,'0'); return '#'+m(r)+m(g)+m(b); }
+const EDGE_WHY = { rail:'성공 레일에서 이어짐', basket:'함께 담기는 조합', trend:'트렌드로 이어짐', ip:'같은 IP', ip2:'같은 IP', ip_attr:'핵심 공통 속성', attr_ip:'대체 IP 후보', anti:'겹침/잠식', prod_kw:'제품 경유' };
+let _comboCur=null, _comboPick=[], _comboAdj={}, _comboEdgeSyn={}, _comboEdgeMargin={}, _comboEdgeW={};
+let _seedPulseTimer=null;
 function _pct(v){ return (v>0?'+':'')+(v*100).toFixed(1)+'%p'; }
 function _edgeType(a,b){ let t=null; (_comboCur.edges||[]).forEach(e=>{ if((e.src===a&&e.tgt===b)||(e.src===b&&e.tgt===a)) t=e.type; }); return t; }
 // synergy(궁합)는 대부분 0 근처로 작음(키워드는 서로 독립적 기여) → 숫자 대신 등급으로
@@ -569,20 +696,31 @@ function _synTier(v){
 }
 function _synRow(name,v){ const T=_synTier(v); return `<div class="nb"><span class="nm">${_esc(name)}</span><span class="nb-right"><b style="color:${T.c};font-size:12px">${T.t}</b></span></div>`; }
 
-function comboSeedFor(b){ if(CD.data && CD.data[b.trend]) return b.trend; return (b.selected||[]).find(a=>CD.data&&CD.data[a]) || null; }
 // 동적 조합망: 오프라인 캐시(combo_data.js) 미스 시 /combo로 라이브 fetch 후 캐시에 적재.
-// file:// (오프라인 데모)면 건너뜀 → 데모는 구운 시드만, 서버 서빙(MD 실무)이면 아무 키워드나 동적.
-const LIVE_COMBO = (window.DASHBOARD_LIVE_COMBO!==undefined) ? window.DASHBOARD_LIVE_COMBO : (location.protocol!=='file:');
+// 라이브 전용 — 오프라인(어텐션) 폴백 제거. 항상 /combo(시너지)로 생성. (서버 없으면 안내 메시지)
+const LIVE_COMBO = (window.DASHBOARD_LIVE_COMBO!==undefined) ? window.DASHBOARD_LIVE_COMBO : true;
+// ★ 시너지 기반 네트워크 생성 — 선택 속성 각각의 /combo 시너지 서브네트워크(rail=marginal synergy로
+//   성장: 그 키워드를 조합에 더했을 때 vs 직전 상태의 Δ 기준)를 확보해 배열로 반환 → 병합 생성.
+//   라이브 /combo 우선(서버 있으면 항상 최신 — gtag·ctag 포함). 캐시(combo_data.js, 8시드)는
+//   file:// 등 서버 미연결 시에만 폴백 → 낡은 캐시가 라이브를 가리지 않음.
+//   하나도 못 구하면 null → runNetworks가 어텐션 1-hop으로 폴백(오프라인 임의 키워드용).
 async function ensureComboSeed(b){
-  const sync=comboSeedFor(b); if(sync) return sync;
-  if(!LIVE_COMBO) return null;
-  for(const cand of [b.trend, ...(b.selected||[])]){
-    if(!cand) continue;
-    if(CD.data && CD.data[cand]) return cand;
-    const d=await apiCombo(cand);
-    if(d && !d.error && d.nodes && d.nodes.length){ CD.data[cand]=d; if(CD.seeds&&!CD.seeds.includes(cand))CD.seeds.push(cand); return cand; }
+  const out=[];
+  for(const a of (b.selected||[])){
+    // ★ 항상 라이브 우선 — 서버가 떠 있으면 늘 최신 /combo를 씀.
+    if(LIVE_COMBO){
+      const d=await apiCombo(a);
+      if(d && !d.error && d.nodes && d.nodes.length){
+        _sanitizeNetObj(d);                       // 라이브 응답도 표기통일·제외 적용 (경동나비엔/카스타드)
+        if(Array.isArray(d.coreNodes)) d.coreNodes=d.coreNodes.map(_ren);
+        if(Array.isArray(d.rail)) d.rail=d.rail.map(_ren);
+        CD.data[a]=d; if(CD.seeds&&!CD.seeds.includes(a))CD.seeds.push(a);
+        if(!out.includes(a)) out.push(a); continue;
+      }
+    }
+    if(CD.data && CD.data[a]){ if(!out.includes(a)) out.push(a); }   // 라이브 실패 시에만 캐시 폴백
   }
-  return null;
+  return out.length ? out : null;   // 배열(선택 속성 중 시너지 서브네트 확보분) / 없으면 null
 }
 function _comboBfs(src,dst){ if(src===dst) return [src]; const q=[[src]], seen=new Set([src]);
   while(q.length){ const p=q.shift(), last=p[p.length-1];
@@ -603,17 +741,19 @@ function _comboSynPath(src,dst){ if(src===dst) return [src];
   const path=[dst]; let c=dst; while(c!==src){ c=prev[c]; if(c===undefined) return _comboBfs(src,dst); path.unshift(c); } return path; }
 function _comboLabel(id){ const n=_comboCur.nodes.find(x=>x.id===id); return n?n.label:id; }
 function _comboSyn(a,b){ return _comboCur.synergy[a+'|'+b] || _comboCur.synergy[b+'|'+a] || null; }
-function _cdot(t){ return `<i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${COL3[_nodeClass(t)]};margin-right:5px;vertical-align:middle"></i>`; }
+function _cdot(m){ const meta=(typeof m==='string')?{type:m}:m; return `<i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${_nodeCol(meta)};margin-right:5px;vertical-align:middle"></i>`; }
 function _hideTracker(){ const pt=document.getElementById('path-tracker'); if(pt) pt.style.display='none'; }
 
 function _drawCombo(C, opts){
   opts=opts||{};
-  const cv=document.getElementById('net-canvas'); _hideBrief();
-  if(_visNet){ _visNet.destroy(); _visNet=null; } cv.innerHTML='';
-  _comboCur=C; _comboPick=[]; _comboAdj={}; _comboEdgeSyn={}; _comboEdgeMargin={}; _nodeMeta={}; _origNodes={}; _origEdges={};
+  const cv=document.getElementById('net-canvas'); _hideBrief(); _nodeSearchHide();
+  if(_visNet){ _stopSeedPulse(); _visNet.destroy(); _visNet=null; } cv.innerHTML='';
+  _comboCur=C; _comboPick=[]; _comboAdj={}; _comboEdgeSyn={}; _comboEdgeMargin={}; _comboEdgeW={}; _nodeMeta={}; _origNodes={}; _origEdges={};
   const _adjS={};   // 양방향 엣지 중복 방지 (Set으로 dedup)
   C.edges.forEach(e=>{ (_adjS[e.src]=_adjS[e.src]||new Set()).add(e.tgt); (_adjS[e.tgt]=_adjS[e.tgt]||new Set()).add(e.src);
     if(e.syn!==undefined){ _comboEdgeSyn[e.src+'|'+e.tgt]=e.syn; _comboEdgeSyn[e.tgt+'|'+e.src]=e.syn; }
+    const _ew=Math.abs(e.weight||0);   // 연결강도(연관성) — '함께 등장' 정렬용 (양방향)
+    _comboEdgeW[e.src+'|'+e.tgt]=Math.max(_comboEdgeW[e.src+'|'+e.tgt]||0,_ew); _comboEdgeW[e.tgt+'|'+e.src]=Math.max(_comboEdgeW[e.tgt+'|'+e.src]||0,_ew);
     if(e.margin!==undefined){ _comboEdgeMargin[e.src+'|'+e.tgt]=e.margin; } });   // margin은 방향(src→tgt) 보존
   Object.keys(_adjS).forEach(k=>_comboAdj[k]=[..._adjS[k]]);
   C.nodes.forEach(n=>_nodeMeta[n.id]=n);
@@ -621,12 +761,16 @@ function _drawCombo(C, opts){
 
   const RAIL_W=4, GRAY='#9CA3AF';   // 레일은 시작점 테두리와 같은 굵기(RAIL_W)로 통일 / 모든 엣지 회색
   const vN=C.nodes.map(n=>{
-    const isSeed=!!n.seed, isShared=!!n.shared && !isSeed, isRail=(n.type==='rail'), col=COL3[_nodeClass(n.type)];  // 속성=초록·제품=빨강·IP=주황
-    let lab=n.label.length>9?n.label.slice(0,9)+'…':n.label;
-    if(isSeed) lab+='\n● 시작'; else if(isShared) lab+=' ◆'; else if(acc[n.label] && /찐보완재/.test(acc[n.label].label||'')) lab+=' ★';
-    const mark=(isSeed||isShared||isRail);   // 레일(시작·척추·공유)을 굵은 테두리로 통일 표시
-    const color={ background:col, border:mark?'#1F2430':col, highlight:{background:col,border:'#1F2430'}, hover:{background:col,border:'#1F2430'} };
-    const borderWidth=mark?RAIL_W:1.5;
+    const isSeed=!!n.seed, isShared=!!n.shared && !isSeed, isRail=(n.type==='rail');
+    const col=_nodeCol(n);   // 타입색 (속성=초록·제품=빨강·IP=주황)
+    const lab=n.label.length>9?n.label.slice(0,9)+'…':n.label;   // 라벨 장식(시작/◆/★) 제거 — 키워드 이름만
+    // 디자인: 연한 파스텔 채움 + 진한 타입색 링(테두리). 색은 유지, 형태만 변경.
+    const fill=_lighten(col,0.68);
+    const color={ background:fill, border:col,
+      highlight:{background:_lighten(col,0.5),border:col}, hover:{background:_lighten(col,0.55),border:col} };
+    let borderWidth=isSeed?4.5:((isRail||isShared)?3.5:2.5);   // 시드>레일/공유>일반 (링 두께로 강조)
+    // AI 인사이트에 등장하는 노드는 위 굵기 유지, 미등장 노드는 더 얇게(배경으로 후퇴)
+    if(!isSeed && _insightIds && _insightIds.size && !_insightIds.has(n.id)) borderWidth=1.2;
     const font={ color:'#1F2430', size:isSeed?15:((isRail||isShared)?14:12), face:'Pretendard, sans-serif', strokeWidth:4, strokeColor:'#FFFFFF' };
     _origNodes[n.id]={ color:JSON.parse(JSON.stringify(color)), borderWidth, font:JSON.parse(JSON.stringify(font)) };
     return { id:n.id, label:lab, color, borderWidth, font,
@@ -634,13 +778,19 @@ function _drawCombo(C, opts){
       shapeProperties:isShared?{borderDashes:[5,3]}:{},
       shadow:{enabled:true,color:'rgba(0,0,0,0.12)',size:6,x:0,y:2} };
   });
-  // 레일 엣지 = 시작점 테두리와 같은 굵기(RAIL_W). 레일 외 엣지 = 가중치 비례. 모두 회색(anti만 점선).
+  // 레일(메타패스=뼈대) = 굵은 다크 실선으로 정착(원본 스타일). 생성 시 흐릿→점등으로 1회 전개.
+  // 비레일 가지 = 얇고 흐린 회색(뼈대 대비). anti만 점선.
   const nonRailMax=Math.max(0.0001, ...C.edges.filter(e=>e.type!=='rail').map(e=>Math.abs(e.weight||0)));
+  const RAIL_DARK='#1F2430';
   const vE=C.edges.map((e,i)=>{
     const isRail=(e.type==='rail'), isAnti=(e.type==='anti');
+    if(isRail){
+      _origEdges[i]={ color:{color:RAIL_DARK,opacity:0.95}, width:5, dashes:false };   // 정착(뼈대)
+      return { id:i, from:e.src, to:e.tgt, _type:e.type, color:{color:GRAY,opacity:0.3}, width:2.4, dashes:false, smooth:{type:'continuous',roundness:0.3} };   // 초기 흐릿 → _revealRail이 점등
+    }
     const ratio=Math.min(1, Math.abs(e.weight||0)/nonRailMax);
-    const width=isRail?RAIL_W:(1.6+ratio*5.4);
-    const color={ color:GRAY, opacity:isRail?0.9:0.5 };
+    const width=1.3+ratio*3.4;
+    const color={ color:GRAY, opacity:0.3 };   // 비레일 더 흐리게
     _origEdges[i]={ color:JSON.parse(JSON.stringify(color)), width, dashes:isAnti };
     return { id:i, from:e.src, to:e.tgt, _type:e.type, color, width, dashes:isAnti, smooth:{type:'continuous',roundness:0.3} };
   });
@@ -649,20 +799,19 @@ function _drawCombo(C, opts){
     physics:{ stabilization:{iterations:220}, barnesHut:{springLength:135,gravitationalConstant:-14000,centralGravity:0.35,damping:0.55} },
     nodes:{ shape:'dot' }, edges:{ arrows:{to:false} },
     interaction:{ hover:true, tooltipDelay:120, zoomView:true, dragView:true } });
-  _visNet.once('stabilizationIterationsDone', ()=>_visNet.fit({animation:false}));
+  _visNet.once('stabilizationIterationsDone', ()=>{ _visNet.fit({animation:false}); _revealRail(C); });   // 안정화 후 뼈대 1회 전개
   _visNet.on('click', p=>{ if(p.nodes.length) _comboPickNode(p.nodes[0]); else { _showComboGuide(); } });
   return true;
 }
-function renderComboNet(seed){ const C=(CD.data||{})[seed]; if(!C) return false; _drawCombo(C); renderComboExplain(seed); _showComboGuide(); return true; }
+function renderComboNet(seed){ const C=(CD.data||{})[seed]; if(!C) return false; _lastInsightKey=_seedsKey([seed]); _drawAfterFilter(C, [seed], {}); return true; }
 
 // 패널 기본 상태 — 노드를 아직 안 눌렀을 때 보여줄 사용법 안내 (구 AI요약의 👉 줄을 여기로 이동).
 function _comboGuideHTML(){
-  return `<h4>🔍 네트워크 사용법</h4><div class="sub">노드를 눌러 궁합을 확인하세요</div>`
-    +`<div class="sec">속성을 하나 누르면</div>`
-    +`<div class="row">잘 맞는 · 안 맞는 짝을 <b>이유와 함께</b> 보여드려요.</div>`
-    +`<div class="sec">속성을 두 개 누르면</div>`
-    +`<div class="row">둘을 <b>잇는 길</b>과 <b>궁합</b>을 보여드려요.</div>`
-    +`<div class="row" style="color:var(--text-3);font-size:12px;margin-top:8px">💡 선이 굵을수록 연결이 강합니다.</div>`;
+  return `<h4>네트워크 사용법</h4><div class="sub">AI 인사이트가 추천한 키워드를 네트워크에서 직접 살펴볼 수 있어요. 검색어를 생성하면 네트워크가 그려져요.</div>`
+    +`<div class="sec">키워드를 하나 누르면</div>`
+    +`<div class="row">그 키워드와 주변 키워드의 정보를 보여줘요.</div>`
+    +`<div class="sec">키워드를 두 개 누르면</div>`
+    +`<div class="row">네트워크 내에서 두 키워드를 잇는 길과 키워드 간 시너지를 보여드려요.</div>`;
 }
 function _showComboGuide(){
   _hideTracker(); _comboPick=[]; _resetHighlight();
@@ -681,22 +830,81 @@ function _mergeCombo(seeds){
     accepted:[].concat(...seeds.map(s=>(CD.data[s]||{}).accepted||[])),
     bypass:[].concat(...seeds.map(s=>(CD.data[s]||{}).bypass||[])) };
 }
+// 선택 칩(=시드)마다 그 시드의 rail = 메타패스. 헤더 한 번 + 아래로 메타패스 나열(최대 3).
+function _metapathLines(seeds){
+  const rails=(seeds||[]).map(s=>(CD.data[s]||{}).rail||[]).filter(r=>r.length);
+  if(!rails.length) return [];
+  const lines=['🎯 **다음의 키워드 조합을 중점으로 기획하세요:**'];
+  rails.forEach(r=>lines.push(`- ${r.map(_ren).join(' · ')}`));
+  return lines;
+}
 function renderComboMerged(seeds){
-  const M=_mergeCombo(seeds); _drawCombo(M,{merged:true});
-  const shared=M.nodes.filter(n=>n.shared && n.type!=='anti' && !n.seed)
-    .sort((a,b)=>(a.type==='rail'?0:1)-(b.type==='rail'?0:1)).slice(0,5).map(n=>n.label);
-  const L=[`검색어 **${seeds.join(', ')}**의 성공 속성들을 하나로 합쳤습니다.`];
-  L.push(shared.length ? `- 🔗 두 검색어가 **공통으로 잘 쓰는 속성**: **${shared.join(', ')}** — 한 제품으로 둘을 잡을 핵심 축(◆ 표시).`
-                       : `- 두 검색어가 공통으로 쓰는 속성이 없어 **서로 다른 길**입니다.`);
-  L.push(`- 👉 속성을 두 개 누르면 둘을 잇는 길과 궁합을 보여드려요. (선이 굵을수록 연결이 강함)`);
-  const el=document.getElementById('net-explain'); el.classList.remove('muted'); el.innerHTML=mdToHtml(L.join('\n'));
+  const M=_mergeCombo(seeds);
+  _lastInsightKey=_seedsKey(seeds);
+  _drawAfterFilter(M, seeds, {merged:true});   // 필터 반영 후 네트워크+인사이트 한 번에 (깜빡임 없음)
 }
 
 function _comboPickNode(id){
   _comboPick.push(id);
-  if(_comboPick.length===1){ _resetHighlight(); _hideTracker(); _comboBrief(id); }
-  else { const a=_comboPick[0], b=_comboPick[1]; _comboPick=[]; _comboPair(a,b); }
+  if(_comboPick.length===1){
+    _resetHighlight(); _hideTracker(); _comboBrief(id);
+    if((_nodeMeta[id]||{}).seed){ _stopSeedPulse(); _showSeedMetapath(id); }
+  } else { const a=_comboPick[0], b=_comboPick[1]; _comboPick=[]; _comboPair(a,b); }
 }
+function _startSeedPulse(ids){}   // (제거) 노랑 반짝이 펄스 — 메타패스 정적 강조 + 1회 전개로 대체
+function _stopSeedPulse(){ if(_seedPulseTimer){clearInterval(_seedPulseTimer);_seedPulseTimer=null;} }
+// 생성 시 1회: 레일(뼈대) 엣지를 시드에서 바깥으로 hop 순서대로 '점등'(흐릿→굵은 다크) → 메타패스 전개 표현, 이후 정적 유지
+function _revealRail(C){
+  if(!_visNet || !_visEdgeDS) return;
+  const railEdges=_visEdgeDS.get().filter(e=>e._type==='rail');
+  if(!railEdges.length) return;
+  const adj={}; railEdges.forEach(e=>{ (adj[e.from]=adj[e.from]||[]).push(e.to); (adj[e.to]=adj[e.to]||[]).push(e.from); });
+  const dist={}; let q=(C.nodes||[]).filter(n=>n.seed).map(n=>n.id); q.forEach(s=>dist[s]=0);
+  while(q.length){ const u=q.shift(); (adj[u]||[]).forEach(v=>{ if(dist[v]===undefined){ dist[v]=dist[u]+1; q.push(v); } }); }
+  const D=x=>(dist[x]===undefined?99:dist[x]);
+  const order=railEdges.map(e=>({id:e.id, hop:Math.max(D(e.from),D(e.to))})).sort((a,b)=>a.hop-b.hop);
+  order.forEach((r,idx)=>setTimeout(()=>{ const o=_origEdges[r.id]; if(_visEdgeDS && o){ try{ _visEdgeDS.update({id:r.id, color:o.color, width:o.width}); }catch(e){} } }, 120+idx*170));
+}
+function _showSeedMetapath(seedId){
+  if(!_comboCur) return;
+  const m=_nodeMeta[seedId]; if(!m) return;
+  let rail=_comboCur.rail||[];
+  // 병합 뷰: 개별 시드 rail 조회
+  if(!rail.length && m.label && CD.data[m.label]) rail=CD.data[m.label].rail||[];
+  if(!rail.length) return;
+  const l2id={}; (_comboCur.nodes||[]).forEach(n=>{ if(!(n.label in l2id)) l2id[n.label]=n.id; });
+  const railIds=rail.map(l=>l2id[l]).filter(id=>id!==undefined);
+  if(railIds.length>1){ _highlightComboPath(railIds); _renderComboTracker(railIds); }
+}
+
+// ── 네트워크 내 노드 검색 — 노드가 많아 클릭이 어려울 때 이름으로 찾아 포커스+브리핑 ──
+function _nodeSearchHide(){ const box=document.getElementById('node-search-list'); if(box){ box.classList.add('hidden'); box.innerHTML=''; } }
+function _nodeSearchInput(q){
+  const box=document.getElementById('node-search-list'); if(!box) return;
+  q=(q||'').trim().toLowerCase();
+  if(!q || !_comboCur){ _nodeSearchHide(); return; }
+  const ms=(_comboCur.nodes||[]).filter(n=>(n.label||'').toLowerCase().includes(q)).slice(0,8);
+  if(!ms.length){ box.innerHTML='<div class="ns-empty">일치하는 노드 없음</div>'; box.classList.remove('hidden'); return; }
+  box.innerHTML=ms.map(n=>`<div class="ns-item" onclick="_nodeSearchPick('${_esc(n.id)}')">${_cdot(n)}${_esc(n.label)}</div>`).join('');
+  box.classList.remove('hidden');
+}
+function _nodeSearchEnter(){
+  if(!_comboCur) return;
+  const q=(document.getElementById('node-search').value||'').trim().toLowerCase(); if(!q) return;
+  const ns=_comboCur.nodes||[];
+  const m=ns.find(n=>(n.label||'').toLowerCase()===q) || ns.find(n=>(n.label||'').toLowerCase().includes(q));
+  if(m) _nodeSearchPick(m.id);
+}
+function _nodeSearchPick(id){ _nodeSearchHide(); _pickFromUI(id); }
+// 카메라만 해당 노드로 이동·선택(픽 상태는 안 건드림).
+function _locateNode(id){
+  if(!_visNet || !_nodeMeta[id]) return;
+  _visNet.selectNodes([id]);
+  _visNet.focus(id, { scale:1.3, animation:{duration:420, easingFunction:'easeInOutQuad'} });
+}
+// 검색/인사이트 칩에서 노드 선택 — 위치로 이동 + 그래프 클릭과 동일한 픽 흐름.
+//  첫 픽 → 위치 포커스 + 궁합 브리핑 / 둘째 픽 → 두 노드 시너지(_comboPair) 검토.
+function _pickFromUI(id){ if(!_nodeMeta[id]) return; _locateNode(id); _comboPickNode(id); }
 
 function _highlightComboPath(order){
   const pN=new Set(order), pE=new Set(), all=_visEdgeDS.get();
@@ -713,7 +921,7 @@ function _renderComboTracker(order){
   const el=document.getElementById('path-tracker');
   let html='<span class="pt-lab">패스</span>';
   order.forEach((id,i)=>{ const m=_nodeMeta[id]; if(!m) return;
-    html+=`<span class="pt-node">${_cdot(m.type)}${_esc(m.label)}</span>`+(i<order.length-1?'<span class="pt-w">→</span>':''); });
+    html+=`<span class="pt-node">${_cdot(m)}${_esc(m.label)}</span>`+(i<order.length-1?'<span class="pt-w">→</span>':''); });
   el.innerHTML=html; el.style.display='flex';
 }
 
@@ -730,35 +938,17 @@ async function _comboPair(aId,bId){
   if(computable && !s){ const live=await apiComboPair(a,b); if(live && live.margin_b_given_a!==undefined) s={synergy:live.synergy,margin:live.margin_b_given_a,label:live.label,kind:live.kind}; }
   let h=`<span class="cls" onclick="_showComboGuide()">✖</span>`;
   h+=`<h4>${_esc(a)} → ${_esc(b)}</h4><div class="sub">두 속성이 어떻게 이어지나</div>`;
-  // ── 함께 쓰면? — margin(절대 기여) 헤드라인 (단일 노드 목록과 동일 지표) ──
-  h+=`<div class="sec">함께 쓰면? (궁합)</div>`;
+  // ── 함께 쓰면? — 키워드·IP·겹침 모두 "성공 가능성 ±%p"로 통일 ──
   if(s && s.margin!==undefined){
-    const good=s.margin>0.01, bad=s.margin<-0.01;   // 단일 노이즈 플로어 ±0.01 (2·SE, 전역 분류와 통일)
+    h+=`<div class="sec">함께 쓰면? (궁합)</div>`;
+    const good=s.margin>0.01, bad=s.margin<-0.01;   // 노이즈 플로어 ±0.01
     const mk=good?'✅':(bad?'⚠':'➖'), col=good?'var(--green)':(bad?'var(--red)':'var(--text-3)');
-    h+=`<div class="row"><b style="color:${col}">${mk} 함께 쓰면 성공 가능성 ${_pct(s.margin)}</b></div>`;
+    h+=`<div class="row"><b style="color:${col}">${mk} 두 키워드를 조합하면 성공 가능성 ${_pct(s.margin)}</b></div>`;
     if(!good&&!bad) h+=`<div class="row" style="color:var(--text-3);font-size:12px">영향이 거의 없어요 — 각자 제 몫을 하는 조합.</div>`;
-    if(s.kind==='kw-ip' && s.synergy!==undefined){   // IP 증폭/잠식
-      const amp=s.synergy>0.01, sup=s.synergy<-0.01;
-      if(amp) h+=`<div class="row" style="color:var(--text-3);font-size:12px">이 IP가 키워드 효과를 <b style="color:var(--green)">키워줘요</b> (단독 대비 ${_pct(s.synergy)}).</div>`;
-      else if(sup) h+=`<div class="row" style="color:var(--text-3);font-size:12px">이 IP는 키워드 효과를 살짝 <b style="color:var(--red)">눌러요</b> (단독 대비 ${_pct(s.synergy)}).</div>`;
-    } else if(s.synergy!==undefined && s.synergy<-0.01)   // 키워드끼리 겹침
-      h+=`<div class="row" style="color:var(--text-3);font-size:12px">단, <b>${_esc(a)}</b>와 결이 겹쳐요 — <b>${_esc(b)}</b> 단독보다 회복분이 ${_pct(s.synergy)} 줄어요(이미 강한 것과 중복).</div>`;
-  } else if(!computable) h+=`<div class="row" style="color:var(--text-2)">제품 노드는 궁합 계산 대상이 아니에요. (속성 키워드 또는 IP를 클릭하세요)</div>`;
-  else h+=`<div class="row" style="color:var(--text-2)">정밀 궁합은 라이브 서버에서 계산돼요. 아래 경로의 구간 수치를 참고하세요.</div>`;
-  // ── 이어지는 길 (시너지 가중 경로 + 구간 margin) ──
-  h+=`<div class="sec">이어지는 길 <span style="font-weight:400;color:var(--text-3);font-size:11px">(겹침 적은 순서로)</span></div>`;
-  if(path && path.length>1){
-    let row='<div class="row">';
-    for(let i=0;i<path.length;i++){
-      row+=`<b>${_esc(_comboLabel(path[i]))}</b>`;
-      if(i<path.length-1){ const mg=_edgeMargin(path[i],path[i+1]);
-        const lab=(mg===null)?(EDGE_WHY[_edgeType(path[i],path[i+1])]||'연결'):_pct(mg);
-        const col=(mg===null)?'var(--text-3)':(mg>0.01?'var(--green)':(mg<-0.01?'var(--red)':'var(--text-3)'));
-        row+=` <span style="color:${col};font-size:11px">—(${lab})→</span> `; }
-    }
-    h+=row+'</div>';
-    h+=`<div class="row" style="color:var(--text-3);font-size:12px">각 구간 = 앞 속성에 뒤 속성을 더할 때 성공 가능성 변화(%p).</div>`;
-  } else h+=`<div class="row">두 속성을 잇는 길이 없어요 (서로 먼 속성).</div>`;
+  } else {
+    h+=`<div class="row" style="color:var(--text-2)">${!computable?'제품 노드는 궁합 계산 대상이 아니에요.':'두 키워드의 궁합을 계산하지 못했어요. 정밀 궁합은 라이브 서버에서 확인할 수 있어요.'}</div>`;
+  }
+  // '이어지는 길' 경로 점수 섹션은 제거 — 직접 궁합(헤드라인) 1개만 표시. 경로는 그래프 위 하이라이트로만 안내.
   const bp=document.getElementById('brief-panel'); bp.innerHTML=h; bp.classList.remove('hidden');
 }
 
@@ -766,183 +956,193 @@ function _fitRow(name, val, good){
   const why = good ? `함께 쓰면 성공 가능성 ${_pct(val)}` : `같이 쓰면 ${_pct(val)} (겹침)`;
   return `<div class="nb"><span class="nm">${_esc(name)}</span><span class="nb-right"><b style="color:${good?'var(--green)':'var(--red)'}">${good?'✅':'⚠'}</b> <span style="font-size:11px;color:var(--text-3)">${why}</span></span></div>`;
 }
-// 전역 분류(1층) 뱃지·설명 — 한 키워드 클릭 시 "이 단어 자체가 무엇인가" (killer/mine/매개/hub, 2025 prior)
+// 키워드 성격(1층) — 영어 태그·배지·이모티콘 없이, 색으로 구분된 '설명 문장'만 노출.
 const GTAG_INFO={
-  killer:{badge:'🔑 killer',color:'#1C8A47',bg:'#E6F7EC',border:'#9BD9B4',desc:'전체 네트워크에서 <b>성공을 유발</b>하는 경향(2025 prior). 단독 주입 시 성공 확률을 끌어올립니다.'},
-  mine:{badge:'⚠ mine',color:'#C0392B',bg:'#FDECEA',border:'#F0B4AC',desc:'전체에서 <b>실패에 쏠린</b> 주의 키워드(2025 prior). 금지룰이 아니라 — 강한 killer·조합으로 상쇄되면 도전 가능.'},
-  '매개':{badge:'🧪 매개',color:'#5B4FCF',bg:'#EEF0FF',border:'#C3C6F0',desc:'혼자선 약하지만 <b>어디 붙여도</b> 성공 확률을 올리는 보편 증폭제입니다.'},
-  hub:{badge:'⚙ hub',color:'#777',bg:'#F2F2F2',border:'#DDD',desc:'성패에 중립인 <b>범용 백본</b> 키워드입니다.'}
+  killer:{color:'#1C8A47',desc:'비슷한 키워드를 쓴 신상품이 성공한 경우가 많아요.'},
+  mine:{color:'#C0392B',desc:'비슷한 키워드를 쓴 신상품이 부진했던 적이 많아요.'},
+  '매개':{color:'#5B4FCF',desc:'어디에 붙여도 성공 확률을 조금씩 올려주는, 두루 잘 맞는 키워드예요.'}
 };
+// 성격 = 색칠된 설명 문장 한 줄(헤더·배지 없음)
+function _gtagSentence(t){ const g=GTAG_INFO[t]; return g?`<div class="row" style="font-size:12.5px;color:${g.color};font-weight:600;margin:2px 0">${g.desc}</div>`:''; }
+// 채널 = 인스타만, 핑크 한 줄 (POS형 미표시)
+function _ctagSentence(t){ return (t==='인스타형'||t==='범용')?`<div class="row" style="font-size:12.5px;color:#BE185D;font-weight:600;margin:2px 0">인스타에서 바이럴되기 좋은 키워드예요.</div>`:''; }
+// 트렌드 = 마커 대신 설명 문장 한 줄 (다른 태그와 형식 통일)
+function _trendSentence(m){ return (m && m.type==='trend')?`<div class="row" style="font-size:12.5px;color:#B45309;font-weight:600;margin:2px 0">2025년 트렌드 키워드예요.</div>`:''; }
 function _gtagBadge(t){ const g=GTAG_INFO[t]; return g?` <span class="tag" style="background:${g.bg};border-color:${g.border};color:${g.color};font-weight:700">${g.badge}</span>`:''; }
-function _gtagRow(t){ const g=GTAG_INFO[t]; return g?`<div class="sec">전역 분류 <span style="font-weight:400;color:var(--text-3);font-size:11px">(이 키워드 자체)</span></div><div class="row" style="font-size:12px;color:var(--text-2)">${g.desc}</div>`:''; }
+function _gtagRow(t){ const g=GTAG_INFO[t]; return g?`<div class="sec">이 키워드의 성격</div><div class="row" style="font-size:12px;color:var(--text-2)">${g.desc}</div>`:''; }
+const CTAG_INFO={
+  '인스타형':{badge:'🩷 인스타',color:'#BE185D',bg:'#FCE7F3',border:'#F9A8D4',desc:'인스타에서 <b>입소문(바이럴)에 강해요</b> — 초기 마케팅 카피로 좋아요.'},
+  '범용':{badge:'🩷 인스타',color:'#BE185D',bg:'#FCE7F3',border:'#F9A8D4',desc:'인스타에서 <b>입소문(바이럴)에 강해요</b> — 초기 마케팅 카피로 좋아요.'},
+  'POS형':{badge:'🟢 매장형',color:'#16A34A',bg:'#EAF8F0',border:'#8FE0AD',desc:'매장 <b>매출(오프라인)에 강해요</b> — 제품 스펙·내실로 좋아요.'}
+};
+function _ctagBadge(t,low){ const g=CTAG_INFO[t]; return g?` <span class="tag" style="background:${g.bg};border-color:${g.border};color:${g.color};font-weight:700">${g.badge}${low?' ⚠':''}</span>`:''; }
+function _ctagRow(t,low){ const g=CTAG_INFO[t]; return g?`<div class="sec">어디서 통할까</div><div class="row" style="font-size:12px;color:var(--text-2)">${g.desc}${low?' <span style="color:var(--text-3)">(인스타 표본 적음 — 참고용)</span>':''}</div>`:''; }
 function _comboBrief(id){
   const C=_comboCur, m=_nodeMeta[id]; if(!m) return;
   let h=`<span class="cls" onclick="_showComboGuide()">✖</span>`;
-  const isIP=(m.type==='ip');
-  const badge = (m.type==='trend') ? ` <span class="tag" style="background:#FFF4E5;border-color:#F2994A;color:#B45309">🔥 트렌드</span>` : '';
-  h+=`<h4>${_cdot(m.type)}${_esc(m.label)}${badge}${_gtagBadge(m.gtag)}</h4>`;
-  h+=`<div class="sub">${isIP?'IP':(m.seed?'시작 속성':'속성 키워드')}</div>`;
-  h+=_gtagRow(m.gtag);
-  if(m.seed){
-    const recs=(C.recommend||[]);
-    const pos=recs.filter(r=>r.margin>0).slice(0,5), neg=recs.filter(r=>r.margin<0).slice(-3);
-    h+=`<div class="sec">✅ 이 속성에 잘 붙는 것</div>`;
-    pos.length ? pos.forEach(r=> h+=_fitRow(r.keyword, r.margin, true)) : h+=`<div class="empty-note">뚜렷한 보완 속성이 적어요.</div>`;
-    if(neg.length){ h+=`<div class="sec">⚠ 같이 쓰면 손해</div>`; neg.forEach(r=> h+=_fitRow(r.keyword, r.margin, false)); }
-  } else {
-    const rows=(C.coreNodes||[]).filter(c=>c!==m.label).map(c=>({c, s:_comboSyn(m.label,c)})).filter(x=>x.s);
-    const pos=rows.filter(x=>x.s.synergy>0).sort((a,b)=>b.s.synergy-a.s.synergy);
-    const neg=rows.filter(x=>x.s.synergy<=0).sort((a,b)=>a.s.synergy-b.s.synergy);
-    if(pos.length||neg.length){
-      if(pos.length){ h+=`<div class="sec">✅ 잘 어울리는 속성</div>`; pos.slice(0,4).forEach(x=> h+=_synRow(x.c, x.s.synergy)); }
-      if(neg.length){ h+=`<div class="sec">⚠ 잘 안 맞는 속성</div>`; neg.slice(0,3).forEach(x=> h+=_synRow(x.c, x.s.synergy)); }
-    } else h+=`<div class="empty-note">이 속성은 정밀 궁합 계산 대상이 아니에요. 아래 '함께 등장'을 참고하세요.</div>`;
-  }
-  h+=`<div class="sec">함께 등장하는 것</div>`;
-  (_comboAdj[id]||[]).slice(0,6).forEach(nb=>{ const nm=_nodeMeta[nb]; if(!nm) return;
-    h+=`<div class="nb"><span class="nm">${_cdot(nm.type)}${_esc(nm.label)}</span><span class="nb-right" style="font-size:11px;color:var(--text-3)">${EDGE_WHY[_edgeType(id,nb)]||''}</span></div>`; });
-  h+=`<div class="sub" style="margin-top:10px">다른 속성을 이어 클릭하면 <b>둘을 잇는 길 + 궁합</b>을 봅니다.</div>`;
+  h+=`<h4>${_cdot(m)}${_esc(m.label)}</h4>`;
+  if(m.seed) h+=`<div class="sub" style="color:var(--text-2);margin-bottom:2px">네트워크의 시작점이 된 키워드예요.</div>`;
+  h+=_gtagSentence(m.gtag);     // 성격 = 색칠된 설명 문장 (헤더·배지 없음)
+  h+=_ctagSentence(m.ctag);     // 인스타면 핑크 한 줄 (POS형 미표시)
+  h+=_trendSentence(m);         // 트렌드면 '2025년 트렌드 키워드예요.' (🔥 마커 대신 문장)
+  // 함께 등장하는 것 — 엣지 중요도 순 정렬(강도바 게이지 제거, 이름만)
+  h+=`<div class="sec">함께 등장하는 것 <span style="font-weight:400;color:var(--text-3);font-size:11px">(중요도 순)</span></div>`;
+  const _rel=(a,b)=>Math.max(_comboEdgeW[a+'|'+b]||0,
+    Math.abs(_comboEdgeMargin[a+'|'+b]!==undefined?_comboEdgeMargin[a+'|'+b]:(_comboEdgeMargin[b+'|'+a]||0)),
+    Math.abs(_comboEdgeSyn[a+'|'+b]||0));
+  const _adjR=(_comboAdj[id]||[]).map(nb=>({nb,r:_rel(id,nb)})).filter(x=>_nodeMeta[x.nb]).sort((x,y)=>y.r-x.r).slice(0,8);
+  if(_adjR.length) _adjR.forEach(({nb})=>{ const nm=_nodeMeta[nb];
+    h+=`<div class="nb"><span class="nm">${_cdot(nm)}${_esc(nm.label)}</span></div>`; });
+  else h+=`<div class="empty-note">함께 등장하는 키워드가 없어요.</div>`;
+  h+=`<div class="sub" style="margin-top:10px">다른 키워드를 이어 클릭하면 <b>둘을 잇는 길 + 시너지</b>를 봅니다.</div>`;
   const bp=document.getElementById('brief-panel'); bp.innerHTML=h; bp.classList.remove('hidden');
 }
 
-function renderComboExplain(seed){
-  const C=CD.data[seed], acc=C.accepted||[];
-  const emg=acc.filter(a=>/찐보완재/.test(a.label||'')).map(a=>a.keyword);
-  const rest=C.rail.slice(1);
-  // 시드에 붙는 IP — 인과 margin(pair_synergy_ip, seed 기준) 내림차순. 클릭 시 궁합 패널과 동일 수치 = 일관.
-  const ipNodes=(C.nodes||[]).filter(n=>n.type==='ip');
-  let topIPs;
-  if(ipNodes.some(n=>n.ip_margin!==undefined)){
-    topIPs=ipNodes.filter(n=>n.ip_margin>0.01).sort((a,b)=>b.ip_margin-a.ip_margin).slice(0,4).map(n=>n.label);
-  } else {   // 구버전 캐시 호환: 어텐션 가중 fallback
-    const ipName={}; ipNodes.forEach(n=>ipName[n.id]=n.label);
-    const ipW={}; (C.edges||[]).forEach(e=>{ if(e.type==='ip' && ipName[e.tgt]!==undefined) ipW[e.tgt]=Math.max(ipW[e.tgt]||0, e.weight||0); });
-    topIPs=Object.keys(ipW).sort((a,b)=>ipW[b]-ipW[a]).slice(0,4).map(id=>ipName[id]);
+// ── AI 요약 인사이트 — 기획 가이드(HTML) ────────────────────────────
+// 핵심 원칙:
+//  · 가이드(흥행/증폭/인스타)는 **속성 노드(rail·trend)만** 대상 → ip2(IP맥락) 제외.
+//  · 워딩은 단정(확실) 금지 → **조합을 제안**하는 톤.
+//  · 키워드 칩은 클릭 가능 → 네트워크 위치 포커스 + 두 개 이어 누르면 시너지 검토(_pickFromUI).
+//  · 효과순(맥락 마진: accepted margin 우선) 최대 5개, 시드는 제외.
+function _kwChip(n, cls){ return `<span class="kw-pick${cls?' '+cls:''}" onclick="_pickFromUI('${_esc(n.id)}')">${_esc(n.label)}</span>`; }
+function _comboInsightHTML(C){
+  const nodes=(C.nodes||[]);
+  const acc={}; (C.accepted||[]).forEach(a=>{ if(a.keyword!==undefined) acc[a.keyword]=Math.abs(a.margin||0); });
+  const _w=n=>{ if(n.type==='ip') return Math.abs(n.ip_margin||0);            // IP는 ip_margin
+    if(acc[n.label]!==undefined) return acc[n.label];                         // 키워드는 rail 채택 마진
+    let mx=0; (C.edges||[]).forEach(e=>{ if(e.tgt===n.id) mx=Math.max(mx,Math.abs(e.weight||0)); }); return mx*1e-4; };
+  const POOL=n=>(n.type==='rail'||n.type==='trend'||n.type==='ip');          // 속성 키워드 + IP
+  const _pick=pred=>{ const seen=new Set(), a=[];
+    nodes.forEach(n=>{ if(n.seed||seen.has(n.label)||!pred(n)) return; seen.add(n.label); a.push(n); });
+    return a.sort((x,y)=>_w(y)-_w(x)).slice(0,6); };
+  // 칩: 배경=타입(IP 주황·키워드 초록), 인스타에 잘 붙으면 라벨 옆 🩷.
+  const chip=n=>{ const ip=(n.type==='ip'), heart=(n.ctag==='인스타형')?'🩷 ':'';
+    return `<span class="kw-pick${ip?' kw-ip':''}" onclick="_pickFromUI('${_esc(n.id)}')">${heart}${_esc(n.label)}</span>`; };
+  // 흥행=killer / 매개=보편 증폭. (주의·일반은 가이드에서 생략 — 추천 신호만) 키워드+IP 공통.
+  const killer=_pick(n=>POOL(n)&&n.gtag==='killer');
+  const bridge=_pick(n=>POOL(n)&&n.gtag==='매개');
+  if(!killer.length&&!bridge.length) return '';
+  const row=(label,arr)=>arr.length
+    ?`<tr><td class="ig-row-label">${label}</td><td class="ig-row-chips">${arr.map(chip).join('')}</td></tr>`:'';
+  let h=`<div class="ins-guide"><div class="ins-h">🎯 기획 가이드 <span class="ins-sub">🟢키워드 · 🟠IP · 🩷=인스타 강세 · 클릭=위치·궁합</span></div>`;
+  h+=`<table class="ig-table">`;
+  h+=row('🔑 흥행',killer);
+  h+=row('🧪 매개',bridge);
+  h+=`</table>`;
+  h+=`<div class="ins-hint">💡 키워드·IP를 누르면 네트워크에서 위치를 찾아주고, 두 개를 이어 누르면 둘의 실제 궁합(시너지)을 확인해요.</div></div>`;
+  return h;
+}
+
+// 한글 조사 자동 선택 (은/는, 을/를, 와/과, (으)로) — "은(는)" 어색함 방지
+function _josa(w, t){
+  const s=(w||''), c=s.charCodeAt(s.length-1);
+  const def={은는:'는',을를:'를',와과:'와',로:'로'};
+  if(c<0xAC00||c>0xD7A3) return def[t];
+  const j=(c-0xAC00)%28, h=(j!==0);
+  if(t==='로') return (j===0||j===8)?'로':'으로';
+  return {은는:h?'은':'는', 을를:h?'을':'를', 와과:h?'과':'와'}[t];
+}
+// ── ★ AI 요약 인사이트 — 문장형 (색=역할, 이모지 없음, 단어 클릭=노드 포커스) ──
+//   흥행=진초록 #1C8A47 / 매개=보라 #5B4FCF / 화제(인스타)=핑크 #BE185D / IP=주황 #D97706 / 주의=빨강 #C0392B / 일반=초록 #16A34A
+//   흥행·매개 각 최대 3개. 단어 onclick=_pickFromUI(id) → 네트워크에서 해당 노드로 이동.
+function _comboInsightSentence(C, seeds){
+  const nodes=(C.nodes||[]);
+  _insightIds=new Set();   // 이 인사이트에 등장하는 노드 id 누적(테두리 강조용)
+  const acc={}; (C.accepted||[]).forEach(a=>{ if(a.keyword!==undefined) acc[a.keyword]=Math.abs(a.margin||0); });
+  const _w=n=>{ if(n.type==='ip') return Math.abs(n.ip_margin||0);
+    if(acc[n.label]!==undefined) return acc[n.label];
+    let mx=0;(C.edges||[]).forEach(e=>{ if(e.tgt===n.id) mx=Math.max(mx,Math.abs(e.weight||0)); }); return mx*1e-4; };
+  const C_KILL='#1C8A47', C_HUB='#5B4FCF', C_MINE='#C0392B', C_IP='#D97706', C_INS='#BE185D', C_KW='#16A34A';
+  const word=(n,color)=>{ if(n&&n.id!==undefined) _insightIds.add(n.id);   // 인사이트 등장 노드 → 테두리 유지
+    return `<span class="ins-word" style="color:${color}" onclick="_pickFromUI('${_esc(n.id)}')">${_esc(_ren(n.label))}</span>`; };
+  const byLabel={}; nodes.forEach(n=>{ const l=_ren(n.label); if(!(l in byLabel)) byLabel[l]=n; });
+  const hopColor=n=> n.gtag==='killer'?C_KILL : n.gtag==='mine'?C_MINE : n.gtag==='매개'?C_HUB : n.type==='ip'?C_IP : n.ctag==='인스타형'?C_INS : C_KW;
+  const isSignal=n=> !!n && (['killer','mine','매개'].includes(n.gtag) || n.type==='ip' || n.ctag==='인스타형');
+  const seedWord=sd=>{ const n=byLabel[_ren(sd)]; return n? word(n,'#1F2430') : `<b>${_esc(_ren(sd))}</b>`; };
+
+  // LLM 관련성 필터 결과 — 이 시드셋용 캐시일 때만 적용(아니면 빈 셋=필터 안 함)
+  const drop=(_seedsKey(seeds)===_insightDropKey)?_insightDrop:_EMPTYSET;
+  // ── 메타패스: 시드별 rail의 모든 노드(상한·신호필터 없음, 시드 간 중복·LLM필터 제외) ──
+  const shown=new Set((seeds||[]).map(_ren));
+  const segs=[];
+  for(const sd of (seeds||[])){
+    const rail=((CD.data[_ren(sd)]||{}).rail)||((seeds.length===1)?(C.rail||[]):[]);
+    const hops=[];
+    for(const lab of rail.slice(1)){ const l=_ren(lab);
+      if(shown.has(l)||drop.has(l)) continue; const n=byLabel[l]; if(!n) continue;
+      shown.add(l); hops.push(n); }            // 메타패스 전체 노드(필터 제외)
+    if(hops.length) segs.push({sd, hops});
   }
-  const L=[`**${seed}**로 신상품을 기획하면, 성공 확률을 **가장 크게 끌어올리는 순서**로 ${rest.length?'**'+rest.join(' → ')+'**':''} 속성이 이어집니다.`];
-  if(emg.length) L.push(`- 💚 **같이 쓸수록 좋아지는 속성**: ${emg.join(', ')}`);
-  if(topIPs.length) L.push(`- 🧡 **잘 어울리는 IP(콜라보 후보)**: ${topIPs.join(', ')} (성공 확률 기여 순)`);
-  const el=document.getElementById('net-explain'); el.classList.remove('muted'); el.innerHTML=mdToHtml(L.join('\n'));
+  // 시드 그룹핑 없이 메타패스 키워드 전체를 한 줄로 나열 (중복은 위 seg 빌드에서 이미 제거됨)
+  const allHops=[].concat(...segs.map(g=>g.hops));
+  let metaLine='';
+  if(allHops.length){ const lastLab=_ren(allHops[allHops.length-1].label);
+    metaLine=`📍 ${allHops.map(n=>word(n,hopColor(n))).join('·')}${_josa(lastLab,'을를')} 중심으로 기획해보세요.`; }
+
+  // ── 참고: 메타패스 밖 네트워크 신호(흥행·매개·화제·IP·주의), 중복 제거 ──
+  const cand=pred=>{ const m=new Map(); nodes.forEach(n=>{ if(n.seed)return; const l=_ren(n.label);
+    if(shown.has(l)||drop.has(l)||!pred(n))return; if(!m.has(l))m.set(l,n); }); return [...m.values()].sort((a,b)=>_w(b)-_w(a)); };
+  const killer=cand(n=>n.gtag==='killer').slice(0,3); killer.forEach(n=>shown.add(_ren(n.label)));
+  const hub   =cand(n=>n.gtag==='매개').slice(0,3);    hub.forEach(n=>shown.add(_ren(n.label)));
+  const ip    =cand(n=>n.type==='ip').slice(0,2);      ip.forEach(n=>shown.add(_ren(n.label)));
+  const refs=[];   // 역할 라벨 대신 자연스러운 수식어로 녹임(색이 역할을 표시). 화제(인스타)는 아래 별도 줄, 주의(mine)는 미표시.
+  if(killer.length) refs.push(`흥행을 끌어올리는 ${killer.map(n=>word(n,C_KILL)).join('·')}`);
+  if(hub.length)    refs.push(`두루 어울리는 ${hub.map(n=>word(n,C_HUB)).join('·')}`);
+  if(ip.length)     refs.push(`콜라보하기 좋은 ${ip.map(n=>word(n,C_IP)).join('·')}`);
+  let refLine='';
+  if(refs.length) refLine=`📍 네트워크에서 ${refs.join(', ')}도 참고해보면 좋아요.`;
+  // 인스타 바이럴 — 메타패스 포함 전체에서 인스타 강세 키워드 수집(별도 줄, 핑크). 메타패스에 있어도 표시.
+  const _im=new Map();
+  nodes.forEach(n=>{ if(n.seed)return; const l=_ren(n.label); if(drop.has(l)||_im.has(l))return; if(n.ctag==='인스타형') _im.set(l,n); });
+  const instaV=[..._im.values()].sort((a,b)=>_w(b)-_w(a)).slice(0,4);
+  let instaLine='';
+  if(instaV.length) instaLine=`📍 ${instaV.map(n=>word(n,C_INS)).join('·')}${_josa(_ren(instaV[instaV.length-1].label),'은는')} 인스타에서 바이럴이 잘 돼요.`;
+
+  if(!metaLine && !refLine && !instaLine)
+    return '<span class="muted">선택 속성으로 그릴 추천 신호가 충분치 않아요. 다른 속성을 골라보세요.</span>';
+
+  // 리드: 검색어(트렌드)를 매칭된 키워드로 조합 — STATE에서 현재 뷰의 검색어 추출
+  let trends=[];
+  try{ const ok=STATE.blocks.filter(b=>b.combo);
+    if(STATE.view==='__all__') trends=ok.map(b=>b.trend).filter(Boolean);
+    else { const tb=ok.find(x=>x.id===STATE.view); if(tb&&tb.trend) trends=[tb.trend]; }
+  }catch(e){}
+  const _rasuh=w=>{ const c=(w||'').charCodeAt((w||'').length-1); if(c<0xAC00||c>0xD7A3) return '라는'; return ((c-0xAC00)%28)?'이라는':'라는'; };
+  let lead;
+  const _trs=(trends||[]).map(_ren).filter(Boolean);
+  if(_trs.length){   // 단일·종합(다중 검색어) 동일 형식: "검색어를 매칭된 키워드 …로 조합해봤어요."
+    const _trSet=new Set(_trs);
+    const matched=seeds.map(_ren).filter(x=>!_trSet.has(x));
+    const head=(_trs.length===1)
+      ? `<b>${_esc(_trs[0])}</b>${_rasuh(_trs[0])} 검색어`
+      : `<b>${_esc(_trs.join('·'))}</b> 검색어`;
+    lead = matched.length
+      ? `${head}를 매칭된 키워드 <b>${matched.map(_esc).join('·')}</b>${_josa(matched[matched.length-1],'로')} 조합해봤어요.`
+      : `${head}로 기획을 시작해보세요.`;
+  } else {
+    const combo=(seeds&&seeds.length)? seeds.map(_ren).join(' × ') : (C.rail&&C.rail[0]? _ren(C.rail[0]):'');
+    lead = `<b>${_esc(combo)}</b> 조합이에요.`;
+  }
+  let s=`<span class="ins-sentence">🎯 ${lead}`;
+  if(metaLine)  s+=`<br>${metaLine}`;
+  if(instaLine) s+=`<br>${instaLine}`;   // 인스타 바이럴(메타패스 포함) — 첫 문장 아래 별도 줄
+  if(refLine)   s+=`<br>${refLine}`;
+  s+=`</span>`;   // 범례는 헤더 💡 도움말 팝업으로 이동(인박스 표시 제거)
+  return s;
+}
+
+function renderComboExplain(seed){   // (보조) 인사이트만 렌더 — 필터·그리기 타이밍은 _drawAfterFilter가 담당
+  const C=CD.data[seed];
+  const el=document.getElementById('net-explain'); if(!el) return; el.classList.remove('muted');
+  el.innerHTML=_comboInsightSentence(C, [seed]);
 }
 
 // ── vis-network 렌더 ───────────────────────────────────────────
 let _visNet = null, _visNodeDS = null, _visEdgeDS = null;
 let _origNodes = {}, _origEdges = {};
-let _children = {}, _expanded = new Set();   // 가지 접기: 백본 id → [가지 id], 펼쳐진 백본 집합
 let _nodeMeta = {};                           // 노드 id → 원본 노드 객체 (브리핑·경로용)
 
-function renderForce(g, seedSet){
-  const cv = document.getElementById('net-canvas');
-  _hideBrief();
-  if(!g.nodes.length){ cv.innerHTML='<div class="placeholder">네트워크 없음</div>'; return; }
-  if(_visNet){ _visNet.destroy(); _visNet=null; }
-  cv.innerHTML='';
-  _origNodes={}; _origEdges={};
-
-  // 가지 접기: 백본(branch=false) 아래 가지(branch=true, parent=백본) 매핑 → 초기엔 가지 숨김
-  // _nodeMeta: 클릭 시 브리핑/경로 추적기에서 노드 속성 조회용
-  _children = {}; _expanded = new Set(); _nodeMeta = {};
-  g.nodes.forEach(n=>{ _nodeMeta[n.id]=n; if(n.branch && n.parent){ (_children[n.parent]=_children[n.parent]||[]).push(n.id); } });
-
-  const DARK = { keyword:'#0E7A38', product:'#C81E1E', ip:'#B45309' };
-  const maxEdgeW = Math.max(0.0001, ...g.edges.map(e=>e.weight||0));
-
-  const visNodes = g.nodes.map(n=>{
-    const c = COL[n.type]||'#8B90A0';
-    const dk = DARK[n.type]||'#5B6270';
-    const isSeed = seedSet && seedSet.has(n.id);
-    const deg = n.deg || (n.shared ? 2 : 1);   // 연결 정도 = 이 노드가 등장한 서브망 수
-    const lbl = n.label.length>9 ? n.label.slice(0,9)+'…' : n.label;
-    let label = lbl;
-    if(n.type==='product' && n.success!=null) label += '\n'+Math.round(n.success*100)+'%';
-    if(isSeed) label += '\n● 출발';
-    const color = {
-      background: c,
-      border: isSeed ? '#1F2430' : dk,
-      highlight:{ background:c, border:'#1F2430' },
-      hover:{ background:c, border:'#1F2430' },
-    };
-    const borderWidth = isSeed ? 4 : (deg>=2 ? 3 : 2);
-    const font = { color:(isSeed?'#1F2430':dk), size:(isSeed?15:(deg>=2?Math.min(19,13+deg*2):13)), face:'Pretendard, sans-serif', bold:(isSeed?{color:'#1F2430'}:{color:dk}), strokeWidth:4, strokeColor:'#FFFFFF' };
-    _origNodes[n.id] = { color: JSON.parse(JSON.stringify(color)), borderWidth, font: JSON.parse(JSON.stringify(font)) };
-    const hasKids = !!(_children[n.id] && _children[n.id].length);
-    return {
-      id: n.id, label: label + (hasKids ? '  ⊕' : ''),
-      title: (n.full||n.label)+(n.shared?' (공유)':'')+(hasKids?' · 더블클릭: 1-hop 펼침/접기':''),
-      level: n.layer || 0,
-      size: isSeed ? 36 : (deg>=2 ? 18+deg*5 : (n.type==='product' ? 17 : 19)),
-      color, borderWidth,
-      shapeProperties: n.shared ? { borderDashes:[3,2] } : {},
-      shadow:{ enabled:true, color:'rgba(0,0,0,0.12)', size:6, x:0, y:2 },
-      font,
-    };
-  });
-
-  const visEdges = g.edges.map((e,i)=>{
-    const w = e.weight||0;
-    const ratio = maxEdgeW>0 ? Math.min(1, w/maxEdgeW) : 0;
-    const width = e.branch ? 1.2 : (1.6 + ratio*4.4);          // 1.6 ~ 6px, 강한 연결일수록 굵게
-    const baseColor = e.branch ? '#D5D9E0' : (ratio>=0.5 ? '#5B6270' : '#9CA3AF');
-    const opacity = e.branch ? 0.55 : (0.45 + ratio*0.5);       // 0.45 ~ 0.95
-    const color = { color:baseColor, opacity };
-    const dashes = e.branch ? [3,2] : false;
-    _origEdges[i] = { color: JSON.parse(JSON.stringify(color)), width, dashes };
-    return { id:i, from:e.src, to:e.tgt, _weight:w, color, width, dashes,
-             smooth:{type:'cubicBezier', forceDirection:'horizontal', roundness:0.4} };
-  });
-
-  _visNodeDS = new vis.DataSet(visNodes);
-  _visEdgeDS = new vis.DataSet(visEdges);
-
-  _visNet = new vis.Network(cv,
-    { nodes: _visNodeDS, edges: _visEdgeDS },
-    {
-      layout:{ hierarchical:{ enabled:true, direction:'LR', sortMethod:'directed',
-               levelSeparation:220, nodeSpacing:110, treeSpacing:160,
-               blockShifting:true, edgeMinimization:true, parentCentralization:true } },
-      physics:false,
-      nodes:{ shape:'dot' },
-      edges:{ arrows:{ to:false } },
-      interaction:{ hover:true, tooltipDelay:100, zoomView:true, dragView:true },
-    }
-  );
-
-  // 전체 배치로 좌표 확정 후, 가지(branch)를 숨겨 출발+백본만 노출 → 펼칠 때 제자리에 등장
-  _visNet.once('afterDrawing', function(){
-    const hN = g.nodes.filter(n=>n.branch).map(n=>({ id:n.id, hidden:true }));
-    const hE = []; g.edges.forEach((e,i)=>{ if(e.branch) hE.push({ id:i, hidden:true }); });
-    if(hN.length) _visNodeDS.update(hN);
-    if(hE.length) _visEdgeDS.update(hE);
-    _visNet.fit({ animation:false });
-  });
-
-  _visNet.on('click', function(params){
-    if(params.nodes.length > 0) _focusNode(params.nodes[0]);   // 포커스: 경로 추적기 + 브리핑 + 강조
-    else { _resetHighlight(); _hideBrief(); }
-  });
-  _visNet.on('doubleClick', function(params){                  // 더블클릭: 1-hop 펼침/접기
-    if(params.nodes.length > 0){
-      const id = params.nodes[0];
-      if(_children[id] && _children[id].length) _toggleExpand(id);
-    }
-  });
-}
-
-// 백본 노드의 1-hop 가지 펼침/접기
-function _toggleExpand(nodeId){
-  const kids = _children[nodeId];
-  if(!kids || !kids.length) return;
-  const expand = !_expanded.has(nodeId);
-  expand ? _expanded.add(nodeId) : _expanded.delete(nodeId);
-  _visNodeDS.update(kids.map(id=>({ id, hidden:!expand })));
-  const eUpd = [];
-  _visEdgeDS.get().forEach(e=>{
-    if((e.from===nodeId && kids.includes(e.to)) || (e.to===nodeId && kids.includes(e.from)))
-      eUpd.push({ id:e.id, hidden:!expand });
-  });
-  if(eUpd.length) _visEdgeDS.update(eUpd);
-  // fit 호출 안 함 → 화면 줌/위치 고정. 가지는 초기 배치에서 잡아둔 빈 자리에 그대로 등장
-}
+// (제거됨) renderForce/_toggleExpand — 어텐션 폴백 렌더러. 라이브 시너지(_drawCombo) 전용으로 전환.
 
 // 네트워크 전체화면 토글 (스테이지 전체 → 경로바·브리핑 패널 포함)
 function toggleFS(){
@@ -956,158 +1156,17 @@ document.addEventListener('keydown', e=>{
   if(e.key==='Escape'){ const stage=document.getElementById('net-stage'); if(stage.classList.contains('fs')) toggleFS(); }
 });
 
-// 클릭 노드에서 가중치 최대 엣지만 따라가는 그리디 경로
-function _greedyPathDir(startId, dir){
-  const allEdges = _visEdgeDS.get();
-  const order = [startId];
-  const visited = new Set([startId]);
-  let current = startId;
-  for(let step=0; step<30; step++){
-    const cands = allEdges
-      .filter(e => dir==='out' ? e.from===current : e.to===current)
-      .map(e => ({ next: dir==='out' ? e.to : e.from, weight: e._weight||0 }))
-      .filter(c => !visited.has(c.next));
-    if(!cands.length) break;
-    cands.sort((a,b) => b.weight - a.weight);
-    const best = cands[0];
-    order.push(best.next);
-    visited.add(best.next);
-    current = best.next;
-  }
-  return order;
-}
-
-function _greedyPath(startId){
-  const outTail = _greedyPathDir(startId, 'out').slice(1);        // 클릭 노드 이후 forward
-  const inHead  = _greedyPathDir(startId, 'in').slice(1).reverse(); // 클릭 노드 이전 backward → 정방향으로
-  return [...inHead, startId, ...outTail];
-}
-
-function _highlightGreedyPath(startId){
-  const order = _greedyPath(startId);
-  const pNodeSet = new Set(order);
-
-  // 연속 노드 쌍으로 경로 엣지 직접 탐색
-  const allEdges = _visEdgeDS.get();
-  const pEdgeSet = new Set();
-  for(let i=0; i<order.length-1; i++){
-    const a = order[i], b = order[i+1];
-    allEdges.forEach(e => {
-      if((e.from===a && e.to===b)||(e.from===b && e.to===a)) pEdgeSet.add(e.id);
-    });
-  }
-
-  _visNodeDS.update(_visNodeDS.get().map(n => {
-    if(pNodeSet.has(n.id)){
-      const orig = _origNodes[n.id];
-      return { id:n.id, color:{ background:orig.color.background, border:'#1F2430', highlight:orig.color.highlight, hover:orig.color.hover }, borderWidth: orig.borderWidth+2, opacity:1 };
-    }
-    return { id:n.id, ...(_origNodes[n.id]||{}), opacity:0.28 };
-  }));
-  _visEdgeDS.update(_visEdgeDS.get().map(e => {
-    if(pEdgeSet.has(e.id))
-      return { id:e.id, color:{ color:'#F2994A', opacity:1.0 }, width:5.5, dashes:false };
-    return { id:e.id, ...(_origEdges[e.id]||{}), color:{ color:'#C7CCD4', opacity:0.18 } };
-  }));
-}
-
 function _resetHighlight(){
   _visNodeDS.update(_visNodeDS.get().map(n => ({ id:n.id, ...(_origNodes[n.id]||{}), opacity:1 })));
   _visEdgeDS.update(_visEdgeDS.get().map(e => ({ id:e.id, ...(_origEdges[e.id]||{}) })));
 }
 
-// ── 경로 추적기 + 브리핑 패널 (노드 클릭 시 포커스) ───────────────────
-function _focusNode(id){
-  const m = _nodeMeta[id]; if(!m) return;
-  _highlightGreedyPath(id);     // 메인 그래프 디밍 + 경로 강조
-  _renderPathTracker(id);
-  _renderBrief(id, m);
-}
-function _hideBrief(){
-  const bp=document.getElementById('brief-panel'); if(bp) bp.classList.add('hidden');
+// (제거됨) 어텐션 네트워크용 쌍-시너지/경로/포커스 헬퍼 — 라이브 콤보(_comboPair/_comboBrief)가 동일 역할.
+function _hideBrief(){   // 패널은 고정 칸 — 숨기지 않고 '사용법 안내'로 되돌림
+  const bp=document.getElementById('brief-panel'); if(bp){ bp.classList.remove('hidden'); bp.innerHTML=_comboGuideHTML(); }
   const pt=document.getElementById('path-tracker'); if(pt) pt.style.display='none';
 }
-function _dot(t){ return `<i style="background:${COL[t]||'#8B90A0'}"></i>`; }
 function _esc(s){ return String(s).replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c])); }
-function _edgeW(a,b){ let w=0; _visEdgeDS.get().forEach(e=>{ if((e.from===a&&e.to===b)||(e.from===b&&e.to===a)) w=Math.max(w,e._weight||0); }); return w; }
-function _neighbors(id){
-  const out=[];
-  _visEdgeDS.get().forEach(e=>{
-    let o=null; if(e.from===id) o=e.to; else if(e.to===id) o=e.from;
-    if(o!=null && _nodeMeta[o]) out.push({ node:_nodeMeta[o], w:e._weight||0 });
-  });
-  out.sort((a,b)=>b.w-a.w);
-  return out;
-}
-function _strengthOf(w, maxW){
-  if(w<=0.005) return null; // 사실상 연결 없음 → 표시 안 함
-  const ratio = maxW>0 ? w/maxW : 0;
-  if(ratio>=0.66) return 'strong';
-  if(ratio>=0.33) return 'medium';
-  return 'weak';
-}
-const _strengthText={strong:'강함',medium:'보통',weak:'약함'};
-function _renderPathTracker(id){
-  const el=document.getElementById('path-tracker');
-  const path=_greedyPath(id);
-  if(path.length<2){ el.style.display='none'; return; }
-  // 0.00 가중치(사실상 무연결) 구간에서 경로를 끊는다 — 약한 연결로 무관한 군집까지 이어 보이지 않도록
-  let cut=path.length;
-  for(let i=0;i<path.length-1;i++){
-    if(_edgeW(path[i],path[i+1])<=0.005){ cut=i+1; break; }
-  }
-  const trimmed = path.slice(0,cut);
-  if(trimmed.length<2){ el.style.display='none'; return; }
-  let html='<span class="pt-lab">경로 추적기</span>';
-  for(let i=0;i<trimmed.length;i++){
-    const m=_nodeMeta[trimmed[i]]; if(!m) continue;
-    const cur = trimmed[i]===id ? ' style="outline:2px solid var(--orange);outline-offset:1px"' : '';
-    html+=`<span class="pt-node"${cur}>${_dot(m.type)}${_esc(m.label)}</span>`;
-    if(i<trimmed.length-1) html+=`<span class="pt-w">→</span>`;
-  }
-  el.innerHTML=html; el.style.display='flex';
-}
-function _renderBrief(id,m){
-  const nbAll=_neighbors(id);
-  // 0.00(사실상 무연결) 이웃은 목록에서 제외 — MD에게 실제 연결만 보여준다
-  const nb=nbAll.filter(x=>x.w>0.005);
-  const ofType=t=>nb.filter(x=>x.node.type===t);
-  const cntP=ofType('product').length, cntI=ofType('ip').length, cntK=ofType('keyword').length;
-  const typeLab={keyword:'속성 키워드',product:'제품',ip:'IP'}[m.type]||m.type;
-  let h=`<span class="cls" onclick="_hideBrief()">✖</span>`;
-  h+=`<h4>${_dot(m.type)} ${_esc(m.full||m.label)}</h4>`;
-  const parts=[];
-  if(cntP) parts.push(`제품 ${cntP}개`); if(cntI) parts.push(`IP ${cntI}개`); if(cntK) parts.push(`키워드 ${cntK}개`);
-  h+=`<div class="sub">${typeLab}${parts.length?' · 실제로 연결된 '+parts.join(' · '):' · 뚜렷하게 연결된 항목 없음'}</div>`;
-  // 가중치 상위 이웃 → 연결 강도
-  h+=`<div class="sec">연결이 강한 순서</div>`;
-  if(nb.length){
-    const maxW = nb[0].w;
-    nb.slice(0,6).forEach(x=>{
-      const s=(x.node.type==='product'&&x.node.success!=null)?` <span style="color:var(--text-3)">· 성공 ${Math.round(x.node.success*100)}%</span>`:'';
-      const lv=_strengthOf(x.w,maxW)||'weak';
-      const bars=[1,2,3].map(n=>`<span class="${n<=({weak:1,medium:2,strong:3}[lv])?('fill-'+lv):''}"></span>`).join('');
-      h+=`<div class="nb"><span class="nm">${_dot(x.node.type)}${_esc(x.node.label)}${s}</span><span class="nb-right"><span class="strength-bar">${bars}</span><span class="strength-label ${lv}">${_strengthText[lv]}</span></span></div>`;
-    });
-  } else h+=`<div class="empty-note">이 항목과 뚜렷하게 연결된 제품·키워드·IP가 없어요. 그래프에 보이는 다른 연결은 거의 의미 없는 수준(연결 강도 0에 가까움)이라 제외했습니다.</div>`;
-  // 타입별 브리핑
-  h+=`<div class="sec">📊 브리핑</div>`;
-  const ipTags=ofType('ip').map(x=>`<span class="tag">${_esc(x.node.label)}</span>`).join('');
-  if(m.type==='product'){
-    if(m.success!=null) h+=`<div class="row">- 성공확률: <b>${Math.round(m.success*100)}%</b>${m.success_src?` (소스 ${_esc(m.success_src)})`:''}</div>`;
-    h+=`<div class="row">- 프로모션: ${(m.promo&&m.promo.length)?m.promo.map(p=>`<span class="tag">${_esc(p)}</span>`).join(''):'<span style="color:var(--text-3)">없음</span>'}</div>`;
-    h+=`<div class="row">- 인스타 언급: <b>${m.insta_mentions||0}</b>회 (30일 내 ${m.insta_30d||0}회)</div>`;
-    if(ipTags) h+=`<div class="row">- 연결 IP: ${ipTags}</div>`;
-  } else {
-    const ps=ofType('product');
-    if(ps.length){ const t=ps[0].node; h+=`<div class="row">- 대표 제품: <b>${_esc(t.label)}</b>${t.success!=null?` (성공 ${Math.round(t.success*100)}%)`:''}</div>`; }
-    h+=`<div class="row">- 연결 제품 <b>${cntP}</b> · 키워드 <b>${cntK}</b></div>`;
-    if(ipTags && m.type!=='ip') h+=`<div class="row">- 연결 IP: ${ipTags}</div>`;
-    if(m.shared) h+=`<div class="row">- <b>연결쌍 노드</b>: ${m.deg||2}개 망을 잇는 핵심 축</div>`;
-  }
-  const el=document.getElementById('brief-panel');
-  el.innerHTML=h; el.classList.remove('hidden');
-}
 
 setRightTitle(null);
 addBlock();  // 시작 시 검색어 1개
@@ -1169,7 +1228,7 @@ function showKeywordLoading(message='키워드 추출 중...'){
 }
 async function callSheet2Api2(path, payload){
   let res;
-  try{ res=await fetch(`${API_BASE}${path}`, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}); }
+  try{ res=await fetch(`${API_BASE}${path}`, {method:'POST',headers:{'Content-Type':'application/json','ngrok-skip-browser-warning':'1'},body:JSON.stringify(payload)}); }
   catch(e){ throw new Error('키워드 추출 서버에 연결할 수 없습니다. 백엔드(api.py)가 실행 중인지 확인해 주세요.'); }
   const data=await res.json().catch(()=>({ok:false,error:'응답을 읽지 못했습니다.'}));
   if(!res.ok || !data.ok) throw new Error(data.error || '키워드 추출에 실패했습니다.');

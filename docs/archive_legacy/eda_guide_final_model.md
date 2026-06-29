@@ -1,8 +1,12 @@
 # 최종 모델 EDA 가이드 — 팀원용
 
+> ⚠️ **구버전 / 폐기 모델 (exp41, 동반구매 누수 포함) — 현행 아님.**
+> 현행 서빙은 **v2_sweepA**. 이 가이드의 모델·수치는 exp41 기준이라 운영과 다르다.
+> 현행 EDA·처방 진입점: [`md_prescription_system_guide.md`](../md_prescription_system_guide.md) · [`eda_channel_prescription_plan.md`](../eda_channel_prescription_plan.md).
+
 > **대상 모델**: `exp41_trend_kw3_ip1`  
 > test PR-AUC **0.6959** / val-test gap **0.033** / 랜덤 대비 **2.95배**  
-> 상세 스펙: `docs/final_model_summary.md`
+> 상세 스펙: `final_model_summary.md`
 
 ---
 
@@ -18,7 +22,7 @@ source .venv/bin/activate     # Mac/Linux
 
 | 파일 | 위치 |
 |---|---|
-| 모델 가중치 | `experiments/results/exp41_trend_kw3_ip1/hin_gnn_best.pt` |
+| 모델 가중치 | c |
 | 제품 예측 점수 | `experiments/results/exp41_trend_kw3_ip1/learned_product_scores.parquet` |
 | 가중 제품-키워드 엣지 | `experiments/results/exp41_trend_kw3_ip1/weighted_product_keyword_edges.parquet` |
 | 관계 중요도 α_r | `experiments/results/exp41_trend_kw3_ip1/relation_importance.json` |

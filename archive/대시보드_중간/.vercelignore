@@ -1,0 +1,24 @@
+# Python 백엔드 파일 — Vercel에 포함하지 않음 (로컬 + ngrok으로 운영)
+server.py
+network_builder.py
+graph_engine.py
+llm_connector.py
+trend_cache_builder.py
+build_master.py
+create_dummy_data.py
+check_tasks.py
+e2e_test.py
+gemma_server.py
+gemma_server_requirements.txt
+
+# Python 환경 파일
+requirements.txt
+__pycache__/
+*.py
+*.pyc
+
+# 데이터 및 분석 파일
+data/
+*.md
+.env
+.env.example

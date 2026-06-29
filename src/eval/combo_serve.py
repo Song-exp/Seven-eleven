@@ -64,21 +64,56 @@ def build_seed(eng, seed, sc, max_hops=MAX_HOPS, eps=EPS, cand_pool=CAND_POOL,
     #   api.py warmup이 백그라운드에서 미리 캐시(eng._live_tags)해 두고, 여기선 준비됐을 때만 붙인다.
     cached = getattr(eng, "_live_tags", None)
     gtags = cached[1] if cached else {}
-    if gtags:
+    # 채널 태그(인스타/POS/범용) — classify_channel_live 로드 1회 캐시. gtag와 동일하게 논블로킹 부착.
+    cch = getattr(eng, "_channel_tags", None)
+    ctags = cch[1] if cch else {}
+    if gtags or ctags:
         for n in net["nodes"]:
             if n["type"] in ("rail", "trend", "basket", "ip2"):
                 t = gtags.get(n["label"])
                 if t:
                     n["gtag"] = t
-    # IP 추천: 어텐션 대신 인과 margin(pair_synergy_ip, seed 기준) — 클릭 시 궁합 패널과 동일 수치 = 일관.
-    # 비용 캡: 어텐션 상위 IP만 margin 계산(프론트는 4개 노출) → CPU 응답시간 보호.
+                c = ctags.get(n["label"])
+                if c:
+                    n["ctag"] = c["ctag"]
+                    n["ctag_low"] = c["low"]
+    # IP 노드 태그(역할 killer/매개/일반 + 채널 인스타/POS/범용) — classify_ips_live 로드 1회 캐시.
+    iptags = getattr(eng, "_ip_tags", None)
+    iptags = iptags[1] if iptags else {}
+    if iptags:
+        for n in net["nodes"]:
+            if n["type"] == "ip":
+                c = iptags.get(n["label"])
+                if c:
+                    if c.get("gtag"):
+                        n["gtag"] = c["gtag"]
+                    if c.get("ctag"):
+                        n["ctag"] = c["ctag"]
+                        n["ctag_low"] = c["low"]
+    # ── IP 관련성 필터 (구조 기준) ──
+    #   rail 키워드가 '직접 보유'(ip 엣지: kw→ip)한 IP만 유지. '대체 IP'(attr_ip)는 제네릭 속성
+    #   (예: '맛') 브릿지로 무관 IP(디저트망에 디진다돈까스)를 끌어와 노이즈 → 제거.
+    #   ※ IP 주입 Δprob은 거의 항상 양수(예: 두바이+디진다돈까스 margin +0.0066)라 margin>0로는
+    #     무관 IP가 안 걸러짐 → 인과 대신 '직접 연결' 구조로 판별.
+    from src.eval.md.classify import IP_DROP_SUBSTR   # 경동나비엔·APEC 등 제거 대상(렌더·분류와 동일)
+    direct_ip = {e["tgt"] for e in net["edges"] if e.get("type") == "ip"}
+    drop_ip = {n["id"] for n in net["nodes"] if n["type"] == "ip"
+               and (n["id"] not in direct_ip                                    # 대체IP(attr_ip) 노이즈
+                    or any(s in str(n.get("label", "")) for s in IP_DROP_SUBSTR))}  # 명시 제거 IP
+    if drop_ip:
+        net["nodes"] = [n for n in net["nodes"] if n["id"] not in drop_ip]
+        net["edges"] = [e for e in net["edges"] if e["src"] not in drop_ip and e["tgt"] not in drop_ip]
+        connected = {e["src"] for e in net["edges"]} | {e["tgt"] for e in net["edges"]}
+        net["nodes"] = [n for n in net["nodes"]    # 드롭된 IP에만 매달렸던 시그니처(ip2) 고아 제거
+                        if n["type"] != "ip2" or n["id"] in connected]
+    # 남은(직접연결) IP의 인과 margin — 클릭 궁합·"잘 어울리는 IP" 랭킹용.
     ip_w = {}
     for e in net["edges"]:
         if e.get("type") == "ip":
             ip_w[e["tgt"]] = max(ip_w.get(e["tgt"], 0.0), e.get("weight", 0.0))
     ip_nodes = sorted((n for n in net["nodes"] if n["type"] == "ip"),
                       key=lambda n: -ip_w.get(n["id"], 0.0))
-    for n in ip_nodes[:6]:
+    for n in ip_nodes[:8]:
         try:
             r = SN.pair_synergy_ip(eng, seed, n["label"], n_headroom=SYN_HEADROOM)
             if "margin_b_given_a" in r:

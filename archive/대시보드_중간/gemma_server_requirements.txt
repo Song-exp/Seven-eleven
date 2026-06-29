@@ -1,0 +1,8 @@
+# gemma_server_requirements.txt
+# 데스크탑의 Gemma API 서버 실행에 필요한 최소 패키지
+# 설치: pip install -r gemma_server_requirements.txt
+
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+requests>=2.31.0
+python-dotenv>=1.0.0
