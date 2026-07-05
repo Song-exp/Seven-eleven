@@ -1,0 +1,20 @@
+{
+  "exp_dir": "experiments/results/exp47_no_copurchase",
+  "thr": 0.7755,
+  "base_rate": 0.23783031988873435,
+  "P": 5033,
+  "K": 2063,
+  "I": 335,
+  "ledger_sizes": {
+    "full": {
+      "killer": 37,
+      "mine": 54,
+      "hub": 56
+    },
+    "train": {
+      "killer": 33,
+      "mine": 49,
+      "hub": 52
+    }
+  }
+}

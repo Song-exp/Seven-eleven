@@ -1,0 +1,20 @@
+{
+  "exp_dir": "experiments/results/v2_sweepA",
+  "thr": 0.7757,
+  "base_rate": 0.23783031988873435,
+  "P": 5033,
+  "K": 2063,
+  "I": 335,
+  "ledger_sizes": {
+    "full": {
+      "killer": 62,
+      "mine": 131,
+      "hub": 144
+    },
+    "train": {
+      "killer": 57,
+      "mine": 122,
+      "hub": 120
+    }
+  }
+}

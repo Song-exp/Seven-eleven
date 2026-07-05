@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7-ELEVEN · 신상품 기획 어시스턴트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --surface:#FFFFFF; --surface-2:#F7F8FA;
+  --line:#E8EAED; --line-soft:#EEF0F2;
+  --text:#1F2430; --text-2:#4B5563; --text-3:#9AA0AC; --text-4:#BFC4CC;
+  --green:#16A34A; --green-soft:#22C55E; --green-fill:#EAF8F0; --green-border:#8FE0AD;
+  --red:#EF4444; --orange:#F2994A; --ip:#F59E0B;
+  --blue:#2563EB; --blue-soft:#EAF1FF; --blue-border:#C9DDFF;
+  --radius:14px; --radius-sm:9px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);font-family:'Pretendard','Noto Sans KR',system-ui,sans-serif;font-size:14px;-webkit-font-smoothing:antialiased}
+b{color:var(--text);font-weight:700}
+
+/* ── 헤더 ─────────────────────────────────────── */
+.header{display:flex;align-items:center;gap:18px;padding:18px 32px;border-bottom:1px solid var(--line);background:#fff}
+.brand{display:flex;align-items:center;gap:18px}
+.logo7e{font-family:'Arial Black','Helvetica Neue',Arial,sans-serif;font-weight:900;font-size:27px;font-style:italic;letter-spacing:-1.5px;line-height:1;white-space:nowrap}
+.logo-img{height:30px;width:auto;display:block;flex:none}
+.logo7e .s7{color:#F47216}
+.logo7e .se{color:#1C8A47}
+.logo7e .sn{color:#ED1B2E}
+.logo7e .reg{font-size:9px;vertical-align:super;color:#1C8A47;font-style:normal;margin-left:1px;letter-spacing:0}
+.app-title{font-size:22px;font-weight:800;color:var(--text);letter-spacing:-.4px}
+.head-meta{margin-left:auto;color:var(--text-3);font-size:15px;font-weight:500;white-space:nowrap}
+.head-meta .arrow{margin:0 4px;color:var(--text-4)}
+.head-meta #serving-tag{font-size:12px;margin-left:8px;color:var(--text-4)}
+
+/* ── 레이아웃 ─────────────────────────────────── */
+.wrap{display:grid;grid-template-columns:300px 1fr;min-height:calc(100vh - 71px)}
+.col-left{padding:26px 24px;border-right:1px solid var(--line)}
+.col-right{padding:26px 32px}
+
+/* ── 좌: 검색 패널 ───────────────────────────── */
+.left-title{font-size:17px;font-weight:800;color:var(--text);margin-bottom:8px;letter-spacing:-.3px}
+.left-sub{font-size:13px;color:var(--text-3);line-height:1.75;margin-bottom:18px}
+.sblock{background:var(--surface-2);border:1px solid var(--line-soft);border-radius:14px;padding:18px;margin-bottom:14px}
+.sblock-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.sblock-title{font-size:14px;font-weight:700;color:var(--text)}
+.sblock-del{font-size:12px;color:var(--text-3);cursor:pointer;border:none;background:none;font-family:inherit}
+.sblock-del:hover{color:var(--red)}
+.trend-row{display:flex;gap:8px}
+.trend-row input{flex:1;min-width:0;padding:9px 12px;border:1px solid var(--line);border-radius:9px;font-size:13px;font-family:inherit;background:#fff;color:var(--text)}
+.trend-row input::placeholder{color:var(--text-4)}
+.trend-row input:focus{outline:none;border-color:var(--green-soft);box-shadow:0 0 0 3px rgba(34,197,94,.12)}
+
+.btn{padding:9px 16px;border:none;border-radius:9px;background:var(--orange);color:#fff;font-weight:700;cursor:pointer;font-size:13px;font-family:inherit;transition:.12s}
+.btn:hover{filter:brightness(1.04)}
+.btn:disabled{opacity:.45;cursor:not-allowed;filter:none}
+.btn.sec{background:var(--green)}
+.btn.ghost{background:none;color:var(--green);border:1px dashed var(--green-border);width:100%;margin:6px 0 12px;padding:11px;border-radius:11px;font-weight:700}
+.btn.ghost:hover{background:var(--green-fill);filter:none}
+#gen-btn{width:100%;padding:13px;border-radius:11px;font-size:14px}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{padding:7px 14px;border:1px solid var(--line);border-radius:18px;font-size:13px;cursor:pointer;background:#fff;color:var(--text-3);font-weight:500;transition:.12s}
+.chip:hover{border-color:var(--green-border);color:var(--green)}
+.chip.on{background:var(--green-fill);border-color:var(--green-soft);color:var(--green);font-weight:600}
+.chip.dim{opacity:.45;cursor:not-allowed}
+.chip.dim:hover{border-color:var(--line);color:var(--text-3)}
+.sel-count{font-size:11px;color:var(--text-3);margin-top:9px}
+
+/* ── 우: 네트워크 패널 ───────────────────────── */
+.right-title{display:none}  /* 검색어›칩 표시 제거 — AI 요약 인사이트가 대신 안내 */
+.right-title.muted{color:var(--text-3);font-weight:500}
+.right-title.muted b{color:var(--text-2)}
+.right-title b{color:var(--green);font-weight:800}
+.rt-trend{font-weight:800;color:var(--green);font-size:17px}
+.rt-sep{color:var(--text-3);margin:0 7px;font-weight:400}
+.rt-div{color:var(--line);margin:0 10px}
+.rt-chip{display:inline-block;padding:2px 9px;margin:0 3px;border:1px solid var(--green-border,#8FE0AD);border-radius:12px;background:var(--green-soft,#EAF8F0);color:#1F2430;font-size:12.5px;font-weight:600;vertical-align:middle}
+
+.mini-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.mtab{padding:8px 16px;border:1px solid var(--line);border-radius:9px;font-size:13px;cursor:pointer;background:#fff;color:var(--text-2);font-weight:500;font-family:inherit;transition:.12s}
+.mtab:hover{border-color:var(--green-border)}
+.mtab.on{background:var(--green-fill);border-color:var(--green-soft);color:var(--green);font-weight:700}
+.mtab.all.on{background:var(--red);border-color:var(--red);color:#fff}
+.mtab.all:hover{border-color:var(--red)}
+
+.insight-card{border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:24px;background:#fff}
+.insight-head{font-size:14px;font-weight:700;color:var(--text);margin-bottom:10px}
+#net-explain{font-size:13.5px;line-height:1.9;color:var(--text-2)}
+#net-explain b{color:var(--text);font-weight:700}
+#net-explain.muted{color:var(--text-3)}
+
+.net-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+.net-title{font-size:16px;font-weight:800;color:var(--text);letter-spacing:-.3px}
+.net-head-right{display:flex;align-items:center;gap:16px}
+.legend{display:flex;align-items:center;gap:14px;font-size:12px;color:var(--text-2)}
+.legend-line{display:flex;align-items:center;gap:6px}
+.legend-line svg{flex:none}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.fs-btn{padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--text-2);font-size:12px;cursor:pointer;font-family:inherit}
+.fs-btn:hover{border-color:var(--green-border);color:var(--green)}
+.node-search{position:relative}
+.node-search input{width:150px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--text);font-size:12px;font-family:inherit}
+.node-search input:focus{outline:none;border-color:var(--green-border)}
+.ns-list{position:absolute;top:34px;right:0;width:210px;max-height:260px;overflow:auto;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);z-index:40;padding:4px}
+.ns-list.hidden{display:none}
+.ns-item{padding:7px 9px;border-radius:7px;font-size:13px;color:var(--text);cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ns-item:hover{background:var(--green-soft,#EAF8F0)}
+.ns-empty{padding:8px 9px;font-size:12px;color:var(--text-3)}
+.ins-guide{margin-top:12px;border-top:1px solid var(--line-soft,#eee);padding-top:11px}
+.ins-h{font-size:13px;font-weight:800;color:var(--text);margin-bottom:9px}
+.ins-h .ins-sub{font-weight:400;font-size:11px;color:var(--text-3);margin-left:5px}
+.ig-sec{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 11px;margin-bottom:8px}
+.ig-t{font-size:12.5px;font-weight:700;color:var(--text);margin-bottom:2px}
+.ig-d{font-size:11px;color:var(--text-3);line-height:1.5;margin-bottom:6px}
+.ig-chips{display:flex;flex-wrap:wrap;gap:5px}
+.ig-leg{font-size:11px;color:var(--text-3);margin:2px 0 2px;line-height:1.5}
+.ig-bk{margin-top:11px}
+.ig-bk-row{display:flex;align-items:flex-start;gap:7px;margin-bottom:6px;flex-wrap:wrap}
+.ig-bk-sep{color:var(--text-3);font-weight:700}
+.ig-bk-prod{font-size:12.5px;font-weight:700;color:var(--text);flex:none;padding-top:3px}
+.ig-bk-pop{font-size:11px;font-weight:700;color:#B45309;background:#FEF3E2;border-radius:6px;padding:1px 6px;flex:none;align-self:flex-start;margin-top:2px}
+.ig-bk-kws{display:flex;flex-wrap:wrap;gap:5px}
+.kw-pick{display:inline-block;padding:3px 10px;border:1px solid var(--green-border,#8FE0AD);border-radius:13px;background:var(--green-soft,#EAF8F0);color:#1F2430;font-size:12px;font-weight:600;cursor:pointer;transition:background .12s,color .12s}
+.kw-pick:hover{background:var(--green,#16A34A);color:#fff}
+.kw-pick.basket{border-color:#F0C089;background:#FEF3E2;color:#1F2430}
+.kw-pick.basket:hover{background:#D97706;color:#fff}
+.kw-pick.kw-ip{border-color:#F0C089;background:#FEF3E2;color:#1F2430}   /* IP = 주황 배경 */
+.kw-pick.kw-ip:hover{background:#D97706;color:#fff}
+.ins-hint{font-size:11px;color:var(--text-3);margin-top:8px;line-height:1.6}
+/* 문장형 AI 인사이트: 색=역할, 이모지 없음, 단어 클릭=노드 포커스 */
+.ins-word{font-weight:700;cursor:pointer;border-bottom:1px solid currentColor;transition:opacity .12s}
+.ins-word:hover{opacity:.65}
+.ins-sentence{font-size:14px;line-height:1.95;color:var(--text-2)}
+.ins-sentence b{color:var(--text);font-weight:800}
+.ins-legend{margin-top:11px;font-size:11px;color:var(--text-3)}
+/* 도움말 호버 팝업 (ℹ️ 정보 칩 — 마우스 올리면 표시) */
+.help{position:relative;display:inline-block}
+.help-ic{display:inline-flex;align-items:center;gap:4px;cursor:pointer;font-size:11.5px;font-weight:700;color:var(--blue);background:var(--blue-soft);border:1px solid var(--blue-border);border-radius:999px;padding:2px 9px;line-height:1.6;user-select:none;vertical-align:middle;transition:background .12s,box-shadow .12s}
+.help-ic:hover{background:#DCE8FF;box-shadow:0 1px 5px rgba(37,99,235,.20)}
+.help-pop{display:none;position:absolute;z-index:80;top:20px;left:0;width:290px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.15);padding:14px 16px;font-size:12.5px;line-height:1.7;color:var(--text-2);font-weight:400;white-space:normal;text-align:left}
+.help:hover .help-pop{display:block}
+.help-pop h5{font-size:12.5px;font-weight:800;color:var(--text);margin:0 0 8px}
+.help-pop .ht-row{display:flex;gap:8px;align-items:flex-start;margin:4px 0}
+.help-pop .ht-dot{width:9px;height:9px;border-radius:50%;flex:none;margin-top:5px}
+.help-pop b{color:var(--text);font-weight:700}
+.help-pop .ht-foot{margin-top:9px;padding-top:8px;border-top:1px solid var(--line-soft);color:var(--text-3);font-size:11.5px}
+.left-help{margin-bottom:16px}
+.ig-table{width:100%;border-collapse:collapse;margin:4px 0 8px}
+.ig-table tr+tr td{border-top:1px solid var(--line-soft)}
+.ig-row-label{white-space:nowrap;padding:7px 10px 7px 0;font-size:12.5px;font-weight:700;color:var(--text-2);vertical-align:top;width:82px}
+.ig-row-chips{padding:5px 0;vertical-align:middle}
+
+#net-canvas{flex:1;min-width:0;height:640px;border:1px solid var(--line);border-radius:14px 0 0 14px;border-right:none;background:#fff;background-image:radial-gradient(var(--line-soft) 1px,transparent 1px);background-size:22px 22px}
+.placeholder{color:var(--text-3);text-align:center;padding:200px 0;font-size:13px}
+
+/* 전체화면: 스테이지(경로바+뷰포트) 전체를 띄움 */
+#net-stage{position:relative}
+#net-stage.fs{position:fixed;inset:0;z-index:1000;background:#fff;padding:14px;display:flex;flex-direction:column}
+#net-stage.fs #net-viewport{flex:1;min-height:0}
+#net-stage.fs #net-canvas{height:100%;border-radius:0}
+#net-stage.fs .brief{border-radius:0}
+/* 전체화면 전용 닫기 버튼 (평소 숨김 → 전체화면일 때만 노출) */
+.fs-close{display:none}
+#net-stage.fs .fs-close{display:inline-flex;align-items:center;gap:6px;position:absolute;top:16px;left:16px;z-index:1001;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.14);font-weight:700;padding:8px 14px}
+
+/* 경로 추적기 */
+#path-tracker{display:none;align-items:center;gap:4px;flex-wrap:wrap;margin-bottom:12px;padding:9px 11px;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius-sm);font-size:12px}
+#path-tracker .pt-lab{color:var(--text-3);font-weight:700;margin-right:4px}
+#path-tracker .pt-node{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:14px;background:#fff;border:1px solid var(--line);font-weight:700}
+#path-tracker .pt-node i{width:8px;height:8px;border-radius:50%}
+#path-tracker .pt-w{color:var(--orange);font-size:11px;font-weight:700;padding:0 2px}
+
+/* 브리핑 패널 — 그래프 옆 고정 칸 (항상 표시, 미선택 시 사용법) */
+#net-viewport{display:flex;align-items:stretch}
+.brief{flex:none;width:300px;background:#fff;border:1px solid var(--line);border-radius:0 var(--radius) var(--radius) 0;padding:18px;overflow:auto;font-size:12.5px}
+.brief.hidden{display:none}
+.brief .cls{position:absolute;top:12px;right:14px;cursor:pointer;color:var(--text-3);font-size:15px;line-height:1}
+.brief h4{margin:0 0 3px;font-size:16px;font-weight:800}
+.brief .sub{color:var(--text-3);font-size:12px;margin-bottom:14px;line-height:1.6}
+.brief .sec{font-weight:700;font-size:11.5px;color:var(--text-3);margin:16px 0 8px;letter-spacing:.01em}
+.brief .nb{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--line-soft)}
+.brief .nb:last-child{border-bottom:none}
+.brief .nb .nm{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text)}
+.brief .nb i{width:8px;height:8px;border-radius:50%;flex:none}
+.brief .nb-right{display:flex;align-items:center;gap:7px;flex:none}
+.brief .strength-bar{display:flex;gap:2px}
+.brief .strength-bar span{width:6px;height:9px;border-radius:2px;background:var(--line)}
+.brief .strength-bar span.fill-strong{background:var(--green)}
+.brief .strength-bar span.fill-medium{background:#F59E0B}
+.brief .strength-bar span.fill-weak{background:var(--text-4)}
+.brief .strength-label{font-size:10.5px;font-weight:700;width:30px;text-align:right}
+.brief .strength-label.strong{color:var(--green)}
+.brief .strength-label.medium{color:#F59E0B}
+.brief .strength-label.weak{color:var(--text-3)}
+.brief .empty-note{font-size:12.5px;color:var(--text-3);line-height:1.7;padding:6px 0}
+.brief .row{margin:6px 0;color:var(--text-2);line-height:1.65;font-size:13px}
+.brief .row b{color:var(--text)}
+.brief .tag{display:inline-block;padding:3px 9px;margin:2px 4px 0 0;border-radius:11px;background:var(--surface-2);border:1px solid var(--line);font-size:11.5px;color:var(--text-2)}
+
+@media (max-width:860px){
+  .wrap{grid-template-columns:1fr}
+  .col-left{border-right:none;border-bottom:1px solid var(--line)}
+  .head-meta{display:none}
+}
+
+/* ── 시트 전환 (병합: 시트1 네트워크 / 시트2 키워드추출) ─────────── */
+.sheet-nav{display:flex;align-items:center;gap:8px;padding:14px 32px;border-bottom:1px solid var(--line);background:#fff}
+.sheet-tab{padding:9px 18px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--text-2);font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:.12s}
+.sheet-tab:hover{border-color:var(--green-border);color:var(--green)}
+.sheet-tab.on{background:var(--green-fill);border-color:var(--green-soft);color:var(--green)}
+.sheet-note{margin-left:auto;color:var(--text-3);font-size:12px;font-weight:500}
+.sheet-panel{display:none}
+.sheet-panel.on{display:block}
+
+/* ── 시트2: 네트워크 키워드 자동 추출 ───────────── */
+.sheet2-wrap{display:grid;grid-template-columns:360px 1fr;min-height:calc(100vh - 126px)}
+.sheet2-left{padding:18px 18px;border-right:1px solid var(--line);background:#fff}
+.sheet2-right{padding:26px 32px;background:#fff}
+.panel-box{background:var(--surface-2);border:1px solid var(--line-soft);border-radius:14px;padding:14px;margin-bottom:10px}
+.field{margin-bottom:9px}
+.field label{display:block;font-size:12px;font-weight:700;color:var(--text-2);margin-bottom:5px}
+.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--text);font-family:inherit;font-size:13px;padding:8px 10px}
+.field textarea{min-height:72px;resize:vertical;line-height:1.6}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--green-soft);box-shadow:0 0 0 3px rgba(34,197,94,.12)}
+.file-box{border:1px dashed var(--green-border);border-radius:11px;background:#fff;padding:9px;margin-top:6px}
+.file-box input{font-size:12px;max-width:100%;color:var(--text-2)}
+.help-text{font-size:12px;color:var(--text-3);line-height:1.45;margin-top:6px}
+.sheet2-left .left-title{margin-bottom:12px}
+.sheet2-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.sheet2-actions .btn{width:100%;padding:11px 12px}
+.btn.two-line{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1.2}
+.btn.line{background:#fff;color:var(--green);border:1px solid var(--green-border)}
+.btn.line:hover{background:var(--green-fill);filter:none}
+.btn.redline{background:#fff;color:var(--red);border:1px solid #F8B4B4}
+.btn.redline:hover{background:#FFF1F2;filter:none}
+.upload-status{padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--text-2);font-size:12px;line-height:1.45;margin-top:8px}
+.upload-status b{color:var(--green)}
+.section-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:16px}
+.section-title{font-size:17px;font-weight:800;color:var(--text);letter-spacing:-.3px}
+.section-sub{font-size:13px;color:var(--text-3);line-height:1.75;margin-top:5px}
+.summary-grid{display:flex;align-items:stretch;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.summary-card{width:148px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:12px 14px}
+.summary-card .lab{font-size:11px;color:var(--text-3);font-weight:700;margin-bottom:7px;white-space:nowrap}
+.summary-card .num{font-size:26px;font-weight:800;color:var(--text);line-height:1}
+.summary-card .num.green{color:var(--green)}
+.summary-card .num.orange{color:#C76A1D}
+.review-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.review-toolbar input{width:220px;border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-family:inherit;font-size:13px}
+.review-toolbar select{border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-family:inherit;font-size:13px;background:#fff;color:var(--text)}
+.result-list{display:grid;gap:12px}
+.result-card{border:1px solid var(--line);border-radius:14px;background:#fff;padding:16px 18px}
+.result-head{margin-bottom:12px}
+.product-meta-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:5px}
+.product-title{font-size:15px;font-weight:800;color:var(--text);line-height:1.45}
+.product-meta{font-size:12px;color:var(--text-3)}
+.status-badge{display:inline-flex;align-items:center;border-radius:14px;padding:4px 10px;font-size:11px;font-weight:800;white-space:nowrap}
+.status-badge.ready{background:var(--green-fill);color:var(--green);border:1px solid var(--green-border)}
+.status-badge.none{background:var(--surface-2);color:var(--text-3);border:1px solid var(--line)}
+.source-label{font-size:12px;color:var(--text-3);font-weight:800;margin:14px 0 8px}
+.source-text{font-size:13px;color:var(--text-2);line-height:1.75;background:var(--surface-2);border:1px solid var(--line-soft);border-radius:10px;padding:10px 12px;margin-bottom:12px}
+.keyword-group{margin-top:10px}
+.keyword-group-title{font-size:12px;color:var(--text-3);font-weight:800;margin-bottom:8px}
+.keyword-chip-row{display:flex;flex-wrap:wrap;gap:8px}
+.result-card .chip{cursor:default}
+.result-card .chip.candidate{background:#FFF4E8;border-color:#F2994A;color:#C76A1D}
+.detail-toggle{margin-top:12px;border:1px solid var(--line-soft);border-radius:10px;background:#fff;overflow:hidden}
+.detail-toggle summary{list-style:none;cursor:pointer;padding:10px 12px;font-size:12px;font-weight:800;color:var(--text-2);background:var(--surface-2);display:flex;align-items:center;gap:7px}
+.detail-toggle summary::-webkit-details-marker{display:none}
+.detail-toggle summary::before{content:'▶';display:inline-block;color:var(--green);font-size:10px;transition:transform .12s ease}
+.detail-toggle[open] summary::before{transform:rotate(90deg)}
+.evidence-table{width:100%;border-collapse:collapse;font-size:12px}
+.evidence-table th,.evidence-table td{border-bottom:1px solid var(--line-soft);padding:8px;text-align:left;vertical-align:top;line-height:1.55}
+.evidence-table th{color:var(--text-3);font-weight:800;background:var(--surface-2)}
+.empty-state{border:1px dashed var(--line);border-radius:14px;background:var(--surface-2);padding:70px 20px;text-align:center;color:var(--text-3);line-height:1.8}
+.loading-state{border:1px solid var(--green-border);border-radius:14px;background:linear-gradient(180deg,#EAF8F0 0%,#F4FBF7 100%);padding:74px 20px;text-align:center;color:var(--green);line-height:1.8;font-size:22px;font-weight:800}
+.loading-state .sub{display:block;margin-top:8px;font-size:13px;font-weight:600;color:var(--text-2)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="brand">
+    <img src="SEVEN_LOGO.png" alt="7-ELEVEN" class="logo-img">
+    <h1 class="app-title">신상품 기획 어시스턴트</h1>
+  </div>
+  <div class="head-meta">최종 업데이트 날짜: 2025-12-31</div>
+</header>
+
+<nav class="sheet-nav">
+  <button class="sheet-tab on" data-sheet="sheet1" onclick="switchSheet('sheet1')">신상품 기획 네트워크</button>
+  <button class="sheet-tab" data-sheet="sheet2" onclick="switchSheet('sheet2')">키워드 추출 자동화</button>
+</nav>
+
+<section id="sheet1" class="sheet-panel on">
+<div class="wrap">
+  <!-- 좌: 검색 블록들 -->
+  <div class="col-left">
+    <div class="left-help"><span class="help"><span class="help-ic">ℹ️ 검색 방법</span><div class="help-pop"><h5>검색 방법</h5>검색어를 입력하면 AI가 속성을 추론해 줍니다. 기획에 사용할 속성을 선택하세요.<br><br>검색어는 <b>최대 3개</b>까지 추가할 수 있고, 검색어마다 <b>별도 탭</b>을 만들어 줍니다.</div></span></div>
+    <div id="blocks"></div>
+    <button class="btn ghost" id="add-btn" onclick="addBlock()">+ 검색어 추가</button>
+    <button class="btn" id="gen-btn" onclick="runNetworks()" disabled>네트워크 생성</button>
+  </div>
+
+  <!-- 우: 네트워크 -->
+  <div class="col-right">
+    <div class="right-title muted" id="right-title">검색어를 추론하고 출발 속성을 선택한 뒤 <b>네트워크 생성</b>을 눌러주세요.</div>
+
+    <div class="mini-tabs" id="mini-tabs"></div>
+
+    <div class="insight-card">
+      <div class="insight-head">📌 AI 요약 인사이트 <span class="help"><span class="help-ic">ℹ️ 상세 설명</span><div class="help-pop"><h5>상세 설명</h5>
+        <div style="margin-bottom:4px">네트워크를 생성하면, 네트워크 내 핵심 키워드를 바탕으로 신제품 기획에 활용할 키워드를 추천해드립니다.</div>
+        <h5 style="margin-top:12px">키워드 종류</h5>
+        <div class="ht-row"><span class="ht-dot" style="background:#1C8A47"></span><span style="color:#1C8A47"><b style="color:inherit">흥행</b> — 비슷한 키워드를 쓴 신상품이 성공한 경우가 많아요</span></div>
+        <div class="ht-row"><span class="ht-dot" style="background:#5B4FCF"></span><span style="color:#5B4FCF"><b style="color:inherit">매개</b> — 어디에 붙여도 두루 잘 어울려요</span></div>
+        <div class="ht-row"><span class="ht-dot" style="background:#BE185D"></span><span style="color:#BE185D"><b style="color:inherit">화제</b> — 인스타에서 바이럴되기 좋아요</span></div>
+        <div class="ht-row"><span class="ht-dot" style="background:#D97706"></span><span style="color:#D97706"><b style="color:inherit">IP</b> — 콜라보·캐릭터 IP예요</span></div></div></span></div>
+      <div id="net-explain" class="muted"></div>
+    </div>
+
+    <div class="net-head">
+      <div class="net-title">네트워크</div>
+      <div class="net-head-right">
+        <div class="node-search">
+          <input id="node-search" placeholder="🔍 노드 검색" autocomplete="off"
+            oninput="_nodeSearchInput(this.value)"
+            onkeydown="if(event.key==='Enter')_nodeSearchEnter(); else if(event.key==='Escape')_nodeSearchHide()">
+          <div id="node-search-list" class="ns-list hidden"></div>
+        </div>
+        <div class="legend">
+          <span><i style="background:var(--green)"></i>속성 키워드</span>
+          <span><i style="background:var(--ip)"></i>IP</span>
+          <span class="legend-line"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="1" y1="5" x2="21" y2="5" stroke="#5B6270" stroke-width="3.5" stroke-linecap="round"/></svg>선이 굵을수록 관련성 높음</span>
+          <span class="legend-line"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="1" y1="5" x2="21" y2="5" stroke="#9CA3AF" stroke-width="2" stroke-dasharray="3,2" stroke-linecap="round"/></svg>점선은 관련성 낮음</span>
+        </div>
+        <button class="fs-btn" id="fs-btn" onclick="toggleFS()">⛶ 전체화면</button>
+      </div>
+    </div>
+
+    <div id="net-stage">
+      <button class="fs-btn fs-close" onclick="toggleFS()">✕ 전체화면 닫기</button>
+      <div id="path-tracker"></div>
+      <div id="net-viewport">
+        <div id="net-canvas"><div class="placeholder">검색어 추론 → 출발점 선택 → 네트워크 생성</div></div>
+        <div id="brief-panel" class="brief"><h4>네트워크 사용법</h4><div class="sub">AI 인사이트가 추천한 키워드를 네트워크에서 직접 살펴볼 수 있어요. 검색어를 생성하면 네트워크가 그려져요.</div><div class="sec">키워드를 하나 누르면</div><div class="row">그 키워드와 주변 키워드의 정보를 보여줘요.</div><div class="sec">키워드를 두 개 누르면</div><div class="row">네트워크 내에서 두 키워드를 잇는 길과 키워드 간 시너지를 보여드려요.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="sheet2" class="sheet-panel">
+  <div class="sheet2-wrap">
+    <aside class="sheet2-left">
+      <div class="left-title">제품-키워드 자동 추출</div>
+      <div class="panel-box">
+        <div class="sblock-head"><span class="sblock-title">단건 입력</span></div>
+        <div class="field"><label for="single-code">상품코드</label><input id="single-code" inputmode="numeric" placeholder="예: 123456"></div>
+        <div class="field"><label for="single-name">상품명</label><input id="single-name" placeholder="예: 딸기초코디저트"></div>
+        <div class="field"><label for="single-desc">상품 설명문</label><textarea id="single-desc" placeholder="예: 빼빼로데이 시즌 한정 초콜릿 딸기맛 디저트를 출시합니다."></textarea></div>
+        <button class="btn sec" style="width:100%" onclick="runSingleExtract()">키워드 추출</button>
+      </div>
+      <div class="panel-box">
+        <div class="sblock-head"><span class="sblock-title">CSV 파일 업로드</span></div>
+        <div class="field">
+          <label for="csv-file">신상품 설명서 CSV</label>
+          <div class="file-box"><input id="csv-file" type="file" accept=".csv,text/csv"></div>
+          <div class="help-text">권장 컬럼명: 상품코드, 상품명, 상품 설명문입니다. 기존 영문 컬럼명도 자동으로 인식합니다.</div>
+        </div>
+        <button class="btn sec" style="width:100%" onclick="runCsvExtract()">업로드 파일 추출</button>
+        <div id="csv-status" class="upload-status">아직 업로드된 파일이 없습니다.</div>
+      </div>
+    </aside>
+    <main class="sheet2-right">
+      <div class="section-title-row">
+        <div>
+          <div class="section-title">네트워크 키워드 자동 추출</div>
+          <div class="section-sub">백엔드 키워드 사전 기준으로 상품 설명문에서 기존 키워드와 신규 키워드를 자동 추출해 업데이트용 CSV로 저장합니다.</div>
+        </div>
+        <div class="sheet2-actions" style="width:310px;margin-top:0">
+          <button class="btn line two-line" onclick="downloadReviewedCsv()"><span>추출 결과</span><span>CSV 다운로드</span></button>
+          <button class="btn redline" onclick="clearSheet2()">결과 초기화</button>
+        </div>
+      </div>
+      <div class="summary-grid">
+        <div class="summary-card"><div class="lab">처리 상품 수</div><div class="num" id="sum-products">0</div></div>
+        <div class="summary-card"><div class="lab">전체 키워드 수</div><div class="num green" id="sum-selected">0</div></div>
+        <div class="summary-card"><div class="lab">기존 키워드</div><div class="num green" id="sum-existing">0</div></div>
+        <div class="summary-card"><div class="lab">신규 키워드</div><div class="num orange" id="sum-candidate">0</div></div>
+      </div>
+      <div class="review-toolbar">
+        <input id="review-search" placeholder="상품명 또는 키워드 검색" oninput="renderReviewList()">
+        <select id="review-filter" onchange="renderReviewList()">
+          <option value="all">전체 보기</option>
+          <option value="candidate">신규 키워드 포함</option>
+          <option value="empty">추출 키워드 없음</option>
+        </select>
+      </div>
+      <div id="review-list" class="result-list">
+        <div class="empty-state">단건 입력 또는 CSV 업로드로 키워드를 추출하면 상품별 결과가 표시됩니다.</div>
+      </div>
+    </main>
+  </div>
+</section>
+
+<script src="config.js"></script>
+<script src="combo_data.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vis-network@9.1.9/styles/vis-network.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+<script>
+const DATA = window.DASHBOARD_DATA || {};
+// API_BASE 우선순위: ① 명시 주입(window.DASHBOARD_API, 프론트/백엔드 분리배포용 백엔드 URL)
+//   ② file:// (오프라인/로컬) → localhost:8000  ③ http(s)로 서빙(터널·백엔드가 직접 서빙) → same-origin('')
+const API_BASE = (window.DASHBOARD_API !== undefined) ? window.DASHBOARD_API
+  : (location.protocol === 'file:' ? 'http://localhost:8000' : '');
+let UID = 0;
+const STATE = { blocks:[], view:null };  // blocks: {id,trend,attrs,selected,net}
+
+// ── 대시보드 데이터 보정 레이어 (피드백 반영) ───────────────────────────────
+// config.js / combo_data.js 는 모델 파이프라인 재생성물이라 직접 편집하면 재export 시 사라짐.
+// 표기 통일·제외는 여기서 로드 직후 한 번 적용 → 재생성과 무관하게 항상 반영.
+//   · 카스타드 → 커스터드 (키워드 표기 통일; 제품 실제 상품명은 보존)
+//   · 경동나비엔 IP/콜라보 노드 제외
+// ★ 영구 반영(소스): 키워드 정규화 keyword_frequency_review_final.xlsx 에 카스타드→커스터드,
+//   경동나비엔은 patch_ip_keywords_all.py DELETE_IPS + HIN ip_nodes 재빌드 후 재export.
+const KW_RENAME = { '카스타드':'커스터드' };          // 키워드 노드 표기 통일
+const NODE_DROP_SUBSTR = ['경동나비엔','APEC정상회의'];   // 라벨에 포함되면 제거 (IP+콜라보 제품 일괄)
+const NODE_DROP_TYPES = new Set(['product','bridge','ip2']);  // 제품·브릿지 + IP 속성전개(ip2) 제거 — 서브네트워크 비대·인사이트 과다 방지
+const _KW_NODE_TYPES = new Set(['keyword','rail','trend','basket','anti','ip2']);  // 키워드성 노드 타입
+function _dropNode(n){ if(NODE_DROP_TYPES.has(n.type)) return true; const L=(n.label||'')+' '+(n.full||''); return NODE_DROP_SUBSTR.some(s=>L.includes(s)); }
+function _ren(s){ return KW_RENAME[s] || s; }
+function _sanitizeNetObj(obj){
+  if(!obj || !Array.isArray(obj.nodes)) return;
+  const drop=new Set();
+  obj.nodes=obj.nodes.filter(n=>{ if(_dropNode(n)){ drop.add(n.id); return false; } return true; });
+  obj.nodes.forEach(n=>{ if(_KW_NODE_TYPES.has(n.type) && KW_RENAME[n.label]) n.label=KW_RENAME[n.label]; });
+  if(Array.isArray(obj.edges))
+    obj.edges=obj.edges.filter(e=>![e.src,e.tgt,e.from,e.to].some(x=>x!==undefined&&drop.has(x)));
+}
+function _sanitizeDashboardData(){
+  const D=window.DASHBOARD_DATA;
+  if(D){
+    if(D.networks) Object.values(D.networks).forEach(_sanitizeNetObj);
+    if(D.trendAttrs) Object.values(D.trendAttrs).forEach(a=>{ if(Array.isArray(a)) a.forEach((v,i)=>a[i]=_ren(v)); });
+    if(D.keywordEvidence && D.keywordEvidence['카스타드'] && !D.keywordEvidence['커스터드'])
+      D.keywordEvidence['커스터드']=D.keywordEvidence['카스타드'];
+  }
+  const C=window.COMBO_DATA;
+  if(C && C.data) Object.values(C.data).forEach(c=>{
+    _sanitizeNetObj(c);
+    if(Array.isArray(c.coreNodes)) c.coreNodes=c.coreNodes.map(_ren);
+    if(Array.isArray(c.rail)) c.rail=c.rail.map(_ren);
+    (c.recommend||[]).forEach(r=>{ if(r.keyword) r.keyword=_ren(r.keyword); });
+    (c.accepted||[]).forEach(a=>{ if(a.keyword) a.keyword=_ren(a.keyword); });
+    if(c.synergy){ const ns={}; for(const k in c.synergy) ns[k.split('|').map(_ren).join('|')]=c.synergy[k]; c.synergy=ns; }
+  });
+}
+_sanitizeDashboardData();
+
+const _stEl=document.getElementById('serving-tag'); if(_stEl) _stEl.textContent = (DATA._meta && DATA._meta.serving_exp) ? ' · model: '+DATA._meta.serving_exp : '';
+
+function mdToHtml(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>'); }
+
+// 우측 상단 동적 제목
+// 상단 검색어 표시 — 검색어 + 그 검색을 대체한 선택 속성 칩. (인사이트 첫 줄을 대체)
+function setRightTitle(blocks){
+  const el=document.getElementById('right-title');
+  if(!blocks || !blocks.length){
+    el.classList.add('muted');
+    el.innerHTML='검색어를 추론하고 출발 속성을 선택한 뒤 <b>네트워크 생성</b>을 눌러주세요.';
+    return;
+  }
+  el.classList.remove('muted');
+  const parts=blocks.map(b=>{
+    const chips=(b.selected||[]).filter(a=>a!==b.trend)   // 검색어 자신은 빼고 '대체 속성'만
+      .map(a=>`<span class="rt-chip">${_esc(_ren(a))}</span>`).join('');
+    return `<span class="rt-trend">${_esc(b.trend)}</span>${chips?`<span class="rt-sep">›</span>${chips}`:''}`;
+  }).join('<span class="rt-div">·</span>');
+  el.innerHTML=parts;
+}
+
+async function apiInfer(trend){ try{const r=await fetch(`${API_BASE}/infer`,{method:'POST',headers:{'Content-Type':'application/json','ngrok-skip-browser-warning':'1'},body:JSON.stringify({trend})});return r.ok?(await r.json()).attrs:[];}catch(e){return [];} }
+// 조합 서브네트워크 동적 fetch (라이브 /combo). 시너지 기반 생성의 단일 소스.
+async function apiCombo(seed){ try{const r=await fetch(`${API_BASE}/combo`,{method:'POST',headers:{'Content-Type':'application/json','ngrok-skip-browser-warning':'1'},body:JSON.stringify({seed})});return r.ok?await r.json():null;}catch(e){return null;} }
+// 두 키워드의 직접 쌍 시너지 (시작-끝 궁합) — 라이브 전용. 오프라인이면 null.
+async function apiComboPair(a,b){ if(!LIVE_COMBO) return null; try{const r=await fetch(`${API_BASE}/combo/pair`,{method:'POST',headers:{'Content-Type':'application/json','ngrok-skip-browser-warning':'1'},body:JSON.stringify({a,b})});return r.ok?await r.json():null;}catch(e){return null;} }
+
+// ── AI 인사이트 LLM 관련성 필터 (컨셉에 안 어울리는 키워드 drop) ──
+let _insightDrop=new Set(), _insightDropKey='', _lastInsightKey='';
+let _insightIds=new Set();   // AI 인사이트 문장에 실제 등장한 노드 id — 미포함 노드는 테두리 얇게
+const _EMPTYSET=new Set();
+function _seedsKey(seeds){ return (seeds||[]).map(_ren).slice().sort().join('|'); }
+async function apiInsightFilter(concept, keywords){
+  try{ const r=await fetch(`${API_BASE}/insight/filter`,{method:'POST',headers:{'Content-Type':'application/json','ngrok-skip-browser-warning':'1'},body:JSON.stringify({concept,keywords})});
+    return r.ok ? ((await r.json()).drop||[]) : []; }catch(e){ return []; }
+}
+// 생성 시 1회 호출 → drop 캐시 → 인사이트 재렌더. 시드셋 단위 캐시(칩 토글 재호출 안 함). 실패 시 필터 없음.
+// 필터 결과 보장(캐시면 즉시, 아니면 LLM 호출 후 _insightDrop 세팅). 8초 폴백(늦으면 필터 없이 진행).
+function _ensureInsightFilter(C, seeds){
+  const key=_seedsKey(seeds);
+  if(key===_insightDropKey) return Promise.resolve();
+  const cands=[...new Set((C.nodes||[]).filter(n=>!n.seed&&n.type!=='anti').map(n=>_ren(n.label)))];
+  if(!cands.length){ _insightDrop=new Set(); _insightDropKey=key; return Promise.resolve(); }
+  const done=apiInsightFilter((seeds||[]).map(_ren), cands).then(drop=>{ _insightDrop=new Set(drop||[]); _insightDropKey=key; });
+  return Promise.race([done, new Promise(r=>setTimeout(()=>{ if(_insightDropKey!==key){ _insightDrop=new Set(); _insightDropKey=key; } r(); }, 8000))]);
+}
+// LLM 필터까지 반영된 뒤 네트워크+인사이트를 한 번에 그림(언필터 깜빡임 제거)
+function _drawAfterFilter(C, seeds, opts){
+  const key=_seedsKey(seeds);
+  const cv=document.getElementById('net-canvas'), el=document.getElementById('net-explain');
+  const draw=()=>{
+    if(_seedsKey(seeds)!==_lastInsightKey) return;          // 그 사이 뷰가 바뀌면 무시
+    const html=_comboInsightSentence(C, seeds);             // 먼저 인사이트 산출(_insightIds 채움) → 노드 테두리 굵기에 반영
+    _drawCombo(C, opts||{});
+    const e=document.getElementById('net-explain'); if(e){ e.classList.remove('muted'); e.innerHTML=html; }
+    _showComboGuide();
+  };
+  if(key===_insightDropKey){ draw(); return; }              // 필터 캐시됨 → 즉시
+  if(cv) cv.innerHTML='<div class="placeholder">⏳ 인사이트 분석 중…</div>';
+  if(el){ el.classList.remove('muted'); el.innerHTML='<span class="muted">⏳ 인사이트 분석 중…</span>'; }
+  _ensureInsightFilter(C, seeds).then(draw);
+}
+
+// ── 검색 블록 관리 ─────────────────────────────────────────
+function addBlock(){
+  if(STATE.blocks.length>=3) return;   // 검색어 최대 3개
+  STATE.blocks.push({id:++UID, trend:'', attrs:[], selected:[], net:null});
+  renderBlocks();
+}
+function delBlock(id){ STATE.blocks = STATE.blocks.filter(b=>b.id!==id); renderBlocks(); updateGen(); }
+function renderBlocks(){
+  const root=document.getElementById('blocks'); root.innerHTML='';
+  const _ab=document.getElementById('add-btn'); if(_ab) _ab.disabled=STATE.blocks.length>=3;   // 최대 3개
+  STATE.blocks.forEach((b,idx)=>{
+    const el=document.createElement('div'); el.className='sblock';
+    el.innerHTML=`
+      <div class="sblock-head">
+        <span class="sblock-title">검색어 ${idx+1}</span>
+        ${STATE.blocks.length>1?`<button class="sblock-del" onclick="delBlock(${b.id})">✕ 삭제</button>`:''}
+      </div>
+      <div class="trend-row">
+        <input placeholder="예: 마라, 로제, 단백질" value="${b.trend||''}"
+          onchange="STATE.blocks.find(x=>x.id===${b.id}).trend=this.value"
+          onkeydown="if(event.key==='Enter')runInfer(${b.id})">
+        <button class="btn sec" onclick="runInfer(${b.id})">추론</button>
+      </div>
+      <div class="chips" id="chips-${b.id}"></div>
+      <div class="sel-count" id="sel-${b.id}"></div>`;
+    root.appendChild(el);
+    renderChips(b);
+  });
+}
+async function runInfer(id){
+  const b=STATE.blocks.find(x=>x.id===id); if(!b) return;
+  const inp=document.querySelector(`#blocks .sblock:nth-child(${STATE.blocks.indexOf(b)+1}) input`);
+  b.trend=(inp?inp.value:b.trend).trim(); if(!b.trend) return;
+  b.selected=[];
+  if(STATE.generated) _resetNetUI();   // 재검색 → 선택 초기화 + 기존 네트워크 비움(다시 고르면 재생성)
+  const chips=document.getElementById('chips-'+id);
+  chips.innerHTML='<span style="color:var(--text-3);font-size:11px">⏳ 속성 추론 중…</span>';
+  let attrs=(await apiInfer(b.trend)||[]).map(_ren);   // 항상 라이브 /infer (정적 trendAttrs 캐시 제거) + 표기 통일
+  b.attrs=attrs||[];
+  // (제거) 검색어 무조건 unshift — '우베'처럼 그래프 미존재 검색어가 칩으로 새는 문제.
+  //   infer_attrs가 검색어가 graph_kw일 때만 맨 앞에 포함하므로 칩은 항상 실제 노드.
+  if(!b.attrs.length){ chips.innerHTML='<span style="color:var(--text-3);font-size:11px">추론 결과 없음 (그래프에 매칭되는 속성이 없어요)</span>'; return; }
+  renderChips(b); updateGen();
+}
+function renderChips(b){
+  const chips=document.getElementById('chips-'+b.id); if(!chips) return; chips.innerHTML='';
+  b.attrs.forEach(a=>{
+    const el=document.createElement('span'); el.className='chip'+(b.selected.includes(a)?' on':'')+((!b.selected.includes(a)&&b.selected.length>=3)?' dim':'');
+    el.textContent=a; el.onclick=()=>toggleChip(b,a); chips.appendChild(el);
+  });
+  document.getElementById('sel-'+b.id).textContent = b.attrs.length?`선택 ${b.selected.length} / 3`:'';
+}
+let _regenTimer=null;
+function _scheduleRegen(){   // 선택 토글마다 /combo(모델) 호출이라 디바운스 — 연속 선택 시 마지막만 생성
+  if(_regenTimer) clearTimeout(_regenTimer);
+  _regenTimer=setTimeout(()=>{ _regenTimer=null; runNetworks(); }, 450);
+}
+function toggleChip(b,a){
+  const i=b.selected.indexOf(a);
+  if(i>=0) b.selected.splice(i,1);
+  else { if(b.selected.length>=3) return; b.selected.push(a); }
+  renderChips(b); updateGen();
+  if(STATE.generated){   // 이미 생성됐으면 선택 바뀔 때 네트워크를 즉시 비우고 디바운스 재생성
+    const anySel=STATE.blocks.some(x=>x.selected.length>0);
+    if(anySel){ _resetNetUI('⏳ 네트워크 갱신 중…'); _scheduleRegen(); }
+    else _resetNetUI();   // 선택 전부 해제 → 네트워크 사라짐
+  }
+}
+function updateGen(){
+  const any=STATE.blocks.some(b=>b.selected.length>0);
+  document.getElementById('gen-btn').disabled=!any;
+}
+
+// 네트워크 영역 초기화 — 재검색/칩 재선택 시 기존 네트워크를 비우고 기본(또는 로딩) 상태로.
+// msg를 주면 캔버스에 그 안내(로딩)를 띄우고, 없으면 최초 placeholder로 되돌린다.
+function _resetNetUI(msg){
+  STATE.generated=false; STATE.view='__all__';
+  if(_visNet){ _visNet.destroy(); _visNet=null; }
+  const cv=document.getElementById('net-canvas');
+  if(cv) cv.innerHTML=`<div class="placeholder">${msg||'검색어 추론 → 출발점 선택 → 네트워크 생성'}</div>`;
+  const ne=document.getElementById('net-explain');
+  if(ne){ ne.innerHTML='네트워크를 생성하면, 네트워크 내 핵심 키워드를 바탕으로 신제품 기획에 활용할 키워드를 추천해드립니다.'; ne.classList.add('muted'); }
+  const tabs=document.getElementById('mini-tabs'); if(tabs) tabs.innerHTML='';
+  const nsi=document.getElementById('node-search'); if(nsi) nsi.value=''; _nodeSearchHide();
+  _hideBrief(); _hideTracker();
+}
+
+// ── 네트워크 생성 (검색어별 /network + 전체종합 병합) ──────────
+async function runNetworks(){
+  const active=STATE.blocks.filter(b=>b.selected.length>0);
+  if(!active.length){ _resetNetUI(); return; }   // 선택 전무 → 로딩 잔상 없이 기본 상태로
+  const cv=document.getElementById('net-canvas'); cv.innerHTML='<div class="placeholder">⏳ 네트워크 생성 중…</div>';
+  document.getElementById('net-explain').classList.remove('muted');
+  document.getElementById('net-explain').innerHTML='';
+  for(const b of active){
+    b.combo = await ensureComboSeed(b);   // 선택 속성들의 시너지 서브네트워크(배열) — 라이브 시너지 전용
+  }
+  const ok=active.filter(b=>b.combo);
+  if(!ok.length){
+    buildTabs([]);
+    cv.innerHTML='<div class="placeholder">시너지 네트워크를 만들 수 없습니다.<br>라이브 서버 연결을 확인하세요 (python -m uvicorn src.eval.api:app)<br>또는 그래프에 없는 키워드일 수 있습니다.</div>';
+    const ne=document.getElementById('net-explain'); ne.innerHTML=''; ne.classList.add('muted');
+    return;
+  }
+  buildTabs(ok);
+  // 현재 보던 탭 유지(라이브 재생성 시 점프 방지), 유효하지 않으면 기본값
+  const valid = STATE.view==='__all__' ? ok.length>1 : ok.some(b=>b.id===STATE.view);
+  if(!valid) STATE.view = ok.length>1 ? '__all__' : ok[0].id;
+  STATE.generated=true;
+  renderView();
+}
+function buildTabs(ok){
+  const tabs=document.getElementById('mini-tabs'); tabs.innerHTML='';
+  if(ok.length<=1) return;   // 단일 검색은 상단 타이틀(검색어›칩)로 충분 — 중복 탭(칩) 생략
+  ok.forEach(b=>{
+    const t=document.createElement('div'); t.className='mtab'; t.textContent=b.trend;
+    t.dataset.blockId=b.id;
+    t.onclick=()=>{STATE.view=b.id;renderView();}; tabs.appendChild(t);
+  });
+  if(ok.length>1){
+    const t=document.createElement('div'); t.className='mtab all';
+    t.textContent='전체';
+    t.title = '검색어들의 성공망 합본 (공유 축 표시)';
+    t.onclick=()=>{STATE.view='__all__';renderView();}; tabs.appendChild(t);
+  }
+}
+function renderView(){
+  const ok=STATE.blocks.filter(b=>b.combo);   // 라이브 시너지 전용 (어텐션 폴백 제거)
+  document.querySelectorAll('.mtab').forEach(t=>{
+    const isAll=t.classList.contains('all');
+    const bid=t.dataset.blockId!==undefined ? Number(t.dataset.blockId) : null;
+    t.classList.toggle('on', (STATE.view==='__all__'&&isAll) || (!isAll && bid===STATE.view));
+  });
+  if(STATE.view==='__all__'){
+    const uniq=[...new Set([].concat(...ok.map(b=>b.combo)))];   // 모든 블록의 선택 속성 시너지망 병합
+    if(!uniq.length) return;
+    if(uniq.length>=2) renderComboMerged(uniq); else renderComboNet(uniq[0]);
+    setRightTitle(ok);
+  }else{
+    const b=ok.find(x=>x.id===STATE.view); if(!b) return;
+    // 선택 속성들의 시너지 서브네트워크 병합 (각 속성=시작점, rail=marginal synergy 성장)
+    if(b.combo.length>=2) renderComboMerged(b.combo); else renderComboNet(b.combo[0]);   // 단일은 renderComboNet이 explain까지
+    setRightTitle([b]);
+  }
+}
+
+// ── 조합 서브네트(combo_grow) — 확정된 네트워크 전개 ─────────────
+const CD = window.COMBO_DATA || { seeds:[], data:{} };
+// 노드 색 = 타입색만: 속성 키워드=초록 / 제품=빨강 / IP=주황.
+// (채널 POS형/인스타형/범용은 노드색이 아님 — 노드 하나 클릭 시 세부 패널 뱃지로만 표시)
+const COL3 = { keyword:'#16A34A', product:'#EF4444', ip:'#F59E0B' };
+function _nodeCol(m){ return COL3[_nodeClass(m.type)]; }
+function _nodeClass(t){ return (t==='ip')?'ip':(t==='product')?'product':'keyword'; }
+// hex 색을 흰색 쪽으로 t(0~1)만큼 밝게 — 노드 파스텔 채움용
+function _lighten(hex,t){ const h=(hex||'#16A34A').replace('#',''); const r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
+  const m=c=>Math.round(c+(255-c)*t).toString(16).padStart(2,'0'); return '#'+m(r)+m(g)+m(b); }
+const EDGE_WHY = { rail:'성공 레일에서 이어짐', basket:'함께 담기는 조합', trend:'트렌드로 이어짐', ip:'같은 IP', ip2:'같은 IP', ip_attr:'핵심 공통 속성', attr_ip:'대체 IP 후보', anti:'겹침/잠식', prod_kw:'제품 경유' };
+let _comboCur=null, _comboPick=[], _comboAdj={}, _comboEdgeSyn={}, _comboEdgeMargin={}, _comboEdgeW={};
+let _seedPulseTimer=null;
+function _pct(v){ return (v>0?'+':'')+(v*100).toFixed(1)+'%p'; }
+function _edgeType(a,b){ let t=null; (_comboCur.edges||[]).forEach(e=>{ if((e.src===a&&e.tgt===b)||(e.src===b&&e.tgt===a)) t=e.type; }); return t; }
+// synergy(궁합)는 대부분 0 근처로 작음(키워드는 서로 독립적 기여) → 숫자 대신 등급으로
+function _synTier(v){
+  if(v>=0.015) return { t:'✅ 잘 어울려요', c:'var(--green)' };
+  if(v>=0.005) return { t:'🙆 약한 보완', c:'var(--green)' };
+  if(v>-0.005) return { t:'➖ 거의 독립', c:'var(--text-3)' };
+  if(v>-0.015) return { t:'⚠ 약한 겹침', c:'var(--orange)' };
+  return { t:'⚠ 서로 겹쳐요', c:'var(--red)' };
+}
+function _synRow(name,v){ const T=_synTier(v); return `<div class="nb"><span class="nm">${_esc(name)}</span><span class="nb-right"><b style="color:${T.c};font-size:12px">${T.t}</b></span></div>`; }
+
+// 동적 조합망: 오프라인 캐시(combo_data.js) 미스 시 /combo로 라이브 fetch 후 캐시에 적재.
+// 라이브 전용 — 오프라인(어텐션) 폴백 제거. 항상 /combo(시너지)로 생성. (서버 없으면 안내 메시지)
+const LIVE_COMBO = (window.DASHBOARD_LIVE_COMBO!==undefined) ? window.DASHBOARD_LIVE_COMBO : true;
+// ★ 시너지 기반 네트워크 생성 — 선택 속성 각각의 /combo 시너지 서브네트워크(rail=marginal synergy로
+//   성장: 그 키워드를 조합에 더했을 때 vs 직전 상태의 Δ 기준)를 확보해 배열로 반환 → 병합 생성.
+//   라이브 /combo 우선(서버 있으면 항상 최신 — gtag·ctag 포함). 캐시(combo_data.js, 8시드)는
+//   file:// 등 서버 미연결 시에만 폴백 → 낡은 캐시가 라이브를 가리지 않음.
+//   하나도 못 구하면 null → runNetworks가 어텐션 1-hop으로 폴백(오프라인 임의 키워드용).
+async function ensureComboSeed(b){
+  const out=[];
+  for(const a of (b.selected||[])){
+    // ★ 항상 라이브 우선 — 서버가 떠 있으면 늘 최신 /combo를 씀.
+    if(LIVE_COMBO){
+      const d=await apiCombo(a);
+      if(d && !d.error && d.nodes && d.nodes.length){
+        _sanitizeNetObj(d);                       // 라이브 응답도 표기통일·제외 적용 (경동나비엔/카스타드)
+        if(Array.isArray(d.coreNodes)) d.coreNodes=d.coreNodes.map(_ren);
+        if(Array.isArray(d.rail)) d.rail=d.rail.map(_ren);
+        CD.data[a]=d; if(CD.seeds&&!CD.seeds.includes(a))CD.seeds.push(a);
+        if(!out.includes(a)) out.push(a); continue;
+      }
+    }
+    if(CD.data && CD.data[a]){ if(!out.includes(a)) out.push(a); }   // 라이브 실패 시에만 캐시 폴백
+  }
+  return out.length ? out : null;   // 배열(선택 속성 중 시너지 서브네트 확보분) / 없으면 null
+}
+function _comboBfs(src,dst){ if(src===dst) return [src]; const q=[[src]], seen=new Set([src]);
+  while(q.length){ const p=q.shift(), last=p[p.length-1];
+    for(const nb of (_comboAdj[last]||[])){ if(nb===dst) return [...p,nb]; if(!seen.has(nb)){ seen.add(nb); q.push([...p,nb]); } } } return null; }
+function _edgeSyn(a,b){ const v=_comboEdgeSyn[a+'|'+b]; return v===undefined?null:v; }
+function _edgeMargin(a,b){ let v=_comboEdgeMargin[a+'|'+b]; if(v===undefined) v=_comboEdgeMargin[b+'|'+a]; return v===undefined?null:v; }  // 방향 없으면 역방향(근사)
+const _KW_TYPES=['rail','trend','basket','anti','ip2'];   // 키워드 노드 타입(궁합 계산 대상)
+// 시너지 가중 최단경로: 비용 = 시너지 클수록 작게(1-syn), syn 없는 엣지(제품/IP경유)는 약간 페널티.
+function _comboSynPath(src,dst){ if(src===dst) return [src];
+  const cost={[src]:0}, prev={}, seen=new Set();
+  while(true){ let u=null,best=Infinity;
+    for(const k in cost){ if(!seen.has(k)&&cost[k]<best){best=cost[k];u=k;} }
+    if(u===null) break; if(u===dst) break; seen.add(u);
+    for(const v of (_comboAdj[u]||[])){ if(seen.has(v)) continue;
+      const s=_edgeSyn(u,v); const w=(s===null)?1.15:(1-s);   // syn↑ → 비용↓
+      if(cost[v]===undefined||cost[u]+w<cost[v]){ cost[v]=cost[u]+w; prev[v]=u; } } }
+  if(cost[dst]===undefined) return _comboBfs(src,dst);   // 비연결 시 hop fallback
+  const path=[dst]; let c=dst; while(c!==src){ c=prev[c]; if(c===undefined) return _comboBfs(src,dst); path.unshift(c); } return path; }
+function _comboLabel(id){ const n=_comboCur.nodes.find(x=>x.id===id); return n?n.label:id; }
+function _comboSyn(a,b){ return _comboCur.synergy[a+'|'+b] || _comboCur.synergy[b+'|'+a] || null; }
+function _cdot(m){ const meta=(typeof m==='string')?{type:m}:m; return `<i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${_nodeCol(meta)};margin-right:5px;vertical-align:middle"></i>`; }
+function _hideTracker(){ const pt=document.getElementById('path-tracker'); if(pt) pt.style.display='none'; }
+
+function _drawCombo(C, opts){
+  opts=opts||{};
+  const cv=document.getElementById('net-canvas'); _hideBrief(); _nodeSearchHide();
+  if(_visNet){ _stopSeedPulse(); _visNet.destroy(); _visNet=null; } cv.innerHTML='';
+  _comboCur=C; _comboPick=[]; _comboAdj={}; _comboEdgeSyn={}; _comboEdgeMargin={}; _comboEdgeW={}; _nodeMeta={}; _origNodes={}; _origEdges={};
+  const _adjS={};   // 양방향 엣지 중복 방지 (Set으로 dedup)
+  C.edges.forEach(e=>{ (_adjS[e.src]=_adjS[e.src]||new Set()).add(e.tgt); (_adjS[e.tgt]=_adjS[e.tgt]||new Set()).add(e.src);
+    if(e.syn!==undefined){ _comboEdgeSyn[e.src+'|'+e.tgt]=e.syn; _comboEdgeSyn[e.tgt+'|'+e.src]=e.syn; }
+    const _ew=Math.abs(e.weight||0);   // 연결강도(연관성) — '함께 등장' 정렬용 (양방향)
+    _comboEdgeW[e.src+'|'+e.tgt]=Math.max(_comboEdgeW[e.src+'|'+e.tgt]||0,_ew); _comboEdgeW[e.tgt+'|'+e.src]=Math.max(_comboEdgeW[e.tgt+'|'+e.src]||0,_ew);
+    if(e.margin!==undefined){ _comboEdgeMargin[e.src+'|'+e.tgt]=e.margin; } });   // margin은 방향(src→tgt) 보존
+  Object.keys(_adjS).forEach(k=>_comboAdj[k]=[..._adjS[k]]);
+  C.nodes.forEach(n=>_nodeMeta[n.id]=n);
+  const acc={}; (C.accepted||[]).forEach(a=>acc[a.keyword]=a);
+
+  const RAIL_W=4, GRAY='#9CA3AF';   // 레일은 시작점 테두리와 같은 굵기(RAIL_W)로 통일 / 모든 엣지 회색
+  const vN=C.nodes.map(n=>{
+    const isSeed=!!n.seed, isShared=!!n.shared && !isSeed, isRail=(n.type==='rail');
+    const col=_nodeCol(n);   // 타입색 (속성=초록·제품=빨강·IP=주황)
+    const lab=n.label.length>9?n.label.slice(0,9)+'…':n.label;   // 라벨 장식(시작/◆/★) 제거 — 키워드 이름만
+    // 디자인: 연한 파스텔 채움 + 진한 타입색 링(테두리). 색은 유지, 형태만 변경.
+    const fill=_lighten(col,0.68);
+    const color={ background:fill, border:col,
+      highlight:{background:_lighten(col,0.5),border:col}, hover:{background:_lighten(col,0.55),border:col} };
+    let borderWidth=isSeed?4.5:((isRail||isShared)?3.5:2.5);   // 시드>레일/공유>일반 (링 두께로 강조)
+    // AI 인사이트에 등장하는 노드는 위 굵기 유지, 미등장 노드는 더 얇게(배경으로 후퇴)
+    if(!isSeed && _insightIds && _insightIds.size && !_insightIds.has(n.id)) borderWidth=1.2;
+    const font={ color:'#1F2430', size:isSeed?15:((isRail||isShared)?14:12), face:'Pretendard, sans-serif', strokeWidth:4, strokeColor:'#FFFFFF' };
+    _origNodes[n.id]={ color:JSON.parse(JSON.stringify(color)), borderWidth, font:JSON.parse(JSON.stringify(font)) };
+    return { id:n.id, label:lab, color, borderWidth, font,
+      size:isSeed?34:(isShared?22:(isRail?19:12)),
+      shapeProperties:isShared?{borderDashes:[5,3]}:{},
+      shadow:{enabled:true,color:'rgba(0,0,0,0.12)',size:6,x:0,y:2} };
+  });
+  // 레일(메타패스=뼈대) = 굵은 다크 실선으로 정착(원본 스타일). 생성 시 흐릿→점등으로 1회 전개.
+  // 비레일 가지 = 얇고 흐린 회색(뼈대 대비). anti만 점선.
+  const nonRailMax=Math.max(0.0001, ...C.edges.filter(e=>e.type!=='rail').map(e=>Math.abs(e.weight||0)));
+  const RAIL_DARK='#1F2430';
+  const vE=C.edges.map((e,i)=>{
+    const isRail=(e.type==='rail'), isAnti=(e.type==='anti');
+    if(isRail){
+      _origEdges[i]={ color:{color:RAIL_DARK,opacity:0.95}, width:5, dashes:false };   // 정착(뼈대)
+      return { id:i, from:e.src, to:e.tgt, _type:e.type, color:{color:GRAY,opacity:0.3}, width:2.4, dashes:false, smooth:{type:'continuous',roundness:0.3} };   // 초기 흐릿 → _revealRail이 점등
+    }
+    const ratio=Math.min(1, Math.abs(e.weight||0)/nonRailMax);
+    const width=1.3+ratio*3.4;
+    const color={ color:GRAY, opacity:0.3 };   // 비레일 더 흐리게
+    _origEdges[i]={ color:JSON.parse(JSON.stringify(color)), width, dashes:isAnti };
+    return { id:i, from:e.src, to:e.tgt, _type:e.type, color, width, dashes:isAnti, smooth:{type:'continuous',roundness:0.3} };
+  });
+  _visNodeDS=new vis.DataSet(vN); _visEdgeDS=new vis.DataSet(vE);
+  _visNet=new vis.Network(cv, { nodes:_visNodeDS, edges:_visEdgeDS }, {
+    physics:{ stabilization:{iterations:220}, barnesHut:{springLength:135,gravitationalConstant:-14000,centralGravity:0.35,damping:0.55} },
+    nodes:{ shape:'dot' }, edges:{ arrows:{to:false} },
+    interaction:{ hover:true, tooltipDelay:120, zoomView:true, dragView:true } });
+  _visNet.once('stabilizationIterationsDone', ()=>{ _visNet.fit({animation:false}); _revealRail(C); });   // 안정화 후 뼈대 1회 전개
+  _visNet.on('click', p=>{ if(p.nodes.length) _comboPickNode(p.nodes[0]); else { _showComboGuide(); } });
+  return true;
+}
+function renderComboNet(seed){ const C=(CD.data||{})[seed]; if(!C) return false; _lastInsightKey=_seedsKey([seed]); _drawAfterFilter(C, [seed], {}); return true; }
+
+// 패널 기본 상태 — 노드를 아직 안 눌렀을 때 보여줄 사용법 안내 (구 AI요약의 👉 줄을 여기로 이동).
+function _comboGuideHTML(){
+  return `<h4>네트워크 사용법</h4><div class="sub">AI 인사이트가 추천한 키워드를 네트워크에서 직접 살펴볼 수 있어요. 검색어를 생성하면 네트워크가 그려져요.</div>`
+    +`<div class="sec">키워드를 하나 누르면</div>`
+    +`<div class="row">그 키워드와 주변 키워드의 정보를 보여줘요.</div>`
+    +`<div class="sec">키워드를 두 개 누르면</div>`
+    +`<div class="row">네트워크 내에서 두 키워드를 잇는 길과 키워드 간 시너지를 보여드려요.</div>`;
+}
+function _showComboGuide(){
+  _hideTracker(); _comboPick=[]; _resetHighlight();
+  const bp=document.getElementById('brief-panel'); if(!bp) return;
+  bp.innerHTML=_comboGuideHTML(); bp.classList.remove('hidden');
+}
+function _mergeCombo(seeds){
+  const nmap={}, emap={}, appear={};
+  seeds.forEach(s=>{ const C=CD.data[s]; if(!C) return;
+    new Set(C.nodes.map(n=>n.id)).forEach(id=>appear[id]=(appear[id]||0)+1);
+    C.nodes.forEach(n=>{ if(!nmap[n.id]) nmap[n.id]=Object.assign({},n); else if(n.seed) nmap[n.id].seed=true; });
+    C.edges.forEach(e=>{ const k=e.src+'>'+e.tgt; if(!emap[k]) emap[k]=e; }); });
+  const nodes=Object.values(nmap).map(n=>Object.assign(n,{shared:appear[n.id]>=2}));
+  return { nodes, edges:Object.values(emap), recommend:[], rail:[],
+    synergy:Object.assign({}, ...seeds.map(s=>(CD.data[s]||{}).synergy||{})),
+    accepted:[].concat(...seeds.map(s=>(CD.data[s]||{}).accepted||[])),
+    bypass:[].concat(...seeds.map(s=>(CD.data[s]||{}).bypass||[])) };
+}
+// 선택 칩(=시드)마다 그 시드의 rail = 메타패스. 헤더 한 번 + 아래로 메타패스 나열(최대 3).
+function _metapathLines(seeds){
+  const rails=(seeds||[]).map(s=>(CD.data[s]||{}).rail||[]).filter(r=>r.length);
+  if(!rails.length) return [];
+  const lines=['🎯 **다음의 키워드 조합을 중점으로 기획하세요:**'];
+  rails.forEach(r=>lines.push(`- ${r.map(_ren).join(' · ')}`));
+  return lines;
+}
+function renderComboMerged(seeds){
+  const M=_mergeCombo(seeds);
+  _lastInsightKey=_seedsKey(seeds);
+  _drawAfterFilter(M, seeds, {merged:true});   // 필터 반영 후 네트워크+인사이트 한 번에 (깜빡임 없음)
+}
+
+function _comboPickNode(id){
+  _comboPick.push(id);
+  if(_comboPick.length===1){
+    _resetHighlight(); _hideTracker(); _comboBrief(id);
+    if((_nodeMeta[id]||{}).seed){ _stopSeedPulse(); _showSeedMetapath(id); }
+  } else { const a=_comboPick[0], b=_comboPick[1]; _comboPick=[]; _comboPair(a,b); }
+}
+function _startSeedPulse(ids){}   // (제거) 노랑 반짝이 펄스 — 메타패스 정적 강조 + 1회 전개로 대체
+function _stopSeedPulse(){ if(_seedPulseTimer){clearInterval(_seedPulseTimer);_seedPulseTimer=null;} }
+// 생성 시 1회: 레일(뼈대) 엣지를 시드에서 바깥으로 hop 순서대로 '점등'(흐릿→굵은 다크) → 메타패스 전개 표현, 이후 정적 유지
+function _revealRail(C){
+  if(!_visNet || !_visEdgeDS) return;
+  const railEdges=_visEdgeDS.get().filter(e=>e._type==='rail');
+  if(!railEdges.length) return;
+  const adj={}; railEdges.forEach(e=>{ (adj[e.from]=adj[e.from]||[]).push(e.to); (adj[e.to]=adj[e.to]||[]).push(e.from); });
+  const dist={}; let q=(C.nodes||[]).filter(n=>n.seed).map(n=>n.id); q.forEach(s=>dist[s]=0);
+  while(q.length){ const u=q.shift(); (adj[u]||[]).forEach(v=>{ if(dist[v]===undefined){ dist[v]=dist[u]+1; q.push(v); } }); }
+  const D=x=>(dist[x]===undefined?99:dist[x]);
+  const order=railEdges.map(e=>({id:e.id, hop:Math.max(D(e.from),D(e.to))})).sort((a,b)=>a.hop-b.hop);
+  order.forEach((r,idx)=>setTimeout(()=>{ const o=_origEdges[r.id]; if(_visEdgeDS && o){ try{ _visEdgeDS.update({id:r.id, color:o.color, width:o.width}); }catch(e){} } }, 120+idx*170));
+}
+function _showSeedMetapath(seedId){
+  if(!_comboCur) return;
+  const m=_nodeMeta[seedId]; if(!m) return;
+  let rail=_comboCur.rail||[];
+  // 병합 뷰: 개별 시드 rail 조회
+  if(!rail.length && m.label && CD.data[m.label]) rail=CD.data[m.label].rail||[];
+  if(!rail.length) return;
+  const l2id={}; (_comboCur.nodes||[]).forEach(n=>{ if(!(n.label in l2id)) l2id[n.label]=n.id; });
+  const railIds=rail.map(l=>l2id[l]).filter(id=>id!==undefined);
+  if(railIds.length>1){ _highlightComboPath(railIds); _renderComboTracker(railIds); }
+}
+
+// ── 네트워크 내 노드 검색 — 노드가 많아 클릭이 어려울 때 이름으로 찾아 포커스+브리핑 ──
+function _nodeSearchHide(){ const box=document.getElementById('node-search-list'); if(box){ box.classList.add('hidden'); box.innerHTML=''; } }
+function _nodeSearchInput(q){
+  const box=document.getElementById('node-search-list'); if(!box) return;
+  q=(q||'').trim().toLowerCase();
+  if(!q || !_comboCur){ _nodeSearchHide(); return; }
+  const ms=(_comboCur.nodes||[]).filter(n=>(n.label||'').toLowerCase().includes(q)).slice(0,8);
+  if(!ms.length){ box.innerHTML='<div class="ns-empty">일치하는 노드 없음</div>'; box.classList.remove('hidden'); return; }
+  box.innerHTML=ms.map(n=>`<div class="ns-item" onclick="_nodeSearchPick('${_esc(n.id)}')">${_cdot(n)}${_esc(n.label)}</div>`).join('');
+  box.classList.remove('hidden');
+}
+function _nodeSearchEnter(){
+  if(!_comboCur) return;
+  const q=(document.getElementById('node-search').value||'').trim().toLowerCase(); if(!q) return;
+  const ns=_comboCur.nodes||[];
+  const m=ns.find(n=>(n.label||'').toLowerCase()===q) || ns.find(n=>(n.label||'').toLowerCase().includes(q));
+  if(m) _nodeSearchPick(m.id);
+}
+function _nodeSearchPick(id){ _nodeSearchHide(); _pickFromUI(id); }
+// 카메라만 해당 노드로 이동·선택(픽 상태는 안 건드림).
+function _locateNode(id){
+  if(!_visNet || !_nodeMeta[id]) return;
+  _visNet.selectNodes([id]);
+  _visNet.focus(id, { scale:1.3, animation:{duration:420, easingFunction:'easeInOutQuad'} });
+}
+// 검색/인사이트 칩에서 노드 선택 — 위치로 이동 + 그래프 클릭과 동일한 픽 흐름.
+//  첫 픽 → 위치 포커스 + 궁합 브리핑 / 둘째 픽 → 두 노드 시너지(_comboPair) 검토.
+function _pickFromUI(id){ if(!_nodeMeta[id]) return; _locateNode(id); _comboPickNode(id); }
+
+function _highlightComboPath(order){
+  const pN=new Set(order), pE=new Set(), all=_visEdgeDS.get();
+  for(let i=0;i<order.length-1;i++){ const a=order[i],b=order[i+1];
+    all.forEach(e=>{ if((e.from===a&&e.to===b)||(e.from===b&&e.to===a)) pE.add(e.id); }); }
+  _visNodeDS.update(_visNodeDS.get().map(n=> pN.has(n.id)
+    ? { id:n.id, ...(_origNodes[n.id]||{}), opacity:1 }
+    : { id:n.id, ...(_origNodes[n.id]||{}), opacity:0.25 }));
+  _visEdgeDS.update(_visEdgeDS.get().map(e=> pE.has(e.id)
+    ? { id:e.id, color:{color:'#1F2430',opacity:1}, width:5, dashes:false }
+    : { id:e.id, ...(_origEdges[e.id]||{}), color:{color:'#C7CCD4',opacity:0.2} }));
+}
+function _renderComboTracker(order){
+  const el=document.getElementById('path-tracker');
+  let html='<span class="pt-lab">패스</span>';
+  order.forEach((id,i)=>{ const m=_nodeMeta[id]; if(!m) return;
+    html+=`<span class="pt-node">${_cdot(m)}${_esc(m.label)}</span>`+(i<order.length-1?'<span class="pt-w">→</span>':''); });
+  el.innerHTML=html; el.style.display='flex';
+}
+
+async function _comboPair(aId,bId){
+  const a=_comboLabel(aId), b=_comboLabel(bId), path=_comboSynPath(aId,bId);
+  if(path){ _highlightComboPath(path); _renderComboTracker(path); } else { _resetHighlight(); _hideTracker(); }
+  // 궁합 계산: 키워드×키워드 또는 키워드×IP (제품 노드는 대상 아님)
+  const ta=(_nodeMeta[aId]||{}).type, tb=(_nodeMeta[bId]||{}).type;
+  const isKw=t=>_KW_TYPES.includes(t), isIp=t=>t==='ip';
+  const bothKw=isKw(ta)&&isKw(tb), kwIp=(isKw(ta)&&isIp(tb))||(isIp(ta)&&isKw(tb));
+  const computable=bothKw||kwIp;
+  // 키워드쌍은 사전계산 매트릭스 → 없으면 라이브. 키워드-IP는 라이브 전용.
+  let s = bothKw ? _comboSyn(a,b) : null;
+  if(computable && !s){ const live=await apiComboPair(a,b); if(live && live.margin_b_given_a!==undefined) s={synergy:live.synergy,margin:live.margin_b_given_a,label:live.label,kind:live.kind}; }
+  let h=`<span class="cls" onclick="_showComboGuide()">✖</span>`;
+  h+=`<h4>${_esc(a)} → ${_esc(b)}</h4><div class="sub">두 속성이 어떻게 이어지나</div>`;
+  // ── 함께 쓰면? — 키워드·IP·겹침 모두 "성공 가능성 ±%p"로 통일 ──
+  if(s && s.margin!==undefined){
+    h+=`<div class="sec">함께 쓰면? (궁합)</div>`;
+    const good=s.margin>0.01, bad=s.margin<-0.01;   // 노이즈 플로어 ±0.01
+    const mk=good?'✅':(bad?'⚠':'➖'), col=good?'var(--green)':(bad?'var(--red)':'var(--text-3)');
+    h+=`<div class="row"><b style="color:${col}">${mk} 두 키워드를 조합하면 성공 가능성 ${_pct(s.margin)}</b></div>`;
+    if(!good&&!bad) h+=`<div class="row" style="color:var(--text-3);font-size:12px">영향이 거의 없어요 — 각자 제 몫을 하는 조합.</div>`;
+  } else {
+    h+=`<div class="row" style="color:var(--text-2)">${!computable?'제품 노드는 궁합 계산 대상이 아니에요.':'두 키워드의 궁합을 계산하지 못했어요. 정밀 궁합은 라이브 서버에서 확인할 수 있어요.'}</div>`;
+  }
+  // '이어지는 길' 경로 점수 섹션은 제거 — 직접 궁합(헤드라인) 1개만 표시. 경로는 그래프 위 하이라이트로만 안내.
+  const bp=document.getElementById('brief-panel'); bp.innerHTML=h; bp.classList.remove('hidden');
+}
+
+function _fitRow(name, val, good){
+  const why = good ? `함께 쓰면 성공 가능성 ${_pct(val)}` : `같이 쓰면 ${_pct(val)} (겹침)`;
+  return `<div class="nb"><span class="nm">${_esc(name)}</span><span class="nb-right"><b style="color:${good?'var(--green)':'var(--red)'}">${good?'✅':'⚠'}</b> <span style="font-size:11px;color:var(--text-3)">${why}</span></span></div>`;
+}
+// 키워드 성격(1층) — 영어 태그·배지·이모티콘 없이, 색으로 구분된 '설명 문장'만 노출.
+const GTAG_INFO={
+  killer:{color:'#1C8A47',desc:'비슷한 키워드를 쓴 신상품이 성공한 경우가 많아요.'},
+  mine:{color:'#C0392B',desc:'비슷한 키워드를 쓴 신상품이 부진했던 적이 많아요.'},
+  '매개':{color:'#5B4FCF',desc:'어디에 붙여도 성공 확률을 조금씩 올려주는, 두루 잘 맞는 키워드예요.'}
+};
+// 성격 = 색칠된 설명 문장 한 줄(헤더·배지 없음)
+function _gtagSentence(t){ const g=GTAG_INFO[t]; return g?`<div class="row" style="font-size:12.5px;color:${g.color};font-weight:600;margin:2px 0">${g.desc}</div>`:''; }
+// 채널 = 인스타만, 핑크 한 줄 (POS형 미표시)
+function _ctagSentence(t){ return (t==='인스타형'||t==='범용')?`<div class="row" style="font-size:12.5px;color:#BE185D;font-weight:600;margin:2px 0">인스타에서 바이럴되기 좋은 키워드예요.</div>`:''; }
+// 트렌드 = 마커 대신 설명 문장 한 줄 (다른 태그와 형식 통일)
+function _trendSentence(m){ return (m && m.type==='trend')?`<div class="row" style="font-size:12.5px;color:#B45309;font-weight:600;margin:2px 0">2025년 트렌드 키워드예요.</div>`:''; }
+function _gtagBadge(t){ const g=GTAG_INFO[t]; return g?` <span class="tag" style="background:${g.bg};border-color:${g.border};color:${g.color};font-weight:700">${g.badge}</span>`:''; }
+function _gtagRow(t){ const g=GTAG_INFO[t]; return g?`<div class="sec">이 키워드의 성격</div><div class="row" style="font-size:12px;color:var(--text-2)">${g.desc}</div>`:''; }
+const CTAG_INFO={
+  '인스타형':{badge:'🩷 인스타',color:'#BE185D',bg:'#FCE7F3',border:'#F9A8D4',desc:'인스타에서 <b>입소문(바이럴)에 강해요</b> — 초기 마케팅 카피로 좋아요.'},
+  '범용':{badge:'🩷 인스타',color:'#BE185D',bg:'#FCE7F3',border:'#F9A8D4',desc:'인스타에서 <b>입소문(바이럴)에 강해요</b> — 초기 마케팅 카피로 좋아요.'},
+  'POS형':{badge:'🟢 매장형',color:'#16A34A',bg:'#EAF8F0',border:'#8FE0AD',desc:'매장 <b>매출(오프라인)에 강해요</b> — 제품 스펙·내실로 좋아요.'}
+};
+function _ctagBadge(t,low){ const g=CTAG_INFO[t]; return g?` <span class="tag" style="background:${g.bg};border-color:${g.border};color:${g.color};font-weight:700">${g.badge}${low?' ⚠':''}</span>`:''; }
+function _ctagRow(t,low){ const g=CTAG_INFO[t]; return g?`<div class="sec">어디서 통할까</div><div class="row" style="font-size:12px;color:var(--text-2)">${g.desc}${low?' <span style="color:var(--text-3)">(인스타 표본 적음 — 참고용)</span>':''}</div>`:''; }
+function _comboBrief(id){
+  const C=_comboCur, m=_nodeMeta[id]; if(!m) return;
+  let h=`<span class="cls" onclick="_showComboGuide()">✖</span>`;
+  h+=`<h4>${_cdot(m)}${_esc(m.label)}</h4>`;
+  if(m.seed) h+=`<div class="sub" style="color:var(--text-2);margin-bottom:2px">네트워크의 시작점이 된 키워드예요.</div>`;
+  h+=_gtagSentence(m.gtag);     // 성격 = 색칠된 설명 문장 (헤더·배지 없음)
+  h+=_ctagSentence(m.ctag);     // 인스타면 핑크 한 줄 (POS형 미표시)
+  h+=_trendSentence(m);         // 트렌드면 '2025년 트렌드 키워드예요.' (🔥 마커 대신 문장)
+  // 함께 등장하는 것 — 엣지 중요도 순 정렬(강도바 게이지 제거, 이름만)
+  h+=`<div class="sec">함께 등장하는 것 <span style="font-weight:400;color:var(--text-3);font-size:11px">(중요도 순)</span></div>`;
+  const _rel=(a,b)=>Math.max(_comboEdgeW[a+'|'+b]||0,
+    Math.abs(_comboEdgeMargin[a+'|'+b]!==undefined?_comboEdgeMargin[a+'|'+b]:(_comboEdgeMargin[b+'|'+a]||0)),
+    Math.abs(_comboEdgeSyn[a+'|'+b]||0));
+  const _adjR=(_comboAdj[id]||[]).map(nb=>({nb,r:_rel(id,nb)})).filter(x=>_nodeMeta[x.nb]).sort((x,y)=>y.r-x.r).slice(0,8);
+  if(_adjR.length) _adjR.forEach(({nb})=>{ const nm=_nodeMeta[nb];
+    h+=`<div class="nb"><span class="nm">${_cdot(nm)}${_esc(nm.label)}</span></div>`; });
+  else h+=`<div class="empty-note">함께 등장하는 키워드가 없어요.</div>`;
+  h+=`<div class="sub" style="margin-top:10px">다른 키워드를 이어 클릭하면 <b>둘을 잇는 길 + 시너지</b>를 봅니다.</div>`;
+  const bp=document.getElementById('brief-panel'); bp.innerHTML=h; bp.classList.remove('hidden');
+}
+
+// ── AI 요약 인사이트 — 기획 가이드(HTML) ────────────────────────────
+// 핵심 원칙:
+//  · 가이드(흥행/증폭/인스타)는 **속성 노드(rail·trend)만** 대상 → ip2(IP맥락) 제외.
+//  · 워딩은 단정(확실) 금지 → **조합을 제안**하는 톤.
+//  · 키워드 칩은 클릭 가능 → 네트워크 위치 포커스 + 두 개 이어 누르면 시너지 검토(_pickFromUI).
+//  · 효과순(맥락 마진: accepted margin 우선) 최대 5개, 시드는 제외.
+function _kwChip(n, cls){ return `<span class="kw-pick${cls?' '+cls:''}" onclick="_pickFromUI('${_esc(n.id)}')">${_esc(n.label)}</span>`; }
+function _comboInsightHTML(C){
+  const nodes=(C.nodes||[]);
+  const acc={}; (C.accepted||[]).forEach(a=>{ if(a.keyword!==undefined) acc[a.keyword]=Math.abs(a.margin||0); });
+  const _w=n=>{ if(n.type==='ip') return Math.abs(n.ip_margin||0);            // IP는 ip_margin
+    if(acc[n.label]!==undefined) return acc[n.label];                         // 키워드는 rail 채택 마진
+    let mx=0; (C.edges||[]).forEach(e=>{ if(e.tgt===n.id) mx=Math.max(mx,Math.abs(e.weight||0)); }); return mx*1e-4; };
+  const POOL=n=>(n.type==='rail'||n.type==='trend'||n.type==='ip');          // 속성 키워드 + IP
+  const _pick=pred=>{ const seen=new Set(), a=[];
+    nodes.forEach(n=>{ if(n.seed||seen.has(n.label)||!pred(n)) return; seen.add(n.label); a.push(n); });
+    return a.sort((x,y)=>_w(y)-_w(x)).slice(0,6); };
+  // 칩: 배경=타입(IP 주황·키워드 초록), 인스타에 잘 붙으면 라벨 옆 🩷.
+  const chip=n=>{ const ip=(n.type==='ip'), heart=(n.ctag==='인스타형')?'🩷 ':'';
+    return `<span class="kw-pick${ip?' kw-ip':''}" onclick="_pickFromUI('${_esc(n.id)}')">${heart}${_esc(n.label)}</span>`; };
+  // 흥행=killer / 매개=보편 증폭. (주의·일반은 가이드에서 생략 — 추천 신호만) 키워드+IP 공통.
+  const killer=_pick(n=>POOL(n)&&n.gtag==='killer');
+  const bridge=_pick(n=>POOL(n)&&n.gtag==='매개');
+  if(!killer.length&&!bridge.length) return '';
+  const row=(label,arr)=>arr.length
+    ?`<tr><td class="ig-row-label">${label}</td><td class="ig-row-chips">${arr.map(chip).join('')}</td></tr>`:'';
+  let h=`<div class="ins-guide"><div class="ins-h">🎯 기획 가이드 <span class="ins-sub">🟢키워드 · 🟠IP · 🩷=인스타 강세 · 클릭=위치·궁합</span></div>`;
+  h+=`<table class="ig-table">`;
+  h+=row('🔑 흥행',killer);
+  h+=row('🧪 매개',bridge);
+  h+=`</table>`;
+  h+=`<div class="ins-hint">💡 키워드·IP를 누르면 네트워크에서 위치를 찾아주고, 두 개를 이어 누르면 둘의 실제 궁합(시너지)을 확인해요.</div></div>`;
+  return h;
+}
+
+// 한글 조사 자동 선택 (은/는, 을/를, 와/과, (으)로) — "은(는)" 어색함 방지
+function _josa(w, t){
+  const s=(w||''), c=s.charCodeAt(s.length-1);
+  const def={은는:'는',을를:'를',와과:'와',로:'로'};
+  if(c<0xAC00||c>0xD7A3) return def[t];
+  const j=(c-0xAC00)%28, h=(j!==0);
+  if(t==='로') return (j===0||j===8)?'로':'으로';
+  return {은는:h?'은':'는', 을를:h?'을':'를', 와과:h?'과':'와'}[t];
+}
+// ── ★ AI 요약 인사이트 — 문장형 (색=역할, 이모지 없음, 단어 클릭=노드 포커스) ──
+//   흥행=진초록 #1C8A47 / 매개=보라 #5B4FCF / 화제(인스타)=핑크 #BE185D / IP=주황 #D97706 / 주의=빨강 #C0392B / 일반=초록 #16A34A
+//   흥행·매개 각 최대 3개. 단어 onclick=_pickFromUI(id) → 네트워크에서 해당 노드로 이동.
+function _comboInsightSentence(C, seeds){
+  const nodes=(C.nodes||[]);
+  _insightIds=new Set();   // 이 인사이트에 등장하는 노드 id 누적(테두리 강조용)
+  const acc={}; (C.accepted||[]).forEach(a=>{ if(a.keyword!==undefined) acc[a.keyword]=Math.abs(a.margin||0); });
+  const _w=n=>{ if(n.type==='ip') return Math.abs(n.ip_margin||0);
+    if(acc[n.label]!==undefined) return acc[n.label];
+    let mx=0;(C.edges||[]).forEach(e=>{ if(e.tgt===n.id) mx=Math.max(mx,Math.abs(e.weight||0)); }); return mx*1e-4; };
+  const C_KILL='#1C8A47', C_HUB='#5B4FCF', C_MINE='#C0392B', C_IP='#D97706', C_INS='#BE185D', C_KW='#16A34A';
+  const word=(n,color)=>{ if(n&&n.id!==undefined) _insightIds.add(n.id);   // 인사이트 등장 노드 → 테두리 유지
+    return `<span class="ins-word" style="color:${color}" onclick="_pickFromUI('${_esc(n.id)}')">${_esc(_ren(n.label))}</span>`; };
+  const byLabel={}; nodes.forEach(n=>{ const l=_ren(n.label); if(!(l in byLabel)) byLabel[l]=n; });
+  const hopColor=n=> n.gtag==='killer'?C_KILL : n.gtag==='mine'?C_MINE : n.gtag==='매개'?C_HUB : n.type==='ip'?C_IP : n.ctag==='인스타형'?C_INS : C_KW;
+  const isSignal=n=> !!n && (['killer','mine','매개'].includes(n.gtag) || n.type==='ip' || n.ctag==='인스타형');
+  const seedWord=sd=>{ const n=byLabel[_ren(sd)]; return n? word(n,'#1F2430') : `<b>${_esc(_ren(sd))}</b>`; };
+
+  // LLM 관련성 필터 결과 — 이 시드셋용 캐시일 때만 적용(아니면 빈 셋=필터 안 함)
+  const drop=(_seedsKey(seeds)===_insightDropKey)?_insightDrop:_EMPTYSET;
+  // ── 메타패스: 시드별 rail의 모든 노드(상한·신호필터 없음, 시드 간 중복·LLM필터 제외) ──
+  const shown=new Set((seeds||[]).map(_ren));
+  const segs=[];
+  for(const sd of (seeds||[])){
+    const rail=((CD.data[_ren(sd)]||{}).rail)||((seeds.length===1)?(C.rail||[]):[]);
+    const hops=[];
+    for(const lab of rail.slice(1)){ const l=_ren(lab);
+      if(shown.has(l)||drop.has(l)) continue; const n=byLabel[l]; if(!n) continue;
+      shown.add(l); hops.push(n); }            // 메타패스 전체 노드(필터 제외)
+    if(hops.length) segs.push({sd, hops});
+  }
+  // 시드 그룹핑 없이 메타패스 키워드 전체를 한 줄로 나열 (중복은 위 seg 빌드에서 이미 제거됨)
+  const allHops=[].concat(...segs.map(g=>g.hops));
+  let metaLine='';
+  if(allHops.length){ const lastLab=_ren(allHops[allHops.length-1].label);
+    metaLine=`📍 ${allHops.map(n=>word(n,hopColor(n))).join('·')}${_josa(lastLab,'을를')} 중심으로 기획해보세요.`; }
+
+  // ── 참고: 메타패스 밖 네트워크 신호(흥행·매개·화제·IP·주의), 중복 제거 ──
+  const cand=pred=>{ const m=new Map(); nodes.forEach(n=>{ if(n.seed)return; const l=_ren(n.label);
+    if(shown.has(l)||drop.has(l)||!pred(n))return; if(!m.has(l))m.set(l,n); }); return [...m.values()].sort((a,b)=>_w(b)-_w(a)); };
+  const killer=cand(n=>n.gtag==='killer').slice(0,3); killer.forEach(n=>shown.add(_ren(n.label)));
+  const hub   =cand(n=>n.gtag==='매개').slice(0,3);    hub.forEach(n=>shown.add(_ren(n.label)));
+  const ip    =cand(n=>n.type==='ip').slice(0,2);      ip.forEach(n=>shown.add(_ren(n.label)));
+  const refs=[];   // 역할 라벨 대신 자연스러운 수식어로 녹임(색이 역할을 표시). 화제(인스타)는 아래 별도 줄, 주의(mine)는 미표시.
+  if(killer.length) refs.push(`흥행을 끌어올리는 ${killer.map(n=>word(n,C_KILL)).join('·')}`);
+  if(hub.length)    refs.push(`두루 어울리는 ${hub.map(n=>word(n,C_HUB)).join('·')}`);
+  if(ip.length)     refs.push(`콜라보하기 좋은 ${ip.map(n=>word(n,C_IP)).join('·')}`);
+  let refLine='';
+  if(refs.length) refLine=`📍 네트워크에서 ${refs.join(', ')}도 참고해보면 좋아요.`;
+  // 인스타 바이럴 — 메타패스 포함 전체에서 인스타 강세 키워드 수집(별도 줄, 핑크). 메타패스에 있어도 표시.
+  const _im=new Map();
+  nodes.forEach(n=>{ if(n.seed)return; const l=_ren(n.label); if(drop.has(l)||_im.has(l))return; if(n.ctag==='인스타형') _im.set(l,n); });
+  const instaV=[..._im.values()].sort((a,b)=>_w(b)-_w(a)).slice(0,4);
+  let instaLine='';
+  if(instaV.length) instaLine=`📍 ${instaV.map(n=>word(n,C_INS)).join('·')}${_josa(_ren(instaV[instaV.length-1].label),'은는')} 인스타에서 바이럴이 잘 돼요.`;
+
+  if(!metaLine && !refLine && !instaLine)
+    return '<span class="muted">선택 속성으로 그릴 추천 신호가 충분치 않아요. 다른 속성을 골라보세요.</span>';
+
+  // 리드: 검색어(트렌드)를 매칭된 키워드로 조합 — STATE에서 현재 뷰의 검색어 추출
+  let trends=[];
+  try{ const ok=STATE.blocks.filter(b=>b.combo);
+    if(STATE.view==='__all__') trends=ok.map(b=>b.trend).filter(Boolean);
+    else { const tb=ok.find(x=>x.id===STATE.view); if(tb&&tb.trend) trends=[tb.trend]; }
+  }catch(e){}
+  const _rasuh=w=>{ const c=(w||'').charCodeAt((w||'').length-1); if(c<0xAC00||c>0xD7A3) return '라는'; return ((c-0xAC00)%28)?'이라는':'라는'; };
+  let lead;
+  const _trs=(trends||[]).map(_ren).filter(Boolean);
+  if(_trs.length){   // 단일·종합(다중 검색어) 동일 형식: "검색어를 매칭된 키워드 …로 조합해봤어요."
+    const _trSet=new Set(_trs);
+    const matched=seeds.map(_ren).filter(x=>!_trSet.has(x));
+    const head=(_trs.length===1)
+      ? `<b>${_esc(_trs[0])}</b>${_rasuh(_trs[0])} 검색어`
+      : `<b>${_esc(_trs.join('·'))}</b> 검색어`;
+    lead = matched.length
+      ? `${head}를 매칭된 키워드 <b>${matched.map(_esc).join('·')}</b>${_josa(matched[matched.length-1],'로')} 조합해봤어요.`
+      : `${head}로 기획을 시작해보세요.`;
+  } else {
+    const combo=(seeds&&seeds.length)? seeds.map(_ren).join(' × ') : (C.rail&&C.rail[0]? _ren(C.rail[0]):'');
+    lead = `<b>${_esc(combo)}</b> 조합이에요.`;
+  }
+  let s=`<span class="ins-sentence">🎯 ${lead}`;
+  if(metaLine)  s+=`<br>${metaLine}`;
+  if(instaLine) s+=`<br>${instaLine}`;   // 인스타 바이럴(메타패스 포함) — 첫 문장 아래 별도 줄
+  if(refLine)   s+=`<br>${refLine}`;
+  s+=`</span>`;   // 범례는 헤더 💡 도움말 팝업으로 이동(인박스 표시 제거)
+  return s;
+}
+
+function renderComboExplain(seed){   // (보조) 인사이트만 렌더 — 필터·그리기 타이밍은 _drawAfterFilter가 담당
+  const C=CD.data[seed];
+  const el=document.getElementById('net-explain'); if(!el) return; el.classList.remove('muted');
+  el.innerHTML=_comboInsightSentence(C, [seed]);
+}
+
+// ── vis-network 렌더 ───────────────────────────────────────────
+let _visNet = null, _visNodeDS = null, _visEdgeDS = null;
+let _origNodes = {}, _origEdges = {};
+let _nodeMeta = {};                           // 노드 id → 원본 노드 객체 (브리핑·경로용)
+
+// (제거됨) renderForce/_toggleExpand — 어텐션 폴백 렌더러. 라이브 시너지(_drawCombo) 전용으로 전환.
+
+// 네트워크 전체화면 토글 (스테이지 전체 → 경로바·브리핑 패널 포함)
+function toggleFS(){
+  const stage = document.getElementById('net-stage');
+  stage.classList.toggle('fs');
+  const on = stage.classList.contains('fs');
+  document.getElementById('fs-btn').textContent = on ? '⛶ 닫기' : '⛶ 전체화면';
+  if(_visNet) setTimeout(()=>{ _visNet.redraw(); _visNet.fit({ animation:false }); }, 60);
+}
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape'){ const stage=document.getElementById('net-stage'); if(stage.classList.contains('fs')) toggleFS(); }
+});
+
+function _resetHighlight(){
+  _visNodeDS.update(_visNodeDS.get().map(n => ({ id:n.id, ...(_origNodes[n.id]||{}), opacity:1 })));
+  _visEdgeDS.update(_visEdgeDS.get().map(e => ({ id:e.id, ...(_origEdges[e.id]||{}) })));
+}
+
+// (제거됨) 어텐션 네트워크용 쌍-시너지/경로/포커스 헬퍼 — 라이브 콤보(_comboPair/_comboBrief)가 동일 역할.
+function _hideBrief(){   // 패널은 고정 칸 — 숨기지 않고 '사용법 안내'로 되돌림
+  const bp=document.getElementById('brief-panel'); if(bp){ bp.classList.remove('hidden'); bp.innerHTML=_comboGuideHTML(); }
+  const pt=document.getElementById('path-tracker'); if(pt) pt.style.display='none';
+}
+function _esc(s){ return String(s).replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c])); }
+
+setRightTitle(null);
+addBlock();  // 시작 시 검색어 1개
+
+// ════════════════════════════════════════════════════════════════════
+//  시트2: 네트워크 업데이트 — 상품 설명문 → 키워드 자동 추출 (Kiwi 백엔드)
+//  서버: /extract-one · /extract-batch (api.py, same-origin). _esc는 시트1 정의 재사용.
+// ════════════════════════════════════════════════════════════════════
+const UPDATE_STATE = { rows: [], rawCsvRows: [] };
+
+function switchSheet(sheetId){
+  document.querySelectorAll('.sheet-tab').forEach(b=>b.classList.toggle('on', b.dataset.sheet===sheetId));
+  document.querySelectorAll('.sheet-panel').forEach(p=>p.classList.toggle('on', p.id===sheetId));
+  if(sheetId==='sheet1' && typeof _visNet!=='undefined' && _visNet) setTimeout(()=>{ _visNet.redraw(); _visNet.fit({animation:false}); }, 60);
+}
+
+function normalize2(t){ return String(t??'').replace(/\s+/g,' ').trim(); }
+function csvEscape2(v){ const s=String(v??''); return /[",\n\r]/.test(s) ? `"${s.replace(/"/g,'""')}"` : s; }
+function rowsToCsv2(rows, headers){ return '﻿' + [headers.join(','), ...rows.map(r=>headers.map(h=>csvEscape2(r[h])).join(','))].join('\n'); }
+function readFileText2(file){ return new Promise((res,rej)=>{ if(!file){res('');return;} const r=new FileReader(); r.onload=()=>res(String(r.result||'')); r.onerror=()=>rej(r.error); r.readAsText(file,'utf-8'); }); }
+function parseCsvText2(text){
+  const rows=[]; let row=[], cell='', quote=false;
+  text=String(text||'').replace(/^﻿/,'');
+  for(let i=0;i<text.length;i++){ const ch=text[i], next=text[i+1];
+    if(quote){ if(ch==='"'&&next==='"'){cell+='"';i++;} else if(ch==='"')quote=false; else cell+=ch; continue; }
+    if(ch==='"'){quote=true;continue;}
+    if(ch===','){row.push(cell);cell='';continue;}
+    if(ch==='\n'){row.push(cell);rows.push(row);row=[];cell='';continue;}
+    if(ch==='\r')continue; cell+=ch;
+  }
+  row.push(cell);
+  if(row.some(v=>String(v).trim()!=='')) rows.push(row);
+  if(!rows.length) return [];
+  const headers=rows[0].map(h=>normalize2(h));
+  return rows.slice(1).filter(r=>r.some(v=>normalize2(v))).map(r=>{ const o={}; headers.forEach((h,i)=>{o[h]=r[i]??'';}); return o; });
+}
+
+function normalizeKeywordType2(type){
+  if(type==='기존 등록 키워드') return '기존 키워드';
+  if(type==='신규 후보 키워드') return '신규 키워드';
+  return type || '신규 키워드';
+}
+function normalizeServerRow2(row){
+  const out=Object.assign({ id:Date.now().toString(36)+Math.random().toString(36).slice(2,7), itemCode:'', itemName:'', sourceText:'', memo:'', confirmed:false, keywords:[] }, row||{});
+  out.id=out.id||(Date.now().toString(36)+Math.random().toString(36).slice(2,7));
+  out.keywords=(out.keywords||[]).map(k=>Object.assign({keyword:'',keywordType:'신규 키워드',selected:true,inputTerm:'',method:'',methodLabel:'',detail:''},k))
+    .map(k=>Object.assign(k,{keywordType:normalizeKeywordType2(k.keywordType),selected:true}));
+  return out;
+}
+function resetSheet2ResultsForNewRun(){
+  UPDATE_STATE.rows=[]; UPDATE_STATE.rawCsvRows=[];
+  const s=document.getElementById('review-search'), f=document.getElementById('review-filter');
+  if(s)s.value=''; if(f)f.value='all'; renderReviewList();
+}
+
+function showKeywordLoading(message='키워드 추출 중...'){
+  const root=document.getElementById('review-list');
+  if(root) root.innerHTML=`<div class="loading-state">${message}<span class="sub">상품 설명문을 분석해 기존 키워드와 신규 키워드를 분리하고 있습니다.</span></div>`;
+}
+async function callSheet2Api2(path, payload){
+  let res;
+  try{ res=await fetch(`${API_BASE}${path}`, {method:'POST',headers:{'Content-Type':'application/json','ngrok-skip-browser-warning':'1'},body:JSON.stringify(payload)}); }
+  catch(e){ throw new Error('키워드 추출 서버에 연결할 수 없습니다. 백엔드(api.py)가 실행 중인지 확인해 주세요.'); }
+  const data=await res.json().catch(()=>({ok:false,error:'응답을 읽지 못했습니다.'}));
+  if(!res.ok || !data.ok) throw new Error(data.error || '키워드 추출에 실패했습니다.');
+  return data;
+}
+async function runSingleExtract(){
+  const code=document.getElementById('single-code').value.trim();
+  const name=document.getElementById('single-name').value.trim();
+  const desc=document.getElementById('single-desc').value.trim();
+  if(!code || !desc){ alert('상품코드와 상품 설명문을 입력해 주세요.'); return; }
+  resetSheet2ResultsForNewRun(); showKeywordLoading('키워드 추출 중...');
+  try{
+    const data=await callSheet2Api2('/extract-one', {itemCode:code, itemName:name, sourceText:desc});
+    UPDATE_STATE.rows=[normalizeServerRow2(data.row)]; UPDATE_STATE.rawCsvRows=[];
+    const st=document.getElementById('csv-status'); if(st) st.textContent='단건 입력 결과를 표시 중입니다.';
+    const s=document.getElementById('review-search'), f=document.getElementById('review-filter'); if(s)s.value=''; if(f)f.value='all';
+    renderReviewList();
+  }catch(e){ alert(e.message); document.getElementById('review-list').innerHTML='<div class="empty-state">추출에 실패했습니다.</div>'; }
+}
+async function runCsvExtract(){
+  const file=document.getElementById('csv-file').files[0];
+  if(!file){ alert('CSV 파일을 첨부해 주세요.'); return; }
+  resetSheet2ResultsForNewRun(); showKeywordLoading('업로드 파일 추출 중...');
+  const rows=parseCsvText2(await readFileText2(file)); UPDATE_STATE.rawCsvRows=rows;
+  try{
+    const data=await callSheet2Api2('/extract-batch', {rows});
+    const built=(data.rows||[]).map(normalizeServerRow2); UPDATE_STATE.rows=built;
+    document.getElementById('csv-status').innerHTML=built.length ? `<b>${built.length}</b>개 상품을 추출했습니다.` : '설명문 컬럼을 찾지 못했습니다.';
+    renderReviewList();
+  }catch(e){ alert(e.message); document.getElementById('review-list').innerHTML='<div class="empty-state">추출에 실패했습니다.</div>'; }
+}
+function clearSheet2(){
+  if(!UPDATE_STATE.rows.length || confirm('추출 결과를 모두 초기화할까요?')){
+    UPDATE_STATE.rows=[]; UPDATE_STATE.rawCsvRows=[]; renderReviewList();
+    const st=document.getElementById('csv-status'); if(st) st.textContent='아직 업로드된 파일이 없습니다.';
+  }
+}
+function statusForRow2(row){ return row.keywords.length ? {cls:'ready', text:'자동 추출 완료'} : {cls:'none', text:'매칭 없음'}; }
+function attrEsc2(s){ return _esc(s).replace(/"/g,'&quot;'); }
+function keywordFlow2(k){ const i=normalize2(k.inputTerm||''), kw=normalize2(k.keyword||''); return (i&&kw&&i!==kw) ? `<b>${_esc(i)} → ${_esc(kw)}</b>` : _esc(kw||i||'-'); }
+function renderSummary2(){
+  const rows=UPDATE_STATE.rows;
+  const sel=rows.reduce((s,r)=>s+r.keywords.length,0);
+  const ex=rows.reduce((s,r)=>s+r.keywords.filter(k=>k.keywordType==='기존 키워드').length,0);
+  const ca=rows.reduce((s,r)=>s+r.keywords.filter(k=>k.keywordType==='신규 키워드').length,0);
+  document.getElementById('sum-products').textContent=rows.length.toLocaleString();
+  document.getElementById('sum-selected').textContent=sel.toLocaleString();
+  document.getElementById('sum-existing').textContent=ex.toLocaleString();
+  document.getElementById('sum-candidate').textContent=ca.toLocaleString();
+}
+function renderReviewList(){
+  renderSummary2();
+  const root=document.getElementById('review-list');
+  const q=normalize2(document.getElementById('review-search')?.value||'').toLowerCase();
+  const filter=document.getElementById('review-filter')?.value||'all';
+  const rows=UPDATE_STATE.rows.filter(row=>{
+    const hay=[row.itemCode,row.itemName,row.sourceText,...row.keywords.map(k=>k.keyword)].join(' ').toLowerCase();
+    if(q && !hay.includes(q)) return false;
+    if(filter==='candidate' && !row.keywords.some(k=>k.keywordType==='신규 키워드')) return false;
+    if(filter==='empty' && row.keywords.length) return false;
+    return true;
+  });
+  if(!rows.length){ root.innerHTML='<div class="empty-state">표시할 추출 결과가 없습니다.</div>'; return; }
+  root.innerHTML='';
+  rows.forEach(row=>{
+    const st=statusForRow2(row);
+    const ex=row.keywords.filter(k=>k.keywordType==='기존 키워드');
+    const ca=row.keywords.filter(k=>k.keywordType==='신규 키워드');
+    const card=document.createElement('div'); card.className='result-card';
+    card.innerHTML=`
+      <div class="result-head">
+        <div class="product-title">${_esc(row.itemName || '상품명 없음')}</div>
+        <div class="product-meta-row">
+          <div class="product-meta">상품코드 ${_esc(row.itemCode || '-')} · 기존 ${ex.length}개 / 신규 ${ca.length}개 / 전체 ${row.keywords.length}개</div>
+          <span class="status-badge ${st.cls}">${st.text}</span>
+        </div>
+      </div>
+      <div class="keyword-group"><div class="keyword-group-title">기존 키워드</div>
+        <div class="keyword-chip-row">${ex.length ? ex.map(k=>`<span class="chip on" title="${attrEsc2(k.detail)}">${_esc(k.keyword)}</span>`).join('') : '<span class="help-text">매칭된 기존 키워드가 없습니다.</span>'}</div>
+      </div>
+      <div class="keyword-group"><div class="keyword-group-title">신규 키워드</div>
+        <div class="keyword-chip-row">${ca.length ? ca.map(k=>`<span class="chip candidate" title="${attrEsc2(k.detail)}">${_esc(k.keyword)}</span>`).join('') : '<span class="help-text">신규 키워드가 없습니다.</span>'}</div>
+      </div>
+      <div class="source-label">상품 설명문</div>
+      <div class="source-text">${_esc(row.sourceText || '설명문 없음')}</div>
+      <details class="detail-toggle">
+        <summary><span>상세 추출 근거</span></summary>
+        <table class="evidence-table">
+          <thead><tr><th>추출 키워드</th><th>입력 표현</th><th>등록 여부</th><th>추출 근거</th></tr></thead>
+          <tbody>${row.keywords.map(k=>`<tr><td>${_esc(k.keyword)}</td><td>${keywordFlow2(k)}</td><td>${_esc(k.keywordType)}</td><td>${_esc(k.detail)}</td></tr>`).join('') || '<tr><td colspan="4">추출 근거가 없습니다.</td></tr>'}</tbody>
+        </table>
+      </details>`;
+    root.appendChild(card);
+  });
+}
+function downloadReviewedCsv(){
+  const out=[];
+  UPDATE_STATE.rows.forEach(row=>{
+    const ex=row.keywords.filter(k=>k.keywordType==='기존 키워드').map(k=>normalize2(k.keyword)).filter(Boolean);
+    const fr=row.keywords.filter(k=>k.keywordType==='신규 키워드').map(k=>normalize2(k.keyword)).filter(Boolean);
+    if(ex.length || fr.length) out.push({'상품코드':row.itemCode,'상품명':row.itemName,'원문 설명':row.sourceText,'기존 키워드':ex.join('|'),'신규 키워드':fr.join('|')});
+  });
+  if(!out.length){ alert('다운로드할 추출 키워드가 없습니다.'); return; }
+  const headers=['상품코드','상품명','원문 설명','기존 키워드','신규 키워드'];
+  const blob=new Blob([rowsToCsv2(out,headers)],{type:'text/csv;charset=utf-8'});
+  const url=URL.createObjectURL(blob); const a=document.createElement('a');
+  a.href=url; a.download='네트워크_키워드_자동추출.csv'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>

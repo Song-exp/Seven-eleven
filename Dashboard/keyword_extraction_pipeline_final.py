@@ -38,19 +38,18 @@ from kiwipiepy import Kiwi
 
 
 BASE_DIR = Path(__file__).resolve().parent
-DATA_DIR = BASE_DIR / "data"
 
-# 네트워크에 들어가는 전체 키워드 파일 (그래프에서 재생성 — scripts/build_network_keyword_dict.py)
-NETWORK_KEYWORD_FILE = DATA_DIR / "network_keyword_dictionary.csv"
+# 네트워크에 들어가는 전체 키워드 파일
+NETWORK_KEYWORD_FILE = BASE_DIR / "network_keyword_dictionary.csv"
 
 # 사람이 검토해 확정한 불용어 사전 파일
-STOPWORD_FILE = DATA_DIR / "stopword_dictionary.csv"
+STOPWORD_FILE = BASE_DIR / "stopword_dictionary.csv"
 
 # 영어로만 이루어진 token 중 살릴 키워드 목록 파일
-ALLOWED_ENGLISH_FILE = DATA_DIR / "english_keyword_allowlist.csv"
+ALLOWED_ENGLISH_FILE = BASE_DIR / "english_keyword_allowlist.csv"
 
 # NP_INFO에서 나온 표현을 네트워크 키워드로 연결한 검수 매핑 사전 파일
-CURATED_MAPPING_FILE = DATA_DIR / "curated_keyword_mapping.csv"
+CURATED_MAPPING_FILE = BASE_DIR / "output" / "curated_keyword_mapping.csv"
 
 
 KEEP_POS = {"NNG", "NNP", "SL", "SN", "XR"}
@@ -613,29 +612,6 @@ def load_curated_mapping(path: Path) -> dict[str, str]:
     return mapping
 
 
-def _load_kiwi():
-    """Kiwi 로드. 비ASCII 경로(한글 폴더)에서 C++ 모델 로더가 실패('Cannot open extract.mdl')하면
-    모델을 ASCII 경로로 복사해 재시도. 배포(Linux /app, ASCII)에선 기본 경로로 바로 성공 → 폴백 미발동."""
-    import os
-    env_path = os.environ.get("KIWI_MODEL_PATH")
-    if env_path:
-        return Kiwi(model_path=env_path)
-    try:
-        return Kiwi()
-    except Exception:
-        import shutil
-        import kiwipiepy_model
-        src = os.path.dirname(kiwipiepy_model.__file__)
-        for dst in (r"C:\kiwi_model", r"C:\Users\Public\kiwi_model"):
-            try:
-                if not os.path.exists(os.path.join(dst, "extract.mdl")):
-                    shutil.copytree(src, dst, dirs_exist_ok=True)
-                return Kiwi(model_path=dst)
-            except Exception:
-                continue
-        raise
-
-
 class MDKeywordPipeline:
     def __init__(
         self,
@@ -684,7 +660,7 @@ class MDKeywordPipeline:
         ]
         self.short_exact_keywords.sort(key=lambda x: (-len(remove_spaces(x)), x))
 
-        self.kiwi = _load_kiwi()
+        self.kiwi = Kiwi()
 
     def extract(self, text: str) -> dict[str, object]:
         normalized = normalize_text(text)
