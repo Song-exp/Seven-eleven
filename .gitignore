@@ -38,6 +38,12 @@ experiments/results/**/*.parquet
 !src/eval/keyword_extract/data/
 !src/eval/keyword_extract/data/*.csv
 
+# --- Dashboard local-only snapshots (git엔 dashboard.html만 추적) ---
+Dashboard/dashboard_baseline.html
+Dashboard/dashboard_offline.html
+Dashboard/dashboard_offline_proto.html
+Dashboard/dashboard_sentence.html
+
 # --- EDA, crawling, and generated outputs ---
 eda/outputs_*/
 eda/**/*.png
